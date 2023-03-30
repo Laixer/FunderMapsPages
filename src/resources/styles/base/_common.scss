@@ -1,0 +1,101 @@
+html {
+  @apply leading-loose text-grey-400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-sans leading-tight font-extrabold text-blue-900;
+}
+
+p {
+  @apply text-base;
+}
+
+h1 {
+  @apply text-4xl lg:leading-[1.1];
+}
+
+h2 {
+  @apply text-3xl lg:leading-[1.1];
+
+  .content & + :not([hidden]) {
+    --content-spacing-top: theme(spacing.3); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+
+    @screen md {
+      --content-spacing-top: theme(spacing.5); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+    }
+  }
+}
+
+h3 {
+  @apply text-2xl lg:leading-[1.1];
+
+  .content & + :not([hidden]) {
+    --content-spacing-top: theme(spacing.3); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+  }
+}
+
+h4 {
+  @apply text-xl lg:leading-[1.1];
+
+  .content & + :not([hidden]) {
+    --content-spacing-top: theme(spacing.3); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+  }
+}
+
+h5 {
+  @apply text-lg lg:leading-[1.1];
+
+  .content & + :not([hidden]) {
+    --content-spacing-top: theme(spacing.2); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+  }
+}
+
+h6 {
+  @apply text-base;
+
+  .content & + :not([hidden]) {
+    --content-spacing-top: theme(spacing.2); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+  }
+}
+
+dl {
+  @apply space-y-1;
+}
+
+dt {
+  @apply font-semibold;
+}
+
+dd {
+  @apply ml-2;
+}
+
+strong {
+  @apply font-semibold;
+}
+
+code {
+  @apply inline-block bg-blue-100/90 px-2 rounded-md text-base font-mono;
+}
+
+a:where(:not(.button, .tag)),
+.fake-link:where(:not( .button, .tag)) {
+  @apply inline-flex gap-1 items-center text-green-300 hover:text-blue-400 underline;
+}
+
+svg {
+  @apply no-underline;
+}
+
+figcaption {
+  @apply opacity-70 px-4;
+}
+
+[x-cloak] {
+  display: none !important;
+}

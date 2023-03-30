@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="">
+
+  <title>Fundermaps</title>
+  <link href="./resources/styles/app.scss" rel="stylesheet" />
+  <script src="./resources/scripts/app.js" type="module"></script>
+</head>
+
+<body>
+  <header x-data="mobileMenu" class="lg:mb-11">
+    <div class="wrapper | flex justify-between items-center pt-16 pb-10 lg:py-0">
+      <div class="logo pt-1.5">
+        <include src="./resources/svg/logo/fundermaps-logo.svg"></include>
+
+        <span class="sr-only">Fundermaps</span>
+      </div>
+
+      <!-- Desktop navigation -->
+      <nav class="hidden lg:flex items-center">
+        <ul class="menu | ">
+          <li class="menu-item | px-6">
+            <a class="active no-underline" title="Intro" href="#hero">Intro</a>
+          </li>
+          <li class="menu-item | px-6">
+            <a class="no-underline" title="Services" href="#services">Services</a>
+          </li>
+          <li class="menu-item | px-6">
+            <a class="no-underline" title="Referenties" href="#references-anchor">Referenties</a>
+          </li>
+          <li class="menu-item | px-6">
+            <a class="no-underline" title="Demo" href="#demo">Demo</a>
+          </li>
+          <li class="menu-item | px-6">
+            <a class="no-underline" title="Partners" href="#partners">Partners</a>
+          </li>
+        </ul>
+
+        <a class="button button-secondary ml-11" href="#naarContact">
+          <div class="inline-block">
+            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" alt="Fundermaps contact">
+          </div>
+
+          <span>
+            Direct contact
+          </span>
+
+          <div class="button-arrow">
+            <include src="./resources/svg/arrow-right-icon.svg"></include>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Mobile navigation: Toggle menu -->
+      <div class="inline-flex lg:hidden">
+        <a href="#toPhone" class="mr-6">
+          <include src="./resources/svg/phone-icon.svg"></include>
+        </a>
+
+        <button x-on:click="open = true" class="flex items-center gap-2 text-blue-900 hover:text-yellow-500">
+          <div x-show="! open">
+            <include src="./resources/svg/hamburger-icon.svg"></include>
+          </div>
+          <span class="sr-only">Open mobiel menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile navigation -->
+    <!-- Mobile navigation: dropdown -->
+    <div x-cloak x-dialog x-model="open" x-transition:enter="left ease-out duration-300, right ease-out duration-300"
+      x-transition:enter-start="opacity-100 left-full -right-full" x-transition:enter-end="opacity-100 left-0 right-0"
+      x-transition:leave="left ease-in duration-100, right ease-in duration-100"
+      x-transition:leave-start="opacity-100 left-0 right-0" x-transition:leave-end="opacity-100 left-full -right-full"
+      class="top-0 bottom-0 fixed z-10 w-full h-full bg-blue-900 overflow-auto lg:hidden">
+
+      <!-- Mobile Menu: Panel -->
+      <div x-dialog:panel class="">
+        <div class="sticky top-0 bg-blue-900 flex justify-between items-center px-5 pt-16 z-10">
+          <div class="pt-1.5">
+            <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
+          </div>
+
+          <div class="flex">
+            <a href="#toPhone" class="mr-6" x-on:click="open = false">
+              <include src="./resources/svg/phone-icon-blue.svg"></include>
+            </a>
+
+            <button x-on:click="open = false" class="flex items-center gap-2">
+              <div>
+                <include src="./resources/svg/arrow-right-icon.svg"></include>
+              </div>
+            </button>
+          </div>
+        </div>
+        <nav x-data class="grid pt-16 lg:hidden">
+          <ul class="menu-mobile | ">
+            <li class="menu-item">
+              <a class="active no-underline" title="Intro" href="#hero" x-on:click="open = false">Intro</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Services" href="#services" x-on:click="open = false">Services</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Referenties" href="#references-anchor"
+                x-on:click="open = false">Referenties</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Demo" href="#demo" x-on:click="open = false">Demo</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Partners" href="#partners" x-on:click="open = false">Partners</a>
+            </li>
+            <li class="pl-16">
+              <a class="button button-outline-primary mt-10" href="#toLinkedIn" x-on:click="open = false">
+                <div class="button-logo">
+                  <include src="./resources/svg/linkedin-logo.svg"></include>
+                </div>
+
+                <span class="sr-only">LinkedIn link</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="fixed top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+        <div class="absolute rotate-90 -scale-x-100 -bottom-[238px] -right-[294px] w-[863px] opacity-20">
+          <include src="./resources/svg/hero-bg.svg"></include>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+    <div class="absolute -top-11 right-[-625px] -z-10 w-[863px] lg:w-[1233px] lg:-top-16 lg:right-[-565px]">
+      <include src="./resources/svg/hero-bg.svg"></include>
+    </div>
+  </div>
+
+  <main class="relative overflow-hidden">
+    <section id="hero" class="section | wrapper lg:grid lg:grid-cols-12">
+      <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-5">
+        <span class="block text-blue-300 font-extrabold text-sm lg:mb-1">Onze applicatie</span>
+
+        <h1 class="mb-2 lg:mb-5">Maak funderings- problematiek inzichtelijk enzo</h1>
+
+        <p class="mb-4 lg:mb-7">Assetbeheer voor funderingen.</p>
+
+        <div>
+          <a href="#moreInfo" class="button button-primary">
+            Meer info
+            <div class="button-arrow">
+              <include src="./resources/svg/arrow-right-icon.svg"></include>
+            </div>
+          </a>
+          <a href="#demo" class="button button-outline-primary | ml-2">Demo</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6">
+        <div class="hero-image | lg:ml-8">
+          <div class="hero-image__document">
+            <include src="./resources/svg/document-example.svg"></include>
+          </div>
+          <div class="hero-image__cracks">
+            <include src="./resources/svg/cracks-example.svg"></include>
+          </div>
+          <img src="./resources/images/foundation-example.webp" alt="Example of bad foundation">
+        </div>
+      </div>
+    </section>
+
+    <section id="usps" class="section | wrapper mt-20 mb-14 grid gap-x-7 gap-y-14 grid-cols-3 lg:mt-24 lg:mb-28">
+      <ul class="p-0 m-0 list-none col-span-3 md:col-span-3 lg:col-span-1">
+        <li>
+          <ul class="usp usp--blue | m-0 list-none">
+            <li>
+              <h2 class="text-3xl lg:text-2xl">400K</h2>
+            </li>
+            <li>
+              <p>Panden met vastgestelde funderingsgegevens.</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="p-0 m-0 list-none col-span-3 md:col-span-3 lg:col-span-1">
+        <li>
+          <ul class="usp usp--green | m-0 list-none">
+            <li>
+              <h2 class="text-3xl lg:text-2xl">Herstelregister</h2>
+            </li>
+            <li>
+              <p>De landelijk officiële registratie van herstelde funderingen.</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="p-0 m-0 list-none col-span-3 md:col-span-3 lg:col-span-1">
+        <li>
+          <ul class="usp usp--yellow | m-0 list-none">
+            <li>
+              <h2 class="text-3xl lg:text-2xl">Risicoanalyses</h2>
+            </li>
+            <li>
+              <p>Voor elk pand een uitgangspunt voor het funderignsrisico.</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="services" class="section | wrapper my-14 lg:mt-14 lg:mb-32">
+      <div class="lg:mb-9 lg:grid lg:grid-cols-12">
+        <h2 class="mb-3 lg:mb-0 lg:col-span-5">Services</h2>
+
+        <p class="mb-7 lg:mb-0 lg:col-span-7">
+          De applicatie FunderMaps biedt verschillende services om funderingsgegevens te verwerken, beheren en te
+          gebruiken in analyses voor funderingsrisico's.
+        </p>
+      </div>
+
+      <div class="grid gap-x-6 gap-y-2 lg:grid-cols-2 lg:gap-y-10">
+        <a href="#card" class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
+          <div class="inline-flex items-center lg:block">
+            <include src="./resources/svg/card-viewer-icon.svg"></include>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Kaartviewer</h3>
+          </div>
+
+          <p class="text-grey-400 mb-7">
+            Funderingsgegevens worden realtime weergegevens op de kaart.
+          </p>
+
+          <span class="card__link | flex items-center font-extrabold text-green-300">
+            <span>Meer info</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </span>
+        </a>
+
+        <a href="#card"
+          class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline lg:mt-10 lg:-mb-10">
+          <div class="inline-flex items-center lg:block">
+            <include src="./resources/svg/application-icon.svg"></include>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Applicatie</h3>
+          </div>
+
+          <p class="text-grey-400 mb-7">
+            Verwerk funderingsgegevens uit verschillende bronnen in de database zodat deze zichtbaar worden op de kaart.
+          </p>
+
+          <span class="card__link | flex items-center font-extrabold text-green-300">
+            <span>Meer info</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </span>
+        </a>
+
+        <a href="#card" class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
+          <div class="inline-flex items-center lg:block">
+            <include src="./resources/svg/api-icon.svg"></include>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">API-functie</h3>
+          </div>
+
+          <p class="text-grey-400 mb-7">
+            Koppel de FunderMaps database aan uw eigen applicatie en haal machine-to-machine gegevens over funderingen
+            op.
+          </p>
+
+          <span class="card__link | flex items-center font-extrabold text-green-300">
+            <span>Meer info</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </span>
+        </a>
+
+        <a href="#card"
+          class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline lg:mt-10 lg:-mb-10">
+          <div class="inline-flex items-center lg:block">
+            <object data="./resources/svg/ai-model-icon.svg"></object>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Modellen</h3>
+          </div>
+
+          <p class="text-grey-400 mb-7">
+            Op basis van vastgestelde gegevens maken modellen door toepassing van Artificial Intelligence
+            funderingsgegevens en risico's inzichtelijk van panden waar deze gegevens niet van bekend zijn.
+          </p>
+
+          <span class="card__link | flex items-center font-extrabold text-green-300">
+            <span>Meer info</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </span>
+        </a>
+        <div id="references-anchor"></div>
+      </div>
+    </section>
+
+    <section id="references"
+      class="section section--dark section--references | relative pt-12 pb-14 lg:wrapper lg:rounded-xl lg:mb-32">
+      <div class="lg:overflow-hidden">
+        <div class="absolute w-[469px] -top-8 -right-[264px] lg:w-[670px] lg:-top-[37px] lg:-right-[105px]">
+          <include src="./resources/svg/reference-bg.svg"></include>
+        </div>
+
+        <div class="lg:grid lg:grid-cols-12">
+          <div class="max-lg:wrapper lg:col-span-10 lg:col-start-2">
+            <h2 class="text-white mb-3">Referenties</h2>
+
+            <p class="mb-8">
+              Deze gebruikers gingen u voor:
+            </p>
+
+            <a href="#meerinfo" class="button button-primary">
+              Meer info
+              <div class="button-arrow">
+                <include src="./resources/svg/arrow-right-icon.svg"></include>
+              </div>
+            </a>
+
+            <div x-data="references_carousel" class="carousel carousel--references | mt-11 lg:mt-20"
+              data-references-carousel="true">
+              <div x-ref="glide" class="">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">
+                      <!-- <include src="./resources/svg/gemeente-schiedam-logo.svg"></include> -->
+                      <!-- <div class="inline-block">
+                        <img class="w-1/2 inline-block" src="./resources/images/gemeente-schiedam-logo.webp"
+                          alt="Gemeente Schiedam logo">
+                      </div> -->
+                      <object data="./resources/svg/gemeente-schiedam-logo.svg"> </object>
+                    </li>
+                    <li class="glide__slide">
+                      <include src="./resources/svg/gemeente-gouda-icon.svg"></include>
+                    </li>
+                    <li class="glide__slide">
+                      <include src="./resources/svg/woonstad-rotterdam-logo.svg"></include>
+                    </li>
+                    <li class="glide__slide">
+                      <include src="./resources/svg/elkien-logo.svg"></include>
+                    </li>
+                    <li class="glide__slide">
+                      <include src="./resources/svg/wetland-logo.svg"></include>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="flex justify-center">
+                  <div class="glide__arrows" data-glide-el="controls">
+                    <!-- Previous Button -->
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                      <include src="./resources/svg/chevron-white-icon.svg"></include>
+                      <span class="sr-only">Vorige referentie slide</span>
+                    </button>
+                    <!-- Next Button -->
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                      <include src="./resources/svg/chevron-white-icon.svg"></include>
+                      <span class="sr-only">Volgende referentie slide</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Bullets -->
+                <div class="glide__bullets | flex w-full items-center" data-glide-el="controls[nav]">
+                  <button class="glide__bullet" data-glide-dir="=0"></button>
+                  <button class="glide__bullet" data-glide-dir="=1"></button>
+                  <button class="glide__bullet" data-glide-dir="=2"></button>
+                  <button class="glide__bullet" data-glide-dir="=3"></button>
+                  <button class="glide__bullet" data-glide-dir="=4"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section | wrapper my-16 lg:mb-32">
+      <div class="lg:mb-9 lg:grid lg:grid-cols-12">
+        <h2 class="mb-3 lg:mb-0 lg:col-span-5">Demo</h2>
+
+        <p class="mb-8 lg:mb-0 lg:col-span-7">
+          De applicatie geeft kaartmateriaal voor de verwekte funderingsgegevens en op basis van modelgegevens.
+          Onderstaande demo geeft enkele van deze kaartlagen voor een deel van Amsterdam.
+        </p>
+      </div>
+
+      <div class="relative">
+        <div class="absolute flex items-center justify-center top-0 bottom-0 left-0 right-0 bg-blue-900/70 lg:hidden">
+          <h3 class="text-white text-lg text-center tracking-normal">Alleen op desktop<br>beschikbaar</h3>
+        </div>
+        <img src="./resources/images/fundermaps-demo.webp" alt="Fundermaps demo">
+      </div>
+    </section>
+
+    <section id="partners" class="section | wrapper my-16 lg:grid lg:grid-cols-12 lg:relative lg:z-10">
+      <h2 class="mb-3 lg:col-span-10 lg:col-start-2 lg:mb-11">Partners</h2>
+
+      <div class="grid gap-x-6 gap-y-5 lg:grid-cols-2 lg:col-start-2 lg:col-span-10">
+        <a href="#card"
+          class="card | inline-block border border-grey-300 bg-white rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
+          <div class="inline-block mb-2 lg:mb-4">
+            <img class="w-1/2" src="./resources/images/kcaf-logo.webp" alt="KCAF logo">
+          </div>
+
+          <h3 class="mb-3">KCAF</h3>
+
+          <p class="text-grey-400 mb-7">
+            Een stichting met als doelstelling het verzamelen, ontwikkelen en ontsluiten van kennis rond de aanpak en
+            preventie van funderingsproblemen.
+          </p>
+
+          <span class="card__link | flex items-center font-extrabold text-green-300">
+            <span>Meer info</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </span>
+        </a>
+
+        <div class="card--bg-visual | relative">
+          <a href="#card"
+            class="card | inline-block border border-grey-300 bg-white rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
+            <div class="inline-block mb-2 lg:mb-4">
+              <img class="w-1/2" src="./resources/images/overheid-logo.webp" alt="Rijksoverheid logo">
+            </div>
+
+            <h3 class="mb-3">RvO</h3>
+
+            <p class="text-grey-400 mb-7">
+              De Nationale Aanpak Funderingsproblematiek (NAF) van het Rijksvastgoedbedrijf zet zich in voor het
+              verbeteren
+              van de kennis over funderings-problematiek in Nederland en de aanpak daarvan.
+            </p>
+
+            <span class="card__link | flex items-center font-extrabold text-green-300">
+              <span>Meer info</span>
+              <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotes" class="section | bg-grey-100 pt-60 pb-14 -mt-60 lg:pb-24">
+      <div class="wrapper lg:grid lg:grid-cols-12">
+        <div x-data="quotes_carousel" class="carousel carousel--quotes lg:col-start-4 lg:col-span-6"
+          data-quote_carousel="true">
+          <div x-ref="glide" class="">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">
+                  <figure>
+                    <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
+                      <include src="./resources/svg/quote-icon.svg"></include>
+                      <p class="text-lg mt-4 lg:text-xl lg:mr-6">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris
+                        nisi ut aliquip ex ea commodo consequat.
+                      </p>
+
+                    </blockquote>
+                    <figcaption class="text-center">
+                      <span class="font-extrabold text-blue-900">Name Surname</span>
+                      <span class="block leading-none">
+                        Functieomschrijving, Organisatie
+                      </span>
+                    </figcaption>
+                  </figure>
+                </li>
+
+                <li class="glide__slide">
+                  <figure>
+                    <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
+                      <include src="./resources/svg/quote-icon.svg"></include>
+                      <p class="text-lg mt-4 lg:text-xl lg:mr-6">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris
+                        nisi ut aliquip ex ea commodo consequat.
+                      </p>
+
+                    </blockquote>
+                    <figcaption class="text-center">
+                      <span class="font-extrabold text-blue-900">Name Surname 2</span>
+                      <span class="block leading-none">
+                        Functieomschrijving, Organisatie
+                      </span>
+                    </figcaption>
+                  </figure>
+                </li>
+
+                <li class="glide__slide">
+                  <figure>
+                    <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
+                      <include src="./resources/svg/quote-icon.svg"></include>
+                      <p class="text-lg mt-4 lg:text-xl lg:mr-6">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris
+                        nisi ut aliquip ex ea commodo consequat.
+                      </p>
+
+                    </blockquote>
+                    <figcaption class="text-center">
+                      <span class="font-extrabold text-blue-900">Name Surname 3</span>
+                      <span class="block leading-none">
+                        Functieomschrijving, Organisatie
+                      </span>
+                    </figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </div>
+
+            <div class="glide__arrows" data-glide-el="controls">
+              <!-- Previous Button -->
+              <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+              </button>
+              <!-- Next Button -->
+              <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="top-tasks" class="section | wrapper py-14 grid gap-x-7 gap-y-5 lg:grid-cols-3 lg:py-20">
+      <h2 class="text-center lg:col-span-3 lg:mb-3">Top taken</h2>
+      <a class="button button-outline-primary button-alternative" href="#mediaBibliotheek">
+        <span class="relative flex">
+          Media bibliotheek
+          <div class="absolute -right-6">
+            <include src="./resources/svg/arrow-right-icon.svg"></include>
+          </div>
+        </span>
+      </a>
+
+      <a class="button button-outline-primary button-alternative" href="#privacy">
+        <span class="relative flex">
+          Privacy verklaring
+          <div class="absolute -right-6">
+            <include src="./resources/svg/arrow-right-icon.svg"></include>
+          </div>
+        </span>
+      </a>
+
+      <a class="button button-outline-primary button-alternative" href="#conditions">
+        <span class="relative flex">
+          Algemene voorwaarden
+          <div class="absolute -right-6">
+            <include src="./resources/svg/arrow-right-icon.svg"></include>
+          </div>
+        </span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="section section--dark | pt-12 pb-14">
+    <div class="wrapper flex flex-col items-center lg:grid lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
+      </div>
+
+      <div class="lg:col-span-4 lg:order-2 flex justify-end">
+        <a class="button button-outline-primary my-8 lg:my-0" href="#toLinkedIn">
+          <div class="button-logo">
+            <include src="./resources/svg/linkedin-logo.svg"></include>
+          </div>
+
+          <span class="sr-only">LinkedIn link</span>
+        </a>
+      </div>
+
+      <p class="text-center text-sm lg:col-span-4">
+        © Copyright 2023 FunderMaps. Alle rechten voorbehouden
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+.button-secondary {
+  @apply text-white bg-blue-900 transition-shadow py-1 pl-1 inline-flex items-center;
+
+  &:hover,
+  .hover {
+    @apply text-white shadow-button transition-shadow;
+  }
+
+  &:disabled {
+    @apply bg-grey-300 border-grey-300;
+  }
+}

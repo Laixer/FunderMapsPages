@@ -1,0 +1,23 @@
+.hero {
+  &-image {
+    @apply relative mt-11 lg:mt-0;
+
+    &::after {
+      content: "";
+
+      @apply absolute w-[95px] h-[166px] bg-yellow-300 -bottom-[9px] left-[30px] rotate-45 rounded-lg -z-10 lg:w-[158px] lg:h-[277px] lg:-bottom-[20px] lg:left-[37px];
+    }
+
+    img {
+      @apply rounded-xl shadow-hero-img;
+    }
+
+    &__document {
+      @apply absolute shadow-hero-img-overlay-1 -left-2.5 top-[26px] w-[40vw] lg:max-w-[252px] xl:-left-[50px] xl:top-[52px];
+    }
+
+    &__cracks {
+      @apply absolute shadow-hero-img-overlay-2 bottom-[43px] -right-2.5 w-[40vw] lg:max-w-[216px] xl:-right-24 xl:bottom-[72px];
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.button-primary {
+  @apply text-white bg-green-300 transition-shadow;
+
+  &:hover,
+  .hover {
+    @apply text-white shadow-button transition-shadow;
+  }
+
+  &:disabled {
+    @apply bg-grey-300 border-grey-300;
+  }
+}
+
+.button-outline-primary {
+  @apply px-6 py-2.5 border-2 text-green-300 transition-shadow;
+
+  &:hover,
+  .hover {
+    @apply text-white border-green-300 bg-green-300 shadow-button transition-shadow;
+  }
+
+  &:disabled {
+    @apply bg-grey-300 border-grey-300;
+  }
+
+  .button-logo {
+    @apply fill-green-300;
+  }
+
+  &:hover .button-logo {
+    @apply fill-white;
+  }
+}

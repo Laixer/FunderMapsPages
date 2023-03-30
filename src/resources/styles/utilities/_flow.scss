@@ -1,0 +1,20 @@
+.flow {
+  > * + * {
+    --flow-space-top: theme(spacing.6);
+    --flow-space-bottom: 0;
+
+    margin-bottom: var(--flow-space-bottom);
+    margin-top: var(--flow-space-top);
+  }
+}
+
+
+.flow-space-y-lg {
+  --flow-space-top: theme(spacing.8);
+  --flow-space-bottom: theme(spacing.8);
+
+  @screen lg {
+    --flow-space-top: theme(spacing.16);
+    --flow-space-bottom: theme(spacing.16);
+  }
+}

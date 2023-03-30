@@ -1,0 +1,8 @@
+.wrapper {
+  margin-inline: auto;
+  width: min(100% - var(--padding, 2.5rem), var(--max-width, 73.75rem));
+}
+
+.wrapper-slim {
+  --max-width: 48.75rem;
+}

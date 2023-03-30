@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~@glidejs/glide/src/assets/sass/glide.core.scss";
+
+@layer base {
+  @import "base";
+}
+
+@layer components {
+  @import "components";
+}
+
+@layer utilities {
+  @import "utilities";
+}

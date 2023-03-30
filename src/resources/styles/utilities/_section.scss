@@ -1,0 +1,14 @@
+.section {
+  &--dark {
+    @apply bg-blue-900 text-grey-400;
+  }
+
+  &--references {
+    @apply relative;
+
+    &::after {
+      content: "";
+      @apply hidden  absolute w-[95px] h-[166px] bg-blue-300 -bottom-[9px] left-[30px] rotate-45 rounded-lg -z-10 lg:block lg:w-[158px] lg:h-[277px] lg:-bottom-[20px] lg:left-[37px]
+    }
+  }
+}

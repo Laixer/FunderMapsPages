@@ -1,0 +1,48 @@
+.menu {
+  @apply h-[120px] flex;
+
+  & &-item {
+    @apply h-full flex justify-end relative;
+
+    a {
+      @apply flex text-grey-400 justify-center flex-col;
+
+      &.active,
+      &:hover,
+      &:focus {
+        @apply font-extrabold text-blue-900;
+
+        &::after {
+          @apply bg-blue-300 h-1 left-0 absolute right-0 top-0;
+          content: "";
+        }
+      }
+
+      &::before {
+        @apply font-extrabold block h-0 text-transparent overflow-hidden invisible;
+        content: attr(title);
+      }
+    }
+  }
+
+  &-mobile {
+    & .menu-item {
+      @apply flex relative pl-16;
+
+      a {
+        @apply flex text-[30px] text-grey-400;
+
+        &.active,
+        &:hover,
+        &:focus {
+          @apply font-extrabold text-white;
+
+          &::after {
+            @apply bg-blue-300 w-1 left-0 absolute bottom-0 top-0;
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}

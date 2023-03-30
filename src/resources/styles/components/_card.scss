@@ -1,0 +1,26 @@
+.card {
+  @apply transition-all top-0 bottom-0 relative;
+
+  svg {
+    @apply inline-block;
+  }
+
+  &__link svg {
+    @apply ml-2 -rotate-45 transform-gpu transition-transform;
+  }
+
+  &:hover {
+    @apply -top-2.5 bottom-2.5 shadow-quote;
+
+    .card__link svg {
+      @apply rotate-0 transition-transform;
+    }
+  }
+
+  &--bg-visual {
+    &::after {
+      content: "";
+      @apply hidden lg:block absolute w-[158px] h-[277px] bg-yellow-300 -top-2.5 right-[38px] rotate-45 rounded-lg -z-10;
+    }
+  }
+}

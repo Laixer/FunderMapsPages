@@ -1,0 +1,16 @@
+.quote {
+  @apply relative flex flex-col justify-center items-center lg:flex-row;
+
+  &::after {
+    content: url("../../resources/svg/quote-balloon.svg");
+    @apply absolute -z-10 leading-[0] -bottom-2.5 z-10;
+  }
+
+  p {
+    @apply tracking-normal lg:mt-0;
+  }
+
+  svg {
+    @apply self-start lg:shrink-0 lg:mr-7;
+  }
+}

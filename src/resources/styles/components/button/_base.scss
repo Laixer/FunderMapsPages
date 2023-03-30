@@ -1,0 +1,13 @@
+.button {
+  @apply inline-flex px-6 py-3 rounded-3xl no-underline font-extrabold text-base leading-none;
+
+  &:hover {
+    .button-arrow {
+      @apply rotate-0 transition-transform;
+    }
+  }
+}
+
+.button-arrow {
+  @apply ml-2 -rotate-45 transition-transform;
+}
