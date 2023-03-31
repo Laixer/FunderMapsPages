@@ -46,7 +46,8 @@
 
         <a class="button button-secondary ml-11" href="#naarContact">
           <div class="inline-block">
-            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64" alt="Fundermaps contact">
+            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64"
+              alt="Fundermaps contact">
           </div>
 
           <span>
@@ -642,7 +643,8 @@
       </div>
 
       <p class="text-center text-sm lg:col-span-4">
-        © Copyright 2023 FunderMaps. Alle rechten voorbehouden
+        © Copyright <span x-data="{ date: new Date() }" x-text="date.getFullYear()"></span> FunderMaps. Alle rechten
+        voorbehouden
       </p>
     </div>
   </footer>
