@@ -7,7 +7,7 @@
   "license": "MIT",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "engines": {
-    "node": ">=16.0.0"
+    "node": "16.x"
   },
   "scripts": {
     "clean:output": "rimraf dist",
