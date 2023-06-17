@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords"
+    content="FunderMaps, Kaarttechnologie, Geo-informatie, Data-analyse, Infrastructuur, Bouw, Asset management, Risicobeoordeling, Bodemgegevens, Duurzaamheid, Stadsplanning, Betrouwbaarheid, Innovatie, Digitalisering, Visualisatie, Interactief, Fundering, Funderingsrisico Funderingsproblematiek, Funderingsherstel, Bodemdaling, Satelliet data, Geotechniek, Geospatial, GIS, Remote sensing, Data science, Geo-engineering, Constructie, Gebouwen, Wegen, Bruggen, Havens, Energie-infrastructuur, Bouwmaterialen, Grondwater, Klimaatadaptatie, Milieueffectrapportage, Duurzame gebouwen, Stedenbouw, Stedelijke ontwikkeling, Veiligheidsbeheer, Schadebeoordeling, Machine learning, Artificial Intelligence, Big Data, Internet of Things, Cloud computing, Multi-sensor integratie, Beeldverwerking" />
+  <meta name="description"
+    content="FunderMaps biedt inzicht in de funderingstypes en  funderingsrisico's van vastgoed in Nederland door middel van data-analyse en kaarttechnologie. Ontdek waar funderingsrisicogebieden zijn en welke panden kwetsbare funderingen hebben. Beheer uw vastgoed met de assetmanagement tool voor funderingen. Voeg eenvoudig lokale data van funderingen toe en voer analyses uit op blok- of pandniveau." />
+
+  <title>Fundermaps</title>
+  <link href="./resources/styles/app.scss" rel="stylesheet" />
+  <script src="./resources/scripts/app.js" type="module"></script>
+</head>
+
+<body>
+  <header x-data="mobileMenu" class="lg:mb-11">
+    <div class="wrapper | flex justify-between items-center pt-16 pb-10 lg:py-0">
+      <div class="logo pt-1.5">
+        <include src="./resources/svg/logo/fundermaps-logo.svg"></include>
+
+        <span class="sr-only">Fundermaps</span>
+      </div>
+
+      <!-- Desktop navigation -->
+      <nav class="hidden lg:flex items-center">
+        <ul class="menu | ">
+          <li class="menu-item | px-6">
+            <a class="no-underline" title="Intro" href="#hero">Intro</a>
+          </li>
+          <li class="menu-item | px-6">
+            <a class="no-underline" title="Services" href="#services">Services</a>
+          </li>
+          <li class="menu-item | px-6">
+            <a class="no-underline" title="Referenties" href="#references-anchor">Referenties</a>
+          </li>
+          <li class="menu-item | px-6">
+            <a class="active no-underline" title="Demo" href="#demo">Demo</a>
+          </li>
+          <li class="menu-item | px-6">
+            <a class="no-underline" title="Partners" href="#partners">Partners</a>
+          </li>
+        </ul>
+
+        <a class="button button-secondary ml-11" href="#naarContact">
+          <div class="inline-block">
+            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" alt="Fundermaps contact">
+          </div>
+
+          <span>
+            Direct contact
+          </span>
+
+          <div class="button-arrow">
+            <include src="./resources/svg/arrow-right-icon.svg"></include>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Mobile navigation: Toggle menu -->
+      <div class="inline-flex lg:hidden">
+        <a href="#toPhone" class="mr-6">
+          <include src="./resources/svg/phone-icon.svg"></include>
+        </a>
+
+        <button x-on:click="open = true" class="flex items-center gap-2 text-blue-900 hover:text-yellow-500">
+          <div x-show="! open">
+            <include src="./resources/svg/hamburger-icon.svg"></include>
+          </div>
+          <span class="sr-only">Open mobiel menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile navigation -->
+    <!-- Mobile navigation: dropdown -->
+    <div x-cloak x-dialog x-model="open" x-transition:enter="left ease-out duration-300, right ease-out duration-300"
+      x-transition:enter-start="opacity-100 left-full -right-full" x-transition:enter-end="opacity-100 left-0 right-0"
+      x-transition:leave="left ease-in duration-100, right ease-in duration-100"
+      x-transition:leave-start="opacity-100 left-0 right-0" x-transition:leave-end="opacity-100 left-full -right-full"
+      class="top-0 bottom-0 fixed z-10 w-full h-full bg-blue-900 overflow-auto lg:hidden">
+
+      <!-- Mobile Menu: Panel -->
+      <div x-dialog:panel class="">
+        <div class="sticky top-0 bg-blue-900 flex justify-between items-center px-5 pt-16 z-10">
+          <div class="pt-1.5">
+            <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
+          </div>
+
+          <div class="flex">
+            <a href="#toPhone" class="mr-6" x-on:click="open = false">
+              <include src="./resources/svg/phone-icon-blue.svg"></include>
+            </a>
+
+            <button x-on:click="open = false" class="flex items-center gap-2">
+              <div>
+                <include src="./resources/svg/arrow-right-icon.svg"></include>
+              </div>
+            </button>
+          </div>
+        </div>
+        <nav x-data class="grid pt-16 lg:hidden">
+          <ul class="menu-mobile | ">
+            <li class="menu-item">
+              <a class="active no-underline" title="Intro" href="#hero" x-on:click="open = false">Intro</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Services" href="#services" x-on:click="open = false">Services</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Referenties" href="#references-anchor"
+                x-on:click="open = false">Referenties</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Demo" href="#demo" x-on:click="open = false">Demo</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Partners" href="#partners" x-on:click="open = false">Partners</a>
+            </li>
+            <li class="pl-16">
+              <a class="button button-outline-primary mt-10" href="#toLinkedIn" x-on:click="open = false">
+                <div class="button-logo">
+                  <include src="./resources/svg/linkedin-logo.svg"></include>
+                </div>
+
+                <span class="sr-only">LinkedIn link</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="fixed top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+        <div class="absolute rotate-90 -scale-x-100 -bottom-[238px] -right-[294px] w-[863px] opacity-20">
+          <include src="./resources/svg/hero-bg.svg"></include>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+    <div class="absolute -top-11 right-[-625px] -z-10 w-[863px] lg:w-[1233px] lg:-top-16 lg:right-[-565px]">
+      <include src="./resources/svg/hero-bg.svg"></include>
+    </div>
+  </div>
+
+  <main class="relative overflow-hidden">
+    <section id="hero" class="section | wrapper lg:grid lg:grid-cols-12">
+      <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-8 lg:col-start-3">
+        <span class="block text-blue-300 font-extrabold text-sm lg:mb-1">Informatie</span>
+
+        <h1 class="mb-4 lg:mb-5">FunderMaps.com Algemene Voorwaarden</h1>
+
+        <!-- Voor intro teksten -->
+        <p class="font-bold text-blue-400">
+          Algemene leveringsvoorwaarden FunderMaps B.V.
+        </p>
+
+      </div>
+    </section>
+    <section id="content" class="section content | wrapper mb-12 lg:mb-16 lg:grid lg:grid-cols-12">
+      <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-8 lg:col-start-3">
+        <!-- <h2 class="mt-7 mb-3 lg:mb-4">De Finibus Bonorum et Malorum</h2> -->
+
+        <p class="mb-4 lg:mb-7">
+          Deze Algemene leveringsvoorwaarden zijn van toepassing op alle aan FunderMaps B.V. verstrekte opdrachten
+          (hierna te noemen: FunderMaps) te Delft, met uitzondering van de aan FunderMaps verstrekte opdrachten die
+          uitsluitend betrekking hebben op de levering van standaardsoftware. Deze Algemene leveringsvoorwaarden zijn
+          van toepassing met uitdrukkelijke uitsluiting van (standaard) leveringsvoorwaarden van de Opdrachtgever.
+          Afwijkingen van deze Algemene leveringsvoorwaarden zijn slechts bindend indien deze schriftelijk tussen
+          FunderMaps en de Opdrachtgever zijn overeengekomen. Deze Algemene leveringsvoorwaarden zijn vastgesteld door
+          FunderMaps en gedeponeerd bij de Kamer van Koophandel in Nederland. Zij zijn tevens te raadplegen op
+          fundermaps.com.
+        </p>
+
+        <p class="font-bold text-blue-400">
+          1. Definities
+        </p>
+
+        <ul class="mb-4 pl-4 list-disc">
+          <li>1.1. Opdrachtgever: de partij die FunderMaps Opdracht geeft tot het verrichten van werkzaamheden.
+          </li>
+          <li>
+            1.2. Aanbieding: de door FunderMaps aan de (potentiële) Opdrachtgever uitgebrachte aanbieding met vermelding
+            van het resultaat of de resultaten van de opgedragen werkzaamheden.
+          </li>
+          <li>
+            1.3. Algemene leveringsvoorwaarden: de door FunderMaps gehanteerde algemene leveringsvoorwaarden.
+          </li>
+          <li>
+            1.4. FunderMaps: de besloten vennootschap met beperkte aansprakelijkheid 'FunderMaps B.V.'.
+          </li>
+          <li>
+            1.5. Opdracht: de tussen FunderMaps en de Opdrachtgever gesloten overeenkomst tot het verrichten van
+            werkzaamheden en/of de overeenkomst tot het verrichten van diensten en/of het leveren van goederen.
+          </li>
+          <li>
+            1.6. Standaardsoftware: door FunderMaps geleverde software op basis van een 'standaard FunderMaps-licentie'.
+          </li>
+          <li>
+            1.7. Werkdag: maandag t/m vrijdag, met uitzondering van algemeen erkende feestdagen in Nederland.
+          </li>
+          <li>
+            1.8. INCO-voorwaarden: de Internationale Handelsvoorwaarden 2000, opgesteld en gepubliceerd door de
+            Internationale Kamer van Koophandel (ICC).
+          </li>
+          <li>
+            1.9. Product: alle beelden, gegevens, producten, geüploade gegevens, geüploade rapporten en documenten,
+            diensten of werken met een licentie van FunderMaps, met inbegrip van, maar niet beperkt tot,
+            informatieproducten en digitale datasets.
+          </li>
+          <li>
+            1.10. Afgeleid product: elk product of elke informatie die door de eindgebruiker wordt afgeleid en
+            ontwikkeld van het Product dat geen bronbeeldgegevens van het Product bevat (met inbegrip van een redelijke
+            facsimile daarvan) en dat onomkeerbaar wordt gewijzigd en losgekoppeld van het Product.
+          </li>
+          <li>
+            1.11. Product met toegevoegde waarde: een door de eindgebruiker gegenereerd product dat bronbeeldgegevens
+            van het Product bevat (inclusief een redelijke kopie daarvan) en door het Product te wijzigen door middel
+            van hogere bewerkingen, technische manipulaties en/of de integratie van aanvullende gegevens.
+          </li>
+        </ul>
+
+        <p class="font-bold text-blue-400">
+          2. Gebruik van informatie
+        </p>
+        <p>
+          We gebruiken uw persoonlijke gegevens voor de volgende doeleinden:
+        </p>
+
+        <ul class="mb-4 pl-4 list-disc">
+          <li>Om onze diensten te leveren, te onderhouden en te verbeteren.
+          </li>
+          <li>
+            Om uw vragen en verzoeken te beantwoorden en klantenservice te bieden.
+          </li>
+          <li>
+            Om onze website en applicaties te personaliseren en te verbeteren.
+          </li>
+          <li>
+            Om u te informeren over producten, diensten, aanbiedingen en promoties waarvan wij denken dat ze interessant
+            voor u zijn.
+          </li>
+          <li>
+            Om te voldoen aan wettelijke verplichtingen en regelgeving.
+          </li>
+        </ul>
+
+        <p class="font-bold text-blue-400">
+          3. Delen van informatie
+        </p>
+        <p>
+          We delen uw persoonlijke gegevens alleen in de volgende gevallen:
+        </p>
+
+        <ul class="mb-4 pl-4 list-disc">
+          <li>Met uw toestemming.
+          </li>
+          <li>
+            Met dienstverleners die namens ons diensten uitvoeren, zoals hosting, gegevensanalyse, klantenservice,
+            e-mailbezorging, marketing en betalingsverwerking.
+          </li>
+          <li>
+            Om te voldoen aan wettelijke verplichtingen, zoals het reageren op dagvaardingen, gerechtelijke bevelen of
+            andere juridische processen.
+          </li>
+          <li>
+            In geval van een fusie, verkoop, reorganisatie, overdracht van activa, financiering of overname van ons
+            bedrijf of een deel ervan door een ander bedrijf.
+          </li>
+        </ul>
+
+        <p class="font-bold text-blue-400">
+          4. Delen van informatie
+        </p>
+        <p class="mb-4 lg:mb-7">
+          We nemen passende technische en organisatorische maatregelen om uw persoonlijke gegevens te beschermen tegen
+          ongeautoriseerde toegang, gebruik, openbaarmaking, verlies of wijziging. We kunnen echter geen absolute
+          veiligheid garanderen.
+        </p>
+
+        <p class="font-bold text-blue-400">
+          5. Bewaartermijn
+        </p>
+        <p class="mb-4 lg:mb-7">
+          We bewaren uw persoonlijke gegevens zo lang als nodig is voor de doeleinden waarvoor ze zijn verzameld,
+          tenzij een langere bewaartermijn wettelijk vereist of toegestaan is.
+        </p>
+
+        <p class="font-bold text-blue-400">
+          6. Uw rechten
+        </p>
+        <p class="mb-4 lg:mb-7">
+          U heeft het recht om toegang te vragen tot, correctie of verwijdering van uw persoonlijke gegevens. U kunt
+          ook bezwaar maken tegen de verwerking van uw gegevens of verzoeken om beperking van de verwerking. Neem
+          contact met ons op via de contactgegevens die in deze Privacyverklaring worden vermeld om uw rechten uit te
+          oefenen.
+        </p>
+
+        <p class="font-bold text-blue-400">
+          7. Cookies en andere trackingtechnologieën
+        </p>
+        <p class="mb-4 lg:mb-7">
+          We gebruiken cookies en vergelijkbare technologieën om informatie te verzamelen over uw interactie met onze
+          website en applicaties. U kunt uw browserinstellingen aanpassen om cookies te weigeren of te verwijderen, maar
+          dit kan de functionaliteit en uw ervaring met onze diensten beïnvloeden.
+        </p>
+
+        <p class="font-bold text-blue-400">
+          8. Doorgifte van gegevens buiten de EU
+        </p>
+        <p class="mb-4 lg:mb-7">
+          In sommige gevallen kunnen we uw persoonlijke gegevens overdragen aan dienstverleners die zich buiten de
+          Europese Unie bevinden. We zorgen ervoor dat dergelijke overdrachten voldoen aan de toepasselijke wetgeving
+          inzake gegevensbescherming en dat passende waarborgen worden getroffen om de veiligheid en vertrouwelijkheid
+          van uw gegevens te waarborgen.
+        </p>
+
+        <p class="font-bold text-blue-400">
+          9. Wijzigingen in deze Privacyverklaring
+        </p>
+        <p class="mb-4 lg:mb-7">
+          We kunnen deze Privacyverklaring van tijd tot tijd bijwerken. We zullen u op de hoogte stellen van eventuele
+          wijzigingen door de "Laatst bijgewerkt" datum bovenaan deze verklaring bij te werken. Uw voortgezet gebruik
+          van onze diensten na het doorvoeren van dergelijke wijzigingen betekent dat u instemt met de bijgewerkte
+          Privacyverklaring.
+        </p>
+
+        <p class="font-bold text-blue-400">
+          10. Contact
+        </p>
+        <p>Als u vragen heeft over deze Privacyverklaring of onze privacypraktijken, neem dan contact met ons op via:
+        </p>
+        <p>FunderMaps B.V.</p>
+        <p>Melbournestraat 34A, 3047 BJ Rotterdam</p>
+        <p class="mb-4 lg:mb-7">
+          info at fundermaps.com
+        </p>
+
+        <p class="mb-4 lg:mb-7">
+          Door onze website te gebruiken en/of onze applicaties en diensten te gebruiken, stemt u in met de verzameling,
+          het gebruik en de openbaarmaking van uw persoonlijke gegevens op de manier zoals beschreven in deze
+          Privacyverklaring. Als u niet instemt met de voorwaarden van deze Privacyverklaring, gebruik dan onze website,
+          applicaties en diensten niet.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="section section--dark | pt-12 pb-14">
+    <div class="wrapper flex flex-col items-center lg:grid lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
+      </div>
+
+      <div class="lg:col-span-4 lg:order-2 flex justify-end">
+        <a class="button button-outline-primary my-8 lg:my-0" href="#toLinkedIn">
+          <div class="button-logo">
+            <include src="./resources/svg/linkedin-logo.svg"></include>
+          </div>
+
+          <span class="sr-only">LinkedIn link</span>
+        </a>
+      </div>
+
+      <p class="text-center text-sm lg:col-span-4">
+        © Copyright 2023 FunderMaps. Alle rechten voorbehouden
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
