@@ -30,7 +30,6 @@
     "posthtml-expressions": "^1.10.0",
     "posthtml-include": "^1.7.4",
     "posthtml-inline-svg": "^0.2.0",
-    "process": "^0.11.10",
     "rimraf": "^5.0.0",
     "stylelint": "^15.6.1",
     "stylelint-config-prettier-scss": "^1.0.0",
