@@ -1,0 +1,27 @@
+# Sets the docker image for the job
+image: node:16
+
+# Build static page
+.build-page:
+  script:
+    - yarn
+    - yarn build
+    - mkdir public
+    - mv dist/* public
+
+.upload-artifacts:
+  artifacts:
+    paths:
+      - public
+
+# Setup GitLab Pages
+pages:
+  extends:
+    - .build-page
+    - .upload-artifacts
+  cache:
+    paths:
+      - node_modules
+  stage: deploy
+  only:
+    - develop

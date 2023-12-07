@@ -13,6 +13,7 @@
   <title>FunderMaps - Inzicht in funderingsrisico's en asset management</title>
   <link href="./resources/styles/app.scss" rel="stylesheet" />
   <script src="./resources/scripts/app.js" type="module"></script>
+  <link rel="icon" type="image/ico" href="resources/images/fundermaps-favicon.ico">
 </head>
 
 <body>
@@ -28,24 +29,27 @@
       <!-- Desktop navigation -->
       <nav class="hidden lg:flex items-center">
         <ul class="menu | ">
-          <li class="menu-item | px-6">
-            <a class="active no-underline" title="Intro" href="#hero">Intro</a>
+          <li class="menu-item | px-4">
+            <a class="active no-underline" title="Intro" href="/#hero">Intro</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Services" href="#services">Services</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Services" href="/#services">Services</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Referenties" href="#references-anchor">Referenties</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Referenties" href="/#references-anchor">Referenties</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Demo" href="#demo">Demo</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Demo" href="/#demo">Demo</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Partners" href="#partners">Partners</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Partners" href="/#partners">Partners</a>
+          </li>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Login" href="https://app.fundermaps.com">App</a>
           </li>
         </ul>
 
-        <a class="button button-secondary ml-11" href="mailto:info@fundermaps.com">
+        <a class="button button-secondary ml-4" href="mailto:info@fundermaps.com">
           <div class="inline-block">
             <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64"
               alt="Fundermaps contact">
@@ -121,6 +125,9 @@
             <li class="menu-item">
               <a class="no-underline" title="Partners" href="#partners" x-on:click="open = false">Partners</a>
             </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Login" href="https://app.fundermaps.com" x-on:click="open = false">App</a>
+            </li>
             <li class="pl-16">
               <a class="button button-outline-primary mt-10" href="#toLinkedIn" x-on:click="open = false">
                 <div class="button-logo">
@@ -157,7 +164,7 @@
         <p class="mb-4 lg:mb-7">Assetbeheer voor funderingen.</p>
 
         <div>
-          <a href="default.html" class="button button-primary">
+          <a href="more-info.html" class="button button-primary">
             Meer info
             <div class="button-arrow">
               <include src="./resources/svg/arrow-right-icon.svg"></include>
@@ -233,71 +240,50 @@
       </div>
 
       <div class="grid gap-x-6 gap-y-2 lg:grid-cols-2 lg:gap-y-10">
-        <a href="#card" class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
+        <a class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/card-viewer-icon.svg"></include>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Kaartviewer</h3>
           </div>
 
-          <p class="text-grey-400 mb-7">
+          <p class="text-grey-400">
             Visuele weergave van cruciale data
           </p>
-
-          <span class="card__link | flex items-center font-extrabold text-green-300">
-            <span>Meer info</span>
-            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
-          </span>
         </a>
 
         <div class="card--bg-visual | relative lg:mt-10 lg:-mb-10 after:bg-blue-900">
-          <a href="#card" class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
+          <a class="card | inline-block bg-grey-100 rounded-xl px-7 pt-14 pb-12 no-underline w-full">
             <div class="inline-flex items-center lg:block">
               <include src="./resources/svg/application-icon.svg"></include>
               <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Applicatie</h3>
             </div>
 
-            <p class="text-grey-400 mb-7">
+            <p class="text-grey-400">
               Efficiënte data-invoer en rapportgeneratie
             </p>
-
-            <span class="card__link | flex items-center font-extrabold text-green-300">
-              <span>Meer info</span>
-              <include src="./resources/svg/arrow-right-icon-green.svg"></include>
-            </span>
           </a>
         </div>
 
-        <a href="#card" class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
+        <a class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/api-icon.svg"></include>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">API-functie</h3>
           </div>
 
-          <p class="text-grey-400 mb-7">
+          <p class="text-grey-400">
             Directe toegang tot waardevolle funderingsdata
           </p>
-
-          <span class="card__link | flex items-center font-extrabold text-green-300">
-            <span>Meer info</span>
-            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
-          </span>
         </a>
 
-        <a href="#card"
-          class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline lg:mt-10 lg:-mb-10">
+        <a class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline lg:mt-10 lg:-mb-10">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/ai-model-icon.svg"></include>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Modellen</h3>
           </div>
 
-          <p class="text-grey-400 mb-7">
+          <p class="text-grey-400">
             Betrouwbare inzichten met geavanceerde AI-modellen
           </p>
-
-          <span class="card__link | flex items-center font-extrabold text-green-300">
-            <span>Meer info</span>
-            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
-          </span>
         </a>
         <div id="references-anchor"></div>
       </div>
@@ -318,14 +304,7 @@
               Deze gebruikers gingen u voor:
             </p>
 
-            <a href="#meerinfo" class="button button-primary">
-              Meer info
-              <div class="button-arrow">
-                <include src="./resources/svg/arrow-right-icon.svg"></include>
-              </div>
-            </a>
-
-            <div x-data="references_carousel" class="carousel carousel--references | mt-11 lg:mt-20"
+            <div x-data="references_carousel" class="carousel carousel--references"
               data-references-carousel="true">
               <div x-ref="glide" class="">
                 <div class="glide__track" data-glide-el="track">
@@ -420,19 +399,19 @@
         </a>
 
         <div class="card--bg-visual | relative">
-          <a href="https://www.rvo.nl/onderwerpen/funderingsproblematiek/nationale-aanpak"
+          <a href="https://www.sensar.nl/"
             class="card | inline-block border border-grey-300 bg-white rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
             <div class="inline-block mb-2 lg:mb-4">
-              <img class="w-1/2" src="./resources/images/overheid-logo.webp" height="180" width="460"
-                alt="Rijksoverheid logo">
+              <img class="w-1/2" src="./resources/images/sensar-logo.webp" height="180" width="460"
+                alt="Sensar logo">
             </div>
 
-            <h3 class="mb-3">RvO</h3>
+            <h3 class="mb-3">Sensar</h3>
 
             <p class="text-grey-400 mb-7">
-              De Nationale Aanpak Funderingsproblematiek (NAF) van het Rijksvastgoedbedrijf zet zich in voor het
-              verbeteren
-              van de kennis over funderings-problematiek in Nederland en de aanpak daarvan.
+              Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele 
+              staat van een potentieel funderingsrisico. Deze gegevens worden geleverd door Sensar en verwerkt in het 
+              FunderMaps-platform.
             </p>
 
             <span class="card__link | flex items-center font-extrabold text-green-300">
@@ -464,9 +443,9 @@
 
                     </blockquote>
                     <figcaption class="text-center">
-                      <span class="font-extrabold text-blue-900">Ambtenaar Gemeente</span>
+                      <span class="font-extrabold text-blue-900">Gemeente</span>
                       <span class="block leading-none">
-                        OpenAPI
+                        
                       </span>
                     </figcaption>
                   </figure>
@@ -527,7 +506,7 @@
 
                     </blockquote>
                     <figcaption class="text-center">
-                      <span class="font-extrabold text-blue-900">Taxateur Taxatiesbureau</span>
+                      <span class="font-extrabold text-blue-900">Taxatiesbureau</span>
                       <span class="block leading-none">
                         Taxateur
                       </span>
@@ -549,7 +528,7 @@
 
                     </blockquote>
                     <figcaption class="text-center">
-                      <span class="font-extrabold text-blue-900">Hypotheek Adviseur Bank</span>
+                      <span class="font-extrabold text-blue-900">Bank</span>
                       <span class="block leading-none">
                         Hypotheekadviseur
                       </span>
@@ -597,7 +576,7 @@
 
     <section id="top-tasks" class="section | wrapper py-14 grid gap-x-7 gap-y-5 lg:grid-cols-3 lg:py-20">
       <h2 class="text-center lg:col-span-3 lg:mb-3">Top taken</h2>
-      <a class="button button-outline-primary button-alternative" href="#mediaBibliotheek">
+      <a class="button button-outline-primary button-alternative" href="media-library.html">
         <span class="relative flex">
           Media bibliotheek
           <div class="absolute -right-6">
