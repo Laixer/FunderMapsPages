@@ -14,35 +14,39 @@
 <body>
   <header x-data="mobileMenu" class="lg:mb-11">
     <div class="wrapper | flex justify-between items-center pt-16 pb-10 lg:py-0">
-      <div class="logo pt-1.5">
+      <a class="logo pt-1.5" href="/">
         <include src="./resources/svg/logo/fundermaps-logo.svg"></include>
 
         <span class="sr-only">Fundermaps</span>
-      </div>
+      </a>
 
       <!-- Desktop navigation -->
       <nav class="hidden lg:flex items-center">
         <ul class="menu | ">
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Intro" href="#hero">Intro</a>
+          <li class="menu-item | px-4">
+            <a class="active no-underline" title="Intro" href="/#hero">Intro</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Services" href="#services">Services</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Services" href="/#services">Services</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Referenties" href="#references-anchor">Referenties</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Referenties" href="/#references-anchor">Referenties</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="active no-underline" title="Demo" href="#demo">Demo</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Demo" href="/#demo">Demo</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Partners" href="#partners">Partners</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Partners" href="/#partners">Partners</a>
+          </li>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Login" href="https://app.fundermaps.com">App</a>
           </li>
         </ul>
 
-        <a class="button button-secondary ml-11" href="#naarContact">
+        <a class="button button-secondary ml-4" href="mailto:info@fundermaps.com">
           <div class="inline-block">
-            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" alt="Fundermaps contact">
+            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64"
+              alt="Fundermaps contact">
           </div>
 
           <span>
@@ -115,6 +119,9 @@
             <li class="menu-item">
               <a class="no-underline" title="Partners" href="#partners" x-on:click="open = false">Partners</a>
             </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Login" href="https://app.fundermaps.com" x-on:click="open = false">App</a>
+            </li>
             <li class="pl-16">
               <a class="button button-outline-primary mt-10" href="#toLinkedIn" x-on:click="open = false">
                 <div class="button-logo">
@@ -146,42 +153,45 @@
       <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-8 lg:col-start-3">
         <span class="block text-blue-300 font-extrabold text-sm lg:mb-1">Informatie</span>
 
-        <h1 class="mb-4 lg:mb-5">Default pagina.</h1>
+        <h1 class="mb-4 lg:mb-5">FunderMaps biedt gedetailleerd risicobeeld op pandniveau</h1>
 
         <!-- Voor intro teksten -->
+        <p class="font-bold text-blue-400 mb-4 lg:mb-7">
+          De funderingskenmerken van gebouwen worden in Nederland niet vastgelegd in de Basisregistratie Gebouwen (BAG). 
+          Analyses en inschattingen die in het verleden zijn gemaakt, zijn daarmee gebaseerd op een aanname van het 
+          type fundering, zoals op staal of houten palen gefundeerd. Dit is dan gedaan op basis van het bouwjaar van 
+          het pand en het globale type ondergrond. Echter, deze inschatting is slechts indicatief en kent een lage 
+          betrouwbaarheid.
+        </p>
+
         <p class="font-bold text-blue-400">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
+          Om het risico op schade aan funderingen door paalrot te bepalen is het van essentieel belang om te weten of er 
+          een houten paalfundering aanwezig is. Hierbij is ook de diepte waarop het hout begint en de mate waarin er sprake 
+          is van een te lage grondwaterstand belangrijk. Om het risico op schade aan funderingen op staal gefundeerd te 
+          bepalen zijn vergelijkbare uitgangspunten nodig. De samenstelling en eigenschappen van de ondergrond, en de 
+          verwachte bodemdaling (of -stijging) zijn tevens zeer belangrijk.
         </p>
 
       </div>
     </section>
     <section id="content" class="section content | wrapper mb-12 lg:mb-16 lg:grid lg:grid-cols-12">
       <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-8 lg:col-start-3">
-        <h2 class="mt-7 mb-3 lg:mb-4">De Finibus Bonorum et Malorum</h2>
+        <h2 class="mt-7 mb-3 lg:mb-4">FunderMaps en de registratie van funderingstypes en hun kenmerken</h2>
 
         <p class="mb-4 lg:mb-7">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
+          Het dataplatform FunderMaps is in 2017 opgezet om inzicht te krijgen in deze factoren. Het platform werkt samen 
+          met verschillende gemeenten, provincies, woningcorporaties, taxatie instituten en de funderings- en bouwkundig 
+          onderzoeksbedrijven. Daarnaast verwerkt FunderMaps actief archieven van andere partijen en overheden om inzicht 
+          te krijgen in de gebruikte funderingstypes, aanlegniveau van funderingen en kwaliteitsgegevens over heel Nederland 
+          maar vooral in gebieden die gevoelig zijn voor funderingsproblemen.
         </p>
 
         <p class="mb-4 lg:mb-7">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-          dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-          sit
-          amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
-          magnam
-          aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-          laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
-          voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-          pariatur?
+          Sinds 2017 is er in Nederland al een indrukwekkend dekkingsgebied opgebouwd waardoor van ca. 35% van alle panden 
+          van voor 1970 gegevens over de funderingen bekend zijn.
         </p>
 
-        <ul class="mb-4 pl-4 list-disc">
+        <!-- <ul class="mb-4 pl-4 list-disc">
           <li>
             Lorem
           </li>
@@ -192,37 +202,28 @@
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur eum, a sunt asperiores, ipsum, optio
             dignissimos similique eos nulla tempora rerum ratione quas repudiandae sed quisquam vero quis nam dolorum.
           </li>
-        </ul>
+        </ul> -->
 
-        <h2 class="mt-7 mb-3 lg:mb-4">De Finibus Bonorum</h2>
-        <h3 class="mt-7 mb-3 lg:mb-4">Et Malorum</h3>
+        <h2 class="mt-7 mb-3 lg:mb-4">Kwaliteitsgegevens van funderingen vastgelegd door funderings- of bouwkundig onderzoek</h2>
+        <!-- <h3 class="mt-7 mb-3 lg:mb-4">Et Malorum</h3> -->
 
         <p class="mb-4 lg:mb-7">
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-          atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
-          sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
-          facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-          impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-          repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
-          voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
-          ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+          Naast de registratie van funderingstypes en hun kenmerken, legt het platform ook kwaliteitsgegevens van funderingen 
+          vast die zijn vastgesteld door funderings- of bouwkundig onderzoek. Het platform bevat ook hoge-resolutie zakkingsdata 
+          voor ongeveer 20% van Nederland en bodemdaling gemeten vanuit de satelliet (InSAR), dankzij een samenwerking met een 
+          leverancier. Verder is er een Funderingsherstel Register met informatie over 23.000 funderingen die in het verleden 
+          zijn hersteld. Gegevens over de ondergrond en grondwaterstanden worden verkregen uit de Basisregistratie Ondergrond 
+          van de overheid en worden aangevuld met lokale gegevens zoals extra boringen, modellen en grondwatermeetnetten.
         </p>
 
-        <div class="mb-4 lg:mb-7">
-          <img class="rounded-lg" src="./resources/images/foundation-example.webp" alt="Example of bad foundation">
-        </div>
-
-        <h2 class="mt-7 mb-3 lg:mb-4">De Finibus Bonorum</h2>
+        <h2 class="mt-7 mb-3 lg:mb-4">Gedetailleerde risicokaarten op pandniveau gemaakt voor gemeenten</h2>
 
         <p class="mb-4 lg:mb-7">
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-          atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
-          sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
-          facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-          impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-          repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
-          voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
-          ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+          Met behulp van het FunderMaps dataplatform zijn gedetailleerde risicokaarten op pandniveau gemaakt voor gemeenten. 
+          Dit levert een gedetailleerd risicobeeld op, gebaseerd op gevestigde onderzoeksgegevens. Dit resultaat onderscheidt 
+          zich van de verouderde funderingsviewer die KCAF samen met RvO heeft ontwikkeld en t.o.v. het indicatieve 
+          uitgangspunten op Gemeente niveau gepresenteerd in de <a class="no-underline" href="https://klimaatschadeschatter.nl">https://klimaatschadeschatter.nl</a> 
+          een gedetailleerd beeld op pandniveau.
         </p>
 
       </div>

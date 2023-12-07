@@ -18,35 +18,39 @@
 <body>
   <header x-data="mobileMenu" class="lg:mb-11">
     <div class="wrapper | flex justify-between items-center pt-16 pb-10 lg:py-0">
-      <div class="logo pt-1.5">
+      <a class="logo pt-1.5" href="/">
         <include src="./resources/svg/logo/fundermaps-logo.svg"></include>
 
         <span class="sr-only">Fundermaps</span>
-      </div>
+      </a>
 
       <!-- Desktop navigation -->
       <nav class="hidden lg:flex items-center">
         <ul class="menu | ">
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Intro" href="#hero">Intro</a>
+          <li class="menu-item | px-4">
+            <a class="active no-underline" title="Intro" href="/#hero">Intro</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Services" href="#services">Services</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Services" href="/#services">Services</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Referenties" href="#references-anchor">Referenties</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Referenties" href="/#references-anchor">Referenties</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="active no-underline" title="Demo" href="#demo">Demo</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Demo" href="/#demo">Demo</a>
           </li>
-          <li class="menu-item | px-6">
-            <a class="no-underline" title="Partners" href="#partners">Partners</a>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Partners" href="/#partners">Partners</a>
+          </li>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Login" href="https://app.fundermaps.com">App</a>
           </li>
         </ul>
 
-        <a class="button button-secondary ml-11" href="#naarContact">
+        <a class="button button-secondary ml-4" href="mailto:info@fundermaps.com">
           <div class="inline-block">
-            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" alt="Fundermaps contact">
+            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64"
+              alt="Fundermaps contact">
           </div>
 
           <span>
@@ -119,6 +123,9 @@
             <li class="menu-item">
               <a class="no-underline" title="Partners" href="#partners" x-on:click="open = false">Partners</a>
             </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Login" href="https://app.fundermaps.com" x-on:click="open = false">App</a>
+            </li>
             <li class="pl-16">
               <a class="button button-outline-primary mt-10" href="#toLinkedIn" x-on:click="open = false">
                 <div class="button-logo">
@@ -150,7 +157,7 @@
       <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-8 lg:col-start-3">
         <span class="block text-blue-300 font-extrabold text-sm lg:mb-1">Informatie</span>
 
-        <h1 class="mb-4 lg:mb-5">FunderMaps.com Algemene Voorwaarden</h1>
+        <h1 class="mb-4 lg:mb-5">Algemene Voorwaarden</h1>
 
         <!-- Voor intro teksten -->
         <p class="font-bold text-blue-400">

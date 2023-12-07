@@ -7,7 +7,7 @@
   "license": "MIT",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "engines": {
-    "node": "16.x"
+    "node": ">= 16.0.0"
   },
   "scripts": {
     "clean:output": "rimraf dist",
@@ -15,14 +15,14 @@
     "build": "yarn run clean:output && parcel build src/index.html --no-optimize --public-url ./"
   },
   "devDependencies": {
-    "@parcel/config-default": "^2.8.0",
-    "@parcel/core": "^2.8.3",
-    "@parcel/transformer-sass": "^2.8.0",
-    "@parcel/validator-eslint": "^2.8.0",
+    "@parcel/config-default": "^2.10.3",
+    "@parcel/core": "^2.10.3",
+    "@parcel/transformer-sass": "^2.10.3",
+    "@parcel/validator-eslint": "^2.10.3",
     "eslint": "^8.28.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
-    "parcel": "^2.8.0",
+    "parcel": "^2.10.3",
     "parcel-validator-stylelint": "^1.0.1",
     "postcss": "^8.4.19",
     "postcss-import": "^15.1.0",
