@@ -7,7 +7,7 @@
   "license": "MIT",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "engines": {
-    "node": ">= 16.0.0"
+    "node": ">= 20.0.0"
   },
   "scripts": {
     "clean:output": "rimraf dist",
@@ -24,11 +24,11 @@
     "eslint-config-prettier": "^9.1.0",
     "parcel": "^2.11.0",
     "parcel-validator-stylelint": "^1.0.1",
-    "postcss": "^8.4.19",
-    "postcss-import": "^15.1.0",
-    "posthtml": ">=0.5.0",
-    "posthtml-expressions": "^1.10.0",
-    "posthtml-include": "^1.7.4",
+    "postcss": "^8.4.35",
+    "postcss-import": "^16.0.1",
+    "posthtml": ">=0.16.6",
+    "posthtml-expressions": "^1.11.0",
+    "posthtml-include": "^2.0.1",
     "posthtml-inline-svg": "^0.2.0",
     "rimraf": "^5.0.5",
     "stylelint": "^16.2.1",
