@@ -15,14 +15,14 @@
     "build": "yarn run clean:output && parcel build src/index.html --no-optimize --public-url ./"
   },
   "devDependencies": {
-    "@parcel/config-default": "^2.10.3",
-    "@parcel/core": "^2.10.3",
-    "@parcel/transformer-sass": "^2.10.3",
-    "@parcel/validator-eslint": "^2.10.3",
-    "eslint": "^8.28.0",
+    "@parcel/config-default": "^2.11.0",
+    "@parcel/core": "^2.11.0",
+    "@parcel/transformer-sass": "^2.11.0",
+    "@parcel/validator-eslint": "^2.11.0",
+    "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "parcel": "^2.10.3",
+    "eslint-config-prettier": "^9.1.0",
+    "parcel": "^2.11.0",
     "parcel-validator-stylelint": "^1.0.1",
     "postcss": "^8.4.19",
     "postcss-import": "^15.1.0",
@@ -30,17 +30,17 @@
     "posthtml-expressions": "^1.10.0",
     "posthtml-include": "^1.7.4",
     "posthtml-inline-svg": "^0.2.0",
-    "rimraf": "^5.0.0",
-    "stylelint": "^15.10.1",
+    "rimraf": "^5.0.5",
+    "stylelint": "^16.2.1",
     "stylelint-config-prettier-scss": "^1.0.0",
-    "stylelint-config-sass-guidelines": "^10.0.0",
-    "tailwindcss": "^3.2.4"
+    "stylelint-config-sass-guidelines": "^11.0.0",
+    "tailwindcss": "^3.4.1"
   },
   "dependencies": {
-    "@alpinejs/collapse": "3.12.1",
-    "@alpinejs/focus": "3.12.1",
-    "@alpinejs/ui": "3.12.1-beta.0",
+    "@alpinejs/collapse": "3.13.5",
+    "@alpinejs/focus": "3.13.5",
+    "@alpinejs/ui": "3.13.5-beta.0",
     "@glidejs/glide": "^3.6.0",
-    "alpinejs": "^3.10.5"
+    "alpinejs": "^3.13.5"
   }
 }
