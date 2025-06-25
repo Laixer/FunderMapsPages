@@ -45,7 +45,7 @@
             <a class="no-underline" title="Partners" href="/#partners">Partners</a>
           </li>
           <li class="menu-item | px-4">
-            <a class="no-underline" title="Login" href="https://app.fundermaps.com">App</a>
+            <a class="no-underline" title="Login" href="https://map.fundermaps.com">Login</a>
           </li>
         </ul>
 
@@ -193,7 +193,7 @@
         <li>
           <ul class="usp usp--blue | m-0 list-none">
             <li>
-              <h2 class="text-3xl lg:text-2xl">500K</h2>
+              <h2 class="text-3xl lg:text-2xl">>1 miljoen</h2>
             </li>
             <li>
               <p>Panden met vastgestelde funderingsgegevens.</p>
@@ -243,11 +243,13 @@
         <a class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/card-viewer-icon.svg"></include>
-            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Kaartviewer</h3>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Interactieve Mapviewer</h3>
           </div>
 
           <p class="text-grey-400">
-            Visuele weergave van cruciale data
+            Ontdek in één oogopslag de <b>funderingsrisico's en funderingstypes</b> in heel Nederland. De interactieve kaart
+            biedt een heldere, visuele weergave van cruciale data, zodat snel inzicht wordt verkregen in de status van
+            gebouwen en gebieden.
           </p>
         </a>
 
@@ -255,11 +257,13 @@
           <a class="card | inline-block bg-grey-100 rounded-xl px-7 pt-14 pb-12 no-underline w-full">
             <div class="inline-flex items-center lg:block">
               <include src="./resources/svg/application-icon.svg"></include>
-              <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Applicatie</h3>
+              <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Geïntegreerd Platform</h3>
             </div>
 
             <p class="text-grey-400">
-              Efficiënte data-invoer en rapportgeneratie
+              Beheer, analyseer en genereer rapporten met een efficiënt, alles-in-één platform. Van
+              <b>gestroomlijnde data-invoer</b> tot <b>inzichtelijke rapportages</b>, het platform transformeert complexe
+              funderingsinformatie naar bruikbare kennis voor projecten.
             </p>
           </a>
         </div>
@@ -267,25 +271,47 @@
         <a class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/api-icon.svg"></include>
-            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">API-functie</h3>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Flexibele API-koppeling</h3>
           </div>
 
           <p class="text-grey-400">
-            Directe toegang tot waardevolle funderingsdata
+            Krijg <b>directe en naadloze toegang</b> tot waardevolle funderingsdata, gedetailleerde rapporten en specifieke
+            risicoprofielen. Integreer de krachtige API eenvoudig in systemen voor geautomatiseerde workflows
+            en realtime inzichten.
           </p>
         </a>
 
         <a class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline lg:mt-10 lg:-mb-10">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/ai-model-icon.svg"></include>
-            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Modellen</h3>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Slimme AI-modellen</h3>
           </div>
 
           <p class="text-grey-400">
-            Betrouwbare inzichten met geavanceerde AI-modellen
+            Vertrouw op <b>betrouwbare inzichten</b> die zijn gegenereerd door geavanceerde AI-modellen. Deze modellen
+            analyseren complexe datasets en leveren accurate voorspellingen en risicoanalyses, waardoor weloverwogen
+            beslissingen kunnen worden genomen.
           </p>
         </a>
         <div id="references-anchor"></div>
+      </div>
+    </section>
+
+    <section id="demo" class="section | wrapper my-16 lg:mb-32">
+      <div class="lg:mb-9 lg:grid lg:grid-cols-12">
+        <h2 class="mb-3 lg:mb-0 lg:col-span-5">Demo</h2>
+
+        <p class="mb-8 lg:mb-0 lg:col-span-7">
+          De applicatie geeft kaartmateriaal voor de verwekte funderingsgegevens en op basis van modelgegevens.
+          Onderstaande demo geeft enkele van deze kaartlagen voor een deel van Dordrecht.
+        </p>
+      </div>
+
+      <div class="relative">
+        <div class="absolute flex items-center justify-center top-0 bottom-0 left-0 right-0 bg-blue-900/70 lg:hidden">
+          <h3 class="text-white text-lg text-center tracking-normal">Alleen op desktop<br>beschikbaar</h3>
+        </div>
+        <img src="./resources/images/fundermaps-demo3.webp" height="1382" width="2466" alt="Fundermaps demo">
       </div>
     </section>
 
@@ -295,7 +321,7 @@
         <div class="absolute w-[469px] -top-8 -right-[264px] lg:w-[670px] lg:-top-[37px] lg:-right-[105px]">
           <include src="./resources/svg/reference-bg.svg"></include>
         </div>
-
+         
         <div class="lg:grid lg:grid-cols-12">
           <div class="max-lg:wrapper lg:col-span-10 lg:col-start-2">
             <h2 class="text-white mb-3">Referenties</h2>
@@ -357,222 +383,179 @@
       </div>
     </section>
 
-    <section id="demo" class="section | wrapper my-16 lg:mb-32">
-      <div class="lg:mb-9 lg:grid lg:grid-cols-12">
-        <h2 class="mb-3 lg:mb-0 lg:col-span-5">Demo</h2>
-
-        <p class="mb-8 lg:mb-0 lg:col-span-7">
-          De applicatie geeft kaartmateriaal voor de verwekte funderingsgegevens en op basis van modelgegevens.
-          Onderstaande demo geeft enkele van deze kaartlagen voor een deel van Dordrecht.
-        </p>
-      </div>
-
-      <div class="relative">
-        <div class="absolute flex items-center justify-center top-0 bottom-0 left-0 right-0 bg-blue-900/70 lg:hidden">
-          <h3 class="text-white text-lg text-center tracking-normal">Alleen op desktop<br>beschikbaar</h3>
-        </div>
-        <img src="./resources/images/fundermaps-demo2.webp" height="1382" width="2466" alt="Fundermaps demo">
-      </div>
-    </section>
-
     <section id="partners" class="section | wrapper my-16 lg:grid lg:grid-cols-12 lg:relative lg:z-10">
       <h2 class="mb-3 lg:col-span-10 lg:col-start-2 lg:mb-11">Partners</h2>
 
-      <div class="grid gap-x-6 gap-y-5 lg:grid-cols-2 lg:col-start-2 lg:col-span-10">
+      <div class="grid gap-x-6 gap-y-5 lg:grid-cols-3 lg:col-start-2 lg:col-span-10">
+        <!-- Partner 1 -->
         <a href="https://kcaf.nl"
-          class="card | inline-block border border-grey-300 bg-white rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
-          <div class="inline-block mb-2 lg:mb-4">
-            <img class="w-1/2" src="./resources/images/kcaf-logo.webp" height="198" width="170" alt="KCAF logo">
+          class="card | inline-block border border-grey-300 bg-white rounded-xl w-full px-7 pt-14 pb-12 no-underline h-full">
+          <div class="h-32 flex items-start justify-start mb-4">
+            <img class="h-full object-contain" src="./resources/images/kcaf-logo.webp" alt="KCAF logo">
           </div>
-
-          <h3 class="mb-3">KCAF</h3>
-
           <p class="text-grey-400 mb-7">
             Een stichting met als doelstelling het verzamelen, ontwikkelen en ontsluiten van kennis rond de aanpak en
             preventie van funderingsproblemen.
           </p>
-
           <span class="card__link | flex items-center font-extrabold text-green-300">
             <span>Meer info</span>
             <include src="./resources/svg/arrow-right-icon-green.svg"></include>
           </span>
         </a>
 
-        <div class="card--bg-visual | relative">
-          <a href="https://www.sensar.nl/"
-            class="card | inline-block border border-grey-300 bg-white rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
-            <div class="inline-block mb-2 lg:mb-4">
-              <img class="w-1/2" src="./resources/images/sensar-logo.webp" height="180" width="460"
-                alt="Sensar logo">
-            </div>
+        <!-- Partner 2 -->
+        <a href="https://www.sensar.nl/"
+          class="card | inline-block border border-grey-300 bg-white rounded-xl w-full px-7 pt-14 pb-12 no-underline h-full">
+          <div class="h-32 flex items-start justify-start mb-4">
+            <img class="h-full object-contain" src="./resources/images/sensar-logo.webp" alt="Sensar logo">
+          </div>
+          <p class="text-grey-400 mb-7">
+            Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele 
+            staat van een potentieel funderingsrisico. Deze gegevens kunnen worden geleverd door Sensar en verwerkt in het 
+            FunderMaps-platform.
+          </p>
+          <span class="card__link | flex items-center font-extrabold text-green-300">
+            <span>Meer info</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </span>
+        </a>
 
-            <h3 class="mb-3">Sensar</h3>
-
-            <p class="text-grey-400 mb-7">
-              Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele 
-              staat van een potentieel funderingsrisico. Deze gegevens worden geleverd door Sensar en verwerkt in het 
-              FunderMaps-platform.
-            </p>
-
-            <span class="card__link | flex items-center font-extrabold text-green-300">
-              <span>Meer info</span>
-              <include src="./resources/svg/arrow-right-icon-green.svg"></include>
-            </span>
-          </a>
-        </div>
+        <!-- Partner 3 -->
+        <a href="https://www.skygeo.com/"
+          class="card | inline-block border border-grey-300 bg-white rounded-xl w-full px-7 pt-14 pb-12 no-underline h-full">
+          <div class="h-32 flex items-start justify-start mb-4">
+            <img class="h-full object-contain" src="./resources/images/skygeo-logo.webp" alt="SkyGeo logo">
+          </div>
+          <p class="text-grey-400 mb-7">
+            Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele 
+            staat van een potentieel funderingsrisico. Deze gegevens kunnen worden geleverd door SkyGeo en verwerkt in het 
+            FunderMaps-platform.
+          </p>
+          <span class="card__link | flex items-center font-extrabold text-green-300">
+            <span>Meer info</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </span>
+        </a>
       </div>
     </section>
 
-    <section id="quotes" class="section | bg-grey-100 pt-60 pb-14 -mt-60 lg:pb-24">
-      <div class="wrapper lg:grid lg:grid-cols-12">
-        <div x-data="quotes_carousel" class="carousel carousel--quotes lg:col-start-4 lg:col-span-6"
-          data-quote_carousel="true">
-          <div x-ref="glide" class="">
-            <div class="glide__track" data-glide-el="track">
-              <ul class="glide__slides">
-                <li class="glide__slide">
-                  <figure>
-                    <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
-                      <include src="./resources/svg/quote-icon.svg"></include>
-                      <p class="text-lg mt-4 lg:text-xl lg:mr-6">
-                        FunderMaps heeft ons geholpen met het beheer van ondergrondse infrastructuur. De actuele
-                        informatie over funderingen heeft ons geholpen om proactief problemen op te lossen.
-                        Kostenbesparingen en een veiligere leefomgeving voor burgers zijn het resultaat. Ik raad
-                        FunderMaps aan aan elke gemeente die betrouwbare gegevens nodig heeft.
-                      </p>
 
-                    </blockquote>
-                    <figcaption class="text-center">
-                      <span class="font-extrabold text-blue-900">Gemeente</span>
-                      <span class="block leading-none">
-                        
-                      </span>
-                    </figcaption>
-                  </figure>
-                </li>
+      <section id="quotes" class="section | bg-grey-100 pt-60 pb-14 -mt-60 lg:pb-24">
+        <div class="wrapper lg:grid lg:grid-cols-12">
+          <div x-data="quotes_carousel" class="carousel carousel--quotes lg:col-start-4 lg:col-span-6" data-quote_carousel="true">
+            <div x-ref="glide">
+              <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                  <!-- Slide 1 -->
+                  <li class="glide__slide">
+                    <figure>
+                      <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
+                        <include src="./resources/svg/quote-icon.svg"></include>
+                        <p class="text-lg mt-4 lg:text-xl lg:mr-6">
+                          Dankzij FunderMaps kregen we snel inzicht in risicogebieden. Hierdoor konden we tijdig ingrijpen en erger voorkomen. De kaartlagen en analyses zijn van hoge kwaliteit en makkelijk bruikbaar in ons interne systeem.
+                        </p>
+                      </blockquote>
+                      <figcaption class="text-center">
+                        <span class="font-extrabold text-blue-900">Gemeente</span>
+                        <span class="block leading-none font-light text-blue-900">Beleidsmedewerker Openbare Ruimte</span>
+                      </figcaption>
+                    </figure>
+                  </li>
 
-                <li class="glide__slide">
-                  <figure>
-                    <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
-                      <include src="./resources/svg/quote-icon.svg"></include>
-                      <p class="text-lg mt-4 lg:text-xl lg:mr-6">
-                        FunderMaps levert ons nauwkeurige informatie over funderingen om onze projecten veilig en
-                        efficiënt uit te voeren. De gegevens zijn gemakkelijk toegankelijk en gebruiksvriendelijk. De
-                        klantenservice is ook uitstekend en altijd bereid om ons te helpen. We zijn zeer tevreden en
-                        zullen zeker blijven samenwerken met FunderMaps.
-                      </p>
+                  <!-- Slide 2 -->
+                  <li class="glide__slide">
+                    <figure>
+                      <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
+                        <include src="./resources/svg/quote-icon.svg"></include>
+                        <p class="text-lg mt-4 lg:text-xl lg:mr-6">
+                          Met de informatie van FunderMaps konden we gerichter communiceren met bewoners over funderingsrisico’s. Dat gaf vertrouwen en hielp ons bij het prioriteren van onderhoud.
+                        </p>
+                      </blockquote>
+                      <figcaption class="text-center">
+                        <span class="font-extrabold text-blue-900">Woningcorporatie</span>
+                        <span class="block leading-none font-light text-blue-900">Projectleider Vastgoedbeheer</span>
+                      </figcaption>
+                    </figure>
+                  </li>
 
-                    </blockquote>
-                    <figcaption class="text-center">
-                      <span class="font-extrabold text-blue-900">Medewerker</span>
-                      <span class="block leading-none">
-                        woningbouwcorporatie
-                      </span>
-                    </figcaption>
-                  </figure>
-                </li>
+                  <!-- Slide 3 -->
+                  <li class="glide__slide">
+                    <figure>
+                      <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
+                        <include src="./resources/svg/quote-icon.svg"></include>
+                        <p class="text-lg mt-4 lg:text-xl lg:mr-6">
+                          Door de kaarten en modellen van FunderMaps weten wij precies waar de risico’s liggen. Dat maakt onze inspecties sneller én effectiever.
+                        </p>
+                      </blockquote>
+                      <figcaption class="text-center">
+                        <span class="font-extrabold text-blue-900">Ingenieursbureau</span>
+                        <span class="block leading-none font-light text-blue-900">Adviseur Geotechniek</span>
+                      </figcaption>
+                    </figure>
+                  </li>
 
-                <li class="glide__slide">
-                  <figure>
-                    <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
-                      <include src="./resources/svg/quote-icon.svg"></include>
-                      <p class="text-lg mt-4 lg:text-xl lg:mr-6">
-                        FunderMaps is een belangrijke partner voor KCAF bij het aanpakken van funderingsproblematiek in
-                        Nederland. De geavanceerde technologie, data en diepgaande kennis van funderingen hebben ons
-                        geholpen om problemen effectief aan te pakken en oplossingen te vinden. Ik kan FunderMaps ten
-                        zeerste aanbevelen aan elke instantie die betrokken is bij de aanpak van funderingsproblematiek.
-                      </p>
+                  <!-- Slide 4 -->
+                  <li class="glide__slide">
+                    <figure>
+                      <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
+                        <include src="./resources/svg/quote-icon.svg"></include>
+                        <p class="text-lg mt-4 lg:text-xl lg:mr-6">
+                          Als taxateur zie ik direct of er sprake is van funderingsrisico’s. Dat scheelt enorm veel tijd en geeft duidelijkheid naar mijn opdrachtgevers.
+                        </p>
+                      </blockquote>
+                      <figcaption class="text-center">
+                        <span class="font-extrabold text-blue-900">Taxatie Bureau</span>
+                        <span class="block leading-none font-light text-blue-900">Taxateur</span>
+                      </figcaption>
+                    </figure>
+                  </li>
 
-                    </blockquote>
-                    <figcaption class="text-center">
-                      <span class="font-extrabold text-blue-900">Frank van Lier</span>
-                      <span class="block leading-none">
-                        Directeur van het KCAF
-                      </span>
-                    </figcaption>
-                  </figure>
-                </li>
+                  <!-- Slide 5 -->
+                  <li class="glide__slide">
+                    <figure>
+                      <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
+                        <include src="./resources/svg/quote-icon.svg"></include>
+                        <p class="text-lg mt-4 lg:text-xl lg:mr-6">
+                          Dankzij de data van FunderMaps kunnen we hypotheekaanvragen sneller en beter beoordelen. Funderingsrisico's zijn direct inzichtelijk.
+                        </p>
+                      </blockquote>
+                      <figcaption class="text-center">
+                        <span class="font-extrabold text-blue-900">Bank</span>
+                        <span class="block leading-none font-light text-blue-900">Hypotheekadviseur</span>
+                      </figcaption>
+                    </figure>
+                  </li>
 
-                <li class="glide__slide">
-                  <figure>
-                    <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
-                      <include src="./resources/svg/quote-icon.svg"></include>
-                      <p class="text-lg mt-4 lg:text-xl lg:mr-6">
-                        FunderMaps heeft mij voorzien van waardevolle gegevens en kaarten om mijn werk efficiënter en
-                        nauwkeuriger uit te voeren. De informatie is actueel en toegankelijk en heeft me veel tijd
-                        bespaard bij het uitvoeren van mijn taxaties. Ik raad FunderMaps aan elke taxateur aan die
-                        betrouwbare informatie over funderingen nodig heeft.
-                      </p>
-
-                    </blockquote>
-                    <figcaption class="text-center">
-                      <span class="font-extrabold text-blue-900">Taxatiesbureau</span>
-                      <span class="block leading-none">
-                        Taxateur
-                      </span>
-                    </figcaption>
-                  </figure>
-                </li>
-
-                <li class="glide__slide">
-                  <figure>
-                    <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
-                      <include src="./resources/svg/quote-icon.svg"></include>
-                      <p class="text-lg mt-4 lg:text-xl lg:mr-6">
-                        FunderMaps heeft ons de gegevens en tools geleverd die we nodig hebben om onze klanten een goed
-                        advies te geven. De informatie is gemakkelijk toegankelijk en zeer betrouwbaar, wat ons in staat
-                        stelt om snel en efficiënt te werken. Daarnaast biedt FunderMaps ook waardevolle inzichten over
-                        de buurt en de omgeving van een woning, wat ons in staat stelt om onze klanten nog beter te
-                        adviseren.
-                      </p>
-
-                    </blockquote>
-                    <figcaption class="text-center">
-                      <span class="font-extrabold text-blue-900">Bank</span>
-                      <span class="block leading-none">
-                        Hypotheekadviseur
-                      </span>
-                    </figcaption>
-                  </figure>
-                </li>
-
-                <li class="glide__slide">
-                  <figure>
-                    <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
-                      <include src="./resources/svg/quote-icon.svg"></include>
-                      <p class="text-lg mt-4 lg:text-xl lg:mr-6">
-                        FunderMaps heeft ons geholpen om een funderingskaart te maken. De digitale en papieren archieven
-                        zijn doorgenomen en relevante informatie is verwerkt. De kaarten die we van FunderMaps gebruiken
-                        zijn daarmee nauwkeurig en up-to-date, waardoor we problemen snel en efficiënt kunnen oplossen.
-                        Ik raad FunderMaps aan elke ambtenaar aan die verantwoordelijk is voor funderingsproblematiek.
-                      </p>
-
-                    </blockquote>
-                    <figcaption class="text-center">
-                      <span class="font-extrabold text-blue-900">Ambtenaar</span>
-                      <span class="block leading-none">
-                        Gemeente
-                      </span>
-                    </figcaption>
-                  </figure>
-                </li>
-              </ul>
-            </div>
-
-            <div class="glide__arrows" data-glide-el="controls">
-              <!-- Previous Button -->
-              <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="glide left">
-                <include src="./resources/svg/arrow-right-icon-green.svg"></include>
-              </button>
-              <!-- Next Button -->
-              <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="glide right">
-                <include src="./resources/svg/arrow-right-icon-green.svg"></include>
-              </button>
-            </div>
+                  <!-- Slide 6 -->
+                  <li class="glide__slide">
+                    <figure>
+                      <blockquote class="quote | bg-blue-300 text-white p-8 rounded-xl mb-9 shadow-quote lg:pb-12">
+                        <include src="./resources/svg/quote-icon.svg"></include>
+                        <p class="text-lg mt-4 lg:text-xl lg:mr-6">
+                          Voor onze funderingsaanpak gebruiken we de kaarten van FunderMaps als basis. Ze zijn nauwkeurig, up-to-date en sluiten goed aan op onze eigen registraties.
+                        </p>
+                      </blockquote>
+                      <figcaption class="text-center">
+                        <span class="font-extrabold text-blue-900">Gemeente</span>
+                        <span class="block leading-none font-light text-blue-900">Coördinator Gebiedsbeheer</span>
+                      </figcaption>
+                    </figure>
+                  </li>
+                </ul>
+              </div> <!-- sluit glide__track -->
+              
+              <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="glide left">
+                  <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+                </button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="glide right">
+                  <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+                </button>
+              </div>
+            </div> <!-- sluit x-ref="glide" -->
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     <section id="top-tasks" class="section | wrapper py-14 grid gap-x-7 gap-y-5 lg:grid-cols-3 lg:py-20">
       <h2 class="text-center lg:col-span-3 lg:mb-3">Top taken</h2>
