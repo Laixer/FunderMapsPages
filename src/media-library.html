@@ -164,7 +164,7 @@
       <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-8 lg:col-start-3">
 
         <div class="mb-4 lg:mb-7">
-          <img class="rounded-lg" src="./resources/images/fundermaps-funderingstypes.webp" alt="Example of bad foundation">
+          <img class="rounded-lg" src="./resources/images/funderingstype.webp" alt="Example of bad foundation">
         </div>
 
         <p class="font-bold text-blue-400">
@@ -316,7 +316,8 @@
       </div>
 
       <p class="text-center text-sm lg:col-span-4">
-        © Copyright 2023 FunderMaps. Alle rechten voorbehouden
+        © Copyright <span x-data="{ date: new Date() }" x-text="date.getFullYear()"></span> FunderMaps. Alle rechten
+        voorbehouden
       </p>
     </div>
   </footer>
