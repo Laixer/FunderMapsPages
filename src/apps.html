@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>FunderMaps - Apps</title>
+  <link href="./resources/styles/app.scss" rel="stylesheet" />
+  <script src="./resources/scripts/app.js" type="module"></script>
+</head>
+
+<body>
+  <header x-data="mobileMenu" class="lg:mb-11">
+    <div class="wrapper | flex justify-between items-center pt-16 pb-10 lg:py-0">
+      <a class="logo pt-1.5" href="/">
+        <include src="./resources/svg/logo/fundermaps-logo.svg"></include>
+
+        <span class="sr-only">Fundermaps</span>
+      </a>
+
+      <!-- Desktop navigation -->
+      <nav class="hidden lg:flex items-center">
+        <ul class="menu | ">
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Intro" href="/#hero">Intro</a>
+          </li>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Services" href="/#services">Services</a>
+          </li>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Referenties" href="/#references-anchor">Referenties</a>
+          </li>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Demo" href="/#demo">Demo</a>
+          </li>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Partners" href="/#partners">Partners</a>
+          </li>
+          <li class="menu-item | px-4">
+            <a class="no-underline" title="Artikelen" href="artikelen.html">Artikelen</a>
+          </li>
+          <li class="menu-item | px-4">
+            <a class="active no-underline" title="Apps" href="apps.html">APPS</a>
+          </li>
+        </ul>
+
+        <a class="button button-secondary ml-4" href="mailto:info@fundermaps.com">
+          <div class="inline-block">
+            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64"
+              alt="Fundermaps contact">
+          </div>
+
+          <span>
+            Direct contact
+          </span>
+
+          <div class="button-arrow">
+            <include src="./resources/svg/arrow-right-icon.svg"></include>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Mobile navigation: Toggle menu -->
+      <div class="inline-flex lg:hidden">
+        <a href="#toPhone" class="mr-6">
+          <include src="./resources/svg/phone-icon.svg"></include>
+        </a>
+
+        <button x-on:click="open = true" class="flex items-center gap-2 text-blue-900 hover:text-yellow-500">
+          <div x-show="! open">
+            <include src="./resources/svg/hamburger-icon.svg"></include>
+          </div>
+          <span class="sr-only">Open mobiel menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile navigation -->
+    <!-- Mobile navigation: dropdown -->
+    <div x-cloak x-dialog x-model="open" x-transition:enter="left ease-out duration-300, right ease-out duration-300"
+      x-transition:enter-start="opacity-100 left-full -right-full" x-transition:enter-end="opacity-100 left-0 right-0"
+      x-transition:leave="left ease-in duration-100, right ease-in duration-100"
+      x-transition:leave-start="opacity-100 left-0 right-0" x-transition:leave-end="opacity-100 left-full -right-full"
+      class="top-0 bottom-0 fixed z-10 w-full h-full bg-blue-900 overflow-auto lg:hidden">
+
+      <!-- Mobile Menu: Panel -->
+      <div x-dialog:panel class="">
+        <div class="sticky top-0 bg-blue-900 flex justify-between items-center px-5 pt-16 z-10">
+          <div class="pt-1.5">
+            <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
+          </div>
+
+          <div class="flex">
+            <a href="#toPhone" class="mr-6" x-on:click="open = false">
+              <include src="./resources/svg/phone-icon-blue.svg"></include>
+            </a>
+
+            <button x-on:click="open = false" class="flex items-center gap-2">
+              <div>
+                <include src="./resources/svg/arrow-right-icon.svg"></include>
+              </div>
+            </button>
+          </div>
+        </div>
+        <nav x-data class="grid pt-16 lg:hidden">
+          <ul class="menu-mobile | ">
+            <li class="menu-item">
+              <a class="no-underline" title="Intro" href="#hero" x-on:click="open = false">Intro</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Services" href="#services" x-on:click="open = false">Services</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Referenties" href="#references-anchor" x-on:click="open = false">Referenties</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Demo" href="#demo" x-on:click="open = false">Demo</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Partners" href="#partners" x-on:click="open = false">Partners</a>
+            </li>
+            <li class="menu-item">
+              <a class="no-underline" title="Artikelen" href="artikelen.html" x-on:click="open = false">Artikelen</a>
+            </li>
+            <li class="menu-item">
+              <a class="active no-underline" title="Apps" href="apps.html" x-on:click="open = false">APPS</a>
+            </li>
+            <li class="pl-16">
+              <a class="button button-outline-primary mt-10" href="#toLinkedIn" x-on:click="open = false">
+                <div class="button-logo">
+                  <include src="./resources/svg/linkedin-logo.svg"></include>
+                </div>
+
+                <span class="sr-only">LinkedIn link</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="fixed top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+        <div class="absolute rotate-90 -scale-x-100 -bottom-[238px] -right-[294px] w-[863px] opacity-20">
+          <include src="./resources/svg/hero-bg.svg"></include>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative overflow-hidden">
+    <section id="hero" class="section | wrapper py-16 lg:py-24">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
+        <div class="lg:col-span-8">
+          <p class="uppercase tracking-widest text-sm font-semibold text-blue-400 mb-4">Overzicht</p>
+          <h1 class="text-4xl lg:text-5xl font-extrabold text-blue-900 leading-tight">
+            Alle FunderMaps apps en tools op een plek
+          </h1>
+          <p class="mt-6 text-lg text-blue-900/80 max-w-3xl">
+            Gebruik deze pagina om snel door te klikken naar onze kaarten, dashboards, beheertools en aanvullende
+            hulpmiddelen voor herstel en registratie.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="fundermaps-apps" class="section | wrapper py-8 lg:py-12">
+      <div class="bg-white border border-blue-100 rounded-3xl shadow-sm px-6 py-8 lg:px-12 lg:py-12 space-y-8">
+        <div class="lg:flex lg:items-center lg:justify-between">
+          <div class="max-w-3xl space-y-3">
+            <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">FunderMaps applicaties</h2>
+            <p class="text-blue-900/80">
+              Werk je aan analyses, beheer je meldingen of heb je administratieve toegang nodig? Gebruik onderstaande
+              links om je direct te verbinden met de juiste omgeving.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <a class="group flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-blue-900 transition hover:border-yellow-500 hover:bg-white"
+            href="https://maps.fundermaps.com/" rel="noopener">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">FM</div>
+            <div class="flex-1">
+              <span class="block font-semibold">FunderMaps Maps</span>
+              <span class="block text-sm text-blue-900/70">Interactieve kaarten en viewer</span>
+            </div>
+            <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
+          </a>
+
+          <a class="group flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-blue-900 transition hover:border-yellow-500 hover:bg-white"
+            href="https://app.fundermaps.com/" rel="noopener">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">FA</div>
+            <div class="flex-1">
+              <span class="block font-semibold">FunderMaps App</span>
+              <span class="block text-sm text-blue-900/70">Dashboard voor meldingen en rapportage</span>
+            </div>
+            <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
+          </a>
+
+          <a class="group flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-blue-900 transition hover:border-yellow-500 hover:bg-white"
+            href="https://admin.fundermaps.com/" rel="noopener">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">AD</div>
+            <div class="flex-1">
+              <span class="block font-semibold">FunderMaps Admin</span>
+              <span class="block text-sm text-blue-900/70">Beheer voor teams en partners</span>
+            </div>
+            <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
+          </a>
+
+          <a class="group flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-blue-900 transition hover:border-yellow-500 hover:bg-white"
+            href="https://analytics.fundermaps.com/" rel="noopener">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">AN</div>
+            <div class="flex-1">
+              <span class="block font-semibold">FunderMaps Analytics</span>
+              <span class="block text-sm text-blue-900/70">Geavanceerde inzichten en rapporten</span>
+            </div>
+            <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="herstel-tools" class="section | wrapper py-8 lg:py-12">
+      <div class="bg-white border border-blue-100 rounded-3xl shadow-sm px-6 py-8 lg:px-12 lg:py-12 space-y-8">
+        <div class="max-w-3xl space-y-3">
+          <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Hersteltools & registraties</h2>
+          <p class="text-blue-900/80">
+            Gebruik onze aanvullende tooling voor snelle kosteninschattingen en het vastleggen van uitgevoerde
+            herstelmaatregelen. Kies de workflow die bij jouw situatie past.
+          </p>
+        </div>
+
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <a class="group flex h-full flex-col gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-6 text-blue-900 transition hover:border-yellow-500 hover:bg-white"
+            href="apps-quickscan.html">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">QS</div>
+            <div class="flex-1 space-y-2">
+              <span class="block text-lg font-semibold">QuickScan</span>
+              <p class="text-sm text-blue-900/70">
+                Lees wat de QuickScan oplevert, waarom aanleveren belangrijk is en start de calculator direct.
+              </p>
+            </div>
+            <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
+          </a>
+
+          <a class="group flex h-full flex-col gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-6 text-blue-900 transition hover:border-yellow-500 hover:bg-white"
+            href="apps-herstelkosten.html">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">HK</div>
+            <div class="flex-1 space-y-2">
+              <span class="block text-lg font-semibold">Indicatieve herstelkosten</span>
+              <p class="text-sm text-blue-900/70">
+                Start de KCAF Herstelkostencalculator, lees de toelichting en bekijk hoe je de uitkomsten kunt
+                interpreteren.
+              </p>
+            </div>
+            <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
+          </a>
+
+          <a class="group flex h-full flex-col gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-6 text-blue-900 transition hover:border-yellow-500 hover:bg-white"
+            href="nationaal-herstelregister.html">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">NR</div>
+            <div class="flex-1 space-y-2">
+              <span class="block text-lg font-semibold">Nationaal Funderingsherstel Register</span>
+              <p class="text-sm text-blue-900/70">
+                Meld herstelde panden aan, bekijk het stappenplan en krijg inzicht in de voordelen van registratie.
+              </p>
+            </div>
+            <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section section--dark | pt-12 pb-14">
+    <div class="wrapper flex flex-col items-center lg:grid lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
+      </div>
+
+      <div class="lg:col-span-4 lg:order-2 flex justify-end">
+        <a class="button button-outline-primary my-8 lg:my-0" href="#toLinkedIn">
+          <div class="button-logo">
+            <include src="./resources/svg/linkedin-logo.svg"></include>
+          </div>
+
+          <span class="sr-only">LinkedIn link</span>
+        </a>
+      </div>
+
+      <p class="text-center text-sm lg:col-span-4">
+        &copy; Copyright <span x-data="{ date: new Date() }" x-text="date.getFullYear()"></span> FunderMaps. Alle rechten
+        voorbehouden
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
+
+
+

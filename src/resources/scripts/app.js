@@ -8,6 +8,7 @@ import focus from '@alpinejs/focus'
 import mobileMenu from './components/mobileMenu.js'
 import referencesCarousel from './components/referencesCarousel.js'
 import quotesCarousel from './components/quotesCarousel.js'
+import articlesCarousel from './components/articlesCarousel.js'
 
 (async () => {
   // Make alpine easier to use from the DevTools
@@ -26,6 +27,7 @@ import quotesCarousel from './components/quotesCarousel.js'
   Alpine.data('mobileMenu', mobileMenu)
   Alpine.data("references_carousel", referencesCarousel);
   Alpine.data("quotes_carousel", quotesCarousel);
+  Alpine.data("articles_carousel", articlesCarousel);
 
   Alpine.start()
 })();
