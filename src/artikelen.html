@@ -1,2195 +1,1348 @@
 ﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>FunderMaps - Artikelen</title>
-  <link href="./resources/styles/app.scss" rel="stylesheet" />
-  <script src="./resources/scripts/app.js" type="module"></script>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FunderMaps - Artikelen</title>
+<link href="./resources/styles/app.scss" rel="stylesheet"/>
+<script src="./resources/scripts/app.js" type="module"></script>
 </head>
-
 <body>
-  <header x-data="mobileMenu" class="lg:mb-11">
-    <div class="wrapper | flex justify-between items-center pt-16 pb-10 lg:py-0">
-      <a class="logo pt-1.5" href="/">
-        <include src="./resources/svg/logo/fundermaps-logo.svg"></include>
-
-        <span class="sr-only">Fundermaps</span>
-      </a>
-
-      <!-- Desktop navigation -->
-      <nav class="hidden lg:flex items-center">
-        <ul class="menu | ">
-          <li class="menu-item | px-4">
-            <a class="active no-underline" title="Intro" href="/#hero">Intro</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Services" href="/#services">Services</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Referenties" href="/#references-anchor">Referenties</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Demo" href="/#demo">Demo</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Partners" href="/#partners">Partners</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Artikelen" href="artikelen.html">Artikelen</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Apps" href="apps.html">APPS</a>
-          </li>
-        </ul>
-
-        <a class="button button-secondary ml-4" href="mailto:info@fundermaps.com">
-          <div class="inline-block">
-            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64"
-              alt="Fundermaps contact">
-          </div>
-
-          <span>
+<header class="lg:mb-11" x-data="mobileMenu">
+<div class="wrapper | flex justify-between items-center pt-16 pb-10 lg:py-0">
+<a class="logo pt-1.5" href="/">
+<include src="./resources/svg/logo/fundermaps-logo.svg"></include>
+<span class="sr-only">Fundermaps</span>
+</a>
+<!-- Desktop navigation -->
+<nav class="hidden lg:flex items-center">
+<ul class="menu |">
+<li class="menu-item | px-4">
+<a class="active no-underline" href="/#hero" title="Intro">Intro</a>
+</li>
+<li class="menu-item | px-4">
+<a class="no-underline" href="/#services" title="Services">Services</a>
+</li>
+<li class="menu-item | px-4">
+<a class="no-underline" href="/#references-anchor" title="Referenties">Referenties</a>
+</li>
+<li class="menu-item | px-4">
+<a class="no-underline" href="/#demo" title="Demo">Demo</a>
+</li>
+<li class="menu-item | px-4">
+<a class="no-underline" href="/#partners" title="Partners">Partners</a>
+</li>
+<li class="menu-item | px-4">
+<a class="no-underline" href="artikelen.html" title="Artikelen">Artikelen</a>
+</li>
+<li class="menu-item | px-4">
+<a class="no-underline" href="apps.html" title="Apps">Apps</a>
+</li>
+</ul>
+<a class="button button-secondary ml-4" href="mailto:info@fundermaps.com">
+<div class="inline-block">
+<img alt="Fundermaps contact" class="w-8 mr-1" height="64" src="./resources/images/contactpersoon.webp" width="64"/>
+</div>
+<span>
             Direct contact
           </span>
-
-          <div class="button-arrow">
-            <include src="./resources/svg/arrow-right-icon.svg"></include>
-          </div>
-        </a>
-      </nav>
-
-      <!-- Mobile navigation: Toggle menu -->
-      <div class="inline-flex lg:hidden">
-        <a href="#toPhone" class="mr-6">
-          <include src="./resources/svg/phone-icon.svg"></include>
-        </a>
-
-        <button x-on:click="open = true" class="flex items-center gap-2 text-blue-900 hover:text-yellow-500">
-          <div x-show="! open">
-            <include src="./resources/svg/hamburger-icon.svg"></include>
-          </div>
-          <span class="sr-only">Open mobiel menu</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile navigation -->
-    <!-- Mobile navigation: dropdown -->
-    <div x-cloak x-dialog x-model="open" x-transition:enter="left ease-out duration-300, right ease-out duration-300"
-      x-transition:enter-start="opacity-100 left-full -right-full" x-transition:enter-end="opacity-100 left-0 right-0"
-      x-transition:leave="left ease-in duration-100, right ease-in duration-100"
-      x-transition:leave-start="opacity-100 left-0 right-0" x-transition:leave-end="opacity-100 left-full -right-full"
-      class="top-0 bottom-0 fixed z-10 w-full h-full bg-blue-900 overflow-auto lg:hidden">
-
-      <!-- Mobile Menu: Panel -->
-      <div x-dialog:panel class="">
-        <div class="sticky top-0 bg-blue-900 flex justify-between items-center px-5 pt-16 z-10">
-          <div class="pt-1.5">
-            <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
-          </div>
-
-          <div class="flex">
-            <a href="#toPhone" class="mr-6" x-on:click="open = false">
-              <include src="./resources/svg/phone-icon-blue.svg"></include>
-            </a>
-
-            <button x-on:click="open = false" class="flex items-center gap-2">
-              <div>
-                <include src="./resources/svg/arrow-right-icon.svg"></include>
-              </div>
-            </button>
-          </div>
-        </div>
-        <nav x-data class="grid pt-16 lg:hidden">
-          <ul class="menu-mobile | ">
-            <li class="menu-item">
-              <a class="active no-underline" title="Intro" href="#hero" x-on:click="open = false">Intro</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Services" href="#services" x-on:click="open = false">Services</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Referenties" href="#references-anchor"
-                x-on:click="open = false">Referenties</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Demo" href="#demo" x-on:click="open = false">Demo</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Partners" href="#partners" x-on:click="open = false">Partners</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Artikelen" href="artikelen.html" x-on:click="open = false">Artikelen</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Apps" href="apps.html" x-on:click="open = false">APPS</a>
-            </li>
-            <li class="pl-16">
-              <a class="button button-outline-primary mt-10" href="#toLinkedIn" x-on:click="open = false">
-                <div class="button-logo">
-                  <include src="./resources/svg/linkedin-logo.svg"></include>
-                </div>
-
-                <span class="sr-only">LinkedIn link</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="fixed top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
-        <div class="absolute rotate-90 -scale-x-100 -bottom-[238px] -right-[294px] w-[863px] opacity-20">
-          <include src="./resources/svg/hero-bg.svg"></include>
-        </div>
-      </div>
-    </div>
-  </header>
+<div class="button-arrow">
+<include src="./resources/svg/arrow-right-icon.svg"></include>
+</div>
+</a>
+</nav>
+<!-- Mobile navigation: Toggle menu -->
+<div class="inline-flex lg:hidden">
+<a class="mr-6" href="#toPhone">
+<include src="./resources/svg/phone-icon.svg"></include>
+</a>
+<button class="flex items-center gap-2 text-blue-900 hover:text-yellow-500" x-on:click="open = true">
+<div x-show="! open">
+<include src="./resources/svg/hamburger-icon.svg"></include>
+</div>
+<span class="sr-only">Open mobiel menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile navigation -->
+<!-- Mobile navigation: dropdown -->
+<div class="top-0 bottom-0 fixed z-10 w-full h-full bg-blue-900 overflow-auto lg:hidden" x-cloak="" x-dialog="" x-model="open" x-transition:enter="left ease-out duration-300, right ease-out duration-300" x-transition:enter-end="opacity-100 left-0 right-0" x-transition:enter-start="opacity-100 left-full -right-full" x-transition:leave="left ease-in duration-100, right ease-in duration-100" x-transition:leave-end="opacity-100 left-full -right-full" x-transition:leave-start="opacity-100 left-0 right-0">
+<!-- Mobile Menu: Panel -->
+<div class="" x-dialog:panel="">
+<div class="sticky top-0 bg-blue-900 flex justify-between items-center px-5 pt-16 z-10">
+<div class="pt-1.5">
+<include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
+</div>
+<div class="flex">
+<a class="mr-6" href="#toPhone" x-on:click="open = false">
+<include src="./resources/svg/phone-icon-blue.svg"></include>
+</a>
+<button class="flex items-center gap-2" x-on:click="open = false">
+<div>
+<include src="./resources/svg/arrow-right-icon.svg"></include>
+</div>
+</button>
+</div>
+</div>
+<nav class="grid pt-16 lg:hidden" x-data="">
+<ul class="menu-mobile |">
+<li class="menu-item">
+<a class="active no-underline" href="#hero" title="Intro" x-on:click="open = false">Intro</a>
+</li>
+<li class="menu-item">
+<a class="no-underline" href="#services" title="Services" x-on:click="open = false">Services</a>
+</li>
+<li class="menu-item">
+<a class="no-underline" href="#references-anchor" title="Referenties" x-on:click="open = false">Referenties</a>
+</li>
+<li class="menu-item">
+<a class="no-underline" href="#demo" title="Demo" x-on:click="open = false">Demo</a>
+</li>
+<li class="menu-item">
+<a class="no-underline" href="#partners" title="Partners" x-on:click="open = false">Partners</a>
+</li>
+<li class="menu-item">
+<a class="no-underline" href="artikelen.html" title="Artikelen" x-on:click="open = false">Artikelen</a>
+</li>
+<li class="menu-item">
+<a class="no-underline" href="apps.html" title="Apps" x-on:click="open = false">Apps</a>
+</li>
+<li class="pl-16">
+<a class="button button-outline-primary mt-10" href="#toLinkedIn" x-on:click="open = false">
+<div class="button-logo">
+<include src="./resources/svg/linkedin-logo.svg"></include>
+</div>
+<span class="sr-only">LinkedIn link</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="fixed top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+<div class="absolute rotate-90 -scale-x-100 -bottom-[238px] -right-[294px] w-[863px] opacity-20">
+<include src="./resources/svg/hero-bg.svg"></include>
+</div>
+</div>
+</div>
+</header>
 
   <main class="relative overflow-hidden">
-    <section id="hero" class="section | wrapper py-16 lg:py-24">
-      <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
-        <div class="lg:col-span-7">
-          <p class="uppercase tracking-widest text-sm font-semibold text-blue-400 mb-4">Artikelen</p>
-          <h1 class="text-4xl lg:text-5xl font-extrabold text-blue-900 leading-tight">
-            Verdiepende verhalen over funderingsdata en oplossingen
-          </h1>
-          <p class="mt-6 text-lg text-blue-900/80 max-w-2xl">
-            Ontdek inzichten, praktijkcases en nieuws rond funderingsrisico's en datagedreven beheer. Deze pagina bundelt
-            publicaties van FunderMaps zodat u eenvoudig op de hoogte blijft.
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <div x-data="articles_carousel">
-      <section id="article-menu" class="section | wrapper py-8 lg:py-12">
-        <div class="bg-white border border-blue-100 rounded-3xl shadow-sm px-6 py-8 lg:px-12 lg:py-12">
-          <div class="lg:flex lg:items-center lg:justify-between">
-            <div class="max-w-2xl">
-              <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Overzicht</h2>
-              <p class="mt-3 text-blue-900/80">Kies een artikel om direct naar het gewenste onderdeel op deze pagina te springen.</p>
-            </div>
-          </div>
-          <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="0" x-bind:class="cardClasses(0)" x-bind:aria-current="currentIndex === 0 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">1</div>
-              <div class="flex-1">
-                <span class="block font-semibold">11 redenen voor funderingsmeldingen</span>
-                <span class="block text-sm text-blue-900/70">Gemeentelijke samenwerking met FunderMaps</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="1" x-bind:class="cardClasses(1)" x-bind:aria-current="currentIndex === 1 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">2</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Alles wat u moet weten over funderingsproblemen</span>
-                <span class="block text-sm text-blue-900/70">Van oorzaken tot mogelijke oplossingen</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="2" x-bind:class="cardClasses(2)" x-bind:aria-current="currentIndex === 2 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">3</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Bacteriele aantasting in palen</span>
-                <span class="block text-sm text-blue-900/70">Waarom palenpest onderschat wordt</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="3" x-bind:class="cardClasses(3)" x-bind:aria-current="currentIndex === 3 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">4</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Droogstand van houten palen</span>
-                <span class="block text-sm text-blue-900/70">Technische uitdagingen en maatregelen</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="4" x-bind:class="cardClasses(4)" x-bind:aria-current="currentIndex === 4 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">5</div>
-              <div class="flex-1">
-                <span class="block font-semibold">De oorsprong van fundering op staal</span>
-                <span class="block text-sm text-blue-900/70">Historische interpretaties en praktijken</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="5" x-bind:class="cardClasses(5)" x-bind:aria-current="currentIndex === 5 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">6</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Gemeenten en funderingsverantwoordelijkheid</span>
-                <span class="block text-sm text-blue-900/70">Waarom lokaal grondwaterbeheer telt</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="6" x-bind:class="cardClasses(6)" x-bind:aria-current="currentIndex === 6 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">7</div>
-              <div class="flex-1">
-                <span class="block font-semibold">De wereld achter het houtmonster</span>
-                <span class="block text-sm text-blue-900/70">Hoe laboratoria houten palen beoordelen</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="7" x-bind:class="cardClasses(7)" x-bind:aria-current="currentIndex === 7 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">8</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Diepgaand inzicht in funderingsproblematiek</span>
-                <span class="block text-sm text-blue-900/70">Werkwijze voor corporaties en gemeenten</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="8" x-bind:class="cardClasses(8)" x-bind:aria-current="currentIndex === 8 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">9</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Negatieve kleef verklaard</span>
-                <span class="block text-sm text-blue-900/70">Extra belasting op houten palen</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="9" x-bind:class="cardClasses(9)" x-bind:aria-current="currentIndex === 9 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">10</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Juridische afwegingen bij verkoop</span>
-                <span class="block text-sm text-blue-900/70">Funderingsrisico's contractueel borgen</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="10" x-bind:class="cardClasses(10)" x-bind:aria-current="currentIndex === 10 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">11</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Optrekkend vocht aanpakken</span>
-                <span class="block text-sm text-blue-900/70">Structurele maatregelen voor gezonde woningen</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="11" x-bind:class="cardClasses(11)" x-bind:aria-current="currentIndex === 11 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">12</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Sloop en vervangende nieuwbouw</span>
-                <span class="block text-sm text-blue-900/70">Wanneer herstel niet volstaat</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="12" x-bind:class="cardClasses(12)" x-bind:aria-current="currentIndex === 12 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">13</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Van risico naar regie</span>
-                <span class="block text-sm text-blue-900/70">Totaaloplossing voor woningcorporaties</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="13" x-bind:class="cardClasses(13)" x-bind:aria-current="currentIndex === 13 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">14</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Wat mag je verwachten van onderzoek?</span>
-                <span class="block text-sm text-blue-900/70">Van QuickScan tot rapportage</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-
-            <a href="#articles" class="group no-underline flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 px-5 py-4 text-left text-blue-900 transition hover:border-yellow-500 hover:bg-white" data-article-target="14" x-bind:class="cardClasses(14)" x-bind:aria-current="currentIndex === 14 ? 'true' : null">
-              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-sm font-semibold text-white">15</div>
-              <div class="flex-1">
-                <span class="block font-semibold">Beslisschema funderingsonderzoek</span>
-                <span class="block text-sm text-blue-900/70">Handleiding vanuit FunderMaps</span>
-              </div>
-              <div class="ml-auto text-sm font-semibold text-yellow-500 opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100" aria-hidden="true">&rarr;</div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-
-
-    <section id="articles" class="section | wrapper py-12 lg:py-20">
-      <div class="glide glide--articles" x-ref="glide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-1" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-          <header class="mb-10">
-
-            
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">11 redenen waarom gemeenten funderingsmeldingen zouden moeten registreren met FunderMaps</h2>
-
-            <p class="mt-4 text-lg text-blue-900/80">Funderingsproblemen nemen toe in Nederland, vooral in gebieden met slappe bodem en bodemdaling. Gemeenten krijgen steeds vaker vragen van bewoners over scheuren, verzakkingen en funderingsschade. Door deze meldingen gestructureerd en samen met het KCAF af te handelen, ontstaat niet alleen beter inzicht op wijkniveau, maar wordt ook landelijke kennis benut. Dit artikel beschrijft elf praktische redenen waarom het bundelen van krachten bij funderingsmeldingen gemeenten helpt om efficienter te werken, bewoners beter te informeren en beleidsmatig sterker te staan.</p>
-
-          </header>
-
-          <ol class="space-y-6">
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">1. Gebruik maken van bestaande landelijke database (FunderMaps)</h3>
-
-              <p class="mt-2 text-blue-900/80">Gemeenten hoeven niet zelf het wiel uit te vinden. De FunderMaps-database bevat reeds archiefdata van panden, funderingstypen, satellietmetingen (pandzakkingssnelheden), onderzoeksresultaten en eerdere meldingen van bewoners. Daarmee kan iedere nieuwe melding sneller en beter worden geduid.</p>
-
-            </li>
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">2. Meldingssoftware in eigen gemeentelijke huisstijl</h3>
-
-              <p class="mt-2 text-blue-900/80">Via een op maat en in huisstijl van de gemeente gemaakt meldingsformulier kunnen bewoners eenvoudig melding maken. De data wordt opgeslagen, gevisualiseerd op kaart en vertaald naar topkaarten op wijk- en buurtniveau.</p>
-
-            </li>
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">3. Meldingen inzichtelijk in een centraal beheersportaal</h3>
-
-              <p class="mt-2 text-blue-900/80">Alle meldingen, inclusief eventueel bijgevoegde foto's of documenten, worden opgeslagen in een gemeentelijk toegankelijke adminomgeving. Hier kan de opvolging worden geregistreerd en bewaakt.</p>
-
-            </li>
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">4. Flexibele afhandeling: door gemeente of KCAF-team</h3>
-
-              <p class="mt-2 text-blue-900/80">Meldingen kunnen worden beantwoord door gemeentelijke medewerkers of - bij beperkte capaciteit - door het team van KCAF. In dat geval legt KCAF periodiek verantwoording af aan de gemeente.</p>
-
-            </li>
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">5. Inhoudelijke beantwoording ondersteund door data en analyses</h3>
-
-              <p class="mt-2 text-blue-900/80">Dankzij de koppeling met FunderMaps kan elke melding onderbouwd worden met risicoanalyses, funderingstypen, kaartmateriaal en historische gegevens. Dit zorgt voor deskundige en consistente terugkoppeling.</p>
-
-            </li>
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">6. Geen versnippering, maar aansluiting bij landelijke infrastructuur</h3>
-
-              <p class="mt-2 text-blue-900/80">Een gestandaardiseerde aanpak voorkomt dat elke gemeente een eigen meldstructuur ontwikkelt. Dit bevordert landelijke beleidsvorming en maakt gegevens uit verschillende regios vergelijkbaar.</p>
-
-            </li>
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">7. Betrouwbare en toegankelijke communicatie richting bewoners</h3>
-
-              <p class="mt-2 text-blue-900/80">De herkenbare lokale ingang (loket) in combinatie met inhoudelijke ondersteuning door KCAF zorgt voor vertrouwen bij bewoners en deskundige opvolging.</p>
-
-            </li>
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">8. Geen aparte ICT-ontwikkeling of beheer nodig</h3>
-
-              <p class="mt-2 text-blue-900/80">De meldstructuur van KCAF is volledig operationeel en veilig. Gemeenten hoeven geen eigen meldingssystemen te ontwikkelen, beheren of updaten.</p>
-
-            </li>
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">9. Schaalvoordeel en kennisdeling via het KCAF-netwerk</h3>
-
-              <p class="mt-2 text-blue-900/80">Gemeenten profiteren van ervaringen uit andere regios, toegang tot tools, analyses en innovaties (zoals AI en koppelingen met de taxatieketen) die anders kostbaar of onbereikbaar zouden zijn.</p>
-
-            </li>
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">10. Ondersteuning dankzij landelijke subsidie voor het Nationaal Funderingsloket</h3>
-
-              <p class="mt-2 text-blue-900/80">KCAF ontvangt landelijke subsidie voor de uitvoering van het Nationaal Funderingsloket. In bepaalde gevallen maakt dit het mogelijk meldingen uitgebreider op te pakken, bijvoorbeeld door het organiseren van een huisbezoek.</p>
-
-            </li>
-
-            <li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
-
-              <h3 class="text-xl font-semibold text-blue-900">11. QuickScan-fonds voor schrijnende gevallen</h3>
-
-              <p class="mt-2 text-blue-900/80">FunderMaps, KCAF en enkele erkende funderingsonderzoekspartijen hebben samen een QuickScan-fonds opgezet. Hiermee kan in uitzonderlijke en schrijnende situaties een funderingsonderzoek (QuickScan) voor particuliere pandeigenaren kosteloos worden uitgevoerd.</p>
-
-            </li>
-
-          </ol>
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-2" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-          <header class="mb-8">
-
-            
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Funderingsproblemen in Nederland</h2>
-
-            <p class="mt-4 text-lg text-blue-900/80">Funderingsproblemen komen steeds vaker voor in Nederland. Voor huiseigenaren kunnen de gevolgen groot zijn: van scheuren in muren tot waardedaling van de woning. Dit overzicht bundelt de belangrijkste inzichten van het Kennis Centrum Aanpak Funderingsproblematiek (KCAF) en vertaalt ze naar duidelijke stappen.</p>
-
-          </header>
-
-          <div class="overflow-hidden rounded-3xl border border-blue-100 bg-white/70 shadow-sm">
-            <img src="./resources/images/beslisschema.webp" alt="Beslisschema voor funderingsonderzoek" class="w-full h-auto" loading="lazy" />
-          </div>
-
-          <div class="space-y-8 text-blue-900/80">
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Wat is een fundering?</h3>
-              <p>De fundering vangt het gewicht van een gebouw op en brengt dit gelijkmatig over op de ondergrond. Een goede fundering voorkomt verzakkingen en scheefstand.</p>
-              <p>Meer informatie staat op de <a class="text-blue-700 underline hover:text-yellow-500" href="https://www.kcaf.nl" rel="noopener">FAQ-pagina van het KCAF</a>.</p>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Wat zijn funderingsproblemen en wat zijn de oorzaken?</h3>
-              <p>Funderingsproblemen ontstaan wanneer de fundering haar dragende functie niet meer goed vervult. Dit kan tot schade aan het gebouw leiden. Veelvoorkomende oorzaken zijn:</p>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>Aantasting van houten funderingspalen door schimmels of bacterien bij lage of sterk wisselende grondwaterstanden</li>
-                <li>Negatieve kleef door ophoging of verlaging van het maaiveld</li>
-                <li>Bodemdaling of langdurige droogte</li>
-                <li>Zettingsverschillen of constructiefouten</li>
-              </ul>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Hoe zijn funderingsproblemen te herkennen?</h3>
-              <p>Let op signalen zoals:</p>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>Scheuren in muren (vooral schuin of trapsgewijs)</li>
-                <li>Klemmende ramen en deuren</li>
-                <li>Scheve vloeren of verzakkingen</li>
-                <li>Krakende geluiden of scheurend metselwerk</li>
-              </ul>
-              <p>Zie het <a class="text-blue-700 underline hover:text-yellow-500" href="https://www.kcaf.nl/stappenplan" rel="noopener">stappenplan bij vermoedens van funderingsproblemen</a> voor een volledig overzicht.</p>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Wat zijn de gevolgen van funderingsproblemen?</h3>
-              <ul class="list-disc pl-6 space-y-2">
-                <li><strong>Financiele impact:</strong> een woning met funderingsproblemen kan tot 25% in waarde dalen.</li>
-                <li><strong>Structurele schade:</strong> funderingsproblemen kunnen leiden tot ernstige constructieve schade.</li>
-                <li><strong>Veiligheidsrisico's:</strong> in bepaalde situaties kunnen bewoners onveilige situaties ervaren.</li>
-              </ul>
-            </div>
-
-            <div class="space-y-4">
-              <h3 class="text-xl font-semibold text-blue-900">Wat te doen bij (vermoedelijke) funderingsproblemen?</h3>
-              <ol class="list-decimal pl-6 space-y-3">
-                <li>
-                  <span class="font-semibold text-blue-900">Controleer het funderingsrisico</span>
-                  <p class="mt-1">Gebruik bijvoorbeeld de FunderMaps Viewer of vraag een funderingsrisicorapport op via het KCAF.</p>
-                </li>
-                <li>
-                  <span class="font-semibold text-blue-900">Laat een funderingsonderzoek uitvoeren</span>
-                  <p class="mt-1">Het KCAF biedt een beslisschema dat helpt bepalen welk type onderzoek geschikt is.</p>
-                </li>
-                <li>
-                  <span class="font-semibold text-blue-900">Vraag een QuickScan aan</span>
-                  <p class="mt-1">Voor een eerste inschatting is de QuickScan funderingsrisico beschikbaar.</p>
-                </li>
-                <li>
-                  <span class="font-semibold text-blue-900">Onderzoek herstelmaatregelen</span>
-                  <p class="mt-1">Soms volstaat funderingsversterking; in andere gevallen is vervanging nodig. De kosten liggen vaak tussen circa &euro;30.000 en &euro;80.000 per woning.</p>
-                </li>
-                <li>
-                  <span class="font-semibold text-blue-900">Regel financiering</span>
-                  <p class="mt-1">Informeer naar gemeentelijke leningen, mogelijkheden via de hypotheekverstrekker en landelijke regelingen zoals het Duurzaam Funderingsherstelfonds.</p>
-                </li>
-              </ol>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Wat als herstel niet direct te betalen is?</h3>
-              <p>Tijdig handelen voorkomt verdere schade en hogere kosten. Mogelijke opties:</p>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>Informeer bij de gemeente naar fondsen of leningen.</li>
-                <li>Neem contact op met de hypotheekverstrekker voor maatwerkoplossingen.</li>
-                <li>Spreek met het KCAF of Nationaal Funderingsloket over tijdelijke maatregelen.</li>
-              </ul>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Juridische aspecten bij aan- of verkoop</h3>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>De verkoper heeft een <strong>meldplicht</strong>.</li>
-                <li>De koper heeft een <strong>onderzoeksplicht</strong>.</li>
-              </ul>
-              <p>Schakel bij twijfel een juridisch of bouwkundig expert in.</p>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Waar is hulp beschikbaar?</h3>
-              <ul class="list-disc pl-6 space-y-3">
-                <li><strong>KCAF</strong> &mdash; informatie, advies en rapportages. Zie <a class="text-blue-700 underline hover:text-yellow-500" href="https://www.kcaf.nl" rel="noopener">www.kcaf.nl</a>.</li>
-                <li><strong>Nationaal Funderingsloket</strong> &mdash; gratis en onafhankelijk advies en meldpunt.</li>
-                <li><strong>Gemeente</strong> &mdash; inzicht in lokale regelingen, subsidies en leningen.</li>
-              </ul>
-            </div>
-
-            <div class="rounded-2xl border-l-4 border-yellow-400 bg-yellow-50 px-5 py-4 text-blue-900">
-              <p class="font-semibold">Let op</p>
-              <p class="mt-1">Signalen van funderingsproblemen verdienen snelle aandacht. Vroegtijdig ingrijpen beperkt schade en kosten.</p>
-            </div>
-
-          </div>
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-3" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-          <header class="mb-8">
-
-            
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Bacteriele aantasting in houten paalfunderingen: een onderschat probleem</h2>
-
-            <p class="mt-4 text-lg text-blue-900/80">Bacteriele aantasting, ook wel palenpest genoemd, vormt een subtiele maar ingrijpende bedreiging voor houten paalfunderingen. Dit artikel zet de unieke eigenschappen, regionale verschillen en praktische aandachtspunten uiteen.</p>
-
-          </header>
-
-          <div class="space-y-8 text-blue-900/80">
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Unieke eigenschappen van bacteriele aantasting</h3>
-              <p>In tegenstelling tot schimmels die zuurstof nodig hebben, kunnen sommige bacterien hout ook in zuurstofloze omstandigheden afbreken. Daardoor blijft aantasting vaak onopgemerkt, zelfs onder water.</p>
-              <p>Vooral grenenhout (Pinus sylvestris) is gevoelig. Een consortium van circa tien gespecialiseerde bacterien werkt samen en blijft actief in anaerobe omstandigheden.</p>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Grenenhout versus vurenhout</h3>
-              <p>De open celstructuur van grenenhout laat grondwater en bacterien gemakkelijk binnendringen, waardoor aantasting zich snel verspreidt. Vurenhout (Picea abies) heeft een dichtere celstructuur en is daardoor minder kwetsbaar.</p>
-              <p>Grenenhout kent bovendien beperkingen in paallengte. De kortere inzetbaarheid is een nadeel in gebieden met diepere draagkrachtige lagen.</p>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Regionale verschillen en historische context</h3>
-              <p>In regio's met een relatief hoge zandlaag, zoals de Zaanstreek, Amsterdam en Gouda, is traditioneel veel grenenhout gebruikt. Hierdoor komt bacteriele aantasting daar vaker voor.</p>
-              <p>In steden als Rotterdam, waar de zandlaag dieper ligt, werd vooral vurenhout toegepast. Dit verklaart regionale verschillen in de huidige risicobeoordeling.</p>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Overgang naar betonnen heipalen</h3>
-              <p>Tot in de jaren zestig waren grenenhouten palen gangbaar. Door toegenomen kennis over bacteriele risico's en beperkingen in paallengte nam het gebruik af. Vanaf circa 1970 werden betonnen heipalen breder toegepast, mede gestuurd door regelgeving en draagkrachtberekeningen.</p>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Wat je mee moet nemen</h3>
-              <p>Bacteriele aantasting vormt nog steeds een substantieel risico voor gebouwen met houten funderingen van voor de jaren zeventig. Houd bij beoordelingen rekening met regionale verschillen en historische bouwwijzen.</p>
-              <p>Een goed begrip van deze factoren helpt vastgoedprofessionals en funderingsspecialisten om onderhoud, monitoring en herstel gerichter in te zetten.</p>
-            </div>
-
-          </div>
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-4" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-          <header class="mb-8">
-
-            
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">De funderingsproblematiek: droogstand van houten palen</h2>
-
-            <p class="mt-4 text-lg text-blue-900/80">Houten paalfunderingen in klei- en veengebieden kampen met een hardnekkig risico: paalrot door droogstand. Dit artikel beschrijft het mechanisme, de technische uitdagingen en hoe monitoring en herstel een rol spelen.</p>
-
-          </header>
-
-          <div class="space-y-8 text-blue-900/80">
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Paalrot: een tikkende tijdbom</h3>
-              <p>Paalrot ontstaat wanneer schimmels toegang krijgen tot zuurstof en het hout van de paal als voedingsbron gebruiken. Dalen grondwaterstanden, verdampende bomen, lekkende riolen of bemalingen kunnen de paal tijdelijk of langdurig droogzetten.</p>
-              <p>Ook opeenvolgende perioden van droogstand zijn voldoende om aantasting te starten. Hierdoor verliest de paal draagkracht en kan de fundering uiteindelijk bezwijken.</p>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Technische uitdagingen en mogelijke oplossingen</h3>
-              <p>Het volledig onder de grondwaterspiegel houden van palen is niet altijd haalbaar, zeker niet in gebieden met fluctuerende waterstanden. De gemiddelde tijd tussen aantasting en falen varieert: ongeveer drie jaar voor grenenspint, tien jaar voor vurenhout en vijftien jaar voor grenen kernhout.</p>
-              <p>Het aantal gevoelige panden neemt niet snel af, omdat funderingsherstel en sloop-nieuwbouw slechts beperkt worden toegepast. Verwacht wordt dat de problematiek de komende decennia zichtbaar blijft.</p>
-              <p>Er zijn twee hoofdstrategien: acuut funderingsherstel of monitoring om de resterende levensduur te verlengen. Monitoring biedt uitstel maar geen definitieve oplossing.</p>
-            </div>
-
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Wat je mee moet nemen</h3>
-              <p>Niet elk pand met houten palen ontwikkelt direct schade, maar de risico's zijn aanwezig. Voortdurende monitoring en proactief beheer helpen de veiligheid van bewoners te borgen.</p>
-              <p>Nieuwe inzichten en technische innovaties zijn nodig om effectievere oplossingen te vinden. Samenwerking tussen gemeenten, eigenaren en kennisinstellingen blijft cruciaal.</p>
-              <p>Het FunderMaps platform biedt actuele pandgegevens, risico-inschattingen en analysetools. Zo vertaalt u complexe data naar concrete acties en voorkomt u onnodige kosten.</p>
-            </div>
-
-          </div>
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-5" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-
-
-          <header class="mb-8">
-
-
-
-            
-
-
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">De oorsprong van de term 'Fundering op staal'</h2>
-
-
-
-            <p class="mt-4 text-lg text-blue-900/80">De term beschrijft funderingen die direct op de ondergrond rusten, maar roept buiten de bouwsector geregeld misverstanden op. Dit artikel verkent de historische context, taalontwikkelingen en praktijktoepassingen rond funderen op staal.</p>
-
-
-
-            <p class="mt-2 text-sm font-semibold text-blue-900">Een verkenning van historische en moderne interpretaties en de toepassing van 'koeienhuiden'.</p>
-
-
-
-          </header>
-
-
-
-          <div class="space-y-8 text-blue-900/80">
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Funderen op staal in de praktijk</h3>
-
-              <p>Funderen op staal betekent dat een constructie zonder heipalen op de draagkracht van de bovenste grondlagen steunt, vaak na grondverbetering. In zandige gebieden is deze methode nog steeds gangbaar; in zachte klei- en veengebieden bleken de veronderstelde draagkracht en beperkte zettingen achteraf vaak te optimistisch.</p>
-
-            </div>
-
-
-
-            <figure class="rounded-3xl border border-blue-100 bg-blue-50/50 p-4">
-
-              <img class="w-full rounded-2xl object-cover" src="https://github.com/user-attachments/assets/843fe1a0-e239-46ed-be92-275fc1b5038c" alt="Historische uitleg van fundering op staal" loading="lazy">
-
-              <figcaption class="mt-2 text-sm text-blue-900/60">Bron: FunderMaps</figcaption>
-
-            </figure>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Breed scala aan uitvoeringstechnieken</h3>
-
-              <p>Historisch onderzoek toont aan dat onder de noemer 'op staal' uiteenlopende technieken vallen: bakstenen of betonnen poeren, houten vaten, verticaal geplaatste takken en houten ondervloeren. De diversiteit illustreert dat het begrip vooral een verzamelnaam is voor ondiepe funderingen.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Waarom het geen stalen constructie is</h3>
-
-              <p>Ondiepe funderingen worden niet van staal gemaakt. Het materiaal is gevoelig voor corrosie, kostbaar en biedt op lange termijn onvoldoende duurzaamheid. Ook bij modern funderingsherstel wordt staal slechts tijdelijk ingezet; beton draagt de constructie.</p>
-
-            </div>
-
-
-
-            <figure class="rounded-3xl border border-blue-100 bg-blue-50/50 p-4">
-
-              <img class="w-full rounded-2xl object-cover" src="https://github.com/user-attachments/assets/7ba7a30c-5029-4070-968e-de4e5e740c25" alt="Voorbeeld van strokenfundering op staal" loading="lazy">
-
-              <figcaption class="mt-2 text-sm text-blue-900/60">Bron: FunderMaps</figcaption>
-
-            </figure>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Taalontwikkeling en mogelijke verbasteringen</h3>
-
-              <p>De term 'op staal' is vermoedelijk een verbastering van woorden zoals 'stal', 'estal' of 'opstal' die 'vaste plaats' betekenen. Archeologische bronnen beschrijven bovendien 'scheepshuiden' of houten planken als drukverdelende laag, wat later mogelijk is verward met dierenhuiden.</p>
-
-              <p>Oud-Nederlandse termen als 'huyen' of 'huien' verwijzen naar korte paaltjes of takken die de bodem verdichtten. Samen met taalontwikkelingen verklaart dit hoe 'op staal' is uitgegroeid tot de huidige benaming.</p>
-
-            </div>
-
-
-
-            <figure class="rounded-3xl border border-blue-100 bg-blue-50/50 p-4">
-
-              <img class="w-full rounded-2xl object-cover" src="https://github.com/user-attachments/assets/545aedfa-ddcd-4c68-a31d-93c126c73dbc" alt="Illustratie van scheepshuiden als funderingsbasis" loading="lazy">
-
-              <figcaption class="mt-2 text-sm text-blue-900/60">Bron: Geschiedenis van Amsterdam tot 1578</figcaption>
-
-            </figure>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Van 'op staal' naar 'ondiepe fundering'</h3>
-
-              <p>In de moderne praktijk sluit de term 'ondiepe fundering' beter aan op internationale terminologie en voorkomt hij verwarring met stalen constructies. Toch blijft kennis van de historische context nuttig om oude dossiers of lokale terminologie correct te duiden.</p>
-
-            </div>
-
-
-
-          </div>
-
-
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-6" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-          <header class="mb-8">
-
-            
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">De verantwoordelijkheid van gemeenten bij funderingsproblematiek</h2>
-
-            <p class="mt-4 text-lg text-blue-900/80">Grondwaterbeheer en bebouwing zijn onlosmakelijk verbonden. Gemeenten spelen een sleutelrol bij het voorkomen van funderingsschade doordat zij verantwoordelijk zijn voor de openbare ruimte, vergunningverlening en beleidskaders.</p>
-
-          </header>
-
-          <div class="space-y-8 text-blue-900/80">
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Waarom gemeenten aan zet zijn</h3>
-
-              <ul class="list-disc pl-6 space-y-2">
-
-                <li>Wegen, riolering en ophogingen in de openbare ruimte beinvloeden grondwaterstanden en bodemdaling.</li>
-
-                <li>Gemeenten sturen via ruimtelijke plannen, vergunningen en onderhoudsnormen het gebruik van de ondergrond.</li>
-
-                <li>Bewoners melden schade vaak bij de gemeente wanneer effecten zichtbaar worden in straat of gevel.</li>
-
-              </ul>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Instrumenten voor regie</h3>
-
-              <p>Met meetnetten voor grondwater, data-analyse (zoals FunderMaps) en meldingsportalen kan een gemeente hotspots snel lokaliseren. Door meldingen te koppelen aan beleid, zoals gemeentelijke rioleringsplannen of klimaatadaptatiestrategien, ontstaat een integrale aanpak.</p>
-
-              <p>Samenwerking met het KCAF en erkende onderzoeksbureaus borgt dat vervolgonderzoek volgens landelijke richtlijnen wordt uitgevoerd.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Van signalering naar handelen</h3>
-
-              <p>Een duidelijke procesafspraak versnelt de reactie op meldingen: registratie, eerste beoordeling (QuickScan), prioritering door een multidisciplinair team en communicatie naar bewoners. Zo blijven verwachtingen realistisch en kan herstel tijdig worden voorbereid.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Communicatie als sleutelfactor</h3>
-
-              <p>Transparante informatie over risico's, rollen en beschikbare maatregelen voorkomt onnodige onrust. Steeds meer gemeenten richten daarom een funderingsloket in met digitale kaarten en standaardantwoorden voor bewoners en professionals.</p>
-
-            </div>
-
-          </div>
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-7" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-
-
-          <header class="mb-8">
-
-
-
-            
-
-
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">De wereld achter het houtmonsteronderzoek</h2>
-
-
-
-            <p class="mt-4 text-lg text-blue-900/80">Bij houten palen vormt laboratoriumonderzoek de sleutel tot een objectieve beoordeling. Dit artikel beschrijft de werkwijze, analysetechnieken en interpretatie van resultaten.</p>
-
-
-
-          </header>
-
-
-
-          <div class="space-y-8 text-blue-900/80">
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Monstername en laboratoriumonderzoek</h3>
-
-              <p>Met een aanwasboor wordt een cilindervormig monster uit de paal gehaald en direct vochtig bewaard. In het laboratorium volgt lichtmicroscopisch onderzoek naar structuur en kwaliteit.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Inzicht in houtsoort en aantasting</h3>
-
-              <p>Het onderzoek bepaalt de houtsoort, de mate van degradatie en de dikte van de zachte schil. Ook de excentriciteit van het paalhart en de korteduurdruksterkte worden vastgesteld voor een volledig beeld van de draagkracht.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Rekenkundige vertaling</h3>
-
-              <p>De resterende dragende diameter vormt de basis voor een beoordeling volgens Eurocode-combinaties. Aandacht gaat uit naar kritieke zones zoals de paalkop en het omslagpunt waar negatieve kleef kan overgaan in positieve kleef.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Vooronderzoek met SPECHT</h3>
-
-              <p>Voordat monsters worden genomen kan de SPECHT-methode de sterkte van het buitenste houtdeel inschatten. De meting, opgenomen in de KCAF-richtlijn, ondersteunt de afweging voor aanvullend onderzoek.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Aanvullende technieken en beperkingen</h3>
-
-              <p>SPECHT-metingen reiken alleen tot het vrij gegraven deel van de paal. Daarom wordt soms een resistograaf ingezet die via boorweerstand inzicht geeft in diepere zones. Toch blijft een fysiek monster noodzakelijk om houtsoort en aantasting definitief vast te stellen.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Conclusie</h3>
-
-              <p>Een combinatie van veldmetingen, microscopisch onderzoek en normatieve rekenregels levert het meest betrouwbare beeld van houten funderingen. Alleen zo kan de veiligheid en restlevensduur goed worden ingeschat.</p>
-
-            </div>
-
-
-
-            <figure class="rounded-3xl border border-blue-100 bg-blue-50/50 p-4">
-
-              <img class="w-full rounded-2xl object-cover" src="https://github.com/user-attachments/assets/e4138170-1146-49f7-95b1-4ed69e08b8b6" alt="Laboratoriumonderzoek van een houtmonster" loading="lazy">
-
-              <figcaption class="mt-2 text-sm text-blue-900/60">Bron: Nebest, 2025</figcaption>
-
-            </figure>
-
-
-
-          </div>
-
-
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-8" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-
-
-          <header class="mb-8">
-
-
-
-            
-
-
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Diepgaand inzicht in funderingsproblematiek: een werkwijze voor woningcorporaties en gemeentes</h2>
-
-
-
-            <p class="mt-4 text-lg text-blue-900/80">Een stapsgewijze methode voor woningcorporaties en gemeenten om inzicht te krijgen in funderingsrisico's, gebaseerd op data-integratie, monitoring en praktische uitvoering.</p>
-
-
-
-          </header>
-
-
-
-          <div class="space-y-8 text-blue-900/80">
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Stap 1 en 2: Gegevensverzameling en integratie</h3>
-
-              <p>Combineer landelijke bronnen zoals Kadaster, BAG en CBS met lokale archieven en grondwatergegevens. Gebruik GIS-software om datasets te integreren, patronen te visualiseren en data op te schonen.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Stap 3: Monitoringsdata</h3>
-
-              <p>Analyseer pand- en bodembeweging via InSAR en volg grondwaterstanden met peilmeters. Deze data legt verbanden tussen bodemdaling, droogstand en funderingsgedrag.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Stap 4 en 5: Geavanceerde analyse en hotspots</h3>
-
-              <p>Machine-learningmodellen koppelen variabelen zoals bouwjaar, bodemtype en funderingsstatus. Geostatistiek helpt clusters van verhoogd risico te signaleren en hotspots te prioriteren.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Stap 6 en 7: Inspecties en handelingsstrategien</h3>
-
-              <p>In hotspots volgen gevelscans, geofysische metingen en structurele evaluaties. Op basis van de bevindingen worden risico's gewogen en maatregelen bepaald, varierend van monitoring tot funderingsvernieuwing.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Stap 8: Continue monitoring</h3>
-
-              <p>Werk datasets bij met nieuwe inspecties, actualiseer modellen en volg effecten van maatregelen. Zo blijft de aanpak toekomstbestendig.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Voordelen van de methode</h3>
-
-              <ul class="list-disc pl-6 space-y-2">
-
-                <li>Diepgaand inzicht op basis van historische, ruimtelijke en technische data.</li>
-
-                <li>Evidence-based beslissingen en gerichte inzet van middelen.</li>
-
-                <li>Monitoring zorgt voor tijdige signalering en bijsturing.</li>
-
-              </ul>
-
-            </div>
-
-
-
-            <div class="rounded-3xl border border-blue-100 bg-blue-50/60 p-6 space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Werkmethodiek geintegreerd in FunderMaps</h3>
-
-              <p>De methode is vertaald naar GevelScans: een funderingsonderzoek light volgens de KCAF-richtlijn. Het FunderMaps-platform automatiseert data-inwinning, dashboards, risicobeoordeling en planning en ondersteunt de afstemming tussen betrokken partijen.</p>
-
-              <blockquote class="border-l-4 border-yellow-400 pl-4 text-blue-900/80">
-
-                <p class="italic">"We waren op zoek naar een praktische aanpak om inzicht te krijgen in funderingsproblemen binnen ons vastgoed. De methode overtrof onze verwachtingen."</p>
-
-                <p class="mt-2 text-sm text-blue-900/60">&mdash; Woningcorporatie uit Noord-Nederland</p>
-
-              </blockquote>
-
-            </div>
-
-
-
-          </div>
-
-
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-9" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-
-
-          <header class="mb-8">
-
-
-
-            
-
-
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Het fenomeen van negatieve kleef: een cruciale uitdaging voor vastgoed in de Randstad</h2>
-
-
-
-            <p class="mt-4 text-lg text-blue-900/80">Negatieve kleef belast houten paalfunderingen extra wanneer grondlagen sneller zakken dan de palen. Inzichten in oorzaken, effect en regionaliteit helpen om risico's te beperken.</p>
-
-
-
-          </header>
-
-
-
-          <div class="space-y-8 text-blue-900/80">
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Wat is negatieve kleef?</h3>
-
-              <p>Wanneer klei aan palen blijft kleven en de bodem sneller zakt dan de paal, wordt de fundering omlaag getrokken. Het draagvermogen neemt af omdat het ontwerp hier vroeger nauwelijks rekening mee hield.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Oorzaken</h3>
-
-              <p>Zakkende grondlagen ontstaan door ophogingen, bouwactiviteiten, variaties in grondwater of langdurige droogte. Verschillen tussen opgehoogde straten en lager gelegen tuinen vergroten de variatie in belasting, vooral bij hoekpanden.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Effect op funderingen</h3>
-
-              <p>Verschillen in vervormingsgedrag tussen palen leiden tot scheuren, verzakkingen en schade. Factoren zoals houtkwaliteit, bacteriele aantasting, grondwaterfluctuaties en algemene bodemdaling bepalen de ernst.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Regionale gevoeligheid</h3>
-
-              <p>Negatieve kleef treedt vooral op in slappe klei- en veengebieden zoals de Randstad. In zandgebieden zijn ondiepe funderingen gangbaar en speelt negatieve kleef praktisch niet, al blijven andere risico's mogelijk.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Conclusie</h3>
-
-              <p>Inzicht in bodemsamenstelling, bouwgeschiedenis en grondwaterbeheer is cruciaal om negatieve kleef te beperken. Vastgoedprofessionals kunnen hiermee proactief maatregelen treffen en de waarde en levensduur van panden beschermen.</p>
-
-            </div>
-
-
-
-          </div>
-
-
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-10" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-
-
-          <header class="mb-8">
-
-
-
-            
-
-
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Juridische afwegingen bij verkoop</h2>
-
-
-
-            <p class="mt-4 text-lg text-blue-900/80">Hoe woningcorporaties woningen met funderingsrisico's juridisch verantwoord verkopen, met behulp van FunderMaps en aangepaste clausules.</p>
-
-
-
-          </header>
-
-
-
-          <div class="space-y-8 text-blue-900/80">
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Risicoklassen als startpunt</h3>
-
-              <p>FunderMaps classificeert risico's van A (laag) tot E (zeer hoog) op basis van geotechnische modellen en lokale omstandigheden. De classificatie bepaalt de vervolgstappen richting verkoop.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Juridische borging</h3>
-
-              <p>Op basis van advies van onder meer mr. Wessel van Boetzelaer is een aangepaste koopovereenkomst ontwikkeld. De ouderdoms- en uitsluitingsclausule benoemt funderingsgebreken expliciet en legt onderzoeksplicht bij de koper.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Label C vraagt maatwerk</h3>
-
-              <p>Bij label C wordt verkoop alleen overwogen na een QuickScan met maximaal 'midden risico' als uitkomst, aangevuld met bestuurlijke afstemming over bijzondere situaties zoals scharnierwoningen.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Rol van FunderMaps</h3>
-
-              <p>FunderMaps ondersteunt bij verkoopdossiers, besluitvorming en beheer van juridische documenten. Modelclausules, toelichtingen en maatwerkbegeleiding zorgen voor consistente dossiervorming.</p>
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Conclusie</h3>
-
-              <p>Een combinatie van objectieve risicoclassificatie, juridische borging en bestuurlijke afweging maakt verantwoorde verkoop mogelijk. Dit beschermt zowel de corporatie als de koper en draagt bij aan een transparante markt.</p>
-
-            </div>
-
-
-
-          </div>
-
-
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-11" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-          <header class="mb-8">
-
-            
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Optrekkend vocht: een taai maar oplosbaar probleem</h2>
-
-            <p class="mt-4 text-lg text-blue-900/80">Optrekkend vocht behoort tot de hardnekkigste oorzaken van schade en gezondheidsklachten in oudere woningen. Dit artikel beschrijft oorzaken, diagnose en maatregelen.</p>
-
-          </header>
-
-          <div class="space-y-8 text-blue-900/80">
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Oorzaken en symptomen</h3>
-
-              <p>Veel oudere woningen zijn gebouwd zonder waterkering tussen fundering en gevel. Grondvocht trekt via capillaire werking omhoog en veroorzaakt loslatend stucwerk, donkere plinten, zoutuitbloei en muffe geuren. Condensatie, koudebruggen en gebrekkige ventilatie kunnen de problematiek versterken.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Diagnose als startpunt</h3>
-
-              <p>Een bouwkundige inspectie brengt in kaart of optrekkend vocht, doorslaand vocht, lekkages of ventilatieproblemen de oorzaak vormen. Zonder juiste diagnose is elke ingreep symptoombestrijding.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Praktische aanpakken</h3>
-
-              <ul class="list-disc pl-6 space-y-2">
-
-                <li>Injecteren van muren met een vochtwerende gel als nieuwe waterkering.</li>
-
-                <li>Binnendrainage of muurdoorvoeringen om vocht gecontroleerd af te voeren.</li>
-
-                <li>Gevelisolatie en renovatiepleister zodat muren kunnen ademen.</li>
-
-                <li>Herstel van lekkages, zoals kapotte dakgoten of voegen.</li>
-
-                <li>Verbeterde ventilatie, met name in natte ruimtes.</li>
-
-              </ul>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Samenwerking met bewoners</h3>
-
-              <p>Technische maatregelen alleen zijn niet voldoende. Bewoners voorlichten over ventileren, stoken en het drogen van was voorkomt terugkerende klachten.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Geen luxeprobleem</h3>
-
-              <p>Optrekkend vocht is een fundamentele bedreiging voor woonkwaliteit en gezondheid. Een bouwkundig onderzoek vormt het startpunt voor een duurzame oplossing.</p>
-
-            </div>
-
-          </div>
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-12" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-          <header class="mb-8">
-
-            
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Sloop en vervangende nieuwbouw: funderingsproblemen structureel oplossen</h2>
-
-            <p class="mt-4 text-lg text-blue-900/80">Bij ernstige funderingsschade kan vervangende nieuwbouw de meest toekomstbestendige keuze zijn. Dit artikel schetst de afwegingen.</p>
-
-          </header>
-
-          <div class="space-y-8 text-blue-900/80">
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Voordelen van sloop en nieuwbouw</h3>
-
-              <p>Sloop maakt het mogelijk om in een keer een nieuwe fundering te realiseren. Nieuwbouw biedt kansen voor energieneutrale woningen, optimale plattegronden en betere toegankelijkheid.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Waarom het niet altijd kan</h3>
-
-              <ul class="list-disc pl-6 space-y-2">
-
-                <li>Draagvlak onder bewoners: herhuisvesting vereist ruime instemming.</li>
-
-                <li>Ruimtelijke beperkingen en regelgeving laten uitbreiding niet altijd toe.</li>
-
-                <li>Gebrek aan beschikbare woningen voor tijdelijke huisvesting.</li>
-
-                <li>Teleurstellingen uit eerdere trajecten kunnen wantrouwen veroorzaken.</li>
-
-                <li>Een casco dat nog redelijk is maakt renovatie soms aantrekkelijker.</li>
-
-              </ul>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Tussen wens en werkelijkheid</h3>
-
-              <p>Zonder sloop vallen corporaties vaak terug op deelmaatregelen zoals dakvervanging of ventilatie-aanpassingen. Daarmee wordt hoogstens tijdelijk verlichting geboden.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Sloop als strategische keuze</h3>
-
-              <p>Wanneer het technisch en planologisch kan, verdient sloop een plek in de afweging. De maatschappelijke waarde van toekomstbestendige woningen en lagere onderhoudslasten is groot.</p>
-
-            </div>
-
-          </div>
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-13" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-          <header class="mb-8">
-
-            
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Van risico naar regie: funderingsrisico's verantwoord beheerd en juridisch geborgd</h2>
-
-            <p class="mt-4 text-lg text-blue-900/80">Met FunderMaps, de QuickScan-methodiek van het KCAF en juridische begeleiding ontstaat een compleet procesproduct waarmee corporaties grip houden op funderingsrisico's.</p>
-
-          </header>
-
-          <div class="space-y-8 text-blue-900/80">
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Funderingsrisico's onder controle</h3>
-
-              <p>FunderMaps classificeert panden in risicoklassen A t/m E op basis van ondergrond, funderingstype, zakkingssnelheid en historische schade. De hotspotanalyse bepaalt de scenario's: monitoring, beheer of directe actie.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">QuickScan als praktische tussenstap</h3>
-
-              <p>Voor panden met een verhoogd risico (label C, D of E) is aanvullend onderzoek nodig. De QuickScan omvat lintvoeg- en loodmetingen, scheurclassificatie en optioneel zakkingsdata. Uitvoering vanaf de openbare ruimte houdt de belasting voor bewoners beperkt.</p>
-
-              <p>FunderMaps begeleidt uitvraag, benchmarkt prijzen en controleert rapportages van erkende uitvoerders.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Uitvraag en uitvoering op schaal</h3>
-
-              <ul class="list-disc pl-6 space-y-2">
-
-                <li>D-label: QuickScan verplicht.</li>
-
-                <li>C-label: QuickScan bij verkoop.</li>
-
-                <li>E-label: direct volledig funderingsonderzoek.</li>
-
-              </ul>
-
-              <p>Heldere criteria zorgen voor kostenbeheersing en uniforme rapportages.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Gezond beheer zonder verkoop</h3>
-
-              <p>QuickScans tonen stabiliteit aan, helpen risico's monitoren en ondersteunen onderhouds- en verduurzamingsplannen.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Verkoop juridisch geborgd</h3>
-
-              <p>Bij verkoop levert FunderMaps een compleet dossier met QuickScan of funderingsrapport, risicoclassificatie, modelclausules en instructies voor makelaar en notaris. Contractuele uitsluiting van aansprakelijkheid beschermt de corporatie.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Begeleiding en kennisborging</h3>
-
-              <p>Corporaties ontvangen opleiding, formats en toegang tot het platform zodat expertise structureel wordt geborgd.</p>
-
-            </div>
-
-          </div>
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-14" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-
-          <header class="mb-8">
-
-            
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Wat mag je verwachten van een funderingsonderzoek?</h2>
-
-            <p class="mt-4 text-lg text-blue-900/80">Funderingsproblemen nemen toe door bodemdaling, klimaatverandering en veroudering van funderingen. Deze gids legt uit welke vormen van onderzoek er zijn en wat ze opleveren.</p>
-
-          </header>
-
-          <div class="space-y-8 text-blue-900/80">
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Fasering van funderingsonderzoek</h3>
-
-              <p>KCAF onderscheidt twee hoofdvormen: de QuickScan Funderingsrisico en het volledig funderingsonderzoek.</p>
-
-              <h4 class="text-lg font-semibold text-blue-900">1. QuickScan Funderingsrisico</h4>
-
-              <p>Visuele beoordeling vanaf de openbare ruimte, gericht op scheuren en scheefstand. Doel: bepalen of een volledig onderzoek nodig is.</p>
-
-              <ul class="list-disc pl-6 space-y-2">
-
-                <li>Indicatief en visueel.</li>
-
-                <li>Lintvoegmeting, loodmeting, scheurclassificatie, satellietdata.</li>
-
-                <li>Resultaat: risico-inschatting laag, gemiddeld of hoog.</li>
-
-              </ul>
-
-              <p class="font-semibold">Let op: een QuickScan inspecteert de fundering zelf niet.</p>
-
-              <h4 class="text-lg font-semibold text-blue-900">2. Volledig funderingsonderzoek</h4>
-
-              <p>Technisch onderzoek met graafwerk, uitgevoerd door erkende bureaus.</p>
-
-              <ol class="list-decimal pl-6 space-y-2">
-
-                <li>Bureaustudie: tekeningen, paalgegevens, sonderingen, grondwater en historische ingrepen.</li>
-
-                <li>Visuele inspecties binnen en buiten.</li>
-
-                <li>Scheefstandsmetingen (lintvoeg en lood).</li>
-
-                <li>Zakkingsmetingen, bijvoorbeeld via satellietdata.</li>
-
-                <li>Funderingsinspectie in graafputten met monstername.</li>
-
-                <li>Bodem- en grondwateranalyse indien relevant.</li>
-
-                <li>Rapportage met advies, herstelopties en kostenraming.</li>
-
-              </ol>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Beoordeling en classificatie</h3>
-
-              <div class="overflow-x-auto">
-
-                <table class="w-full text-left border-collapse">
-
-                  <thead>
-
-                    <tr class="border-b border-blue-100">
-
-                      <th class="px-4 py-3">QuickScan risicoklasse</th>
-
-                      <th class="px-4 py-3">Kenmerken</th>
-
-                      <th class="px-4 py-3">Aanbevolen actie</th>
-
-                    </tr>
-
-                  </thead>
-
-                  <tbody>
-
-                    <tr class="border-b border-blue-50">
-
-                      <td class="px-4 py-3 font-semibold">Laag</td>
-
-                      <td class="px-4 py-3">Geen of minimale schade, scheefstand &le; 1:300</td>
-
-                      <td class="px-4 py-3">Geen directe actie, wel monitoren</td>
-
-                    </tr>
-
-                    <tr class="border-b border-blue-50">
-
-                      <td class="px-4 py-3 font-semibold">Gemiddeld</td>
-
-                      <td class="px-4 py-3">Scheefstand tot 1:100, matige scheuren</td>
-
-                      <td class="px-4 py-3">Herhaal QuickScan of plan volledig onderzoek</td>
-
-                    </tr>
-
-                    <tr>
-
-                      <td class="px-4 py-3 font-semibold">Hoog</td>
-
-                      <td class="px-4 py-3">Scheefstand &gt; 1:75, forse of actieve schade</td>
-
-                      <td class="px-4 py-3">Direct volledig onderzoek of hersteltraject</td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
-
-              </div>
-
-              <p class="mt-4">Een volledig onderzoek resulteert in een classificatie volgens de richtlijn <em>Funderingen onder gebouwen</em>. Deze kleurcodes vormen ook de basis voor het Funderherstelregister.</p>
-
-              <div class="overflow-x-auto">
-
-                <table class="w-full text-left border-collapse">
-
-                  <thead>
-
-                    <tr class="border-b border-blue-100">
-
-                      <th class="px-4 py-3">Kleurcode</th>
-
-                      <th class="px-4 py-3">Betekenis</th>
-
-                      <th class="px-4 py-3">Aanbevolen vervolg</th>
-
-                    </tr>
-
-                  </thead>
-
-                  <tbody>
-
-                    <tr class="border-b border-blue-50">
-
-                      <td class="px-4 py-3 font-semibold">Groen</td>
-
-                      <td class="px-4 py-3">Fundering functioneert naar verwachting</td>
-
-                      <td class="px-4 py-3">Geen ingreep; op termijn opnieuw beoordelen</td>
-
-                    </tr>
-
-                    <tr class="border-b border-blue-50">
-
-                      <td class="px-4 py-3 font-semibold">Oranje</td>
-
-                      <td class="px-4 py-3">Fundering functioneert nog maar is kwetsbaar</td>
-
-                      <td class="px-4 py-3">Monitoring of herstel op middellange termijn</td>
-
-                    </tr>
-
-                    <tr>
-
-                      <td class="px-4 py-3 font-semibold">Rood</td>
-
-                      <td class="px-4 py-3">Fundering functioneert niet meer of schade is ernstig</td>
-
-                      <td class="px-4 py-3">Herstel of vernieuwing dringend noodzakelijk</td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
-
-              </div>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Wat mag je verwachten van de rapportage?</h3>
-
-              <ul class="list-disc pl-6 space-y-2">
-
-                <li>Foto's van scheuren en meetpunten.</li>
-
-                <li>Meetwaarden van scheefstand (mm/m en rotatieverhoudingen).</li>
-
-                <li>Duidelijke risicoclassificatie met onderbouwing.</li>
-
-                <li>Volledig handelingsperspectief: vervolgonderzoek, herstel of monitoring.</li>
-
-                <li>Transparantie over meetpunten, locaties en methoden.</li>
-
-              </ul>
-
-              <p class="mt-2 italic text-blue-900/70">Voorbeeld bij gemiddeld risico: "De lintvoegmetingen tonen afwijkingen tot 1:150 en loodmetingen tot 1:140. Er zijn matige scheuren zichtbaar. Herhaal de QuickScan binnen drie jaar of voer een volledig funderingsonderzoek uit bij toename van afwijkingen."</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Wie voert funderingsonderzoek uit?</h3>
-
-              <p>KCAF beheert een erkenningsregeling voor onderzoeksbureaus. Alleen erkende partijen voeren onderzoeken uit volgens de richtlijn. Zie <a class="text-blue-700 underline hover:text-yellow-500" href="https://www.kcaf.nl/erkenningslijst" rel="noopener">kcaf.nl/erkenningslijst</a>.</p>
-
-            </div>
-
-            <div class="space-y-3">
-
-              <h3 class="text-xl font-semibold text-blue-900">Waarom dit belangrijk is</h3>
-
-              <ul class="list-disc pl-6 space-y-2">
-
-                <li>Voorkomt onnodige kosten of verkeerde maatregelen.</li>
-
-                <li>Geeft duidelijkheid aan eigenaren, kopers en financiers.</li>
-
-                <li>Biedt een onderbouwd handelingsperspectief voor herstel of monitoring.</li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
-        </article>
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-            </div>
-          </div>
-        </li>
-            <li class="glide__slide">
-              <div class="space-y-6">
-<article id="artikel-15" class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16">
-          <header class="mb-8">
-            <h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">FunderMaps - Handleiding: Beslisschema onderzoek funderingsproblematiek</h2>
-            <p class="mt-4 text-lg text-blue-900/80">Dit beslisschema laat zien welke stappen volgen na ontvangst van een FunderMaps Funderingsrisicorapport. Het rapport geeft op basis van beschikbare data een eerste inschatting van het risico op funderingsproblemen.</p>
-            <p class="mt-4 text-lg text-blue-900/80">Afhankelijk van de betrouwbaarheid van de gegevens en de ernst van het risico volgen vervolgacties zoals monitoring, een QuickScan, volledig funderingsonderzoek of directe stabilisatie- en herstelmaatregelen.</p>
-          </header>
-          <div class="overflow-hidden rounded-3xl border border-blue-100 bg-white/70 shadow-sm">
-            <img src="./resources/images/beslisschema.webp" alt="Beslisschema voor funderingsonderzoek" class="w-full h-auto" loading="lazy" />
-          </div>
-          <div class="space-y-8 text-blue-900/80">
-            <div class="space-y-3">
-              <h3 class="text-xl font-semibold text-blue-900">Belangrijk om te begrijpen</h3>
-              <ul class="list-disc pl-6 space-y-2">
-                <li>FunderMaps is een dynamische database; gegevens worden continu uitgebreid, verbeterd en gevalideerd.</li>
-                <li>Elke risicoclassificatie krijgt een betrouwbaarheidslabel dat aangeeft hoe hard de informatie is.
-                  <ul class="mt-2 list-disc pl-6 space-y-1 text-sm text-blue-900/70">
-                    <li><span class="font-semibold text-blue-900">Model:</span> analyse op basis van data uit de ruimere omgeving en modelaannames.</li>
-                    <li><span class="font-semibold text-blue-900">Afgeleid:</span> analyse op basis van gegevens uit de directe omgeving zoals nabijgelegen panden of satellietmetingen.</li>
-                    <li><span class="font-semibold text-blue-900">Vastgesteld:</span> onderbouwd met onderzoeksrapporten of andere bewijsdocumenten voor het betreffende pand.</li>
-                  </ul>
-                </li>
-
-
-
-                <li>De beslissingen in het schema combineren risiconiveau en betrouwbaarheid, zodat vervolgacties proportioneel zijn.</li>
-
-
-
-              </ul>
-
-
-
-              <p>Het beslisschema start bij het FunderMaps Funderingsrisicorapport en leidt via beslismomenten naar monitoring, QuickScan, volledig onderzoek of directe maatregelen.</p>
-
-
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-
-
-              <h3 class="text-xl font-semibold text-blue-900">Funderingsrisicoanalyse (groen blok)</h3>
-
-
-
-              <p>FunderMaps combineert meerdere databronnen om de funderingsrisico's te bepalen:</p>
-
-
-
-              <ul class="list-disc pl-6 space-y-2">
-
-
-
-                <li>Archiefinformatie over funderingstypen, bouwjaar en herstelmaatregelen.</li>
-
-
-
-                <li>Onderzoeksrapporten met kwaliteitsbeoordelingen.</li>
-
-
-
-                <li>Satellietgegevens over actueel zakkingsgedrag.</li>
-
-
-
-                <li>Ondergrond- en grondwatergegevens uit landelijke voorzieningen.</li>
-
-
-
-              </ul>
-
-
-
-              <p>Op basis hiervan deelt het rapport panden in risicoklasse A t/m E:</p>
-
-
-
-              <ol class="list-decimal pl-6 space-y-3">
-
-
-
-                <li>
-
-                  <span class="font-semibold text-blue-900">Risico A &ndash; Geen risico.</span>
-
-                  <p class="mt-1">Het pand is hersteld, verkeert in goede staat of kent een betonpaalfundering.</p>
-
-                </li>
-
-
-
-                <li>
-
-                  <span class="font-semibold text-blue-900">Risico B &ndash; Laag risico.</span>
-
-                  <p class="mt-1">Geen directe vervolgstap nodig, maar het funderingstype vraagt alertheid voor de toekomst.</p>
-
-                </li>
-
-
-
-                <li>
-
-                  <span class="font-semibold text-blue-900">Risico C &ndash; Matig risico.</span>
-
-                  <p class="mt-1">Monitoring op afstand is gewenst; signalen of berekeningen wijzen op een licht verhoogd risico. Verkoop kan doorgaan zonder aanvullende onderzoeken.</p>
-
-                </li>
-
-
-
-                <li>
-
-                  <span class="font-semibold text-blue-900">Risico D &ndash; Hoog risico.</span>
-
-                  <p class="mt-1">Er zijn aanwijzingen voor funderingsproblemen, gebaseerd op metingen, signalen of modelberekeningen.</p>
-
-                </li>
-
-
-
-                <li>
-
-                  <span class="font-semibold text-blue-900">Risico E &ndash; Hoog risico.</span>
-
-                  <p class="mt-1">Er zijn duidelijke en vaak vastgestelde aanwijzingen voor schade of falen van de fundering.</p>
-
-                </li>
-
-
-
-              </ol>
-
-
-
-              <div class="rounded-2xl border-l-4 border-blue-200 bg-blue-50/70 px-5 py-4 text-blue-900">
-
-
-
-                <p class="font-semibold">Interpretatie van risicoklasse D en E</p>
-
-
-
-                <ul class="mt-2 list-disc pl-5 space-y-1">
-
-
-
-                  <li><span class="font-semibold">Vastgesteld of afgeleid:</span> vervolg met een QuickScan voor locatiebevestiging.</li>
-
-
-
-                  <li><span class="font-semibold">Alleen modelmatig:</span> eerst aanvullende validatie; de uitkomst is niet direct bruikbaar voor beleidsbesluiten.</li>
-
-
-
-                </ul>
-
-
-
-              </div>
-
-
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-
-
-              <h3 class="text-xl font-semibold text-blue-900">QuickScan (oranje blok)</h3>
-
-
-
-              <p>De QuickScan is een snelle methode om funderingsrisico's te beoordelen op basis van visuele en meetbare indicatoren zoals scheurvorming, scheefstand en verzakkingssnelheid. Het onderzoek vindt plaats vanaf de buitenzijde en vormt een addendum op de KCAF-richtlijn <em>Funderingen onder gebouwen</em>.</p>
-
-
-
-              <p>Omdat onderdelen van de QuickScan overeenkomen met het volledige onderzoek, kan eenvoudig worden opgeschaald als extra zekerheid nodig is.</p>
-
-
-
-              <div class="rounded-2xl border-l-4 border-orange-300 bg-orange-50/70 px-5 py-4 text-blue-900">
-
-
-
-                <p class="font-semibold">Mogelijke uitkomsten QuickScan</p>
-
-
-
-                <ul class="mt-2 list-disc pl-5 space-y-1">
-
-
-
-                  <li>Laag risico &rarr; Geen vervolgactie.</li>
-
-
-
-                  <li>Midden risico &rarr; Monitoring en controle op locatie.</li>
-
-
-
-                  <li>Hoog risico &rarr; Aanvullend funderingsonderzoek noodzakelijk.</li>
-
-
-
-                </ul>
-
-
-
-              </div>
-
-
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-
-
-              <h3 class="text-xl font-semibold text-blue-900">Belang van terugkoppeling</h3>
-
-
-
-              <p>QuickScan-resultaten vormen samen met het funderingsrisicorapport de basis voor beleid en transacties. Het is cruciaal dat elke QuickScan wordt teruggekoppeld in FunderMaps.</p>
-
-
-
-              <ul class="list-disc pl-6 space-y-2">
-
-
-
-                <li>De opdrachtgever van de QuickScan is verantwoordelijk voor het uploaden van de resultaten.</li>
-
-
-
-                <li>Een actuele database zorgt voor betrouwbare validatie in latere processen.</li>
-
-
-
-              </ul>
-
-
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-
-
-              <h3 class="text-xl font-semibold text-blue-900">Uploadproces</h3>
-
-
-
-              <ol class="list-decimal pl-6 space-y-2">
-
-
-
-                <li>QuickScans kunnen direct in FunderMaps worden geupload.</li>
-
-
-
-                <li>Na upload volgt validatie door FunderMaps of KCAF.</li>
-
-
-
-                <li>Geverifieerde resultaten worden ontsloten voor vervolgbesluitvorming.</li>
-
-
-
-              </ol>
-
-
-
-              <a class="button button-outline-primary" href="https://app.fundermaps.com" rel="noopener">QuickScan aanvragen of resultaten uploaden</a>
-
-
-
-              <p class="text-sm text-blue-900/70">Onderzoeksbureaus die volgens de KCAF-richtlijnen werken, staan in de erkenningsregeling van het Kennis Centrum Aanpak Funderingsproblematiek (KCAF).</p>
-
-
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-
-
-              <h3 class="text-xl font-semibold text-blue-900">Funderingsonderzoek (blauw blok)</h3>
-
-
-
-              <p>Blijft het risico na de QuickScan hoog of is er onvoldoende duidelijkheid, dan volgt een volledig funderingsonderzoek. Historische onderzoeken kunnen onderdeel van de analyse zijn, waardoor soms geen aanvullend veldwerk nodig is.</p>
-
-
-
-              <p>Een volledig onderzoek omvat onder meer:</p>
-
-
-
-              <ul class="list-disc pl-6 space-y-2">
-
-
-
-                <li>Scheefstands- en zakkingsmetingen.</li>
-
-
-
-                <li>Archiefonderzoek en analyse van bouwtekeningen.</li>
-
-
-
-                <li>Inspectie van funderingspalen en vloeren, inclusief graafwerk en monstername.</li>
-
-
-
-                <li>Bodem- en grondwateronderzoek waar relevant.</li>
-
-
-
-                <li>Rapportage met handelingsperspectief, herstelopties en kostenraming.</li>
-
-
-
-              </ul>
-
-
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-
-
-              <h3 class="text-xl font-semibold text-blue-900">Resultaten funderingsonderzoek (verkeerslichtmodel)</h3>
-
-
-
-              <ul class="list-disc pl-6 space-y-2">
-
-
-
-                <li><strong>Groen</strong> &ndash; Geen vervolgactie nodig.</li>
-
-
-
-                <li><strong>Oranje</strong> &ndash; Monitoring en periodieke inspectie.</li>
-
-
-
-                <li><strong>Rood</strong> &ndash; Herstelmaatregelen en concreet handelingsperspectief noodzakelijk.</li>
-
-
-
-              </ul>
-
-
-
-              <p>Ook deze resultaten moeten in FunderMaps worden teruggekoppeld om de betrouwbaarheid van de database te vergroten.</p>
-
-
-
-            </div>
-
-
-
-            <div class="space-y-3">
-
-
-
-              <h3 class="text-xl font-semibold text-blue-900">Kernboodschap voor gebruikers</h3>
-
-
-
-              <ul class="list-disc pl-6 space-y-2">
-
-
-
-                <li>Gebruik het schema om te bepalen wanneer monitoring volstaat en wanneer extra onderzoek nodig is.</li>
-
-
-
-                <li>Beslissingen zijn gebaseerd op een combinatie van risicohoogte en databetrouwbaarheid.</li>
-
-
-
-                <li>Het proces is iteratief: nieuwe informatie verhoogt de betrouwbaarheid en kan een vervolgactie aanpassen.</li>
-
-
-
-              </ul>
-
-
-
-              <div class="rounded-2xl border-l-4 border-yellow-400 bg-yellow-50 px-5 py-4 text-blue-900">
-
-
-
-                <p class="font-semibold">Disclaimer</p>
-
-
-
-                <p class="mt-1">Het funderingsrisicorapport en dit beslisschema bieden richting, maar vormen geen definitief oordeel. Lokale professionals mogen de uitkomsten bijsturen op basis van specifieke kennis, net zoals taxateurs informatie uit FunderMaps wegen binnen het NWWI-proces. FunderMaps aanvaardt geen aansprakelijkheid voor besluiten die uitsluitend op basis van het rapport worden genomen.</p>
-
-
-
-              </div>
-
-
-
-            </div>
-
-
-
-          </div>
-
-
-
-        </article>
-
-            <div class="mt-6 flex items-center justify-between gap-4" data-glide-el="controls">
-
-              <button class="button button-outline-primary" data-glide-dir="<" aria-label="Vorige artikel">Vorige</button>
-
-              <button class="button button-outline-primary" data-glide-dir=">" aria-label="Volgende artikel">Volgende</button>
-
-            </div>
-
-          </div>
-
-        </li>
-
-          </ul>
-        </div>
-      </div>
-    </section>
+<section id="hero" class="section | wrapper py-16 lg:py-24">
+  <div class="max-w-3xl space-y-4">
+    <p class="uppercase tracking-widest text-sm font-semibold text-blue-400 mb-4">Mobiel concept</p>
+    <h1 class="text-4xl lg:text-5xl font-extrabold text-blue-900 leading-tight">Prototype voor artikelen</h1>
+    <p class="text-lg text-blue-900/80">Bekijk hieronder een alternatieve mobiele ervaring voor het artikelenoverzicht. Gebruik deze pagina om de interactie te testen en te vergelijken.</p>
   </div>
+</section>
 
-  </main>
+    <section class="section | wrapper pb-16 space-y-10">
+      <div class="flex gap-3 overflow-x-auto pb-2">
+        <button type="button" class="filter-button" data-filter="all">Alle thema's</button>
+        <button type="button" class="filter-button" data-filter="Bewoner">Bewoner</button>
+        <button type="button" class="filter-button" data-filter="Gemeente">Gemeente</button>
+        <button type="button" class="filter-button" data-filter="Handleiding">Handleiding</button>
+        <button type="button" class="filter-button" data-filter="Herstel">Herstel</button>
+        <button type="button" class="filter-button" data-filter="Historie">Historie</button>
+        <button type="button" class="filter-button" data-filter="Juridisch">Juridisch</button>
+        <button type="button" class="filter-button" data-filter="Onderzoek">Onderzoek</button>
+        <button type="button" class="filter-button" data-filter="Overzicht">Overzicht</button>
+        <button type="button" class="filter-button" data-filter="Strategie">Strategie</button>
+        <button type="button" class="filter-button" data-filter="Techniek">Techniek</button>
 
-  <footer class="section section--dark | pt-12 pb-14">
-    <div class="wrapper flex flex-col items-center lg:grid lg:grid-cols-12">
-      <div class="lg:col-span-4">
-        <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
       </div>
+      <div class="space-y-6">
 
-      <div class="lg:col-span-4 lg:order-2 flex justify-end">
-        <a class="button button-outline-primary my-8 lg:my-0" href="#toLinkedIn">
-          <div class="button-logo">
-            <include src="./resources/svg/linkedin-logo.svg"></include>
+      <details class="article-card" data-categories="Strategie Gemeente">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 1</span>
+              <span class="block text-lg font-bold text-blue-900">11 redenen waarom gemeenten funderingsmeldingen zouden moeten registreren met FunderMaps</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Funderingsproblemen nemen toe in Nederland, vooral in gebieden met slappe bodem en bodemdaling. Gemeenten krijgen steeds vaker vragen van bewoners over scheuren, verzakkingen en funderingsschade. Door deze mâ€¦</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Strategie</span>
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Gemeente</span>
+            </div>
           </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-1">
+<header class="mb-10">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">11 redenen waarom gemeenten funderingsmeldingen zouden moeten registreren met FunderMaps</h2>
+<p class="mt-4 text-lg text-blue-900/80">Funderingsproblemen nemen toe in Nederland, vooral in gebieden met slappe bodem en bodemdaling. Gemeenten krijgen steeds vaker vragen van bewoners over scheuren, verzakkingen en funderingsschade. Door deze meldingen gestructureerd en samen met het KCAF af te handelen, ontstaat niet alleen beter inzicht op wijkniveau, maar wordt ook landelijke kennis benut. Dit artikel beschrijft elf praktische redenen waarom het bundelen van krachten bij funderingsmeldingen gemeenten helpt om efficienter te werken, bewoners beter te informeren en beleidsmatig sterker te staan.</p>
+</header>
+<ol class="space-y-6">
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">1. Gebruik maken van bestaande landelijke database (FunderMaps)</h3>
+<p class="mt-2 text-blue-900/80">Gemeenten hoeven niet zelf het wiel uit te vinden. De FunderMaps-database bevat reeds archiefdata van panden, funderingstypen, satellietmetingen (pandzakkingssnelheden), onderzoeksresultaten en eerdere meldingen van bewoners. Daarmee kan iedere nieuwe melding sneller en beter worden geduid.</p>
+</li>
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">2. Meldingssoftware in eigen gemeentelijke huisstijl</h3>
+<p class="mt-2 text-blue-900/80">Via een op maat en in huisstijl van de gemeente gemaakt meldingsformulier kunnen bewoners eenvoudig melding maken. De data wordt opgeslagen, gevisualiseerd op kaart en vertaald naar topkaarten op wijk- en buurtniveau.</p>
+</li>
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">3. Meldingen inzichtelijk in een centraal beheersportaal</h3>
+<p class="mt-2 text-blue-900/80">Alle meldingen, inclusief eventueel bijgevoegde foto's of documenten, worden opgeslagen in een gemeentelijk toegankelijke adminomgeving. Hier kan de opvolging worden geregistreerd en bewaakt.</p>
+</li>
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">4. Flexibele afhandeling: door gemeente of KCAF-team</h3>
+<p class="mt-2 text-blue-900/80">Meldingen kunnen worden beantwoord door gemeentelijke medewerkers of - bij beperkte capaciteit - door het team van KCAF. In dat geval legt KCAF periodiek verantwoording af aan de gemeente.</p>
+</li>
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">5. Inhoudelijke beantwoording ondersteund door data en analyses</h3>
+<p class="mt-2 text-blue-900/80">Dankzij de koppeling met FunderMaps kan elke melding onderbouwd worden met risicoanalyses, funderingstypen, kaartmateriaal en historische gegevens. Dit zorgt voor deskundige en consistente terugkoppeling.</p>
+</li>
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">6. Geen versnippering, maar aansluiting bij landelijke infrastructuur</h3>
+<p class="mt-2 text-blue-900/80">Een gestandaardiseerde aanpak voorkomt dat elke gemeente een eigen meldstructuur ontwikkelt. Dit bevordert landelijke beleidsvorming en maakt gegevens uit verschillende regios vergelijkbaar.</p>
+</li>
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">7. Betrouwbare en toegankelijke communicatie richting bewoners</h3>
+<p class="mt-2 text-blue-900/80">De herkenbare lokale ingang (loket) in combinatie met inhoudelijke ondersteuning door KCAF zorgt voor vertrouwen bij bewoners en deskundige opvolging.</p>
+</li>
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">8. Geen aparte ICT-ontwikkeling of beheer nodig</h3>
+<p class="mt-2 text-blue-900/80">De meldstructuur van KCAF is volledig operationeel en veilig. Gemeenten hoeven geen eigen meldingssystemen te ontwikkelen, beheren of updaten.</p>
+</li>
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">9. Schaalvoordeel en kennisdeling via het KCAF-netwerk</h3>
+<p class="mt-2 text-blue-900/80">Gemeenten profiteren van ervaringen uit andere regios, toegang tot tools, analyses en innovaties (zoals AI en koppelingen met de taxatieketen) die anders kostbaar of onbereikbaar zouden zijn.</p>
+</li>
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">10. Ondersteuning dankzij landelijke subsidie voor het Nationaal Funderingsloket</h3>
+<p class="mt-2 text-blue-900/80">KCAF ontvangt landelijke subsidie voor de uitvoering van het Nationaal Funderingsloket. In bepaalde gevallen maakt dit het mogelijk meldingen uitgebreider op te pakken, bijvoorbeeld door het organiseren van een huisbezoek.</p>
+</li>
+<li class="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+<h3 class="text-xl font-semibold text-blue-900">11. QuickScan-fonds voor schrijnende gevallen</h3>
+<p class="mt-2 text-blue-900/80">FunderMaps, KCAF en enkele erkende funderingsonderzoekspartijen hebben samen een QuickScan-fonds opgezet. Hiermee kan in uitzonderlijke en schrijnende situaties een funderingsonderzoek (QuickScan) voor particuliere pandeigenaren kosteloos worden uitgevoerd.</p>
+</li>
+</ol>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
 
-          <span class="sr-only">LinkedIn link</span>
-        </a>
+
+      <details class="article-card" data-categories="Overzicht Bewoner">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 2</span>
+              <span class="block text-lg font-bold text-blue-900">Funderingsproblemen in Nederland</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Funderingsproblemen komen steeds vaker voor in Nederland. Voor huiseigenaren kunnen de gevolgen groot zijn: van scheuren in muren tot waardedaling van de woning. Dit overzicht bundelt de belangrijkste inzichâ€¦</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Overzicht</span>
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Bewoner</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-2">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Funderingsproblemen in Nederland</h2>
+<p class="mt-4 text-lg text-blue-900/80">Funderingsproblemen komen steeds vaker voor in Nederland. Voor huiseigenaren kunnen de gevolgen groot zijn: van scheuren in muren tot waardedaling van de woning. Dit overzicht bundelt de belangrijkste inzichten van het Kennis Centrum Aanpak Funderingsproblematiek (KCAF) en vertaalt ze naar duidelijke stappen.</p>
+</header>
+<div class="overflow-hidden rounded-3xl border border-blue-100 bg-white/70 shadow-sm">
+<img alt="Beslisschema voor funderingsonderzoek" class="w-full h-auto" loading="lazy" src="./resources/images/beslisschema.webp">
+</img></div>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Wat is een fundering?</h3>
+<p>De fundering vangt het gewicht van een gebouw op en brengt dit gelijkmatig over op de ondergrond. Een goede fundering voorkomt verzakkingen en scheefstand.</p>
+<p>Meer informatie staat op de <a class="text-blue-700 underline hover:text-yellow-500" href="https://www.kcaf.nl" rel="noopener">FAQ-pagina van het KCAF</a>.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Wat zijn funderingsproblemen en wat zijn de oorzaken?</h3>
+<p>Funderingsproblemen ontstaan wanneer de fundering haar dragende functie niet meer goed vervult. Dit kan tot schade aan het gebouw leiden. Veelvoorkomende oorzaken zijn:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Aantasting van houten funderingspalen door schimmels of bacterien bij lage of sterk wisselende grondwaterstanden</li>
+<li>Negatieve kleef door ophoging of verlaging van het maaiveld</li>
+<li>Bodemdaling of langdurige droogte</li>
+<li>Zettingsverschillen of constructiefouten</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Hoe zijn funderingsproblemen te herkennen?</h3>
+<p>Let op signalen zoals:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Scheuren in muren (vooral schuin of trapsgewijs)</li>
+<li>Klemmende ramen en deuren</li>
+<li>Scheve vloeren of verzakkingen</li>
+<li>Krakende geluiden of scheurend metselwerk</li>
+</ul>
+<p>Zie het <a class="text-blue-700 underline hover:text-yellow-500" href="https://www.kcaf.nl/stappenplan" rel="noopener">stappenplan bij vermoedens van funderingsproblemen</a> voor een volledig overzicht.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Wat zijn de gevolgen van funderingsproblemen?</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li><strong>Financiele impact:</strong> een woning met funderingsproblemen kan tot 25% in waarde dalen.</li>
+<li><strong>Structurele schade:</strong> funderingsproblemen kunnen leiden tot ernstige constructieve schade.</li>
+<li><strong>Veiligheidsrisico's:</strong> in bepaalde situaties kunnen bewoners onveilige situaties ervaren.</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h3 class="text-xl font-semibold text-blue-900">Wat te doen bij (vermoedelijke) funderingsproblemen?</h3>
+<ol class="list-decimal pl-6 space-y-3">
+<li>
+<span class="font-semibold text-blue-900">Controleer het funderingsrisico</span>
+<p class="mt-1">Gebruik bijvoorbeeld de FunderMaps Viewer of vraag een funderingsrisicorapport op via het KCAF.</p>
+</li>
+<li>
+<span class="font-semibold text-blue-900">Laat een funderingsonderzoek uitvoeren</span>
+<p class="mt-1">Het KCAF biedt een beslisschema dat helpt bepalen welk type onderzoek geschikt is.</p>
+</li>
+<li>
+<span class="font-semibold text-blue-900">Vraag een QuickScan aan</span>
+<p class="mt-1">Voor een eerste inschatting is de QuickScan funderingsrisico beschikbaar.</p>
+</li>
+<li>
+<span class="font-semibold text-blue-900">Onderzoek herstelmaatregelen</span>
+<p class="mt-1">Soms volstaat funderingsversterking; in andere gevallen is vervanging nodig. De kosten liggen vaak tussen circa â‚¬30.000 en â‚¬80.000 per woning.</p>
+</li>
+<li>
+<span class="font-semibold text-blue-900">Regel financiering</span>
+<p class="mt-1">Informeer naar gemeentelijke leningen, mogelijkheden via de hypotheekverstrekker en landelijke regelingen zoals het Duurzaam Funderingsherstelfonds.</p>
+</li>
+</ol>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Wat als herstel niet direct te betalen is?</h3>
+<p>Tijdig handelen voorkomt verdere schade en hogere kosten. Mogelijke opties:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Informeer bij de gemeente naar fondsen of leningen.</li>
+<li>Neem contact op met de hypotheekverstrekker voor maatwerkoplossingen.</li>
+<li>Spreek met het KCAF of Nationaal Funderingsloket over tijdelijke maatregelen.</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Juridische aspecten bij aan- of verkoop</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>De verkoper heeft een <strong>meldplicht</strong>.</li>
+<li>De koper heeft een <strong>onderzoeksplicht</strong>.</li>
+</ul>
+<p>Schakel bij twijfel een juridisch of bouwkundig expert in.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Waar is hulp beschikbaar?</h3>
+<ul class="list-disc pl-6 space-y-3">
+<li><strong>KCAF</strong> â€” informatie, advies en rapportages. Zie <a class="text-blue-700 underline hover:text-yellow-500" href="https://www.kcaf.nl" rel="noopener">www.kcaf.nl</a>.</li>
+<li><strong>Nationaal Funderingsloket</strong> â€” gratis en onafhankelijk advies en meldpunt.</li>
+<li><strong>Gemeente</strong> â€” inzicht in lokale regelingen, subsidies en leningen.</li>
+</ul>
+</div>
+<div class="rounded-2xl border-l-4 border-yellow-400 bg-yellow-50 px-5 py-4 text-blue-900">
+<p class="font-semibold">Let op</p>
+<p class="mt-1">Signalen van funderingsproblemen verdienen snelle aandacht. Vroegtijdig ingrijpen beperkt schade en kosten.</p>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Techniek">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 3</span>
+              <span class="block text-lg font-bold text-blue-900">Bacteriele aantasting in houten paalfunderingen: een onderschat probleem</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Bacteriele aantasting, ook wel palenpest genoemd, vormt een subtiele maar ingrijpende bedreiging voor houten paalfunderingen. Dit artikel zet de unieke eigenschappen, regionale verschillen en praktische aandâ€¦</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Techniek</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-3">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Bacteriele aantasting in houten paalfunderingen: een onderschat probleem</h2>
+<p class="mt-4 text-lg text-blue-900/80">Bacteriele aantasting, ook wel palenpest genoemd, vormt een subtiele maar ingrijpende bedreiging voor houten paalfunderingen. Dit artikel zet de unieke eigenschappen, regionale verschillen en praktische aandachtspunten uiteen.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Unieke eigenschappen van bacteriele aantasting</h3>
+<p>In tegenstelling tot schimmels die zuurstof nodig hebben, kunnen sommige bacterien hout ook in zuurstofloze omstandigheden afbreken. Daardoor blijft aantasting vaak onopgemerkt, zelfs onder water.</p>
+<p>Vooral grenenhout (Pinus sylvestris) is gevoelig. Een consortium van circa tien gespecialiseerde bacterien werkt samen en blijft actief in anaerobe omstandigheden.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Grenenhout versus vurenhout</h3>
+<p>De open celstructuur van grenenhout laat grondwater en bacterien gemakkelijk binnendringen, waardoor aantasting zich snel verspreidt. Vurenhout (Picea abies) heeft een dichtere celstructuur en is daardoor minder kwetsbaar.</p>
+<p>Grenenhout kent bovendien beperkingen in paallengte. De kortere inzetbaarheid is een nadeel in gebieden met diepere draagkrachtige lagen.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Regionale verschillen en historische context</h3>
+<p>In regio's met een relatief hoge zandlaag, zoals de Zaanstreek, Amsterdam en Gouda, is traditioneel veel grenenhout gebruikt. Hierdoor komt bacteriele aantasting daar vaker voor.</p>
+<p>In steden als Rotterdam, waar de zandlaag dieper ligt, werd vooral vurenhout toegepast. Dit verklaart regionale verschillen in de huidige risicobeoordeling.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Overgang naar betonnen heipalen</h3>
+<p>Tot in de jaren zestig waren grenenhouten palen gangbaar. Door toegenomen kennis over bacteriele risico's en beperkingen in paallengte nam het gebruik af. Vanaf circa 1970 werden betonnen heipalen breder toegepast, mede gestuurd door regelgeving en draagkrachtberekeningen.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Wat je mee moet nemen</h3>
+<p>Bacteriele aantasting vormt nog steeds een substantieel risico voor gebouwen met houten funderingen van voor de jaren zeventig. Houd bij beoordelingen rekening met regionale verschillen en historische bouwwijzen.</p>
+<p>Een goed begrip van deze factoren helpt vastgoedprofessionals en funderingsspecialisten om onderhoud, monitoring en herstel gerichter in te zetten.</p>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Techniek">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 4</span>
+              <span class="block text-lg font-bold text-blue-900">De funderingsproblematiek: droogstand van houten palen</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Houten paalfunderingen in klei- en veengebieden kampen met een hardnekkig risico: paalrot door droogstand. Dit artikel beschrijft het mechanisme, de technische uitdagingen en hoe monitoring en herstel een roâ€¦</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Techniek</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-4">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">De funderingsproblematiek: droogstand van houten palen</h2>
+<p class="mt-4 text-lg text-blue-900/80">Houten paalfunderingen in klei- en veengebieden kampen met een hardnekkig risico: paalrot door droogstand. Dit artikel beschrijft het mechanisme, de technische uitdagingen en hoe monitoring en herstel een rol spelen.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Paalrot: een tikkende tijdbom</h3>
+<p>Paalrot ontstaat wanneer schimmels toegang krijgen tot zuurstof en het hout van de paal als voedingsbron gebruiken. Dalen grondwaterstanden, verdampende bomen, lekkende riolen of bemalingen kunnen de paal tijdelijk of langdurig droogzetten.</p>
+<p>Ook opeenvolgende perioden van droogstand zijn voldoende om aantasting te starten. Hierdoor verliest de paal draagkracht en kan de fundering uiteindelijk bezwijken.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Technische uitdagingen en mogelijke oplossingen</h3>
+<p>Het volledig onder de grondwaterspiegel houden van palen is niet altijd haalbaar, zeker niet in gebieden met fluctuerende waterstanden. De gemiddelde tijd tussen aantasting en falen varieert: ongeveer drie jaar voor grenenspint, tien jaar voor vurenhout en vijftien jaar voor grenen kernhout.</p>
+<p>Het aantal gevoelige panden neemt niet snel af, omdat funderingsherstel en sloop-nieuwbouw slechts beperkt worden toegepast. Verwacht wordt dat de problematiek de komende decennia zichtbaar blijft.</p>
+<p>Er zijn twee hoofdstrategien: acuut funderingsherstel of monitoring om de resterende levensduur te verlengen. Monitoring biedt uitstel maar geen definitieve oplossing.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Wat je mee moet nemen</h3>
+<p>Niet elk pand met houten palen ontwikkelt direct schade, maar de risico's zijn aanwezig. Voortdurende monitoring en proactief beheer helpen de veiligheid van bewoners te borgen.</p>
+<p>Nieuwe inzichten en technische innovaties zijn nodig om effectievere oplossingen te vinden. Samenwerking tussen gemeenten, eigenaren en kennisinstellingen blijft cruciaal.</p>
+<p>Het FunderMaps platform biedt actuele pandgegevens, risico-inschattingen en analysetools. Zo vertaalt u complexe data naar concrete acties en voorkomt u onnodige kosten.</p>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Historie">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 5</span>
+              <span class="block text-lg font-bold text-blue-900">De oorsprong van de term 'Fundering op staal'</span>
+              <span class="mt-1 block text-sm text-blue-900/70">De term beschrijft funderingen die direct op de ondergrond rusten, maar roept buiten de bouwsector geregeld misverstanden op. Dit artikel verkent de historische context, taalontwikkelingen en praktijktoepassâ€¦</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Historie</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-5">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">De oorsprong van de term 'Fundering op staal'</h2>
+<p class="mt-4 text-lg text-blue-900/80">De term beschrijft funderingen die direct op de ondergrond rusten, maar roept buiten de bouwsector geregeld misverstanden op. Dit artikel verkent de historische context, taalontwikkelingen en praktijktoepassingen rond funderen op staal.</p>
+<p class="mt-2 text-sm font-semibold text-blue-900">Een verkenning van historische en moderne interpretaties en de toepassing van 'koeienhuiden'.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Funderen op staal in de praktijk</h3>
+<p>Funderen op staal betekent dat een constructie zonder heipalen op de draagkracht van de bovenste grondlagen steunt, vaak na grondverbetering. In zandige gebieden is deze methode nog steeds gangbaar; in zachte klei- en veengebieden bleken de veronderstelde draagkracht en beperkte zettingen achteraf vaak te optimistisch.</p>
+</div>
+<figure class="rounded-3xl border border-blue-100 bg-blue-50/50 p-4">
+<img alt="Historische uitleg van fundering op staal" class="w-full rounded-2xl object-cover" loading="lazy" src="https://github.com/user-attachments/assets/843fe1a0-e239-46ed-be92-275fc1b5038c"/>
+<figcaption class="mt-2 text-sm text-blue-900/60">Bron: FunderMaps</figcaption>
+</figure>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Breed scala aan uitvoeringstechnieken</h3>
+<p>Historisch onderzoek toont aan dat onder de noemer 'op staal' uiteenlopende technieken vallen: bakstenen of betonnen poeren, houten vaten, verticaal geplaatste takken en houten ondervloeren. De diversiteit illustreert dat het begrip vooral een verzamelnaam is voor ondiepe funderingen.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Waarom het geen stalen constructie is</h3>
+<p>Ondiepe funderingen worden niet van staal gemaakt. Het materiaal is gevoelig voor corrosie, kostbaar en biedt op lange termijn onvoldoende duurzaamheid. Ook bij modern funderingsherstel wordt staal slechts tijdelijk ingezet; beton draagt de constructie.</p>
+</div>
+<figure class="rounded-3xl border border-blue-100 bg-blue-50/50 p-4">
+<img alt="Voorbeeld van strokenfundering op staal" class="w-full rounded-2xl object-cover" loading="lazy" src="https://github.com/user-attachments/assets/7ba7a30c-5029-4070-968e-de4e5e740c25"/>
+<figcaption class="mt-2 text-sm text-blue-900/60">Bron: FunderMaps</figcaption>
+</figure>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Taalontwikkeling en mogelijke verbasteringen</h3>
+<p>De term 'op staal' is vermoedelijk een verbastering van woorden zoals 'stal', 'estal' of 'opstal' die 'vaste plaats' betekenen. Archeologische bronnen beschrijven bovendien 'scheepshuiden' of houten planken als drukverdelende laag, wat later mogelijk is verward met dierenhuiden.</p>
+<p>Oud-Nederlandse termen als 'huyen' of 'huien' verwijzen naar korte paaltjes of takken die de bodem verdichtten. Samen met taalontwikkelingen verklaart dit hoe 'op staal' is uitgegroeid tot de huidige benaming.</p>
+</div>
+<figure class="rounded-3xl border border-blue-100 bg-blue-50/50 p-4">
+<img alt="Illustratie van scheepshuiden als funderingsbasis" class="w-full rounded-2xl object-cover" loading="lazy" src="https://github.com/user-attachments/assets/545aedfa-ddcd-4c68-a31d-93c126c73dbc"/>
+<figcaption class="mt-2 text-sm text-blue-900/60">Bron: Geschiedenis van Amsterdam tot 1578</figcaption>
+</figure>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Van 'op staal' naar 'ondiepe fundering'</h3>
+<p>In de moderne praktijk sluit de term 'ondiepe fundering' beter aan op internationale terminologie en voorkomt hij verwarring met stalen constructies. Toch blijft kennis van de historische context nuttig om oude dossiers of lokale terminologie correct te duiden.</p>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Gemeente Strategie">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 6</span>
+              <span class="block text-lg font-bold text-blue-900">De verantwoordelijkheid van gemeenten bij funderingsproblematiek</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Grondwaterbeheer en bebouwing zijn onlosmakelijk verbonden. Gemeenten spelen een sleutelrol bij het voorkomen van funderingsschade doordat zij verantwoordelijk zijn voor de openbare ruimte, vergunningverleniâ€¦</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Gemeente</span>
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Strategie</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-6">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">De verantwoordelijkheid van gemeenten bij funderingsproblematiek</h2>
+<p class="mt-4 text-lg text-blue-900/80">Grondwaterbeheer en bebouwing zijn onlosmakelijk verbonden. Gemeenten spelen een sleutelrol bij het voorkomen van funderingsschade doordat zij verantwoordelijk zijn voor de openbare ruimte, vergunningverlening en beleidskaders.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Waarom gemeenten aan zet zijn</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>Wegen, riolering en ophogingen in de openbare ruimte beinvloeden grondwaterstanden en bodemdaling.</li>
+<li>Gemeenten sturen via ruimtelijke plannen, vergunningen en onderhoudsnormen het gebruik van de ondergrond.</li>
+<li>Bewoners melden schade vaak bij de gemeente wanneer effecten zichtbaar worden in straat of gevel.</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Instrumenten voor regie</h3>
+<p>Met meetnetten voor grondwater, data-analyse (zoals FunderMaps) en meldingsportalen kan een gemeente hotspots snel lokaliseren. Door meldingen te koppelen aan beleid, zoals gemeentelijke rioleringsplannen of klimaatadaptatiestrategien, ontstaat een integrale aanpak.</p>
+<p>Samenwerking met het KCAF en erkende onderzoeksbureaus borgt dat vervolgonderzoek volgens landelijke richtlijnen wordt uitgevoerd.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Van signalering naar handelen</h3>
+<p>Een duidelijke procesafspraak versnelt de reactie op meldingen: registratie, eerste beoordeling (QuickScan), prioritering door een multidisciplinair team en communicatie naar bewoners. Zo blijven verwachtingen realistisch en kan herstel tijdig worden voorbereid.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Communicatie als sleutelfactor</h3>
+<p>Transparante informatie over risico's, rollen en beschikbare maatregelen voorkomt onnodige onrust. Steeds meer gemeenten richten daarom een funderingsloket in met digitale kaarten en standaardantwoorden voor bewoners en professionals.</p>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Onderzoek">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 7</span>
+              <span class="block text-lg font-bold text-blue-900">De wereld achter het houtmonsteronderzoek</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Bij houten palen vormt laboratoriumonderzoek de sleutel tot een objectieve beoordeling. Dit artikel beschrijft de werkwijze, analysetechnieken en interpretatie van resultaten.</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Onderzoek</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-7">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">De wereld achter het houtmonsteronderzoek</h2>
+<p class="mt-4 text-lg text-blue-900/80">Bij houten palen vormt laboratoriumonderzoek de sleutel tot een objectieve beoordeling. Dit artikel beschrijft de werkwijze, analysetechnieken en interpretatie van resultaten.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Monstername en laboratoriumonderzoek</h3>
+<p>Met een aanwasboor wordt een cilindervormig monster uit de paal gehaald en direct vochtig bewaard. In het laboratorium volgt lichtmicroscopisch onderzoek naar structuur en kwaliteit.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Inzicht in houtsoort en aantasting</h3>
+<p>Het onderzoek bepaalt de houtsoort, de mate van degradatie en de dikte van de zachte schil. Ook de excentriciteit van het paalhart en de korteduurdruksterkte worden vastgesteld voor een volledig beeld van de draagkracht.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Rekenkundige vertaling</h3>
+<p>De resterende dragende diameter vormt de basis voor een beoordeling volgens Eurocode-combinaties. Aandacht gaat uit naar kritieke zones zoals de paalkop en het omslagpunt waar negatieve kleef kan overgaan in positieve kleef.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Vooronderzoek met SPECHT</h3>
+<p>Voordat monsters worden genomen kan de SPECHT-methode de sterkte van het buitenste houtdeel inschatten. De meting, opgenomen in de KCAF-richtlijn, ondersteunt de afweging voor aanvullend onderzoek.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Aanvullende technieken en beperkingen</h3>
+<p>SPECHT-metingen reiken alleen tot het vrij gegraven deel van de paal. Daarom wordt soms een resistograaf ingezet die via boorweerstand inzicht geeft in diepere zones. Toch blijft een fysiek monster noodzakelijk om houtsoort en aantasting definitief vast te stellen.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Conclusie</h3>
+<p>Een combinatie van veldmetingen, microscopisch onderzoek en normatieve rekenregels levert het meest betrouwbare beeld van houten funderingen. Alleen zo kan de veiligheid en restlevensduur goed worden ingeschat.</p>
+</div>
+<figure class="rounded-3xl border border-blue-100 bg-blue-50/50 p-4">
+<img alt="Laboratoriumonderzoek van een houtmonster" class="w-full rounded-2xl object-cover" loading="lazy" src="https://github.com/user-attachments/assets/e4138170-1146-49f7-95b1-4ed69e08b8b6"/>
+<figcaption class="mt-2 text-sm text-blue-900/60">Bron: Nebest, 2025</figcaption>
+</figure>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Onderzoek">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 8</span>
+              <span class="block text-lg font-bold text-blue-900">Diepgaand inzicht in funderingsproblematiek: een werkwijze voor woningcorporaties en gemeentes</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Een stapsgewijze methode voor woningcorporaties en gemeenten om inzicht te krijgen in funderingsrisico's, gebaseerd op data-integratie, monitoring en praktische uitvoering.</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Onderzoek</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-8">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Diepgaand inzicht in funderingsproblematiek: een werkwijze voor woningcorporaties en gemeentes</h2>
+<p class="mt-4 text-lg text-blue-900/80">Een stapsgewijze methode voor woningcorporaties en gemeenten om inzicht te krijgen in funderingsrisico's, gebaseerd op data-integratie, monitoring en praktische uitvoering.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Stap 1 en 2: Gegevensverzameling en integratie</h3>
+<p>Combineer landelijke bronnen zoals Kadaster, BAG en CBS met lokale archieven en grondwatergegevens. Gebruik GIS-software om datasets te integreren, patronen te visualiseren en data op te schonen.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Stap 3: Monitoringsdata</h3>
+<p>Analyseer pand- en bodembeweging via InSAR en volg grondwaterstanden met peilmeters. Deze data legt verbanden tussen bodemdaling, droogstand en funderingsgedrag.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Stap 4 en 5: Geavanceerde analyse en hotspots</h3>
+<p>Machine-learningmodellen koppelen variabelen zoals bouwjaar, bodemtype en funderingsstatus. Geostatistiek helpt clusters van verhoogd risico te signaleren en hotspots te prioriteren.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Stap 6 en 7: Inspecties en handelingsstrategien</h3>
+<p>In hotspots volgen gevelscans, geofysische metingen en structurele evaluaties. Op basis van de bevindingen worden risico's gewogen en maatregelen bepaald, varierend van monitoring tot funderingsvernieuwing.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Stap 8: Continue monitoring</h3>
+<p>Werk datasets bij met nieuwe inspecties, actualiseer modellen en volg effecten van maatregelen. Zo blijft de aanpak toekomstbestendig.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Voordelen van de methode</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>Diepgaand inzicht op basis van historische, ruimtelijke en technische data.</li>
+<li>Evidence-based beslissingen en gerichte inzet van middelen.</li>
+<li>Monitoring zorgt voor tijdige signalering en bijsturing.</li>
+</ul>
+</div>
+<div class="rounded-3xl border border-blue-100 bg-blue-50/60 p-6 space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Werkmethodiek geintegreerd in FunderMaps</h3>
+<p>De methode is vertaald naar GevelScans: een funderingsonderzoek light volgens de KCAF-richtlijn. Het FunderMaps-platform automatiseert data-inwinning, dashboards, risicobeoordeling en planning en ondersteunt de afstemming tussen betrokken partijen.</p>
+<blockquote class="border-l-4 border-yellow-400 pl-4 text-blue-900/80">
+<p class="italic">"We waren op zoek naar een praktische aanpak om inzicht te krijgen in funderingsproblemen binnen ons vastgoed. De methode overtrof onze verwachtingen."</p>
+<p class="mt-2 text-sm text-blue-900/60">â€” Woningcorporatie uit Noord-Nederland</p>
+</blockquote>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Strategie Gemeente">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 9</span>
+              <span class="block text-lg font-bold text-blue-900">Het fenomeen van negatieve kleef: een cruciale uitdaging voor vastgoed in de Randstad</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Negatieve kleef belast houten paalfunderingen extra wanneer grondlagen sneller zakken dan de palen. Inzichten in oorzaken, effect en regionaliteit helpen om risico's te beperken.</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Strategie</span>
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Gemeente</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-9">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Het fenomeen van negatieve kleef: een cruciale uitdaging voor vastgoed in de Randstad</h2>
+<p class="mt-4 text-lg text-blue-900/80">Negatieve kleef belast houten paalfunderingen extra wanneer grondlagen sneller zakken dan de palen. Inzichten in oorzaken, effect en regionaliteit helpen om risico's te beperken.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Wat is negatieve kleef?</h3>
+<p>Wanneer klei aan palen blijft kleven en de bodem sneller zakt dan de paal, wordt de fundering omlaag getrokken. Het draagvermogen neemt af omdat het ontwerp hier vroeger nauwelijks rekening mee hield.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Oorzaken</h3>
+<p>Zakkende grondlagen ontstaan door ophogingen, bouwactiviteiten, variaties in grondwater of langdurige droogte. Verschillen tussen opgehoogde straten en lager gelegen tuinen vergroten de variatie in belasting, vooral bij hoekpanden.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Effect op funderingen</h3>
+<p>Verschillen in vervormingsgedrag tussen palen leiden tot scheuren, verzakkingen en schade. Factoren zoals houtkwaliteit, bacteriele aantasting, grondwaterfluctuaties en algemene bodemdaling bepalen de ernst.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Regionale gevoeligheid</h3>
+<p>Negatieve kleef treedt vooral op in slappe klei- en veengebieden zoals de Randstad. In zandgebieden zijn ondiepe funderingen gangbaar en speelt negatieve kleef praktisch niet, al blijven andere risico's mogelijk.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Conclusie</h3>
+<p>Inzicht in bodemsamenstelling, bouwgeschiedenis en grondwaterbeheer is cruciaal om negatieve kleef te beperken. Vastgoedprofessionals kunnen hiermee proactief maatregelen treffen en de waarde en levensduur van panden beschermen.</p>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Techniek">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 10</span>
+              <span class="block text-lg font-bold text-blue-900">Juridische afwegingen bij verkoop</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Hoe woningcorporaties woningen met funderingsrisico's juridisch verantwoord verkopen, met behulp van FunderMaps en aangepaste clausules.</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Techniek</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-10">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Juridische afwegingen bij verkoop</h2>
+<p class="mt-4 text-lg text-blue-900/80">Hoe woningcorporaties woningen met funderingsrisico's juridisch verantwoord verkopen, met behulp van FunderMaps en aangepaste clausules.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Risicoklassen als startpunt</h3>
+<p>FunderMaps classificeert risico's van A (laag) tot E (zeer hoog) op basis van geotechnische modellen en lokale omstandigheden. De classificatie bepaalt de vervolgstappen richting verkoop.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Juridische borging</h3>
+<p>Op basis van advies van onder meer mr. Wessel van Boetzelaer is een aangepaste koopovereenkomst ontwikkeld. De ouderdoms- en uitsluitingsclausule benoemt funderingsgebreken expliciet en legt onderzoeksplicht bij de koper.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Label C vraagt maatwerk</h3>
+<p>Bij label C wordt verkoop alleen overwogen na een QuickScan met maximaal 'midden risico' als uitkomst, aangevuld met bestuurlijke afstemming over bijzondere situaties zoals scharnierwoningen.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Rol van FunderMaps</h3>
+<p>FunderMaps ondersteunt bij verkoopdossiers, besluitvorming en beheer van juridische documenten. Modelclausules, toelichtingen en maatwerkbegeleiding zorgen voor consistente dossiervorming.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Conclusie</h3>
+<p>Een combinatie van objectieve risicoclassificatie, juridische borging en bestuurlijke afweging maakt verantwoorde verkoop mogelijk. Dit beschermt zowel de corporatie als de koper en draagt bij aan een transparante markt.</p>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Juridisch">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 11</span>
+              <span class="block text-lg font-bold text-blue-900">Optrekkend vocht: een taai maar oplosbaar probleem</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Optrekkend vocht behoort tot de hardnekkigste oorzaken van schade en gezondheidsklachten in oudere woningen. Dit artikel beschrijft oorzaken, diagnose en maatregelen.</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Juridisch</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-11">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Optrekkend vocht: een taai maar oplosbaar probleem</h2>
+<p class="mt-4 text-lg text-blue-900/80">Optrekkend vocht behoort tot de hardnekkigste oorzaken van schade en gezondheidsklachten in oudere woningen. Dit artikel beschrijft oorzaken, diagnose en maatregelen.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Oorzaken en symptomen</h3>
+<p>Veel oudere woningen zijn gebouwd zonder waterkering tussen fundering en gevel. Grondvocht trekt via capillaire werking omhoog en veroorzaakt loslatend stucwerk, donkere plinten, zoutuitbloei en muffe geuren. Condensatie, koudebruggen en gebrekkige ventilatie kunnen de problematiek versterken.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Diagnose als startpunt</h3>
+<p>Een bouwkundige inspectie brengt in kaart of optrekkend vocht, doorslaand vocht, lekkages of ventilatieproblemen de oorzaak vormen. Zonder juiste diagnose is elke ingreep symptoombestrijding.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Praktische aanpakken</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>Injecteren van muren met een vochtwerende gel als nieuwe waterkering.</li>
+<li>Binnendrainage of muurdoorvoeringen om vocht gecontroleerd af te voeren.</li>
+<li>Gevelisolatie en renovatiepleister zodat muren kunnen ademen.</li>
+<li>Herstel van lekkages, zoals kapotte dakgoten of voegen.</li>
+<li>Verbeterde ventilatie, met name in natte ruimtes.</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Samenwerking met bewoners</h3>
+<p>Technische maatregelen alleen zijn niet voldoende. Bewoners voorlichten over ventileren, stoken en het drogen van was voorkomt terugkerende klachten.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Geen luxeprobleem</h3>
+<p>Optrekkend vocht is een fundamentele bedreiging voor woonkwaliteit en gezondheid. Een bouwkundig onderzoek vormt het startpunt voor een duurzame oplossing.</p>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Techniek">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 12</span>
+              <span class="block text-lg font-bold text-blue-900">Sloop en vervangende nieuwbouw: funderingsproblemen structureel oplossen</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Bij ernstige funderingsschade kan vervangende nieuwbouw de meest toekomstbestendige keuze zijn. Dit artikel schetst de afwegingen.</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Techniek</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-12">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Sloop en vervangende nieuwbouw: funderingsproblemen structureel oplossen</h2>
+<p class="mt-4 text-lg text-blue-900/80">Bij ernstige funderingsschade kan vervangende nieuwbouw de meest toekomstbestendige keuze zijn. Dit artikel schetst de afwegingen.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Voordelen van sloop en nieuwbouw</h3>
+<p>Sloop maakt het mogelijk om in een keer een nieuwe fundering te realiseren. Nieuwbouw biedt kansen voor energieneutrale woningen, optimale plattegronden en betere toegankelijkheid.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Waarom het niet altijd kan</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>Draagvlak onder bewoners: herhuisvesting vereist ruime instemming.</li>
+<li>Ruimtelijke beperkingen en regelgeving laten uitbreiding niet altijd toe.</li>
+<li>Gebrek aan beschikbare woningen voor tijdelijke huisvesting.</li>
+<li>Teleurstellingen uit eerdere trajecten kunnen wantrouwen veroorzaken.</li>
+<li>Een casco dat nog redelijk is maakt renovatie soms aantrekkelijker.</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Tussen wens en werkelijkheid</h3>
+<p>Zonder sloop vallen corporaties vaak terug op deelmaatregelen zoals dakvervanging of ventilatie-aanpassingen. Daarmee wordt hoogstens tijdelijk verlichting geboden.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Sloop als strategische keuze</h3>
+<p>Wanneer het technisch en planologisch kan, verdient sloop een plek in de afweging. De maatschappelijke waarde van toekomstbestendige woningen en lagere onderhoudslasten is groot.</p>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Herstel">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 13</span>
+              <span class="block text-lg font-bold text-blue-900">Van risico naar regie: funderingsrisico's verantwoord beheerd en juridisch geborgd</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Met FunderMaps, de QuickScan-methodiek van het KCAF en juridische begeleiding ontstaat een compleet procesproduct waarmee corporaties grip houden op funderingsrisico's.</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Herstel</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-13">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Van risico naar regie: funderingsrisico's verantwoord beheerd en juridisch geborgd</h2>
+<p class="mt-4 text-lg text-blue-900/80">Met FunderMaps, de QuickScan-methodiek van het KCAF en juridische begeleiding ontstaat een compleet procesproduct waarmee corporaties grip houden op funderingsrisico's.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Funderingsrisico's onder controle</h3>
+<p>FunderMaps classificeert panden in risicoklassen A t/m E op basis van ondergrond, funderingstype, zakkingssnelheid en historische schade. De hotspotanalyse bepaalt de scenario's: monitoring, beheer of directe actie.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">QuickScan als praktische tussenstap</h3>
+<p>Voor panden met een verhoogd risico (label C, D of E) is aanvullend onderzoek nodig. De QuickScan omvat lintvoeg- en loodmetingen, scheurclassificatie en optioneel zakkingsdata. Uitvoering vanaf de openbare ruimte houdt de belasting voor bewoners beperkt.</p>
+<p>FunderMaps begeleidt uitvraag, benchmarkt prijzen en controleert rapportages van erkende uitvoerders.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Uitvraag en uitvoering op schaal</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>D-label: QuickScan verplicht.</li>
+<li>C-label: QuickScan bij verkoop.</li>
+<li>E-label: direct volledig funderingsonderzoek.</li>
+</ul>
+<p>Heldere criteria zorgen voor kostenbeheersing en uniforme rapportages.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Gezond beheer zonder verkoop</h3>
+<p>QuickScans tonen stabiliteit aan, helpen risico's monitoren en ondersteunen onderhouds- en verduurzamingsplannen.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Verkoop juridisch geborgd</h3>
+<p>Bij verkoop levert FunderMaps een compleet dossier met QuickScan of funderingsrapport, risicoclassificatie, modelclausules en instructies voor makelaar en notaris. Contractuele uitsluiting van aansprakelijkheid beschermt de corporatie.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Begeleiding en kennisborging</h3>
+<p>Corporaties ontvangen opleiding, formats en toegang tot het platform zodat expertise structureel wordt geborgd.</p>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Strategie">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 14</span>
+              <span class="block text-lg font-bold text-blue-900">Wat mag je verwachten van een funderingsonderzoek?</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Funderingsproblemen nemen toe door bodemdaling, klimaatverandering en veroudering van funderingen. Deze gids legt uit welke vormen van onderzoek er zijn en wat ze opleveren.</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Strategie</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-14">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">Wat mag je verwachten van een funderingsonderzoek?</h2>
+<p class="mt-4 text-lg text-blue-900/80">Funderingsproblemen nemen toe door bodemdaling, klimaatverandering en veroudering van funderingen. Deze gids legt uit welke vormen van onderzoek er zijn en wat ze opleveren.</p>
+</header>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Fasering van funderingsonderzoek</h3>
+<p>KCAF onderscheidt twee hoofdvormen: de QuickScan Funderingsrisico en het volledig funderingsonderzoek.</p>
+<h4 class="text-lg font-semibold text-blue-900">1. QuickScan Funderingsrisico</h4>
+<p>Visuele beoordeling vanaf de openbare ruimte, gericht op scheuren en scheefstand. Doel: bepalen of een volledig onderzoek nodig is.</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Indicatief en visueel.</li>
+<li>Lintvoegmeting, loodmeting, scheurclassificatie, satellietdata.</li>
+<li>Resultaat: risico-inschatting laag, gemiddeld of hoog.</li>
+</ul>
+<p class="font-semibold">Let op: een QuickScan inspecteert de fundering zelf niet.</p>
+<h4 class="text-lg font-semibold text-blue-900">2. Volledig funderingsonderzoek</h4>
+<p>Technisch onderzoek met graafwerk, uitgevoerd door erkende bureaus.</p>
+<ol class="list-decimal pl-6 space-y-2">
+<li>Bureaustudie: tekeningen, paalgegevens, sonderingen, grondwater en historische ingrepen.</li>
+<li>Visuele inspecties binnen en buiten.</li>
+<li>Scheefstandsmetingen (lintvoeg en lood).</li>
+<li>Zakkingsmetingen, bijvoorbeeld via satellietdata.</li>
+<li>Funderingsinspectie in graafputten met monstername.</li>
+<li>Bodem- en grondwateranalyse indien relevant.</li>
+<li>Rapportage met advies, herstelopties en kostenraming.</li>
+</ol>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Beoordeling en classificatie</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-blue-100">
+<th class="px-4 py-3">QuickScan risicoklasse</th>
+<th class="px-4 py-3">Kenmerken</th>
+<th class="px-4 py-3">Aanbevolen actie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-blue-50">
+<td class="px-4 py-3 font-semibold">Laag</td>
+<td class="px-4 py-3">Geen of minimale schade, scheefstand â‰¤ 1:300</td>
+<td class="px-4 py-3">Geen directe actie, wel monitoren</td>
+</tr>
+<tr class="border-b border-blue-50">
+<td class="px-4 py-3 font-semibold">Gemiddeld</td>
+<td class="px-4 py-3">Scheefstand tot 1:100, matige scheuren</td>
+<td class="px-4 py-3">Herhaal QuickScan of plan volledig onderzoek</td>
+</tr>
+<tr>
+<td class="px-4 py-3 font-semibold">Hoog</td>
+<td class="px-4 py-3">Scheefstand &gt; 1:75, forse of actieve schade</td>
+<td class="px-4 py-3">Direct volledig onderzoek of hersteltraject</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="mt-4">Een volledig onderzoek resulteert in een classificatie volgens de richtlijn <em>Funderingen onder gebouwen</em>. Deze kleurcodes vormen ook de basis voor het Funderherstelregister.</p>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-blue-100">
+<th class="px-4 py-3">Kleurcode</th>
+<th class="px-4 py-3">Betekenis</th>
+<th class="px-4 py-3">Aanbevolen vervolg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-blue-50">
+<td class="px-4 py-3 font-semibold">Groen</td>
+<td class="px-4 py-3">Fundering functioneert naar verwachting</td>
+<td class="px-4 py-3">Geen ingreep; op termijn opnieuw beoordelen</td>
+</tr>
+<tr class="border-b border-blue-50">
+<td class="px-4 py-3 font-semibold">Oranje</td>
+<td class="px-4 py-3">Fundering functioneert nog maar is kwetsbaar</td>
+<td class="px-4 py-3">Monitoring of herstel op middellange termijn</td>
+</tr>
+<tr>
+<td class="px-4 py-3 font-semibold">Rood</td>
+<td class="px-4 py-3">Fundering functioneert niet meer of schade is ernstig</td>
+<td class="px-4 py-3">Herstel of vernieuwing dringend noodzakelijk</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Wat mag je verwachten van de rapportage?</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>Foto's van scheuren en meetpunten.</li>
+<li>Meetwaarden van scheefstand (mm/m en rotatieverhoudingen).</li>
+<li>Duidelijke risicoclassificatie met onderbouwing.</li>
+<li>Volledig handelingsperspectief: vervolgonderzoek, herstel of monitoring.</li>
+<li>Transparantie over meetpunten, locaties en methoden.</li>
+</ul>
+<p class="mt-2 italic text-blue-900/70">Voorbeeld bij gemiddeld risico: "De lintvoegmetingen tonen afwijkingen tot 1:150 en loodmetingen tot 1:140. Er zijn matige scheuren zichtbaar. Herhaal de QuickScan binnen drie jaar of voer een volledig funderingsonderzoek uit bij toename van afwijkingen."</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Wie voert funderingsonderzoek uit?</h3>
+<p>KCAF beheert een erkenningsregeling voor onderzoeksbureaus. Alleen erkende partijen voeren onderzoeken uit volgens de richtlijn. Zie <a class="text-blue-700 underline hover:text-yellow-500" href="https://www.kcaf.nl/erkenningslijst" rel="noopener">kcaf.nl/erkenningslijst</a>.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Waarom dit belangrijk is</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>Voorkomt onnodige kosten of verkeerde maatregelen.</li>
+<li>Geeft duidelijkheid aan eigenaren, kopers en financiers.</li>
+<li>Biedt een onderbouwd handelingsperspectief voor herstel of monitoring.</li>
+</ul>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="article-card" data-categories="Onderzoek Handleiding">
+        <summary>
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <span class="block text-sm font-semibold uppercase tracking-wide text-blue-400">Artikel 15</span>
+              <span class="block text-lg font-bold text-blue-900">FunderMaps - Handleiding: Beslisschema onderzoek funderingsproblematiek</span>
+              <span class="mt-1 block text-sm text-blue-900/70">Dit beslisschema laat zien welke stappen volgen na ontvangst van een FunderMaps Funderingsrisicorapport. Het rapport geeft op basis van beschikbare data een eerste inschatting van het risico op funderingsproâ€¦</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Onderzoek</span>
+              <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700">Handleiding</span>
+            </div>
+          </div>
+        </summary>
+        <div class="article-card__content">
+<article class="rounded-3xl border border-blue-100 bg-white px-6 py-10 shadow-sm lg:px-16 lg:py-16" id="artikel-15">
+<header class="mb-8">
+<h2 class="mt-2 text-3xl font-extrabold text-blue-900 lg:text-4xl">FunderMaps - Handleiding: Beslisschema onderzoek funderingsproblematiek</h2>
+<p class="mt-4 text-lg text-blue-900/80">Dit beslisschema laat zien welke stappen volgen na ontvangst van een FunderMaps Funderingsrisicorapport. Het rapport geeft op basis van beschikbare data een eerste inschatting van het risico op funderingsproblemen.</p>
+<p class="mt-4 text-lg text-blue-900/80">Afhankelijk van de betrouwbaarheid van de gegevens en de ernst van het risico volgen vervolgacties zoals monitoring, een QuickScan, volledig funderingsonderzoek of directe stabilisatie- en herstelmaatregelen.</p>
+</header>
+<div class="overflow-hidden rounded-3xl border border-blue-100 bg-white/70 shadow-sm">
+<img alt="Beslisschema voor funderingsonderzoek" class="w-full h-auto" loading="lazy" src="./resources/images/beslisschema.webp">
+</img></div>
+<div class="space-y-8 text-blue-900/80">
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Belangrijk om te begrijpen</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>FunderMaps is een dynamische database; gegevens worden continu uitgebreid, verbeterd en gevalideerd.</li>
+<li>Elke risicoclassificatie krijgt een betrouwbaarheidslabel dat aangeeft hoe hard de informatie is.
+                  <ul class="mt-2 list-disc pl-6 space-y-1 text-sm text-blue-900/70">
+<li><span class="font-semibold text-blue-900">Model:</span> analyse op basis van data uit de ruimere omgeving en modelaannames.</li>
+<li><span class="font-semibold text-blue-900">Afgeleid:</span> analyse op basis van gegevens uit de directe omgeving zoals nabijgelegen panden of satellietmetingen.</li>
+<li><span class="font-semibold text-blue-900">Vastgesteld:</span> onderbouwd met onderzoeksrapporten of andere bewijsdocumenten voor het betreffende pand.</li>
+</ul>
+</li>
+<li>De beslissingen in het schema combineren risiconiveau en betrouwbaarheid, zodat vervolgacties proportioneel zijn.</li>
+</ul>
+<p>Het beslisschema start bij het FunderMaps Funderingsrisicorapport en leidt via beslismomenten naar monitoring, QuickScan, volledig onderzoek of directe maatregelen.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Funderingsrisicoanalyse (groen blok)</h3>
+<p>FunderMaps combineert meerdere databronnen om de funderingsrisico's te bepalen:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Archiefinformatie over funderingstypen, bouwjaar en herstelmaatregelen.</li>
+<li>Onderzoeksrapporten met kwaliteitsbeoordelingen.</li>
+<li>Satellietgegevens over actueel zakkingsgedrag.</li>
+<li>Ondergrond- en grondwatergegevens uit landelijke voorzieningen.</li>
+</ul>
+<p>Op basis hiervan deelt het rapport panden in risicoklasse A t/m E:</p>
+<ol class="list-decimal pl-6 space-y-3">
+<li>
+<span class="font-semibold text-blue-900">Risico A â€“ Geen risico.</span>
+<p class="mt-1">Het pand is hersteld, verkeert in goede staat of kent een betonpaalfundering.</p>
+</li>
+<li>
+<span class="font-semibold text-blue-900">Risico B â€“ Laag risico.</span>
+<p class="mt-1">Geen directe vervolgstap nodig, maar het funderingstype vraagt alertheid voor de toekomst.</p>
+</li>
+<li>
+<span class="font-semibold text-blue-900">Risico C â€“ Matig risico.</span>
+<p class="mt-1">Monitoring op afstand is gewenst; signalen of berekeningen wijzen op een licht verhoogd risico. Verkoop kan doorgaan zonder aanvullende onderzoeken.</p>
+</li>
+<li>
+<span class="font-semibold text-blue-900">Risico D â€“ Hoog risico.</span>
+<p class="mt-1">Er zijn aanwijzingen voor funderingsproblemen, gebaseerd op metingen, signalen of modelberekeningen.</p>
+</li>
+<li>
+<span class="font-semibold text-blue-900">Risico E â€“ Hoog risico.</span>
+<p class="mt-1">Er zijn duidelijke en vaak vastgestelde aanwijzingen voor schade of falen van de fundering.</p>
+</li>
+</ol>
+<div class="rounded-2xl border-l-4 border-blue-200 bg-blue-50/70 px-5 py-4 text-blue-900">
+<p class="font-semibold">Interpretatie van risicoklasse D en E</p>
+<ul class="mt-2 list-disc pl-5 space-y-1">
+<li><span class="font-semibold">Vastgesteld of afgeleid:</span> vervolg met een QuickScan voor locatiebevestiging.</li>
+<li><span class="font-semibold">Alleen modelmatig:</span> eerst aanvullende validatie; de uitkomst is niet direct bruikbaar voor beleidsbesluiten.</li>
+</ul>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">QuickScan (oranje blok)</h3>
+<p>De QuickScan is een snelle methode om funderingsrisico's te beoordelen op basis van visuele en meetbare indicatoren zoals scheurvorming, scheefstand en verzakkingssnelheid. Het onderzoek vindt plaats vanaf de buitenzijde en vormt een addendum op de KCAF-richtlijn <em>Funderingen onder gebouwen</em>.</p>
+<p>Omdat onderdelen van de QuickScan overeenkomen met het volledige onderzoek, kan eenvoudig worden opgeschaald als extra zekerheid nodig is.</p>
+<div class="rounded-2xl border-l-4 border-orange-300 bg-orange-50/70 px-5 py-4 text-blue-900">
+<p class="font-semibold">Mogelijke uitkomsten QuickScan</p>
+<ul class="mt-2 list-disc pl-5 space-y-1">
+<li>Laag risico â†’ Geen vervolgactie.</li>
+<li>Midden risico â†’ Monitoring en controle op locatie.</li>
+<li>Hoog risico â†’ Aanvullend funderingsonderzoek noodzakelijk.</li>
+</ul>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Belang van terugkoppeling</h3>
+<p>QuickScan-resultaten vormen samen met het funderingsrisicorapport de basis voor beleid en transacties. Het is cruciaal dat elke QuickScan wordt teruggekoppeld in FunderMaps.</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>De opdrachtgever van de QuickScan is verantwoordelijk voor het uploaden van de resultaten.</li>
+<li>Een actuele database zorgt voor betrouwbare validatie in latere processen.</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Uploadproces</h3>
+<ol class="list-decimal pl-6 space-y-2">
+<li>QuickScans kunnen direct in FunderMaps worden geupload.</li>
+<li>Na upload volgt validatie door FunderMaps of KCAF.</li>
+<li>Geverifieerde resultaten worden ontsloten voor vervolgbesluitvorming.</li>
+</ol>
+<a class="button button-outline-primary" href="https://app.fundermaps.com" rel="noopener">QuickScan aanvragen of resultaten uploaden</a>
+<p class="text-sm text-blue-900/70">Onderzoeksbureaus die volgens de KCAF-richtlijnen werken, staan in de erkenningsregeling van het Kennis Centrum Aanpak Funderingsproblematiek (KCAF).</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Funderingsonderzoek (blauw blok)</h3>
+<p>Blijft het risico na de QuickScan hoog of is er onvoldoende duidelijkheid, dan volgt een volledig funderingsonderzoek. Historische onderzoeken kunnen onderdeel van de analyse zijn, waardoor soms geen aanvullend veldwerk nodig is.</p>
+<p>Een volledig onderzoek omvat onder meer:</p>
+<ul class="list-disc pl-6 space-y-2">
+<li>Scheefstands- en zakkingsmetingen.</li>
+<li>Archiefonderzoek en analyse van bouwtekeningen.</li>
+<li>Inspectie van funderingspalen en vloeren, inclusief graafwerk en monstername.</li>
+<li>Bodem- en grondwateronderzoek waar relevant.</li>
+<li>Rapportage met handelingsperspectief, herstelopties en kostenraming.</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Resultaten funderingsonderzoek (verkeerslichtmodel)</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li><strong>Groen</strong> â€“ Geen vervolgactie nodig.</li>
+<li><strong>Oranje</strong> â€“ Monitoring en periodieke inspectie.</li>
+<li><strong>Rood</strong> â€“ Herstelmaatregelen en concreet handelingsperspectief noodzakelijk.</li>
+</ul>
+<p>Ook deze resultaten moeten in FunderMaps worden teruggekoppeld om de betrouwbaarheid van de database te vergroten.</p>
+</div>
+<div class="space-y-3">
+<h3 class="text-xl font-semibold text-blue-900">Kernboodschap voor gebruikers</h3>
+<ul class="list-disc pl-6 space-y-2">
+<li>Gebruik het schema om te bepalen wanneer monitoring volstaat en wanneer extra onderzoek nodig is.</li>
+<li>Beslissingen zijn gebaseerd op een combinatie van risicohoogte en databetrouwbaarheid.</li>
+<li>Het proces is iteratief: nieuwe informatie verhoogt de betrouwbaarheid en kan een vervolgactie aanpassen.</li>
+</ul>
+<div class="rounded-2xl border-l-4 border-yellow-400 bg-yellow-50 px-5 py-4 text-blue-900">
+<p class="font-semibold">Disclaimer</p>
+<p class="mt-1">Het funderingsrisicorapport en dit beslisschema bieden richting, maar vormen geen definitief oordeel. Lokale professionals mogen de uitkomsten bijsturen op basis van specifieke kennis, net zoals taxateurs informatie uit FunderMaps wegen binnen het NWWI-proces. FunderMaps aanvaardt geen aansprakelijkheid voor besluiten die uitsluitend op basis van het rapport worden genomen.</p>
+</div>
+</div>
+</div>
+</article>
+          <div class="mt-6 text-right">
+            <button type="button" class="text-sm font-semibold text-blue-700 underline" data-close-panel>Sluiten</button>
+          </div>
+        </div>
+      </details>
+
       </div>
+    </section>
+    </main>
 
-      <p class="text-center text-sm lg:col-span-4">
-        &copy; Copyright <span x-data="{ date: new Date() }" x-text="date.getFullYear()"></span> FunderMaps. Alle rechten
+<style>
+  .filter-button {
+    border-radius: 9999px;
+    border: 1px solid rgba(30, 64, 175, 0.2);
+    background-color: #fff;
+    color: #1d3a6f;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .filter-button.is-active,
+  .filter-button:hover {
+    border-color: #f59e0b;
+    color: #f59e0b;
+  }
+  .article-card {
+    border-radius: 1.5rem;
+    border: 1px solid rgba(30, 64, 175, 0.15);
+    background-color: #F6F7F8;
+    padding: 1.25rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .article-card[open] {
+    border-color: #f59e0b;
+    box-shadow: 0 15px 35px rgba(31, 41, 55, 0.12);
+    background-color: #fff;
+  }
+  .article-card summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .article-card summary::-webkit-details-marker {
+    display: none;
+  }
+  .article-card__content {
+    margin-top: 1.5rem;
+  }
+</style>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = Array.from(document.querySelectorAll('.filter-button'));
+    const cards = Array.from(document.querySelectorAll('.article-card'));
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(other => other.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const cats = card.dataset.categories.split(' ');
+          if (filter === 'all' || cats.includes(filter)) {
+            card.hidden = false;
+          } else {
+            card.hidden = true;
+          }
+        });
+      });
+    });
+    const closeButtons = document.querySelectorAll('[data-close-panel]');
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const details = btn.closest('details');
+        if (details) details.removeAttribute('open');
+      });
+    });
+  });
+</script>
+
+
+<footer class="section section--dark | pt-12 pb-14">
+<div class="wrapper flex flex-col items-center lg:grid lg:grid-cols-12">
+<div class="lg:col-span-4">
+<include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
+</div>
+<div class="lg:col-span-4 lg:order-2 flex justify-end">
+<a class="button button-outline-primary my-8 lg:my-0" href="#toLinkedIn">
+<div class="button-logo">
+<include src="./resources/svg/linkedin-logo.svg"></include>
+</div>
+<span class="sr-only">LinkedIn link</span>
+</a>
+</div>
+<p class="text-center text-sm lg:col-span-4">
+        Â© Copyright <span x-data="{ date: new Date() }" x-text="date.getFullYear()"></span> FunderMaps. Alle rechten
         voorbehouden
       </p>
-    </div>
-  </footer>
+</div>
+</footer>
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 
