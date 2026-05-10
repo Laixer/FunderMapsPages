@@ -8,7 +8,7 @@
   "license": "MIT",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "engines": {
-    "node": ">= 20.0.0"
+    "node": ">= 22.13.0"
   },
   "packageManager": "pnpm@11.0.9",
   "scripts": {

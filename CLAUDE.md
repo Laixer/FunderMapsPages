@@ -8,7 +8,7 @@ Static marketing site for FunderMaps (Dutch foundation-risk / asset-management p
 
 ## Commands
 
-Package manager is **pnpm 11**. Node ≥ 20. Pinned via `packageManager` in `package.json`. (Earlier note about pnpm failing on DO App Platform is no longer accurate — DO's Node buildpack does ship pnpm now and detects `pnpm-lock.yaml` correctly.)
+Package manager is **pnpm 11**. Node ≥ 22.13 (pnpm 11 needs `node:sqlite`, added in Node 22.13). Pinned via `packageManager` in `package.json`. (Earlier note about pnpm failing on DO App Platform is no longer accurate — DO's Node buildpack does ship pnpm now and detects `pnpm-lock.yaml` correctly.)
 
 - `pnpm install` — install dependencies.
 - `pnpm start` — dev server on `http://localhost:8000` with HMR. Only the HTML entries listed in `package.json` are served (`index.html`, `artikelen.html`, `apps*.html`, `media-library.html`, `more-info.html`, `nationaal-herstelregister.html`, `privacy-statement.html`, `terms-conditions.html`, plus the static `llms.txt` / `llms-full.txt` / `robots.txt` / `sitemap.xml`). **Adding a new top-level page requires adding it to the `start` script** — Parcel will not pick it up otherwise.

@@ -1,5 +1,5 @@
 # Sets the docker image for the job
-image: node:20
+image: node:22
 
 # Build static page
 .build-page:
