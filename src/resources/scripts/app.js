@@ -1,13 +1,13 @@
 // Import Alpine, Alpine Components and Alpine Plugins
-import Alpine from 'alpinejs'
-import ui from '@alpinejs/ui'
-import collapse from '@alpinejs/collapse'
-import focus from '@alpinejs/focus'
+import Alpine from "alpinejs"
+import ui from "@alpinejs/ui"
+import collapse from "@alpinejs/collapse"
+import focus from "@alpinejs/focus"
 
 // Import Component specific JS
-import mobileMenu from './components/mobileMenu.js'
-import referencesCarousel from './components/referencesCarousel.js'
-import quotesCarousel from './components/quotesCarousel.js'
+import mobileMenu from "./components/mobileMenu.js"
+import referencesCarousel from "./components/referencesCarousel.js"
+import quotesCarousel from "./components/quotesCarousel.js"
 
 (async () => {
   // Make alpine easier to use from the DevTools
@@ -23,7 +23,7 @@ import quotesCarousel from './components/quotesCarousel.js'
 
   // Alpine Data
   // https://alpinejs.dev/globals/alpine-data
-  Alpine.data('mobileMenu', mobileMenu)
+  Alpine.data("mobileMenu", mobileMenu)
   Alpine.data("references_carousel", referencesCarousel);
   Alpine.data("quotes_carousel", quotesCarousel);
 

@@ -2,16 +2,6 @@
   "plugins": {
     "posthtml-include": {
       "root": "./src/"
-    },
-    "posthtml-inline-svg": {
-      "cwd": "./src/resources/svg/",
-      "svgo": {
-        "params": {
-          "overrides": {
-            "cleanupIDs": false
-          }
-        }
-      }
     }
   }
 }

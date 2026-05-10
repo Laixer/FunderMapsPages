@@ -3,24 +3,24 @@
 @theme {
   --font-sans: "Greycliff CF", sans-serif;
 
-  --color-grey-100: #F6F7F8;
-  --color-grey-200: #E8EAF1;
-  --color-grey-300: #CED0DA;
-  --color-grey-400: #525C77;
+  --color-grey-100: #f6f7f8;
+  --color-grey-200: #e8eaf1;
+  --color-grey-300: #ced0da;
+  --color-grey-400: #525c77;
   --color-grey-900: #17192a;
 
-  --color-yellow-100: #FFFAF0;
-  --color-yellow-300: #FFCC69;
+  --color-yellow-100: #fffaf0;
+  --color-yellow-300: #ffcc69;
 
-  --color-green-100: #E9FAF3;
-  --color-green-300: #0A8158;
+  --color-green-100: #e9faf3;
+  --color-green-300: #0a8158;
 
   --color-red-500: #dc3545;
 
-  --color-blue-100: #E7F6FD;
-  --color-blue-300: #0C75A8;
-  --color-blue-400: #3D5372;
-  --color-blue-900: #191E3C;
+  --color-blue-100: #e7f6fd;
+  --color-blue-300: #0c75a8;
+  --color-blue-400: #3d5372;
+  --color-blue-900: #191e3c;
 
   --text-4xl: clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem);
   --text-4xl--line-height: 2.75rem;
@@ -46,14 +46,15 @@
   --text-sm--line-height: 1.5rem;
 
   --shadow-button: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
-  --shadow-hero-img: 0 12px 24px 0 rgba(0, 0, 0, 0.10);
-  --shadow-hero-img-overlay-1: 0 14px 29px 0 rgba(0, 0, 0, 0.10);
-  --shadow-hero-img-overlay-2: 0 17px 35px 0 rgba(0, 0, 0, 0.10);
-  --shadow-quote: 0 20px 40px 0 rgba(0, 0, 0, 0.20);
-  --shadow-slider-arrow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
+  --shadow-hero-img: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
+  --shadow-hero-img-overlay-1: 0 14px 29px 0 rgba(0, 0, 0, 0.1);
+  --shadow-hero-img-overlay-2: 0 17px 35px 0 rgba(0, 0, 0, 0.1);
+  --shadow-quote: 0 20px 40px 0 rgba(0, 0, 0, 0.2);
+  --shadow-slider-arrow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 @layer base {
+  // stylelint-disable-next-line scss/at-import-partial-extension-disallowed-list
   @import "@glidejs/glide/src/assets/sass/glide.core.scss";
   @import "base";
 }

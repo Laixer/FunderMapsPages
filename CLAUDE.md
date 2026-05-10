@@ -55,4 +55,3 @@ Flat config in `eslint.config.js`: `@eslint/js` recommended + `eslint-config-pre
 - **Quotes**: ESLint warns on single-quote JS; Stylelint requires double-quote SCSS.
 - **Class naming in SCSS**: BEM (`block__element_modifier_value`). Tailwind utility classes in HTML are unconstrained.
 - **Language**: page copy is Dutch; code identifiers and comments are English.
-- `normalize_menu_attrs.py` is a one-off script that was used to bulk-edit `artikelen.html` Alpine attributes — not part of the build.

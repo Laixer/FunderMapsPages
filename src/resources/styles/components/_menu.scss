@@ -42,7 +42,7 @@
   }
 
   &-mobile {
-    & .menu-item {
+    .menu-item {
       @apply flex relative pl-16;
 
       a {
