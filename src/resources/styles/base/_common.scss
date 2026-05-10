@@ -23,10 +23,10 @@ h2 {
   @apply text-3xl lg:leading-[1.1];
 
   .content & + :not([hidden]) {
-    --content-spacing-top: theme(spacing.3); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+    --content-spacing-top: 0.75rem; // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
 
-    @screen md {
-      --content-spacing-top: theme(spacing.5); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+    @media (min-width: 48rem) {
+      --content-spacing-top: 1.25rem; // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
     }
   }
 }
@@ -35,7 +35,7 @@ h3 {
   @apply text-2xl lg:leading-[1.1];
 
   .content & + :not([hidden]) {
-    --content-spacing-top: theme(spacing.3); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+    --content-spacing-top: 0.75rem; // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
   }
 }
 
@@ -43,7 +43,7 @@ h4 {
   @apply text-xl lg:leading-[1.1];
 
   .content & + :not([hidden]) {
-    --content-spacing-top: theme(spacing.3); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+    --content-spacing-top: 0.75rem; // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
   }
 }
 
@@ -51,7 +51,7 @@ h5 {
   @apply text-lg lg:leading-[1.1];
 
   .content & + :not([hidden]) {
-    --content-spacing-top: theme(spacing.2); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+    --content-spacing-top: 0.5rem; // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
   }
 }
 
@@ -59,7 +59,7 @@ h6 {
   @apply text-base;
 
   .content & + :not([hidden]) {
-    --content-spacing-top: theme(spacing.2); // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
+    --content-spacing-top: 0.5rem; // stylelint-disable-line number-leading-zero, number-no-trailing-zeros
   }
 }
 

@@ -1,8 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "@glidejs/glide/src/assets/sass/glide.core.scss";
 
-@import "~@glidejs/glide/src/assets/sass/glide.core.scss";
+@import url("tailwindcss");
+
+@theme {
+  --font-sans: "Greycliff CF", sans-serif;
+
+  --color-grey-100: #F6F7F8;
+  --color-grey-200: #E8EAF1;
+  --color-grey-300: #CED0DA;
+  --color-grey-400: #7F8FA4;
+  --color-grey-900: #17192a;
+
+  --color-yellow-100: #FFFAF0;
+  --color-yellow-300: #FFCC69;
+
+  --color-green-100: #E9FAF3;
+  --color-green-300: #28CC8B;
+
+  --color-red-500: #dc3545;
+
+  --color-blue-100: #E7F6FD;
+  --color-blue-300: #17A4EA;
+  --color-blue-400: #3D5372;
+  --color-blue-900: #191E3C;
+
+  --text-4xl: clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem);
+  --text-4xl--line-height: 2.75rem;
+  --text-4xl--letter-spacing: -0.4px;
+
+  --text-3xl: clamp(2.25rem, 2.0299rem + 0.939vw, 2.875rem);
+  --text-3xl--line-height: 2.75rem;
+  --text-3xl--letter-spacing: -1px;
+
+  --text-2xl: clamp(1.875rem, 1.743rem + 0.5634vw, 2.25rem);
+  --text-2xl--letter-spacing: -1px;
+
+  --text-xl: clamp(1.125rem, 1.081rem + 0.1878vw, 1.25rem);
+  --text-xl--letter-spacing: -1px;
+
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.625rem;
+
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5rem;
+
+  --shadow-button: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
+  --shadow-hero-img: 0 12px 24px 0 rgba(0, 0, 0, 0.10);
+  --shadow-hero-img-overlay-1: 0 14px 29px 0 rgba(0, 0, 0, 0.10);
+  --shadow-hero-img-overlay-2: 0 17px 35px 0 rgba(0, 0, 0, 0.10);
+  --shadow-quote: 0 20px 40px 0 rgba(0, 0, 0, 0.20);
+  --shadow-slider-arrow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
+}
 
 @layer base {
   @import "base";
