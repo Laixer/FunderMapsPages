@@ -44,8 +44,16 @@
     }
 
     .glide__bullet {
-      @apply block w-full h-0.5 bg-green-300;
-          transition: background-color ease;
+      // Visually a 2px progress bar, but the tap area extends ±22px via an
+      // invisible ::after to give a 44px touch target without disturbing the
+      // surrounding layout.
+      @apply block w-full h-0.5 bg-green-300 relative;
+      transition: background-color ease;
+
+      &::after {
+        content: "";
+        @apply absolute left-0 right-0 -top-[22px] -bottom-[22px];
+      }
 
       &:first-child {
         @apply rounded-l-full;

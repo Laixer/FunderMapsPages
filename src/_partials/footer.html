@@ -1,0 +1,25 @@
+<footer class="section section--dark | pt-12 pb-14">
+  <div class="wrapper flex flex-col items-center lg:grid lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
+    </div>
+
+    <div class="lg:col-span-4 lg:order-2 flex justify-end">
+      <a class="button button-outline-primary my-8 lg:my-0" href="https://www.linkedin.com/company/26521848/" target="_blank" rel="noopener">
+        <div class="button-logo">
+          <include src="./resources/svg/linkedin-logo.svg"></include>
+        </div>
+        <span class="sr-only">FunderMaps op LinkedIn</span>
+      </a>
+    </div>
+
+    <div class="text-center text-sm text-grey-300 lg:col-span-4">
+      <p>© Copyright <span x-data="{ date: new Date() }" x-text="date.getFullYear()"></span> FunderMaps. Alle rechten voorbehouden.</p>
+      <p class="mt-1 flex justify-center items-center gap-3">
+        <a class="no-underline text-white hover:text-yellow-300 inline-flex items-center min-h-11 px-1" href="privacy-statement.html">Privacy</a>
+        <span aria-hidden="true">·</span>
+        <a class="no-underline text-white hover:text-yellow-300 inline-flex items-center min-h-11 px-1" href="terms-conditions.html">Voorwaarden</a>
+      </p>
+    </div>
+  </div>
+</footer>

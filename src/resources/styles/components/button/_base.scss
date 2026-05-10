@@ -1,5 +1,7 @@
 .button {
-  @apply inline-flex px-6 py-3 rounded-3xl no-underline font-extrabold text-base leading-none;
+  // 44px minimum touch target. py-3 + 16px text = 40px which Apple/WCAG flag —
+  // py-3.5 (14px each side) brings the box to 44px without changing the look.
+  @apply inline-flex items-center px-6 py-3.5 min-h-11 rounded-3xl no-underline font-extrabold text-base leading-none;
 
   &:hover {
     .button-arrow {

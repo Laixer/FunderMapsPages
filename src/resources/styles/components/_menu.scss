@@ -1,3 +1,21 @@
+// Active-state matching: any ancestor with [data-active-nav="<key>"] activates
+// the descendant link with [data-nav-key="<key>"]. Lets the shared header
+// partial drive its own highlight via a single attribute per page.
+@mixin nav-active-selectors {
+  &.active,
+  &:hover,
+  &:focus,
+  [data-active-nav="intro"] &[data-nav-key="intro"],
+  [data-active-nav="services"] &[data-nav-key="services"],
+  [data-active-nav="references"] &[data-nav-key="references"],
+  [data-active-nav="demo"] &[data-nav-key="demo"],
+  [data-active-nav="partners"] &[data-nav-key="partners"],
+  [data-active-nav="artikelen"] &[data-nav-key="artikelen"],
+  [data-active-nav="apps"] &[data-nav-key="apps"] {
+    @content;
+  }
+}
+
 .menu {
   @apply h-[120px] flex;
 
@@ -7,9 +25,7 @@
     a {
       @apply flex text-grey-400 justify-center flex-col;
 
-      &.active,
-      &:hover,
-      &:focus {
+      @include nav-active-selectors {
         @apply font-extrabold text-blue-900;
 
         &::after {
@@ -32,9 +48,7 @@
       a {
         @apply flex text-[30px] text-grey-400;
 
-        &.active,
-        &:hover,
-        &:focus {
+        @include nav-active-selectors {
           @apply font-extrabold text-white;
 
           &::after {

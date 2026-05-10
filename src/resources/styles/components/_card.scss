@@ -9,18 +9,20 @@
     @apply ml-2 -rotate-45 transform-gpu transition-transform;
   }
 
-  &:hover {
-    @apply -top-2.5 bottom-2.5 shadow-quote;
-
-    .card__link svg {
-      @apply rotate-0 transition-transform;
-    }
-  }
-
   &--bg-visual {
     &::after {
       content: "";
       @apply hidden lg:block absolute w-[158px] h-[277px] bg-yellow-300 -top-2.5 right-[38px] rotate-45 rounded-lg -z-10;
     }
+  }
+}
+
+// Hover lift only on actually-clickable cards. Plain <article>/<div> cards
+// shouldn't show a click affordance — they have no href to follow.
+a.card:hover {
+  @apply -top-2.5 bottom-2.5 shadow-quote;
+
+  .card__link svg {
+    @apply rotate-0 transition-transform;
   }
 }

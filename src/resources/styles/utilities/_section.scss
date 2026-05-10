@@ -1,6 +1,8 @@
 .section {
   &--dark {
-    @apply bg-blue-900 text-grey-400;
+    // On the dark blue surface the body grey would fail AA — use a lighter
+    // foreground (grey-300 over blue-900 is ~10:1).
+    @apply bg-blue-900 text-grey-300;
   }
 
   &--references {

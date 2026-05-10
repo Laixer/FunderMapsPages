@@ -1,160 +1,14 @@
 ﻿<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="nl" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords"
-    content="FunderMaps, Kaarttechnologie, Geo-informatie, Data-analyse, Infrastructuur, Bouw, Asset management, Risicobeoordeling, Bodemgegevens, Duurzaamheid, Stadsplanning, Betrouwbaarheid, Innovatie, Digitalisering, Visualisatie, Interactief, Fundering, Funderingsrisico Funderingsproblematiek, Funderingsherstel, Bodemdaling, Satelliet data, Geotechniek, Geospatial, GIS, Remote sensing, Data science, Geo-engineering, Constructie, Gebouwen, Wegen, Bruggen, Havens, Energie-infrastructuur, Bouwmaterialen, Grondwater, Klimaatadaptatie, Milieueffectrapportage, Duurzame gebouwen, Stedenbouw, Stedelijke ontwikkeling, Veiligheidsbeheer, Schadebeoordeling, Machine learning, Artificial Intelligence, Big Data, Internet of Things, Cloud computing, Multi-sensor integratie, Beeldverwerking" />
-  <meta name="description"
-    content="FunderMaps biedt inzicht in de funderingstypes en  funderingsrisico's van vastgoed in Nederland door middel van data-analyse en kaarttechnologie. Ontdek waar funderingsrisicogebieden zijn en welke panden kwetsbare funderingen hebben. Beheer uw vastgoed met de assetmanagement tool voor funderingen. Voeg eenvoudig lokale data van funderingen toe en voer analyses uit op blok- of pandniveau." />
-
-  <title>FunderMaps - Inzicht in funderingsrisico's en asset management</title>
-  <link href="./resources/styles/app.scss" rel="stylesheet" />
-  <script src="./resources/scripts/app.js" type="module"></script>
-  <link rel="icon" type="image/ico" href="resources/images/fundermaps-favicon.ico">
+  <include src="./_partials/meta.html" locals='{"title":"FunderMaps — Inzicht in funderingsrisico’s","description":"FunderMaps brengt funderingsrisico’s en funderingstypes van Nederlandse panden in kaart. Voor verzekeraars, banken, gemeenten en surveyors.","slug":"","ogType":"website"}'></include>
 </head>
 
 <body>
-  <header x-data="mobileMenu" class="lg:mb-11">
-    <div class="wrapper | flex justify-between items-center pt-16 pb-10 lg:py-0">
+  <include src="./_partials/header.html" locals='{"active":"intro"}'></include>
 
-      <a class="logo pt-1.5" href="/">
-        <include src="./resources/svg/logo/fundermaps-logo.svg"></include>
-
-        <span class="sr-only">Fundermaps</span>
-      </a>
-
-      <!-- Desktop navigation -->
-      <nav class="hidden lg:flex items-center">
-        <ul class="menu | ">
-          <li class="menu-item | px-4">
-            <a class="active no-underline" title="Intro" href="/#hero">Intro</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Services" href="/#services">Services</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Referenties" href="/#references-anchor">Referenties</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Demo" href="/#demo">Demo</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Partners" href="/#partners">Partners</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Artikelen" href="artikelen.html">Artikelen</a>
-          </li>
-          <li class="menu-item | px-4">
-            <a class="no-underline" title="Apps" href="apps.html">APPS</a>
-          </li>
-        </ul>
-
-        <a class="button button-secondary ml-4" href="mailto:info@fundermaps.com">
-          <div class="inline-block">
-            <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64"
-              alt="Fundermaps contact">
-          </div>
-
-          <span>
-            Direct contact
-          </span>
-
-          <div class="button-arrow">
-            <include src="./resources/svg/arrow-right-icon.svg"></include>
-          </div>
-        </a>
-      </nav>
-
-      <!-- Mobile navigation: Toggle menu -->
-      <div class="inline-flex lg:hidden">
-        <a href="#toPhone" class="mr-6">
-          <include src="./resources/svg/phone-icon.svg"></include>
-        </a>
-
-        <button x-on:click="open = true" class="flex items-center gap-2 text-blue-900 hover:text-yellow-500">
-          <div x-show="! open">
-            <include src="./resources/svg/hamburger-icon.svg"></include>
-          </div>
-          <span class="sr-only">Open mobiel menu</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile navigation -->
-    <!-- Mobile navigation: dropdown -->
-    <div x-cloak x-dialog x-model="open" x-transition:enter="left ease-out duration-300, right ease-out duration-300"
-      x-transition:enter-start="opacity-100 left-full -right-full" x-transition:enter-end="opacity-100 left-0 right-0"
-      x-transition:leave="left ease-in duration-100, right ease-in duration-100"
-      x-transition:leave-start="opacity-100 left-0 right-0" x-transition:leave-end="opacity-100 left-full -right-full"
-      class="top-0 bottom-0 fixed z-10 w-full h-full bg-blue-900 overflow-auto lg:hidden">
-
-      <!-- Mobile Menu: Panel -->
-      <div x-dialog:panel class="">
-        <div class="sticky top-0 bg-blue-900 flex justify-between items-center px-5 pt-16 z-10">
-          <div class="pt-1.5">
-            <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
-          </div>
-
-          <div class="flex">
-            <a href="#toPhone" class="mr-6" x-on:click="open = false">
-              <include src="./resources/svg/phone-icon-blue.svg"></include>
-            </a>
-
-            <button x-on:click="open = false" class="flex items-center gap-2">
-              <div>
-                <include src="./resources/svg/arrow-right-icon.svg"></include>
-              </div>
-            </button>
-          </div>
-        </div>
-        <nav x-data class="grid pt-16 lg:hidden">
-          <ul class="menu-mobile | ">
-            <li class="menu-item">
-              <a class="active no-underline" title="Intro" href="#hero" x-on:click="open = false">Intro</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Services" href="#services" x-on:click="open = false">Services</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Referenties" href="#references-anchor"
-                x-on:click="open = false">Referenties</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Demo" href="#demo" x-on:click="open = false">Demo</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Partners" href="#partners" x-on:click="open = false">Partners</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Artikelen" href="artikelen.html" x-on:click="open = false">Artikelen</a>
-            </li>
-            <li class="menu-item">
-              <a class="no-underline" title="Apps" href="apps.html" x-on:click="open = false">APPS</a>
-            </li>
-            <li class="pl-16">
-              <a class="button button-outline-primary mt-10" href="#toLinkedIn" x-on:click="open = false">
-                <div class="button-logo">
-                  <include src="./resources/svg/linkedin-logo.svg"></include>
-                </div>
-
-                <span class="sr-only">LinkedIn link</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="fixed top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
-        <div class="absolute rotate-90 -scale-x-100 -bottom-[238px] -right-[294px] w-[863px] opacity-20">
-          <include src="./resources/svg/hero-bg.svg"></include>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+<div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
     <div class="absolute -top-11 right-[-625px] -z-10 w-[863px] lg:w-[1233px] lg:-top-16 lg:right-[-565px]">
       <include src="./resources/svg/hero-bg.svg"></include>
     </div>
@@ -163,20 +17,20 @@
   <main class="relative overflow-hidden">
     <section id="hero" class="section | wrapper lg:grid lg:grid-cols-12">
       <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-5">
-        <span class="block text-blue-300 font-extrabold text-sm lg:mb-1">Onze applicatie</span>
+        <span class="block text-blue-300 font-extrabold text-sm uppercase tracking-widest lg:mb-2">Funderingsrisico-platform</span>
 
-        <h1 class="mb-2 lg:mb-5">Maak funderings- problematiek inzichtelijk</h1>
+        <h1 class="mb-3 lg:mb-5">Funderingsrisico in beeld voor 11&nbsp;miljoen panden</h1>
 
-        <p class="mb-4 lg:mb-7">Assetbeheer voor funderingen.</p>
+        <p class="mb-6 lg:mb-7 text-lg">Eén databron voor verzekeraars, banken, gemeenten en taxateurs — gevoed door BAG-data, satellietmetingen en KCAF-onderzoek.</p>
 
-        <div>
-          <a href="more-info.html" class="button button-primary">
-            Meer info
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:info@fundermaps.com?subject=Demo%20FunderMaps" class="button button-primary">
+            Plan een demo
             <div class="button-arrow">
               <include src="./resources/svg/arrow-right-icon.svg"></include>
             </div>
           </a>
-          <a href="#demo" class="button button-outline-primary | ml-2">Demo</a>
+          <a href="#preview" class="button button-outline-primary">Bekijk het platform</a>
         </div>
       </div>
 
@@ -199,10 +53,10 @@
         <li>
           <ul class="usp usp--blue | m-0 list-none">
             <li>
-              <h2 class="text-3xl lg:text-2xl">>1 miljoen</h2>
+              <h2 class="text-3xl lg:text-2xl">11&nbsp;miljoen panden</h2>
             </li>
             <li>
-              <p>Panden met vastgestelde funderingsgegevens.</p>
+              <p>Risicobeeld op pandniveau, gevoed door BAG, 3DBAG en bodemkundige data.</p>
             </li>
           </ul>
         </li>
@@ -215,7 +69,7 @@
               <h2 class="text-3xl lg:text-2xl">Herstelregister</h2>
             </li>
             <li>
-              <p>De landelijk officiële registratie van herstelde funderingen.</p>
+              <p>Hét nationale register voor uitgevoerd funderingsherstel — transparant voor taxatie en transactie.</p>
             </li>
           </ul>
         </li>
@@ -225,10 +79,10 @@
         <li>
           <ul class="usp usp--yellow | m-0 list-none">
             <li>
-              <h2 class="text-3xl lg:text-2xl">Risicoanalyses</h2>
+              <h2 class="text-3xl lg:text-2xl">Live data</h2>
             </li>
             <li>
-              <p>Voor elk pand een uitgangspunt voor het funderignsrisico.</p>
+              <p>Satelliet­metingen, QuickScans en herstelmeldingen worden continu verwerkt in het risicomodel.</p>
             </li>
           </ul>
         </li>
@@ -237,93 +91,80 @@
 
     <section id="services" class="section | wrapper my-14 lg:mt-14 lg:mb-32">
       <div class="lg:mb-9 lg:grid lg:grid-cols-12">
-        <h2 class="mb-3 lg:mb-0 lg:col-span-5">Services</h2>
+        <h2 class="mb-3 lg:mb-0 lg:col-span-5">Wat FunderMaps levert</h2>
 
         <p class="mb-7 lg:mb-0 lg:col-span-7">
-          De applicatie FunderMaps biedt verschillende services om funderingsgegevens te verwerken, beheren en te
-          gebruiken in analyses voor funderingsrisico's.
+          Vier manieren om funderingsdata in jouw werk te krijgen — kies wat past bij jouw proces. Eén onderliggende databron, vier ingangen.
         </p>
       </div>
 
-      <div class="grid gap-x-6 gap-y-2 lg:grid-cols-2 lg:gap-y-10">
-        <a class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
+      <div class="grid gap-x-6 gap-y-6 lg:grid-cols-2">
+        <article class="card | bg-grey-100 rounded-xl px-7 pt-14 pb-12">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/card-viewer-icon.svg"></include>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Interactieve Mapviewer</h3>
           </div>
 
           <p class="text-grey-400">
-            Ontdek in één oogopslag de <b>funderingsrisico's en funderingstypes</b> in heel Nederland. De interactieve kaart
-            biedt een heldere, visuele weergave van cruciale data, zodat snel inzicht wordt verkregen in de status van
-            gebouwen en gebieden.
+            Open de kaart, zoek op postcode of adres en zie per pand het <b>funderingsrisico, het funderingstype, onderzoekshistorie en herstelmeldingen</b>. Filter op wijk of gemeente en exporteer een selectie voor verder onderzoek.
           </p>
-        </a>
+        </article>
 
-        <div class="card--bg-visual | relative lg:mt-10 lg:-mb-10 after:bg-blue-900">
-          <a class="card | inline-block bg-grey-100 rounded-xl px-7 pt-14 pb-12 no-underline w-full">
-            <div class="inline-flex items-center lg:block">
-              <include src="./resources/svg/application-icon.svg"></include>
-              <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Geïntegreerd Platform</h3>
-            </div>
+        <article class="card | bg-grey-100 rounded-xl px-7 pt-14 pb-12">
+          <div class="inline-flex items-center lg:block">
+            <include src="./resources/svg/application-icon.svg"></include>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Beheerplatform</h3>
+          </div>
 
-            <p class="text-grey-400">
-              Beheer, analyseer en genereer rapporten met een efficiënt, alles-in-één platform. Van
-              <b>gestroomlijnde data-invoer</b> tot <b>inzichtelijke rapportages</b>, het platform transformeert complexe
-              funderingsinformatie naar bruikbare kennis voor projecten.
-            </p>
-          </a>
-        </div>
+          <p class="text-grey-400">
+            Eén werkomgeving voor <b>onderzoeken, herstelmeldingen en rapportages</b>. Werk samen met team en partners, koppel data uit eigen onderzoek en lever bevindingen terug aan de landelijke database.
+          </p>
+        </article>
 
-        <a class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline">
+        <article class="card | bg-grey-100 rounded-xl px-7 pt-14 pb-12">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/api-icon.svg"></include>
-            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Flexibele API-koppeling</h3>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">API-koppeling</h3>
           </div>
 
           <p class="text-grey-400">
-            Krijg <b>directe en naadloze toegang</b> tot waardevolle funderingsdata, gedetailleerde rapporten en specifieke
-            risicoprofielen. Integreer de krachtige API eenvoudig in systemen voor geautomatiseerde workflows
-            en realtime inzichten.
+            Plug FunderMaps direct in jouw <b>onderwriting-flow, taxatieproces of gemeentelijk dashboard</b>. JSON over HTTPS, BAG-ID als sleutel, met risicoscore, funderingstype en historie per pand.
           </p>
-        </a>
+        </article>
 
-        <a class="card | inline-block bg-grey-100 rounded-xl w-100 px-7 pt-14 pb-12 no-underline lg:mt-10 lg:-mb-10">
+        <article class="card | bg-grey-100 rounded-xl px-7 pt-14 pb-12">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/ai-model-icon.svg"></include>
-            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Slimme AI-modellen</h3>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Risicomodel</h3>
           </div>
 
           <p class="text-grey-400">
-            Vertrouw op <b>betrouwbare inzichten</b> die zijn gegenereerd door geavanceerde AI-modellen. Deze modellen
-            analyseren complexe datasets en leveren accurate voorspellingen en risicoanalyses, waardoor weloverwogen
-            beslissingen kunnen worden genomen.
+            Het <b>onderliggende model</b> combineert kadastrale data, 3D-bouwgeometrie, bodemkundige eigenschappen en satellietmetingen om gaten in het onderzoeksbeeld op te vullen — zodat ook panden zonder fysiek onderzoek een onderbouwde score krijgen.
           </p>
-        </a>
+        </article>
         <div id="references-anchor"></div>
       </div>
     </section>
 
-    <section id="demo" class="section | wrapper my-16 lg:mb-32">
+    <section id="preview" class="section | wrapper my-16 lg:mb-32">
       <div class="lg:mb-9 lg:grid lg:grid-cols-12">
-        <h2 class="mb-3 lg:mb-0 lg:col-span-5">Demo</h2>
+        <h2 class="mb-3 lg:mb-0 lg:col-span-5">In de app</h2>
 
         <p class="mb-8 lg:mb-0 lg:col-span-7">
-          Ontdek gedetailleerde inzichten via de kaartfunctionaliteit van de applicatie en krijg inzicht in verwerkte
-          funderings- en risicogegevens, onderzoeksdata, meetdata. Ontbrekende informatie wordt naadloos aangevuld
-          door slimme modellen. Hieronder vind je een visualisatie van de funderingstypes.
+          Een blik op de kaartweergave: per pand het funderingsrisico, het funderingstype, onderzoekshistorie en herstelmeldingen. Filter op wijk, gemeente of risicoklasse en duik door tot de pand­details.
         </p>
       </div>
 
-      <div class="relative">
-        <div class="absolute flex items-center justify-center top-0 bottom-0 left-0 right-0 bg-blue-900/70 lg:hidden">
-          <h3 class="text-white text-lg text-center tracking-normal">Alleen op desktop<br>beschikbaar</h3>
-        </div>
-        <img src="./resources/images/fundermaps-demo3.webp" height="1382" width="2466" alt="Fundermaps demo">
-      </div>
+      <figure class="relative">
+        <img class="rounded-xl w-full h-auto shadow-hero-img" src="./resources/images/fundermaps-demo3.webp" width="2466" height="1382" loading="lazy" alt="Schermafbeelding van de FunderMaps mapviewer met pandselectie en risicogegevens">
+        <figcaption class="sr-only">Schermafbeelding van de FunderMaps mapviewer.</figcaption>
+      </figure>
     </section>
+    <!-- Back-compat: legacy #demo anchor -->
+    <span id="demo" class="sr-only" aria-hidden="true"></span>
 
     <section id="references"
-      class="section section--dark section--references | relative pt-12 pb-14 lg:wrapper lg:rounded-xl lg:mb-32">
+      class="section section--dark section--references | relative pt-12 pb-14 lg:max-w-[73.75rem] lg:w-[calc(100%-2.5rem)] lg:mx-auto lg:rounded-xl lg:mb-32">
       <div class="lg:overflow-hidden">
         <div class="absolute w-[469px] -top-8 -right-[264px] lg:w-[670px] lg:-top-[37px] lg:-right-[105px]">
           <include src="./resources/svg/reference-bg.svg"></include>
@@ -398,7 +239,7 @@
         <a href="https://kcaf.nl"
           class="card | inline-block border border-grey-300 bg-white rounded-xl w-full px-7 pt-14 pb-12 no-underline h-full">
           <div class="h-32 flex items-start justify-start mb-4">
-            <img class="h-full object-contain" src="./resources/images/kcaf-logo.webp" alt="KCAF logo">
+            <img class="h-full object-contain" src="./resources/images/kcaf-logo.webp" width="170" height="198" loading="lazy" alt="KCAF logo">
           </div>
           <p class="text-grey-400 mb-7">
             Een stichting met als doelstelling het verzamelen, ontwikkelen en ontsluiten van kennis rond de aanpak en
@@ -414,7 +255,7 @@
         <a href="https://www.sensar.nl/"
           class="card | inline-block border border-grey-300 bg-white rounded-xl w-full px-7 pt-14 pb-12 no-underline h-full">
           <div class="h-32 flex items-start justify-start mb-4">
-            <img class="h-full object-contain" src="./resources/images/sensar-logo.webp" alt="Sensar logo">
+            <img class="h-full object-contain" src="./resources/images/sensar-logo.webp" width="309" height="125" loading="lazy" alt="Sensar logo">
           </div>
           <p class="text-grey-400 mb-7">
             Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele 
@@ -431,7 +272,7 @@
         <a href="https://www.skygeo.com/"
           class="card | inline-block border border-grey-300 bg-white rounded-xl w-full px-7 pt-14 pb-12 no-underline h-full">
           <div class="h-32 flex items-start justify-start mb-4">
-            <img class="h-full object-contain" src="./resources/images/skygeo-logo.webp" alt="SkyGeo logo">
+            <img class="h-full object-contain" src="./resources/images/skygeo-logo.webp" width="1858" height="558" loading="lazy" alt="SkyGeo logo">
           </div>
           <p class="text-grey-400 mb-7">
             Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele 
@@ -595,28 +436,7 @@
     </section>
   </main>
 
-  <footer class="section section--dark | pt-12 pb-14">
-    <div class="wrapper flex flex-col items-center lg:grid lg:grid-cols-12">
-      <div class="lg:col-span-4">
-        <include src="./resources/svg/logo/fundermaps-logo-white.svg"></include>
-      </div>
-
-      <div class="lg:col-span-4 lg:order-2 flex justify-end">
-        <a class="button button-outline-primary my-8 lg:my-0" href="https://www.linkedin.com/company/26521848/">
-          <div class="button-logo">
-            <include src="./resources/svg/linkedin-logo.svg"></include>
-          </div>
-
-          <span class="sr-only">LinkedIn link</span>
-        </a>
-      </div>
-
-      <p class="text-center text-sm lg:col-span-4">
-        © Copyright <span x-data="{ date: new Date() }" x-text="date.getFullYear()"></span> FunderMaps. Alle rechten
-        voorbehouden
-      </p>
-    </div>
-  </footer>
+  <include src="./_partials/footer.html"></include>
 </body>
 
 </html>
