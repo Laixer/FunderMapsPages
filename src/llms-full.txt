@@ -1,0 +1,993 @@
+# FunderMaps — full content
+
+> This file is the consolidated textual content of fundermaps.com (the Dutch marketing site). One section per page. Use it as long-form context for FunderMaps; for a structured index, see llms.txt.
+
+
+---
+
+# Home
+
+URL: https://fundermaps.com/
+
+Hero, services overview, references, partners.
+
+Onze applicatie
+
+## Maak funderings- problematiek inzichtelijk
+
+Assetbeheer voor funderingen. Meer info Demo
+
+### >1 miljoen
+
+Panden met vastgestelde funderingsgegevens.
+
+### Herstelregister
+
+De landelijk officiële registratie van herstelde funderingen.
+
+### Risicoanalyses
+
+Voor elk pand een uitgangspunt voor het funderingsrisico.
+
+### Services
+
+ De applicatie FunderMaps biedt verschillende services om funderingsgegevens te verwerken, beheren en te gebruiken in analyses voor funderingsrisico's.
+
+#### Interactieve Mapviewer
+
+ Ontdek in één oogopslag de funderingsrisico's en funderingstypes in heel Nederland. De interactieve kaart biedt een heldere, visuele weergave van cruciale data, zodat snel inzicht wordt verkregen in de status van gebouwen en gebieden.
+
+#### Geïntegreerd Platform
+
+ Beheer, analyseer en genereer rapporten met een efficiënt, alles-in-één platform. Van gestroomlijnde data-invoer tot inzichtelijke rapportages, het platform transformeert complexe funderingsinformatie naar bruikbare kennis voor projecten.
+
+#### Flexibele API-koppeling
+
+ Krijg directe en naadloze toegang tot waardevolle funderingsdata, gedetailleerde rapporten en specifieke risicoprofielen. Integreer de krachtige API eenvoudig in systemen voor geautomatiseerde workflows en realtime inzichten.
+
+#### Slimme AI-modellen
+
+ Vertrouw op betrouwbare inzichten die zijn gegenereerd door geavanceerde AI-modellen. Deze modellen analyseren complexe datasets en leveren accurate voorspellingen en risicoanalyses, waardoor weloverwogen beslissingen kunnen worden genomen.
+
+### Demo
+
+ Ontdek gedetailleerde inzichten via de kaartfunctionaliteit van de applicatie en krijg inzicht in verwerkte funderings- en risicogegevens, onderzoeksdata, meetdata. Ontbrekende informatie wordt naadloos aangevuld door slimme modellen. Hieronder vind je een visualisatie van de funderingstypes.
+
+#### Alleen op desktop
+beschikbaar
+
+### Referenties
+
+ Deze gebruikers gingen u voor:
+
+### Partners
+
+ Een stichting met als doelstelling het verzamelen, ontwikkelen en ontsluiten van kennis rond de aanpak en preventie van funderingsproblemen. Meer info
+
+ Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele staat van een potentieel funderingsrisico. Deze gegevens kunnen worden geleverd door Sensar en verwerkt in het FunderMaps-platform. Meer info
+
+ Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele staat van een potentieel funderingsrisico. Deze gegevens kunnen worden geleverd door SkyGeo en verwerkt in het FunderMaps-platform. Meer info
+
+ Dankzij de data van FunderMaps kunnen we hypotheekaanvragen sneller en beter beoordelen. Funderingsrisico's zijn direct inzichtelijk. BankHypotheekadviseur
+
+ Voor onze funderingsaanpak gebruiken we de kaarten van FunderMaps als basis. Ze zijn nauwkeurig, up-to-date en sluiten goed aan op onze eigen registraties. GemeenteCoördinator Gebiedsbeheer
+
+ Dankzij FunderMaps kregen we snel inzicht in risicogebieden. Hierdoor konden we tijdig ingrijpen en erger voorkomen. De kaartlagen en analyses zijn van hoge kwaliteit en makkelijk bruikbaar in ons interne systeem. GemeenteBeleidsmedewerker Openbare Ruimte
+
+ Met de informatie van FunderMaps konden we gerichter communiceren met bewoners over funderingsrisico’s. Dat gaf vertrouwen en hielp ons bij het prioriteren van onderhoud. WoningcorporatieProjectleider Vastgoedbeheer
+
+ Door de kaarten en modellen van FunderMaps weten wij precies waar de risico’s liggen. Dat maakt onze inspecties sneller én effectiever. IngenieursbureauAdviseur Geotechniek
+
+ Als taxateur zie ik direct of er sprake is van funderingsrisico’s. Dat scheelt enorm veel tijd en geeft duidelijkheid naar mijn opdrachtgevers. Taxatie BureauTaxateur
+
+ Dankzij de data van FunderMaps kunnen we hypotheekaanvragen sneller en beter beoordelen. Funderingsrisico's zijn direct inzichtelijk. BankHypotheekadviseur
+
+ Voor onze funderingsaanpak gebruiken we de kaarten van FunderMaps als basis. Ze zijn nauwkeurig, up-to-date en sluiten goed aan op onze eigen registraties. GemeenteCoördinator Gebiedsbeheer
+
+ Dankzij FunderMaps kregen we snel inzicht in risicogebieden. Hierdoor konden we tijdig ingrijpen en erger voorkomen. De kaartlagen en analyses zijn van hoge kwaliteit en makkelijk bruikbaar in ons interne systeem. GemeenteBeleidsmedewerker Openbare Ruimte
+
+ Met de informatie van FunderMaps konden we gerichter communiceren met bewoners over funderingsrisico’s. Dat gaf vertrouwen en hielp ons bij het prioriteren van onderhoud. WoningcorporatieProjectleider Vastgoedbeheer
+
+### Top taken
+ Funderingstypes & -risico's Privacy verklaring Algemene voorwaarden
+
+---
+
+# Apps overzicht
+
+URL: https://fundermaps.com/apps.html
+
+Index van FunderMaps apps en tools.
+
+Overzicht
+
+## Alle FunderMaps apps en tools op een plek
+
+ Gebruik deze pagina om snel door te klikken naar onze kaarten, dashboards, beheertools en aanvullende hulpmiddelen voor herstel en registratie.
+
+### FunderMaps applicaties
+
+ Werk je aan analyses, beheer je meldingen of heb je administratieve toegang nodig? Gebruik onderstaande links om je direct te verbinden met de juiste omgeving. FMFunderMaps MapsInteractieve kaarten en viewer→FAFunderMaps AppDashboard voor meldingen en rapportage→ADFunderMaps AdminBeheer voor teams en partners→ANFunderMaps AnalyticsGeavanceerde inzichten en rapporten→
+
+### Hersteltools & registraties
+
+ Gebruik onze aanvullende tooling voor snelle kosteninschattingen en het vastleggen van uitgevoerde herstelmaatregelen. Kies de workflow die bij jouw situatie past. QSQuickScan
+
+ Lees wat de QuickScan oplevert, waarom aanleveren belangrijk is en start de calculator direct. →HKIndicatieve herstelkosten
+
+ Start de KCAF Herstelkostencalculator, lees de toelichting en bekijk hoe je de uitkomsten kunt interpreteren. →NRNationaal Funderingsherstel Register
+
+ Meld herstelde panden aan, bekijk het stappenplan en krijg inzicht in de voordelen van registratie. →
+
+---
+
+# QuickScan
+
+URL: https://fundermaps.com/apps-quickscan.html
+
+KCAF-methode voor snel funderingsrisico-inzicht via gevelmetingen.
+
+QuickScan funderingsrisico
+
+## QuickScan: Snel inzicht in funderingsrisico's
+
+De QuickScan is een gestandaardiseerde methode van het KCAF. Op basis van gevelmetingen en de Richtlijn Funderingen onder Gebouwen ontstaat een betrouwbaar indicatief beeld van het funderingsrisico, zonder ingrijpend onderzoek. Start direct via het formulier en ontvang een eerste prijsindicatie van onderzoeksbedrijven in de omgeving.
+
+### Na het uitvoeren van een QuickScan
+
+Heb je de QuickScan afgerond? Upload het resultaat direct via hetzelfde formulier en voeg het QuickScan-bestand als bijlage toe. Zo blijven de bevindingen beschikbaar voor collega's, gemeenten en andere belanghebbenden.
+
+- Vergroot de betrouwbaarheid van de landelijke funderingsdatabase.
+- Maakt informatie voor toekomstige transacties, onderzoeken en meldingen direct beschikbaar.
+- Biedt een transparante en consistente onderbouwing van funderingsrisico's.
+
+Het uploaden van QuickScans is een verplicht onderdeel van de werkwijze en helpt de sector om kennis actueel en gedeeld te houden.
+
+---
+
+# Indicatieve herstelkosten
+
+URL: https://fundermaps.com/apps-herstelkosten.html
+
+Eerste raming van funderingsherstelkosten.
+
+Indicatieve herstelkosten
+
+## Snel inzicht in kosten voor funderingsherstel
+
+Met de KCAF Herstelkostencalculator krijg je binnen enkele minuten een eerste raming van de herstelkosten per pand. Vul het formulier in om direct een indicatie te ontvangen op basis van funderingstype, herstelmethode en pandgrootte.
+
+### Na de berekening
+
+Gebruik de uitkomst als eerste indicatie en laat bij twijfel een volledig funderingsonderzoek uitvoeren. Registreer uitgevoerde herstelmaatregelen in het Nationaal Funderingsherstel Register.
+
+---
+
+# Nationaal Funderingsherstel Register
+
+URL: https://fundermaps.com/nationaal-herstelregister.html
+
+Registreer uitgevoerd funderingsherstel.
+
+Nationaal herstelregister
+
+## Leg funderingsherstel vast voor transparantie en zekerheid
+
+Meld herstelde funderingen in het Nationaal Funderingsherstel Register. Zo blijven kennis en vertrouwen behouden en verloopt besluitvorming rond transacties, taxaties en beleid sneller.
+
+Gebruik het formulier hieronder om herstelmaatregelen aan te melden en voeg de relevante bewijsdocumenten toe. Wil je als gemeente of herstelbedrijf structureel aansluiten? Neem contact op via info@fundermaps.com.
+
+### Na het aanmelden
+
+Controleer of alle bewijsdocumenten zijn toegevoegd. Na validatie sturen we het certificaat waarmee de herstelmaatregelen aantoonbaar blijven voor toekomstige transacties en taxaties.
+
+---
+
+# Funderingstypes & -risico's
+
+URL: https://fundermaps.com/media-library.html
+
+Visueel overzicht van funderingstypes en risico's.
+
+Informatie
+
+## Funderingstypes & -risico's
+
+ Funderingstypes
+
+ In Nederland worden diverse funderingstypes gebruikt, afhankelijk van de ondergrond en bouwtechnische eisen. Veelvoorkomende types zijn een fundering op staal, waarbij betonnen stroken onder dragende muren worden geplaatst, en paalfunderingen, waarbij palen in de grond worden geheid of geschroefd om de belasting naar diepere en stevigere grondlagen over te dragen. De keuze van het specifieke type fundering hangt af van factoren zoals bodemgesteldheid, belasting, kosten en bouwvoorschriften. Gedurende de afgelopen 150 jaar zijn er verschillende combinaties en varianten van deze funderingstypes toegepast in de bouwpraktijk.
+
+ Bacteriën
+
+ Bacteriën kunnen houten funderingspalen verzwakken, vooral grenenhout, door palenpest. Deze bacteriën vormen een consortium dat zonder zuurstof kan overleven en zich binnenin de paal verplaatst via waterstromen. Dit probleem treft ongeveer 33% van de houten paalfunderingen in Nederland, voornamelijk in regio's met een hogere dragende zandlaag. Vuren houten palen zijn minder vatbaar voor aantasting en worden daarom in gebieden zoals Rotterdam vaker gebruikt. Sinds de jaren '60 is het gebruik van grenenhout als heipaal verboden, en vanaf de jaren '70 zijn houten palen in het algemeen minder populair geworden vanwege bouwvoorschriften en de opkomst van betonnen palen.
+
+ Schimmelaantasting
+
+ Schimmelaantasting is een belangrijke oorzaak van schade aan houten funderingspalen in het westen en noorden van Nederland. Schimmels hebben vocht, zuurstof en voeding nodig om te overleven. Ondergronds, waar het altijd vochtig is en het hout als voeding dient, is de ideale omgeving voor schimmels om actief te worden en het hout aan te tasten. Dit proces, bekend als paalrot, treedt op bij droogstand wanneer zuurstof bij de bovenkant van de paal kan komen. De mate van aantasting hangt af van de cumulatieve droogstand en de aanwezigheid van vocht en voedsel voor schimmels. Om schimmelaantasting te voorkomen, moeten funderingspalen volledig onder grondwaterstand geplaatst worden. De aantasting kan worden gevisualiseerd en geanalyseerd door onderzoek te doen naar de paalkop.
+
+ Negatieve kleef
+
+ Negatieve kleef is een fenomeen dat optreedt bij houten funderingspalen, waarbij zakkende grondlagen harder zakken dan de palen zelf. Klei blijft aan de palen kleven, waardoor extra belasting ontstaat en de fundering omlaag wordt getrokken. Dit beperkt het draagvermogen van de palen. Zakkende grondlagen kunnen ontstaan door ophogingen in de straat of bouwterreinen. Vóór 1965 werd er geen rekening gehouden met negatieve kleef bij het ontwerp van gebouwen. Schade hangt samen met verschillen in het vervormingsgedrag van de palen, maar gelijkmatige vervorming voorkomt schade door negatieve kleef.
+
+ Verschil zakking
+
+ Negatieve kleef is een fenomeen dat optreedt bij houten funderingspalen, waarbij zakkende grondlagen harder zakken dan de palen zelf. Klei blijft aan de palen kleven, waardoor extra belasting ontstaat en de fundering omlaag wordt getrokken. Dit beperkt het draagvermogen van de palen. Zakkende grondlagen kunnen ontstaan door ophogingen in de straat of bouwterreinen. Vóór 1965 werd er geen rekening gehouden met negatieve kleef bij het ontwerp van gebouwen. Schade hangt samen met verschillen in het vervormingsgedrag van de palen, maar gelijkmatige vervorming voorkomt schade door negatieve kleef.
+
+ Optrekkend vocht
+
+ Negatieve kleef is een fenomeen dat optreedt bij houten funderingspalen, waarbij zakkende grondlagen harder zakken dan de palen zelf. Klei blijft aan de palen kleven, waardoor extra belasting ontstaat en de fundering omlaag wordt getrokken. Dit beperkt het draagvermogen van de palen. Zakkende grondlagen kunnen ontstaan door ophogingen in de straat of bouwterreinen. Vóór 1965 werd er geen rekening gehouden met negatieve kleef bij het ontwerp van gebouwen. Schade hangt samen met verschillen in het vervormingsgedrag van de palen, maar gelijkmatige vervorming voorkomt schade door negatieve kleef.
+
+---
+
+# Over FunderMaps
+
+URL: https://fundermaps.com/more-info.html
+
+Achtergrond bij het dataplatform.
+
+Informatie
+
+## FunderMaps biedt gedetailleerd risicobeeld op pandniveau
+
+ De funderingskenmerken van gebouwen worden in Nederland niet vastgelegd in de Basisregistratie Gebouwen (BAG). Analyses en inschattingen die in het verleden zijn gemaakt, zijn daarmee gebaseerd op een aanname van het type fundering, zoals op staal of houten palen gefundeerd. Dit is dan gedaan op basis van het bouwjaar van het pand en het globale type ondergrond. Echter, deze inschatting is slechts indicatief en kent een lage betrouwbaarheid.
+
+ Om het risico op schade aan funderingen door paalrot te bepalen is het van essentieel belang om te weten of er een houten paalfundering aanwezig is. Hierbij is ook de diepte waarop het hout begint en de mate waarin er sprake is van een te lage grondwaterstand belangrijk. Om het risico op schade aan funderingen op staal gefundeerd te bepalen zijn vergelijkbare uitgangspunten nodig. De samenstelling en eigenschappen van de ondergrond, en de verwachte bodemdaling (of -stijging) zijn tevens zeer belangrijk.
+
+### FunderMaps en de registratie van funderingstypes en hun kenmerken
+
+ Het dataplatform FunderMaps is in 2017 opgezet om inzicht te krijgen in deze factoren. Het platform werkt samen met verschillende gemeenten, provincies, woningcorporaties, taxatie instituten en de funderings- en bouwkundig onderzoeksbedrijven. Daarnaast verwerkt FunderMaps actief archieven van andere partijen en overheden om inzicht te krijgen in de gebruikte funderingstypes, aanlegniveau van funderingen en kwaliteitsgegevens over heel Nederland maar vooral in gebieden die gevoelig zijn voor funderingsproblemen.
+
+ Sinds 2017 is er in Nederland al een indrukwekkend dekkingsgebied opgebouwd waardoor van ca. 35% van alle panden van voor 1970 gegevens over de funderingen bekend zijn.
+
+### Kwaliteitsgegevens van funderingen vastgelegd door funderings- of bouwkundig onderzoek
+
+ Naast de registratie van funderingstypes en hun kenmerken, legt het platform ook kwaliteitsgegevens van funderingen vast die zijn vastgesteld door funderings- of bouwkundig onderzoek. Het platform bevat ook hoge-resolutie zakkingsdata voor ongeveer 20% van Nederland en bodemdaling gemeten vanuit de satelliet (InSAR), dankzij een samenwerking met een leverancier. Verder is er een Funderingsherstel Register met informatie over 23.000 funderingen die in het verleden zijn hersteld. Gegevens over de ondergrond en grondwaterstanden worden verkregen uit de Basisregistratie Ondergrond van de overheid en worden aangevuld met lokale gegevens zoals extra boringen, modellen en grondwatermeetnetten.
+
+### Gedetailleerde risicokaarten op pandniveau gemaakt voor gemeenten
+
+ Met behulp van het FunderMaps dataplatform zijn gedetailleerde risicokaarten op pandniveau gemaakt voor gemeenten. Dit levert een gedetailleerd risicobeeld op, gebaseerd op gevestigde onderzoeksgegevens. Dit resultaat onderscheidt zich van de verouderde funderingsviewer die KCAF samen met RvO heeft ontwikkeld en t.o.v. het indicatieve uitgangspunten op Gemeente niveau gepresenteerd in de https://klimaatschadeschatter.nl een gedetailleerd beeld op pandniveau.
+
+---
+
+# Kennisbank — artikelen
+
+URL: https://fundermaps.com/artikelen.html
+
+Achtergrond en praktijkkennis over funderingsproblematiek.
+
+Kennisbank
+
+## Artikelen
+
+Achtergrond en praktijkkennis over funderingsproblematiek — van bewoners en gemeenten tot herstel, juridische afwegingen en techniek. Filter op thema en klik een artikel open om verder te lezen.
+
+### 11 redenen waarom gemeenten funderingsmeldingen zouden moeten registreren met FunderMapsFunderingsproblemen nemen toe in Nederland, vooral in gebieden met slappe bodem en bodemdaling. Gemeenten krijgen steeds vaker vragen van bewoners over scheuren, verzakkingen en funderingsschade. Door deze …StrategieGemeente
+
+#### 1. Gebruik maken van bestaande landelijke database (FunderMaps)
+
+Gemeenten hoeven niet zelf het wiel uit te vinden. De FunderMaps-database bevat reeds archiefdata van panden, funderingstypen, satellietmetingen (pandzakkingssnelheden), onderzoeksresultaten en eerdere meldingen van bewoners. Daarmee kan iedere nieuwe melding sneller en beter worden geduid.
+
+#### 2. Meldingssoftware in eigen gemeentelijke huisstijl
+
+Via een op maat en in huisstijl van de gemeente gemaakt meldingsformulier kunnen bewoners eenvoudig melding maken. De data wordt opgeslagen, gevisualiseerd op kaart en vertaald naar topkaarten op wijk- en buurtniveau.
+
+#### 3. Meldingen inzichtelijk in een centraal beheersportaal
+
+Alle meldingen, inclusief eventueel bijgevoegde foto's of documenten, worden opgeslagen in een gemeentelijk toegankelijke adminomgeving. Hier kan de opvolging worden geregistreerd en bewaakt.
+
+#### 4. Flexibele afhandeling: door gemeente of KCAF-team
+
+Meldingen kunnen worden beantwoord door gemeentelijke medewerkers of - bij beperkte capaciteit - door het team van KCAF. In dat geval legt KCAF periodiek verantwoording af aan de gemeente.
+
+#### 5. Inhoudelijke beantwoording ondersteund door data en analyses
+
+Dankzij de koppeling met FunderMaps kan elke melding onderbouwd worden met risicoanalyses, funderingstypen, kaartmateriaal en historische gegevens. Dit zorgt voor deskundige en consistente terugkoppeling.
+
+#### 6. Geen versnippering, maar aansluiting bij landelijke infrastructuur
+
+Een gestandaardiseerde aanpak voorkomt dat elke gemeente een eigen meldstructuur ontwikkelt. Dit bevordert landelijke beleidsvorming en maakt gegevens uit verschillende regio's vergelijkbaar.
+
+#### 7. Betrouwbare en toegankelijke communicatie richting bewoners
+
+De herkenbare lokale ingang (loket) in combinatie met inhoudelijke ondersteuning door KCAF zorgt voor vertrouwen bij bewoners en deskundige opvolging.
+
+#### 8. Geen aparte ICT-ontwikkeling of beheer nodig
+
+De meldstructuur van KCAF is volledig operationeel en veilig. Gemeenten hoeven geen eigen meldingssystemen te ontwikkelen, beheren of updaten.
+
+#### 9. Schaalvoordeel en kennisdeling via het KCAF-netwerk
+
+Gemeenten profiteren van ervaringen uit andere regio's, toegang tot tools, analyses en innovaties (zoals AI en koppelingen met de taxatieketen) die anders kostbaar of onbereikbaar zouden zijn.
+
+#### 10. Ondersteuning dankzij landelijke subsidie voor het Nationaal Funderingsloket
+
+KCAF ontvangt landelijke subsidie voor de uitvoering van het Nationaal Funderingsloket. In bepaalde gevallen maakt dit het mogelijk meldingen uitgebreider op te pakken, bijvoorbeeld door het organiseren van een huisbezoek.
+
+#### 11. QuickScan-fonds voor schrijnende gevallen
+
+FunderMaps, KCAF en enkele erkende funderingsonderzoekspartijen hebben samen een QuickScan-fonds opgezet. Hiermee kan in uitzonderlijke en schrijnende situaties een funderingsonderzoek (QuickScan) voor particuliere pandeigenaren kosteloos worden uitgevoerd.
+
+### Funderingsproblemen in NederlandFunderingsproblemen komen steeds vaker voor in Nederland. Voor huiseigenaren kunnen de gevolgen groot zijn: van scheuren in muren tot waardedaling van de woning. Dit overzicht bundelt de belangrijkste …OverzichtBewoner
+
+#### Wat is een fundering?
+
+De fundering vangt het gewicht van een gebouw op en brengt dit gelijkmatig over op de ondergrond. Een goede fundering voorkomt verzakkingen en scheefstand.
+
+Meer informatie staat op de FAQ-pagina van het KCAF.
+
+#### Wat zijn funderingsproblemen en wat zijn de oorzaken?
+
+Funderingsproblemen ontstaan wanneer de fundering haar dragende functie niet meer goed vervult. Dit kan tot schade aan het gebouw leiden. Veelvoorkomende oorzaken zijn:
+
+- Aantasting van houten funderingspalen door schimmels of bacteriën bij lage of sterk wisselende grondwaterstanden
+- Negatieve kleef door ophoging of verlaging van het maaiveld
+- Bodemdaling of langdurige droogte
+- Zettingsverschillen of constructiefouten
+
+#### Hoe zijn funderingsproblemen te herkennen?
+
+Let op signalen zoals:
+
+- Scheuren in muren (vooral schuin of trapsgewijs)
+- Klemmende ramen en deuren
+- Scheve vloeren of verzakkingen
+- Krakende geluiden of scheurend metselwerk
+
+Zie het stappenplan bij vermoedens van funderingsproblemen voor een volledig overzicht.
+
+#### Wat zijn de gevolgen van funderingsproblemen?
+
+- Financiële impact: een woning met funderingsproblemen kan tot 25% in waarde dalen.
+- Structurele schade: funderingsproblemen kunnen leiden tot ernstige constructieve schade.
+- Veiligheidsrisico's: in bepaalde situaties kunnen bewoners onveilige situaties ervaren.
+
+#### Wat te doen bij (vermoedelijke) funderingsproblemen?
+
+- Controleer het funderingsrisico
+
+Gebruik bijvoorbeeld de FunderMaps Viewer of vraag een funderingsrisicorapport op via het KCAF.
+- Laat een funderingsonderzoek uitvoeren
+
+Het KCAF biedt een beslisschema dat helpt bepalen welk type onderzoek geschikt is.
+- Vraag een QuickScan aan
+
+Voor een eerste inschatting is de QuickScan funderingsrisico beschikbaar.
+- Onderzoek herstelmaatregelen
+
+Soms volstaat funderingsversterking; in andere gevallen is vervanging nodig. De kosten liggen vaak tussen circa €30.000 en €80.000 per woning.
+- Regel financiering
+
+Informeer naar gemeentelijke leningen, mogelijkheden via de hypotheekverstrekker en landelijke regelingen zoals het Duurzaam Funderingsherstelfonds.
+
+#### Wat als herstel niet direct te betalen is?
+
+Tijdig handelen voorkomt verdere schade en hogere kosten. Mogelijke opties:
+
+- Informeer bij de gemeente naar fondsen of leningen.
+- Neem contact op met de hypotheekverstrekker voor maatwerkoplossingen.
+- Spreek met het KCAF of Nationaal Funderingsloket over tijdelijke maatregelen.
+
+#### Juridische aspecten bij aan- of verkoop
+
+- De verkoper heeft een meldplicht.
+- De koper heeft een onderzoeksplicht.
+
+Schakel bij twijfel een juridisch of bouwkundig expert in.
+
+#### Waar is hulp beschikbaar?
+
+- KCAF — informatie, advies en rapportages. Zie www.kcaf.nl.
+- Nationaal Funderingsloket — gratis en onafhankelijk advies en meldpunt.
+- Gemeente — inzicht in lokale regelingen, subsidies en leningen.
+
+Let op
+
+Signalen van funderingsproblemen verdienen snelle aandacht. Vroegtijdig ingrijpen beperkt schade en kosten.
+
+### Bacteriële aantasting in houten paalfunderingen: een onderschat probleemBacteriële aantasting, ook wel palenpest genoemd, vormt een subtiele maar ingrijpende bedreiging voor houten paalfunderingen. Dit artikel zet de unieke eigenschappen, regionale verschillen en praktische …Techniek
+
+#### Unieke eigenschappen van bacteriële aantasting
+
+In tegenstelling tot schimmels die zuurstof nodig hebben, kunnen sommige bacteriën hout ook in zuurstofloze omstandigheden afbreken. Daardoor blijft aantasting vaak onopgemerkt, zelfs onder water.
+
+Vooral grenenhout (Pinus sylvestris) is gevoelig. Een consortium van circa tien gespecialiseerde bacteriën werkt samen en blijft actief in anaerobe omstandigheden.
+
+#### Grenenhout versus vurenhout
+
+De open celstructuur van grenenhout laat grondwater en bacteriën gemakkelijk binnendringen, waardoor aantasting zich snel verspreidt. Vurenhout (Picea abies) heeft een dichtere celstructuur en is daardoor minder kwetsbaar.
+
+Grenenhout kent bovendien beperkingen in paallengte. De kortere inzetbaarheid is een nadeel in gebieden met diepere draagkrachtige lagen.
+
+#### Regionale verschillen en historische context
+
+In regio's met een relatief hoge zandlaag, zoals de Zaanstreek, Amsterdam en Gouda, is traditioneel veel grenenhout gebruikt. Hierdoor komt bacteriële aantasting daar vaker voor.
+
+In steden als Rotterdam, waar de zandlaag dieper ligt, werd vooral vurenhout toegepast. Dit verklaart regionale verschillen in de huidige risicobeoordeling.
+
+#### Overgang naar betonnen heipalen
+
+Tot in de jaren zestig waren grenenhouten palen gangbaar. Door toegenomen kennis over bacteriële risico's en beperkingen in paallengte nam het gebruik af. Vanaf circa 1970 werden betonnen heipalen breder toegepast, mede gestuurd door regelgeving en draagkrachtberekeningen.
+
+#### Wat je mee moet nemen
+
+Bacteriële aantasting vormt nog steeds een substantieel risico voor gebouwen met houten funderingen van voor de jaren zeventig. Houd bij beoordelingen rekening met regionale verschillen en historische bouwwijzen.
+
+Een goed begrip van deze factoren helpt vastgoedprofessionals en funderingsspecialisten om onderhoud, monitoring en herstel gerichter in te zetten.
+
+### De funderingsproblematiek: droogstand van houten palenHouten paalfunderingen in klei- en veengebieden kampen met een hardnekkig risico: paalrot door droogstand. Dit artikel beschrijft het mechanisme, de technische uitdagingen en hoe monitoring en herstel een …Techniek
+
+#### Paalrot: een tikkende tijdbom
+
+Paalrot ontstaat wanneer schimmels toegang krijgen tot zuurstof en het hout van de paal als voedingsbron gebruiken. Dalen grondwaterstanden, verdampende bomen, lekkende riolen of bemalingen kunnen de paal tijdelijk of langdurig droogzetten.
+
+Ook opeenvolgende perioden van droogstand zijn voldoende om aantasting te starten. Hierdoor verliest de paal draagkracht en kan de fundering uiteindelijk bezwijken.
+
+#### Technische uitdagingen en mogelijke oplossingen
+
+Het volledig onder de grondwaterspiegel houden van palen is niet altijd haalbaar, zeker niet in gebieden met fluctuerende waterstanden. De gemiddelde tijd tussen aantasting en falen varieert: ongeveer drie jaar voor grenenspint, tien jaar voor vurenhout en vijftien jaar voor grenen kernhout.
+
+Het aantal gevoelige panden neemt niet snel af, omdat funderingsherstel en sloop-nieuwbouw slechts beperkt worden toegepast. Verwacht wordt dat de problematiek de komende decennia zichtbaar blijft.
+
+Er zijn twee hoofdstrategieën: acuut funderingsherstel of monitoring om de resterende levensduur te verlengen. Monitoring biedt uitstel maar geen definitieve oplossing.
+
+#### Wat je mee moet nemen
+
+Niet elk pand met houten palen ontwikkelt direct schade, maar de risico's zijn aanwezig. Voortdurende monitoring en proactief beheer helpen de veiligheid van bewoners te borgen.
+
+Nieuwe inzichten en technische innovaties zijn nodig om effectievere oplossingen te vinden. Samenwerking tussen gemeenten, eigenaren en kennisinstellingen blijft cruciaal.
+
+Het FunderMaps platform biedt actuele pandgegevens, risico-inschattingen en analysetools. Zo vertaalt u complexe data naar concrete acties en voorkomt u onnodige kosten.
+
+### De oorsprong van de term 'Fundering op staal'De term beschrijft funderingen die direct op de ondergrond rusten, maar roept buiten de bouwsector geregeld misverstanden op. Dit artikel verkent de historische context, taalontwikkelingen en …Historie
+
+#### Funderen op staal in de praktijk
+
+Funderen op staal betekent dat een constructie zonder heipalen op de draagkracht van de bovenste grondlagen steunt, vaak na grondverbetering. In zandige gebieden is deze methode nog steeds gangbaar; in zachte klei- en veengebieden bleken de veronderstelde draagkracht en beperkte zettingen achteraf vaak te optimistisch.Bron: FunderMaps
+
+#### Breed scala aan uitvoeringstechnieken
+
+Historisch onderzoek toont aan dat onder de noemer 'op staal' uiteenlopende technieken vallen: bakstenen of betonnen poeren, houten vaten, verticaal geplaatste takken en houten ondervloeren. De diversiteit illustreert dat het begrip vooral een verzamelnaam is voor ondiepe funderingen.
+
+#### Waarom het geen stalen constructie is
+
+Ondiepe funderingen worden niet van staal gemaakt. Het materiaal is gevoelig voor corrosie, kostbaar en biedt op lange termijn onvoldoende duurzaamheid. Ook bij modern funderingsherstel wordt staal slechts tijdelijk ingezet; beton draagt de constructie.Bron: FunderMaps
+
+#### Taalontwikkeling en mogelijke verbasteringen
+
+De term 'op staal' is vermoedelijk een verbastering van woorden zoals 'stal', 'estal' of 'opstal' die 'vaste plaats' betekenen. Archeologische bronnen beschrijven bovendien 'scheepshuiden' of houten planken als drukverdelende laag, wat later mogelijk is verward met dierenhuiden.
+
+Oud-Nederlandse termen als 'huyen' of 'huien' verwijzen naar korte paaltjes of takken die de bodem verdichtten. Samen met taalontwikkelingen verklaart dit hoe 'op staal' is uitgegroeid tot de huidige benaming.Bron: Geschiedenis van Amsterdam tot 1578
+
+#### Van 'op staal' naar 'ondiepe fundering'
+
+In de moderne praktijk sluit de term 'ondiepe fundering' beter aan op internationale terminologie en voorkomt hij verwarring met stalen constructies. Toch blijft kennis van de historische context nuttig om oude dossiers of lokale terminologie correct te duiden.
+
+### De verantwoordelijkheid van gemeenten bij funderingsproblematiekGrondwaterbeheer en bebouwing zijn onlosmakelijk verbonden. Gemeenten spelen een sleutelrol bij het voorkomen van funderingsschade doordat zij verantwoordelijk zijn voor de openbare ruimte, …GemeenteStrategie
+
+#### Waarom gemeenten aan zet zijn
+
+- Wegen, riolering en ophogingen in de openbare ruimte beïnvloeden grondwaterstanden en bodemdaling.
+- Gemeenten sturen via ruimtelijke plannen, vergunningen en onderhoudsnormen het gebruik van de ondergrond.
+- Bewoners melden schade vaak bij de gemeente wanneer effecten zichtbaar worden in straat of gevel.
+
+#### Instrumenten voor regie
+
+Met meetnetten voor grondwater, data-analyse (zoals FunderMaps) en meldingsportalen kan een gemeente hotspots snel lokaliseren. Door meldingen te koppelen aan beleid, zoals gemeentelijke rioleringsplannen of klimaatadaptatiestrategieën, ontstaat een integrale aanpak.
+
+Samenwerking met het KCAF en erkende onderzoeksbureaus borgt dat vervolgonderzoek volgens landelijke richtlijnen wordt uitgevoerd.
+
+#### Van signalering naar handelen
+
+Een duidelijke procesafspraak versnelt de reactie op meldingen: registratie, eerste beoordeling (QuickScan), prioritering door een multidisciplinair team en communicatie naar bewoners. Zo blijven verwachtingen realistisch en kan herstel tijdig worden voorbereid.
+
+#### Communicatie als sleutelfactor
+
+Transparante informatie over risico's, rollen en beschikbare maatregelen voorkomt onnodige onrust. Steeds meer gemeenten richten daarom een funderingsloket in met digitale kaarten en standaardantwoorden voor bewoners en professionals.
+
+### De wereld achter het houtmonsteronderzoekBij houten palen vormt laboratoriumonderzoek de sleutel tot een objectieve beoordeling. Dit artikel beschrijft de werkwijze, analysetechnieken en interpretatie van resultaten.Onderzoek
+
+#### Monstername en laboratoriumonderzoek
+
+Met een aanwasboor wordt een cilindervormig monster uit de paal gehaald en direct vochtig bewaard. In het laboratorium volgt lichtmicroscopisch onderzoek naar structuur en kwaliteit.
+
+#### Inzicht in houtsoort en aantasting
+
+Het onderzoek bepaalt de houtsoort, de mate van degradatie en de dikte van de zachte schil. Ook de excentriciteit van het paalhart en de korteduurdruksterkte worden vastgesteld voor een volledig beeld van de draagkracht.
+
+#### Rekenkundige vertaling
+
+De resterende dragende diameter vormt de basis voor een beoordeling volgens Eurocode-combinaties. Aandacht gaat uit naar kritieke zones zoals de paalkop en het omslagpunt waar negatieve kleef kan overgaan in positieve kleef.
+
+#### Vooronderzoek met SPECHT
+
+Voordat monsters worden genomen kan de SPECHT-methode de sterkte van het buitenste houtdeel inschatten. De meting, opgenomen in de KCAF-richtlijn, ondersteunt de afweging voor aanvullend onderzoek.
+
+#### Aanvullende technieken en beperkingen
+
+SPECHT-metingen reiken alleen tot het vrij gegraven deel van de paal. Daarom wordt soms een resistograaf ingezet die via boorweerstand inzicht geeft in diepere zones. Toch blijft een fysiek monster noodzakelijk om houtsoort en aantasting definitief vast te stellen.
+
+#### Conclusie
+
+Een combinatie van veldmetingen, microscopisch onderzoek en normatieve rekenregels levert het meest betrouwbare beeld van houten funderingen. Alleen zo kan de veiligheid en restlevensduur goed worden ingeschat.Bron: Nebest, 2025
+
+### Diepgaand inzicht in funderingsproblematiek: een werkwijze voor woningcorporaties en gemeentesEen stapsgewijze methode voor woningcorporaties en gemeenten om inzicht te krijgen in funderingsrisico's, gebaseerd op data-integratie, monitoring en praktische uitvoering.Onderzoek
+
+#### Stap 1 en 2: Gegevensverzameling en integratie
+
+Combineer landelijke bronnen zoals Kadaster, BAG en CBS met lokale archieven en grondwatergegevens. Gebruik GIS-software om datasets te integreren, patronen te visualiseren en data op te schonen.
+
+#### Stap 3: Monitoringsdata
+
+Analyseer pand- en bodembeweging via InSAR en volg grondwaterstanden met peilmeters. Deze data legt verbanden tussen bodemdaling, droogstand en funderingsgedrag.
+
+#### Stap 4 en 5: Geavanceerde analyse en hotspots
+
+Machine-learningmodellen koppelen variabelen zoals bouwjaar, bodemtype en funderingsstatus. Geostatistiek helpt clusters van verhoogd risico te signaleren en hotspots te prioriteren.
+
+#### Stap 6 en 7: Inspecties en handelingsstrategieën
+
+In hotspots volgen gevelscans, geofysische metingen en structurele evaluaties. Op basis van de bevindingen worden risico's gewogen en maatregelen bepaald, variërend van monitoring tot funderingsvernieuwing.
+
+#### Stap 8: Continue monitoring
+
+Werk datasets bij met nieuwe inspecties, actualiseer modellen en volg effecten van maatregelen. Zo blijft de aanpak toekomstbestendig.
+
+#### Voordelen van de methode
+
+- Diepgaand inzicht op basis van historische, ruimtelijke en technische data.
+- Evidence-based beslissingen en gerichte inzet van middelen.
+- Monitoring zorgt voor tijdige signalering en bijsturing.
+
+#### Werkmethodiek geïntegreerd in FunderMaps
+
+De methode is vertaald naar GevelScans: een funderingsonderzoek light volgens de KCAF-richtlijn. Het FunderMaps-platform automatiseert data-inwinning, dashboards, risicobeoordeling en planning en ondersteunt de afstemming tussen betrokken partijen.
+
+"We waren op zoek naar een praktische aanpak om inzicht te krijgen in funderingsproblemen binnen ons vastgoed. De methode overtrof onze verwachtingen."
+
+— Woningcorporatie uit Noord-Nederland
+
+### Het fenomeen van negatieve kleef: een cruciale uitdaging voor vastgoed in de RandstadNegatieve kleef belast houten paalfunderingen extra wanneer grondlagen sneller zakken dan de palen. Inzichten in oorzaken, effect en regionaliteit helpen om risico's te beperken.StrategieGemeente
+
+#### Wat is negatieve kleef?
+
+Wanneer klei aan palen blijft kleven en de bodem sneller zakt dan de paal, wordt de fundering omlaag getrokken. Het draagvermogen neemt af omdat het ontwerp hier vroeger nauwelijks rekening mee hield.
+
+#### Oorzaken
+
+Zakkende grondlagen ontstaan door ophogingen, bouwactiviteiten, variaties in grondwater of langdurige droogte. Verschillen tussen opgehoogde straten en lager gelegen tuinen vergroten de variatie in belasting, vooral bij hoekpanden.
+
+#### Effect op funderingen
+
+Verschillen in vervormingsgedrag tussen palen leiden tot scheuren, verzakkingen en schade. Factoren zoals houtkwaliteit, bacteriële aantasting, grondwaterfluctuaties en algemene bodemdaling bepalen de ernst.
+
+#### Regionale gevoeligheid
+
+Negatieve kleef treedt vooral op in slappe klei- en veengebieden zoals de Randstad. In zandgebieden zijn ondiepe funderingen gangbaar en speelt negatieve kleef praktisch niet, al blijven andere risico's mogelijk.
+
+#### Conclusie
+
+Inzicht in bodemsamenstelling, bouwgeschiedenis en grondwaterbeheer is cruciaal om negatieve kleef te beperken. Vastgoedprofessionals kunnen hiermee proactief maatregelen treffen en de waarde en levensduur van panden beschermen.
+
+### Juridische afwegingen bij verkoopHoe woningcorporaties woningen met funderingsrisico's juridisch verantwoord verkopen, met behulp van FunderMaps en aangepaste clausules.Techniek
+
+#### Risicoklassen als startpunt
+
+FunderMaps classificeert risico's van A (laag) tot E (zeer hoog) op basis van geotechnische modellen en lokale omstandigheden. De classificatie bepaalt de vervolgstappen richting verkoop.
+
+#### Juridische borging
+
+Op basis van advies van onder meer mr. Wessel van Boetzelaer is een aangepaste koopovereenkomst ontwikkeld. De ouderdoms- en uitsluitingsclausule benoemt funderingsgebreken expliciet en legt onderzoeksplicht bij de koper.
+
+#### Label C vraagt maatwerk
+
+Bij label C wordt verkoop alleen overwogen na een QuickScan met maximaal 'midden risico' als uitkomst, aangevuld met bestuurlijke afstemming over bijzondere situaties zoals scharnierwoningen.
+
+#### Rol van FunderMaps
+
+FunderMaps ondersteunt bij verkoopdossiers, besluitvorming en beheer van juridische documenten. Modelclausules, toelichtingen en maatwerkbegeleiding zorgen voor consistente dossiervorming.
+
+#### Conclusie
+
+Een combinatie van objectieve risicoclassificatie, juridische borging en bestuurlijke afweging maakt verantwoorde verkoop mogelijk. Dit beschermt zowel de corporatie als de koper en draagt bij aan een transparante markt.
+
+### Optrekkend vocht: een taai maar oplosbaar probleemOptrekkend vocht behoort tot de hardnekkigste oorzaken van schade en gezondheidsklachten in oudere woningen. Dit artikel beschrijft oorzaken, diagnose en maatregelen.Juridisch
+
+#### Oorzaken en symptomen
+
+Veel oudere woningen zijn gebouwd zonder waterkering tussen fundering en gevel. Grondvocht trekt via capillaire werking omhoog en veroorzaakt loslatend stucwerk, donkere plinten, zoutuitbloei en muffe geuren. Condensatie, koudebruggen en gebrekkige ventilatie kunnen de problematiek versterken.
+
+#### Diagnose als startpunt
+
+Een bouwkundige inspectie brengt in kaart of optrekkend vocht, doorslaand vocht, lekkages of ventilatieproblemen de oorzaak vormen. Zonder juiste diagnose is elke ingreep symptoombestrijding.
+
+#### Praktische aanpakken
+
+- Injecteren van muren met een vochtwerende gel als nieuwe waterkering.
+- Binnendrainage of muurdoorvoeringen om vocht gecontroleerd af te voeren.
+- Gevelisolatie en renovatiepleister zodat muren kunnen ademen.
+- Herstel van lekkages, zoals kapotte dakgoten of voegen.
+- Verbeterde ventilatie, met name in natte ruimtes.
+
+#### Samenwerking met bewoners
+
+Technische maatregelen alleen zijn niet voldoende. Bewoners voorlichten over ventileren, stoken en het drogen van was voorkomt terugkerende klachten.
+
+#### Geen luxeprobleem
+
+Optrekkend vocht is een fundamentele bedreiging voor woonkwaliteit en gezondheid. Een bouwkundig onderzoek vormt het startpunt voor een duurzame oplossing.
+
+### Sloop en vervangende nieuwbouw: funderingsproblemen structureel oplossenBij ernstige funderingsschade kan vervangende nieuwbouw de meest toekomstbestendige keuze zijn. Dit artikel schetst de afwegingen.Techniek
+
+#### Voordelen van sloop en nieuwbouw
+
+Sloop maakt het mogelijk om in een keer een nieuwe fundering te realiseren. Nieuwbouw biedt kansen voor energieneutrale woningen, optimale plattegronden en betere toegankelijkheid.
+
+#### Waarom het niet altijd kan
+
+- Draagvlak onder bewoners: herhuisvesting vereist ruime instemming.
+- Ruimtelijke beperkingen en regelgeving laten uitbreiding niet altijd toe.
+- Gebrek aan beschikbare woningen voor tijdelijke huisvesting.
+- Teleurstellingen uit eerdere trajecten kunnen wantrouwen veroorzaken.
+- Een casco dat nog redelijk is maakt renovatie soms aantrekkelijker.
+
+#### Tussen wens en werkelijkheid
+
+Zonder sloop vallen corporaties vaak terug op deelmaatregelen zoals dakvervanging of ventilatie-aanpassingen. Daarmee wordt hoogstens tijdelijk verlichting geboden.
+
+#### Sloop als strategische keuze
+
+Wanneer het technisch en planologisch kan, verdient sloop een plek in de afweging. De maatschappelijke waarde van toekomstbestendige woningen en lagere onderhoudslasten is groot.
+
+### Van risico naar regie: funderingsrisico's verantwoord beheerd en juridisch geborgdMet FunderMaps, de QuickScan-methodiek van het KCAF en juridische begeleiding ontstaat een compleet procesproduct waarmee corporaties grip houden op funderingsrisico's.Herstel
+
+#### Funderingsrisico's onder controle
+
+FunderMaps classificeert panden in risicoklassen A t/m E op basis van ondergrond, funderingstype, zakkingssnelheid en historische schade. De hotspotanalyse bepaalt de scenario's: monitoring, beheer of directe actie.
+
+#### QuickScan als praktische tussenstap
+
+Voor panden met een verhoogd risico (label C, D of E) is aanvullend onderzoek nodig. De QuickScan omvat lintvoeg- en loodmetingen, scheurclassificatie en optioneel zakkingsdata. Uitvoering vanaf de openbare ruimte houdt de belasting voor bewoners beperkt.
+
+FunderMaps begeleidt uitvraag, benchmarkt prijzen en controleert rapportages van erkende uitvoerders.
+
+#### Uitvraag en uitvoering op schaal
+
+- D-label: QuickScan verplicht.
+- C-label: QuickScan bij verkoop.
+- E-label: direct volledig funderingsonderzoek.
+
+Heldere criteria zorgen voor kostenbeheersing en uniforme rapportages.
+
+#### Gezond beheer zonder verkoop
+
+QuickScans tonen stabiliteit aan, helpen risico's monitoren en ondersteunen onderhouds- en verduurzamingsplannen.
+
+#### Verkoop juridisch geborgd
+
+Bij verkoop levert FunderMaps een compleet dossier met QuickScan of funderingsrapport, risicoclassificatie, modelclausules en instructies voor makelaar en notaris. Contractuele uitsluiting van aansprakelijkheid beschermt de corporatie.
+
+#### Begeleiding en kennisborging
+
+Corporaties ontvangen opleiding, formats en toegang tot het platform zodat expertise structureel wordt geborgd.
+
+### Wat mag je verwachten van een funderingsonderzoek?Funderingsproblemen nemen toe door bodemdaling, klimaatverandering en veroudering van funderingen. Deze gids legt uit welke vormen van onderzoek er zijn en wat ze opleveren.Strategie
+
+#### Fasering van funderingsonderzoek
+
+KCAF onderscheidt twee hoofdvormen: de QuickScan Funderingsrisico en het volledig funderingsonderzoek.
+
+##### 1. QuickScan Funderingsrisico
+
+Visuele beoordeling vanaf de openbare ruimte, gericht op scheuren en scheefstand. Doel: bepalen of een volledig onderzoek nodig is.
+
+- Indicatief en visueel.
+- Lintvoegmeting, loodmeting, scheurclassificatie, satellietdata.
+- Resultaat: risico-inschatting laag, gemiddeld of hoog.
+
+Let op: een QuickScan inspecteert de fundering zelf niet.
+
+##### 2. Volledig funderingsonderzoek
+
+Technisch onderzoek met graafwerk, uitgevoerd door erkende bureaus.
+
+- Bureaustudie: tekeningen, paalgegevens, sonderingen, grondwater en historische ingrepen.
+- Visuele inspecties binnen en buiten.
+- Scheefstandsmetingen (lintvoeg en lood).
+- Zakkingsmetingen, bijvoorbeeld via satellietdata.
+- Funderingsinspectie in graafputten met monstername.
+- Bodem- en grondwateranalyse indien relevant.
+- Rapportage met advies, herstelopties en kostenraming.
+
+#### Beoordeling en classificatie
+QuickScan risicoklasseKenmerkenAanbevolen actieLaagGeen of minimale schade, scheefstand ≤ 1:300Geen directe actie, wel monitorenGemiddeldScheefstand tot 1:100, matige scheurenHerhaal QuickScan of plan volledig onderzoekHoogScheefstand > 1:75, forse of actieve schadeDirect volledig onderzoek of hersteltraject
+
+Een volledig onderzoek resulteert in een classificatie volgens de richtlijn Funderingen onder gebouwen. Deze kleurcodes vormen ook de basis voor het Funderherstelregister.KleurcodeBetekenisAanbevolen vervolgGroenFundering functioneert naar verwachtingGeen ingreep; op termijn opnieuw beoordelenOranjeFundering functioneert nog maar is kwetsbaarMonitoring of herstel op middellange termijnRoodFundering functioneert niet meer of schade is ernstigHerstel of vernieuwing dringend noodzakelijk
+
+#### Wat mag je verwachten van de rapportage?
+
+- Foto's van scheuren en meetpunten.
+- Meetwaarden van scheefstand (mm/m en rotatieverhoudingen).
+- Duidelijke risicoclassificatie met onderbouwing.
+- Volledig handelingsperspectief: vervolgonderzoek, herstel of monitoring.
+- Transparantie over meetpunten, locaties en methoden.
+
+Voorbeeld bij gemiddeld risico: "De lintvoegmetingen tonen afwijkingen tot 1:150 en loodmetingen tot 1:140. Er zijn matige scheuren zichtbaar. Herhaal de QuickScan binnen drie jaar of voer een volledig funderingsonderzoek uit bij toename van afwijkingen."
+
+#### Wie voert funderingsonderzoek uit?
+
+KCAF beheert een erkenningsregeling voor onderzoeksbureaus. Alleen erkende partijen voeren onderzoeken uit volgens de richtlijn. Zie kcaf.nl/erkenningslijst.
+
+#### Waarom dit belangrijk is
+
+- Voorkomt onnodige kosten of verkeerde maatregelen.
+- Geeft duidelijkheid aan eigenaren, kopers en financiers.
+- Biedt een onderbouwd handelingsperspectief voor herstel of monitoring.
+
+### FunderMaps - Handleiding: Beslisschema onderzoek funderingsproblematiekDit beslisschema laat zien welke stappen volgen na ontvangst van een FunderMaps Funderingsrisicorapport. Het rapport geeft op basis van beschikbare data een eerste inschatting van het risico op …OnderzoekHandleiding
+
+#### Belangrijk om te begrijpen
+
+- FunderMaps is een dynamische database; gegevens worden continu uitgebreid, verbeterd en gevalideerd.
+- Elke risicoclassificatie krijgt een betrouwbaarheidslabel dat aangeeft hoe hard de informatie is.
+
+- Model: analyse op basis van data uit de ruimere omgeving en modelaannames.
+- Afgeleid: analyse op basis van gegevens uit de directe omgeving zoals nabijgelegen panden of satellietmetingen.
+- Vastgesteld: onderbouwd met onderzoeksrapporten of andere bewijsdocumenten voor het betreffende pand.
+
+- De beslissingen in het schema combineren risiconiveau en betrouwbaarheid, zodat vervolgacties proportioneel zijn.
+
+Het beslisschema start bij het FunderMaps Funderingsrisicorapport en leidt via beslismomenten naar monitoring, QuickScan, volledig onderzoek of directe maatregelen.
+
+#### Funderingsrisicoanalyse (groen blok)
+
+FunderMaps combineert meerdere databronnen om de funderingsrisico's te bepalen:
+
+- Archiefinformatie over funderingstypen, bouwjaar en herstelmaatregelen.
+- Onderzoeksrapporten met kwaliteitsbeoordelingen.
+- Satellietgegevens over actueel zakkingsgedrag.
+- Ondergrond- en grondwatergegevens uit landelijke voorzieningen.
+
+Op basis hiervan deelt het rapport panden in risicoklasse A t/m E:
+
+- Risico A – Geen risico.
+
+Het pand is hersteld, verkeert in goede staat of kent een betonpaalfundering.
+- Risico B – Laag risico.
+
+Geen directe vervolgstap nodig, maar het funderingstype vraagt alertheid voor de toekomst.
+- Risico C – Matig risico.
+
+Monitoring op afstand is gewenst; signalen of berekeningen wijzen op een licht verhoogd risico. Verkoop kan doorgaan zonder aanvullende onderzoeken.
+- Risico D – Hoog risico.
+
+Er zijn aanwijzingen voor funderingsproblemen, gebaseerd op metingen, signalen of modelberekeningen.
+- Risico E – Hoog risico.
+
+Er zijn duidelijke en vaak vastgestelde aanwijzingen voor schade of falen van de fundering.
+
+Interpretatie van risicoklasse D en E
+
+- Vastgesteld of afgeleid: vervolg met een QuickScan voor locatiebevestiging.
+- Alleen modelmatig: eerst aanvullende validatie; de uitkomst is niet direct bruikbaar voor beleidsbesluiten.
+
+#### QuickScan (oranje blok)
+
+De QuickScan is een snelle methode om funderingsrisico's te beoordelen op basis van visuele en meetbare indicatoren zoals scheurvorming, scheefstand en verzakkingssnelheid. Het onderzoek vindt plaats vanaf de buitenzijde en vormt een addendum op de KCAF-richtlijn Funderingen onder gebouwen.
+
+Omdat onderdelen van de QuickScan overeenkomen met het volledige onderzoek, kan eenvoudig worden opgeschaald als extra zekerheid nodig is.
+
+Mogelijke uitkomsten QuickScan
+
+- Laag risico →’ Geen vervolgactie.
+- Midden risico →’ Monitoring en controle op locatie.
+- Hoog risico →’ Aanvullend funderingsonderzoek noodzakelijk.
+
+#### Belang van terugkoppeling
+
+QuickScan-resultaten vormen samen met het funderingsrisicorapport de basis voor beleid en transacties. Het is cruciaal dat elke QuickScan wordt teruggekoppeld in FunderMaps.
+
+- De opdrachtgever van de QuickScan is verantwoordelijk voor het uploaden van de resultaten.
+- Een actuele database zorgt voor betrouwbare validatie in latere processen.
+
+#### Uploadproces
+
+- QuickScans kunnen direct in FunderMaps worden geüpload.
+- Na upload volgt validatie door FunderMaps of KCAF.
+- Geverifieerde resultaten worden ontsloten voor vervolgbesluitvorming.
+QuickScan aanvragen of resultaten uploaden
+
+Onderzoeksbureaus die volgens de KCAF-richtlijnen werken, staan in de erkenningsregeling van het Kennis Centrum Aanpak Funderingsproblematiek (KCAF).
+
+#### Funderingsonderzoek (blauw blok)
+
+Blijft het risico na de QuickScan hoog of is er onvoldoende duidelijkheid, dan volgt een volledig funderingsonderzoek. Historische onderzoeken kunnen onderdeel van de analyse zijn, waardoor soms geen aanvullend veldwerk nodig is.
+
+Een volledig onderzoek omvat onder meer:
+
+- Scheefstands- en zakkingsmetingen.
+- Archiefonderzoek en analyse van bouwtekeningen.
+- Inspectie van funderingspalen en vloeren, inclusief graafwerk en monstername.
+- Bodem- en grondwateronderzoek waar relevant.
+- Rapportage met handelingsperspectief, herstelopties en kostenraming.
+
+#### Resultaten funderingsonderzoek (verkeerslichtmodel)
+
+- Groen – Geen vervolgactie nodig.
+- Oranje – Monitoring en periodieke inspectie.
+- Rood – Herstelmaatregelen en concreet handelingsperspectief noodzakelijk.
+
+Ook deze resultaten moeten in FunderMaps worden teruggekoppeld om de betrouwbaarheid van de database te vergroten.
+
+#### Kernboodschap voor gebruikers
+
+- Gebruik het schema om te bepalen wanneer monitoring volstaat en wanneer extra onderzoek nodig is.
+- Beslissingen zijn gebaseerd op een combinatie van risicohoogte en databetrouwbaarheid.
+- Het proces is iteratief: nieuwe informatie verhoogt de betrouwbaarheid en kan een vervolgactie aanpassen.
+
+Disclaimer
+
+Het funderingsrisicorapport en dit beslisschema bieden richting, maar vormen geen definitief oordeel. Lokale professionals mogen de uitkomsten bijsturen op basis van specifieke kennis, net zoals taxateurs informatie uit FunderMaps wegen binnen het NWWI-proces. FunderMaps aanvaardt geen aansprakelijkheid voor besluiten die uitsluitend op basis van het rapport worden genomen.
+
+---
+
+# Privacy Statement
+
+URL: https://fundermaps.com/privacy-statement.html
+
+Hoe FunderMaps persoonsgegevens behandelt.
+
+Informatie
+
+## Privacy Statement
+
+ Laatst bijgewerkt: 27 april 2023
+
+ FunderMaps hecht grote waarde aan de bescherming van uw privacy en persoonlijke gegevens. Deze Privacyverklaring beschrijft hoe FunderMaps ("wij", "ons" of "onze") uw persoonlijke gegevens verzamelt, gebruikt, opslaat en deelt wanneer u onze website bezoekt, onze applicaties gebruikt of met ons communiceert.
+
+ 1. Verzamelen van informatie
+
+ We verzamelen de volgende categorieën van persoonlijke gegevens:
+
+- Identificatiegegevens: zoals uw naam, achternaam, e-mailadres, telefoonnummer en adres.
+- Gebruiksgegevens: zoals informatie over uw interactie met onze website, applicaties en diensten, uw IP-adres, browsertype, besturingssysteem, toegangstijden en verwijzende URL's.
+- Communicatiegegevens: zoals informatie die u verstrekt wanneer u contact met ons opneemt via e-mail, telefoon of sociale media.
+
+ 2. Gebruik van informatie
+
+ We gebruiken uw persoonlijke gegevens voor de volgende doeleinden:
+
+- Om onze diensten te leveren, te onderhouden en te verbeteren.
+- Om uw vragen en verzoeken te beantwoorden en klantenservice te bieden.
+- Om onze website en applicaties te personaliseren en te verbeteren.
+- Om u te informeren over producten, diensten, aanbiedingen en promoties waarvan wij denken dat ze interessant voor u zijn.
+- Om te voldoen aan wettelijke verplichtingen en regelgeving.
+
+ 3. Delen van informatie
+
+ We delen uw persoonlijke gegevens alleen in de volgende gevallen:
+
+- Met uw toestemming.
+- Met dienstverleners die namens ons diensten uitvoeren, zoals hosting, gegevensanalyse, klantenservice, e-mailbezorging, marketing en betalingsverwerking.
+- Om te voldoen aan wettelijke verplichtingen, zoals het reageren op dagvaardingen, gerechtelijke bevelen of andere juridische processen.
+- In geval van een fusie, verkoop, reorganisatie, overdracht van activa, financiering of overname van ons bedrijf of een deel ervan door een ander bedrijf.
+
+ 4. Delen van informatie
+
+ We nemen passende technische en organisatorische maatregelen om uw persoonlijke gegevens te beschermen tegen ongeautoriseerde toegang, gebruik, openbaarmaking, verlies of wijziging. We kunnen echter geen absolute veiligheid garanderen.
+
+ 5. Bewaartermijn
+
+ We bewaren uw persoonlijke gegevens zo lang als nodig is voor de doeleinden waarvoor ze zijn verzameld, tenzij een langere bewaartermijn wettelijk vereist of toegestaan is.
+
+ 6. Uw rechten
+
+ U heeft het recht om toegang te vragen tot, correctie of verwijdering van uw persoonlijke gegevens. U kunt ook bezwaar maken tegen de verwerking van uw gegevens of verzoeken om beperking van de verwerking. Neem contact met ons op via de contactgegevens die in deze Privacyverklaring worden vermeld om uw rechten uit te oefenen.
+
+ 7. Cookies en andere trackingtechnologieën
+
+ We gebruiken cookies en vergelijkbare technologieën om informatie te verzamelen over uw interactie met onze website en applicaties. U kunt uw browserinstellingen aanpassen om cookies te weigeren of te verwijderen, maar dit kan de functionaliteit en uw ervaring met onze diensten beïnvloeden.
+
+ 8. Doorgifte van gegevens buiten de EU
+
+ In sommige gevallen kunnen we uw persoonlijke gegevens overdragen aan dienstverleners die zich buiten de Europese Unie bevinden. We zorgen ervoor dat dergelijke overdrachten voldoen aan de toepasselijke wetgeving inzake gegevensbescherming en dat passende waarborgen worden getroffen om de veiligheid en vertrouwelijkheid van uw gegevens te waarborgen.
+
+ 9. Wijzigingen in deze Privacyverklaring
+
+ We kunnen deze Privacyverklaring van tijd tot tijd bijwerken. We zullen u op de hoogte stellen van eventuele wijzigingen door de "Laatst bijgewerkt" datum bovenaan deze verklaring bij te werken. Uw voortgezet gebruik van onze diensten na het doorvoeren van dergelijke wijzigingen betekent dat u instemt met de bijgewerkte Privacyverklaring.
+
+ 10. Contact
+
+Als u vragen heeft over deze Privacyverklaring of onze privacypraktijken, neem dan contact met ons op via:
+
+FunderMaps B.V.
+
+Melbournestraat 34A, 3047 BJ Rotterdam
+
+ info at fundermaps.com
+
+ Door onze website te gebruiken en/of onze applicaties en diensten te gebruiken, stemt u in met de verzameling, het gebruik en de openbaarmaking van uw persoonlijke gegevens op de manier zoals beschreven in deze Privacyverklaring. Als u niet instemt met de voorwaarden van deze Privacyverklaring, gebruik dan onze website, applicaties en diensten niet.
+
+---
+
+# Algemene Voorwaarden
+
+URL: https://fundermaps.com/terms-conditions.html
+
+Algemene leveringsvoorwaarden van FunderMaps.
+
+Informatie
+
+## Algemene Voorwaarden
+
+ Algemene leveringsvoorwaarden FunderMaps B.V.
+
+ Deze Algemene leveringsvoorwaarden zijn van toepassing op alle aan FunderMaps B.V. verstrekte opdrachten (hierna te noemen: FunderMaps) te Delft, met uitzondering van de aan FunderMaps verstrekte opdrachten die uitsluitend betrekking hebben op de levering van standaardsoftware. Deze Algemene leveringsvoorwaarden zijn van toepassing met uitdrukkelijke uitsluiting van (standaard) leveringsvoorwaarden van de Opdrachtgever. Afwijkingen van deze Algemene leveringsvoorwaarden zijn slechts bindend indien deze schriftelijk tussen FunderMaps en de Opdrachtgever zijn overeengekomen. Deze Algemene leveringsvoorwaarden zijn vastgesteld door FunderMaps en gedeponeerd bij de Kamer van Koophandel in Nederland. Zij zijn tevens te raadplegen op fundermaps.com.
+
+ 1. Definities
+
+- 1.1. Opdrachtgever: de partij die FunderMaps Opdracht geeft tot het verrichten van werkzaamheden.
+- 1.2. Aanbieding: de door FunderMaps aan de (potentiële) Opdrachtgever uitgebrachte aanbieding met vermelding van het resultaat of de resultaten van de opgedragen werkzaamheden.
+- 1.3. Algemene leveringsvoorwaarden: de door FunderMaps gehanteerde algemene leveringsvoorwaarden.
+- 1.4. FunderMaps: de besloten vennootschap met beperkte aansprakelijkheid 'FunderMaps B.V.'.
+- 1.5. Opdracht: de tussen FunderMaps en de Opdrachtgever gesloten overeenkomst tot het verrichten van werkzaamheden en/of de overeenkomst tot het verrichten van diensten en/of het leveren van goederen.
+- 1.6. Standaardsoftware: door FunderMaps geleverde software op basis van een 'standaard FunderMaps-licentie'.
+- 1.7. Werkdag: maandag t/m vrijdag, met uitzondering van algemeen erkende feestdagen in Nederland.
+- 1.8. INCO-voorwaarden: de Internationale Handelsvoorwaarden 2000, opgesteld en gepubliceerd door de Internationale Kamer van Koophandel (ICC).
+- 1.9. Product: alle beelden, gegevens, producten, geüploade gegevens, geüploade rapporten en documenten, diensten of werken met een licentie van FunderMaps, met inbegrip van, maar niet beperkt tot, informatieproducten en digitale datasets.
+- 1.10. Afgeleid product: elk product of elke informatie die door de eindgebruiker wordt afgeleid en ontwikkeld van het Product dat geen bronbeeldgegevens van het Product bevat (met inbegrip van een redelijke facsimile daarvan) en dat onomkeerbaar wordt gewijzigd en losgekoppeld van het Product.
+- 1.11. Product met toegevoegde waarde: een door de eindgebruiker gegenereerd product dat bronbeeldgegevens van het Product bevat (inclusief een redelijke kopie daarvan) en door het Product te wijzigen door middel van hogere bewerkingen, technische manipulaties en/of de integratie van aanvullende gegevens.
+
+ 2. Gebruik van informatie
+
+ We gebruiken uw persoonlijke gegevens voor de volgende doeleinden:
+
+- Om onze diensten te leveren, te onderhouden en te verbeteren.
+- Om uw vragen en verzoeken te beantwoorden en klantenservice te bieden.
+- Om onze website en applicaties te personaliseren en te verbeteren.
+- Om u te informeren over producten, diensten, aanbiedingen en promoties waarvan wij denken dat ze interessant voor u zijn.
+- Om te voldoen aan wettelijke verplichtingen en regelgeving.
+
+ 3. Delen van informatie
+
+ We delen uw persoonlijke gegevens alleen in de volgende gevallen:
+
+- Met uw toestemming.
+- Met dienstverleners die namens ons diensten uitvoeren, zoals hosting, gegevensanalyse, klantenservice, e-mailbezorging, marketing en betalingsverwerking.
+- Om te voldoen aan wettelijke verplichtingen, zoals het reageren op dagvaardingen, gerechtelijke bevelen of andere juridische processen.
+- In geval van een fusie, verkoop, reorganisatie, overdracht van activa, financiering of overname van ons bedrijf of een deel ervan door een ander bedrijf.
+
+ 4. Delen van informatie
+
+ We nemen passende technische en organisatorische maatregelen om uw persoonlijke gegevens te beschermen tegen ongeautoriseerde toegang, gebruik, openbaarmaking, verlies of wijziging. We kunnen echter geen absolute veiligheid garanderen.
+
+ 5. Bewaartermijn
+
+ We bewaren uw persoonlijke gegevens zo lang als nodig is voor de doeleinden waarvoor ze zijn verzameld, tenzij een langere bewaartermijn wettelijk vereist of toegestaan is.
+
+ 6. Uw rechten
+
+ U heeft het recht om toegang te vragen tot, correctie of verwijdering van uw persoonlijke gegevens. U kunt ook bezwaar maken tegen de verwerking van uw gegevens of verzoeken om beperking van de verwerking. Neem contact met ons op via de contactgegevens die in deze Privacyverklaring worden vermeld om uw rechten uit te oefenen.
+
+ 7. Cookies en andere trackingtechnologieën
+
+ We gebruiken cookies en vergelijkbare technologieën om informatie te verzamelen over uw interactie met onze website en applicaties. U kunt uw browserinstellingen aanpassen om cookies te weigeren of te verwijderen, maar dit kan de functionaliteit en uw ervaring met onze diensten beïnvloeden.
+
+ 8. Doorgifte van gegevens buiten de EU
+
+ In sommige gevallen kunnen we uw persoonlijke gegevens overdragen aan dienstverleners die zich buiten de Europese Unie bevinden. We zorgen ervoor dat dergelijke overdrachten voldoen aan de toepasselijke wetgeving inzake gegevensbescherming en dat passende waarborgen worden getroffen om de veiligheid en vertrouwelijkheid van uw gegevens te waarborgen.
+
+ 9. Wijzigingen in deze Privacyverklaring
+
+ We kunnen deze Privacyverklaring van tijd tot tijd bijwerken. We zullen u op de hoogte stellen van eventuele wijzigingen door de "Laatst bijgewerkt" datum bovenaan deze verklaring bij te werken. Uw voortgezet gebruik van onze diensten na het doorvoeren van dergelijke wijzigingen betekent dat u instemt met de bijgewerkte Privacyverklaring.
+
+ 10. Contact
+
+Als u vragen heeft over deze Privacyverklaring of onze privacypraktijken, neem dan contact met ons op via:
+
+FunderMaps B.V.
+
+Melbournestraat 34A, 3047 BJ Rotterdam
+
+ info at fundermaps.com
+
+ Door onze website te gebruiken en/of onze applicaties en diensten te gebruiken, stemt u in met de verzameling, het gebruik en de openbaarmaking van uw persoonlijke gegevens op de manier zoals beschreven in deze Privacyverklaring. Als u niet instemt met de voorwaarden van deze Privacyverklaring, gebruik dan onze website, applicaties en diensten niet.

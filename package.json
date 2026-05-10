@@ -9,18 +9,23 @@
   "engines": {
     "node": ">= 20.0.0"
   },
+  "packageManager": "pnpm@11.0.9",
   "scripts": {
     "clean:output": "rimraf dist",
-    "start": "npm run clean:output && parcel src/artikelen.html src/index.html src/apps.html src/apps-quickscan.html src/apps-herstelkosten.html src/media-library.html src/more-info.html src/nationaal-herstelregister.html src/privacy-statement.html src/terms-conditions.html -p 8000",
-    "build": "parcel build src/index.html --public-url ./",
+    "start": "pnpm clean:output && parcel src/artikelen.html src/index.html src/apps.html src/apps-quickscan.html src/apps-herstelkosten.html src/media-library.html src/more-info.html src/nationaal-herstelregister.html src/privacy-statement.html src/terms-conditions.html src/llms.txt src/llms-full.txt src/robots.txt src/sitemap.xml -p 8000",
+    "build": "parcel build src/index.html src/llms.txt src/llms-full.txt src/robots.txt src/sitemap.xml --public-url ./",
     "lint:js": "eslint \"src/**/*.{js,mjs}\"",
     "lint:css": "stylelint \"src/**/*.{css,scss}\"",
-    "lint": "npm run lint:js && npm run lint:css"
+    "lint": "pnpm lint:js && pnpm lint:css"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@parcel/config-default": "^2.16.4",
     "@parcel/core": "^2.16.4",
+    "@parcel/packager-raw-url": "^2.16.4",
+    "@parcel/packager-xml": "^2.16.4",
+    "@parcel/transformer-jsonld": "^2.16.4",
+    "@parcel/transformer-raw": "^2.16.4",
     "@parcel/transformer-sass": "^2.16.4",
     "@tailwindcss/postcss": "^4.3.0",
     "eslint": "^10.3.0",

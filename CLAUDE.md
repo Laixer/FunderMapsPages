@@ -8,13 +8,15 @@ Static marketing site for FunderMaps (Dutch foundation-risk / asset-management p
 
 ## Commands
 
-Package manager is npm. Node ≥ 20. (We tried pnpm but the DigitalOcean App Platform Node buildpack v0.5.0 doesn't ship pnpm in its image — it detects `pnpm-lock.yaml` and then fails with `pnpm: executable file not found`. npm avoids that.)
+Package manager is **pnpm 11**. Node ≥ 20. Pinned via `packageManager` in `package.json`. (Earlier note about pnpm failing on DO App Platform is no longer accurate — DO's Node buildpack does ship pnpm now and detects `pnpm-lock.yaml` correctly.)
 
-- `npm install` — install dependencies.
-- `npm start` — dev server on `http://localhost:8000` with HMR. Only the HTML entries listed in `package.json` are served (`index.html`, `artikelen.html`, `apps*.html`, `media-library.html`, `more-info.html`, `nationaal-herstelregister.html`, `privacy-statement.html`, `terms-conditions.html`). **Adding a new top-level page requires adding it to the `start` script** — Parcel will not pick it up otherwise.
-- `npm run build` — production build of `index.html` only into `dist/`. Other HTML entries reachable via `<a href="...">` are followed automatically by Parcel's link traversal, so they end up in `dist/` too — but the entry list in `start` is the authoritative full set. CI (`.github/workflows/node.js.yml`, `.gitlab-ci.yml`) runs `npm run build`.
-- `npm run lint` — runs `eslint` on `src/**/*.{js,mjs}` then `stylelint` on `src/**/*.{css,scss}`. Lint is not wired into Parcel anymore (the old `@parcel/validator-eslint` and `parcel-validator-stylelint` were dropped — they peered `eslint ≤ 8` / `stylelint ^6` and are unmaintained). Run lint explicitly.
-- `npm run clean:output` — remove `dist/`.
+- `pnpm install` — install dependencies.
+- `pnpm start` — dev server on `http://localhost:8000` with HMR. Only the HTML entries listed in `package.json` are served (`index.html`, `artikelen.html`, `apps*.html`, `media-library.html`, `more-info.html`, `nationaal-herstelregister.html`, `privacy-statement.html`, `terms-conditions.html`, plus the static `llms.txt` / `llms-full.txt` / `robots.txt` / `sitemap.xml`). **Adding a new top-level page requires adding it to the `start` script** — Parcel will not pick it up otherwise.
+- `pnpm build` — production build of `index.html` (plus the static text/xml files) into `dist/`. Other HTML entries reachable via `<a href="...">` are followed automatically by Parcel's link traversal, so they end up in `dist/` too — but the entry list in `start` is the authoritative full set. CI (`.github/workflows/node.js.yml`, `.gitlab-ci.yml`) runs `pnpm build`.
+- `pnpm lint` — runs `eslint` on `src/**/*.{js,mjs}` then `stylelint` on `src/**/*.{css,scss}`. Lint is not wired into Parcel anymore (the old `@parcel/validator-eslint` and `parcel-validator-stylelint` were dropped — they peered `eslint ≤ 8` / `stylelint ^6` and are unmaintained). Run lint explicitly.
+- `pnpm clean:output` — remove `dist/`.
+
+Note on native build scripts: `package.json` lists `pnpm.onlyBuiltDependencies` for `@parcel/watcher`, `@swc/core`, `lmdb`, `msgpackr-extract`. Parcel runs fine if their post-install build scripts are skipped (it uses precompiled binaries / JS fallbacks), but the entry is there so they can run when allowed.
 
 There are no tests.
 
@@ -44,9 +46,9 @@ Each top-level file in `src/` is a standalone HTML page. There is no router — 
 Flat config in `eslint.config.js`: `@eslint/js` recommended + `eslint-config-prettier`, browser globals, double-quote preference. `airbnb-base` was dropped because it has no ESLint 9+ release. Quote rule is set to `warn`, not `error`, matching prior behaviour.
 
 ### Deployment
-- GitHub Actions (`.github/workflows/node.js.yml`): runs `npm run build` on push/PR to `main`. No deploy step — used as a build check only.
-- GitLab CI (`.gitlab-ci.yml`): builds and publishes to GitLab Pages from the `develop` branch. Uses Node 20 + npm.
-- DigitalOcean App Platform: detects `package-lock.json` and uses npm via the `digitalocean/node` buildpack. Custom build command is `npm run build`.
+- GitHub Actions (`.github/workflows/node.js.yml`): uses `pnpm/action-setup@v4`, runs `pnpm install --frozen-lockfile && pnpm build` on push/PR to `main`. No deploy step — used as a build check only.
+- GitLab CI (`.gitlab-ci.yml`): activates pnpm via `corepack`, builds and publishes to GitLab Pages from the `develop` branch. Caches `node_modules` and `.pnpm-store`.
+- DigitalOcean App Platform: detects `pnpm-lock.yaml` and uses pnpm via the `digitalocean/node` buildpack. Custom build command is `pnpm build`.
 
 ## Conventions
 

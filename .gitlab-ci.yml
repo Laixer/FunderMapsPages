@@ -3,9 +3,12 @@ image: node:20
 
 # Build static page
 .build-page:
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@11.0.9 --activate
   script:
-    - npm ci
-    - npm run build
+    - pnpm install --frozen-lockfile
+    - pnpm build
     - mkdir public
     - mv dist/* public
 
@@ -22,6 +25,7 @@ pages:
   cache:
     paths:
       - node_modules
+      - .pnpm-store
   stage: deploy
   only:
     - develop
