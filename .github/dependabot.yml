@@ -1,0 +1,42 @@
+version: 2
+updates:
+  # JS dependencies — pnpm-lock.yaml is detected automatically.
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    groups:
+      parcel:
+        patterns:
+          - "@parcel/*"
+          - "parcel"
+      tooling:
+        patterns:
+          - "@eslint/*"
+          - "eslint"
+          - "eslint-*"
+          - "stylelint"
+          - "stylelint-*"
+          - "globals"
+          - "rimraf"
+      runtime:
+        patterns:
+          - "alpinejs"
+          - "@alpinejs/*"
+          - "@glidejs/glide"
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+          - "postcss"
+          - "postcss-*"
+          - "posthtml"
+          - "posthtml-*"
+
+  # GitHub Actions versions.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
