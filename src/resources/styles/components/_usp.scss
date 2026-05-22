@@ -7,10 +7,11 @@
   }
 
   &__badge {
-    @apply w-12 h-12 shrink-0 rounded-full bg-center bg-no-repeat;
+    @apply w-12 h-12 shrink-0 rounded-full flex items-center justify-center;
 
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='11'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M4.792 7.877 1.869 5.058.625 6.266l4.167 4.047 8.583-8.335L12.131.75z'/%3E%3C/svg%3E");
-    background-size: 18px 14px;
+    svg {
+      @apply w-6 h-6;
+    }
   }
 
   &--blue {
