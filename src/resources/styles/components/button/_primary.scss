@@ -1,22 +1,35 @@
 .button-primary {
-  @apply text-white bg-green-300 transition-shadow;
+  @apply text-white bg-green-300 transition-all duration-200 ease-out;
+
+  // Subtle same-hue gradient adds depth without leaving the brand green.
+  background-image: linear-gradient(135deg, var(--color-green-300), var(--color-green-400));
 
   &:hover,
   .hover {
-    @apply text-white shadow-button transition-shadow;
+    @apply text-white shadow-button -translate-y-0.5;
+  }
+
+  &:active {
+    @apply translate-y-0 shadow-none;
   }
 
   &:disabled {
-    @apply bg-grey-300 border-grey-300;
+    @apply bg-grey-300 border-grey-300 translate-y-0 shadow-none;
+
+    background-image: none;
   }
 }
 
 .button-outline-primary {
-  @apply px-6 py-2.5 border-2 text-green-300 transition-shadow;
+  @apply px-6 py-2.5 border-2 text-green-300 transition-all duration-200 ease-out;
 
   &:hover,
   .hover {
-    @apply text-white border-green-300 bg-green-300 shadow-button transition-shadow;
+    @apply text-white border-green-300 bg-green-300 shadow-button -translate-y-0.5;
+  }
+
+  &:active {
+    @apply translate-y-0;
   }
 
   &:disabled {

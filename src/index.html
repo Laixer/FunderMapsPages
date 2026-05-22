@@ -8,20 +8,21 @@
 <body>
   <include src="./_partials/header.html" locals='{"active":"intro"}'></include>
 
-<div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
-    <div class="absolute -top-11 right-[-625px] -z-10 w-[863px] lg:w-[1233px] lg:-top-16 lg:right-[-565px]">
-      <include src="./resources/svg/hero-bg.svg"></include>
-    </div>
-  </div>
-
   <main class="relative overflow-hidden">
-    <section id="hero" class="section | wrapper lg:grid lg:grid-cols-12">
+    <section id="hero" class="section section--feature-blue | relative overflow-hidden py-16 lg:py-24">
+      <div class="absolute -top-11 right-[-625px] w-[863px] opacity-20 pointer-events-none lg:w-[1233px] lg:-top-16 lg:right-[-565px]">
+        <include src="./resources/svg/hero-bg.svg"></include>
+      </div>
+      <div class="wrapper relative z-10 lg:grid lg:grid-cols-12">
       <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-5">
-        <span class="block text-blue-300 font-extrabold text-sm uppercase tracking-widest lg:mb-2">Funderingsrisico-platform</span>
+        <span class="inline-flex items-center gap-2 self-start mb-4 px-3 py-1 rounded-full bg-white/10 text-white font-extrabold text-xs uppercase tracking-widest lg:mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-yellow-300"></span>
+          Funderingsrisico-platform
+        </span>
 
-        <h1 class="mb-3 lg:mb-5">Funderingsrisico in beeld voor 11&nbsp;miljoen panden</h1>
+        <h1 class="mb-3 lg:mb-5 text-white">Funderingsrisico in beeld voor 11&nbsp;miljoen panden</h1>
 
-        <p class="mb-6 lg:mb-7 text-lg">Eén databron voor verzekeraars, banken, gemeenten en taxateurs — gevoed door BAG-data, satellietmetingen en KCAF-onderzoek.</p>
+        <p class="mb-6 lg:mb-7 text-lg text-grey-300">Eén databron voor verzekeraars, banken, gemeenten en taxateurs — gevoed door BAG-data, satellietmetingen en KCAF-onderzoek.</p>
 
         <div class="flex flex-wrap gap-3">
           <a href="mailto:info@fundermaps.com?subject=Demo%20FunderMaps" class="button button-primary">
@@ -30,7 +31,7 @@
               <include src="./resources/svg/arrow-right-icon.svg"></include>
             </div>
           </a>
-          <a href="#preview" class="button button-outline-primary">Bekijk het platform</a>
+          <a href="#preview" class="button border-2 border-white/40 text-white hover:bg-white/10 hover:border-white">Bekijk het platform</a>
         </div>
       </div>
 
@@ -43,8 +44,9 @@
             <include src="./resources/svg/cracks-example.svg"></include>
           </div>
           <img src="./resources/images/foundation-example.webp" height="692" width="670"
-            alt="Example of bad foundation">
+            alt="Voorbeeld van een aangetaste fundering">
         </div>
+      </div>
       </div>
     </section>
 
@@ -52,7 +54,8 @@
       <ul class="p-0 m-0 list-none col-span-3 md:col-span-3 lg:col-span-1">
         <li>
           <ul class="usp usp--blue | m-0 list-none">
-            <li>
+            <li class="usp__head">
+              <span class="usp__badge"><include src="./resources/svg/usp-building.svg"></include></span>
               <h2 class="text-3xl lg:text-2xl">11&nbsp;miljoen panden</h2>
             </li>
             <li>
@@ -65,7 +68,8 @@
       <ul class="p-0 m-0 list-none col-span-3 md:col-span-3 lg:col-span-1">
         <li>
           <ul class="usp usp--green | m-0 list-none">
-            <li>
+            <li class="usp__head">
+              <span class="usp__badge"><include src="./resources/svg/usp-register.svg"></include></span>
               <h2 class="text-3xl lg:text-2xl">Herstelregister</h2>
             </li>
             <li>
@@ -78,7 +82,8 @@
       <ul class="p-0 m-0 list-none col-span-3 md:col-span-3 lg:col-span-1">
         <li>
           <ul class="usp usp--yellow | m-0 list-none">
-            <li>
+            <li class="usp__head">
+              <span class="usp__badge"><include src="./resources/svg/usp-live.svg"></include></span>
               <h2 class="text-3xl lg:text-2xl">Live data</h2>
             </li>
             <li>
@@ -89,17 +94,18 @@
       </ul>
     </section>
 
-    <section id="services" class="section | wrapper my-14 lg:mt-14 lg:mb-32">
+    <section id="services" class="section section--feature-blue | py-16 lg:py-24">
+      <div class="wrapper">
       <div class="lg:mb-9 lg:grid lg:grid-cols-12">
-        <h2 class="mb-3 lg:mb-0 lg:col-span-5">Wat FunderMaps levert</h2>
+        <h2 class="mb-3 lg:mb-0 lg:col-span-5 text-white">Wat FunderMaps levert</h2>
 
-        <p class="mb-7 lg:mb-0 lg:col-span-7">
+        <p class="mb-7 lg:mb-0 lg:col-span-7 text-grey-300">
           Vier manieren om funderingsdata in jouw werk te krijgen — kies wat past bij jouw proces. Eén onderliggende databron, vier ingangen.
         </p>
       </div>
 
       <div class="grid gap-x-6 gap-y-6 lg:grid-cols-2">
-        <article class="card | bg-grey-100 rounded-xl px-7 pt-14 pb-12">
+        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/card-viewer-icon.svg"></include>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Interactieve Mapviewer</h3>
@@ -110,7 +116,7 @@
           </p>
         </article>
 
-        <article class="card | bg-grey-100 rounded-xl px-7 pt-14 pb-12">
+        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/application-icon.svg"></include>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Beheerplatform</h3>
@@ -121,7 +127,7 @@
           </p>
         </article>
 
-        <article class="card | bg-grey-100 rounded-xl px-7 pt-14 pb-12">
+        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/api-icon.svg"></include>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">API-koppeling</h3>
@@ -132,7 +138,7 @@
           </p>
         </article>
 
-        <article class="card | bg-grey-100 rounded-xl px-7 pt-14 pb-12">
+        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/ai-model-icon.svg"></include>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Risicomodel</h3>
@@ -144,9 +150,11 @@
         </article>
         <div id="references-anchor"></div>
       </div>
+      </div>
     </section>
 
-    <section id="preview" class="section | wrapper my-16 lg:mb-32">
+    <section id="preview" class="section bg-blue-100 | py-16 lg:py-24 lg:mb-32">
+      <div class="wrapper">
       <div class="lg:mb-9 lg:grid lg:grid-cols-12">
         <h2 class="mb-3 lg:mb-0 lg:col-span-5">In de app</h2>
 
@@ -156,22 +164,23 @@
       </div>
 
       <figure class="relative">
-        <img class="rounded-xl w-full h-auto shadow-hero-img" src="./resources/images/fundermaps-demo3.webp" width="2466" height="1382" loading="lazy" alt="Schermafbeelding van de FunderMaps mapviewer met pandselectie en risicogegevens">
+        <img class="rounded-2xl w-full h-auto shadow-hero-img" src="./resources/images/fundermaps-demo3.webp" width="2466" height="1382" loading="lazy" alt="Schermafbeelding van de FunderMaps mapviewer met pandselectie en risicogegevens">
         <figcaption class="sr-only">Schermafbeelding van de FunderMaps mapviewer.</figcaption>
       </figure>
+      </div>
     </section>
     <!-- Back-compat: legacy #demo anchor -->
     <span id="demo" class="sr-only" aria-hidden="true"></span>
 
     <section id="references"
-      class="section section--dark section--references | relative pt-12 pb-14 lg:max-w-[73.75rem] lg:w-[calc(100%-2.5rem)] lg:mx-auto lg:rounded-xl lg:mb-32">
+      class="section section--feature-blue | relative pt-12 pb-14 lg:max-w-[73.75rem] lg:w-[calc(100%-2.5rem)] lg:mx-auto lg:rounded-2xl lg:mb-32">
       <div class="lg:overflow-hidden">
         <div class="absolute w-[469px] -top-8 -right-[264px] lg:w-[670px] lg:-top-[37px] lg:-right-[105px]">
           <include src="./resources/svg/reference-bg.svg"></include>
         </div>
          
         <div class="lg:grid lg:grid-cols-12">
-          <div class="max-lg:wrapper lg:col-span-10 lg:col-start-2">
+          <div class="px-5 lg:px-0 lg:col-span-10 lg:col-start-2">
             <h2 class="text-white mb-3">Referenties</h2>
 
             <p class="mb-8">
@@ -204,12 +213,12 @@
                 <div class="flex justify-center">
                   <div class="glide__arrows" data-glide-el="controls">
                     <!-- Previous Button -->
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="glide left">
+                    <button type="button" class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="glide left">
                       <include src="./resources/svg/chevron-white-icon.svg"></include>
                       <span class="sr-only">Vorige referentie slide</span>
                     </button>
                     <!-- Next Button -->
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="glide right">
+                    <button type="button" class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="glide right">
                       <include src="./resources/svg/chevron-white-icon.svg"></include>
                       <span class="sr-only">Volgende referentie slide</span>
                     </button>
@@ -218,11 +227,11 @@
 
                 <!-- Bullets -->
                 <div class="glide__bullets | flex w-full items-center" data-glide-el="controls[nav]">
-                  <button class="glide__bullet" data-glide-dir="=0" aria-label="glide navigation"></button>
-                  <button class="glide__bullet" data-glide-dir="=1" aria-label="glide navigation"></button>
-                  <button class="glide__bullet" data-glide-dir="=2" aria-label="glide navigation"></button>
-                  <button class="glide__bullet" data-glide-dir="=3" aria-label="glide navigation"></button>
-                  <button class="glide__bullet" data-glide-dir="=4" aria-label="glide navigation"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=0" aria-label="glide navigation"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=1" aria-label="glide navigation"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=2" aria-label="glide navigation"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=3" aria-label="glide navigation"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=4" aria-label="glide navigation"></button>
                 </div>
               </div>
             </div>
@@ -231,13 +240,14 @@
       </div>
     </section>
 
-    <section id="partners" class="section | wrapper my-16 lg:grid lg:grid-cols-12 lg:relative lg:z-10">
+    <section id="partners" class="section bg-grey-100 | py-16 lg:py-24 lg:relative lg:z-10">
+      <div class="wrapper lg:grid lg:grid-cols-12">
       <h2 class="mb-3 lg:col-span-10 lg:col-start-2 lg:mb-11">Partners</h2>
 
       <div class="grid gap-x-6 gap-y-5 lg:grid-cols-3 lg:col-start-2 lg:col-span-10">
         <!-- Partner 1 -->
         <a href="https://kcaf.nl"
-          class="card | inline-block border border-grey-300 bg-white rounded-xl w-full px-7 pt-14 pb-12 no-underline h-full">
+          class="card | inline-block border border-grey-300 bg-white rounded-2xl w-full px-7 pt-14 pb-12 no-underline h-full">
           <div class="h-32 flex items-start justify-start mb-4">
             <img class="h-full object-contain" src="./resources/images/kcaf-logo.webp" width="170" height="198" loading="lazy" alt="KCAF logo">
           </div>
@@ -253,7 +263,7 @@
 
         <!-- Partner 2 -->
         <a href="https://www.sensar.nl/"
-          class="card | inline-block border border-grey-300 bg-white rounded-xl w-full px-7 pt-14 pb-12 no-underline h-full">
+          class="card | inline-block border border-grey-300 bg-white rounded-2xl w-full px-7 pt-14 pb-12 no-underline h-full">
           <div class="h-32 flex items-start justify-start mb-4">
             <img class="h-full object-contain" src="./resources/images/sensar-logo.webp" width="309" height="125" loading="lazy" alt="Sensar logo">
           </div>
@@ -270,7 +280,7 @@
 
         <!-- Partner 3 -->
         <a href="https://www.skygeo.com/"
-          class="card | inline-block border border-grey-300 bg-white rounded-xl w-full px-7 pt-14 pb-12 no-underline h-full">
+          class="card | inline-block border border-grey-300 bg-white rounded-2xl w-full px-7 pt-14 pb-12 no-underline h-full">
           <div class="h-32 flex items-start justify-start mb-4">
             <img class="h-full object-contain" src="./resources/images/skygeo-logo.webp" width="1858" height="558" loading="lazy" alt="SkyGeo logo">
           </div>
@@ -284,6 +294,7 @@
             <include src="./resources/svg/arrow-right-icon-green.svg"></include>
           </span>
         </a>
+      </div>
       </div>
     </section>
 
@@ -393,10 +404,10 @@
               </div> <!-- sluit glide__track -->
               
               <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="glide left">
+                <button type="button" class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="glide left">
                   <include src="./resources/svg/arrow-right-icon-green.svg"></include>
                 </button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="glide right">
+                <button type="button" class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="glide right">
                   <include src="./resources/svg/arrow-right-icon-green.svg"></include>
                 </button>
               </div>
@@ -410,27 +421,27 @@
       <a class="button button-outline-primary button-alternative" href="media-library.html">
         <span class="relative flex">
           Funderingstypes & -risico's
-          <div class="absolute -right-6">
+          <span class="absolute -right-6">
             <include src="./resources/svg/arrow-right-icon.svg"></include>
-          </div>
+          </span>
         </span>
       </a>
 
       <a class="button button-outline-primary button-alternative" href="privacy-statement.html">
         <span class="relative flex">
           Privacy verklaring
-          <div class="absolute -right-6">
+          <span class="absolute -right-6">
             <include src="./resources/svg/arrow-right-icon.svg"></include>
-          </div>
+          </span>
         </span>
       </a>
 
       <a class="button button-outline-primary button-alternative" href="terms-conditions.html">
         <span class="relative flex">
           Algemene voorwaarden
-          <div class="absolute -right-6">
+          <span class="absolute -right-6">
             <include src="./resources/svg/arrow-right-icon.svg"></include>
-          </div>
+          </span>
         </span>
       </a>
     </section>

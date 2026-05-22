@@ -16,11 +16,6 @@
 
     .glide__track {
       @apply overflow-visible relative;
-
-      &::before {
-        @apply top-0 bottom-0 right-[100%] -left-[100%] bg-blue-900 absolute z-10;
-        content: "";
-      }
     }
 
     .glide__arrows {

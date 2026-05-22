@@ -1,5 +1,5 @@
 .card {
-  @apply transition-all top-0 bottom-0 relative;
+  @apply transition-all duration-300 ease-out relative shadow-card;
 
   svg {
     @apply inline-block;
@@ -20,7 +20,7 @@
 // Hover lift only on actually-clickable cards. Plain <article>/<div> cards
 // shouldn't show a click affordance — they have no href to follow.
 a.card:hover {
-  @apply -top-2.5 bottom-2.5 shadow-quote;
+  @apply -translate-y-2 shadow-card-hover;
 
   .card__link svg {
     @apply rotate-0 transition-transform;

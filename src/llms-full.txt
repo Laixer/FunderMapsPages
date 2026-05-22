@@ -9,87 +9,61 @@
 
 URL: https://fundermaps.com/
 
-Hero, services overview, references, partners.
+Inzicht in funderingsrisico's voor 11 miljoen panden. Eén databron voor verzekeraars, banken, gemeenten en taxateurs, gevoed door BAG-data, satellietmetingen en KCAF-onderzoek. CTA's: Plan een demo, Bekijk het platform.
 
-Onze applicatie
+## Funderingsrisico in beeld voor 11 miljoen panden
 
-## Maak funderings- problematiek inzichtelijk
+### 11 miljoen panden
 
-Assetbeheer voor funderingen. Meer info Demo
-
-### >1 miljoen
-
-Panden met vastgestelde funderingsgegevens.
+Risicobeeld op pandniveau, gevoed door BAG, 3DBAG en bodemkundige data.
 
 ### Herstelregister
 
-De landelijk officiële registratie van herstelde funderingen.
+Hét nationale register voor uitgevoerd funderingsherstel — transparant voor taxatie en transactie.
 
-### Risicoanalyses
+### Live data
 
-Voor elk pand een uitgangspunt voor het funderingsrisico.
+Satellietmetingen, QuickScans en herstelmeldingen worden continu verwerkt in het risicomodel.
 
-### Services
+### Wat FunderMaps levert
 
- De applicatie FunderMaps biedt verschillende services om funderingsgegevens te verwerken, beheren en te gebruiken in analyses voor funderingsrisico's.
+Vier manieren om funderingsdata in jouw werk te krijgen — kies wat past bij jouw proces. Eén onderliggende databron, vier ingangen.
 
 #### Interactieve Mapviewer
 
- Ontdek in één oogopslag de funderingsrisico's en funderingstypes in heel Nederland. De interactieve kaart biedt een heldere, visuele weergave van cruciale data, zodat snel inzicht wordt verkregen in de status van gebouwen en gebieden.
+Open de kaart, zoek op postcode of adres en zie per pand het funderingsrisico, het funderingstype, onderzoekshistorie en herstelmeldingen. Filter op wijk of gemeente en exporteer een selectie voor verder onderzoek.
 
-#### Geïntegreerd Platform
+#### Beheerplatform
 
- Beheer, analyseer en genereer rapporten met een efficiënt, alles-in-één platform. Van gestroomlijnde data-invoer tot inzichtelijke rapportages, het platform transformeert complexe funderingsinformatie naar bruikbare kennis voor projecten.
+Eén werkomgeving voor onderzoeken, herstelmeldingen en rapportages. Werk samen met team en partners, koppel data uit eigen onderzoek en lever bevindingen terug aan de landelijke database.
 
-#### Flexibele API-koppeling
+#### API-koppeling
 
- Krijg directe en naadloze toegang tot waardevolle funderingsdata, gedetailleerde rapporten en specifieke risicoprofielen. Integreer de krachtige API eenvoudig in systemen voor geautomatiseerde workflows en realtime inzichten.
+Plug FunderMaps direct in jouw onderwriting-flow, taxatieproces of gemeentelijk dashboard. JSON over HTTPS, BAG-ID als sleutel, met risicoscore, funderingstype en historie per pand.
 
-#### Slimme AI-modellen
+#### Risicomodel
 
- Vertrouw op betrouwbare inzichten die zijn gegenereerd door geavanceerde AI-modellen. Deze modellen analyseren complexe datasets en leveren accurate voorspellingen en risicoanalyses, waardoor weloverwogen beslissingen kunnen worden genomen.
+Het onderliggende model combineert kadastrale data, 3D-bouwgeometrie, bodemkundige eigenschappen en satellietmetingen om gaten in het onderzoeksbeeld op te vullen — zodat ook panden zonder fysiek onderzoek een onderbouwde score krijgen.
 
-### Demo
+### In de app
 
- Ontdek gedetailleerde inzichten via de kaartfunctionaliteit van de applicatie en krijg inzicht in verwerkte funderings- en risicogegevens, onderzoeksdata, meetdata. Ontbrekende informatie wordt naadloos aangevuld door slimme modellen. Hieronder vind je een visualisatie van de funderingstypes.
-
-#### Alleen op desktop
-beschikbaar
+Een blik op de kaartweergave: per pand het funderingsrisico, het funderingstype, onderzoekshistorie en herstelmeldingen. Filter op wijk, gemeente of risicoklasse en duik door tot de panddetails.
 
 ### Referenties
 
- Deze gebruikers gingen u voor:
+Deze gebruikers gingen u voor: gemeente Schiedam, Gemeente Gouda, Woonstad Rotterdam, Elkien, Wetland Wonen.
 
 ### Partners
 
- Een stichting met als doelstelling het verzamelen, ontwikkelen en ontsluiten van kennis rond de aanpak en preventie van funderingsproblemen. Meer info
+KCAF — een stichting met als doelstelling het verzamelen, ontwikkelen en ontsluiten van kennis rond de aanpak en preventie van funderingsproblemen.
 
- Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele staat van een potentieel funderingsrisico. Deze gegevens kunnen worden geleverd door Sensar en verwerkt in het FunderMaps-platform. Meer info
+Sensar — gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele staat van een potentieel funderingsrisico, geleverd door Sensar en verwerkt in het FunderMaps-platform.
 
- Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele staat van een potentieel funderingsrisico. Deze gegevens kunnen worden geleverd door SkyGeo en verwerkt in het FunderMaps-platform. Meer info
-
- Dankzij de data van FunderMaps kunnen we hypotheekaanvragen sneller en beter beoordelen. Funderingsrisico's zijn direct inzichtelijk. BankHypotheekadviseur
-
- Voor onze funderingsaanpak gebruiken we de kaarten van FunderMaps als basis. Ze zijn nauwkeurig, up-to-date en sluiten goed aan op onze eigen registraties. GemeenteCoördinator Gebiedsbeheer
-
- Dankzij FunderMaps kregen we snel inzicht in risicogebieden. Hierdoor konden we tijdig ingrijpen en erger voorkomen. De kaartlagen en analyses zijn van hoge kwaliteit en makkelijk bruikbaar in ons interne systeem. GemeenteBeleidsmedewerker Openbare Ruimte
-
- Met de informatie van FunderMaps konden we gerichter communiceren met bewoners over funderingsrisico’s. Dat gaf vertrouwen en hielp ons bij het prioriteren van onderhoud. WoningcorporatieProjectleider Vastgoedbeheer
-
- Door de kaarten en modellen van FunderMaps weten wij precies waar de risico’s liggen. Dat maakt onze inspecties sneller én effectiever. IngenieursbureauAdviseur Geotechniek
-
- Als taxateur zie ik direct of er sprake is van funderingsrisico’s. Dat scheelt enorm veel tijd en geeft duidelijkheid naar mijn opdrachtgevers. Taxatie BureauTaxateur
-
- Dankzij de data van FunderMaps kunnen we hypotheekaanvragen sneller en beter beoordelen. Funderingsrisico's zijn direct inzichtelijk. BankHypotheekadviseur
-
- Voor onze funderingsaanpak gebruiken we de kaarten van FunderMaps als basis. Ze zijn nauwkeurig, up-to-date en sluiten goed aan op onze eigen registraties. GemeenteCoördinator Gebiedsbeheer
-
- Dankzij FunderMaps kregen we snel inzicht in risicogebieden. Hierdoor konden we tijdig ingrijpen en erger voorkomen. De kaartlagen en analyses zijn van hoge kwaliteit en makkelijk bruikbaar in ons interne systeem. GemeenteBeleidsmedewerker Openbare Ruimte
-
- Met de informatie van FunderMaps konden we gerichter communiceren met bewoners over funderingsrisico’s. Dat gaf vertrouwen en hielp ons bij het prioriteren van onderhoud. WoningcorporatieProjectleider Vastgoedbeheer
+SkyGeo — gegevens over de zakking van de bodem en panden, geleverd door SkyGeo en verwerkt in het FunderMaps-platform.
 
 ### Top taken
- Funderingstypes & -risico's Privacy verklaring Algemene voorwaarden
+
+Funderingstypes & -risico's, Privacy verklaring, Algemene voorwaarden.
 
 ---
 
@@ -183,11 +157,11 @@ Informatie
 
  Verschil zakking
 
- Negatieve kleef is een fenomeen dat optreedt bij houten funderingspalen, waarbij zakkende grondlagen harder zakken dan de palen zelf. Klei blijft aan de palen kleven, waardoor extra belasting ontstaat en de fundering omlaag wordt getrokken. Dit beperkt het draagvermogen van de palen. Zakkende grondlagen kunnen ontstaan door ophogingen in de straat of bouwterreinen. Vóór 1965 werd er geen rekening gehouden met negatieve kleef bij het ontwerp van gebouwen. Schade hangt samen met verschillen in het vervormingsgedrag van de palen, maar gelijkmatige vervorming voorkomt schade door negatieve kleef.
+ Verschilzakking ontstaat wanneer delen van een pand ongelijkmatig zakken. Doordat de ondergrond, het funderingstype of de belasting per bouwdeel verschilt, zakt het ene deel sneller dan het andere. Dit veroorzaakt scheuren in muren, klemmende ramen en deuren en scheefstand van vloeren. Vooral bij overgangen tussen verschillende funderingstypes of grondlagen, en bij latere aan- en uitbouwen, is het risico op verschilzakking groot.
 
  Optrekkend vocht
 
- Negatieve kleef is een fenomeen dat optreedt bij houten funderingspalen, waarbij zakkende grondlagen harder zakken dan de palen zelf. Klei blijft aan de palen kleven, waardoor extra belasting ontstaat en de fundering omlaag wordt getrokken. Dit beperkt het draagvermogen van de palen. Zakkende grondlagen kunnen ontstaan door ophogingen in de straat of bouwterreinen. Vóór 1965 werd er geen rekening gehouden met negatieve kleef bij het ontwerp van gebouwen. Schade hangt samen met verschillen in het vervormingsgedrag van de palen, maar gelijkmatige vervorming voorkomt schade door negatieve kleef.
+ Optrekkend vocht ontstaat wanneer grondwater via capillaire werking omhoog trekt in de fundering en het muurwerk. Veel oudere panden hebben geen waterkering tussen fundering en gevel, waardoor vocht ongehinderd opstijgt. Dit leidt tot loslatend stucwerk, zoutuitbloei, een muffe geur en op den duur schade aan hout en metselwerk. Een bouwkundige inspectie brengt de oorzaak in kaart en bepaalt de juiste vochtwerende maatregelen.
 
 ---
 
