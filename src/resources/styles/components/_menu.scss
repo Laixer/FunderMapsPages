@@ -16,7 +16,7 @@
 }
 
 .menu {
-  @apply h-[120px] flex;
+  @apply h-20 flex;
 
   & &-item {
     @apply h-full flex justify-end relative;

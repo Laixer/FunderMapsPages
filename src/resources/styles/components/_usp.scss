@@ -1,20 +1,36 @@
 .usp {
-  @apply pl-[72px] relative;
+  @apply relative h-full rounded-2xl px-7 pb-8 pt-20;
 
   &::before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='11'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M4.792 7.877 1.869 5.058.625 6.266l4.167 4.047 8.583-8.335L12.131.75z'/%3E%3C/svg%3E");
-    @apply absolute w-8 h-8 p-[17px] border-[28px] rounded-full flex items-center justify-center left-0 -top-7 mt-1 -z-10;
+    content: "";
+
+    @apply absolute top-7 left-7 w-12 h-12 rounded-full bg-center bg-no-repeat;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='11'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M4.792 7.877 1.869 5.058.625 6.266l4.167 4.047 8.583-8.335L12.131.75z'/%3E%3C/svg%3E");
+    background-size: 18px 14px;
   }
 
-  &--blue::before {
-    @apply bg-blue-300 border-blue-100;
+  &--blue {
+    @apply bg-blue-100;
+
+    &::before {
+      @apply bg-blue-300;
+    }
   }
 
-  &--green::before {
-    @apply bg-green-300 border-green-100;
+  &--green {
+    @apply bg-green-100;
+
+    &::before {
+      @apply bg-green-300;
+    }
   }
 
-  &--yellow::before {
-    @apply bg-yellow-300 border-yellow-100;
+  &--yellow {
+    @apply bg-yellow-100;
+
+    &::before {
+      @apply bg-yellow-300;
+    }
   }
 }

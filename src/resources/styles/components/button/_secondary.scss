@@ -1,9 +1,13 @@
 .button-secondary {
-  @apply text-white bg-blue-900 transition-shadow py-1 pl-1 inline-flex items-center;
+  @apply text-white bg-blue-900 transition-all duration-200 ease-out py-1 pl-1 inline-flex items-center;
 
   &:hover,
   .hover {
-    @apply text-white shadow-button transition-shadow;
+    @apply text-white shadow-button -translate-y-0.5;
+  }
+
+  &:active {
+    @apply translate-y-0;
   }
 
   &:disabled {

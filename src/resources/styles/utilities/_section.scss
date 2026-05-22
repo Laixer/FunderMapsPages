@@ -5,6 +5,22 @@
     @apply bg-blue-900 text-grey-300;
   }
 
+  // Full-bleed feature band: navy gradient for a high-contrast colour block
+  // that breaks up the otherwise light-on-white page rhythm.
+  &--feature {
+    @apply bg-blue-900 text-grey-300;
+
+    background-image: linear-gradient(160deg, var(--color-blue-900), var(--color-blue-400));
+  }
+
+  // Brand-blue variant so two rich bands on one page read as navy + blue
+  // rather than two identical dark blocks.
+  &--feature-blue {
+    @apply text-grey-300;
+
+    background-image: linear-gradient(160deg, var(--color-blue-300), var(--color-blue-900));
+  }
+
   &--references {
     @apply relative;
 

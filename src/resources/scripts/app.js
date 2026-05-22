@@ -8,6 +8,7 @@ import focus from "@alpinejs/focus"
 import mobileMenu from "./components/mobileMenu.js"
 import referencesCarousel from "./components/referencesCarousel.js"
 import quotesCarousel from "./components/quotesCarousel.js"
+import navScrollSpy from "./components/navScrollSpy.js"
 
 (async () => {
   // Make alpine easier to use from the DevTools
@@ -28,4 +29,7 @@ import quotesCarousel from "./components/quotesCarousel.js"
   Alpine.data("quotes_carousel", quotesCarousel);
 
   Alpine.start()
+
+  // Highlight the header nav item for the section currently in view.
+  navScrollSpy()
 })();

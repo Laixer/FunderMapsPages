@@ -1,7 +1,7 @@
-<header data-active-nav="{{ active }}" x-data="mobileMenu" class="lg:mb-11">
-  <div class="wrapper | flex justify-between items-center pt-16 pb-10 lg:py-0">
+<header data-active-nav="{{ active }}" x-data="mobileMenu" class="sticky top-0 z-40 bg-white shadow-nav">
+  <div class="wrapper | flex justify-between items-center py-5 lg:py-0">
 
-    <a class="logo pt-1.5" href="/">
+    <a class="logo" href="/">
       <include src="./resources/svg/logo/fundermaps-logo.svg"></include>
       <span class="sr-only">FunderMaps</span>
     </a>
@@ -10,16 +10,16 @@
     <nav class="hidden lg:flex items-center" aria-label="Hoofdnavigatie">
       <ul class="menu | ">
         <li class="menu-item | px-4">
-          <a class="no-underline" data-nav-key="intro" title="Intro" href="/#hero">Intro</a>
+          <a class="no-underline" data-nav-key="intro" title="Home" href="/">Home</a>
         </li>
         <li class="menu-item | px-4">
           <a class="no-underline" data-nav-key="services" title="Services" href="/#services">Services</a>
         </li>
         <li class="menu-item | px-4">
-          <a class="no-underline" data-nav-key="references" title="Referenties" href="/#references-anchor">Referenties</a>
+          <a class="no-underline" data-nav-key="demo" title="Voorbeeld" href="/#preview">Voorbeeld</a>
         </li>
         <li class="menu-item | px-4">
-          <a class="no-underline" data-nav-key="demo" title="Voorbeeld" href="/#preview">Voorbeeld</a>
+          <a class="no-underline" data-nav-key="references" title="Referenties" href="/#references-anchor">Referenties</a>
         </li>
         <li class="menu-item | px-4">
           <a class="no-underline" data-nav-key="partners" title="Partners" href="/#partners">Partners</a>
@@ -55,7 +55,7 @@
     x-transition:enter-start="opacity-100 left-full -right-full" x-transition:enter-end="opacity-100 left-0 right-0"
     x-transition:leave="left ease-in duration-100, right ease-in duration-100"
     x-transition:leave-start="opacity-100 left-0 right-0" x-transition:leave-end="opacity-100 left-full -right-full"
-    class="top-0 bottom-0 fixed z-10 w-full h-full bg-blue-900 overflow-auto lg:hidden">
+    class="top-0 bottom-0 fixed z-50 w-full h-full bg-blue-900 overflow-auto lg:hidden">
 
     <div x-dialog:panel>
       <div class="sticky top-0 bg-blue-900 flex justify-between items-center px-5 pt-16 z-10">
@@ -71,16 +71,16 @@
       <nav x-data class="grid pt-16 lg:hidden" aria-label="Mobiele navigatie">
         <ul class="menu-mobile | ">
           <li class="menu-item">
-            <a class="no-underline" data-nav-key="intro" title="Intro" href="/#hero" x-on:click="open = false">Intro</a>
+            <a class="no-underline" data-nav-key="intro" title="Home" href="/" x-on:click="open = false">Home</a>
           </li>
           <li class="menu-item">
             <a class="no-underline" data-nav-key="services" title="Services" href="/#services" x-on:click="open = false">Services</a>
           </li>
           <li class="menu-item">
-            <a class="no-underline" data-nav-key="references" title="Referenties" href="/#references-anchor" x-on:click="open = false">Referenties</a>
+            <a class="no-underline" data-nav-key="demo" title="Voorbeeld" href="/#preview" x-on:click="open = false">Voorbeeld</a>
           </li>
           <li class="menu-item">
-            <a class="no-underline" data-nav-key="demo" title="Voorbeeld" href="/#preview" x-on:click="open = false">Voorbeeld</a>
+            <a class="no-underline" data-nav-key="references" title="Referenties" href="/#references-anchor" x-on:click="open = false">Referenties</a>
           </li>
           <li class="menu-item">
             <a class="no-underline" data-nav-key="partners" title="Partners" href="/#partners" x-on:click="open = false">Partners</a>

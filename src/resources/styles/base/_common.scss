@@ -104,3 +104,21 @@ button:not(:disabled),
 [role="button"]:not(:disabled) {
   cursor: pointer;
 }
+
+// Modern polish: brand-tinted text selection, accessible focus ring and an
+// anchor-scroll offset so in-page jumps don't sit flush against the viewport.
+::selection {
+  @apply bg-blue-300 text-white;
+}
+
+html {
+  // Offset in-page anchor jumps so the target clears the sticky header.
+  @apply scroll-pt-24;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+  @apply outline-none ring-2 ring-blue-300 ring-offset-2 ring-offset-white rounded-sm;
+}

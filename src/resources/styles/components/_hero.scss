@@ -2,6 +2,15 @@
   &-image {
     @apply relative mt-11 lg:mt-0;
 
+    // Soft brand-blue glow behind the hero composition for depth.
+    &::before {
+      content: "";
+
+      @apply absolute -inset-x-8 -top-8 -bottom-8 -z-10 rounded-[40%] opacity-70;
+
+      background: radial-gradient(50% 50% at 50% 50%, rgba(12, 117, 168, 0.16), transparent 72%);
+    }
+
     &::after {
       content: "";
 
@@ -9,7 +18,7 @@
     }
 
     img {
-      @apply rounded-xl shadow-hero-img;
+      @apply rounded-2xl shadow-hero-img;
     }
 
     &__document {
@@ -20,4 +29,9 @@
       @apply absolute shadow-hero-img-overlay-2 bottom-[43px] -right-2.5 w-[40vw] lg:max-w-[216px] xl:-right-24 xl:bottom-[72px];
     }
   }
+}
+
+// Ambient brand-colour wash behind the top of the page.
+.hero-aura {
+  background-image: radial-gradient(55% 50% at 70% -10%, rgba(12, 117, 168, 0.14), transparent 70%);
 }
