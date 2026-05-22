@@ -10,8 +10,7 @@
   [data-active-nav="references"] &[data-nav-key="references"],
   [data-active-nav="demo"] &[data-nav-key="demo"],
   [data-active-nav="partners"] &[data-nav-key="partners"],
-  [data-active-nav="artikelen"] &[data-nav-key="artikelen"],
-  [data-active-nav="apps"] &[data-nav-key="apps"] {
+  [data-active-nav="artikelen"] &[data-nav-key="artikelen"] {
     @content;
   }
 }

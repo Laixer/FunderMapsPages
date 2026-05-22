@@ -2,7 +2,7 @@
 
 > FunderMaps is a Dutch geospatial platform for foundation-risk assessment of buildings. It ingests cadastral data (BAG), subsidence measurements and 3DBAG, runs a risk model over ~11.2M Dutch buildings, and surfaces the results to clients (insurers, banks, mortgage lenders, municipalities, surveyors) through a webservice, a customer app and PDF reports.
 
-This site is the Dutch-language marketing front for FunderMaps. The product itself lives at separate subdomains (linked under "Apps").
+This site is the Dutch-language marketing front for FunderMaps. The product itself lives at separate subdomains (see "External product surfaces").
 
 ## Primary pages
 
@@ -10,7 +10,6 @@ This site is the Dutch-language marketing front for FunderMaps. The product itse
 - [Funderingstypes & risico's](https://fundermaps.com/media-library.html): Visual reference of foundation types (rotterdamse fundering, betonpaal, kespen, etc.) and their associated risks.
 - [Meer informatie](https://fundermaps.com/more-info.html): Background on the dataplatform, how it works, and what information it surfaces.
 - [Artikelen](https://fundermaps.com/artikelen.html): Articles on funderingsproblematiek — causes, repair, municipal policy, practical guidance.
-- [Apps overzicht](https://fundermaps.com/apps.html): Index of FunderMaps apps and tools (maps, dashboard, admin, analytics) plus repair/registration helpers.
 
 ## Apps & tools (sub-products)
 
