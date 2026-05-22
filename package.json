@@ -13,8 +13,8 @@
   "packageManager": "pnpm@11.0.9",
   "scripts": {
     "clean:output": "rimraf dist",
-    "start": "pnpm clean:output && parcel src/artikelen.html src/index.html src/apps-quickscan.html src/apps-herstelkosten.html src/media-library.html src/more-info.html src/nationaal-herstelregister.html src/privacy-statement.html src/terms-conditions.html src/llms.txt src/llms-full.txt src/robots.txt src/sitemap.xml -p 8000",
-    "build": "parcel build src/index.html src/apps-quickscan.html src/apps-herstelkosten.html src/llms.txt src/llms-full.txt src/robots.txt src/sitemap.xml --public-url ./",
+    "start": "pnpm clean:output && parcel src/artikelen.html src/index.html src/apps-quickscan.html src/apps-herstelkosten.html src/media-library.html src/more-info.html src/nationaal-herstelregister.html src/privacy-statement.html src/terms-conditions.html src/og-image.jpg src/logo.png src/llms.txt src/llms-full.txt src/robots.txt src/sitemap.xml -p 8000",
+    "build": "parcel build src/index.html src/apps-quickscan.html src/apps-herstelkosten.html src/og-image.jpg src/logo.png src/llms.txt src/llms-full.txt src/robots.txt src/sitemap.xml --public-url ./",
     "lint:js": "eslint \"src/**/*.{js,mjs}\"",
     "lint:css": "stylelint \"src/**/*.{css,scss}\"",
     "lint": "pnpm lint:js && pnpm lint:css"

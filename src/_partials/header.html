@@ -43,9 +43,9 @@
     <!-- Mobile navigation: Toggle menu -->
     <div class="inline-flex lg:hidden">
       <button type="button" x-on:click="open = true" class="flex items-center justify-center w-11 h-11 -mr-2 text-blue-900 hover:text-yellow-500" aria-label="Open mobiel menu">
-        <div x-show="! open">
+        <span x-show="! open" class="block">
           <include src="./resources/svg/hamburger-icon.svg"></include>
-        </div>
+        </span>
       </button>
     </div>
   </div>
