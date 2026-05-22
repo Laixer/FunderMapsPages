@@ -93,34 +93,6 @@ beschikbaar
 
 ---
 
-# Apps overzicht
-
-URL: https://fundermaps.com/apps.html
-
-Index van FunderMaps apps en tools.
-
-Overzicht
-
-## Alle FunderMaps apps en tools op een plek
-
- Gebruik deze pagina om snel door te klikken naar onze kaarten, dashboards, beheertools en aanvullende hulpmiddelen voor herstel en registratie.
-
-### FunderMaps applicaties
-
- Werk je aan analyses, beheer je meldingen of heb je administratieve toegang nodig? Gebruik onderstaande links om je direct te verbinden met de juiste omgeving. FMFunderMaps MapsInteractieve kaarten en viewer→FAFunderMaps AppDashboard voor meldingen en rapportage→ADFunderMaps AdminBeheer voor teams en partners→ANFunderMaps AnalyticsGeavanceerde inzichten en rapporten→
-
-### Hersteltools & registraties
-
- Gebruik onze aanvullende tooling voor snelle kosteninschattingen en het vastleggen van uitgevoerde herstelmaatregelen. Kies de workflow die bij jouw situatie past. QSQuickScan
-
- Lees wat de QuickScan oplevert, waarom aanleveren belangrijk is en start de calculator direct. →HKIndicatieve herstelkosten
-
- Start de KCAF Herstelkostencalculator, lees de toelichting en bekijk hoe je de uitkomsten kunt interpreteren. →NRNationaal Funderingsherstel Register
-
- Meld herstelde panden aan, bekijk het stappenplan en krijg inzicht in de voordelen van registratie. →
-
----
-
 # QuickScan
 
 URL: https://fundermaps.com/apps-quickscan.html
