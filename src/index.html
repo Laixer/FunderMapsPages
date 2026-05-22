@@ -8,16 +8,12 @@
 <body>
   <include src="./_partials/header.html" locals='{"active":"intro"}'></include>
 
-<div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
-    <div class="hero-aura absolute inset-x-0 -top-40 h-[640px]"></div>
-    <div class="absolute -top-11 right-[-625px] -z-10 w-[863px] lg:w-[1233px] lg:-top-16 lg:right-[-565px]">
-      <include src="./resources/svg/hero-bg.svg"></include>
-    </div>
-  </div>
-
   <main class="relative overflow-hidden">
-    <section id="hero" class="section section--feature-blue | py-16 lg:py-24">
-      <div class="wrapper lg:grid lg:grid-cols-12">
+    <section id="hero" class="section section--feature-blue | relative overflow-hidden py-16 lg:py-24">
+      <div class="absolute -top-11 right-[-625px] w-[863px] opacity-20 pointer-events-none lg:w-[1233px] lg:-top-16 lg:right-[-565px]">
+        <include src="./resources/svg/hero-bg.svg"></include>
+      </div>
+      <div class="wrapper relative z-10 lg:grid lg:grid-cols-12">
       <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-5">
         <span class="inline-flex items-center gap-2 self-start mb-4 px-3 py-1 rounded-full bg-white/10 text-white font-extrabold text-xs uppercase tracking-widest lg:mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-yellow-300"></span>
