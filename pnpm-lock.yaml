@@ -64,11 +64,11 @@ importers:
         specifier: ^2.16.4
         version: 2.16.4(@swc/helpers@0.5.21)
       postcss:
-        specifier: ^8.5.14
-        version: 8.5.14
+        specifier: ^8.5.15
+        version: 8.5.15
       postcss-import:
         specifier: ^16.1.1
-        version: 16.1.1(postcss@8.5.14)
+        version: 16.1.1(postcss@8.5.15)
       posthtml:
         specifier: ^0.16.7
         version: 0.16.7
@@ -83,7 +83,7 @@ importers:
         version: 17.11.1
       stylelint-config-sass-guidelines:
         specifier: ^13.0.0
-        version: 13.0.0(postcss@8.5.14)(stylelint@17.11.1)
+        version: 13.0.0(postcss@8.5.15)(stylelint@17.11.1)
       tailwindcss:
         specifier: ^4.3.0
         version: 4.3.0
@@ -1700,8 +1700,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.14:
-    resolution: {integrity: sha512-SoSL4+OSEtR99LHFZQiJLkT59C5B1amGO1NzTwj7TT1qCUgUO6hxOvzkOYxD+vMrXBM3XJIKzokoERdqQq/Zmg==}
+  postcss@8.5.15:
+    resolution: {integrity: sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==}
     engines: {node: ^10 || ^12 || >=14}
 
   posthtml-expressions@1.11.4:
@@ -2848,7 +2848,7 @@ snapshots:
       '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-tokenizer': 4.0.0
       '@csstools/media-query-list-parser': 5.0.0(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
-      postcss: 8.5.14
+      postcss: 8.5.15
       postcss-selector-parser: 7.1.1
       postcss-value-parser: 4.2.0
       style-search: 0.1.0
@@ -2985,7 +2985,7 @@ snapshots:
       '@alloc/quick-lru': 5.2.0
       '@tailwindcss/node': 4.3.0
       '@tailwindcss/oxide': 4.3.0
-      postcss: 8.5.14
+      postcss: 8.5.15
       tailwindcss: 4.3.0
 
   '@types/esrecurse@4.3.1': {}
@@ -3670,9 +3670,9 @@ snapshots:
 
   pify@2.3.0: {}
 
-  postcss-import@16.1.1(postcss@8.5.14):
+  postcss-import@16.1.1(postcss@8.5.15):
     dependencies:
-      postcss: 8.5.14
+      postcss: 8.5.15
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.12
@@ -3681,13 +3681,13 @@ snapshots:
 
   postcss-resolve-nested-selector@0.1.6: {}
 
-  postcss-safe-parser@7.0.1(postcss@8.5.14):
+  postcss-safe-parser@7.0.1(postcss@8.5.15):
     dependencies:
-      postcss: 8.5.14
+      postcss: 8.5.15
 
-  postcss-scss@4.0.9(postcss@8.5.14):
+  postcss-scss@4.0.9(postcss@8.5.15):
     dependencies:
-      postcss: 8.5.14
+      postcss: 8.5.15
 
   postcss-selector-parser@7.1.1:
     dependencies:
@@ -3696,7 +3696,7 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.14:
+  postcss@8.5.15:
     dependencies:
       nanoid: 3.3.12
       picocolors: 1.1.1
@@ -3830,11 +3830,11 @@ snapshots:
 
   style-search@0.1.0: {}
 
-  stylelint-config-sass-guidelines@13.0.0(postcss@8.5.14)(stylelint@17.11.1):
+  stylelint-config-sass-guidelines@13.0.0(postcss@8.5.15)(stylelint@17.11.1):
     dependencies:
       '@stylistic/stylelint-plugin': 5.1.0(stylelint@17.11.1)
-      postcss: 8.5.14
-      postcss-scss: 4.0.9(postcss@8.5.14)
+      postcss: 8.5.15
+      postcss-scss: 4.0.9(postcss@8.5.15)
       stylelint: 17.11.1
       stylelint-scss: 7.0.0(stylelint@17.11.1)
 
@@ -3878,8 +3878,8 @@ snapshots:
       micromatch: 4.0.8
       normalize-path: 3.0.0
       picocolors: 1.1.1
-      postcss: 8.5.14
-      postcss-safe-parser: 7.0.1(postcss@8.5.14)
+      postcss: 8.5.15
+      postcss-safe-parser: 7.0.1(postcss@8.5.15)
       postcss-selector-parser: 7.1.1
       postcss-value-parser: 4.2.0
       string-width: 8.2.1

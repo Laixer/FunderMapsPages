@@ -33,7 +33,7 @@
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.6.0",
     "parcel": "^2.16.4",
-    "postcss": "^8.5.14",
+    "postcss": "^8.5.15",
     "postcss-import": "^16.1.1",
     "posthtml": "^0.16.7",
     "posthtml-include": "^2.0.1",
