@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+
+<head>
+  <include src="./_partials/meta.html" locals='{"title":"Stand van het Land | FunderMaps","description":"De landelijke funderingscijfers uit de Nationale Database FunderMaps: funderingstypen, risicoklassen A–E, bouwperioden en herstelkosten.","slug":"stand-van-het-land.html","ogType":"website"}'></include>
+</head>
+
+<body>
+  <include src="./_partials/header.html" locals='{"active":""}'></include>
+
+  <main class="relative overflow-hidden">
+    <section id="hero" class="section section--feature-blue | py-16 lg:py-24">
+      <div class="wrapper">
+        <div class="max-w-3xl space-y-4">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white font-extrabold text-xs uppercase tracking-widest mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-300"></span>
+            Landelijke funderingscijfers
+          </span>
+          <h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-tight">Stand van het Land</h1>
+          <p class="text-lg text-grey-300">Een actueel overzicht van de funderingsproblematiek in Nederland, rechtstreeks uit de Nationale Database FunderMaps. Voor beleidsmakers, gemeenten, provincies, woningcorporaties en iedereen die risico's wil herkennen en gericht wil handelen.</p>
+          <p class="text-grey-300">Bijgewerkt op <strong class="text-white" data-svl="updated">–</strong> · <span data-svl="model">–</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section | wrapper py-12 lg:py-16 space-y-6">
+      <div class="max-w-3xl space-y-2">
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Kerncijfers</h2>
+        <p>Alle panden met een adres in de BAG. Funderingstype en risicoklasse komen uit het FunderMaps-model: waar onderzoek is gedaan uit dat onderzoek, elders afgeleid uit het pand en zijn omgeving.</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="svl-figure svl-figure--lead">
+          <span class="svl-figure__label">Panden met een adres</span>
+          <span class="svl-figure__value" data-svl="buildings">–</span>
+          <span class="svl-figure__note"><span data-svl="addresses">–</span> adressen</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Houten paalfundering</span>
+          <span class="svl-figure__value" data-svl="wood">–</span>
+          <span class="svl-figure__note"><span data-svl="wood_pct">–</span> van alle panden</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Ondiepe fundering</span>
+          <span class="svl-figure__value" data-svl="shallow">–</span>
+          <span class="svl-figure__note"><span data-svl="shallow_pct">–</span> van alle panden</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Dekking</span>
+          <span class="svl-figure__value" data-svl="municipalities">–</span>
+          <span class="svl-figure__note">gemeenten · <span data-svl="districts">–</span> wijken · <span data-svl="neighborhoods">–</span> buurten</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Herstelopgave klasse D en E</span>
+          <span class="svl-figure__value" data-svl="de_total">–</span>
+          <span class="svl-figure__note"><span data-svl="de_with_cost">–</span> panden met klasse D of E op droogstand of ontwateringsdiepte</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Gem. herstelkosten</span>
+          <span class="svl-figure__value" data-svl="cost_avg">–</span>
+          <span class="svl-figure__note"><span data-svl="cost_n">–</span> panden met een kostenindicatie</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Gem. herstelkosten houten palen</span>
+          <span class="svl-figure__value" data-svl="cost_wood">–</span>
+          <span class="svl-figure__note"><span data-svl="cost_wood_n">–</span> panden</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Gem. herstelkosten ondiep</span>
+          <span class="svl-figure__value" data-svl="cost_shallow">–</span>
+          <span class="svl-figure__note"><span data-svl="cost_shallow_n">–</span> panden</span>
+        </div>
+      </div>
+      <div class="svl-figure">
+        <span class="svl-figure__label">Herstelde panden</span>
+        <span class="svl-figure__value">30.122</span>
+        <span class="svl-figure__note">Gevalideerd en niet-gevalideerd funderingsherstel uit het <a href="nationaal-herstelregister.html">Nationaal Funderingsherstel Register</a>, stand 21 september 2026. Dit getal wordt nog met de hand bijgewerkt, tot het register volledig in FunderMaps is opgenomen.</span>
+      </div>
+    </section>
+
+    <section class="section | wrapper pb-12 lg:pb-16">
+      <div class="svl-panel space-y-4">
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Funderingstypen</h2>
+        <p class="max-w-3xl">Verhouding tussen de drie funderingsgroepen over alle panden met een adres.</p>
+        <div data-svl-chart="family-share"></div>
+      </div>
+    </section>
+
+    <section class="section | wrapper pb-12 lg:pb-16">
+      <div class="svl-panel space-y-4">
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Risicotabel</h2>
+        <p class="max-w-3xl">Risicoklasse A (laag) tot en met E (hoog), voor panden op houten palen en ondiepe funderingen. De klasse van een pand is de zwaarste van zijn risico's: droogstand, bacteriële aantasting, ontwateringsdiepte en overig.</p>
+        <div class="svl-scroll" data-svl-chart="risk-table">
+          <table class="svl-table">
+            <thead>
+              <tr>
+                <th scope="col">Klasse</th>
+                <th scope="col">Panden</th>
+                <th scope="col">Adressen</th>
+                <th scope="col">Aandeel panden</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section | wrapper pb-12 lg:pb-16">
+      <div class="svl-panel space-y-4">
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Risicoklassen per funderingstype</h2>
+        <p class="max-w-3xl">Betonpalen vallen vrijwel geheel in klasse A. Het risico zit bij houten palen en, in mindere mate, bij ondiepe funderingen.</p>
+        <div data-svl-chart="family-risk"></div>
+      </div>
+    </section>
+
+    <section class="section | wrapper pb-12 lg:pb-16">
+      <div class="svl-panel space-y-4">
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Risicoklassen per bouwdecennium</h2>
+        <p class="max-w-3xl">Elke cel toont welk deel van de panden uit dat decennium in een klasse valt. Hoe voller de kleur, hoe groter het aandeel.</p>
+        <div class="svl-scroll" data-svl-chart="decade-risk"></div>
+      </div>
+    </section>
+
+    <section class="section | wrapper pb-12 lg:pb-16">
+      <div class="svl-panel space-y-4">
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Funderingstypen door de tijd</h2>
+        <p class="max-w-3xl">Aandeel per funderingsgroep, per bouwdecennium. Ondiep domineert de oudere bouw; beton wint terrein na de oorlog.</p>
+        <div data-svl-chart="decade-family"></div>
+      </div>
+    </section>
+
+    <section class="section | wrapper pb-12 lg:pb-16">
+      <div class="svl-panel space-y-6">
+        <div class="space-y-2">
+          <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Bandbreedtes herstelkosten</h2>
+          <p class="max-w-3xl">Verdeling van de kostenindicatie, als aandeel van de panden met een indicatie. Niet elk pand heeft er een.</p>
+        </div>
+        <div class="grid gap-10 lg:grid-cols-2" data-svl-chart="cost-bands"></div>
+      </div>
+    </section>
+
+    <section class="section section--feature | py-16 lg:py-20">
+      <div class="wrapper grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-5 space-y-4">
+          <h2 class="text-2xl lg:text-3xl font-extrabold text-white">Terugmeldingen</h2>
+          <p>Professionals en bewoners melden onderzoek, herstel en correcties terug. Elke melding wordt beoordeeld, en waar het risico verandert, rekent FunderMaps het pand opnieuw door.</p>
+          <a class="button button-primary" href="https://melden.fundermaps.com">Doe een melding</a>
+        </div>
+        <div class="lg:col-span-7 grid gap-4 sm:grid-cols-2">
+          <div class="svl-figure">
+            <span class="svl-figure__label">Terugmeldingen totaal</span>
+            <span class="svl-figure__value" data-svl="fb_total">–</span>
+            <span class="svl-figure__note"><span data-svl="fb_portal">–</span> via het meldportaal · <span data-svl="fb_archive">–</span> uit het FunderConsult-archief · <span data-svl="fb_melden">–</span> via melden.fundermaps.com</span>
+          </div>
+          <div class="svl-figure">
+            <span class="svl-figure__label">Mediane doorlooptijd</span>
+            <span class="svl-figure__value"><span data-svl="fb_hours">–</span> uur</span>
+            <span class="svl-figure__note">van melding tot beoordeling, via melden.fundermaps.com</span>
+          </div>
+          <div class="svl-figure sm:col-span-2">
+            <span class="svl-figure__label">Risico herberekend</span>
+            <span class="svl-figure__value" data-svl="fb_recalculated">–</span>
+            <span class="svl-figure__note">meldingen waarna het risico van het pand is aangepast en de melder bericht kreeg</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section | wrapper py-12 lg:py-16">
+      <div class="svl-panel grid gap-8 lg:grid-cols-12">
+        <div class="lg:col-span-5 space-y-3">
+          <span class="svl-figure__label">Externe duiding</span>
+          <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">AFM: funderingsherstel is urgent</h2>
+          <p>Op basis van de Nationale Database FunderMaps concludeerde de AFM dat voor een grote groep woningeigenaren funderingsherstel noodzakelijk is, en dat dat niet voor iedereen verantwoord te financieren is.</p>
+          <p class="svl-muted svl-small">Publicatie 13 april 2026 · <a href="https://www.afm.nl/nl-nl/sector/actueel/2026/apr/sb-funderingsherstel" target="_blank" rel="noopener">Lees het AFM-artikel</a></p>
+        </div>
+        <div class="lg:col-span-7 grid gap-4 sm:grid-cols-2">
+          <div class="svl-figure">
+            <span class="svl-figure__label">Eigenaren met noodzakelijk herstel</span>
+            <span class="svl-figure__value">120.000+</span>
+          </div>
+          <div class="svl-figure">
+            <span class="svl-figure__label">Totale herstelopgave</span>
+            <span class="svl-figure__value">€ 11 miljard</span>
+          </div>
+          <div class="svl-figure">
+            <span class="svl-figure__label">Lenen lijkt niet verantwoord</span>
+            <span class="svl-figure__value">25.000+</span>
+            <span class="svl-figure__note">eigenaren</span>
+          </div>
+          <div class="svl-figure">
+            <span class="svl-figure__label">Niet financierbaar</span>
+            <span class="svl-figure__value">€ 3 miljard</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section | wrapper pb-16 lg:pb-24">
+      <div class="max-w-3xl space-y-3">
+        <h2 class="text-2xl font-extrabold text-blue-900">Hoe deze cijfers ontstaan</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>De cijfers komen rechtstreeks uit de Nationale Database FunderMaps, uit hetzelfde model dat klanten in FunderMaps zien. De datum van de laatste berekening staat bovenaan de pagina.</li>
+          <li>Telbasis: alle panden met ten minste één adres in de BAG.</li>
+          <li>Funderingsgroepen: houten palen (alle houten varianten, ook met oplanger), beton (betonpalen en andere paalsystemen van beton of staal) en ondiep (op staal, gemetseld, stroken en vloeren). Gecombineerde en overige funderingen staan apart.</li>
+          <li>Herstelkosten zijn een modelmatige indicatie per pand, geen offerte. Voor betonpalen wordt geen indicatie berekend.</li>
+          <li>Externe cijfers, zoals die van de AFM, noemen we met bron en datum. Ze komen niet uit de nachtelijke berekening.</li>
+        </ul>
+        <p>Vragen over de cijfers, of wilt u ze voor uw eigen gebied? Mail <a href="mailto:info@fundermaps.com?subject=Stand%20van%20het%20Land">info@fundermaps.com</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <include src="./_partials/footer.html"></include>
+  <script src="./resources/scripts/standVanHetLand.js" type="module"></script>
+</body>
+
+</html>

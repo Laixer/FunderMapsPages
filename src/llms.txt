@@ -16,6 +16,7 @@ This site is the Dutch-language marketing front for FunderMaps. The product itse
 - [QuickScan](https://fundermaps.com/apps-quickscan.html): Standardised KCAF method that gives a quick foundation-risk indication from façade measurements, without invasive investigation.
 - [Indicatieve herstelkosten](https://fundermaps.com/apps-herstelkosten.html): KCAF Herstelkostencalculator — first-cut repair-cost estimate by foundation type, repair method and building size.
 - [Nationaal Funderingsherstel Register](https://fundermaps.com/nationaal-herstelregister.html): Public register for completed foundation-repair work, supporting taxation, transactions and policy.
+- [Stand van het Land](https://fundermaps.com/stand-van-het-land.html): National foundation figures from the FunderMaps database: foundation types, risk classes A–E, construction periods and restoration costs.
 
 ## External product surfaces
 

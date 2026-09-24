@@ -55,3 +55,13 @@ Flat config in `eslint.config.js`: `@eslint/js` recommended + `eslint-config-pre
 - **Quotes**: ESLint warns on single-quote JS; Stylelint requires double-quote SCSS.
 - **Class naming in SCSS**: BEM (`block__element_modifier_value`). Tailwind utility classes in HTML are unconstrained.
 - **Language**: page copy is Dutch; code identifiers and comments are English.
+
+## Stand van het Land (`stand-van-het-land.html`)
+
+National figures page. The numbers come from `src/data/stand-van-het-land.json`, which Parcel bundles into
+`scripts/standVanHetLand.js`; the page never talks to the database. Refresh the file with the read-only
+query and commit it (a push to `main` deploys):
+
+    psql "$DATABASE_URL" -X -A -t -v ON_ERROR_STOP=1 -f scripts/stand-van-het-land.sql > src/data/stand-van-het-land.json
+
+The herstelde-panden figure and the AFM block are hand-maintained in the HTML, with source and date.
