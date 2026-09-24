@@ -75,17 +75,25 @@ SELECT json_build_object(
         SELECT json_agg(json_build_object('decade', decade, 'family', family, 'buildings', n) ORDER BY decade, family)
         FROM (SELECT decade, family, count(*) AS n FROM b WHERE decade IS NOT NULL GROUP BY 1, 2) r
     ),
+    -- Averages leave out the most expensive 10% per group (Don 2026-09-24): a few very
+    -- large panden with many addresses pull a plain mean far above a typical pand.
     'costs', (
         SELECT json_build_object(
             'with_cost', count(restoration_costs),
-            'avg', round(avg(restoration_costs)),
+            'avg', round(avg(restoration_costs) FILTER (WHERE restoration_costs <= p.all_p90)),
             'shallow_with_cost', count(restoration_costs) FILTER (WHERE family = 'shallow'),
-            'shallow_avg', round(avg(restoration_costs) FILTER (WHERE family = 'shallow')),
+            'shallow_avg', round(avg(restoration_costs) FILTER (WHERE family = 'shallow' AND restoration_costs <= p.shallow_p90)),
             'wood_with_cost', count(restoration_costs) FILTER (WHERE family = 'wood'),
-            'wood_avg', round(avg(restoration_costs) FILTER (WHERE family = 'wood')),
+            'wood_avg', round(avg(restoration_costs) FILTER (WHERE family = 'wood' AND restoration_costs <= p.wood_p90)),
             'de_with_cost', count(restoration_costs) FILTER (WHERE urgent),
             'de_total', sum(restoration_costs) FILTER (WHERE urgent)
-        ) FROM b
+        )
+        FROM b, (
+            SELECT percentile_cont(0.9) WITHIN GROUP (ORDER BY restoration_costs) AS all_p90,
+                   percentile_cont(0.9) WITHIN GROUP (ORDER BY restoration_costs) FILTER (WHERE family = 'shallow') AS shallow_p90,
+                   percentile_cont(0.9) WITHIN GROUP (ORDER BY restoration_costs) FILTER (WHERE family = 'wood') AS wood_p90
+            FROM b WHERE restoration_costs IS NOT NULL
+        ) p
     ),
     'cost_bands', (
         SELECT json_agg(json_build_object('family', family, 'band', band, 'buildings', n) ORDER BY family, band)
