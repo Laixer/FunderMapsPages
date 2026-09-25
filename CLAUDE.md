@@ -71,3 +71,7 @@ The herstelde-panden figure and the AFM block are hand-maintained in the HTML, w
 (the standard, latest + fixed per-version URL) are standalone pages with their own inline styles. Their source
 lives outside this repo (the standard is generated); replace the files as a whole, don't hand-edit here. A new
 version of the standard gets its own `informatiestandaard-<x>-<y>.html` and `informatiestandaard.html` is overwritten.
+
+## llms-full.txt
+Generated: `pnpm build && python3 scripts/build-llms-full.py` rebuilds `src/llms-full.txt` from the built pages
+(page list inside the script). Run it after copy changes, then build again.
