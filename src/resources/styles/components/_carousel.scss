@@ -14,6 +14,15 @@
       }
     }
 
+    // Colour logos from the reference list sit on a white tile (Don, 2026-09-25).
+    .glide__slide--logo {
+      @apply bg-white p-5;
+
+      img {
+        @apply max-h-full max-w-full object-contain;
+      }
+    }
+
     .glide__track {
       @apply overflow-visible relative;
     }

@@ -2,7 +2,7 @@
 <html lang="nl" class="scroll-smooth">
 
 <head>
-  <include src="./_partials/meta.html" locals='{"title":"FunderMaps — Inzicht in funderingsrisico’s","description":"FunderMaps brengt funderingsrisico’s en funderingstypes van Nederlandse panden in kaart. Voor verzekeraars, banken, gemeenten en surveyors.","slug":"","ogType":"website"}'></include>
+  <include src="./_partials/meta.html" locals='{"title":"FunderMaps — De Nationale Database Funderingen","description":"FunderMaps is de Nationale Database Funderingen: funderingstypen, herstel, pandzakking en funderingsrisico voor elk pand in Nederland. Voor gemeenten, corporaties, taxateurs, financiers en onderzoeksbureaus.","slug":"","ogType":"website"}'></include>
 </head>
 
 <body>
@@ -17,12 +17,12 @@
       <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-5">
         <span class="inline-flex items-center gap-2 self-start mb-4 px-3 py-1 rounded-full bg-white/10 text-white font-extrabold text-xs uppercase tracking-widest lg:mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-yellow-300"></span>
-          Funderingsrisico-platform
+          Nationale Database Funderingen
         </span>
 
-        <h1 class="mb-3 lg:mb-5 text-white">Funderingsrisico in beeld voor 11&nbsp;miljoen panden</h1>
+        <h1 class="mb-3 lg:mb-5 text-white">Eén landelijke database, opgebouwd met de hele keten</h1>
 
-        <p class="mb-6 lg:mb-7 text-lg text-grey-300">Eén databron voor verzekeraars, banken, gemeenten en taxateurs — gevoed door BAG-data, satellietmetingen en KCAF-onderzoek.</p>
+        <p class="mb-6 lg:mb-7 text-lg text-grey-300">Funderingstypen, herstel, pandzakking en funderingsrisico voor alle 11&nbsp;miljoen panden in Nederland. Onderbouwd met funderingsonderzoek en archiefstukken, samen met gemeenten, woningcorporaties en onderzoeksbureaus.</p>
 
         <div class="flex flex-wrap gap-3">
           <a href="mailto:info@fundermaps.com?subject=Demo%20FunderMaps" class="button button-primary">
@@ -31,7 +31,8 @@
               <include src="./resources/svg/arrow-right-icon.svg"></include>
             </div>
           </a>
-          <a href="#preview" class="button border-2 border-white/40 text-white hover:bg-white/10 hover:border-white">Bekijk het platform</a>
+          <a href="https://maps.fundermaps.com" class="button border-2 border-white/40 text-white hover:bg-white/10 hover:border-white">Open de kaart</a>
+          <a href="stand-van-het-land.html" class="button border-2 border-white/40 text-white hover:bg-white/10 hover:border-white">Stand van het land</a>
         </div>
       </div>
 
@@ -50,48 +51,64 @@
       </div>
     </section>
 
-    <section id="usps" class="section | wrapper mt-20 mb-14 grid gap-x-7 gap-y-14 grid-cols-3 lg:mt-24 lg:mb-28">
-      <ul class="p-0 m-0 list-none col-span-3 md:col-span-3 lg:col-span-1">
-        <li>
-          <ul class="usp usp--blue | m-0 list-none">
-            <li class="usp__head">
-              <span class="usp__badge"><include src="./resources/svg/usp-building.svg"></include></span>
-              <h2 class="text-3xl lg:text-2xl">11&nbsp;miljoen panden</h2>
-            </li>
-            <li>
-              <p>Risicobeeld op pandniveau, gevoed door BAG, 3DBAG en bodemkundige data.</p>
-            </li>
-          </ul>
-        </li>
-      </ul>
+    <section id="kerncijfers" class="section | wrapper mt-16 mb-14 space-y-6 lg:mt-24 lg:mb-24">
+      <div class="max-w-3xl space-y-2">
+        <h2>Gebouwd op onderzoek, niet op aannames</h2>
+        <p>FunderMaps is meer dan een kaart. Het is de Nationale Database Funderingen: funderingstypen uit onderzoek, herstelhistorie, pandzakking uit satellietmetingen en een risicoanalyse voor elk pand.</p>
+      </div>
+      <div class="grid gap-4 lg:grid-cols-3">
+        <div class="svl-figure svl-figure--lead">
+          <span class="svl-figure__label">Panden</span>
+          <span class="svl-figure__value">11 miljoen</span>
+          <span class="svl-figure__note">elk pand in Nederland, met funderingstype en funderingsrisico</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Vastgelegde waarden</span>
+          <span class="svl-figure__value">bijna 1,8 miljoen</span>
+          <span class="svl-figure__note">over funderingstypen, kwaliteit, schade en herstel, uit onderzoek en archief</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Herstelde panden</span>
+          <span class="svl-figure__value">30.122</span>
+          <span class="svl-figure__note">in het <a href="nationaal-herstelregister.html">Nationaal Herstel Register</a></span>
+        </div>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-3">
+        <div class="space-y-2">
+          <h3>Archiefverwerking</h3>
+          <p class="text-grey-400">Een invoerteam ontsluit historische archiefstukken: bouwtekeningen, bestekken en funderingsonderzoeken. Zo gaan eerder vastgestelde feiten niet verloren.</p>
+        </div>
+        <div class="space-y-2">
+          <h3>Onderzoek in het veld</h3>
+          <p class="text-grey-400">Resultaten van funderingsonderzoek en Verkennend Funderingsonderzoek stromen terug naar de database.</p>
+        </div>
+        <div class="space-y-2">
+          <h3>Terugmelding door de keten</h3>
+          <p class="text-grey-400">Makelaars, taxateurs, gemeenten en eigenaren melden onderzoek, herstel en correcties via <a href="https://melden.fundermaps.com">melden.fundermaps.com</a>. Elke melding wordt beoordeeld.</p>
+        </div>
+      </div>
+      <p class="text-sm text-grey-400">Niet elk pand is onderzocht. FunderMaps combineert onderzoeksgegevens met afgeleide gegevens en modeluitkomsten, en toont bij elk gegeven hoe het is vastgesteld. De actuele cijfers staan op de <a href="stand-van-het-land.html">Stand van het land</a>; hoe het risico wordt bepaald op <a href="hoe-het-model-werkt.html">Hoe het model werkt</a>.</p>
+    </section>
 
-      <ul class="p-0 m-0 list-none col-span-3 md:col-span-3 lg:col-span-1">
-        <li>
-          <ul class="usp usp--green | m-0 list-none">
-            <li class="usp__head">
-              <span class="usp__badge"><include src="./resources/svg/usp-register.svg"></include></span>
-              <h2 class="text-3xl lg:text-2xl">Herstelregister</h2>
-            </li>
-            <li>
-              <p>Hét nationale register voor uitgevoerd funderingsherstel — transparant voor taxatie en transactie.</p>
-            </li>
-          </ul>
-        </li>
-      </ul>
-
-      <ul class="p-0 m-0 list-none col-span-3 md:col-span-3 lg:col-span-1">
-        <li>
-          <ul class="usp usp--yellow | m-0 list-none">
-            <li class="usp__head">
-              <span class="usp__badge"><include src="./resources/svg/usp-live.svg"></include></span>
-              <h2 class="text-3xl lg:text-2xl">Live data</h2>
-            </li>
-            <li>
-              <p>Satelliet­metingen, QuickScans en herstelmeldingen worden continu verwerkt in het risicomodel.</p>
-            </li>
-          </ul>
-        </li>
-      </ul>
+    <section id="doe-mee" class="section | wrapper mb-16 grid gap-6 lg:mb-24 lg:grid-cols-2">
+      <article class="card | rounded-2xl border border-grey-300 bg-white px-7 py-10 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-grey-400">Cijfers</span>
+        <h2 class="text-3xl">Stand van het land</h2>
+        <p class="text-grey-400">De funderingen van Nederland in cijfers: funderingstypen, risicoklassen per bouwperiode, herstelkosten en terugmeldingen. Rechtstreeks uit de Nationale Database Funderingen.</p>
+        <a href="stand-van-het-land.html" class="button button-primary">
+          Bekijk de cijfers
+          <div class="button-arrow"><include src="./resources/svg/arrow-right-icon.svg"></include></div>
+        </a>
+      </article>
+      <article class="card | rounded-2xl border border-grey-300 bg-white px-7 py-10 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-grey-400">Melden</span>
+        <h2 class="text-3xl">Weet u meer over een fundering?</h2>
+        <p class="text-grey-400">Heeft u een funderingsonderzoek, een archiefstuk of een bewijs van herstel? Meld het. Elke melding wordt beoordeeld, en waar het risico verandert, rekent FunderMaps het pand opnieuw door. U krijgt bericht over de uitkomst.</p>
+        <a href="https://melden.fundermaps.com" class="button button-primary">
+          Doe een melding
+          <div class="button-arrow"><include src="./resources/svg/arrow-right-icon.svg"></include></div>
+        </a>
+      </article>
     </section>
 
     <section id="services" class="section section--feature-blue | py-16 lg:py-24">
@@ -100,56 +117,94 @@
         <h2 class="mb-3 lg:mb-0 lg:col-span-5 text-white">Wat FunderMaps levert</h2>
 
         <p class="mb-7 lg:mb-0 lg:col-span-7 text-grey-300">
-          Vier manieren om funderingsdata in jouw werk te krijgen — kies wat past bij jouw proces. Eén onderliggende databron, vier ingangen.
+          Van de landelijke kaart tot een koppeling met uw eigen systemen: één databron, voor de hele keten. Bij elk onderdeel vindt u de uitleg in de kennisbank.
         </p>
       </div>
 
       <div class="grid gap-x-6 gap-y-6 lg:grid-cols-2">
-        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12">
+        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/card-viewer-icon.svg"></include>
-            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Interactieve Mapviewer</h3>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Kaart en kaartlagen</h3>
           </div>
-
-          <p class="text-grey-400">
-            Open de kaart, zoek op postcode of adres en zie per pand het <b>funderingsrisico, het funderingstype, onderzoekshistorie en herstelmeldingen</b>. Filter op wijk of gemeente en exporteer een selectie voor verder onderzoek.
-          </p>
+          <p class="text-grey-400 mb-6">Zoek op adres en zie per pand het <b>funderingstype, de vier funderingsrisico's, de risicoklasse, onderzoekshistorie en herstel</b>. Risicoprofielen per wijk, buurt of pand, voor beleid, onderzoek en taxatie.</p>
+          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="https://funderconsult.com/kennisbank/3-platform/kaartlagen-overzicht">
+            <span>Kennisbank: Kaartlagen</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </a>
         </article>
-
-        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12">
-          <div class="inline-flex items-center lg:block">
-            <include src="./resources/svg/application-icon.svg"></include>
-            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Beheerplatform</h3>
-          </div>
-
-          <p class="text-grey-400">
-            Eén werkomgeving voor <b>onderzoeken, herstelmeldingen en rapportages</b>. Werk samen met team en partners, koppel data uit eigen onderzoek en lever bevindingen terug aan de landelijke database.
-          </p>
-        </article>
-
-        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12">
-          <div class="inline-flex items-center lg:block">
-            <include src="./resources/svg/api-icon.svg"></include>
-            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">API-koppeling</h3>
-          </div>
-
-          <p class="text-grey-400">
-            Plug FunderMaps direct in jouw <b>onderwriting-flow, taxatieproces of gemeentelijk dashboard</b>. JSON over HTTPS, BAG-ID als sleutel, met risicoscore, funderingstype en historie per pand.
-          </p>
-        </article>
-
-        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12">
+        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
           <div class="inline-flex items-center lg:block">
             <include src="./resources/svg/ai-model-icon.svg"></include>
-            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Risicomodel</h3>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Risicoanalyse</h3>
           </div>
-
-          <p class="text-grey-400">
-            Het <b>onderliggende model</b> combineert kadastrale data, 3D-bouwgeometrie, bodemkundige eigenschappen en satellietmetingen om gaten in het onderzoeksbeeld op te vullen — zodat ook panden zonder fysiek onderzoek een onderbouwde score krijgen.
-          </p>
+          <p class="text-grey-400 mb-6">Het model bepaalt het funderingstype uit <b>vergelijkbare onderzochte panden</b> en berekent vier funderingsrisico's met de risicoklassen van het KCAF. Wat ter plaatse is vastgesteld, gaat altijd voor. <a href="hoe-het-model-werkt.html">Zo werkt het model</a>.</p>
+          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="https://funderconsult.com/kennisbank/4-funderingsrisicos/risicoanalyse-binnen-fundermaps">
+            <span>Kennisbank: Risicoanalyse binnen FunderMaps</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </a>
+        </article>
+        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
+          <div class="inline-flex items-center lg:block">
+            <span class="inline-block w-10 h-10 text-blue-400 [&_svg]:w-full [&_svg]:h-full"><include src="./resources/svg/usp-live.svg"></include></span>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Pandzakking</h3>
+          </div>
+          <p class="text-grey-400 mb-6">Hoe snel een pand zelf zakt, gemeten met <b>satellietmetingen (InSAR)</b>. Een verhoogde zakkingssnelheid weegt mee als signaal in de funderingsrisico's.</p>
+          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="https://funderconsult.com/kennisbank/3-platform/pandzakking">
+            <span>Kennisbank: Pandzakking</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </a>
+        </article>
+        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
+          <div class="inline-flex items-center lg:block">
+            <span class="inline-block w-10 h-10 text-blue-400 [&_svg]:w-full [&_svg]:h-full"><include src="./resources/svg/usp-register.svg"></include></span>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Nationaal Herstel Register</h3>
+          </div>
+          <p class="text-grey-400 mb-6">Hét register van <b>uitgevoerd funderingsherstel</b>. Een geregistreerd herstel gaat boven de modelschatting en is zichtbaar voor taxatie en transactie. <a href="nationaal-herstelregister.html">Over het register</a>.</p>
+          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="https://funderconsult.com/kennisbank/2-proces/herstelregister">
+            <span>Kennisbank: Herstelregister</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </a>
+        </article>
+        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
+          <div class="inline-flex items-center lg:block">
+            <include src="./resources/svg/application-icon.svg"></include>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Archiefverwerking met AI</h3>
+          </div>
+          <p class="text-grey-400 mb-6">Een AI-leeslaag stelt velden voor uit archiefdocumenten, <b>met citaat en paginaverwijzing</b>. Elk voorstel wordt door een mens gecontroleerd; er wordt niets automatisch overgenomen.</p>
+          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="https://funderconsult.com/kennisbank/3-platform/overzicht-van-het-platform">
+            <span>Kennisbank: Overzicht van het platform</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </a>
+        </article>
+        <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
+          <div class="inline-flex items-center lg:block">
+            <include src="./resources/svg/api-icon.svg"></include>
+            <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">API</h3>
+          </div>
+          <p class="text-grey-400 mb-6">Funderingsdata rechtstreeks in uw eigen systemen, met het <b>BAG-pand als sleutel</b>: van één risicoklasse met betrouwbaarheid tot pandgegevens, funderingsrisico's, herstelkostenindicatie en buurtcijfers.</p>
+          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="https://funderconsult.com/kennisbank/6-api/webservice-overzicht">
+            <span>Kennisbank: Webservice</span>
+            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          </a>
         </article>
         <div id="references-anchor"></div>
       </div>
+      </div>
+    </section>
+
+    <section id="keten" class="section | wrapper py-16 lg:py-24 space-y-8">
+      <div class="max-w-3xl space-y-2">
+        <h2>Voor de hele keten</h2>
+        <p>Publieke en private partijen gebruiken FunderMaps, elk vanuit een eigen vraag. Samen versterken zij de database en de kwaliteit van besluiten.</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="space-y-1"><h3>Gemeenten</h3><p class="text-grey-400">Gebiedsgerichte aanpak, beleid en monitoring van risicogebieden.</p></div>
+        <div class="space-y-1"><h3>Woningcorporaties</h3><p class="text-grey-400">Assetmanagement en onderhoudsopgaven op portefeuilleniveau.</p></div>
+        <div class="space-y-1"><h3>Onderzoeksbureaus</h3><p class="text-grey-400">Een betere uitgangspositie voor funderingsonderzoek: archief- en omgevingsdata in één klik.</p></div>
+        <div class="space-y-1"><h3>Makelaars en taxateurs</h3><p class="text-grey-400">Funderingsrisico in het taxatierapport, met de risicoklassen van het KCAF. Hun controlerende rol versterkt de database.</p></div>
+        <div class="space-y-1"><h3>Financiers</h3><p class="text-grey-400">Risicobeoordeling op pand- en portefeuilleniveau, en ESG-rapportage.</p></div>
+        <div class="space-y-1"><h3>Onderzoek en overheid</h3><p class="text-grey-400">Onder meer de AFM en ministeries gebruiken de database voor landelijk onderzoek naar funderingsproblematiek.</p></div>
       </div>
     </section>
 
@@ -184,7 +239,7 @@
             <h2 class="text-white mb-3">Referenties</h2>
 
             <p class="mb-8">
-              Deze gebruikers gingen u voor:
+              Deze organisaties werken met de gegevens van FunderMaps:
             </p>
 
             <div x-data="references_carousel" class="carousel carousel--references"
@@ -192,21 +247,49 @@
               <div x-ref="glide" class="">
                 <div class="glide__track" data-glide-el="track">
                   <ul class="glide__slides">
-                    <li class="glide__slide">
-                      <include src="./resources/svg/gemeente-schiedam-logo.svg"></include>
-                    </li>
-                    <li class="glide__slide">
-                      <include src="./resources/svg/gemeente-gouda-icon.svg"></include>
-                    </li>
-                    <li class="glide__slide">
-                      <include src="./resources/svg/woonstad-rotterdam-logo.svg"></include>
-                    </li>
-                    <li class="glide__slide">
-                      <include src="./resources/svg/elkien-logo.svg"></include>
-                    </li>
-                    <li class="glide__slide">
-                      <include src="./resources/svg/wetland-logo.svg"></include>
-                    </li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/aalsmeer.svg" alt="Aalsmeer" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/abn.svg" alt="Abn" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/accolade.png" alt="Accolade" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/aedes.png" alt="Aedes" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/amstelveen.webp" alt="Amstelveen" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/bodegraven-reeuwijk.svg" alt="Bodegraven Reeuwijk" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/calcasa.png" alt="Calcasa" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/delft.jpg" alt="Delft" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/den-haag.jpg" alt="Den Haag" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/elkien.webp" alt="Elkien" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/feangreide-frysland.webp" alt="Feangreide Frysland" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/gemeente-dordrecht.png" alt="Gemeente Dordrecht" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/gemeente-rotterdam.svg" alt="Gemeente Rotterdam" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/gemeente-schiedam.svg" alt="Gemeente Schiedam" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/gouda.svg" alt="Gouda" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/haarlem.svg" alt="Haarlem" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/ing.jpg" alt="Ing" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/kbf.svg" alt="Kbf" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/lansingerland.svg" alt="Lansingerland" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/lloyds.svg" alt="Lloyds" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/logo-gemeente-amsterdam.png" alt="Gemeente Amsterdam" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/logo-wetland-wonen.svg" alt="Wetland Wonen" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nhg.svg" alt="Nhg" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nieuwkoop.svg" alt="Nieuwkoop" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nrvt.svg" alt="Nrvt" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nvm.png" alt="Nvm" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nwwi.svg" alt="Nwwi" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/obvion.svg" alt="Obvion" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/oude-water.png" alt="Oude Water" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/quawonen.png" alt="Quawonen" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/rabobank.png" alt="Rabobank" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/regiodeal-loket.jpeg" alt="Regiodeal Loket" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/stadgenoot.webp" alt="Stadgenoot" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/trivire.png" alt="Trivire" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/utrecht.svg" alt="Utrecht" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/vastgoedned.svg" alt="Vastgoedned" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/westland.svg" alt="Westland" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/woerden.png" alt="Woerden" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/woonbron.svg" alt="Woonbron" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/woonkracht10.svg" alt="Woonkracht10" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/woonstad.jpg" alt="Woonstad" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/wsw.webp" alt="Wsw" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/zwijndrecht.png" alt="Zwijndrecht" loading="lazy"></li>
                   </ul>
                 </div>
 
@@ -227,11 +310,49 @@
 
                 <!-- Bullets -->
                 <div class="glide__bullets | flex w-full items-center" data-glide-el="controls[nav]">
-                  <button type="button" class="glide__bullet" data-glide-dir="=0" aria-label="glide navigation"></button>
-                  <button type="button" class="glide__bullet" data-glide-dir="=1" aria-label="glide navigation"></button>
-                  <button type="button" class="glide__bullet" data-glide-dir="=2" aria-label="glide navigation"></button>
-                  <button type="button" class="glide__bullet" data-glide-dir="=3" aria-label="glide navigation"></button>
-                  <button type="button" class="glide__bullet" data-glide-dir="=4" aria-label="glide navigation"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=0" aria-label="Naar referentie 1"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=1" aria-label="Naar referentie 2"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=2" aria-label="Naar referentie 3"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=3" aria-label="Naar referentie 4"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=4" aria-label="Naar referentie 5"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=5" aria-label="Naar referentie 6"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=6" aria-label="Naar referentie 7"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=7" aria-label="Naar referentie 8"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=8" aria-label="Naar referentie 9"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=9" aria-label="Naar referentie 10"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=10" aria-label="Naar referentie 11"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=11" aria-label="Naar referentie 12"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=12" aria-label="Naar referentie 13"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=13" aria-label="Naar referentie 14"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=14" aria-label="Naar referentie 15"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=15" aria-label="Naar referentie 16"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=16" aria-label="Naar referentie 17"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=17" aria-label="Naar referentie 18"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=18" aria-label="Naar referentie 19"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=19" aria-label="Naar referentie 20"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=20" aria-label="Naar referentie 21"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=21" aria-label="Naar referentie 22"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=22" aria-label="Naar referentie 23"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=23" aria-label="Naar referentie 24"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=24" aria-label="Naar referentie 25"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=25" aria-label="Naar referentie 26"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=26" aria-label="Naar referentie 27"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=27" aria-label="Naar referentie 28"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=28" aria-label="Naar referentie 29"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=29" aria-label="Naar referentie 30"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=30" aria-label="Naar referentie 31"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=31" aria-label="Naar referentie 32"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=32" aria-label="Naar referentie 33"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=33" aria-label="Naar referentie 34"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=34" aria-label="Naar referentie 35"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=35" aria-label="Naar referentie 36"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=36" aria-label="Naar referentie 37"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=37" aria-label="Naar referentie 38"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=38" aria-label="Naar referentie 39"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=39" aria-label="Naar referentie 40"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=40" aria-label="Naar referentie 41"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=41" aria-label="Naar referentie 42"></button>
+                  <button type="button" class="glide__bullet" data-glide-dir="=42" aria-label="Naar referentie 43"></button>
                 </div>
               </div>
             </div>
@@ -252,8 +373,7 @@
             <img class="h-full object-contain" src="./resources/images/kcaf-logo.webp" width="170" height="198" loading="lazy" alt="KCAF logo">
           </div>
           <p class="text-grey-400 mb-7">
-            Een stichting met als doelstelling het verzamelen, ontwikkelen en ontsluiten van kennis rond de aanpak en
-            preventie van funderingsproblemen.
+            Kenniscentrum Aanpak Funderingsproblematiek. FunderMaps volgt de KCAF-richtlijn en de risicoklassen A tot en met E, en sluit aan op de ambitie van het KCAF: eigenaren en kopers helpen funderingsproblemen te signaleren en aan te pakken.
           </p>
           <span class="card__link | flex items-center font-extrabold text-green-300">
             <span>Meer info</span>
@@ -268,9 +388,7 @@
             <img class="h-full object-contain" src="./resources/images/sensar-logo.webp" width="309" height="125" loading="lazy" alt="Sensar logo">
           </div>
           <p class="text-grey-400 mb-7">
-            Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele 
-            staat van een potentieel funderingsrisico. Deze gegevens kunnen worden geleverd door Sensar en verwerkt in het 
-            FunderMaps-platform.
+            Bodem- en pandzakking uit InSAR-satellietmetingen. Verwerkt in FunderMaps voor onderbouwde risicoprofielen.
           </p>
           <span class="card__link | flex items-center font-extrabold text-green-300">
             <span>Meer info</span>
@@ -285,15 +403,26 @@
             <img class="h-full object-contain" src="./resources/images/skygeo-logo.webp" width="1858" height="558" loading="lazy" alt="SkyGeo logo">
           </div>
           <p class="text-grey-400 mb-7">
-            Gegevens over de zakking van de bodem en panden vormen een aanvulling bij het beoordelen van de actuele 
-            staat van een potentieel funderingsrisico. Deze gegevens kunnen worden geleverd door SkyGeo en verwerkt in het 
-            FunderMaps-platform.
+            Satellietgegevens over de zakking van bodem en panden: een aanvulling op de actuele staat en een belangrijk onderdeel van de risicobeoordeling.
           </p>
           <span class="card__link | flex items-center font-extrabold text-green-300">
             <span>Meer info</span>
             <include src="./resources/svg/arrow-right-icon-green.svg"></include>
           </span>
         </a>
+      </div>
+
+      <div class="mt-14 lg:col-span-10 lg:col-start-2 space-y-5">
+        <h2 class="mb-3">Levering via deskundigen</h2>
+        <p class="max-w-3xl">Funderingsproblematiek gaat over hoge kosten en ingrijpende beslissingen. Daarom levert FunderMaps zijn data via deskundigen, die de uitkomst in context kunnen plaatsen: bouwkundigen, makelaars, taxateurs en andere vastgoedprofessionals. Dit zijn de partijen via wie wij leveren:</p>
+        <ul class="grid grid-cols-2 gap-4 p-0 m-0 list-none sm:grid-cols-3 lg:grid-cols-5">
+          <li class="flex h-24 items-center justify-center rounded-2xl border border-grey-300 bg-white p-4"><img class="max-h-full max-w-full object-contain" src="./resources/images/partners/nwwi.svg" alt="NWWI" loading="lazy"></li>
+          <li class="flex h-24 items-center justify-center rounded-2xl border border-grey-300 bg-white p-4"><img class="max-h-full max-w-full object-contain" src="./resources/images/partners/nrvt.svg" alt="NRVT" loading="lazy"></li>
+          <li class="flex h-24 items-center justify-center rounded-2xl border border-grey-300 bg-white p-4"><img class="max-h-full max-w-full object-contain" src="./resources/images/partners/vastgoedned.svg" alt="VastgoedNED" loading="lazy"></li>
+          <li class="flex h-24 items-center justify-center rounded-2xl border border-grey-300 bg-white p-4"><img class="max-h-full max-w-full object-contain" src="./resources/images/partners/nvm.png" alt="NVM" loading="lazy"></li>
+          <li class="flex h-24 items-center justify-center rounded-2xl border border-grey-300 bg-white p-4"><img class="max-h-full max-w-full object-contain" src="./resources/images/partners/calcasa.png" alt="Calcasa" loading="lazy"></li>
+        </ul>
+        <p class="max-w-3xl text-sm text-grey-400">Geen andere partijen of producten gebruiken de data van FunderMaps, ongeacht wat er wordt beweerd.</p>
       </div>
       </div>
     </section>
@@ -417,28 +546,50 @@
       </section>
 
     <section id="top-tasks" class="section | wrapper py-14 grid gap-x-7 gap-y-5 lg:grid-cols-3 lg:py-20">
-      <h2 class="text-center lg:col-span-3 lg:mb-3">Top taken</h2>
-      <a class="button button-outline-primary button-alternative" href="media-library.html">
+      <h2 class="text-center lg:col-span-3 lg:mb-3">Open over wat we doen</h2>
+      <a class="button button-outline-primary button-alternative" href="stand-van-het-land.html">
         <span class="relative flex">
-          Funderingstypes & -risico's
+          Stand van het land
           <span class="absolute -right-6">
             <include src="./resources/svg/arrow-right-icon.svg"></include>
           </span>
         </span>
       </a>
-
-      <a class="button button-outline-primary button-alternative" href="privacy-statement.html">
+      <a class="button button-outline-primary button-alternative" href="hoe-het-model-werkt.html">
         <span class="relative flex">
-          Privacy verklaring
+          Hoe het model werkt
           <span class="absolute -right-6">
             <include src="./resources/svg/arrow-right-icon.svg"></include>
           </span>
         </span>
       </a>
-
-      <a class="button button-outline-primary button-alternative" href="terms-conditions.html">
+      <a class="button button-outline-primary button-alternative" href="informatiestandaard.html">
         <span class="relative flex">
-          Algemene voorwaarden
+          Informatiestandaard
+          <span class="absolute -right-6">
+            <include src="./resources/svg/arrow-right-icon.svg"></include>
+          </span>
+        </span>
+      </a>
+      <a class="button button-outline-primary button-alternative" href="begrippen-en-standaarden.html">
+        <span class="relative flex">
+          Begrippen en standaarden
+          <span class="absolute -right-6">
+            <include src="./resources/svg/arrow-right-icon.svg"></include>
+          </span>
+        </span>
+      </a>
+      <a class="button button-outline-primary button-alternative" href="nationaal-herstelregister.html">
+        <span class="relative flex">
+          Nationaal Herstel Register
+          <span class="absolute -right-6">
+            <include src="./resources/svg/arrow-right-icon.svg"></include>
+          </span>
+        </span>
+      </a>
+      <a class="button button-outline-primary button-alternative" href="https://melden.fundermaps.com">
+        <span class="relative flex">
+          Melding doen
           <span class="absolute -right-6">
             <include src="./resources/svg/arrow-right-icon.svg"></include>
           </span>
