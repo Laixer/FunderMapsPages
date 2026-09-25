@@ -152,6 +152,29 @@ SELECT json_build_object(
             GROUP BY 1, 2
         ) c
     ),
+    -- Verkennend Funderingsonderzoek (the addendum QuickScan, inquiry type facade_scan):
+    -- how many, per month of execution. Counts only, never the outcomes (Don, 2026-09-25).
+    'verkennend', (
+        SELECT json_build_object(
+            'reports', count(DISTINCT i.id),
+            'buildings', count(DISTINCT s.building_id),
+            'last_12', (SELECT count(DISTINCT i2.id) FROM report.inquiry i2
+                        WHERE i2.type = 'facade_scan' AND i2.delete_date IS NULL
+                          AND i2.document_date >= date_trunc('month', now()) - interval '11 months'),
+            'months', (
+                SELECT json_agg(json_build_object('month', m, 'reports', n) ORDER BY m)
+                FROM (
+                    SELECT to_char(date_trunc('month', i3.document_date), 'YYYY-MM') AS m, count(*) AS n
+                    FROM report.inquiry i3
+                    WHERE i3.type = 'facade_scan' AND i3.delete_date IS NULL
+                      AND i3.document_date >= date_trunc('month', now()) - interval '11 months'
+                    GROUP BY 1
+                ) x
+            )
+        )
+        FROM report.inquiry i JOIN report.inquiry_sample s ON s.inquiry_id = i.id AND s.delete_date IS NULL
+        WHERE i.type = 'facade_scan' AND i.delete_date IS NULL
+    ),
     'feedback', (
         SELECT json_build_object(
             'total', count(*),
