@@ -40,14 +40,14 @@ feedback AS (
 ),
 obs AS (
     -- The database figures shared with fundermaps.com/hoe-het-model-werkt.html:
-    -- waarnemingen = samples from research, archive, notes and herstel (the
-    -- Verkennend Funderingsonderzoek counts as commercial data, not ours);
+    -- waarnemingen = samples from research, archive, notes, Verkennend
+    -- Funderingsonderzoek and herstel;
     -- vastgelegde waarden = the filled fields in those samples.
     SELECT count(*) AS n,
            sum((SELECT count(*) FROM jsonb_each(to_jsonb(s) - ARRAY['id','inquiry_id','address','create_date','update_date','delete_date','building_id','metadata']) e
                 WHERE e.value NOT IN ('null'::jsonb, '[]'::jsonb, '""'::jsonb))) AS v
     FROM report.inquiry_sample s JOIN report.inquiry i ON i.id = s.inquiry_id
-    WHERE s.delete_date IS NULL AND i.delete_date IS NULL AND i.type <> 'facade_scan'
+    WHERE s.delete_date IS NULL AND i.delete_date IS NULL
     UNION ALL
     SELECT count(*),
            sum((SELECT count(*) FROM jsonb_each(to_jsonb(r) - ARRAY['id','recovery_id','create_date','update_date','delete_date','building_id','metadata']) e
@@ -74,7 +74,9 @@ SELECT json_build_object(
             'municipalities', count(DISTINCT municipality_id),
             'districts', count(DISTINCT district_id),
             'neighborhoods', count(DISTINCT neighborhood_id),
-            'restored', (SELECT count(DISTINCT building_id) FROM report.recovery_sample WHERE delete_date IS NULL)
+            -- Herstelde panden: the Nationaal Herstel Register total (stand 2026-09-21),
+            -- set by hand until the register is fully in FunderMaps (Don, 2026-09-25).
+            'restored', 30122
         ) FROM b
     ),
     'families', (
