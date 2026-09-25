@@ -62,6 +62,9 @@ function fillFigures() {
     db_observations: num(data.database.observations),
     db_values: num(data.database.values),
     db_researched: num(data.database.researched),
+    vfo_reports: num(data.verkennend.reports),
+    vfo_buildings: num(data.verkennend.buildings),
+    vfo_last12: num(data.verkennend.last_12),
     fb_total: num(data.feedback.total),
     fb_portal: num(data.feedback.by_source.incident_portal || 0),
     fb_archive: num(data.feedback.by_source.archive || 0),
@@ -257,4 +260,24 @@ const charts = {
 }
 
 fillFigures()
+// Verkennend Funderingsonderzoek per month, last twelve months: counts only.
+function verkennendMonths(root) {
+  const rows = data.verkennend.months
+  const max = Math.max(...rows.map((r) => r.reports))
+  const chart = el("div", "svl-columns")
+  for (const r of rows) {
+    const col = el("div", "svl-col")
+    const stack = el("div", "svl-col__stack svl-col__stack--short")
+    const seg = el("span", "svl-col__seg svl-vfo")
+    seg.style.height = (100 * r.reports) / max + "%"
+    const label = new Date(r.month + "-01").toLocaleDateString("nl-NL", { month: "short", year: "2-digit" })
+    stack.title = `${label}: ${num(r.reports)}`
+    stack.append(seg)
+    col.append(stack, el("span", "svl-col__label", label))
+    chart.append(col)
+  }
+  root.append(chart)
+}
+charts["verkennend-months"] = verkennendMonths
+
 document.querySelectorAll("[data-svl-chart]").forEach((root) => charts[root.dataset.svlChart]?.(root))
