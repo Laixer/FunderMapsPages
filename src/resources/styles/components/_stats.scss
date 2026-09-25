@@ -1,0 +1,240 @@
+// Stand van het Land: figures and hand-rolled charts (see scripts/standVanHetLand.js).
+// Class names are set from JS, so keep them literal here for Tailwind/Parcel.
+
+:root {
+  // Kaartkleuren: the market standard FunderMaps/FunderConsult maintain
+  // (funderconsult.com/kennisbank/7-techniek/kaartkleuren).
+  --svl-risk-A: #2e7d32;
+  --svl-risk-B: #9e9d24;
+  --svl-risk-C: #f9a825;
+  --svl-risk-D: #ef6c00;
+  --svl-risk-E: #c62828;
+  --svl-fam-wood: #8c3a28;
+  --svl-fam-concrete: #6a6c70;
+  --svl-fam-shallow: #ce0015;
+  --svl-fam-other: #ced0da;
+}
+
+.svl-risk--a {
+  background-color: var(--svl-risk-A);
+  color: #fff;
+}
+
+.svl-risk--b {
+  background-color: var(--svl-risk-B);
+  color: #fff;
+}
+
+.svl-risk--c {
+  background-color: var(--svl-risk-C);
+  color: var(--color-blue-900);
+}
+
+.svl-risk--d {
+  background-color: var(--svl-risk-D);
+  color: #fff;
+}
+
+.svl-risk--e {
+  background-color: var(--svl-risk-E);
+  color: #fff;
+}
+
+.svl-fam-wood { background-color: var(--svl-fam-wood); }
+.svl-fam-concrete { background-color: var(--svl-fam-concrete); }
+.svl-fam-shallow { background-color: var(--svl-fam-shallow); }
+.svl-fam-other { background-color: var(--svl-fam-other); }
+
+.svl-figure {
+  @apply flex flex-col gap-1 rounded-2xl border border-grey-200 bg-white p-5;
+
+  &__label {
+    @apply text-xs font-extrabold uppercase tracking-widest text-grey-400;
+  }
+
+  &__value {
+    @apply text-3xl font-extrabold text-blue-900;
+
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__note {
+    @apply text-sm text-grey-400;
+  }
+
+  &--lead {
+    @apply border-blue-900 bg-blue-900;
+
+    .svl-figure__label,
+    .svl-figure__note { @apply text-grey-300; }
+    .svl-figure__value { @apply text-white; }
+  }
+}
+
+.svl-panel {
+  @apply rounded-3xl border border-grey-200 bg-white p-6 lg:p-10;
+}
+
+.svl-muted { @apply text-grey-400; }
+.svl-small { @apply text-sm; }
+
+.svl-bar {
+  @apply flex h-7 w-full overflow-hidden rounded-md bg-grey-100;
+
+  &--lg { @apply h-12 rounded-lg; }
+}
+
+.svl-seg {
+  @apply flex h-full items-center justify-center text-xs font-extrabold;
+
+  min-width: 2px;
+}
+
+.svl-legend {
+  @apply m-0 mt-4 grid list-none gap-2 p-0 sm:grid-cols-2;
+
+  li { @apply flex items-center gap-2; }
+
+  &--inline { @apply flex flex-wrap gap-x-5 gap-y-2; }
+}
+
+.svl-swatch {
+  @apply inline-block h-3 w-3 shrink-0 rounded-sm;
+}
+
+.svl-chip {
+  @apply inline-flex h-6 w-6 items-center justify-center rounded text-xs font-extrabold;
+}
+
+.svl-table {
+  @apply w-full border-collapse text-left;
+
+  font-variant-numeric: tabular-nums;
+
+  th,
+  td { @apply border-b border-grey-200 px-3 py-3; }
+
+  thead th { @apply text-xs font-extrabold uppercase tracking-widest text-grey-400; }
+  tbody th { @apply whitespace-nowrap font-extrabold text-blue-900; }
+  td { @apply text-right; }
+  thead th:not(:first-child) { @apply text-right; }
+}
+
+.svl-share {
+  @apply flex items-center justify-end gap-3;
+
+  min-width: 10rem;
+}
+
+.svl-inline-bar {
+  @apply block h-2 rounded-full;
+
+  max-width: 6rem;
+  min-width: 2px;
+}
+
+.svl-stack-row {
+  @apply flex flex-col gap-2 border-b border-grey-200 py-4;
+}
+
+.svl-stack-head {
+  @apply flex flex-wrap items-baseline justify-between gap-2 text-blue-900;
+}
+
+.svl-scroll {
+  @apply overflow-x-auto;
+}
+
+.svl-heat {
+  @apply w-full border-separate text-center text-xs;
+
+  border-spacing: 3px;
+  font-variant-numeric: tabular-nums;
+
+  thead th { @apply whitespace-nowrap px-1 pb-1 font-extrabold text-grey-400; }
+
+  td {
+    @apply rounded px-1 py-2 text-blue-900;
+
+    min-width: 3.25rem;
+    background-color: color-mix(in srgb, var(--heat-color) calc(var(--heat) * 100%), var(--color-grey-100));
+  }
+}
+
+.svl-columns {
+  // Top-aligned: the rotated decade labels differ in length, and with items-end
+  // they pushed every stack to a different height (Don, 2026-09-25).
+  @apply flex items-start gap-1 overflow-x-auto pb-1;
+}
+
+.svl-col {
+  @apply flex flex-1 flex-col items-center gap-2;
+
+  min-width: 2.25rem;
+
+  &__stack {
+    @apply flex w-full flex-col-reverse overflow-hidden rounded-t;
+
+    height: 14rem;
+  }
+
+  &__seg { @apply block w-full; }
+
+  &__label {
+    @apply whitespace-nowrap text-xs text-grey-400;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+}
+
+.svl-bands {
+  @apply flex flex-col gap-2;
+
+  h4 { @apply mb-1 text-lg font-extrabold text-blue-900; }
+}
+
+.svl-band {
+  @apply grid items-center gap-3 text-sm;
+
+  grid-template-columns: minmax(8.5rem, 11rem) 1fr 3.5rem;
+  font-variant-numeric: tabular-nums;
+
+  &__track { @apply block h-3 rounded-full bg-grey-100; }
+  &__bar { @apply block h-3 rounded-full; }
+  &__value { @apply text-right text-blue-900; }
+}
+
+// Funderingstypen: one tall bar with the family names standing in their segment,
+// and the three illustrations below (the FunderConsult composition, Don 2026-09-25).
+.svl-famshare {
+  @apply flex h-36 w-full overflow-hidden rounded-md;
+
+  &__seg {
+    @apply flex h-full items-start overflow-hidden p-2 text-xs font-extrabold text-white;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    justify-content: flex-end;
+  }
+}
+
+.svl-famcards {
+  @apply mt-8 grid gap-8 sm:grid-cols-3;
+}
+
+.svl-famcard {
+  @apply flex flex-col items-center gap-1 text-center;
+
+  &__img {
+    @apply mb-3 aspect-square w-40 max-w-full rounded-full border-4 bg-white object-cover lg:w-52;
+  }
+
+  &__name {
+    @apply font-extrabold text-blue-900;
+  }
+
+  &__note {
+    @apply text-sm text-grey-400;
+  }
+}

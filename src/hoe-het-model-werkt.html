@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoe FunderMaps rekent</title>
+<link rel="canonical" href="https://fundermaps.com/hoe-het-model-werkt.html">
+<meta name="description" content="Hoe het FunderMaps-model het funderingstype en funderingsrisico per pand bepaalt, en welke data daarachter zit: eigen onderzoeksdata, open data en commerciële data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap">
+<style>
+:root {
+  --navy: #191e3c;
+  --blue: #0c75a8;
+  --slate: #3d5372;
+  --yellow: #ffcc69;
+  --ink: #17192a;
+  --muted: #525c77;
+  --line: #e8eaf1;
+  --paper: #ffffff;
+  --wash: #f6f7f8;
+  --tint: #e7f6fd;
+  --open: #0a8158;
+  --open-bg: #e9faf3;
+  --public: #b07a12;
+  --public-bg: #fffaf0;
+  --ours: #0c75a8;
+  --ours-bg: #e7f6fd;
+  --wood: #8c3a28;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e9ebf3; --muted: #a9b0c4; --line: #2c3252; --paper: #121629; --wash: #191e38; --tint: #13304a;
+    --open: #4fd1a0; --open-bg: #10291f; --public: #f0c060; --public-bg: #2b2412; --ours: #5bb8e6; --ours-bg: #102a3d;
+    --wood: #d98a70;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #e9ebf3; --muted: #a9b0c4; --line: #2c3252; --paper: #121629; --wash: #191e38; --tint: #13304a;
+  --open: #4fd1a0; --open-bg: #10291f; --public: #f0c060; --public-bg: #2b2412; --ours: #5bb8e6; --ours-bg: #102a3d;
+  --wood: #d98a70;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; padding: 0 16px; background: var(--wash); color: var(--ink);
+  font: 400 17px/1.6 Figtree, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--ours); }
+a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+.wrap { max-width: 64rem; margin: 0 auto; }
+.prose { max-width: 42rem; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-weight: 800; font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem); letter-spacing: -0.02em; }
+h2 { font-weight: 800; font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); letter-spacing: -0.01em; }
+h3 { font-weight: 800; font-size: 1.2rem; }
+p { margin: 0; }
+.eyebrow { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+header.hero {
+  margin: 0 -16px; padding: 56px 16px 48px; color: #ced0da;
+  background: linear-gradient(160deg, #0c75a8, #191e3c);
+}
+header.hero .eyebrow { color: #ffcc69; }
+header.hero h1 { color: #fff; margin: 12px 0 16px; }
+header.hero p { font-size: 1.15rem; max-width: 40rem; }
+header.hero .thesis {
+  margin-top: 28px; display: inline-block; padding: 14px 18px; border-radius: 12px;
+  background: rgba(255,255,255,0.08); color: #fff; font-weight: 600;
+}
+header.hero .thesis strong { color: #ffcc69; }
+
+section { padding: 56px 0 8px; display: grid; gap: 20px; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+
+.steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.step { display: grid; gap: 8px; align-content: start; }
+.step .n { font-weight: 800; color: var(--blue); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.step p { color: var(--muted); }
+
+.classes { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.cls { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 6px; font-weight: 800; font-size: 0.9rem; }
+.cls.a { background: #0a8158; color: #fff; } .cls.b { background: #7fbf8e; color: #191e3c; }
+.cls.c { background: #ffcc69; color: #191e3c; } .cls.d { background: #e8793a; color: #191e3c; }
+.cls.e { background: #b3261e; color: #fff; }
+
+.layers { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.layer { border-radius: 20px; padding: 24px; display: grid; gap: 12px; align-content: start; border: 1px solid var(--line); background: var(--paper); border-top: 6px solid var(--c); }
+.layer.open { --c: var(--open); } .layer.public { --c: var(--public); } .layer.ours { --c: var(--ours); background: var(--ours-bg); }
+.layer .tag { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); }
+.layer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; }
+.layer .verdict { font-weight: 600; border-top: 1px solid var(--line); padding-top: 12px; }
+.layer.ours .verdict { border-color: color-mix(in srgb, var(--ours) 30%, transparent); }
+
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+td.num, th.num { text-align: right; white-space: nowrap; }
+td.num strong { font-size: 1.15rem; }
+.scroll { overflow-x: auto; }
+.bar { display: block; height: 8px; border-radius: 99px; background: var(--line); margin-top: 6px; overflow: hidden; }
+.bar > span { display: block; height: 100%; border-radius: 99px; background: var(--wood); }
+.bar.old > span { background: var(--muted); }
+
+.callout { border-left: 4px solid var(--yellow); background: var(--paper); border-radius: 0 16px 16px 0; padding: 20px 24px; display: grid; gap: 8px; }
+.pill { justify-self: start; display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; background: var(--tint); color: var(--ours); }
+.pill.live { background: var(--open-bg); color: var(--open); }
+.pill.soon { background: var(--public-bg); color: var(--public); }
+.status { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.status .card { display: grid; gap: 8px; align-content: start; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
+
+.facts { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.fact { display: grid; gap: 4px; align-content: start; }
+.fact .big { font-weight: 800; font-size: clamp(2rem, 1.6rem + 1.6vw, 2.8rem); line-height: 1.05; color: var(--ours); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.fact .big sup { font-size: 0.45em; vertical-align: super; }
+.risks { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.risks .card { display: grid; gap: 8px; align-content: start; }
+.risks .uses { font-size: 0.9rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
+.ladder { margin: 0; padding-left: 1.4rem; display: grid; gap: 8px; }
+.scale { display: grid; gap: 8px; }
+.scale div { display: flex; gap: 12px; align-items: center; }
+.layer.commercial { --c: var(--slate); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .layer.commercial { --c: #9fb2d0; } }
+:root[data-theme="dark"] .layer.commercial { --c: #9fb2d0; }
+.disclaimer { border: 1px solid var(--line); background: var(--paper); border-radius: 16px; padding: 20px 24px; display: grid; gap: 8px; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">FunderMaps · voor vastgoedprofessionals</span>
+    <h1>Hoe FunderMaps het funderingsrisico bepaalt</h1>
+    <p>Deze pagina is bedoeld voor taxateurs, hypotheekverstrekkers, makelaars, gemeenten, woningcorporaties, onderzoeksbureaus en herstelbedrijven. U leest hier hoe een risicoklasse tot stand komt, op welke gegevens die rust en hoe zeker de uitkomst is. Zo kunt u een klasse begrijpen en aan uw klant uitleggen.</p>
+    <p class="thesis">De rekenmethode is open. <strong>De data maakt het verschil.</strong></p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <span class="eyebrow">De basis</span>
+    <h2>De grootste verzameling funderingsgegevens van Nederland</h2>
+    <p class="prose">Een model is zo goed als de gegevens waarop het rust. FunderMaps rust op onderzoek aan funderingen zelf: rapporten, archiefstukken en geregistreerd herstel, per pand of adres vastgelegd. Dat is het verschil met ieder model dat alleen op open data rekent.</p>
+    <div class="facts">
+      <div class="card fact"><span class="big">ruim 500.000</span><h3>waarnemingen</h3><p class="muted small">Funderingsgegevens per pand of adres uit funderingsonderzoek, archiefonderzoek, Verkennend Funderingsonderzoek, notities en herstel.</p></div>
+      <div class="card fact"><span class="big">ruim 1,3 miljoen</span><h3>vastgelegde waarden</h3><p class="muted small">Alle ingevulde gegevens in die waarnemingen samen: funderingstype, niveaus, maten, kwaliteit, schade en herstel.</p></div>
+      <div class="card fact"><span class="big">ruim 215.000</span><h3>onderzochte panden</h3><p class="muted small">Panden waarvan het funderingstype uit eigen onderzoek of archief bekend is.</p></div>
+    </div>
+    <p class="muted small">Peildatum 25 september 2026. Dezelfde getallen staan op de <a href="https://fundermaps.com/stand-van-het-land.html">Stand van het land</a>.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">In drie stappen</span>
+    <h2>Van pand naar risicoklasse</h2>
+    <div class="steps">
+      <div class="card step">
+        <span class="n">Stap 1</span>
+        <h3>Welke fundering?</h3>
+        <p>Het funderingstype komt uit onderzoek aan het pand zelf. Is dat er niet, dan wordt het afgeleid van vergelijkbare onderzochte panden in de buurt. Is ook dat er niet, dan wordt het geschat op basis van kenmerken van het pand, zoals bouwjaar, hoogte en ondergrond.</p>
+      </div>
+      <div class="card step">
+        <span class="n">Stap 2</span>
+        <h3>Vier funderingsrisico's</h3>
+        <p>Voor elk pand worden vier funderingsrisico's bepaald, elk met een eigen betrouwbaarheid. Het zwaarste van de vier bepaalt de risicoklasse.</p>
+      </div>
+      <div class="card step">
+        <span class="n">Stap 3</span>
+        <h3>Wat altijd voorgaat</h3>
+        <p>Een geregistreerd funderingsherstel en een Verkennend Funderingsonderzoek (voorheen QuickScan / Fase 0) gaan boven de modelschatting. Verder telt de hiërarchie van bewijs: wat ter plaatse is vastgesteld, gaat voor wat is afgeleid of geschat.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Het risico</span>
+    <h2>De vier funderingsrisico's</h2>
+    <p class="prose">De rekenmethode kent vier funderingsrisico's. Per risico staat hieronder wat het is, waar het speelt en wat de berekening gebruikt. Is er onderzoek aan het pand, dan gaat de uitkomst daarvan voor; zonder onderzoek wordt het risico geschat uit de kenmerken van het pand. De gemeten pandzakking uit satellietdata weegt bij de eerste drie risico's mee als aanwijzing: een pand dat sneller zakt dan verwacht, krijgt een hogere klasse. De achtergrond per risico staat in de kennisbank <a href="https://funderconsult.com/kennisbank/4-funderingsrisicos/soorten-funderingsrisico">Soorten funderingsrisico</a>.</p>
+    <div class="risks">
+      <div class="card">
+        <h3>Droogstand (paalrot)</h3>
+        <p>Houten palen of langshout komen boven de grondwaterstand uit. Het hout komt in contact met zuurstof en schimmels tasten het aan.</p>
+        <p class="uses"><strong>Waar:</strong> overal waar op houten palen is gebouwd; landelijk berekend.<br><strong>In de berekening:</strong> het funderingstype (houten palen, of houten palen met betonoplanger), de grondwaterstand bij het pand, bij onderzoek het houtniveau tegenover de grondwaterstand, en een verhoogde pandzakkingssnelheid als signaal.</p>
+      </div>
+      <div class="card">
+        <h3>Ontwateringsdiepte</h3>
+        <p>Bij ondiepe funderingen (op staal, zonder palen) de afstand tussen de onderkant van de fundering en het grondwater. Staat het grondwater hoog, dan ontstaat optrekkend vocht en kan het pand gaan zakken.</p>
+        <p class="uses"><strong>Waar:</strong> overal waar ondiep is gefundeerd; landelijk berekend.<br><strong>In de berekening:</strong> het funderingstype, de funderingsdiepte tegenover de grondwaterstand bij het pand, en de pandzakkingssnelheid als signaal.<br><strong>Verschilzakking</strong> valt hieronder: panden die duidelijk sneller zakken dan hun buren en dan de bodem om hen heen. Dit wordt berekend waar satellietdata is.</p>
+      </div>
+      <div class="card">
+        <h3>Bacteriële aantasting (palenpest)</h3>
+        <p>Bacteriën tasten houten palen aan, ook onder water. Het hout verliest langzaam zijn draagkracht. Grenen is gevoeliger dan vuren.</p>
+        <p class="uses"><strong>Waar:</strong> vooral in Noord- en West-Nederland, waar korte palen in een ondiepe zandlaag staan. Waar langere palen tot in een diepere zandlaag zijn gebruikt, zoals in Rotterdam, komt het minder voor.<br><strong>In de berekening:</strong> het funderingstype, de paallengte (hoe korter, hoe hoger het risico) en een verhoogde pandzakkingssnelheid als signaal.</p>
+      </div>
+      <div class="card">
+        <h3>Overig risico</h3>
+        <p>Risico's die uit onderzoek aan het pand zijn vastgesteld en niet onder de andere drie vallen. Dit risico wordt niet geschat; het bestaat alleen waar onderzoek ligt.</p>
+        <p class="uses"><strong>Hieronder vallen onder meer:</strong><br><strong>Negatieve kleef</strong>: zakkende grondlagen die de paal meetrekken, vooral in de regio Rijnmond en de Drechtsteden.<br>En verder overbelasting, constructiefouten en trillingen, zoals het onderzoek ze vaststelt.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:10px">De risicoklassen</h3>
+      <p class="muted small" style="margin-bottom:12px">De klassen volgen de termen van het KCAF (Kenniscentrum Aanpak Funderingsproblematiek).</p>
+      <div class="scale">
+        <div><span class="cls a">A</span><span>Geen risico</span></div>
+        <div><span class="cls b">B</span><span>Licht risico</span></div>
+        <div><span class="cls c">C</span><span>Verhoogd risico of onzekerheid</span></div>
+        <div><span class="cls d">D</span><span>Hoog risico</span></div>
+        <div><span class="cls e">E</span><span>Vastgesteld probleem</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Wat voorgaat</span>
+    <h2>De hiërarchie van bewijs</h2>
+    <div class="prose" style="display:grid;gap:14px">
+      <p>Niet elk gegeven telt even zwaar. Liggen er voor een pand meerdere bronnen, dan gaat het sterkste bewijs voor:</p>
+      <ol class="ladder">
+        <li><strong>Onderzoek ter plaatse</strong>, zoals een funderingsonderzoek met inspectieput: de fundering is gezien en gemeten.</li>
+        <li><strong>Archiefstukken</strong>, zoals bouwtekeningen en bestekken: de fundering is gedocumenteerd.</li>
+        <li><strong>Afleiding van vergelijkbare panden</strong>: onderzochte panden uit dezelfde buurt en bouwperiode.</li>
+        <li><strong>Schatting</strong> op basis van kenmerken van het pand.</li>
+      </ol>
+      <p>Een geregistreerd funderingsherstel en een Verkennend Funderingsonderzoek gaan altijd boven de modelschatting. Bij elk gegeven staat hoe het is vastgesteld: <em>vastgesteld</em> (onderzoek aan dit pand), <em>afgeleid</em> (vergelijkbare panden) of <em>indicatief</em> (een schatting).</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Het funderingstype</span>
+    <h2>Het funderingstype schatten uit vergelijkbare panden</h2>
+    <div class="prose" style="display:grid;gap:14px">
+      <p>Is een pand niet zelf onderzocht, dan bepaalt het vernieuwde funderingstypemodel de fundering uit onderzochte panden die erop lijken. Dat gaat in vijf stappen.</p>
+    </div>
+    <div class="steps">
+      <div class="card step"><span class="n">Funderingseenheid</span><p>Aaneengesloten panden die naar verwachting één fundering delen, zoals een bouwblok uit hetzelfde jaar met dezelfde bouwvorm. Een onderzoek aan één pand zegt daardoor iets over de rest van het blok.</p></div>
+      <div class="card step"><span class="n">Vergelijkbare panden</span><p>Onderzochte panden uit dezelfde buurt, bouwperiode en gebouwfamilie, met een vergelijkbare hoogte en ondergrond: de grondsoortregio en de opbouw van de ondergrond uit GeoTOP.</p></div>
+      <div class="card step"><span class="n">Weging</span><p>Hoe dichterbij en hoe meer het onderzochte pand lijkt, hoe zwaarder het meetelt. Heeft het pand zelf onderzoek of een archiefstuk, dan gaat dat voor, volgens de hiërarchie van bewijs.</p></div>
+      <div class="card step"><span class="n">Uitkomst</span><p>Een kans per funderingsfamilie (houten palen, betonpalen of ondiep) en hoeveel bewijs daaronder ligt. Daaruit volgt de betrouwbaarheid: <em>vastgesteld</em>, <em>afgeleid</em> of <em>indicatief</em>.</p></div>
+      <div class="card step"><span class="n">Zonder onderzoek in de buurt</span><p>Dan schat het model de fundering uit de kenmerken van het pand zelf: bouwjaar, hoogte en ondergrond. De uitkomst is dan <em>indicatief</em>.</p></div>
+    </div>
+    <div class="card" style="display:grid;gap:10px">
+      <h3>Getoetst op panden die het model nooit had gezien</h3>
+      <p class="muted">Van ruim 47.000 onderzochte panden is de uitkomst achtergehouden. Het model rekende zonder die panden en moest ze daarna inschatten. De uitkomst is vergeleken met wat het onderzoek vaststelde. De panden zijn gescheiden per rapport en per gemeente: panden uit hetzelfde rapport of dezelfde gemeente zaten nooit tegelijk in de rekenset en de toetsset. Zo kan het model niet leren van het antwoord.</p>
+      <p class="muted">De <em>juiste funderingsfamilie</em> betekent dat het model dezelfde familie aanwijst als het onderzoek: houten palen, betonpalen of ondiep.</p>
+      <p><strong>Het resultaat:</strong> het vernieuwde model vindt in buurten met onderzoek ongeveer twee keer zo vaak de houten funderingen terug als de eerdere schatting. In gemeenten waarvan het model geen enkel onderzocht pand kende, wijst het ongeveer twee keer zo vaak de juiste funderingsfamilie aan.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Waarom data het verschil maakt</span>
+    <h2>Zonder onderzoek in de buurt raadt elk model</h2>
+    <div class="callout">
+      <p>In sommige gebieden verschilt de fundering sterk van die in de buurgemeenten. Een stad kan grotendeels op houten palen staan terwijl de gemeenten eromheen dat bijna niet hebben. Geen bouwjaar, hoogte of bodemkaart laat dat zien. Alleen lokaal onderzoek brengt het aan het licht.</p>
+      <p>Komt er in zo'n gebied onderzoek bij, dan wordt de schatting voor de hele buurt beter. Het model blijft hetzelfde. <strong>De data maakt het verschil.</strong></p>
+    </div>
+    <p class="prose">Daarom staat bij elk pand hoe betrouwbaar de uitkomst is, en daarom vragen we professionals om onderzoek en herstel terug te melden.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">De bronnen</span>
+    <h2>Drie soorten data</h2>
+    <p class="prose">Open data vertelt veel over een pand, maar niet wat eronder zit. Dat staat alleen in onderzoek aan de fundering zelf, en dat onderzoek heeft FunderMaps verzameld.</p>
+    <div class="layers">
+      <article class="layer ours">
+        <span class="tag">Onze data</span>
+        <h3>Onderzocht, gekoppeld en gewogen</h3>
+        <ul>
+          <li><strong>Ruim 500.000 waarnemingen</strong> met samen <strong>ruim 1,3 miljoen vastgelegde waarden</strong></li>
+          <li><strong>Ruim 215.000 onderzochte panden</strong>: funderingsonderzoek, inspectieputten, archiefonderzoek</li>
+          <li>Het <a href="https://fundermaps.com/nationaal-herstelregister.html">Nationaal Herstel Register</a></li>
+          <li>Terugmeldingen van professionals, elke dag nieuwe</li>
+        </ul>
+        <p class="verdict">Jaren verzameld met gemeenten, het KCAF en onderzoeksbureaus. Elk stuk is per pand gekoppeld en gewogen volgens de hiërarchie van bewijs.</p>
+      </article>
+      <article class="layer open">
+        <span class="tag">Open data</span>
+        <h3>Vrij beschikbaar, voor iedereen</h3>
+        <ul>
+          <li>BAG: bouwjaar, adressen en pandcontour</li>
+          <li>3D BAG en AHN: hoogte van pand en maaiveld</li>
+          <li>CBS: wijken en buurten</li>
+        </ul>
+        <p class="verdict">Zegt veel over het pand, niets over de fundering. Een bouwjaar is een aanwijzing, geen bewijs.</p>
+      </article>
+      <article class="layer commercial">
+        <span class="tag">Commerciële data</span>
+        <h3>Van gespecialiseerde leveranciers en bureaus</h3>
+        <ul>
+          <li><strong>Grondwaterstand</strong> per pand</li>
+          <li><strong>Pandzakking uit satellietdata</strong>: hoe snel het pand zelf zakt, niet alleen de bodem in het gebied</li>
+          <li><strong>Verkennend Funderingsonderzoek</strong>: de beoordeling van het pand door gespecialiseerde bureaus, met een risicoklasse per pand</li>
+        </ul>
+        <p class="verdict">Onder licentie gebruikt en niet gedeeld.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Openheid</span>
+    <h2>Wat open is, en wat niet</h2>
+    <div class="status">
+      <div class="card">
+        <span class="pill live">Open</span>
+        <h3>De rekenmethode</h3>
+        <p>Hoe een risicoklasse tot stand komt, staat op deze pagina. De begrippen en gegevens staan in de <a href="https://fundermaps.com/informatiestandaard.html">Informatiestandaard funderingsgegevens</a>.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Van FunderMaps</span>
+        <h3>De brondata</h3>
+        <p>Ruim 500.000 waarnemingen, het herstelregister en de terugmeldingen. Verzameld, gekoppeld en gewogen. Deze gegevens zijn niet te downloaden; ze zijn de reden dat de uitkomst klopt.</p>
+      </div>
+      <div class="card">
+        <span class="pill soon">Onder licentie</span>
+        <h3>Commerciële data</h3>
+        <p>Grondwaterstand, pandzakking uit satellietdata en Verkennend Funderingsonderzoek. FunderMaps gebruikt deze gegevens, maar deelt ze niet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Verwijzingen</span>
+    <h2>Verder lezen</h2>
+    <ul class="prose" style="margin:0;padding-left:1.2rem">
+      <li><a href="https://fundermaps.com/stand-van-het-land.html">Stand van het land</a>: de funderingen van Nederland in cijfers, met dezelfde peildatum als deze pagina</li>
+      <li><a href="https://fundermaps.com/informatiestandaard.html">Informatiestandaard funderingsgegevens</a>: de begrippen, eenheden en waardelijsten</li>
+      <li><a href="https://funderconsult.com/kennisbank/4-funderingsrisicos/soorten-funderingsrisico">Kennisbank: Soorten funderingsrisico</a></li>
+      <li><a href="https://fundermaps.com/nationaal-herstelregister.html">Nationaal Herstel Register</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <span class="eyebrow">Wat u kunt doen</span>
+    <h2>Heeft u een funderingsonderzoek, herstel of archiefstuk?</h2>
+    <p class="prose">Meld het via <a href="https://melden.fundermaps.com">melden.fundermaps.com</a>. Elke melding wordt beoordeeld. Verandert het risico, dan wordt het pand opnieuw doorgerekend. Zo wordt de uitkomst voor het pand en de buurt beter.</p>
+    <p class="prose">Heeft u vragen over een risicoklasse of over deze methode? Neem contact op via <a href="mailto:info@fundermaps.com">info@fundermaps.com</a>.</p>
+    <div class="disclaimer">
+      <h3>Let op</h3>
+      <p class="muted">De uitkomst van FunderMaps is een indicatie van het funderingsrisico op basis van de beschikbare gegevens. Het is geen vervanging van funderingsonderzoek aan het pand. Voor zekerheid over de fundering van een pand is onderzoek ter plaatse nodig.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>FunderMaps · Nationale Database Funderingen. Aantallen: productiedatabase FunderMaps, peildatum 25 september 2026: 520.749 waarnemingen, 1.371.547 vastgelegde waarden en 216.281 onderzochte panden; dezelfde bron en peildatum als de Stand van het land (fundermaps.com/stand-van-het-land.html). Achtergrond bij de risico's: kennisbank FunderConsult, Soorten funderingsrisico. Toetsing: onderzochte panden achtergehouden en gescheiden per rapport en per gemeente; het model rekende zonder deze panden en is vergeleken met de onderzoeksuitkomst. Risicoklassen volgens de termen van het KCAF.</p>
+</footer>
+
+</body>
+</html>
