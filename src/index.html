@@ -31,7 +31,7 @@
               <include src="./resources/svg/arrow-right-icon.svg"></include>
             </div>
           </a>
-          <a href="https://maps.fundermaps.com" class="button border-2 border-white/40 text-white hover:bg-white/10 hover:border-white">Open de kaart</a>
+          <a href="https://maps.fundermaps.com" class="button border-2 border-white/40 text-white hover:bg-white/10 hover:border-white">Open de kaartdemo</a>
           <a href="stand-van-het-land.html" class="button border-2 border-white/40 text-white hover:bg-white/10 hover:border-white">Stand van het land</a>
         </div>
       </div>
@@ -129,7 +129,7 @@
           </div>
           <p class="text-grey-400 mb-6">Zoek op adres en zie per pand het <b>funderingstype, de vier funderingsrisico's, de risicoklasse, onderzoekshistorie en herstel</b>. Risicoprofielen per wijk, buurt of pand, voor beleid, onderzoek en taxatie.</p>
           <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="https://maps.fundermaps.com">
-            <span>Open de kaart</span>
+            <span>Open de kaartdemo</span>
             <include src="./resources/svg/arrow-right-icon-green.svg"></include>
           </a>
         </article>
@@ -211,17 +211,23 @@
     <section id="preview" class="section bg-blue-100 | py-16 lg:py-24 lg:mb-32">
       <div class="wrapper">
       <div class="lg:mb-9 lg:grid lg:grid-cols-12">
-        <h2 class="mb-3 lg:mb-0 lg:col-span-5">In de app</h2>
+        <h2 class="mb-3 lg:mb-0 lg:col-span-5">Probeer de kaart</h2>
 
         <p class="mb-8 lg:mb-0 lg:col-span-7">
-          Een blik op de kaartweergave: per pand het funderingsrisico, het funderingstype, onderzoekshistorie en herstelmeldingen. Filter op wijk, gemeente of risicoklasse en duik door tot de pand­details.
+          Per pand het funderingsrisico, het funderingstype, onderzoekshistorie en herstel. Filter op wijk, gemeente of risicoklasse en duik door tot de pand­details. Zie het zelf in de kaartdemo.
         </p>
+        <div class="mt-2 lg:col-span-7 lg:col-start-6">
+          <a href="https://maps.fundermaps.com" class="button button-primary">
+            Open de kaartdemo
+            <div class="button-arrow"><include src="./resources/svg/arrow-right-icon.svg"></include></div>
+          </a>
+        </div>
       </div>
 
-      <figure class="relative">
+      <a href="https://maps.fundermaps.com" class="block mt-8" aria-label="Open de kaartdemo"><figure class="relative">
         <img class="rounded-2xl w-full h-auto shadow-hero-img" src="./resources/images/fundermaps-demo3.webp" width="2466" height="1382" loading="lazy" alt="Schermafbeelding van de FunderMaps mapviewer met pandselectie en risicogegevens">
-        <figcaption class="sr-only">Schermafbeelding van de FunderMaps mapviewer.</figcaption>
-      </figure>
+        <figcaption class="sr-only">Schermafbeelding van de FunderMaps-kaart.</figcaption>
+      </figure></a>
       </div>
     </section>
     <!-- Back-compat: legacy #demo anchor -->

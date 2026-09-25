@@ -16,7 +16,7 @@ Funderingstypen, herstel, pandzakking en funderingsrisico voor alle 11 miljoen p
 
 Plan een demo
 
-Open de kaart
+Open de kaartdemo
 Stand van het land
 
 ### Gebouwd op onderzoek, niet op aannames
@@ -73,7 +73,7 @@ Van de landelijke kaart tot een koppeling met uw eigen systemen: één databron,
 
 Zoek op adres en zie per pand het funderingstype, de vier funderingsrisico's, de risicoklasse, onderzoekshistorie en herstel . Risicoprofielen per wijk, buurt of pand, voor beleid, onderzoek en taxatie.
 
-Open de kaart
+Open de kaartdemo
 
 #### Risicoanalyse
 
@@ -133,11 +133,13 @@ Risicobeoordeling op pand- en portefeuilleniveau, en ESG-rapportage.
 
 Onder meer de AFM en ministeries gebruiken de database voor landelijk onderzoek naar funderingsproblematiek.
 
-### In de app
+### Probeer de kaart
 
-Een blik op de kaartweergave: per pand het funderingsrisico, het funderingstype, onderzoekshistorie en herstelmeldingen. Filter op wijk, gemeente of risicoklasse en duik door tot de pand­details.
+Per pand het funderingsrisico, het funderingstype, onderzoekshistorie en herstel. Filter op wijk, gemeente of risicoklasse en duik door tot de pand­details. Zie het zelf in de kaartdemo.
 
-Schermafbeelding van de FunderMaps mapviewer.
+Open de kaartdemo
+
+Schermafbeelding van de FunderMaps-kaart.
 
 ### Referenties
 
