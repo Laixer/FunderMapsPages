@@ -19,6 +19,7 @@ This site is the Dutch-language marketing front for FunderMaps. The product itse
 - [Stand van het Land](https://fundermaps.com/stand-van-het-land.html): National foundation figures from the FunderMaps database: foundation types, risk classes A–E, construction periods and restoration costs.
 - [Hoe FunderMaps het funderingsrisico bepaalt](https://fundermaps.com/hoe-het-model-werkt.html): How the FunderMaps model determines foundation type and risk class A–E, the four foundation risks, the hierarchy of evidence and the data behind it.
 - [Informatiestandaard funderingsgegevens](https://fundermaps.com/informatiestandaard.html): The FunderMaps information standard 1.0 for foundation data: terms, units, value lists and map colours (CC BY 4.0).
+- [Begrippen, standaarden en catalogus](https://fundermaps.com/begrippen-en-standaarden.html): How FunderMaps defines its terms (NL-SBB), information model (MIM 1.2), data catalogue (DCAT-AP-NL) and calculation rules, and which datasets it uses.
 
 ## External product surfaces
 
