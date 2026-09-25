@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+
+<head>
+  <include src="./_partials/meta.html" locals='{"title":"FunderMaps API — funderingsdata in uw eigen systeem","description":"Koppel FunderMaps aan uw eigen systemen: risicoklasse, funderingsrisico’s, pandgegevens en buurtcijfers per BAG-pand, via een REST-API met API-sleutel.","slug":"api.html","ogType":"website"}'></include>
+</head>
+
+<body>
+  <include src="./_partials/header.html" locals='{"active":""}'></include>
+
+<div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+    <div class="absolute -top-11 right-[-625px] -z-10 w-[863px] lg:w-[1233px] lg:-top-16 lg:right-[-565px]">
+      <include src="./resources/svg/hero-bg.svg"></include>
+    </div>
+  </div>
+
+  <main class="relative overflow-hidden">
+    <section id="hero" class="section section--feature-blue | py-16 lg:py-24">
+      <div class="wrapper lg:grid lg:grid-cols-12">
+      <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-8 lg:col-start-3">
+        <span class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-white/10 text-white font-extrabold text-xs uppercase tracking-widest mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-yellow-300"></span>
+          API
+        </span>
+
+        <h1 class="mb-4 lg:mb-5 text-white">Funderingsdata in uw eigen systeem</h1>
+
+        <!-- Voor intro teksten -->
+        <p class="text-grey-300">
+          Met de FunderMaps API haalt u funderingsgegevens per pand rechtstreeks op, met het BAG-pand of het adres als sleutel. Van één risicoklasse tot het volledige pandbeeld.
+        </p>
+
+      </div>
+      </div>
+    </section>
+                        <section id="content" class="section content | wrapper mb-12 lg:mb-16 space-y-14">
+      <div class="space-y-6">
+        <h2>Vier producten, één databron</h2>
+        <div class="grid gap-6 sm:grid-cols-2">
+          <article class="card | flex flex-col gap-2 rounded-2xl border border-grey-300 bg-white px-7 py-8 h-full">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-grey-400">Light</span>
+            <h3 class="text-2xl text-blue-900">Eén risicoklasse</h3>
+            <p class="text-grey-400">Eén risicoklasse A tot en met E met de betrouwbaarheid erbij. Is het pand hersteld, dan staat de klasse op A.</p>
+            <p class="mt-auto text-sm text-blue-900"><strong>Voor:</strong> snelle selectie in grote portefeuilles en acceptatie</p>
+          </article>
+          <article class="card | flex flex-col gap-2 rounded-2xl border border-grey-300 bg-white px-7 py-8 h-full">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-grey-400">Risk</span>
+            <h3 class="text-2xl text-blue-900">De vier funderingsrisico’s</h3>
+            <p class="text-grey-400">Droogstand, ontwateringsdiepte, bacteriële aantasting en overig risico, elk met betrouwbaarheid, plus funderingstype en herstelkosten.</p>
+            <p class="mt-auto text-sm text-blue-900"><strong>Voor:</strong> taxatie, hypotheekverstrekking en dashboards</p>
+          </article>
+          <article class="card | flex flex-col gap-2 rounded-2xl border border-grey-300 bg-white px-7 py-8 h-full">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-grey-400">Analysis</span>
+            <h3 class="text-2xl text-blue-900">Het volledige pandbeeld</h3>
+            <p class="text-grey-400">Funderingstype, bouwjaar, grondwaterstand, pandzakking, herstelkostenindicatie, onderzoek en herstel: alles wat FunderMaps over het pand weet.</p>
+            <p class="mt-auto text-sm text-blue-900"><strong>Voor:</strong> verdieping, advies en onderzoek</p>
+          </article>
+          <article class="card | flex flex-col gap-2 rounded-2xl border border-grey-300 bg-white px-7 py-8 h-full">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-grey-400">Statistics</span>
+            <h3 class="text-2xl text-blue-900">Buurtcijfers</h3>
+            <p class="text-grey-400">Verdeling van funderingstypen en risicoklassen, onderzoek en herstel in de buurt van een pand of voor een CBS-buurt.</p>
+            <p class="mt-auto text-sm text-blue-900"><strong>Voor:</strong> gebiedsvergelijking, beleid en prioritering</p>
+          </article>
+        </div>
+        <p class="text-grey-400">Daarnaast levert de API de uitkomst van recent uitgevoerd onderzoek aan het pand, zoals een Verkennend Funderingsonderzoek of een funderingsonderzoek, waar dat beschikbaar is.</p>
+      </div>
+
+      <div class="grid gap-10 lg:grid-cols-2">
+        <div class="space-y-4">
+          <h2>Zo werkt het</h2>
+          <ul class="pl-5 list-disc space-y-2">
+            <li>U vraagt op met een <strong>BAG-pand-ID of een adres</strong> (nummeraanduiding). Het antwoord komt in JSON.</li>
+            <li>Toegang met een <strong>API-sleutel</strong> per organisatie.</li>
+            <li>Afrekening <strong>per pand per 24 uur</strong>: vaker opvragen binnen een dag telt één keer.</li>
+            <li>Een <strong>testomgeving</strong> met dezelfde gegevens, om uw koppeling te proberen.</li>
+            <li>Ook te gebruiken door <strong>AI-assistenten</strong>, via een MCP-koppeling.</li>
+            <li>Een overzicht van uw eigen gebruik, per dag en per maand.</li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h2>Voorbeeld</h2>
+          <pre class="rounded-2xl bg-blue-900 p-5 text-sm text-white overflow-x-auto"><code>GET https://ws.fundermaps.com/v4/product/light/0599100000369041
+Authorization: Bearer &lt;uw-api-sleutel&gt;
+
+{
+  "overallRisk": "d",
+  "overallRiskReliability": "indicative"
+}</code></pre>
+          <p class="text-sm text-grey-400">Voorbeeldwaarden; geen beoordeling van dit pand.</p>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h2>Voor wie</h2>
+        <p class="max-w-3xl">Taxatie- en hypotheekketens, banken en verzekeraars, woningcorporaties, gemeenten en softwarebouwers die funderingsinformatie in hun eigen toepassing willen tonen.</p>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="mailto:info@fundermaps.com?subject=API-sleutel%20FunderMaps" class="button button-primary">
+          Vraag een API-sleutel aan
+          <div class="button-arrow"><include src="./resources/svg/arrow-right-icon.svg"></include></div>
+        </a>
+        <a href="api-documentatie.html" class="button button-outline-primary">Bekijk de documentatie</a>
+      </div>
+    </section>
+
+  </main>
+
+  <include src="./_partials/footer.html"></include>
+</body>
+
+</html>
+
+

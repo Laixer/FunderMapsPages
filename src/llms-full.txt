@@ -103,7 +103,7 @@ Kennisbank: Archiefstuk in de standaard
 
 Funderingsdata rechtstreeks in uw eigen systemen, met het BAG-pand als sleutel : van één risicoklasse met betrouwbaarheid tot pandgegevens, funderingsrisico's, herstelkostenindicatie en buurtcijfers.
 
-Kennisbank: API-documentatie v4
+Meer over de API
 
 ### Voor de hele keten
 
@@ -1327,6 +1327,87 @@ Melden
 Onderzoek, archiefstuk of herstel terugmelden. Elke melding wordt beoordeeld.
 
 Lees verder
+
+---
+
+# FunderMaps API
+
+URL: https://fundermaps.com/api.html
+
+API
+
+## Funderingsdata in uw eigen systeem
+
+Met de FunderMaps API haalt u funderingsgegevens per pand rechtstreeks op, met het BAG-pand of het adres als sleutel. Van één risicoklasse tot het volledige pandbeeld.
+
+### Vier producten, één databron
+
+Light
+
+#### Eén risicoklasse
+
+Eén risicoklasse A tot en met E met de betrouwbaarheid erbij. Is het pand hersteld, dan staat de klasse op A.
+
+Voor: snelle selectie in grote portefeuilles en acceptatie
+
+Risk
+
+#### De vier funderingsrisico’s
+
+Droogstand, ontwateringsdiepte, bacteriële aantasting en overig risico, elk met betrouwbaarheid, plus funderingstype en herstelkosten.
+
+Voor: taxatie, hypotheekverstrekking en dashboards
+
+Analysis
+
+#### Het volledige pandbeeld
+
+Funderingstype, bouwjaar, grondwaterstand, pandzakking, herstelkostenindicatie, onderzoek en herstel: alles wat FunderMaps over het pand weet.
+
+Voor: verdieping, advies en onderzoek
+
+Statistics
+
+#### Buurtcijfers
+
+Verdeling van funderingstypen en risicoklassen, onderzoek en herstel in de buurt van een pand of voor een CBS-buurt.
+
+Voor: gebiedsvergelijking, beleid en prioritering
+
+Daarnaast levert de API de uitkomst van recent uitgevoerd onderzoek aan het pand, zoals een Verkennend Funderingsonderzoek of een funderingsonderzoek, waar dat beschikbaar is.
+
+### Zo werkt het
+
+- U vraagt op met een BAG-pand-ID of een adres (nummeraanduiding). Het antwoord komt in JSON.
+
+- Toegang met een API-sleutel per organisatie.
+
+- Afrekening per pand per 24 uur : vaker opvragen binnen een dag telt één keer.
+
+- Een testomgeving met dezelfde gegevens, om uw koppeling te proberen.
+
+- Ook te gebruiken door AI-assistenten , via een MCP-koppeling.
+
+- Een overzicht van uw eigen gebruik, per dag en per maand.
+
+### Voorbeeld
+
+GET https://ws.fundermaps.com/v4/product/light/0599100000369041
+Authorization: Bearer <uw-api-sleutel>
+
+{
+"overallRisk": "d",
+"overallRiskReliability": "indicative"
+}
+Voorbeeldwaarden; geen beoordeling van dit pand.
+
+### Voor wie
+
+Taxatie- en hypotheekketens, banken en verzekeraars, woningcorporaties, gemeenten en softwarebouwers die funderingsinformatie in hun eigen toepassing willen tonen.
+
+Vraag een API-sleutel aan
+
+Bekijk de documentatie
 
 ---
 
