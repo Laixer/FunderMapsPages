@@ -26,8 +26,10 @@ WITH b AS MATERIALIZED (
             ELSE 'other'
         END AS family,
         upper(greatest(t.drystand_risk, t.bio_infection_risk, t.dewatering_depth_risk, t.unclassified_risk)) AS risk_class,
-        -- Restoration need (Don, 2026-09-25): the pand's worst class is D or E.
-        upper(greatest(t.drystand_risk, t.bio_infection_risk, t.dewatering_depth_risk, t.unclassified_risk)) IN ('D', 'E') AS urgent
+        -- Restoration need (Don, 2026-09-25): D or E on droogstand or ontwateringsdiepte
+        -- only, as FunderConsult counts it. Worst-of-four adds ~104k wood panden that
+        -- the bacterial rule puts at D by pile length alone (EUR 18.1bn -> 58.6bn).
+        t.drystand_risk IN ('d', 'e') OR t.dewatering_depth_risk IN ('d', 'e') AS urgent
     FROM maplayer.building_tiles t
 ),
 feedback AS (
@@ -103,8 +105,8 @@ SELECT json_build_object(
         SELECT json_agg(json_build_object('decade', decade, 'family', family, 'buildings', n) ORDER BY decade, family)
         FROM (SELECT decade, family, count(*) AS n FROM b WHERE decade IS NOT NULL GROUP BY 1, 2) r
     ),
-    -- Restoration costs only for panden that need it: worst class D or E (Don,
-    -- 2026-09-25), per foundation family. Averages leave out the most expensive
+    -- Restoration costs only for panden that need it: D or E on droogstand or
+    -- ontwateringsdiepte (Don, 2026-09-25), per foundation family. Averages leave out the most expensive
     -- 10% per family (Don 2026-09-24): a few very large panden with many
     -- addresses pull a plain mean far above a typical pand. Totals count all.
     'costs', (

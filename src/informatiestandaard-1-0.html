@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informatiestandaard funderingsgegevens 1.0</title>
+<link rel="canonical" href="https://fundermaps.com/informatiestandaard-1-0.html">
+<meta name="description" content="Versie 1.0: welke gegevens FunderMaps vastlegt over funderingsonderzoek, Verkennend Funderingsonderzoek, archiefonderzoek, pandzakking, herstel en herstelkosten, met definities, eenheden, waardelijsten en herkomst.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap">
+<style>
+:root {
+  --navy: #191e3c;
+  --blue: #0c75a8;
+  --slate: #3d5372;
+  --yellow: #ffcc69;
+  --ink: #17192a;
+  --muted: #525c77;
+  --line: #e8eaf1;
+  --paper: #ffffff;
+  --wash: #f6f7f8;
+  --tint: #e7f6fd;
+  --open: #0a8158;
+  --open-bg: #e9faf3;
+  --public: #b07a12;
+  --public-bg: #fffaf0;
+  --ours: #0c75a8;
+  --ours-bg: #e7f6fd;
+  --wood: #8c3a28;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e9ebf3; --muted: #a9b0c4; --line: #2c3252; --paper: #121629; --wash: #191e38; --tint: #13304a;
+    --open: #4fd1a0; --open-bg: #10291f; --public: #f0c060; --public-bg: #2b2412; --ours: #5bb8e6; --ours-bg: #102a3d;
+    --wood: #d98a70;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #e9ebf3; --muted: #a9b0c4; --line: #2c3252; --paper: #121629; --wash: #191e38; --tint: #13304a;
+  --open: #4fd1a0; --open-bg: #10291f; --public: #f0c060; --public-bg: #2b2412; --ours: #5bb8e6; --ours-bg: #102a3d;
+  --wood: #d98a70;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; padding: 0 16px; background: var(--wash); color: var(--ink);
+  font: 400 17px/1.6 Figtree, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--ours); }
+a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+.wrap { max-width: 64rem; margin: 0 auto; }
+.prose { max-width: 42rem; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-weight: 800; font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem); letter-spacing: -0.02em; }
+h2 { font-weight: 800; font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); letter-spacing: -0.01em; }
+h3 { font-weight: 800; font-size: 1.2rem; }
+p { margin: 0; }
+.eyebrow { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+header.hero {
+  margin: 0 -16px; padding: 56px 16px 48px; color: #ced0da;
+  background: linear-gradient(160deg, #0c75a8, #191e3c);
+}
+header.hero .eyebrow { color: #ffcc69; }
+header.hero h1 { color: #fff; margin: 12px 0 16px; }
+header.hero p { font-size: 1.15rem; max-width: 40rem; }
+header.hero .thesis {
+  margin-top: 28px; display: inline-block; padding: 14px 18px; border-radius: 12px;
+  background: rgba(255,255,255,0.08); color: #fff; font-weight: 600;
+}
+header.hero .thesis strong { color: #ffcc69; }
+
+section { padding: 56px 0 8px; display: grid; gap: 20px; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+
+.steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.step { display: grid; gap: 8px; align-content: start; }
+.step .n { font-weight: 800; color: var(--blue); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.step p { color: var(--muted); }
+
+.classes { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.cls { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 6px; font-weight: 800; font-size: 0.9rem; }
+.cls.a { background: #0a8158; color: #fff; } .cls.b { background: #7fbf8e; color: #191e3c; }
+.cls.c { background: #ffcc69; color: #191e3c; } .cls.d { background: #e8793a; color: #191e3c; }
+.cls.e { background: #b3261e; color: #fff; }
+
+.layers { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.layer { border-radius: 20px; padding: 24px; display: grid; gap: 12px; align-content: start; border: 1px solid var(--line); background: var(--paper); border-top: 6px solid var(--c); }
+.layer.open { --c: var(--open); } .layer.public { --c: var(--public); } .layer.ours { --c: var(--ours); background: var(--ours-bg); }
+.layer .tag { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); }
+.layer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; }
+.layer .verdict { font-weight: 600; border-top: 1px solid var(--line); padding-top: 12px; }
+.layer.ours .verdict { border-color: color-mix(in srgb, var(--ours) 30%, transparent); }
+
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+td.num, th.num { text-align: right; white-space: nowrap; }
+td.num strong { font-size: 1.15rem; }
+.scroll { overflow-x: auto; }
+.bar { display: block; height: 8px; border-radius: 99px; background: var(--line); margin-top: 6px; overflow: hidden; }
+.bar > span { display: block; height: 100%; border-radius: 99px; background: var(--wood); }
+.bar.old > span { background: var(--muted); }
+
+.callout { border-left: 4px solid var(--yellow); background: var(--paper); border-radius: 0 16px 16px 0; padding: 20px 24px; display: grid; gap: 8px; }
+.pill { justify-self: start; display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; background: var(--tint); color: var(--ours); }
+.pill.live { background: var(--open-bg); color: var(--open); }
+.pill.soon { background: var(--public-bg); color: var(--public); }
+.status { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.status .card { display: grid; gap: 8px; align-content: start; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
+
+.toc { display: grid; gap: 6px; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 0; padding: 0; list-style: none; }
+.toc a { display: block; padding: 10px 14px; border-radius: 12px; background: var(--paper); border: 1px solid var(--line); text-decoration: none; color: var(--ink); font-weight: 600; }
+.toc a:hover { border-color: var(--ours); }
+.code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.8rem; color: var(--muted); overflow-wrap: anywhere; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em; }
+table.attrs td { font-size: 0.92rem; }
+table.attrs td:first-child { min-width: 11rem; }
+table.attrs td:nth-child(2) { min-width: 16rem; }
+.fill { display: inline-block; min-width: 3rem; text-align: center; padding: 1px 6px; border-radius: 99px; font-size: 0.8rem; font-weight: 600; }
+.f-hi { background: var(--open-bg); color: var(--open); }
+.f-mid { background: var(--public-bg); color: var(--public); }
+.f-lo { background: var(--wash); color: var(--muted); }
+.st { font-size: 0.75rem; font-weight: 800; white-space: nowrap; }
+.st-b { color: var(--open); } .st-t { color: var(--public); }
+h3.grp { margin: 18px 0 4px; }
+details.wl { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; }
+details.wl summary { cursor: pointer; font-weight: 600; }
+details.wl[open] summary { margin-bottom: 10px; }
+.flag { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--public); background: var(--public-bg); padding: 2px 8px; border-radius: 99px; }
+.note { border-left: 3px solid var(--yellow); padding: 6px 12px; margin-bottom: 10px; background: var(--wash); border-radius: 0 8px 8px 0; font-size: 0.95rem; }
+.model { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.obj { border: 1px solid var(--line); border-radius: 14px; background: var(--paper); padding: 14px 16px; display: grid; gap: 4px; align-content: start; border-top: 5px solid var(--c, var(--ours)); }
+.obj h3 { font-size: 1.05rem; }
+.obj p { color: var(--muted); font-size: 0.92rem; }
+.obj.key { --c: var(--navy); } .obj.ev { --c: var(--ours); } .obj.rec { --c: var(--open); } .obj.out { --c: var(--public); }
+.formula { font-size: 1.15rem; font-weight: 800; color: var(--ink); background: var(--wash); border-radius: 12px; padding: 14px 18px; font-variant-numeric: tabular-nums; }
+.legend-fill { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.9rem; color: var(--muted); align-items: center; }
+.hist { display: inline-block; margin-left: 6px; font-size: 0.75rem; font-weight: 600; padding: 1px 8px; border-radius: 99px; background: var(--line); color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">FunderMaps · informatiestandaard · versie 1.0 · 25 september 2026</span>
+    <h1>Informatiestandaard funderingsgegevens</h1>
+    <p>Deze standaard is bedoeld voor professionals die funderingsgegevens aanleveren of gebruiken: taxateurs, hypotheekverstrekkers, makelaars, gemeenten, woningcorporaties, onderzoeksbureaus en herstelbedrijven. Hij beschrijft welke gegevens FunderMaps vastlegt over funderingsonderzoek, Verkennend Funderingsonderzoek (voorheen QuickScan / Fase 0), archiefonderzoek, pandzakking en herstel: wat ze betekenen, in welke eenheid en waar ze vandaan komen. Zo kunt u gegevens aanleveren en lezen in dezelfde begrippen.</p>
+    <p class="thesis">Begrippen en afspraken. <strong>Hoe het risico wordt berekend</strong>, leest u op de <a href="https://fundermaps.com/hoe-het-model-werkt.html" style="color:#ffcc69">modelpagina</a>.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <span class="eyebrow">Inhoud</span>
+  <ul class="toc">
+    <li><a href="#principes">1. Uitgangspunten</a></li>
+    <li><a href="#model">2. Informatiemodel</a></li>
+    <li><a href="#bronnen">3. Brondata</a></li>
+    <li><a href="#herkomst">4. Herkomst en betrouwbaarheid</a></li>
+    <li><a href="#onderzoek">5. Funderingsonderzoek</a></li>
+    <li><a href="#waarneming">6. Waarnemingen per pand</a></li>
+    <li><a href="#quickscan">7. Verkennend Funderingsonderzoek</a></li>
+    <li><a href="#archief">8. Archiefonderzoek</a></li>
+    <li><a href="#zakking">9. Pandzakking</a></li>
+    <li><a href="#herstel">10. Herstelregistratie</a></li>
+    <li><a href="#kosten">11. Herstelkosten</a></li>
+    <li><a href="#risico">12. Risico-inschatting</a></li>
+    <li><a href="#waardelijsten">13. Waardelijsten</a></li>
+    <li><a href="#kleuren">14. Kaartkleuren</a></li>
+    <li><a href="#beheer">15. Beheer, licentie en contact</a></li>
+  </ul>
+</section>
+
+<section id="principes">
+  <span class="eyebrow">1</span>
+  <h2>Uitgangspunten</h2>
+  <div class="card prose" style="max-width:none">
+    <ul style="margin:0;padding-left:1.1rem;display:grid;gap:8px">
+      <li><strong>Het BAG-pand is de sleutel.</strong> Elk gegeven hoort bij een pand uit de Basisregistratie Adressen en Gebouwen, en waar nodig bij een adres (nummeraanduiding).</li>
+      <li><strong>Elk gegeven heeft een herkomst.</strong> Uit welk document, van welke datum, van welke uitvoerder, en of het is gecontroleerd (§4).</li>
+      <li><strong>Waarnemen en afleiden zijn gescheiden.</strong> Wat een onderzoeker ter plaatse vaststelt (§5–10) staat los van wat het model daaruit afleidt (§11–12).</li>
+      <li><strong>Vaste waardelijsten.</strong> Keuzevelden kennen alleen de waarden uit §13. Elke waarde krijgt een term en een definitie.</li>
+      <li><strong>Inhoud volgt de richtlijn.</strong> Onderzoek en beoordeling volgen de richtlijn <em>Funderingen onder gebouwen</em> van het KCAF (Kenniscentrum Aanpak Funderingsproblematiek), vastgesteld op 22 november 2022, die de F3O-richtlijnen verving. De risicoklassen A–E gebruiken de termen van het KCAF.</li>
+      <li><strong>Vorm volgt de overheid.</strong> Begrippen volgens NL-SBB, het informatiemodel volgens MIM 1.2, de datasets volgens DCAT-AP-NL.</li>
+      <li><strong>Vaste eenheden.</strong> Niveaus in meters ten opzichte van NAP, diameters, scheurbreedtes en inslagdiepte in millimeters, afstanden en lengtes in meters, zakkingssnelheid in millimeters per jaar.</li>
+      <li><strong>Codes Engels, termen Nederlands.</strong> De code is de technische naam in database en API; de term is wat gebruikers lezen.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="model">
+  <span class="eyebrow">2</span>
+  <h2>Informatiemodel</h2>
+  <p class="prose">Twaalf objecttypen. Alles hangt aan het pand; onderzoek en herstel komen binnen als document met per pand één of meer waarnemingen.</p>
+  <div class="model">
+    <div class="obj key"><h3>Pand</h3><p>BAG-pand, met bouwjaar, hoogte, oppervlak en adressen. Sleutel van alles.</p></div>
+    <div class="obj ev"><h3>Onderzoek</h3><p>Een rapport of document: soort, datum, uitvoerder, eigenaar, controlestatus (§5).</p></div>
+    <div class="obj ev"><h3>Waarneming</h3><p>Wat een onderzoek over één pand of adres vaststelt: fundering, palen, kwaliteit, schade, advies (§6).</p></div>
+    <div class="obj ev"><h3>Verkennend Funderingsonderzoek</h3><p>Een Verkennend Funderingsonderzoek, met waarnemingen aan het pand en een risicoklasse (§7).</p></div>
+    <div class="obj ev"><h3>Archiefstuk</h3><p>Een document uit een archief (bouwtekening, bestek, funderingskaart, paalplan) als bewijs over de fundering (§8).</p></div>
+    <div class="obj ev"><h3>Zakkingsmeting</h3><p>Een meting van hoe snel een pand zakt: satelliet, waterpassing of lintvoegmeting, met meetperiode (§9).</p></div>
+    <div class="obj rec"><h3>Herstelregistratie</h3><p>Het bewijs van herstel: vergunning, rapport of eigenaarsverklaring (§10).</p></div>
+    <div class="obj rec"><h3>Herstelmaatregel</h3><p>Het herstel per pand: methode, status, datum, uitvoerder (§10).</p></div>
+    <div class="obj key"><h3>Funderingseenheid</h3><p>Aaneengesloten panden die naar verwachting één fundering delen, zoals een bouwblok uit hetzelfde jaar met dezelfde bouwvorm. Een onderzoek aan één pand zegt daardoor iets over de andere panden in de eenheid. Funderingseenheden die op elkaar lijken, vormen samen een bredere groep.</p></div>
+    <div class="obj key"><h3>Gebouwfamilie</h3><p>Indeling van panden naar bouwvorm op basis van de BAG-woningtypologie (zoals vrijstaand, twee-onder-een-kap, rijwoning, appartementengebouw).</p></div>
+    <div class="obj out"><h3>Herstelkostenindicatie</h3><p>Afgeleid per pand uit funderingstype en oppervlak (§11).</p></div>
+    <div class="obj out"><h3>Risico-inschatting</h3><p>Afgeleid per pand door een modelversie: type, vier funderingsrisico's, klasse, betrouwbaarheid (§12).</p></div>
+  </div>
+  <p class="prose muted small">Relaties: een onderzoek heeft één of meer waarnemingen; een waarneming hoort bij precies één pand. Een herstelregistratie heeft één of meer herstelmaatregelen; een maatregel hoort bij één pand. Een pand hoort bij hoogstens één funderingseenheid, en een funderingseenheid bij hoogstens één bredere groep. Een pand hoort bij één gebouwfamilie. Een archiefstuk kan over één of veel panden gaan (een funderingskaart beslaat een hele straat). Een pand heeft nul of meer zakkingsmetingen, elk met een reeks meetmomenten. Een pand heeft per modelversie één risico-inschatting en één herstelkostenindicatie. Meldingen (terugmeldingen van professionals en bewoners) horen ook bij het pand; zij vallen buiten deze versie.</p>
+</section>
+
+<section id="bronnen">
+  <span class="eyebrow">3</span>
+  <h2>Brondata</h2>
+  <p class="prose">Naast de eigen onderzoeks- en herstelgegevens van FunderMaps gebruikt het model deze bronnen. De catalogus legt per bron vast wie de eigenaar is, hoe actueel hij is en onder welke voorwaarden we hem gebruiken.</p>
+  <div class="card scroll">
+    <table>
+      <thead><tr><th>Bron</th><th>Wat het levert</th><th>Soort</th><th>In gebruik</th></tr></thead>
+      <tbody>
+        <tr><td><strong>BAG</strong> (Kadaster)</td><td>Pand, bouwjaar, adressen, pandcontour; basis voor de gebouwfamilie</td><td>Open data</td><td>Ja, de sleutel van alles</td></tr>
+        <tr><td><strong>3D BAG</strong></td><td>Pandhoogte in 3D, afgeleid uit BAG en hoogtemetingen</td><td>Open data</td><td>Ja: hoogte in het model</td></tr>
+        <tr><td><strong>GeoTOP</strong> (TNO)</td><td>3D-model van de ondiepe ondergrond: lagen klei, veen en zand tot tientallen meters diep</td><td>Open data</td><td>Ja: de opbouw van de ondergrond in het funderingstypemodel</td></tr>
+        <tr><td><strong>Grondsoortregio</strong></td><td>Indeling in zeeklei, laagveen, zand, rivierengebied, duinen enzovoort</td><td>Referentiedata</td><td>Ja: in het funderingstypemodel</td></tr>
+        <tr><td><strong>Grondwaterstand</strong></td><td>Grondwaterstand per pand</td><td>Commerciële data</td><td>Ja: droogstand en ontwateringsdiepte</td></tr>
+        <tr><td><strong>Pandzakking</strong> (satelliet, InSAR)</td><td>Zakkingssnelheid van het pand zelf</td><td>Commerciële data</td><td>Ja</td></tr>
+        <tr><td><strong>Verkennend Funderingsonderzoek</strong></td><td>Risicoklasse en waarnemingen per pand, door gespecialiseerde bureaus</td><td>Commerciële data</td><td>Ja: gaat boven de modelschatting</td></tr>
+        <tr><td><strong>CBS wijken en buurten</strong></td><td>Indeling voor statistiek en het model</td><td>Open data</td><td>Ja</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="herkomst">
+  <span class="eyebrow">4</span>
+  <h2>Herkomst en betrouwbaarheid</h2>
+  <div class="prose" style="display:grid;gap:12px">
+    <p>Bij elk vastgelegd gegeven moet te herleiden zijn: <strong>welk document</strong> (onderzoek of herstelregistratie), <strong>welke documentdatum</strong>, <strong>welke uitvoerder</strong>, <strong>wie de gegevens bezit</strong> (data-eigenaar) en <strong>of het is gecontroleerd</strong> (controlestatus). Dat legt de database al vast op het niveau van het document.</p>
+    <p>Bij elk <em>afgeleid</em> gegeven hoort bovendien de <strong>modelversie</strong> en de <strong>betrouwbaarheid</strong>: vastgesteld (uit onderzoek aan dit pand), afgeleid (van vergelijkbare panden dichtbij) of indicatief (geschat).</p>
+    <p><strong>De hiërarchie van bewijs.</strong> Niet elk gegeven telt even zwaar. Liggen er voor een pand meerdere bronnen, dan gaat het sterkste bewijs voor: onderzoek ter plaatse gaat voor archiefstukken, archiefstukken gaan voor afleiding van vergelijkbare panden, en afleiding gaat voor een schatting. Een geregistreerd funderingsherstel en een Verkennend Funderingsonderzoek gaan boven de modelschatting.</p>
+    <p>De documentdatum is altijd de datum van het onderzoek of het stuk zelf, nooit de datum van invoer.</p>
+  </div>
+</section>
+
+<section id="onderzoek">
+  <span class="eyebrow">5</span>
+  <h2>Funderingsonderzoek (het document)</h2>
+  <p class="prose">Gegevens over het onderzoek als geheel. Verplicht bij invoer: soort, documentnaam, documentdatum, rapportbestand en de betrokken partijen.</p>
+  <div class="card"><div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>Soort onderzoek</strong><br><span class="code">type</span></td><td>Het soort document of onderzoek waar de gegevens uit komen. Bepaalt hoe zwaar de gegevens meewegen.</td><td>keuze<br><a href="#wl-inquiry_type">inquiry_type</a></td></tr><tr><td><strong>Documentnaam</strong><br><span class="code">document_name</span></td><td>Naam of kenmerk van het rapport zoals de aanleveraar het noemt.</td><td>tekst</td></tr><tr><td><strong>Documentdatum</strong><br><span class="code">document_date</span></td><td>Datum waarop het onderzoek is uitgevoerd of het rapport is opgesteld. Niet de invoerdatum.</td><td>datum</td></tr><tr><td><strong>Rapportbestand</strong><br><span class="code">document_file</span></td><td>Het oorspronkelijke rapport (pdf), als bewijsstuk bewaard.</td><td>bestand</td></tr><tr><td><strong>Volgens richtlijn</strong><br><span class="code">standard_f3o</span></td><td>Het onderzoek is uitgevoerd volgens de erkende richtlijn (voorheen F3O, nu KCAF-richtlijn Funderingen onder gebouwen).</td><td>ja/nee</td></tr><tr><td><strong>Inspectieput gemaakt</strong><br><span class="code">inspection</span></td><td>Er is bij het onderzoek een put gegraven om de fundering zelf te bekijken.</td><td>ja/nee</td></tr><tr><td><strong>Lintvoegmeting uitgevoerd</strong><br><span class="code">joint_measurement</span></td><td>De scheefstand van het pand is gemeten langs de horizontale voegen van het metselwerk.</td><td>ja/nee</td></tr><tr><td><strong>Vloerwaterpassing uitgevoerd</strong><br><span class="code">floor_measurement</span></td><td>De scheefstand van de vloer is gemeten.</td><td>ja/nee</td></tr><tr><td><strong>Uitvoerder, opdrachtgever, verwerker, controleur</strong><br><span class="code">attribution</span></td><td>Wie het onderzoek uitvoerde, voor wie, wie het invoerde en wie het controleerde.</td><td>organisatie / persoon</td></tr><tr><td><strong>Data-eigenaar</strong><br><span class="code">data_owner_organization_id</span></td><td>De organisatie die eigenaar is van de gegevens, los van wie ze verwerkte.</td><td>organisatie</td></tr><tr><td><strong>Controlestatus</strong><br><span class="code">audit_status</span></td><td>Waar het rapport in de beoordeling staat: nog behandelen, ter review, afgerond, afgewezen of vervallen. Hoe zwaar een rapport meeweegt, volgt de hiërarchie van bewijs (§4).</td><td>keuze<br><a href="#wl-audit_status">audit_status</a></td></tr><tr><td><strong>Openbaarheid</strong><br><span class="code">access_policy</span></td><td>Of het rapport voor andere gebruikers zichtbaar is.</td><td>keuze<br><a href="#wl-access_policy">access_policy</a></td></tr></tbody></table></div></div>
+</section>
+
+<section id="waarneming">
+  <span class="eyebrow">6</span>
+  <h2>Waarnemingen per pand</h2>
+  <div class="prose" style="display:grid;gap:10px">
+    <p>Wat een onderzoek per pand of adres vaststelt. Alle velden zijn optioneel, behalve het pand.</p>
+    <p class="muted small">Niveaus zijn in meters ten opzichte van NAP: positief boven NAP, negatief eronder.</p>
+  </div>
+  <div class="card"><h3 class="grp">Pand en algemeen</h3><div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>BAG-pand</strong><br><span class="code">building_id</span></td><td>Het pand volgens de Basisregistratie Adressen en Gebouwen. De sleutel van elk gegeven.</td><td>BAG-pandidentificatie</td></tr><tr><td><strong>Adres</strong><br><span class="code">address</span></td><td>Het adres (BAG-nummeraanduiding) waarop de waarneming betrekking heeft.</td><td>BAG-nummeraanduiding</td></tr><tr><td><strong>Bouwjaar volgens onderzoek</strong><br><span class="code">built_year</span></td><td>Het bouwjaar zoals het onderzoek dat vaststelt. Kan afwijken van de BAG.</td><td>jaar</td></tr><tr><td><strong>Onderbouw</strong><br><span class="code">substructure</span></td><td>Wat er onder de begane grond zit.</td><td>keuze<br><a href="#wl-substructure">substructure</a></td></tr><tr><td><strong>Opmerking</strong><br><span class="code">note</span></td><td>Vrije toelichting van de onderzoeker.</td><td>tekst</td></tr></tbody></table></div><h3 class="grp">Funderingstype en constructie</h3><div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>Type fundering</strong><br><span class="code">foundation_type</span></td><td>Het funderingstype zoals het onderzoek dat vaststelt.</td><td>keuze<br><a href="#wl-foundation_type">foundation_type</a></td></tr><tr><td><strong>Niveau onderkant funderingsbalk</strong><br><span class="code">construction_level</span></td><td>Hoogte van de onderkant van de funderingsbalk (kesp of balk).</td><td>m t.o.v. NAP</td></tr><tr><td><strong>Niveau bovenkant langshout</strong><br><span class="code">wood_level</span></td><td>Hoogte van de bovenkant van het langshout op de palen. Samen met de grondwaterstand bepaalt dit of hout droog kan komen te staan.</td><td>m t.o.v. NAP</td></tr><tr><td><strong>Niveau onderkant metselwerk</strong><br><span class="code">mason_level</span></td><td>Hoogte van de onderkant van het funderingsmetselwerk.</td><td>m t.o.v. NAP</td></tr><tr><td><strong>Funderingsniveau</strong><br><span class="code">foundation_depth</span></td><td>Hoogte van de onderkant van de fundering.</td><td>m t.o.v. NAP</td></tr><tr><td><strong>Kwaliteit funderingsbalk</strong><br><span class="code">construction_quality</span></td><td>Oordeel over de staat van de funderingsbalk.</td><td>keuze<br><a href="#wl-quality">quality</a></td></tr><tr><td><strong>Kwaliteit metselwerk</strong><br><span class="code">mason_quality</span></td><td>Oordeel over de staat van het funderingsmetselwerk.</td><td>keuze<br><a href="#wl-quality">quality</a></td></tr></tbody></table></div><h3 class="grp">Palen</h3><div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>Paalkopniveau</strong><br><span class="code">pile_head_level</span></td><td>Hoogte van de bovenkant van de paal.</td><td>m t.o.v. NAP</td></tr><tr><td><strong>Paalpuntniveau</strong><br><span class="code">pile_tip_level</span></td><td>Hoogte van de onderkant (punt) van de paal.</td><td>m t.o.v. NAP</td></tr><tr><td><strong>Paalkopdiameter</strong><br><span class="code">pile_diameter_top</span></td><td>Doorsnede van de paal aan de bovenkant.</td><td>mm</td></tr><tr><td><strong>Paalpuntdiameter</strong><br><span class="code">pile_diameter_bottom</span></td><td>Doorsnede van de paal aan de onderkant.</td><td>mm</td></tr><tr><td><strong>Hart-op-hartafstand</strong><br><span class="code">pile_distance_length</span></td><td>Afstand tussen de middens van twee naast elkaar staande palen.</td><td>m</td></tr><tr><td><strong>Lengte oplanger</strong><br><span class="code">concrete_charger_length</span></td><td>Lengte van de (beton)oplanger op de houten paal.</td><td>m</td></tr><tr><td><strong>Houtsoort</strong><br><span class="code">wood_type</span></td><td>Houtsoort van de paal.</td><td>keuze<br><a href="#wl-wood_type">wood_type</a></td></tr><tr><td><strong>Inslagdiepte</strong><br><span class="code">wood_penetration_depth</span></td><td>Hoe diep een meetpen in het hout dringt: een maat voor aantasting van het hout.</td><td>mm</td></tr><tr><td><strong>Houtaantasting</strong><br><span class="code">wood_encroachment</span></td><td>Soort aantasting van het paalhout.</td><td>keuze<br><a href="#wl-wood_encroachment">wood_encroachment</a></td></tr><tr><td><strong>Constructie paal</strong><br><span class="code">construction_pile</span></td><td>Wat er met de paal is gebeurd of aan de paal mankeert.</td><td>keuze<br><a href="#wl-construction_pile">construction_pile</a></td></tr></tbody></table></div><h3 class="grp">Kwaliteit en draagkracht</h3><div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>Totale funderingskwaliteit</strong><br><span class="code">overall_quality</span></td><td>Het eindoordeel van de onderzoeker over de fundering als geheel.</td><td>keuze<br><a href="#wl-foundation_quality">foundation_quality</a></td></tr><tr><td><strong>Houtkwaliteit paal</strong><br><span class="code">wood_quality</span></td><td>Kwaliteitsgebied van het paalhout volgens de KCAF-richtlijn.</td><td>keuze<br><a href="#wl-wood_quality">wood_quality</a></td></tr><tr><td><strong>Noodzaak houtonderzoek</strong><br><span class="code">wood_quality_necessity</span></td><td>Of nader onderzoek naar het hout nodig is.</td><td>ja/nee</td></tr><tr><td><strong>Resterende draagkracht paal</strong><br><span class="code">carrying_capacity_quality</span></td><td>Oordeel over de draagkracht die de paal nog heeft.</td><td>keuze<br><a href="#wl-quality">quality</a></td></tr><tr><td><strong>Kwaliteit verticale draagkracht paal</strong><br><span class="code">pile_wood_capacity_vertical_quality</span></td><td>Oordeel over de draagkracht van het paalhout in de lengterichting.</td><td>keuze<br><a href="#wl-quality">quality</a></td></tr><tr><td><strong>Horizontale draagkracht paal</strong><br><span class="code">wood_capacity_horizontal_quality</span></td><td>Oordeel over de draagkracht van het hout dwars op de paal.</td><td>keuze<br><a href="#wl-quality">quality</a></td></tr></tbody></table></div><h3 class="grp">Grondwater en ondergrond</h3><div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>Grondwaterniveau bij ontgraving</strong><br><span class="code">groundwater_level_temp</span></td><td>De grondwaterstand zoals aangetroffen in de inspectieput, op het moment van onderzoek.</td><td>m t.o.v. NAP</td></tr><tr><td><strong>Grondwaterniveau</strong><br><span class="code">groundwater_level_net</span></td><td>De maatgevende grondwaterstand volgens het onderzoek, bijvoorbeeld uit een peilbuis.</td><td>m t.o.v. NAP</td></tr><tr><td><strong>Maaiveldniveau</strong><br><span class="code">groundlevel</span></td><td>Hoogte van het maaiveld bij het pand.</td><td>m t.o.v. NAP</td></tr><tr><td><strong>Peilbuis</strong><br><span class="code">monitoring_well</span></td><td>Kenmerk van de gebruikte peilbuis.</td><td>tekst</td></tr><tr><td><strong>Sondering</strong><br><span class="code">cpt</span></td><td>Kenmerk van de gebruikte sondering (CPT).</td><td>tekst</td></tr></tbody></table></div><h3 class="grp">Oordeel en advies</h3><div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>Handhavingstermijn</strong><br><span class="code">enforcement_term</span></td><td>De periode waarin de fundering volgens het onderzoek nog kan worden gehandhaafd voordat herstel nodig is.</td><td>keuze<br><a href="#wl-enforcement_term">enforcement_term</a></td></tr><tr><td><strong>Funderingsherstel geadviseerd</strong><br><span class="code">recovery_advised</span></td><td>Het onderzoek adviseert de fundering te herstellen.</td><td>ja/nee</td></tr><tr><td><strong>Oorzaken funderingsschade</strong><br><span class="code">damage_cause_list</span></td><td>Alle oorzaken die het rapport noemt, de hoofdoorzaak eerst.</td><td>keuzes (lijst)<br><a href="#wl-foundation_damage_cause">foundation_damage_cause</a></td></tr><tr><td><strong>Geconstateerde schade</strong><br><span class="code">damage_characteristics_list</span></td><td>Alle schadekenmerken die het rapport noemt, het belangrijkste eerst.</td><td>keuzes (lijst)<br><a href="#wl-foundation_damage_characteristics">foundation_damage_characteristics</a></td></tr></tbody></table></div><h3 class="grp">Schadebeeld</h3><div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>Scheur: type</strong><br><span class="code">crack_*_type</span></td><td>Grootteklasse van de grootste scheur, per plek: binnen, voorgevel, achtergevel, linker- en rechtergevel.</td><td>keuze<br><a href="#wl-crack_type">crack_type</a></td></tr><tr><td><strong>Scheur: breedte</strong><br><span class="code">crack_*_size</span></td><td>Gemeten breedte van de scheur, per plek.</td><td>mm</td></tr><tr><td><strong>Scheur: hersteld</strong><br><span class="code">crack_*_restored</span></td><td>De scheur is al eerder dichtgezet.</td><td>ja/nee</td></tr><tr><td><strong>Lintvoegmeting</strong><br><span class="code">skewed_parallel</span></td><td>Gemeten scheefstand langs de gevel.</td><td>verhouding 1 : n (bijv. 1 : 300)</td></tr><tr><td><strong>Lintvoegmeting: beoordeling</strong><br><span class="code">skewed_parallel_facade</span></td><td>Oordeel over de gemeten scheefstand langs de gevel.</td><td>keuze<br><a href="#wl-rotation_type">rotation_type</a></td></tr><tr><td><strong>Loodmeting</strong><br><span class="code">skewed_perpendicular</span></td><td>Gemeten scheefstand van de gevel ten opzichte van het lood.</td><td>verhouding 1 : n (bijv. 1 : 300)</td></tr><tr><td><strong>Loodmeting: beoordeling</strong><br><span class="code">skewed_perpendicular_facade</span></td><td>Oordeel over de gemeten scheefstand ten opzichte van het lood.</td><td>keuze<br><a href="#wl-rotation_type">rotation_type</a></td></tr><tr><td><strong>Pandzakkingsnelheid gemeten</strong><br><span class="code">settlement_speed</span></td><td>Gemeten snelheid waarmee het pand zakt.</td><td>mm per jaar (negatief = zakken)</td></tr><tr><td><strong>Gevel vervormd</strong><br><span class="code">deformed_facade</span></td><td>De gevel is zichtbaar vervormd.</td><td>ja/nee</td></tr><tr><td><strong>Scheve deur- of raamkozijnen</strong><br><span class="code">skewed_window_frame</span></td><td>Kozijnen staan zichtbaar scheef.</td><td>ja/nee</td></tr><tr><td><strong>Ongelijkmatige zakking</strong><br><span class="code">threshold_updown_skewed</span></td><td>Het pand zakt niet overal even snel.</td><td>ja/nee</td></tr><tr><td><strong>Drempel voorgevel niveau</strong><br><span class="code">threshold_front_level</span></td><td>Hoogte van de drempel aan de voorgevel.</td><td>m t.o.v. NAP</td></tr><tr><td><strong>Drempel achtergevel niveau</strong><br><span class="code">threshold_back_level</span></td><td>Hoogte van de drempel aan de achtergevel.</td><td>m t.o.v. NAP</td></tr></tbody></table></div><h3 class="grp">Verkennend Funderingsonderzoek</h3><div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>Risicoklasse Verkennend Funderingsonderzoek</strong><br><span class="code">facade_scan_risk</span></td><td>De risicoklasse (A tot en met E, volgens de KCAF-termen) die het Verkennend Funderingsonderzoek aan het pand geeft, op basis van waarnemingen aan het pand. Gaat boven de modelschatting.</td><td>keuze<br><a href="#wl-facade_scan_risk">facade_scan_risk</a></td></tr></tbody></table></div></div>
+  
+</section>
+
+<section id="quickscan">
+  <span class="eyebrow">7</span>
+  <h2>Verkennend Funderingsonderzoek</h2>
+  <div class="prose" style="display:grid;gap:12px">
+    <p>Een Verkennend Funderingsonderzoek (voorheen QuickScan / Fase 0) is een onderzoek van het soort <span class="code">facade_scan</span>: een eerste beoordeling van het pand op basis van waarnemingen aan gevels en pand, uitgevoerd volgens de KCAF-methode. Het levert per pand een <strong>risicoklasse</strong> (A–E, in de termen van het KCAF) en het schadebeeld van de gevels.</p>
+    <p>Wat een Verkennend Funderingsonderzoek vastlegt: de risicoklasse, de lintvoeg- en loodmeting met beoordeling, het scheurtype per gevel, en het funderingstype als dat bekend is.</p>
+    <p>Een Verkennend Funderingsonderzoek gaat boven de modelschatting. Hoe het verder meeweegt, staat op de <a href="https://fundermaps.com/hoe-het-model-werkt.html">modelpagina</a>.</p>
+    <p class="muted small">Oudere rapporten van de eerdere QuickScan-methode hebben de code <span class="code">quickscan</span>. Ze blijven vastgelegd als historisch.</p>
+  </div>
+</section>
+
+<section id="archief">
+  <span class="eyebrow">8</span>
+  <h2>Archiefonderzoek</h2>
+  <div class="prose" style="display:grid;gap:12px">
+    <p>Archiefonderzoek haalt funderingsgegevens uit bestaande documenten in plaats van uit onderzoek ter plaatse: bouwtekeningen, bestekken, funderingskaarten, paalplannen, heirapporten, constructieberekeningen en vergunningen. Het is een onderzoek van het soort <span class="code">archive_research</span>; elk archiefstuk wordt vastgelegd als bewijs.</p>
+    
+  </div>
+  <div class="card">
+    <h3 style="margin-bottom:8px">Archiefstuk</h3>
+    <div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody>
+      <tr><td><strong>Soort archiefstuk</strong></td><td>Wat voor document het is.</td><td>keuze: bouwtekening, bestek, funderingskaart, paalplan, heirapport, constructieberekening, sondering, vergunning, foto, overig</td></tr>
+      <tr><td><strong>Archiefbron</strong></td><td>Waar het stuk vandaan komt: welk archief of welke eigenaar.</td><td>keuze: gemeentearchief (bouwdossier), eigenaar, onderzoeksbureau, overig; plus naam</td></tr>
+      <tr><td><strong>Archiefkenmerk</strong></td><td>Het nummer of kenmerk waaronder het stuk in het archief ligt, zodat het terug te vinden is.</td><td>tekst</td></tr>
+      <tr><td><strong>Datum van het stuk</strong></td><td>De datum die op het stuk zelf staat (tekening, bestek, vergunning). Niet de datum van het archiefonderzoek en niet de invoerdatum.</td><td>datum, of alleen jaar</td></tr>
+      <tr><td><strong>Datum archiefonderzoek</strong></td><td>Wanneer het stuk is opgezocht en beoordeeld.</td><td>datum</td></tr>
+      <tr><td><strong>Panden</strong></td><td>De panden waar het stuk over gaat. Eén stuk kan over veel panden gaan.</td><td>BAG-panden</td></tr>
+      <tr><td><strong>Wat eruit blijkt</strong></td><td>De gegevens die uit het stuk zijn afgelezen: funderingstype, paalgegevens (lengte, diameter, paalkop- en paalpuntniveau, oplanger), funderingsniveau, bouwjaar. Zelfde begrippen als bij de waarneming (§6).</td><td>waarneming</td></tr>
+      <tr><td><strong>Bewijskracht</strong></td><td><em>Gedocumenteerd</em>: het staat op een archiefstuk, maar is niet ter plaatse gezien. Staat tussen <em>fysiek vastgesteld</em> (inspectieput, funderingsonderzoek) en <em>afgeleid</em>.</td><td>keuze: fysiek vastgesteld, gedocumenteerd, afgeleid, indicatief</td></tr>
+      <tr><td><strong>Afwijking van ontwerp</strong></td><td>Of bekend is dat er anders is gebouwd dan getekend.</td><td>ja / nee / onbekend</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section id="zakking">
+  <span class="eyebrow">9</span>
+  <h2>Pandzakking</h2>
+  <div class="prose" style="display:grid;gap:12px">
+    <p>Hoe snel een pand zakt, en hoeveel het al gezakt is. Er zijn drie soorten bronnen: <strong>satellietmetingen</strong> (InSAR, van een leverancier, voor veel panden tegelijk), <strong>waterpassingen</strong> en <strong>lintvoegmetingen</strong> uit onderzoek, en <strong>monitoring</strong> over een langere periode (soort onderzoek <span class="code">monitoring</span>).</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-bottom:8px">Zakkingsmeting</h3>
+    <div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody>
+      <tr><td><strong>Meetmethode</strong></td><td>Hoe de zakking is gemeten.</td><td>keuze: satelliet (InSAR), waterpassing, lintvoegmeting, monitoring</td></tr>
+      <tr><td><strong>Bron</strong></td><td>Wie de meting leverde: leverancier of onderzoeksbureau, met leveringsdatum.</td><td>organisatie, datum</td></tr>
+      <tr><td><strong>Meetperiode</strong></td><td>Eerste en laatste meetmoment.</td><td>datum – datum</td></tr>
+      <tr><td><strong>Meetmoment</strong></td><td>Eén meting in de reeks: datum en de <em>cumulatieve zakking</em> ten opzichte van het eerste meetmoment.</td><td>datum; mm</td></tr>
+      <tr><td><strong>Zakkingssnelheid</strong></td><td>De gemiddelde zakking per jaar over de meetperiode, bepaald als trendlijn door de meetmomenten. Negatief = zakken.</td><td>mm per jaar</td></tr>
+      <tr><td><strong>Aantal meetmomenten</strong></td><td>Hoeveel metingen de snelheid onderbouwen. Weinig metingen = onzekere snelheid.</td><td>getal</td></tr>
+      <tr><td><strong>Ongelijkmatige zakking</strong></td><td>Het pand zakt niet overal even snel (scheefzakken). Belangrijker voor schade dan gelijkmatig zakken.</td><td>ja/nee</td></tr>
+      <tr><td><strong>Pand</strong></td><td>Het BAG-pand waar de meting bij hoort.</td><td>BAG-pand</td></tr>
+    </tbody></table></div>
+  </div>
+  <p class="prose muted small">Zakkingssnelheid (mm per jaar) en cumulatieve zakking (mm) zijn twee verschillende gegevens en worden apart vastgelegd.</p>
+</section>
+
+<section id="herstel">
+  <span class="eyebrow">10</span>
+  <h2>Herstelregistratie</h2>
+  <p class="prose">Het <a href="https://fundermaps.com/nationaal-herstelregister.html">Nationaal Herstel Register</a> legt herstel vast in twee lagen: de <strong>registratie</strong> (het bewijsstuk) en per pand de <strong>herstelmaatregel</strong>.</p>
+  <div class="card"><h3 style="margin-bottom:8px">Registratie (het bewijsstuk)</h3><div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>Soort bewijs</strong><br><span class="code">type (registratie)</span></td><td>Waarmee het herstel is aangetoond.</td><td>keuze<br><a href="#wl-recovery_document_type">recovery_document_type</a></td></tr><tr><td><strong>Documentdatum</strong><br><span class="code">document_date</span></td><td>Datum van het bewijsstuk.</td><td>datum</td></tr><tr><td><strong>Bewijsstuk</strong><br><span class="code">document_file</span></td><td>Het bewijsstuk zelf (pdf of scan).</td><td>bestand</td></tr><tr><td><strong>Uitvoerder, opdrachtgever, verwerker, controleur</strong><br><span class="code">attribution</span></td><td>Wie het herstel uitvoerde, voor wie, wie het registreerde en wie het controleerde.</td><td>organisatie / persoon</td></tr><tr><td><strong>Controlestatus</strong><br><span class="code">audit_status</span></td><td>Waar de registratie in de beoordeling staat. Afgerond = gevalideerd herstel.</td><td>keuze<br><a href="#wl-audit_status">audit_status</a></td></tr></tbody></table></div></div>
+  <div class="card">
+    <h3 style="margin-bottom:8px">Herstelmaatregel (per pand)</h3>
+    <div class="scroll"><table class="attrs"><thead><tr><th>Begrip</th><th>Definitie</th><th>Waarde</th></tr></thead><tbody><tr><td><strong>BAG-pand</strong><br><span class="code">building_id</span></td><td>Het herstelde pand.</td><td>BAG-pandidentificatie</td></tr><tr><td><strong>Herstelmethode</strong><br><span class="code">type</span></td><td>De manier waarop de fundering is hersteld.</td><td>keuze<br><a href="#wl-recovery_type">recovery_type</a></td></tr><tr><td><strong>Status herstel</strong><br><span class="code">status</span></td><td>Of het herstel gepland, aangevraagd of uitgevoerd is.</td><td>keuze<br><a href="#wl-recovery_status">recovery_status</a></td></tr><tr><td><strong>Datum herstel</strong><br><span class="code">recovery_date</span></td><td>Datum waarop het herstel is uitgevoerd.</td><td>datum</td></tr><tr><td><strong>Vergunningsnummer</strong><br><span class="code">permit</span></td><td>Kenmerk van de omgevingsvergunning voor het herstel.</td><td>tekst</td></tr><tr><td><strong>Vergunningsdatum</strong><br><span class="code">permit_date</span></td><td>Datum van de vergunning.</td><td>datum</td></tr><tr><td><strong>Herstelde gevels</strong><br><span class="code">facade</span></td><td>Welke gevels zijn hersteld, bij gedeeltelijk herstel.</td><td>keuzes (lijst)<br><a href="#wl-facade">facade</a></td></tr><tr><td><strong>Paaltype</strong><br><span class="code">pile_type</span></td><td>Het type nieuwe paal dat is gebruikt.</td><td>keuze<br><a href="#wl-pile_type">pile_type</a></td></tr><tr><td><strong>Uitvoerder</strong><br><span class="code">contractor_id</span></td><td>Het herstelbedrijf.</td><td>organisatie</td></tr></tbody></table></div>
+  </div>
+  
+</section>
+
+<section id="kosten">
+  <span class="eyebrow">11</span>
+  <h2>Herstelkosten</h2>
+  <div class="prose" style="display:grid;gap:12px">
+    <p>De <strong>herstelkostenindicatie</strong> is een afgeleid gegeven per pand: een raming van wat funderingsherstel zou kosten. Geen offerte.</p>
+    <p>Bij elke indicatie legt de standaard vast:</p>
+    <ul style="margin:0;padding-left:1.1rem;display:grid;gap:6px">
+      <li><strong>Bedrag</strong>, in euro, inclusief of exclusief btw</li>
+      <li><strong>Eenheid</strong>: per pand of per adres</li>
+      <li><strong>Rekenmethode</strong>: welke calculator en welke versie</li>
+      <li><strong>Prijspeildatum</strong>: van welk jaar de prijzen zijn</li>
+      <li><strong>Grondslag</strong>: het funderingstype en de maat waarop de raming rust, elk met hun betrouwbaarheid</li>
+      <li><strong>Herstelmethode</strong> waar de raming van uitgaat</li>
+    </ul>
+    <p>De berekening zelf hoort bij de rekenregels van de calculator, niet bij deze standaard.</p>
+  </div>
+</section>
+
+<section id="risico">
+  <span class="eyebrow">12</span>
+  <h2>Risico-inschatting</h2>
+  <div class="prose" style="display:grid;gap:12px">
+    <p>Per pand en per modelversie: het funderingstype met betrouwbaarheid, vier funderingsrisico's (droogstand, ontwateringsdiepte, bacteriële aantasting, overig) elk met betrouwbaarheid, en de risicoklasse als de zwaarste van de vier. Hoe dat wordt berekend staat op de pagina <a href="https://fundermaps.com/hoe-het-model-werkt.html">Hoe FunderMaps het funderingsrisico bepaalt</a>.</p>
+    <p>Bij elke uitkomst legt de standaard vast: de modelversie waarmee is gerekend, de datum van berekening, en bij elk funderingsrisico de bron (eigen onderzoek, vergelijkbare panden, of indicatie).</p>
+  </div>
+</section>
+
+<section id="waardelijsten">
+  <span class="eyebrow">13</span>
+  <h2>Waardelijsten</h2>
+  <p class="prose">Alle keuzelijsten, met per waarde de code en de standaardterm. Waarden die alleen in oudere rapporten voorkomen, zijn gemarkeerd als historisch. Klik een lijst open.</p>
+  <div style="display:grid;gap:8px"><details class="wl" id="wl-inquiry_type"><summary><span class="code">inquiry_type</span> <span class="muted">· 15 waarden</span></summary><p class="note">Het Verkennend Funderingsonderzoek (voorheen QuickScan / Fase 0) heeft de code <code>facade_scan</code>. De code <code>quickscan</code> is de oudere methode en komt alleen in oudere rapporten voor.</p><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">monitoring</span></td><td>Monitoring</td></tr><tr><td><span class="code">note</span></td><td>Notitie</td></tr><tr><td><span class="code">quickscan</span></td><td>QuickScan, oudere methode <span class="hist">historisch (oudere rapporten)</span></td></tr><tr><td><span class="code">unknown</span></td><td>Onbekend</td></tr><tr><td><span class="code">demolition_research</span></td><td>Sloopgrensonderzoek</td></tr><tr><td><span class="code">second_opinion</span></td><td>Tweede opinie (second opinion)</td></tr><tr><td><span class="code">archive_research</span></td><td>Archiefonderzoek</td></tr><tr><td><span class="code">architectural_research</span></td><td>Bouwkundig onderzoek</td></tr><tr><td><span class="code">foundation_advice</span></td><td>Funderingsadvies</td></tr><tr><td><span class="code">inspectionpit</span></td><td>Inspectieput</td></tr><tr><td><span class="code">foundation_research</span></td><td>Funderingsonderzoek</td></tr><tr><td><span class="code">additional_research</span></td><td>Aanvullend onderzoek</td></tr><tr><td><span class="code">ground_water_level_research</span></td><td>Grondwateronderzoek</td></tr><tr><td><span class="code">soil_investigation</span></td><td>Grondonderzoek</td></tr><tr><td><span class="code">facade_scan</span></td><td>Verkennend Funderingsonderzoek</td></tr></table></div></details><details class="wl" id="wl-foundation_type"><summary><span class="code">foundation_type</span> <span class="muted">· 18 waarden</span></summary><p class="note">De typen vallen in families: houten palen (alle houten varianten, ook met betonoplanger), betonpalen (ook verzwaarde-puntpaal en stalen buispaal), ondiep (op staal, alle varianten) en overig.</p><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">wood</span></td><td>Houten paalfundering</td></tr><tr><td><span class="code">concrete</span></td><td>Betonpaalfundering</td></tr><tr><td><span class="code">no_pile</span></td><td>Ondiepe fundering (op staal)</td></tr><tr><td><span class="code">wood_charger</span></td><td>Houten paalfundering met betonoplanger</td></tr><tr><td><span class="code">weighted_pile</span></td><td>Verzwaarde-puntpaal</td></tr><tr><td><span class="code">combined</span></td><td>Gecombineerde fundering</td></tr><tr><td><span class="code">steel_pile</span></td><td>Stalen buispaal</td></tr><tr><td><span class="code">other</span></td><td>Overig</td></tr><tr><td><span class="code">no_pile_masonry</span></td><td>Ondiepe fundering, gemetseld</td></tr><tr><td><span class="code">no_pile_strips</span></td><td>Ondiepe fundering, stroken</td></tr><tr><td><span class="code">no_pile_concrete_floor</span></td><td>Ondiepe fundering, betonvloer</td></tr><tr><td><span class="code">no_pile_slit</span></td><td>Ondiepe fundering, slieten</td></tr><tr><td><span class="code">wood_amsterdam</span></td><td>Houten paalfundering, Amsterdamse</td></tr><tr><td><span class="code">wood_rotterdam</span></td><td>Houten paalfundering, Rotterdamse</td></tr><tr><td><span class="code">no_pile_bearing_floor</span></td><td>Ondiepe fundering, plaatfundering</td></tr><tr><td><span class="code">wood_rotterdam_amsterdam</span></td><td>Houten paalfundering, Rotterdamse of Amsterdamse</td></tr><tr><td><span class="code">wood_rotterdam_arch</span></td><td>Houten paalfundering, Rotterdamse, met spaarbogen</td></tr><tr><td><span class="code">wood_amsterdam_arch</span></td><td>Houten paalfundering, Amsterdamse, met spaarbogen</td></tr></table></div></details><details class="wl" id="wl-foundation_damage_cause"><summary><span class="code">foundation_damage_cause</span> <span class="muted">· 18 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">drainage</span></td><td>Te lage grondwaterstand (ontwatering)</td></tr><tr><td><span class="code">construction_flaw</span></td><td>Constructiefouten</td></tr><tr><td><span class="code">drystand</span></td><td>Droogstand houten paalkop</td></tr><tr><td><span class="code">overcharge</span></td><td>Overbelasting</td></tr><tr><td><span class="code">overcharge_negative_cling</span></td><td>Overbelasting en/of negatieve kleef <span class="hist">historisch (oudere rapporten)</span></td></tr><tr><td><span class="code">negative_cling</span></td><td>Negatieve kleef</td></tr><tr><td><span class="code">bio_infection</span></td><td>Bacteriële aantasting (palenpest)</td></tr><tr><td><span class="code">fungus_infection</span></td><td>Schimmelaantasting (paalrot)</td></tr><tr><td><span class="code">bio_fungus_infection</span></td><td>Bacteriële en/of schimmelaantasting <span class="hist">historisch (oudere rapporten)</span></td></tr><tr><td><span class="code">foundation_flaw</span></td><td>Funderingsfouten</td></tr><tr><td><span class="code">construction_heave</span></td><td>Opdrukking van het pand</td></tr><tr><td><span class="code">subsidence</span></td><td>Verzakking</td></tr><tr><td><span class="code">vegetation</span></td><td>Schade door planten en wortels</td></tr><tr><td><span class="code">gas</span></td><td>Gaswinning</td></tr><tr><td><span class="code">vibrations</span></td><td>Trillingen</td></tr><tr><td><span class="code">partial_foundation_recovery</span></td><td>Gedeeltelijk funderingsherstel</td></tr><tr><td><span class="code">japanese_knotweed</span></td><td>Schade door Japanse duizendknoop</td></tr><tr><td><span class="code">groundwater_level_reduction</span></td><td>Verlaging van de grondwaterstand</td></tr></table></div></details><details class="wl" id="wl-foundation_damage_characteristics"><summary><span class="code">foundation_damage_characteristics</span> <span class="muted">· 7 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">jamming_door_window</span></td><td>Klemmende deuren en ramen</td></tr><tr><td><span class="code">crack</span></td><td>Scheuren</td></tr><tr><td><span class="code">skewed</span></td><td>Scheefstand</td></tr><tr><td><span class="code">crawlspace_flooding</span></td><td>Water in kruipruimte</td></tr><tr><td><span class="code">threshold_above_subsurface</span></td><td>Drempel boven maaiveld</td></tr><tr><td><span class="code">threshold_below_subsurface</span></td><td>Drempel onder maaiveld</td></tr><tr><td><span class="code">crooked_floor_wall</span></td><td>Scheve vloer of wand</td></tr></table></div></details><details class="wl" id="wl-foundation_quality"><summary><span class="code">foundation_quality</span> <span class="muted">· 6 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">bad</span></td><td>Slecht</td></tr><tr><td><span class="code">mediocre</span></td><td>Matig</td></tr><tr><td><span class="code">tolerable</span></td><td>Redelijk</td></tr><tr><td><span class="code">good</span></td><td>Goed</td></tr><tr><td><span class="code">mediocre_good</span></td><td>Matig tot goed</td></tr><tr><td><span class="code">mediocre_bad</span></td><td>Matig tot slecht</td></tr></table></div></details><details class="wl" id="wl-enforcement_term"><summary><span class="code">enforcement_term</span> <span class="muted">· 10 waarden</span></summary><p class="note">Nieuwe rapporten gebruiken de bandbreedtes (0 tot 5, 5 tot 10, 10 tot 20 jaar). De reeks 'tot … jaar' is historisch.</p><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">term05</span></td><td>0 tot 5 jaar</td></tr><tr><td><span class="code">term510</span></td><td>5 tot 10 jaar</td></tr><tr><td><span class="code">term1020</span></td><td>10 tot 20 jaar</td></tr><tr><td><span class="code">term5</span></td><td>Tot 5 jaar <span class="hist">historisch (oudere rapporten)</span></td></tr><tr><td><span class="code">term10</span></td><td>Tot 10 jaar <span class="hist">historisch (oudere rapporten)</span></td></tr><tr><td><span class="code">term15</span></td><td>Tot 15 jaar <span class="hist">historisch (oudere rapporten)</span></td></tr><tr><td><span class="code">term20</span></td><td>Tot 20 jaar <span class="hist">historisch (oudere rapporten)</span></td></tr><tr><td><span class="code">term25</span></td><td>Tot 25 jaar <span class="hist">historisch (oudere rapporten)</span></td></tr><tr><td><span class="code">term30</span></td><td>Tot 30 jaar <span class="hist">historisch (oudere rapporten)</span></td></tr><tr><td><span class="code">term40</span></td><td>Tot 40 jaar <span class="hist">historisch (oudere rapporten)</span></td></tr></table></div></details><details class="wl" id="wl-quality"><summary><span class="code">quality</span> <span class="muted">· 4 waarden</span></summary><p class="note">Let op de codes: <code>nil</code> = slecht, <code>small</code> = redelijk, <code>mediocre</code> = goed, <code>large</code> = zeer goed.</p><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">nil</span></td><td>Slecht</td></tr><tr><td><span class="code">small</span></td><td>Redelijk</td></tr><tr><td><span class="code">mediocre</span></td><td>Goed</td></tr><tr><td><span class="code">large</span></td><td>Zeer goed</td></tr></table></div></details><details class="wl" id="wl-wood_quality"><summary><span class="code">wood_quality</span> <span class="muted">· 4 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">area1</span></td><td>Gebied I</td></tr><tr><td><span class="code">area2</span></td><td>Gebied II</td></tr><tr><td><span class="code">area3</span></td><td>Gebied III</td></tr><tr><td><span class="code">area4</span></td><td>Gebied IV</td></tr></table></div></details><details class="wl" id="wl-wood_type"><summary><span class="code">wood_type</span> <span class="muted">· 2 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">pine</span></td><td>Grenen</td></tr><tr><td><span class="code">spruce</span></td><td>Vuren</td></tr></table></div></details><details class="wl" id="wl-wood_encroachment"><summary><span class="code">wood_encroachment</span> <span class="muted">· 3 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">fungus_infection</span></td><td>Schimmelaantasting</td></tr><tr><td><span class="code">bio_fungus_infection</span></td><td>Bacteriële en schimmelaantasting</td></tr><tr><td><span class="code">bio_infection</span></td><td>Bacteriële aantasting</td></tr></table></div></details><details class="wl" id="wl-construction_pile"><summary><span class="code">construction_pile</span> <span class="muted">· 7 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">punched</span></td><td>Geperforeerd</td></tr><tr><td><span class="code">broken</span></td><td>Gebroken</td></tr><tr><td><span class="code">pinched</span></td><td>Verschoven</td></tr><tr><td><span class="code">pressed</span></td><td>Gedrukt</td></tr><tr><td><span class="code">perished</span></td><td>Vergaan</td></tr><tr><td><span class="code">decay</span></td><td>Verrot</td></tr><tr><td><span class="code">root_growth</span></td><td>Wortelgroei</td></tr></table></div></details><details class="wl" id="wl-substructure"><summary><span class="code">substructure</span> <span class="muted">· 4 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">basement</span></td><td>Souterrain</td></tr><tr><td><span class="code">cellar</span></td><td>Kelder</td></tr><tr><td><span class="code">crawlspace</span></td><td>Kruipruimte</td></tr><tr><td><span class="code">none</span></td><td>Geen</td></tr></table></div></details><details class="wl" id="wl-crack_type"><summary><span class="code">crack_type</span> <span class="muted">· 5 waarden</span></summary><p class="note">De code <code>nil</code> betekent 'zeer klein (haarscheuren)', niet 'geen'. Geen scheur is <code>none</code>.</p><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">none</span></td><td>Geen</td></tr><tr><td><span class="code">nil</span></td><td>Zeer klein (haarscheuren)</td></tr><tr><td><span class="code">small</span></td><td>Klein (0,5 tot 1 mm)</td></tr><tr><td><span class="code">mediocre</span></td><td>Matig (1 tot 3 mm)</td></tr><tr><td><span class="code">big</span></td><td>Groot (meer dan 3 mm)</td></tr></table></div></details><details class="wl" id="wl-rotation_type"><summary><span class="code">rotation_type</span> <span class="muted">· 5 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">nil</span></td><td>Nihil</td></tr><tr><td><span class="code">small</span></td><td>Klein</td></tr><tr><td><span class="code">mediocre</span></td><td>Matig</td></tr><tr><td><span class="code">big</span></td><td>Groot</td></tr><tr><td><span class="code">very_big</span></td><td>Zeer groot</td></tr></table></div></details><details class="wl" id="wl-facade_scan_risk"><summary><span class="code">facade_scan_risk</span> <span class="muted">· 5 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">a</span></td><td>A: geen risico</td></tr><tr><td><span class="code">b</span></td><td>B: licht risico</td></tr><tr><td><span class="code">c</span></td><td>C: verhoogd risico of onzekerheid</td></tr><tr><td><span class="code">d</span></td><td>D: hoog risico</td></tr><tr><td><span class="code">e</span></td><td>E: vastgesteld probleem</td></tr></table></div></details><details class="wl" id="wl-recovery_document_type"><summary><span class="code">recovery_document_type</span> <span class="muted">· 5 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">permit</span></td><td>Vergunning</td></tr><tr><td><span class="code">foundation_report</span></td><td>Funderingsonderzoek</td></tr><tr><td><span class="code">archive_report</span></td><td>Archiefonderzoek</td></tr><tr><td><span class="code">owner_evidence</span></td><td>Bewijs van eigenaar</td></tr><tr><td><span class="code">unknown</span></td><td>Onbekend</td></tr></table></div></details><details class="wl" id="wl-recovery_type"><summary><span class="code">recovery_type</span> <span class="muted">· 6 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">table</span></td><td>Tafelfundering</td></tr><tr><td><span class="code">beam_on_pile</span></td><td>Opzetters</td></tr><tr><td><span class="code">pile_lowering</span></td><td>Paalkopverlaging</td></tr><tr><td><span class="code">pile_in_wall</span></td><td>Paalinkassing (in de muur)</td></tr><tr><td><span class="code">injection</span></td><td>Grondinjectie of grondverbetering</td></tr><tr><td><span class="code">unknown</span></td><td>Onbekend</td></tr></table></div></details><details class="wl" id="wl-recovery_status"><summary><span class="code">recovery_status</span> <span class="muted">· 3 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">planned</span></td><td>Gepland</td></tr><tr><td><span class="code">requested</span></td><td>Aangevraagd</td></tr><tr><td><span class="code">executed</span></td><td>Uitgevoerd</td></tr></table></div></details><details class="wl" id="wl-pile_type"><summary><span class="code">pile_type</span> <span class="muted">· 3 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">press</span></td><td>Drukpaal</td></tr><tr><td><span class="code">internally_driven</span></td><td>Inwendig geheide buispaal</td></tr><tr><td><span class="code">segment</span></td><td>Segmentpaal</td></tr></table></div></details><details class="wl" id="wl-facade"><summary><span class="code">facade</span> <span class="muted">· 4 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">front</span></td><td>Voorgevel</td></tr><tr><td><span class="code">sidewall_left</span></td><td>Linkergevel</td></tr><tr><td><span class="code">sidewall_right</span></td><td>Rechtergevel</td></tr><tr><td><span class="code">rear</span></td><td>Achtergevel</td></tr></table></div></details><details class="wl" id="wl-audit_status"><summary><span class="code">audit_status</span> <span class="muted">· 6 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">todo</span></td><td>Nog behandelen</td></tr><tr><td><span class="code">pending</span></td><td>In afwachting</td></tr><tr><td><span class="code">done</span></td><td>Afgerond</td></tr><tr><td><span class="code">discarded</span></td><td>Vervallen</td></tr><tr><td><span class="code">rejected</span></td><td>Afgewezen</td></tr><tr><td><span class="code">pending_review</span></td><td>Ter review</td></tr></table></div></details><details class="wl" id="wl-foundation_risk_indication"><summary><span class="code">foundation_risk_indication</span> <span class="muted">· 5 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">a</span></td><td>A: geen risico</td></tr><tr><td><span class="code">b</span></td><td>B: licht risico</td></tr><tr><td><span class="code">c</span></td><td>C: verhoogd risico of onzekerheid</td></tr><tr><td><span class="code">d</span></td><td>D: hoog risico</td></tr><tr><td><span class="code">e</span></td><td>E: vastgesteld probleem</td></tr></table></div></details><details class="wl" id="wl-reliability"><summary><span class="code">reliability</span> <span class="muted">· 4 waarden</span></summary><p class="note"><code>cluster</code> en <code>supercluster</code> betekenen allebei: afgeleid van vergelijkbare panden.</p><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">indicative</span></td><td>Indicatief</td></tr><tr><td><span class="code">established</span></td><td>Vastgesteld</td></tr><tr><td><span class="code">cluster</span></td><td>Afgeleid</td></tr><tr><td><span class="code">supercluster</span></td><td>Afgeleid</td></tr></table></div></details><details class="wl" id="wl-access_policy"><summary><span class="code">access_policy</span> <span class="muted">· 2 waarden</span></summary><div class="scroll"><table><tr><th>Code</th><th>Term</th></tr><tr><td><span class="code">public</span></td><td>Publiek</td></tr><tr><td><span class="code">private</span></td><td>Afgeschermd</td></tr></table></div></details></div>
+</section>
+
+
+<section id="kleuren">
+  <span class="eyebrow">14</span>
+  <h2>Kaartkleuren</h2>
+  <div class="prose" style="display:grid;gap:12px">
+    <p>Dezelfde waarde heeft op elke kaart, in elk rapport en in elke toepassing dezelfde kleur. Zo leest u een funderingskaart van FunderMaps, van FunderConsult en van partijen die deze standaard volgen op dezelfde manier. De kaartkleuren zijn de marktstandaard en worden beheerd door FunderMaps.</p>
+    <p class="muted small">Toelichting en voorbeelden: <a href="https://funderconsult.com/kennisbank/7-techniek/kaartkleuren">kennisbank, Kaartkleuren</a>.</p>
+  </div>
+  <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr))">
+    <div class="card scroll"><h3 style="margin-bottom:8px">Risicoklasse (A–E)</h3><table><thead><tr><th>Kleur</th><th>Betekenis</th><th>Code</th></tr></thead><tbody><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#2E7D32;border:1px solid rgba(0,0,0,.12)"></span></td><td>A: geen risico</td><td><span class="code">#2E7D32</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#9E9D24;border:1px solid rgba(0,0,0,.12)"></span></td><td>B: licht risico</td><td><span class="code">#9E9D24</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#F9A825;border:1px solid rgba(0,0,0,.12)"></span></td><td>C: verhoogd risico of onzekerheid</td><td><span class="code">#F9A825</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#EF6C00;border:1px solid rgba(0,0,0,.12)"></span></td><td>D: hoog risico</td><td><span class="code">#EF6C00</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#C62828;border:1px solid rgba(0,0,0,.12)"></span></td><td>E: vastgesteld probleem</td><td><span class="code">#C62828</span></td></tr></tbody></table></div>
+    <div class="card scroll"><h3 style="margin-bottom:8px">Funderingstype</h3><table><thead><tr><th>Kleur</th><th>Betekenis</th><th>Code</th></tr></thead><tbody><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#CE0015;border:1px solid rgba(0,0,0,.12)"></span></td><td>Ondiepe fundering (op staal)</td><td><span class="code">#CE0015</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#6A6C70;border:1px solid rgba(0,0,0,.12)"></span></td><td>Betonpaalfundering</td><td><span class="code">#6A6C70</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#8F7A2E;border:1px solid rgba(0,0,0,.12)"></span></td><td>Houten paalfundering met betonoplanger</td><td><span class="code">#8F7A2E</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#8C3A28;border:1px solid rgba(0,0,0,.12)"></span></td><td>Houten paalfundering</td><td><span class="code">#8C3A28</span></td></tr></tbody></table></div>
+    <div class="card scroll"><h3 style="margin-bottom:8px">Risico Verkennend Funderingsonderzoek (drie klassen)</h3><table><thead><tr><th>Kleur</th><th>Betekenis</th><th>Code</th></tr></thead><tbody><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#2E7D32;border:1px solid rgba(0,0,0,.12)"></span></td><td>Laag</td><td><span class="code">#2E7D32</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#F9A825;border:1px solid rgba(0,0,0,.12)"></span></td><td>Midden</td><td><span class="code">#F9A825</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#C62828;border:1px solid rgba(0,0,0,.12)"></span></td><td>Hoog</td><td><span class="code">#C62828</span></td></tr></tbody></table></div>
+    <div class="card scroll"><h3 style="margin-bottom:8px">Funderingskwaliteit</h3><table><thead><tr><th>Kleur</th><th>Betekenis</th><th>Code</th></tr></thead><tbody><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#96ED51;border:1px solid rgba(0,0,0,.12)"></span></td><td>Goed</td><td><span class="code">#96ED51</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#D3E14D;border:1px solid rgba(0,0,0,.12)"></span></td><td>Redelijk</td><td><span class="code">#D3E14D</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#FFEC33;border:1px solid rgba(0,0,0,.12)"></span></td><td>Matig tot goed</td><td><span class="code">#FFEC33</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#C9B441;border:1px solid rgba(0,0,0,.12)"></span></td><td>Matig</td><td><span class="code">#C9B441</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#9D592D;border:1px solid rgba(0,0,0,.12)"></span></td><td>Matig tot slecht</td><td><span class="code">#9D592D</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#7B2A2D;border:1px solid rgba(0,0,0,.12)"></span></td><td>Slecht</td><td><span class="code">#7B2A2D</span></td></tr></tbody></table></div>
+    <div class="card scroll"><h3 style="margin-bottom:8px">Schadebeeld: scheuren, scheefstand en zakking</h3><table><thead><tr><th>Kleur</th><th>Betekenis</th><th>Code</th></tr></thead><tbody><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#42FF33;border:1px solid rgba(0,0,0,.12)"></span></td><td>Nihil</td><td><span class="code">#42FF33</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#D1FF33;border:1px solid rgba(0,0,0,.12)"></span></td><td>Klein</td><td><span class="code">#D1FF33</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#FFEC33;border:1px solid rgba(0,0,0,.12)"></span></td><td>Matig</td><td><span class="code">#FFEC33</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#FFAC33;border:1px solid rgba(0,0,0,.12)"></span></td><td>Groot</td><td><span class="code">#FFAC33</span></td></tr><tr><td><span style="display:inline-block;width:2.2rem;height:1.2rem;border-radius:4px;vertical-align:middle;background:#FF5533;border:1px solid rgba(0,0,0,.12)"></span></td><td>Zeer groot</td><td><span class="code">#FF5533</span></td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section id="beheer">
+  <span class="eyebrow">15</span>
+  <h2>Beheer, licentie en contact</h2>
+  <div class="prose" style="display:grid;gap:12px">
+    <p><strong>Versies.</strong> Elke versie krijgt een nummer en een vaste URL. Deze versie staat op <a href="https://fundermaps.com/informatiestandaard-1-0.html">fundermaps.com/informatiestandaard-1-0.html</a>; de meest recente versie staat altijd op <a href="https://fundermaps.com/informatiestandaard.html">fundermaps.com/informatiestandaard.html</a>.</p>
+    <p><strong>Wijzigingen.</strong> Een wijziging begint als voorstel, wordt beoordeeld en daarna gepubliceerd in een nieuwe versie. Elke versie staat in het wijzigingslog.</p>
+    <p><strong>Licentie.</strong> Deze standaard is gepubliceerd onder <a href="https://creativecommons.org/licenses/by/4.0/deed.nl">Creative Commons Naamsvermelding 4.0 (CC BY 4.0)</a>. U mag hem gebruiken en overnemen, met vermelding van FunderMaps als bron. De licentie geldt voor de standaard, niet voor de gegevens in FunderMaps.</p>
+    <p><strong>Machineleesbare vorm.</strong> De waardelijsten en de standaard in machineleesbare vorm zijn op te vragen bij FunderMaps.</p>
+    <p><strong>Contact.</strong> Vragen, reacties en voorstellen voor wijziging: <a href="mailto:info@fundermaps.com">info@fundermaps.com</a>. Heeft u een funderingsonderzoek, herstel of archiefstuk? Meld het via <a href="https://melden.fundermaps.com">melden.fundermaps.com</a>.</p>
+  </div>
+  <div class="card scroll">
+    <h3 style="margin-bottom:8px">Wijzigingslog</h3>
+    <table>
+      <thead><tr><th>Versie</th><th>Datum</th><th>Wijziging</th></tr></thead>
+      <tbody><tr><td>1.0</td><td>25 september 2026</td><td>Eerste versie.</td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>Informatiestandaard funderingsgegevens, versie 1.0, 25 september 2026. FunderMaps · Nationale Database Funderingen. Licentie CC BY 4.0. Richtlijn: KCAF, Funderingen onder gebouwen (22 november 2022). Contact: info@fundermaps.com.</p>
+</footer>
+
+</body>
+</html>
