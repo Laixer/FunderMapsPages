@@ -70,22 +70,17 @@
         <div class="svl-figure">
           <span class="svl-figure__label">Herstelopgave klasse D en E</span>
           <span class="svl-figure__value" data-svl="de_total">–</span>
-          <span class="svl-figure__note"><span data-svl="de_with_cost">–</span> panden met klasse D of E op droogstand of ontwateringsdiepte</span>
+          <span class="svl-figure__note"><span data-svl="de_with_cost">–</span> panden op houten palen of ondiep, met als zwaarste klasse D of E</span>
         </div>
         <div class="svl-figure">
-          <span class="svl-figure__label">Gem. herstelkosten</span>
-          <span class="svl-figure__value" data-svl="cost_avg">–</span>
-          <span class="svl-figure__note"><span data-svl="cost_n">–</span> panden met een kostenindicatie, zonder de duurste 10%</span>
+          <span class="svl-figure__label">Houten palen, klasse D en E</span>
+          <span class="svl-figure__value" data-svl="de_wood_avg">–</span>
+          <span class="svl-figure__note">gemiddeld per pand · totaal <span data-svl="de_wood_total">–</span> · <span data-svl="de_wood_n">–</span> panden (<span data-svl="de_wood_pct">–</span> van de houten panden)</span>
         </div>
         <div class="svl-figure">
-          <span class="svl-figure__label">Gem. herstelkosten houten palen</span>
-          <span class="svl-figure__value" data-svl="cost_wood">–</span>
-          <span class="svl-figure__note"><span data-svl="cost_wood_n">–</span> panden</span>
-        </div>
-        <div class="svl-figure">
-          <span class="svl-figure__label">Gem. herstelkosten ondiep</span>
-          <span class="svl-figure__value" data-svl="cost_shallow">–</span>
-          <span class="svl-figure__note"><span data-svl="cost_shallow_n">–</span> panden</span>
+          <span class="svl-figure__label">Ondiep, klasse D en E</span>
+          <span class="svl-figure__value" data-svl="de_shallow_avg">–</span>
+          <span class="svl-figure__note">gemiddeld per pand · totaal <span data-svl="de_shallow_total">–</span> · <span data-svl="de_shallow_n">–</span> panden (<span data-svl="de_shallow_pct">–</span> van de ondiepe panden)</span>
         </div>
       </div>
       <div class="svl-figure">
@@ -142,7 +137,7 @@
     <section class="section | wrapper pb-12 lg:pb-16">
       <div class="svl-panel space-y-4">
         <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Funderingstypen door de tijd</h2>
-        <p class="max-w-3xl">Aandeel per funderingsgroep, per bouwdecennium. Ondiep domineert de oudere bouw; beton wint terrein na de oorlog.</p>
+        <p class="max-w-3xl">Aandeel per funderingsgroep, per bouwdecennium (houten palen, beton en ondiep samen 100%). Ondiep domineert de oudere bouw; beton wint terrein na de oorlog.</p>
         <div data-svl-chart="decade-family"></div>
       </div>
     </section>
@@ -220,8 +215,8 @@
         <ul class="list-disc pl-5 space-y-2">
           <li>De cijfers komen rechtstreeks uit de Nationale Database FunderMaps, uit hetzelfde model dat klanten in FunderMaps zien. De datum van de laatste berekening staat bovenaan de pagina.</li>
           <li>Telbasis: alle panden met ten minste één adres in de BAG.</li>
-          <li>Funderingsgroepen: houten palen (alle houten varianten, ook met oplanger), beton (betonpalen en andere paalsystemen van beton of staal) en ondiep (op staal, gemetseld, stroken en vloeren). Gecombineerde en overige funderingen staan apart.</li>
-          <li>Herstelkosten zijn een modelmatige indicatie per pand, geen offerte. Voor betonpalen wordt geen indicatie berekend. De gemiddelden laten per groep de duurste 10% buiten beschouwing, zodat een paar zeer grote panden het beeld niet vertekenen. De herstelopgave voor klasse D en E telt wel alle panden.</li>
+          <li>Funderingsgroepen: houten palen (alle houten varianten, ook met oplanger), beton (betonpalen en andere paalsystemen van beton of staal) en ondiep (op staal, gemetseld, stroken en vloeren). Gecombineerde en overige funderingen staan apart. De kleuren volgen de <a href="https://funderconsult.com/kennisbank/7-techniek/kaartkleuren">kaartkleuren-standaard</a>.</li>
+          <li>Herstelkosten zijn een modelmatige indicatie per pand, geen offerte. Voor betonpalen wordt geen indicatie berekend. Herstelkosten en herstelopgave tellen alleen panden waarvan de zwaarste risicoklasse D of E is. De gemiddelden laten per funderingsgroep de duurste 10% buiten beschouwing, zodat een paar zeer grote panden het beeld niet vertekenen; de totalen tellen alle panden.</li>
           <li>Externe cijfers, zoals die van de AFM, noemen we met bron en datum. Ze komen niet uit de nachtelijke berekening.</li>
         </ul>
         <p>Vragen over de cijfers, of wilt u ze voor uw eigen gebied? Mail <a href="mailto:info@fundermaps.com?subject=Stand%20van%20het%20Land">info@fundermaps.com</a>.</p>

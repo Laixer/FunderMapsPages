@@ -35,6 +35,7 @@ function fillFigures() {
   const c = data.coverage
   const fam = Object.fromEntries(data.families.map((f) => [f.family, f]))
   const k = data.costs
+  const kf = Object.fromEntries(k.families.map((f) => [f.family, f]))
   const values = {
     updated: new Date(data.generated_at).toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" }),
     model: data.model_version,
@@ -50,12 +51,14 @@ function fillFigures() {
     shallow_pct: pct(fam.shallow.buildings, c.buildings),
     de_total: billions(k.de_total),
     de_with_cost: num(k.de_with_cost),
-    cost_avg: euro(k.avg),
-    cost_n: num(k.with_cost),
-    cost_shallow: euro(k.shallow_avg),
-    cost_shallow_n: num(k.shallow_with_cost),
-    cost_wood: euro(k.wood_avg),
-    cost_wood_n: num(k.wood_with_cost),
+    de_wood_n: num(kf.wood.de_buildings),
+    de_wood_pct: pct(kf.wood.de_buildings, kf.wood.buildings),
+    de_wood_avg: euro(kf.wood.de_avg),
+    de_wood_total: billions(kf.wood.de_total),
+    de_shallow_n: num(kf.shallow.de_buildings),
+    de_shallow_pct: pct(kf.shallow.de_buildings, kf.shallow.buildings),
+    de_shallow_avg: euro(kf.shallow.de_avg),
+    de_shallow_total: billions(kf.shallow.de_total),
     db_observations: num(data.database.observations),
     db_values: num(data.database.values),
     db_researched: num(data.database.researched),
@@ -72,25 +75,38 @@ function fillFigures() {
   })
 }
 
-// One 100% bar split into coloured segments, with a legend below.
+// One tall 100% bar with the family names in their segments, and a card with
+// the illustration per family below (the FunderConsult composition).
+const FAMILY_IMAGE = {
+  wood: new URL("../images/foundation/houtenpaal_fundering.svg", import.meta.url),
+  concrete: new URL("../images/foundation/betonpaal_fundering.svg", import.meta.url),
+  shallow: new URL("../images/foundation/ondiepe_fundering.svg", import.meta.url),
+}
+const FAMILY_COLOR = { wood: "var(--svl-fam-wood)", concrete: "var(--svl-fam-concrete)", shallow: "var(--svl-fam-shallow)" }
+
 function familyShare(root) {
   const total = data.coverage.buildings
-  const bar = el("div", "svl-bar svl-bar--lg")
-  const legend = el("ul", "svl-legend")
+  const bar = el("div", "svl-famshare")
+  const cards = el("div", "svl-famcards")
   for (const f of [...FAMILIES, "other"]) {
     const row = data.families.find((r) => r.family === f)
     if (!row) continue
-    const seg = el("span", `svl-seg svl-fam-${f}`)
-    seg.style.width = (100 * row.buildings) / total + "%"
+    const share = (100 * row.buildings) / total
+    const seg = el("span", `svl-famshare__seg svl-fam-${f}`, share >= 3 ? FAMILY_LABEL[f] : "")
+    seg.style.width = share + "%"
     seg.title = `${FAMILY_LABEL[f]}: ${pct(row.buildings, total)}`
     bar.append(seg)
-    const li = el("li")
-    li.append(el("span", `svl-swatch svl-fam-${f}`))
-    li.append(el("strong", "", FAMILY_LABEL[f]))
-    li.append(el("span", "svl-muted", ` ${pct(row.buildings, total)} · ${num(row.buildings)} panden`))
-    legend.append(li)
+    if (!FAMILY_IMAGE[f]) continue
+    const card = el("div", "svl-famcard")
+    const img = el("img", "svl-famcard__img")
+    img.src = FAMILY_IMAGE[f]
+    img.alt = FAMILY_LABEL[f]
+    img.loading = "lazy"
+    img.style.borderColor = FAMILY_COLOR[f]
+    card.append(img, el("span", "svl-famcard__name", FAMILY_LABEL[f]), el("span", "svl-famcard__note", `${pct(row.buildings, total)} · ${num(row.buildings)} panden`))
+    cards.append(card)
   }
-  root.append(bar, legend)
+  root.append(bar, cards)
 }
 
 function riskTable(root) {
@@ -184,7 +200,8 @@ function decadeFamily(root) {
   const decades = [...new Set(data.decade_family.map((r) => r.decade))].sort((a, b) => a - b)
   const chart = el("div", "svl-columns")
   for (const d of decades) {
-    const total = sum(data.decade_family, { decade: d })
+    // Shares of the three drawn families only, so every column is full height.
+    const total = ["shallow", "concrete", "wood"].reduce((s, f) => s + sum(data.decade_family, { decade: d, family: f }), 0)
     const col = el("div", "svl-col")
     const stack = el("div", "svl-col__stack")
     stack.title = `${decadeLabel(d)}: ${num(total)} panden`

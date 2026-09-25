@@ -26,8 +26,8 @@ WITH b AS MATERIALIZED (
             ELSE 'other'
         END AS family,
         upper(greatest(t.drystand_risk, t.bio_infection_risk, t.dewatering_depth_risk, t.unclassified_risk)) AS risk_class,
-        -- Restoration need as FunderConsult counted it: D/E on drystand or dewatering depth only.
-        t.drystand_risk IN ('d', 'e') OR t.dewatering_depth_risk IN ('d', 'e') AS urgent
+        -- Restoration need (Don, 2026-09-25): the pand's worst class is D or E.
+        upper(greatest(t.drystand_risk, t.bio_infection_risk, t.dewatering_depth_risk, t.unclassified_risk)) IN ('D', 'E') AS urgent
     FROM maplayer.building_tiles t
 ),
 feedback AS (
@@ -103,25 +103,38 @@ SELECT json_build_object(
         SELECT json_agg(json_build_object('decade', decade, 'family', family, 'buildings', n) ORDER BY decade, family)
         FROM (SELECT decade, family, count(*) AS n FROM b WHERE decade IS NOT NULL GROUP BY 1, 2) r
     ),
-    -- Averages leave out the most expensive 10% per group (Don 2026-09-24): a few very
-    -- large panden with many addresses pull a plain mean far above a typical pand.
+    -- Restoration costs only for panden that need it: worst class D or E (Don,
+    -- 2026-09-25), per foundation family. Averages leave out the most expensive
+    -- 10% per family (Don 2026-09-24): a few very large panden with many
+    -- addresses pull a plain mean far above a typical pand. Totals count all.
     'costs', (
         SELECT json_build_object(
-            'with_cost', count(restoration_costs),
-            'avg', round(avg(restoration_costs) FILTER (WHERE restoration_costs <= p.all_p90)),
-            'shallow_with_cost', count(restoration_costs) FILTER (WHERE family = 'shallow'),
-            'shallow_avg', round(avg(restoration_costs) FILTER (WHERE family = 'shallow' AND restoration_costs <= p.shallow_p90)),
-            'wood_with_cost', count(restoration_costs) FILTER (WHERE family = 'wood'),
-            'wood_avg', round(avg(restoration_costs) FILTER (WHERE family = 'wood' AND restoration_costs <= p.wood_p90)),
             'de_with_cost', count(restoration_costs) FILTER (WHERE urgent),
-            'de_total', sum(restoration_costs) FILTER (WHERE urgent)
+            'de_total', sum(restoration_costs) FILTER (WHERE urgent),
+            'families', (
+                SELECT json_agg(json_build_object(
+                    'family', f.family,
+                    'buildings', f.buildings,
+                    'de_buildings', f.de_buildings,
+                    'de_with_cost', f.de_with_cost,
+                    'de_avg', f.de_avg,
+                    'de_total', f.de_total) ORDER BY f.family DESC)
+                FROM (
+                    SELECT b2.family,
+                           count(*) AS buildings,
+                           count(*) FILTER (WHERE b2.urgent) AS de_buildings,
+                           count(b2.restoration_costs) FILTER (WHERE b2.urgent) AS de_with_cost,
+                           round(avg(b2.restoration_costs) FILTER (WHERE b2.urgent AND b2.restoration_costs <= q.p90)) AS de_avg,
+                           sum(b2.restoration_costs) FILTER (WHERE b2.urgent) AS de_total
+                    FROM b b2
+                    JOIN (SELECT family, percentile_cont(0.9) WITHIN GROUP (ORDER BY restoration_costs) AS p90
+                          FROM b WHERE urgent AND restoration_costs IS NOT NULL GROUP BY family) q USING (family)
+                    WHERE b2.family IN ('wood', 'shallow')
+                    GROUP BY b2.family
+                ) f
+            )
         )
-        FROM b, (
-            SELECT percentile_cont(0.9) WITHIN GROUP (ORDER BY restoration_costs) AS all_p90,
-                   percentile_cont(0.9) WITHIN GROUP (ORDER BY restoration_costs) FILTER (WHERE family = 'shallow') AS shallow_p90,
-                   percentile_cont(0.9) WITHIN GROUP (ORDER BY restoration_costs) FILTER (WHERE family = 'wood') AS wood_p90
-            FROM b WHERE restoration_costs IS NOT NULL
-        ) p
+        FROM b
     ),
     'cost_bands', (
         SELECT json_agg(json_build_object('family', family, 'band', band, 'buildings', n) ORDER BY family, band)
