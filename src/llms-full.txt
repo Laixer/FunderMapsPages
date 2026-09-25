@@ -77,7 +77,7 @@ Open de kaart
 
 #### Risicoanalyse
 
-Het model bepaalt het funderingstype uit vergelijkbare onderzochte panden en berekent vier funderingsrisico's met de risicoklassen van het KCAF. Wat ter plaatse is vastgesteld, gaat altijd voor. Zo werkt het model .
+Het model bepaalt het funderingstype uit vergelijkbare onderzochte panden en berekent vier funderingsrisico's met de risicoklassen van het KCAF. Wat ter plaatse is vastgesteld, gaat altijd voor.
 
 Kennisbank: Hoe het model werkt
 
@@ -89,7 +89,7 @@ Kennisbank: Pandzakking in het model
 
 #### Nationaal Herstel Register
 
-Hét register van uitgevoerd funderingsherstel . Een geregistreerd herstel gaat boven de modelschatting en is zichtbaar voor taxatie en transactie. Over het register .
+Hét register van uitgevoerd funderingsherstel . Een geregistreerd herstel gaat boven de modelschatting en is zichtbaar voor taxatie en transactie.
 
 Kennisbank: Nationaal Herstel Register
 
