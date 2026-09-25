@@ -67,7 +67,7 @@ query and commit it (a push to `main` deploys):
 The herstelde-panden figure and the AFM block are hand-maintained in the HTML, with source and date.
 
 ## Model page and information standard
-`hoe-het-model-werkt.html` (how the model works) and `informatiestandaard.html` / `informatiestandaard-1-0.html`
+`hoe-het-model-werkt.html` (how the model works; since 2026-09-25 the copy HERE is the source, it references site images) and `informatiestandaard.html` / `informatiestandaard-1-0.html`
 (the standard, latest + fixed per-version URL) are standalone pages with their own inline styles. Their source
 lives outside this repo (the standard is generated); replace the files as a whole, don't hand-edit here. A new
 version of the standard gets its own `informatiestandaard-<x>-<y>.html` and `informatiestandaard.html` is overwritten.
