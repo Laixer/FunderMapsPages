@@ -181,25 +181,33 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
     <p class="prose">De rekenmethode kent vier funderingsrisico's. Per risico staat hieronder wat het is, waar het speelt en wat de berekening gebruikt. Is er onderzoek aan het pand, dan gaat de uitkomst daarvan voor; zonder onderzoek wordt het risico geschat uit de kenmerken van het pand. De gemeten pandzakking uit satellietdata weegt bij de eerste drie risico's mee als aanwijzing: een pand dat sneller zakt dan verwacht, krijgt een hogere klasse. De achtergrond per risico staat in de kennisbank <a href="https://funderconsult.com/kennisbank/4-funderingsrisicos/soorten-funderingsrisico">Soorten funderingsrisico</a>.</p>
     <div class="risks">
       <div class="card">
+        <img src="./resources/images/schimmel.webp" alt="Schimmelaantasting van een houten paal door droogstand" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px">
         <h3>Droogstand (paalrot)</h3>
         <p>Houten palen of langshout komen boven de grondwaterstand uit. Het hout komt in contact met zuurstof en schimmels tasten het aan.</p>
         <p class="uses"><strong>Waar:</strong> overal waar op houten palen is gebouwd; landelijk berekend.<br><strong>In de berekening:</strong> het funderingstype (houten palen, of houten palen met betonoplanger), de grondwaterstand bij het pand, bij onderzoek het houtniveau tegenover de grondwaterstand, en een verhoogde pandzakkingssnelheid als signaal.</p>
       </div>
       <div class="card">
+        <img src="./resources/images/optrekkendvocht.webp" alt="Optrekkend vocht bij een ondiepe fundering" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px">
         <h3>Ontwateringsdiepte</h3>
         <p>Bij ondiepe funderingen (op staal, zonder palen) de afstand tussen de onderkant van de fundering en het grondwater. Staat het grondwater hoog, dan ontstaat optrekkend vocht en kan het pand gaan zakken.</p>
         <p class="uses"><strong>Waar:</strong> overal waar ondiep is gefundeerd; landelijk berekend.<br><strong>In de berekening:</strong> het funderingstype, de funderingsdiepte tegenover de grondwaterstand bij het pand, en de pandzakkingssnelheid als signaal.<br><strong>Verschilzakking</strong> valt hieronder: panden die duidelijk sneller zakken dan hun buren en dan de bodem om hen heen. Dit wordt berekend waar satellietdata is.</p>
       </div>
       <div class="card">
+        <img src="./resources/images/bacterie.webp" alt="Bacteriële aantasting van een houten paal" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px">
         <h3>Bacteriële aantasting (palenpest)</h3>
         <p>Bacteriën tasten houten palen aan, ook onder water. Het hout verliest langzaam zijn draagkracht. Grenen is gevoeliger dan vuren.</p>
         <p class="uses"><strong>Waar:</strong> vooral in Noord- en West-Nederland, waar korte palen in een ondiepe zandlaag staan. Waar langere palen tot in een diepere zandlaag zijn gebruikt, zoals in Rotterdam, komt het minder voor.<br><strong>In de berekening:</strong> het funderingstype, de paallengte (hoe korter, hoe hoger het risico) en een verhoogde pandzakkingssnelheid als signaal.</p>
       </div>
       <div class="card">
+        <img src="./resources/images/negatievekleef.webp" alt="Negatieve kleef: zakkende grondlagen trekken de paal mee" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px">
         <h3>Overig risico</h3>
         <p>Risico's die uit onderzoek aan het pand zijn vastgesteld en niet onder de andere drie vallen. Dit risico wordt niet geschat; het bestaat alleen waar onderzoek ligt.</p>
         <p class="uses"><strong>Hieronder vallen onder meer:</strong><br><strong>Negatieve kleef</strong>: zakkende grondlagen die de paal meetrekken, vooral in de regio Rijnmond en de Drechtsteden.<br>En verder overbelasting, constructiefouten en trillingen, zoals het onderzoek ze vaststelt.</p>
       </div>
+    </div>
+    <div class="card" style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));align-items:center">
+      <img src="./resources/images/verschil.webp" alt="Verschilzakking: panden die ongelijk zakken" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px">
+      <div style="display:grid;gap:8px"><h3>Verschilzakking</h3><p class="muted">Panden binnen één bouwblok die ongelijk zakken, of een pand dat duidelijk sneller zakt dan zijn buren. Het rekent mee onder ontwateringsdiepte, waar satellietdata is.</p></div>
     </div>
     <div class="card">
       <h3 style="margin-bottom:10px">De risicoklassen</h3>
@@ -232,6 +240,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
   <section>
     <span class="eyebrow">Het funderingstype</span>
     <h2>Het funderingstype schatten uit vergelijkbare panden</h2>
+    <img src="./resources/images/funderingstype.webp" alt="Schematisch overzicht van de funderingstypen in Nederland" loading="lazy" style="width:100%;height:auto;border-radius:14px;background:#fff">
     <div class="prose" style="display:grid;gap:14px">
       <p>Is een pand niet zelf onderzocht, dan bepaalt het vernieuwde funderingstypemodel de fundering uit onderzochte panden die erop lijken. Dat gaat in vijf stappen.</p>
     </div>
