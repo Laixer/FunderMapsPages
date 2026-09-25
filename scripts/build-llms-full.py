@@ -13,6 +13,7 @@ PAGES = [
     ("Informatiestandaard funderingsgegevens", "informatiestandaard.html", "informatiestandaard.html"),
     ("Begrippen, standaarden en catalogus", "begrippen-en-standaarden.html", "begrippen-en-standaarden.html"),
     ("Kennisbank", "kennisbank.html", "kennisbank.html"),
+    ("FunderMaps API", "api.html", "api.html"),
     ("FunderMaps API v4", "api-documentatie.html", "api-documentatie.html"),
     ("Nationaal Herstel Register", "nationaal-herstelregister.html", "nationaal-herstelregister.html"),
     ("Funderingstypen en -risico's", "media-library.html", "media-library.html"),

@@ -8,19 +8,17 @@ This site is the Dutch-language marketing front for FunderMaps. The product itse
 
 - [Home / Inzicht in funderingsrisico's](https://fundermaps.com/): Hero, services overview, references, demo, partners.
 - [Funderingstypes & risico's](https://fundermaps.com/media-library.html): Visual reference of foundation types (rotterdamse fundering, betonpaal, kespen, etc.) and their associated risks.
-- [Meer informatie](https://fundermaps.com/more-info.html): Background on the dataplatform, how it works, and what information it surfaces.
 - [Artikelen](https://fundermaps.com/artikelen.html): Articles on funderingsproblematiek — causes, repair, municipal policy, practical guidance.
 
 ## Apps & tools (sub-products)
 
-- [QuickScan](https://fundermaps.com/apps-quickscan.html): Standardised KCAF method that gives a quick foundation-risk indication from façade measurements, without invasive investigation.
-- [Indicatieve herstelkosten](https://fundermaps.com/apps-herstelkosten.html): KCAF Herstelkostencalculator — first-cut repair-cost estimate by foundation type, repair method and building size.
 - [Nationaal Funderingsherstel Register](https://fundermaps.com/nationaal-herstelregister.html): Public register for completed foundation-repair work, supporting taxation, transactions and policy.
 - [Stand van het Land](https://fundermaps.com/stand-van-het-land.html): National foundation figures from the FunderMaps database: foundation types, risk classes A–E, construction periods and restoration costs.
 - [Hoe FunderMaps het funderingsrisico bepaalt](https://fundermaps.com/hoe-het-model-werkt.html): How the FunderMaps model determines foundation type and risk class A–E, the four foundation risks, the hierarchy of evidence and the data behind it.
 - [Informatiestandaard funderingsgegevens](https://fundermaps.com/informatiestandaard.html): The FunderMaps information standard 1.0 for foundation data: terms, units, value lists and map colours (CC BY 4.0).
 - [Begrippen, standaarden en catalogus](https://fundermaps.com/begrippen-en-standaarden.html): How FunderMaps defines its terms (NL-SBB), information model (MIM 1.2), data catalogue (DCAT-AP-NL) and calculation rules, and which datasets it uses.
 - [Kennisbank](https://fundermaps.com/kennisbank.html): Index of the FunderMaps knowledge pages.
+- [FunderMaps API](https://fundermaps.com/api.html): What the API delivers (light, risk, analysis, statistics), how access and billing work, and who it is for.
 - [FunderMaps API v4](https://fundermaps.com/api-documentatie.html): The current FunderMaps product API reference (endpoints, authentication, fields, errors, rate limits).
 
 ## External product surfaces
