@@ -37,9 +37,35 @@ feedback AS (
     SELECT CASE channel WHEN 'upload' THEN 'melden' ELSE 'archive' END, outcome::text, outcome_at - received_at
     FROM dataops.dossier
     WHERE channel IN ('upload', 'bulk_drop') AND audit_inquiry_id IS NULL
+),
+obs AS (
+    -- The database figures shared with fundermaps.com/hoe-het-model-werkt.html:
+    -- waarnemingen = samples from research, archive, notes and herstel (the
+    -- Verkennend Funderingsonderzoek counts as commercial data, not ours);
+    -- vastgelegde waarden = the filled fields in those samples.
+    SELECT count(*) AS n,
+           sum((SELECT count(*) FROM jsonb_each(to_jsonb(s) - ARRAY['id','inquiry_id','address','create_date','update_date','delete_date','building_id','metadata']) e
+                WHERE e.value NOT IN ('null'::jsonb, '[]'::jsonb, '""'::jsonb))) AS v
+    FROM report.inquiry_sample s JOIN report.inquiry i ON i.id = s.inquiry_id
+    WHERE s.delete_date IS NULL AND i.delete_date IS NULL AND i.type <> 'facade_scan'
+    UNION ALL
+    SELECT count(*),
+           sum((SELECT count(*) FROM jsonb_each(to_jsonb(r) - ARRAY['id','recovery_id','create_date','update_date','delete_date','building_id','metadata']) e
+                WHERE e.value NOT IN ('null'::jsonb, '""'::jsonb)))
+    FROM report.recovery_sample r WHERE r.delete_date IS NULL
 )
 SELECT json_build_object(
     'generated_at', now(),
+    'database', (
+        SELECT json_build_object(
+            'observations', sum(n),
+            'values', sum(v),
+            'researched', (SELECT count(DISTINCT s.building_id)
+                           FROM report.inquiry_sample s JOIN report.inquiry i ON i.id = s.inquiry_id
+                           WHERE s.delete_date IS NULL AND i.delete_date IS NULL AND s.foundation_type IS NOT NULL
+                             AND i.type NOT IN ('quickscan', 'facade_scan'))
+        ) FROM obs
+    ),
     'model_version', 'model-2024.1',
     'coverage', (
         SELECT json_build_object(

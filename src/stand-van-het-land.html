@@ -28,6 +28,23 @@
         <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Kerncijfers</h2>
         <p>Alle panden met een adres in de BAG. Funderingstype en risicoklasse komen uit het FunderMaps-model: waar onderzoek is gedaan uit dat onderzoek, elders afgeleid uit het pand en zijn omgeving.</p>
       </div>
+      <div class="grid gap-4 sm:grid-cols-3">
+        <div class="svl-figure">
+          <span class="svl-figure__label">Waarnemingen</span>
+          <span class="svl-figure__value" data-svl="db_observations">–</span>
+          <span class="svl-figure__note">funderingsgegevens per pand of adres uit onderzoek, archief, notities en herstel</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Vastgelegde waarden</span>
+          <span class="svl-figure__value" data-svl="db_values">–</span>
+          <span class="svl-figure__note">alle ingevulde gegevens in die waarnemingen samen</span>
+        </div>
+        <div class="svl-figure">
+          <span class="svl-figure__label">Onderzochte panden</span>
+          <span class="svl-figure__value" data-svl="db_researched">–</span>
+          <span class="svl-figure__note">met een funderingstype uit eigen onderzoek of archief · <a href="https://fundermaps.com/hoe-het-model-werkt.html">hoe het model rekent</a></span>
+        </div>
+      </div>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div class="svl-figure svl-figure--lead">
           <span class="svl-figure__label">Panden met een adres</span>
@@ -73,7 +90,7 @@
       <div class="svl-figure">
         <span class="svl-figure__label">Herstelde panden</span>
         <span class="svl-figure__value">30.122</span>
-        <span class="svl-figure__note">Gevalideerd en niet-gevalideerd funderingsherstel uit het <a href="nationaal-herstelregister.html">Nationaal Funderingsherstel Register</a>, stand 21 september 2026. Dit getal wordt nog met de hand bijgewerkt, tot het register volledig in FunderMaps is opgenomen.</span>
+        <span class="svl-figure__note">Gevalideerd en niet-gevalideerd funderingsherstel uit het <a href="nationaal-herstelregister.html">Nationaal Herstel Register</a>, stand 21 september 2026. Dit getal wordt nog met de hand bijgewerkt, tot het register volledig in FunderMaps is opgenomen.</span>
       </div>
     </section>
 
@@ -88,7 +105,7 @@
     <section class="section | wrapper pb-12 lg:pb-16">
       <div class="svl-panel space-y-4">
         <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Risicotabel</h2>
-        <p class="max-w-3xl">Risicoklasse A (laag) tot en met E (hoog), voor panden op houten palen en ondiepe funderingen. De klasse van een pand is de zwaarste van zijn risico's: droogstand, bacteriële aantasting, ontwateringsdiepte en overig.</p>
+        <p class="max-w-3xl">Risicoklasse A (laag) tot en met E (hoog), voor panden op houten palen en ondiepe funderingen. De klasse van een pand is de zwaarste van zijn vier funderingsrisico's: droogstand, bacteriële aantasting, ontwateringsdiepte en overig.</p>
         <div class="svl-scroll" data-svl-chart="risk-table">
           <table class="svl-table">
             <thead>
