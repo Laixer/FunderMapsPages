@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Begrippen en standaarden</title>
+<link rel="canonical" href="https://fundermaps.com/begrippen-en-standaarden.html">
+<meta name="description" content="Hoe FunderMaps vastlegt wat funderingsgegevens betekenen, hoe ze eruitzien en waar ze vandaan komen: begrippenkader, informatiemodel, gegevenscatalogus en rekenregels, volgens de standaarden van de overheid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap">
+<style>
+:root {
+  --navy: #191e3c;
+  --blue: #0c75a8;
+  --slate: #3d5372;
+  --yellow: #ffcc69;
+  --ink: #17192a;
+  --muted: #525c77;
+  --line: #e8eaf1;
+  --paper: #ffffff;
+  --wash: #f6f7f8;
+  --tint: #e7f6fd;
+  --open: #0a8158;
+  --open-bg: #e9faf3;
+  --public: #b07a12;
+  --public-bg: #fffaf0;
+  --ours: #0c75a8;
+  --ours-bg: #e7f6fd;
+  --wood: #8c3a28;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e9ebf3; --muted: #a9b0c4; --line: #2c3252; --paper: #121629; --wash: #191e38; --tint: #13304a;
+    --open: #4fd1a0; --open-bg: #10291f; --public: #f0c060; --public-bg: #2b2412; --ours: #5bb8e6; --ours-bg: #102a3d;
+    --wood: #d98a70;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #e9ebf3; --muted: #a9b0c4; --line: #2c3252; --paper: #121629; --wash: #191e38; --tint: #13304a;
+  --open: #4fd1a0; --open-bg: #10291f; --public: #f0c060; --public-bg: #2b2412; --ours: #5bb8e6; --ours-bg: #102a3d;
+  --wood: #d98a70;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; padding: 0 16px; background: var(--wash); color: var(--ink);
+  font: 400 17px/1.6 Figtree, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--ours); }
+a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+.wrap { max-width: 64rem; margin: 0 auto; }
+.prose { max-width: 42rem; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-weight: 800; font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem); letter-spacing: -0.02em; }
+h2 { font-weight: 800; font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); letter-spacing: -0.01em; }
+h3 { font-weight: 800; font-size: 1.2rem; }
+p { margin: 0; }
+.eyebrow { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+header.hero {
+  margin: 0 -16px; padding: 56px 16px 48px; color: #ced0da;
+  background: linear-gradient(160deg, #0c75a8, #191e3c);
+}
+header.hero .eyebrow { color: #ffcc69; }
+header.hero h1 { color: #fff; margin: 12px 0 16px; }
+header.hero p { font-size: 1.15rem; max-width: 40rem; }
+header.hero .thesis {
+  margin-top: 28px; display: inline-block; padding: 14px 18px; border-radius: 12px;
+  background: rgba(255,255,255,0.08); color: #fff; font-weight: 600;
+}
+header.hero .thesis strong { color: #ffcc69; }
+
+section { padding: 56px 0 8px; display: grid; gap: 20px; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+
+.steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.step { display: grid; gap: 8px; align-content: start; }
+.step .n { font-weight: 800; color: var(--blue); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.step p { color: var(--muted); }
+
+.classes { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.cls { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 6px; font-weight: 800; font-size: 0.9rem; }
+.cls.a { background: #0a8158; color: #fff; } .cls.b { background: #7fbf8e; color: #191e3c; }
+.cls.c { background: #ffcc69; color: #191e3c; } .cls.d { background: #e8793a; color: #191e3c; }
+.cls.e { background: #b3261e; color: #fff; }
+
+.layers { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.layer { border-radius: 20px; padding: 24px; display: grid; gap: 12px; align-content: start; border: 1px solid var(--line); background: var(--paper); border-top: 6px solid var(--c); }
+.layer.open { --c: var(--open); } .layer.public { --c: var(--public); } .layer.ours { --c: var(--ours); background: var(--ours-bg); }
+.layer .tag { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); }
+.layer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; }
+.layer .verdict { font-weight: 600; border-top: 1px solid var(--line); padding-top: 12px; }
+.layer.ours .verdict { border-color: color-mix(in srgb, var(--ours) 30%, transparent); }
+
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+td.num, th.num { text-align: right; white-space: nowrap; }
+td.num strong { font-size: 1.15rem; }
+.scroll { overflow-x: auto; }
+.bar { display: block; height: 8px; border-radius: 99px; background: var(--line); margin-top: 6px; overflow: hidden; }
+.bar > span { display: block; height: 100%; border-radius: 99px; background: var(--wood); }
+.bar.old > span { background: var(--muted); }
+
+.callout { border-left: 4px solid var(--yellow); background: var(--paper); border-radius: 0 16px 16px 0; padding: 20px 24px; display: grid; gap: 8px; }
+.pill { justify-self: start; display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; background: var(--tint); color: var(--ours); }
+.pill.live { background: var(--open-bg); color: var(--open); }
+.pill.soon { background: var(--public-bg); color: var(--public); }
+.status { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.status .card { display: grid; gap: 8px; align-content: start; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
+
+.facts { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.fact { display: grid; gap: 4px; align-content: start; }
+.fact .big { font-weight: 800; font-size: clamp(2rem, 1.6rem + 1.6vw, 2.8rem); line-height: 1.05; color: var(--ours); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.fact .big sup { font-size: 0.45em; vertical-align: super; }
+.risks { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.risks .card { display: grid; gap: 8px; align-content: start; }
+.risks .uses { font-size: 0.9rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
+.ladder { margin: 0; padding-left: 1.4rem; display: grid; gap: 8px; }
+.scale { display: grid; gap: 8px; }
+.scale div { display: flex; gap: 12px; align-items: center; }
+.layer.commercial { --c: var(--slate); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .layer.commercial { --c: #9fb2d0; } }
+:root[data-theme="dark"] .layer.commercial { --c: #9fb2d0; }
+.disclaimer { border: 1px solid var(--line); background: var(--paper); border-radius: 16px; padding: 20px 24px; display: grid; gap: 8px; }
+.defs { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+.def { display: grid; gap: 8px; align-content: start; }
+.def dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; font-size: 0.95rem; }
+.def dt { font-weight: 600; color: var(--muted); }
+.def dd { margin: 0; }
+.code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 0.85em; background: var(--tint); padding: 1px 5px; border-radius: 4px; }
+.std { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">FunderMaps · voor professionals</span>
+    <h1>Begrippen, standaarden en catalogus</h1>
+    <p>Deze pagina is bedoeld voor taxateurs, hypotheekverstrekkers, makelaars, gemeenten, woningcorporaties, onderzoeksbureaus en herstelbedrijven. U leest hier hoe FunderMaps vastlegt wat funderingsgegevens betekenen, hoe ze eruitzien en waar ze vandaan komen. Zo kunt u een gegeven uit FunderMaps herleiden en in uw eigen werk verantwoorden.</p>
+    <p class="thesis">De modelpagina zegt hoe we rekenen. <strong>Deze pagina zegt waarmee.</strong></p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <span class="eyebrow">Waarom</span>
+    <h2>Herleidbaar, van gegeven tot bron</h2>
+    <div class="prose" style="display:grid;gap:14px">
+      <p>Sinds 1 april 2026 geldt het model taxatierapport woonruimte van het NRVT. Funderingsrisico staat daarin met de risicoklassen A tot en met E van het KCAF, en de taxateur legt de uitkomst herleidbaar vast en licht haar toe. Het KCAF noemt FunderMaps daarbij als bronhouder.</p>
+      <p>Een bronhouder laat zien wat elk gegeven betekent, waar het vandaan komt en hoe actueel het is. FunderMaps doet dat in vier lagen, elk volgens een standaard die de overheid al gebruikt.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Opzet</span>
+    <h2>Vier lagen</h2>
+    <div class="steps">
+      <div class="card step">
+        <span class="std">NL-SBB</span>
+        <h3>Begrippenkader</h3>
+        <p><strong>Wat betekent het?</strong> Per begrip een voorkeursterm, een definitie en een uitleg in gewone taal, met bron en relaties ("houten paal met betonoplanger" valt onder "houten paalfundering"). NL-SBB is de Geonovum-standaard voor begripsbeschrijvingen, vastgesteld op 10 oktober 2024.</p>
+      </div>
+      <div class="card step">
+        <span class="std">MIM 1.2</span>
+        <h3>Informatiemodel</h3>
+        <p><strong>Hoe ziet het eruit?</strong> Welke objecten er zijn (pand, onderzoek, waarneming, herstel, risico-inschatting), welke kenmerken ze hebben en welke waarden zijn toegestaan. MIM is het metamodel waarmee ook de BAG en de BRO zijn beschreven. Uitgewerkt in de <a href="https://fundermaps.com/informatiestandaard.html">Informatiestandaard funderingsgegevens</a>.</p>
+      </div>
+      <div class="card step">
+        <span class="std">DCAT-AP-NL 3.0</span>
+        <h3>Gegevenscatalogus</h3>
+        <p><strong>Waar komt het vandaan?</strong> Per dataset de bron, de eigenaar, hoe vaak hij wordt ververst en onder welke voorwaarden hij wordt gebruikt. DCAT-AP-NL is het Nederlandse profiel voor datacatalogi, de basis van data.overheid.nl.</p>
+      </div>
+      <div class="card step">
+        <span class="std">Openbaar</span>
+        <h3>Rekenregels</h3>
+        <p><strong>Hoe wordt het risico bepaald?</strong> De rekenmethode staat op <a href="https://fundermaps.com/hoe-het-model-werkt.html">Hoe FunderMaps het funderingsrisico bepaalt</a>, en verwijst naar de begrippen en datasets op deze pagina.</p>
+      </div>
+    </div>
+    <p class="prose muted">De inhoud van de begrippen volgt de vakpraktijk. Onderzoek en beoordeling volgen de richtlijn <em>Funderingen onder gebouwen</em> van het KCAF (22 november 2022), die de F3O-richtlijnen verving. De risicoklassen A–E zijn die van het KCAF. Het pand is het BAG-pand. Kaarten gebruiken de <a href="https://funderconsult.com/kennisbank/7-techniek/kaartkleuren">kaartkleuren-standaard</a>.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Voorbeelden</span>
+    <h2>Zo ziet een begrip eruit</h2>
+    <div class="defs">
+      <article class="card def">
+        <h3>Houten paalfundering met betonoplanger</h3>
+        <dl>
+          <dt>Definitie</dt><dd>Houten paalfundering waarbij op de paal een betonnen verlengstuk is gezet, omdat de paal bij het heien lager eindigde dan het vereiste niveau.</dd>
+          <dt>Uitleg</dt><dd>Een oplanger wijst op een paal die te kort is geslagen. Dat is op zichzelf al een signaal.</dd>
+          <dt>Bovenliggend</dt><dd>Houten paalfundering</dd>
+          <dt>Code</dt><dd><span class="code">wood_charger</span></dd>
+          <dt>Bron</dt><dd>FunderMaps, vakpraktijk</dd>
+        </dl>
+      </article>
+      <article class="card def">
+        <h3>Risicoklasse</h3>
+        <dl>
+          <dt>Definitie</dt><dd>Indeling van het funderingsrisico van een pand in vijf klassen: A geen risico, B licht risico, C verhoogd risico of onzekerheid, D hoog risico, E vastgesteld probleem.</dd>
+          <dt>Uitleg</dt><dd>Een inschatting van het risico, geen technisch oordeel over de fundering zelf.</dd>
+          <dt>Code</dt><dd><span class="code">foundation_risk_indication</span>: a–e</dd>
+          <dt>Bron</dt><dd>KCAF</dd>
+        </dl>
+      </article>
+      <article class="card def">
+        <h3>Handhavingstermijn</h3>
+        <dl>
+          <dt>Definitie</dt><dd>De periode waarin de fundering volgens het onderzoek nog kan worden gehandhaafd voordat herstel nodig is.</dd>
+          <dt>Code</dt><dd><span class="code">enforcement_term</span></dd>
+          <dt>Bron</dt><dd>KCAF-richtlijn Funderingen onder gebouwen</dd>
+        </dl>
+      </article>
+      <article class="card def">
+        <h3>Vastgesteld (betrouwbaarheid)</h3>
+        <dl>
+          <dt>Definitie</dt><dd>Het gegeven komt uit onderzoek aan dit pand zelf.</dd>
+          <dt>Tegenhangers</dt><dd>Afgeleid (van vergelijkbare panden), indicatief (geschat)</dd>
+          <dt>Code</dt><dd><span class="code">reliability</span>: established</dd>
+          <dt>Bron</dt><dd>FunderMaps</dd>
+        </dl>
+      </article>
+    </div>
+    <p class="prose muted small">Alle begrippen, eenheden en waardelijsten staan in de <a href="https://fundermaps.com/informatiestandaard.html">Informatiestandaard funderingsgegevens</a>.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Catalogus</span>
+    <h2>Welke data, van wie, hoe actueel</h2>
+    <div class="card scroll">
+      <table>
+        <thead><tr><th>Dataset</th><th>Soort</th><th>Eigenaar</th><th>Actualiteit</th></tr></thead>
+        <tbody>
+          <tr><td>Panden en adressen</td><td>Open data</td><td>Kadaster (BAG)</td><td>Bij elke inlees van de BAG</td></tr>
+          <tr><td>Pandhoogte</td><td>Open data</td><td>3D BAG</td><td>Bij elke inlees</td></tr>
+          <tr><td>Wijken en buurten</td><td>Open data</td><td>CBS</td><td>Jaarlijks</td></tr>
+          <tr><td>Opbouw van de ondergrond</td><td>Open data</td><td>TNO (GeoTOP)</td><td>Per versie</td></tr>
+          <tr><td>Funderingsonderzoek en archiefonderzoek</td><td>Onze data</td><td>FunderMaps</td><td>Dagelijks, na beoordeling</td></tr>
+          <tr><td>Nationaal Herstel Register</td><td>Onze data</td><td>FunderMaps</td><td>Doorlopend</td></tr>
+          <tr><td>Terugmeldingen van professionals</td><td>Onze data</td><td>FunderMaps</td><td>Doorlopend, na beoordeling</td></tr>
+          <tr><td>Verkennend Funderingsonderzoek</td><td>Commerciële data</td><td>Gespecialiseerde bureaus</td><td>Dagelijks</td></tr>
+          <tr><td>Grondwaterstand</td><td>Commerciële data</td><td>Leverancier</td><td>Per levering</td></tr>
+          <tr><td>Pandzakking (satelliet)</td><td>Commerciële data</td><td>Leverancier</td><td>Per levering</td></tr>
+          <tr><td>Funderingstype en risico per pand</td><td>Afgeleid</td><td>FunderMaps</td><td>Twee keer per dag herberekend</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Beheer</span>
+    <h2>Openbaar, met versies</h2>
+    <div class="status">
+      <div class="card">
+        <span class="pill live">Openbaar</span>
+        <h3>Begrippen en rekenregels</h3>
+        <p>Begrippen, informatiemodel, catalogus en rekenregels zijn openbaar en leesbaar op fundermaps.com. In machineleesbare vorm zijn ze op te vragen bij FunderMaps. De gegevens zelf blijven van FunderMaps.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Versies</span>
+        <h3>Wijzigen</h3>
+        <p>Elke versie krijgt een nummer en een wijzigingslog. Een wijziging gaat van voorstel via beoordeling naar publicatie. Zo ziet u welke versie u kreeg, en dat is wat herleidbaarheid vraagt.</p>
+      </div>
+      <div class="card">
+        <span class="pill soon">Contact</span>
+        <h3>Vragen en voorstellen</h3>
+        <p>Vragen over een begrip, of een voorstel voor een wijziging? Mail <a href="mailto:info@fundermaps.com">info@fundermaps.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Verwijzingen</span>
+    <h2>Verder lezen</h2>
+    <ul class="prose" style="margin:0;padding-left:1.2rem">
+      <li><a href="https://fundermaps.com/informatiestandaard.html">Informatiestandaard funderingsgegevens</a></li>
+      <li><a href="https://fundermaps.com/hoe-het-model-werkt.html">Hoe FunderMaps het funderingsrisico bepaalt</a></li>
+      <li><a href="https://fundermaps.com/stand-van-het-land.html">Stand van het land</a></li>
+      <li><a href="https://funderconsult.com/kennisbank/7-techniek/kaartkleuren">Kennisbank: Kaartkleuren</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>FunderMaps · Nationale Database Funderingen · 25 september 2026. Bronnen: KCAF, richtlijn Funderingen onder gebouwen (22 november 2022); NRVT, model taxatierapport woonruimte per 1 april 2026; Geonovum, NL-SBB (vastgesteld 10 oktober 2024), MIM 1.2 (vastgesteld 13 juni 2024) en DCAT-AP-NL 3.0.</p>
+</footer>
+
+</body>
+</html>
