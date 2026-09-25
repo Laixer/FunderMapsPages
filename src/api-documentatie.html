@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FunderMaps API v4</title>
+<link rel="canonical" href="https://fundermaps.com/api-documentatie.html">
+<meta name="description" content="De actuele documentatie van de FunderMaps API v4: endpoints, authenticatie, velden, foutmeldingen en limieten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap">
+<style>
+:root {
+  --navy: #191e3c;
+  --blue: #0c75a8;
+  --slate: #3d5372;
+  --yellow: #ffcc69;
+  --ink: #17192a;
+  --muted: #525c77;
+  --line: #e8eaf1;
+  --paper: #ffffff;
+  --wash: #f6f7f8;
+  --tint: #e7f6fd;
+  --open: #0a8158;
+  --open-bg: #e9faf3;
+  --public: #b07a12;
+  --public-bg: #fffaf0;
+  --ours: #0c75a8;
+  --ours-bg: #e7f6fd;
+  --wood: #8c3a28;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e9ebf3; --muted: #a9b0c4; --line: #2c3252; --paper: #121629; --wash: #191e38; --tint: #13304a;
+    --open: #4fd1a0; --open-bg: #10291f; --public: #f0c060; --public-bg: #2b2412; --ours: #5bb8e6; --ours-bg: #102a3d;
+    --wood: #d98a70;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #e9ebf3; --muted: #a9b0c4; --line: #2c3252; --paper: #121629; --wash: #191e38; --tint: #13304a;
+  --open: #4fd1a0; --open-bg: #10291f; --public: #f0c060; --public-bg: #2b2412; --ours: #5bb8e6; --ours-bg: #102a3d;
+  --wood: #d98a70;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; padding: 0 16px; background: var(--wash); color: var(--ink);
+  font: 400 17px/1.6 Figtree, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--ours); }
+a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+.wrap { max-width: 64rem; margin: 0 auto; }
+.prose { max-width: 42rem; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-weight: 800; font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem); letter-spacing: -0.02em; }
+h2 { font-weight: 800; font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); letter-spacing: -0.01em; }
+h3 { font-weight: 800; font-size: 1.2rem; }
+p { margin: 0; }
+.eyebrow { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+header.hero {
+  margin: 0 -16px; padding: 56px 16px 48px; color: #ced0da;
+  background: linear-gradient(160deg, #0c75a8, #191e3c);
+}
+header.hero .eyebrow { color: #ffcc69; }
+header.hero h1 { color: #fff; margin: 12px 0 16px; }
+header.hero p { font-size: 1.15rem; max-width: 40rem; }
+header.hero .thesis {
+  margin-top: 28px; display: inline-block; padding: 14px 18px; border-radius: 12px;
+  background: rgba(255,255,255,0.08); color: #fff; font-weight: 600;
+}
+header.hero .thesis strong { color: #ffcc69; }
+
+section { padding: 56px 0 8px; display: grid; gap: 20px; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+
+.steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.step { display: grid; gap: 8px; align-content: start; }
+.step .n { font-weight: 800; color: var(--blue); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.step p { color: var(--muted); }
+
+.classes { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.cls { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 6px; font-weight: 800; font-size: 0.9rem; }
+.cls.a { background: #0a8158; color: #fff; } .cls.b { background: #7fbf8e; color: #191e3c; }
+.cls.c { background: #ffcc69; color: #191e3c; } .cls.d { background: #e8793a; color: #191e3c; }
+.cls.e { background: #b3261e; color: #fff; }
+
+.layers { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.layer { border-radius: 20px; padding: 24px; display: grid; gap: 12px; align-content: start; border: 1px solid var(--line); background: var(--paper); border-top: 6px solid var(--c); }
+.layer.open { --c: var(--open); } .layer.public { --c: var(--public); } .layer.ours { --c: var(--ours); background: var(--ours-bg); }
+.layer .tag { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); }
+.layer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; }
+.layer .verdict { font-weight: 600; border-top: 1px solid var(--line); padding-top: 12px; }
+.layer.ours .verdict { border-color: color-mix(in srgb, var(--ours) 30%, transparent); }
+
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+td.num, th.num { text-align: right; white-space: nowrap; }
+td.num strong { font-size: 1.15rem; }
+.scroll { overflow-x: auto; }
+.bar { display: block; height: 8px; border-radius: 99px; background: var(--line); margin-top: 6px; overflow: hidden; }
+.bar > span { display: block; height: 100%; border-radius: 99px; background: var(--wood); }
+.bar.old > span { background: var(--muted); }
+
+.callout { border-left: 4px solid var(--yellow); background: var(--paper); border-radius: 0 16px 16px 0; padding: 20px 24px; display: grid; gap: 8px; }
+.pill { justify-self: start; display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; background: var(--tint); color: var(--ours); }
+.pill.live { background: var(--open-bg); color: var(--open); }
+.pill.soon { background: var(--public-bg); color: var(--public); }
+.status { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.status .card { display: grid; gap: 8px; align-content: start; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
+
+.facts { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.fact { display: grid; gap: 4px; align-content: start; }
+.fact .big { font-weight: 800; font-size: clamp(2rem, 1.6rem + 1.6vw, 2.8rem); line-height: 1.05; color: var(--ours); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.fact .big sup { font-size: 0.45em; vertical-align: super; }
+.risks { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.risks .card { display: grid; gap: 8px; align-content: start; }
+.risks .uses { font-size: 0.9rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
+.ladder { margin: 0; padding-left: 1.4rem; display: grid; gap: 8px; }
+.scale { display: grid; gap: 8px; }
+.scale div { display: flex; gap: 12px; align-items: center; }
+.layer.commercial { --c: var(--slate); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .layer.commercial { --c: #9fb2d0; } }
+:root[data-theme="dark"] .layer.commercial { --c: #9fb2d0; }
+.disclaimer { border: 1px solid var(--line); background: var(--paper); border-radius: 16px; padding: 20px 24px; display: grid; gap: 8px; }
+.doc { max-width: 52rem; display: grid; gap: 14px; }
+.doc h2 { margin-top: 28px; } .doc h3 { margin-top: 16px; } .doc h4 { margin-top: 10px; font-weight: 800; }
+.doc table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.doc th, .doc td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.doc .tbl { overflow-x: auto; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; }
+.doc code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 0.86em; background: var(--tint); padding: 1px 5px; border-radius: 4px; }
+.doc pre { background: #191e3c; color: #e9ebf3; padding: 16px; border-radius: 12px; overflow-x: auto; }
+.doc pre code { background: none; padding: 0; color: inherit; }
+.doc ul, .doc ol { margin: 0; padding-left: 1.3rem; display: grid; gap: 4px; }
+.doc blockquote { margin: 0; border-left: 4px solid var(--yellow); padding: 8px 16px; background: var(--paper); border-radius: 0 12px 12px 0; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">FunderMaps · kennisbank · voor ontwikkelaars</span>
+    <h1>FunderMaps API v4</h1>
+    <p>De actuele documentatie van de FunderMaps API: funderingsgegevens per pand rechtstreeks in uw eigen systemen, met het BAG-pand als sleutel. Een API-sleutel vraagt u aan via <a href="mailto:info@fundermaps.com?subject=API-sleutel" style="color:#ffcc69">info@fundermaps.com</a>. De documentatie is in het Engels, de taal van de meeste koppelingen.</p>
+  </div>
+</header>
+<main class="wrap">
+  <section><div class="doc">
+
+<p>The FunderMaps webservice serves building-level foundation data to integrators: valuation chains, banks, insurers and municipalities. This document is the complete contract of the current version, <strong>v4</strong>. Anything not listed here is not part of the contract; if a response differs from what is documented, treat it as a defect and report it to us.</p>
+<pre><code>Production   https://ws.fundermaps.com/v4/...
+Staging      https://ws-staging.fundermaps.com/v4/...
+</code></pre>
+<p>Staging serves the same production data with the same API key and is meant for trying an integration before pointing production traffic at it. Calls on either hostname are billed.</p>
+<p>The previous version, <code>/api/v3</code>, was switched off on 2026-08-29 and now returns <code>404</code>. If you are migrating an old v3 client, see <a href="#appendix-coming-from-v3">Appendix: coming from v3</a>.</p>
+<h2 id="1-endpoints">1. Endpoints</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Returns</th>
+<th>Billed as</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>GET /v4/product/analysis/{id}</code></td>
+<td>Full model-based assessment of one building — <a href="#3-analysis-response-reference">field reference</a></td>
+<td><code>analysis3</code></td>
+</tr>
+<tr>
+<td><code>GET /v4/product/risk/{id}</code></td>
+<td>Subset of <code>analysis</code> for valuation chains and dashboards</td>
+<td><code>risk3</code></td>
+</tr>
+<tr>
+<td><code>GET /v4/product/light/{id}</code></td>
+<td>One derived <code>overallRisk</code> + reliability</td>
+<td><code>light3</code></td>
+</tr>
+<tr>
+<td><code>GET /v4/product/facade_scan/{id}</code></td>
+<td>Outcome of the most recent facade scan (QuickScan), if under 3 years old</td>
+<td><code>facade_scan4</code></td>
+</tr>
+<tr>
+<td><code>GET /v4/product/foundation-research/{id}</code></td>
+<td>Outcome of the most recent foundation research, if under 5 years old</td>
+<td><code>foundation_research4</code></td>
+</tr>
+<tr>
+<td><code>GET /v4/product/statistics/{id}</code></td>
+<td>Aggregates for the neighborhood of a building or a CBS neighborhood — <a href="#4-statistics-response">shape</a></td>
+<td><code>statistics3</code></td>
+</tr>
+<tr>
+<td><code>GET /v4/usage</code></td>
+<td>Your organization&#39;s billed-event counts (last 30 days per day, this year per month, all-time total)</td>
+<td>free</td>
+</tr>
+<tr>
+<td><code>GET /v4/health</code></td>
+<td>Availability probe, unauthenticated — <a href="#7-health-check">details</a></td>
+<td>free</td>
+</tr>
+<tr>
+<td><code>POST /v4/mcp</code></td>
+<td>The same products as an MCP server for AI agents — <a href="#mcp-endpoint-for-ai-agents">details</a></td>
+<td>per tool</td>
+</tr>
+</tbody></table></div>
+<p>Billing counts <strong>billable events</strong>: one event per (product, building) per 24 hours, regardless of how often you request it. Per-product usage limits may apply to your key; see <a href="#5-error-responses">rate limits</a>.</p>
+<h3 id="accepted-id-formats">Accepted <code>{id}</code> formats</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Accepted formats</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/v4/product/analysis/{id}</code></td>
+<td>BAG pand (<code>NL.IMBAG.PAND.0599100000369041</code> or 16-digit <code>0599100000369041</code>); BAG nummeraanduiding (<code>NL.IMBAG.NUMMERAANDUIDING.0599200000123456</code> or 16-/15-digit bare form)</td>
+</tr>
+<tr>
+<td><code>/v4/product/risk/{id}</code></td>
+<td>Same as <code>analysis</code></td>
+</tr>
+<tr>
+<td><code>/v4/product/light/{id}</code></td>
+<td>Same as <code>analysis</code></td>
+</tr>
+<tr>
+<td><code>/v4/product/facade_scan/{id}</code></td>
+<td>Same as <code>analysis</code></td>
+</tr>
+<tr>
+<td><code>/v4/product/foundation-research/{id}</code></td>
+<td>Same as <code>analysis</code></td>
+</tr>
+<tr>
+<td><code>/v4/product/statistics/{id}</code></td>
+<td>Any of the above, plus CBS neighborhood (<code>BU03630000</code>)</td>
+</tr>
+</tbody></table></div>
+<p>Nummeraanduiding IDs are resolved to their pand before lookup. BAG address-to-building is many-to-one, so two nummeraanduidingen on the same pand return identical analysis and statistics — that&#39;s expected, the model is building-level.</p>
+<p>Unrecognized or unresolvable IDs return a <code>404</code> with a structured error body — see <a href="#5-error-responses">Error responses</a>.</p>
+<h3 id="v4productrisk-and-v4productlight"><code>/v4/product/risk</code> and <code>/v4/product/light</code></h3>
+<p><strong><code>/v4/product/risk/{id}</code></strong> — a subset of <code>analysis</code> for valuation chains and dashboards. Returns: <code>buildingId</code>, <code>foundationType</code>, <code>foundationTypeReliability</code>, <code>restorationCosts</code>, <code>inquiryType</code>, <code>drystandRisk</code>, <code>drystandReliability</code>, <code>bioInfectionRisk</code>, <code>bioInfectionReliability</code>, <code>dewateringDepthRisk</code>, <code>dewateringDepthReliability</code>, <code>unclassifiedRisk</code>, <code>recoveryType</code>.</p>
+<p>Field names and semantics are identical to the corresponding fields in <code>analysis</code> — note that the reliability fields are <code>drystandReliability</code>, <code>bioInfectionReliability</code> and <code>dewateringDepthReliability</code> (not <code>…RiskReliability</code>).</p>
+<p><strong><code>/v4/product/light/{id}</code></strong> — minimal response for fast integrations. Collapses the three component risks plus <code>unclassifiedRisk</code> (the construction-year-derived fallback classification) into a single derived <code>overallRisk</code> + <code>overallRiskReliability</code>. The fallback enters at <code>indicative</code> reliability, so it only determines <code>overallRisk</code> when no more reliable component risk is present — buildings covered only by the fallback report that class instead of <code>null</code>. If a <code>recoveryType</code> is set on the building (i.e. the foundation has been restored), <code>overallRisk</code> is forced to <code>a</code> with <code>established</code> reliability. Returns: <code>overallRisk</code>, <code>overallRiskReliability</code> — nothing else (<code>restorationCosts</code> and <code>drystandRisk</code> were removed from the response).</p>
+<h3 id="research-outcome-endpoints">Research outcome endpoints</h3>
+<p>Where <code>analysis</code> returns the <strong>model-based</strong> risk assessment, these two endpoints return the summarized outcome of <strong>actually performed research</strong> on the building, where available. They complement <code>analysis</code>; they do not replace it.</p>
+<p><strong><code>/v4/product/facade_scan/{id}</code></strong> — the most recent facade scan (QuickScan) for the building, provided its report is <strong>less than 3 years old</strong>. Returns: <code>buildingId</code>, <code>inquiryId</code>, <code>inquiryType</code> (<code>facade_scan</code>), <code>documentDate</code> (<code>YYYY-MM-DD</code>), <code>validUntil</code> (<code>documentDate</code> + 3 years), <code>facadeScanRisk</code> (<code>a</code>–<code>e</code>), <code>settlementSpeed</code>, <code>skewedParallelFacade</code>, <code>skewedPerpendicularFacade</code>, <code>facadeCrack</code>, <code>contractor</code>, <code>resource</code> (optional, see below).</p>
+<p><strong><code>/v4/product/foundation-research/{id}</code></strong> — the most recent foundation research for the building, provided its report is <strong>less than 5 years old</strong>. Returns: <code>buildingId</code>, <code>inquiryId</code>, <code>inquiryType</code> (<code>foundation_research</code>), <code>documentDate</code>, <code>validUntil</code> (<code>documentDate</code> + 5 years), <code>settlementSpeed</code>, <code>skewedParallelFacade</code>, <code>skewedPerpendicularFacade</code>, <code>facadeCrack</code>, <code>overallQuality</code>, <code>recoveryAdvised</code> (boolean), <code>enforcementTerm</code>, <code>contractor</code>, <code>resource</code> (optional, see below).</p>
+<p>Notes for both:</p>
+<ul>
+<li><p>All fields are nullable except <code>buildingId</code>. A <code>null</code> means the underlying report did not record that observation.</p>
+</li>
+<li><p><strong><code>resource</code> — the source document.</strong> A link to the original report (normally a PDF) the outcome was taken from:</p>
+<pre><code class="language-json">&quot;resource&quot;: {
+  &quot;url&quot;: &quot;https://ams3.digitaloceanspaces.com/…/inquiry-report/8286ef68-….pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;…&quot;,
+  &quot;expiresAt&quot;: &quot;2026-09-04T13:00:00.000Z&quot;,
+  &quot;mediaType&quot;: &quot;application/pdf&quot;
+}
+</code></pre>
+<ul>
+<li><code>url</code> is a <strong>signed, short-lived link</strong>: it works for <strong>1 hour</strong> from the moment of the response (<code>expiresAt</code>, ISO-8601 UTC), for anyone who holds it, with no further authentication. Fetch the document promptly; do not persist the URL — re-request the product to get a fresh one. Retrieving the document is not a separate billable call.</li>
+<li><strong>Freshness follows the data window.</strong> The link is included whenever the record itself is served: within 3 years for <code>facade_scan</code>, within 5 years for <code>foundation-research</code>. There is no separate age limit on the document.</li>
+<li><strong>Absent, never <code>null</code>.</strong> When the record has no source document on file, the <code>resource</code> key is <strong>omitted from the response entirely</strong>. Check for presence (<code>&quot;resource&quot; in body</code>), not for <code>null</code>.</li>
+<li><code>mediaType</code> is almost always <code>application/pdf</code>; a handful of legacy dossiers hold an image instead.</li>
+</ul>
+</li>
+<li><p>Building-level: a nummeraanduiding resolves to its pand first, so two addresses on the same building return the same outcome — the research is attached to the building, not to one address.</p>
+</li>
+<li><p>&quot;Latest available&quot; = the newest report by <code>documentDate</code> of that research type within the freshness window. A building whose only research is older than the window returns <code>404 no_data_available</code>, same as a building never researched.</p>
+</li>
+<li><p>The skew/settlement classifications use the same scale (<code>nil</code> → <code>very_big</code>) and derivation as the public facade-scan map layer; <code>facadeCrack</code> is the worst of the four facade crack observations.</p>
+</li>
+</ul>
+<p>Same authentication, ID formats, and error responses as <code>analysis</code>.</p>
+<h3 id="mcp-endpoint-for-ai-agents">MCP endpoint for AI agents</h3>
+<p><code>POST /v4/mcp</code> exposes the same products as an <a href="https://modelcontextprotocol.io">MCP</a> server (Streamable HTTP, stateless, JSON responses), so an AI agent — Claude, ChatGPT, an in-house LLM tool — can call FunderMaps directly with your existing API key. Nothing else changes: the same <code>Authorization: Bearer fmsk.…</code> header, the same billing (a tool call is recorded as the corresponding product, with the same 24-hour deduplication), the same rate limits and the same error codes.</p>
+<p>Tools:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Equivalent REST call</th>
+<th>Billed as</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>find_building</code> (<code>postalCode</code>, <code>houseNumber</code>)</td>
+<td>— (address → BAG id lookup)</td>
+<td>free</td>
+</tr>
+<tr>
+<td><code>get_analysis</code> (<code>id</code>)</td>
+<td><code>GET /v4/product/analysis/{id}</code></td>
+<td><code>analysis3</code></td>
+</tr>
+<tr>
+<td><code>get_risk</code> (<code>id</code>)</td>
+<td><code>GET /v4/product/risk/{id}</code></td>
+<td><code>risk3</code></td>
+</tr>
+<tr>
+<td><code>get_light</code> (<code>id</code>)</td>
+<td><code>GET /v4/product/light/{id}</code></td>
+<td><code>light3</code></td>
+</tr>
+<tr>
+<td><code>get_facade_scan</code> (<code>id</code>)</td>
+<td><code>GET /v4/product/facade_scan/{id}</code></td>
+<td><code>facade_scan4</code></td>
+</tr>
+<tr>
+<td><code>get_foundation_research</code> (<code>id</code>)</td>
+<td><code>GET /v4/product/foundation-research/{id}</code></td>
+<td><code>foundation_research4</code></td>
+</tr>
+<tr>
+<td><code>get_statistics</code> (<code>id</code>)</td>
+<td><code>GET /v4/product/statistics/{id}</code></td>
+<td><code>statistics3</code></td>
+</tr>
+<tr>
+<td><code>get_usage</code></td>
+<td><code>GET /v4/usage</code></td>
+<td>free</td>
+</tr>
+</tbody></table></div>
+<p>Connecting (Claude Desktop / Claude Code / any Streamable-HTTP client):</p>
+<pre><code class="language-json">{
+  &quot;mcpServers&quot;: {
+    &quot;fundermaps&quot;: {
+      &quot;type&quot;: &quot;http&quot;,
+      &quot;url&quot;: &quot;https://ws.fundermaps.com/v4/mcp&quot;,
+      &quot;headers&quot;: { &quot;Authorization&quot;: &quot;Bearer fmsk.your-key&quot; }
+    }
+  }
+}
+</code></pre>
+<p>Tool results carry the REST JSON body both as text and as <code>structuredContent</code>; a non-200 REST response becomes a tool error whose text starts with the REST <code>code</code> (<code>no_data_available</code>, <code>rate_limit_exceeded</code>, …) so the agent can pick the same follow-up a REST consumer would. The endpoint is POST-only: <code>GET</code>/<code>DELETE</code> return <code>405</code> because there are no sessions to resume or terminate.</p>
+<h2 id="2-authentication">2. Authentication</h2>
+<p>Every product call carries your API key as a standard Bearer token:</p>
+<pre><code>Authorization: Bearer fmsk.your_api_key
+</code></pre>
+<p>No other delivery method (query parameter, custom header) is accepted. Keys are issued by FunderMaps; contact us to add or rotate a key.</p>
+<h2 id="3-analysis-response-reference">3. Analysis response reference</h2>
+<p>The complete field set of <code>GET /v4/product/analysis/{id}</code>. Nothing else is returned; any field not listed here is not part of the contract.</p>
+<p>&quot;Null share&quot; is the proportion of the 11.2M buildings in the current model snapshot for which the field is <code>null</code>. It is guidance for sizing your handling of missing data, not a contract — shares move as the model is rebuilt.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null share</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>buildingId</code></td>
+<td>string</td>
+<td>never</td>
+<td>BAG pand id, e.g. <code>NL.IMBAG.PAND.0599100000369041</code></td>
+</tr>
+<tr>
+<td><code>neighborhoodId</code></td>
+<td>string</td>
+<td>&lt;0.1%</td>
+<td>Internal FunderMaps neighborhood id, not a CBS <code>BU*</code> code</td>
+</tr>
+<tr>
+<td><code>constructionYear</code></td>
+<td>integer</td>
+<td>&lt;0.1%</td>
+<td>Year, not a date</td>
+</tr>
+<tr>
+<td><code>constructionYearReliability</code></td>
+<td><code>reliability</code></td>
+<td>never</td>
+<td></td>
+</tr>
+<tr>
+<td><code>foundationType</code></td>
+<td><code>foundationType</code></td>
+<td>never</td>
+<td></td>
+</tr>
+<tr>
+<td><code>foundationTypeReliability</code></td>
+<td><code>reliability</code></td>
+<td>never</td>
+<td></td>
+</tr>
+<tr>
+<td><code>restorationCosts</code></td>
+<td>number</td>
+<td>43%</td>
+<td>Euro estimate for the whole building; divide by <code>addressCount</code> for a per-object figure</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>number</td>
+<td>never</td>
+<td>Metres</td>
+</tr>
+<tr>
+<td><code>velocity</code></td>
+<td>number</td>
+<td>90%</td>
+<td>Subsidence rate, mm/year; negative = sinking</td>
+</tr>
+<tr>
+<td><code>groundWaterLevel</code></td>
+<td>number</td>
+<td>10%</td>
+<td></td>
+</tr>
+<tr>
+<td><code>groundLevel</code></td>
+<td>number</td>
+<td>9%</td>
+<td></td>
+</tr>
+<tr>
+<td><code>soil</code></td>
+<td>string</td>
+<td>10%</td>
+<td>Free-text soil description, not an enum</td>
+</tr>
+<tr>
+<td><code>surfaceArea</code></td>
+<td>number</td>
+<td>never</td>
+<td>m²</td>
+</tr>
+<tr>
+<td><code>damageCause</code></td>
+<td><code>damageCause</code></td>
+<td>&gt;99%</td>
+<td>Only set where a report recorded a cause</td>
+</tr>
+<tr>
+<td><code>inquiryType</code></td>
+<td><code>inquiryType</code></td>
+<td>97%</td>
+<td>Type of the report backing this building, where one exists</td>
+</tr>
+<tr>
+<td><code>drystand</code></td>
+<td>number</td>
+<td>96%</td>
+<td></td>
+</tr>
+<tr>
+<td><code>drystandRisk</code></td>
+<td><code>foundationRisk</code></td>
+<td>53%</td>
+<td></td>
+</tr>
+<tr>
+<td><code>drystandReliability</code></td>
+<td><code>reliability</code></td>
+<td>never</td>
+<td></td>
+</tr>
+<tr>
+<td><code>bioInfectionRisk</code></td>
+<td><code>foundationRisk</code></td>
+<td>97%</td>
+<td></td>
+</tr>
+<tr>
+<td><code>bioInfectionReliability</code></td>
+<td><code>reliability</code></td>
+<td>never</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dewateringDepth</code></td>
+<td>number</td>
+<td>47%</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dewateringDepthRisk</code></td>
+<td><code>foundationRisk</code></td>
+<td>4%</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dewateringDepthReliability</code></td>
+<td><code>reliability</code></td>
+<td>never</td>
+<td></td>
+</tr>
+<tr>
+<td><code>unclassifiedRisk</code></td>
+<td><code>foundationRisk</code></td>
+<td>99%</td>
+<td>See §6</td>
+</tr>
+<tr>
+<td><code>recoveryType</code></td>
+<td><code>recoveryType</code></td>
+<td>&gt;99%</td>
+<td>Set when the foundation has been restored</td>
+</tr>
+<tr>
+<td><code>addressCount</code></td>
+<td>integer</td>
+<td>never</td>
+<td>Addresses (nummeraanduidingen) on this pand; divide <code>restorationCosts</code> by it for a per-object figure</td>
+</tr>
+</tbody></table></div>
+<p>Note the asymmetry in the reliability field names: <code>constructionYearReliability</code> and <code>foundationTypeReliability</code> are named after their value field, while <code>drystandReliability</code>, <code>bioInfectionReliability</code> and <code>dewateringDepthReliability</code> are <strong>not</strong> <code>…RiskReliability</code>. This matches v3 exactly; it is a quirk we preserved deliberately rather than a v4 change.</p>
+<p>The <code>*Reliability</code> fields have never been <code>null</code> in any model snapshot to date, but treat them as nullable anyway — v3&#39;s non-nullable integer encoding could not express &quot;unknown&quot;, and v4&#39;s can.</p>
+<h2 id="4-statistics-response">4. Statistics response</h2>
+<p><code>GET /v4/product/statistics/{id}</code> returns aggregates for the neighborhood the building lies in (or for the CBS neighborhood given directly).</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Shape</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>foundationTypeDistribution</code></td>
+<td><code>[{ &quot;foundationType&quot;: &quot;concrete&quot;, &quot;percentage&quot;: 81.01 }, …]</code></td>
+</tr>
+<tr>
+<td><code>constructionYearDistribution</code></td>
+<td><code>[{ &quot;yearFrom&quot;: 1800, &quot;count&quot;: 2 }, …]</code> — one item per decade, <code>yearFrom</code> is an integer year</td>
+</tr>
+<tr>
+<td><code>foundationRiskDistribution</code></td>
+<td><code>[{ &quot;foundationRisk&quot;: &quot;a&quot;, &quot;percentage&quot;: 81.01 }, …]</code> — categories with 0 % are omitted</td>
+</tr>
+<tr>
+<td><code>totalIncidentCount</code>, <code>municipalityIncidentCount</code>, <code>totalReportCount</code>, <code>municipalityReportCount</code></td>
+<td><code>[{ &quot;year&quot;: 2024, &quot;count&quot;: 7 }, …]</code></td>
+</tr>
+<tr>
+<td><code>dataCollectedPercentage</code></td>
+<td>number</td>
+</tr>
+<tr>
+<td><code>totalBuildingRestoredCount</code></td>
+<td>integer</td>
+</tr>
+</tbody></table></div>
+<p>Enum values follow the <a href="#enum-reference">enum reference</a>.</p>
+<h2 id="5-error-responses">5. Error responses</h2>
+<p>Every non-200 response has a consistent JSON body:</p>
+<pre><code class="language-json">{ &quot;code&quot;: &quot;building_not_found&quot;, &quot;message&quot;: &quot;No data available for building &#39;NL.IMBAG.PAND.0599100000369041&#39;.&quot; }
+</code></pre>
+<p><code>code</code> is a stable, machine-readable identifier — switch on it in your integration. <code>message</code> is human-readable and may be reworded without notice; don&#39;t parse it.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>HTTP status</th>
+<th><code>code</code></th>
+<th>Meaning</th>
+<th>Suggested follow-up</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>401</td>
+<td><code>missing_api_key</code></td>
+<td>No <code>Authorization: Bearer</code> header was sent</td>
+<td>Send the key as <code>Authorization: Bearer fmsk.…</code></td>
+</tr>
+<tr>
+<td>401</td>
+<td><code>invalid_api_key</code></td>
+<td>The key is unknown, disabled, or expired</td>
+<td>Check the key; contact us if it should be active</td>
+</tr>
+<tr>
+<td>404</td>
+<td><code>identifier_invalid</code></td>
+<td>The <code>{id}</code> is not a recognized identifier format</td>
+<td>Resubmit with a valid BAG pand/nummeraanduiding (or CBS neighborhood for statistics)</td>
+</tr>
+<tr>
+<td>404</td>
+<td><code>address_not_found</code></td>
+<td>Valid address format, but the address is not known in BAG</td>
+<td>Resubmit with a corrected address</td>
+</tr>
+<tr>
+<td>404</td>
+<td><code>building_not_found</code></td>
+<td>Valid building id format, but no such building exists in BAG</td>
+<td>Verify the building id; no foundation data can exist for it</td>
+</tr>
+<tr>
+<td>404</td>
+<td><code>not_a_building</code></td>
+<td>The identifier refers to a mooring or mobile-home site (ligplaats/standplaats), not a building</td>
+<td>None — foundation risk does not apply to these objects; a QuickScan is not useful</td>
+</tr>
+<tr>
+<td>404</td>
+<td><code>no_data_available</code></td>
+<td>The building is known, but no foundation data is available for it</td>
+<td>Request a QuickScan to have the building assessed</td>
+</tr>
+<tr>
+<td>404</td>
+<td><code>neighborhood_not_found</code></td>
+<td>Statistics only: the CBS neighborhood code is not known</td>
+<td>Verify the <code>BU*</code> code</td>
+</tr>
+<tr>
+<td>404</td>
+<td><code>route_not_found</code></td>
+<td>Unknown endpoint path</td>
+<td>Check the request path</td>
+</tr>
+<tr>
+<td>429</td>
+<td><code>rate_limit_exceeded</code></td>
+<td>Your per-product usage limit was reached; see the <code>Retry-After</code> and <code>X-RateLimit-*</code> headers</td>
+<td>Retry after the indicated time</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>internal_server_error</code></td>
+<td>Unexpected server error</td>
+<td>Retry later; contact support if it persists</td>
+</tr>
+<tr>
+<td>503</td>
+<td><code>service_unavailable</code></td>
+<td>Health check only (§7): the webservice is up but cannot currently serve product requests</td>
+<td>Treat the webservice as unavailable; retry later</td>
+</tr>
+</tbody></table></div>
+<p>The four 404 &quot;no result&quot; codes are designed so automated integrations (e.g. the NWWI valuation chain) can choose the correct follow-up action from <code>code</code> alone: a corrected resubmission (<code>identifier_invalid</code>, <code>address_not_found</code>), a QuickScan request (<code>no_data_available</code>), or no action (<code>building_not_found</code>, <code>not_a_building</code>).</p>
+<p>New codes may be added over time; treat any unlisted <code>code</code> on an error status generically based on the HTTP status.</p>
+<h3 id="rate-limits">Rate limits</h3>
+<p>Usage limits are set per API key and product as a number of billable events per calendar day or month (UTC). When a limit applies, every response to that product carries <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code> and <code>X-RateLimit-Reset</code> (seconds until the window resets); an exhausted limit returns <code>429 rate_limit_exceeded</code> with <code>Retry-After</code>. Repeated requests for the same building within 24 hours do not consume additional events.</p>
+<h2 id="6-every-known-building-carries-a-risk-indication">6. Every known building carries a risk indication</h2>
+<p>Since July 2026, the model guarantees that every building known to the model carries <strong>at least one</strong> risk indication. When none of the component risks (<code>drystandRisk</code>, <code>bioInfectionRisk</code>, <code>dewateringDepthRisk</code>) could be computed and no report-derived class exists — typically buildings outside groundwater-model coverage or with an undetermined foundation type — <code>unclassifiedRisk</code> contains a construction-year-based estimate:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Construction year</th>
+<th><code>unclassifiedRisk</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>before 1970</td>
+<td><code>d</code></td>
+</tr>
+<tr>
+<td>1970 or later</td>
+<td><code>b</code></td>
+</tr>
+</tbody></table></div>
+<p>Notes for interpreting responses:</p>
+<ul>
+<li>This fallback is <strong>indicative</strong>: it is a heuristic, not a computed or inspected result. It applies to roughly 0.4% of buildings nationally.</li>
+<li>The component risk fields themselves stay <code>null</code> in this case. More generally, a <code>null</code> component risk is <strong>structural, not missing data</strong>: each component only applies to certain foundation types (e.g. <code>drystandRisk</code> to wood foundations, <code>dewateringDepthRisk</code> to no-pile foundations). Do not infer data quality from individual <code>null</code> components.</li>
+<li>Report-derived <code>unclassifiedRisk</code> values always take precedence over the fallback.</li>
+<li>Consequently, the <code>no_data_available</code> error (§5) is rare in practice and mainly occurs for buildings not yet present in the current model snapshot, such as very recent BAG additions.</li>
+<li><strong>Do not assert on this.</strong> The fallback is derived from the construction year, so a building whose construction year is itself unknown gets no fallback and returns <code>null</code> for all four risk fields. In the current snapshot that is exactly 1 building out of 11.2M — but it is not zero, so treat &quot;all risks null&quot; as a case your code handles rather than an impossible state.</li>
+</ul>
+<h2 id="7-health-check">7. Health check</h2>
+<p><code>GET /v4/health</code> reports whether the webservice can currently serve product requests. It is <strong>unauthenticated</strong>, never billed, and intended for availability monitors.</p>
+<pre><code class="language-bash">curl -i https://ws.fundermaps.com/v4/health
+</code></pre>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>HTTP status</th>
+<th>Body</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>200</td>
+<td><code>{ &quot;status&quot;: &quot;ok&quot; }</code></td>
+<td>The webservice is up and can reach its data</td>
+</tr>
+<tr>
+<td>503</td>
+<td><code>{ &quot;code&quot;: &quot;service_unavailable&quot;, &quot;message&quot;: &quot;…&quot; }</code></td>
+<td>The webservice is up but cannot currently serve requests — retry later</td>
+</tr>
+<tr>
+<td>anything else, or no response</td>
+<td>—</td>
+<td>The webservice itself is unreachable</td>
+</tr>
+</tbody></table></div>
+<p>Treat the <strong>HTTP status</strong> as the contract: <code>200</code> means available, anything else means unavailable. The body is informational and deliberately carries no technical detail (no versions, hostnames, or timings).</p>
+<ul>
+<li>Responses carry <code>Cache-Control: no-store</code>; every call reflects the current state.</li>
+<li>The state is re-evaluated at most once every 5 seconds server-side. Once a minute is a sensible polling interval; polling faster does not give fresher answers.</li>
+<li>A <code>200</code> says the service is available, not that a specific building has data — the <code>404</code> codes in §5 still apply to product calls.</li>
+<li>Staging exposes the same endpoint at <code>https://ws-staging.fundermaps.com/v4/health</code>.</li>
+</ul>
+<h2 id="enum-reference">Enum reference</h2>
+<p>The values below are the exact, complete label sets of the database enum types the API serves from — every value a v4 response can contain is listed, and a CI check keeps this table in sync with the implementation (<code>src/enums.ts</code>). All enum fields are nullable: expect <code>null</code> when the underlying data point is absent.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>foundationType</td>
+<td><code>wood</code>, <code>concrete</code>, <code>no_pile</code>, <code>wood_charger</code>, <code>weighted_pile</code>, <code>combined</code>, <code>steel_pile</code>, <code>other</code>, <code>no_pile_masonry</code>, <code>no_pile_strips</code>, <code>no_pile_concrete_floor</code>, <code>no_pile_slit</code>, <code>wood_amsterdam</code>, <code>wood_rotterdam</code>, <code>no_pile_bearing_floor</code>, <code>wood_rotterdam_amsterdam</code>, <code>wood_rotterdam_arch</code>, <code>wood_amsterdam_arch</code></td>
+</tr>
+<tr>
+<td>reliability</td>
+<td><code>indicative</code>, <code>established</code>, <code>cluster</code>, <code>supercluster</code></td>
+</tr>
+<tr>
+<td>foundationRisk</td>
+<td><code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code></td>
+</tr>
+<tr>
+<td>damageCause</td>
+<td><code>drainage</code>, <code>construction_flaw</code>, <code>drystand</code>, <code>overcharge</code>, <code>overcharge_negative_cling</code>, <code>negative_cling</code>, <code>bio_infection</code>, <code>fungus_infection</code>, <code>bio_fungus_infection</code>, <code>foundation_flaw</code>, <code>construction_heave</code>, <code>subsidence</code>, <code>vegetation</code>, <code>gas</code>, <code>vibrations</code>, <code>partial_foundation_recovery</code>, <code>japanese_knotweed</code>, <code>groundwater_level_reduction</code></td>
+</tr>
+<tr>
+<td>inquiryType</td>
+<td><code>monitoring</code>, <code>note</code>, <code>quickscan</code>, <code>unknown</code>, <code>demolition_research</code>, <code>second_opinion</code>, <code>archive_research</code>, <code>architectural_research</code>, <code>foundation_advice</code>, <code>inspectionpit</code>, <code>foundation_research</code>, <code>additional_research</code>, <code>ground_water_level_research</code>, <code>soil_investigation</code>, <code>facade_scan</code></td>
+</tr>
+<tr>
+<td>recoveryType</td>
+<td><code>table</code>, <code>beam_on_pile</code>, <code>pile_lowering</code>, <code>pile_in_wall</code>, <code>injection</code>, <code>unknown</code></td>
+</tr>
+<tr>
+<td>facadeScanRisk</td>
+<td><code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code></td>
+</tr>
+<tr>
+<td>settlementSpeed</td>
+<td><code>nil</code>, <code>small</code>, <code>mediocre</code>, <code>big</code>, <code>very_big</code></td>
+</tr>
+<tr>
+<td>skewedParallelFacade</td>
+<td><code>nil</code>, <code>small</code>, <code>mediocre</code>, <code>big</code>, <code>very_big</code></td>
+</tr>
+<tr>
+<td>skewedPerpendicularFacade</td>
+<td><code>nil</code>, <code>small</code>, <code>mediocre</code>, <code>big</code>, <code>very_big</code></td>
+</tr>
+<tr>
+<td>facadeCrack</td>
+<td><code>none</code>, <code>nil</code>, <code>small</code>, <code>mediocre</code>, <code>big</code></td>
+</tr>
+<tr>
+<td>overallQuality</td>
+<td><code>bad</code>, <code>mediocre</code>, <code>tolerable</code>, <code>good</code>, <code>mediocre_good</code>, <code>mediocre_bad</code></td>
+</tr>
+<tr>
+<td>enforcementTerm</td>
+<td><code>term05</code>, <code>term510</code>, <code>term1020</code>, <code>term5</code>, <code>term10</code>, <code>term15</code>, <code>term20</code>, <code>term25</code>, <code>term30</code>, <code>term40</code></td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p><strong>Correction notice (June 2026).</strong> Earlier revisions of this table were incomplete and listed four <code>inquiryType</code> values that the API never returns. If you implemented against an earlier revision, update your parsers:</p>
+<ul>
+<li><code>monitor</code> → the API returns <code>monitoring</code></li>
+<li><code>inspection</code> → the API returns <code>inspectionpit</code></li>
+<li><code>demolition</code> → the API returns <code>demolition_research</code></li>
+<li><code>quick_scan</code> → the API returns <code>quickscan</code></li>
+</ul>
+<p>Additionally, 8 <code>foundationType</code> values, 5 <code>damageCause</code> values, and 4 further <code>inquiryType</code> values (<code>archive_research</code>, <code>ground_water_level_research</code>, <code>soil_investigation</code>, <code>facade_scan</code>) were missing and have been added above. Treat any enum value outside this table as a defect and report it to us.</p>
+</blockquote>
+<h2 id="appendix-coming-from-v3">Appendix: coming from v3</h2>
+<p><code>/api/v3</code> was retired on 2026-08-29. The data and its meaning did not change between v3 and v4 — the same building returns the same assessment — but the wire format did. This appendix exists so historical v3 output can be reconciled with v4; nothing in it is needed for a new integration.</p>
+<ul>
+<li><strong>Paths:</strong> <code>/api/v3/product/{analysis|statistics}/{id}</code> → <code>/v4/product/…/{id}</code>. <code>risk</code>, <code>light</code>, <code>facade_scan</code>, <code>foundation-research</code>, <code>usage</code>, <code>health</code> and <code>mcp</code> have no v3 equivalent.</li>
+<li><strong>Authentication:</strong> only <code>Authorization: Bearer fmsk.…</code>; <code>X-API-Key</code>, <code>Authorization: authkey</code> and <code>?authkey=</code> are gone.</li>
+<li><strong>Enums are strings, not integers</strong> — mapping tables below. Do not derive the mapping from the position of a value in the <a href="#enum-reference">enum reference</a>; that table follows the database ordering, which is not the v3 ordering.</li>
+<li><strong>Analysis:</strong> <code>enforcementTerm</code> and <code>overallQuality</code> were removed (source column had drifted from the documented semantics); <code>addressCount</code> was added.</li>
+<li><strong>Statistics:</strong> <code>foundationTypeDistribution</code> is the array itself (was <code>{ foundationTypes: [...] }</code>); <code>constructionYearDistribution</code> items are <code>{ yearFrom, count }</code> (was nested <code>decade.yearFrom/yearTo</code> dates + <code>totalCount</code>); <code>foundationRiskDistribution</code> is an array of <code>{ foundationRisk, percentage }</code> (was <code>percentageA</code>–<code>percentageE</code>); the four year-count arrays renamed <code>totalCount</code> → <code>count</code>.</li>
+<li><strong>Errors:</strong> every non-200 response is <code>{ code, message }</code> with a stable <code>code</code> (§5).</li>
+</ul>
+<h3 id="integer--string-mapping">Integer → string mapping</h3>
+<p>The underlying values did <strong>not</strong> change — only their encoding. A building that returned <code>foundationType: 3</code> from v3 returns <code>foundationType: &quot;concrete&quot;</code> from v4 for the same identifier, from the same source data. Use these tables to reconcile historical v3 output with v4 output.</p>
+<blockquote>
+<p>⚠️ <strong>Do not derive this mapping from the position of a value in the <a href="#enum-reference">enum reference</a> table.</strong> That table is ordered by the database&#39;s own enum ordering, which is <strong>not</strong> the v3 integer ordering. Mapping by position silently yields <code>concrete</code> where v3 said <code>wood_amsterdam</code>, and so on. Use the explicit tables below.</p>
+</blockquote>
+<p><strong><code>Reliability</code></strong> — applies to all <code>*Reliability</code> fields:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>v3</th>
+<th>v4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>0</code></td>
+<td><code>indicative</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>established</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>cluster</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>supercluster</code></td>
+</tr>
+</tbody></table></div>
+<p><strong><code>FoundationRisk</code></strong> — applies to <code>drystandRisk</code>, <code>bioInfectionRisk</code>, <code>dewateringDepthRisk</code>, <code>unclassifiedRisk</code>, and <code>facadeScanRisk</code>:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>v3</th>
+<th>v4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>0</code></td>
+<td><code>a</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>b</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>c</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>d</code></td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>e</code></td>
+</tr>
+</tbody></table></div>
+<p><strong><code>foundationType</code>:</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>v3</th>
+<th>v4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>0</code></td>
+<td><code>wood</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>wood_amsterdam</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>wood_rotterdam</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>concrete</code></td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>no_pile</code></td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td><code>no_pile_masonry</code></td>
+</tr>
+<tr>
+<td><code>6</code></td>
+<td><code>no_pile_strips</code></td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td><code>no_pile_bearing_floor</code></td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td><code>no_pile_concrete_floor</code></td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td><code>no_pile_slit</code></td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td><code>wood_charger</code></td>
+</tr>
+<tr>
+<td><code>11</code></td>
+<td><code>weighted_pile</code></td>
+</tr>
+<tr>
+<td><code>12</code></td>
+<td><code>combined</code></td>
+</tr>
+<tr>
+<td><code>13</code></td>
+<td><code>steel_pile</code></td>
+</tr>
+<tr>
+<td><code>14</code></td>
+<td><code>other</code></td>
+</tr>
+<tr>
+<td><code>15</code></td>
+<td><code>wood_rotterdam_amsterdam</code></td>
+</tr>
+<tr>
+<td><code>16</code></td>
+<td><code>wood_rotterdam_arch</code></td>
+</tr>
+<tr>
+<td><code>17</code></td>
+<td><code>wood_amsterdam_arch</code></td>
+</tr>
+</tbody></table></div>
+<p><strong><code>inquiryType</code>:</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>v3</th>
+<th>v4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>0</code></td>
+<td><code>additional_research</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>monitoring</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>note</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>quickscan</code></td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>unknown</code></td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td><code>demolition_research</code></td>
+</tr>
+<tr>
+<td><code>6</code></td>
+<td><code>second_opinion</code></td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td><code>archive_research</code></td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td><code>architectural_research</code></td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td><code>foundation_advice</code></td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td><code>inspectionpit</code></td>
+</tr>
+<tr>
+<td><code>11</code></td>
+<td><code>foundation_research</code></td>
+</tr>
+<tr>
+<td><code>12</code></td>
+<td><code>ground_water_level_research</code></td>
+</tr>
+<tr>
+<td><code>13</code></td>
+<td><code>soil_investigation</code></td>
+</tr>
+<tr>
+<td><code>14</code></td>
+<td><code>facade_scan</code></td>
+</tr>
+</tbody></table></div>
+<p><strong><code>recoveryType</code>:</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>v3</th>
+<th>v4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>0</code></td>
+<td><code>table</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>beam_on_pile</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>pile_lowering</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>pile_in_wall</code></td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>injection</code></td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td><code>unknown</code></td>
+</tr>
+</tbody></table></div>
+<p><strong><code>damageCause</code></strong> — note that <strong><code>7</code> is not used</strong>; the v3 integer sequence has a gap there. Do not assume contiguous values.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>v3</th>
+<th>v4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>0</code></td>
+<td><code>drainage</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>construction_flaw</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>drystand</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>overcharge</code></td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>overcharge_negative_cling</code></td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td><code>negative_cling</code></td>
+</tr>
+<tr>
+<td><code>6</code></td>
+<td><code>bio_infection</code></td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td><code>fungus_infection</code></td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td><code>bio_fungus_infection</code></td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td><code>foundation_flaw</code></td>
+</tr>
+<tr>
+<td><code>11</code></td>
+<td><code>construction_heave</code></td>
+</tr>
+<tr>
+<td><code>12</code></td>
+<td><code>subsidence</code></td>
+</tr>
+<tr>
+<td><code>13</code></td>
+<td><code>vegetation</code></td>
+</tr>
+<tr>
+<td><code>14</code></td>
+<td><code>gas</code></td>
+</tr>
+<tr>
+<td><code>15</code></td>
+<td><code>vibrations</code></td>
+</tr>
+<tr>
+<td><code>16</code></td>
+<td><code>partial_foundation_recovery</code></td>
+</tr>
+<tr>
+<td><code>17</code></td>
+<td><code>japanese_knotweed</code></td>
+</tr>
+<tr>
+<td><code>18</code></td>
+<td><code>groundwater_level_reduction</code></td>
+</tr>
+</tbody></table></div>
+
+  </div></section>
+</main>
+<footer class="wrap"><p>FunderMaps · Nationale Database Funderingen. Zie ook <a href="kennisbank.html">de kennisbank</a> en <a href="hoe-het-model-werkt.html">Hoe FunderMaps het funderingsrisico bepaalt</a>.</p></footer>
+</body>
+</html>
