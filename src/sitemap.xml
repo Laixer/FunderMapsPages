@@ -66,6 +66,26 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://fundermaps.com/dataverwerking.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://fundermaps.com/cookieverklaring.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://fundermaps.com/disclaimer.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://fundermaps.com/toegankelijkheid.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://fundermaps.com/terms-conditions.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
