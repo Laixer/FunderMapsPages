@@ -1407,6 +1407,12 @@ Voorbeeldwaarden; geen beoordeling van dit pand.
 
 Taxatie- en hypotheekketens, banken en verzekeraars, woningcorporaties, gemeenten en softwarebouwers die funderingsinformatie in hun eigen toepassing willen tonen.
 
+### Iets gezien dat niet klopt? Meld het terug
+
+De data in de API is net zo goed als wat er wordt teruggemeld. Ziet u in een antwoord een funderingstype, risico of herstel dat niet klopt, of heeft u een onderzoek of archiefstuk? Meld het via melden.fundermaps.com . Elke melding wordt beoordeeld, en waar het risico verandert, rekent FunderMaps het pand opnieuw door.
+
+Tip voor uw eigen toepassing: link direct naar het formulier met het adres al ingevuld: https://melden.fundermaps.com/form/<id> , met als <id> de BAG-nummeraanduiding (16 cijfers) of het BAG-pand-ID ( NL.IMBAG.PAND.… ).
+
 Vraag een API-sleutel aan
 
 Bekijk de documentatie
@@ -1416,6 +1422,12 @@ Bekijk de documentatie
 # FunderMaps API v4
 
 URL: https://fundermaps.com/api-documentatie.html
+
+#### Terugmelden
+
+Ziet u in een antwoord iets dat niet klopt, of heeft u een onderzoek of archiefstuk? Meld het via melden.fundermaps.com . Elke melding wordt beoordeeld; waar het risico verandert, wordt het pand opnieuw doorgerekend.
+
+Tip: link vanuit uw toepassing direct naar het formulier met het adres al ingevuld: https://melden.fundermaps.com/form/<id> , met als <id> de BAG-nummeraanduiding (16 cijfers) of het pand-ID ( NL.IMBAG.PAND.… ). Dat is dezelfde sleutel als in de API.
 
 The FunderMaps webservice serves building-level foundation data to integrators: valuation chains, banks, insurers and municipalities. This document is the complete contract of the current version, v4 . Anything not listed here is not part of the contract; if a response differs from what is documented, treat it as a defect and report it to us.
 
