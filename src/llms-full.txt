@@ -641,6 +641,8 @@ Zonder onderzoek in de buurt Dan schat het model de fundering uit de kenmerken v
 
 Van ruim 47.000 onderzochte panden is de uitkomst achtergehouden. Het model rekende zonder die panden en moest ze daarna inschatten. De uitkomst is vergeleken met wat het onderzoek vaststelde. De panden zijn gescheiden per rapport en per gemeente: panden uit hetzelfde rapport of dezelfde gemeente zaten nooit tegelijk in de rekenset en de toetsset. Zo kan het model niet leren van het antwoord.
 
+Ook de bronnen zelf zijn getoetst. Oudere QuickScans, uitgevoerd vóór de huidige methode van het Verkennend Funderingsonderzoek, zijn per rapportage vergeleken met onafhankelijk onderzoek aan hetzelfde pand en met wat onderzoek in dezelfde buurt en bouwperiode vaststelt. 88 rapportages, samen ruim 85.000 funderingstypen, bleken betrouwbaar en tellen mee in het model. 25 rapportages, samen ruim 25.000 funderingstypen, weken te veel af en tellen niet mee.
+
 De juiste funderingsfamilie betekent dat het model dezelfde familie aanwijst als het onderzoek: houten palen, betonpalen of ondiep.
 
 Het resultaat: het vernieuwde model vindt in buurten met onderzoek ongeveer twee keer zo vaak de houten funderingen terug als de eerdere schatting. In gemeenten waarvan het model geen enkel onderzocht pand kende, wijst het ongeveer twee keer zo vaak de juiste funderingsfamilie aan.
