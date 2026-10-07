@@ -1,5 +1,5 @@
 <header data-active-nav="{{ active }}" x-data="mobileMenu" class="sticky top-0 z-40 bg-white shadow-nav">
-  <div class="wrapper | flex justify-between items-center py-5 lg:py-0">
+  <div class="wrapper | flex justify-between items-center py-5 nav:py-0" style="--max-width: 90rem">
 
     <a class="logo" href="/">
       <include src="./resources/svg/logo/fundermaps-logo.svg"></include>
@@ -7,30 +7,30 @@
     </a>
 
     <!-- Desktop navigation -->
-    <nav class="hidden lg:flex items-center" aria-label="Hoofdnavigatie">
+    <nav class="hidden nav:flex items-center" aria-label="Hoofdnavigatie">
       <ul class="menu | ">
-        <li class="menu-item | px-4">
+        <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="intro" title="Home" href="/">Home</a>
         </li>
-        <li class="menu-item | px-4">
+        <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="services" title="Wat we leveren" href="/#services">Wat we leveren</a>
         </li>
-        <li class="menu-item | px-4">
+        <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="demo" title="Voorbeeld" href="/#preview">Voorbeeld</a>
         </li>
-        <li class="menu-item | px-4">
+        <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="references" title="Referenties" href="/#references-anchor">Referenties</a>
         </li>
-        <li class="menu-item | px-4">
+        <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="partners" title="Partners" href="/#partners">Partners</a>
         </li>
-        <li class="menu-item | px-4">
+        <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="artikelen" title="Artikelen" href="artikelen.html">Artikelen</a>
         </li>
-        <li class="menu-item | px-4">
+        <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="stand-van-het-land" title="Stand van het Land" href="stand-van-het-land.html">Stand van het Land</a>
         </li>
-        <li class="menu-item | px-4">
+        <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="kennisbank" title="Kennisbank" href="kennisbank.html">Kennisbank</a>
         </li>
       </ul>
@@ -47,7 +47,7 @@
     </nav>
 
     <!-- Mobile navigation: Toggle menu -->
-    <div class="inline-flex lg:hidden">
+    <div class="inline-flex nav:hidden">
       <button type="button" x-on:click="open = true" class="flex items-center justify-center w-11 h-11 -mr-2 text-blue-900 hover:text-yellow-500" aria-label="Open mobiel menu">
         <span x-show="! open" class="block">
           <include src="./resources/svg/hamburger-icon.svg"></include>
@@ -61,7 +61,7 @@
     x-transition:enter-start="opacity-100 left-full -right-full" x-transition:enter-end="opacity-100 left-0 right-0"
     x-transition:leave="left ease-in duration-100, right ease-in duration-100"
     x-transition:leave-start="opacity-100 left-0 right-0" x-transition:leave-end="opacity-100 left-full -right-full"
-    class="top-0 bottom-0 fixed z-50 w-full h-full bg-blue-900 overflow-auto lg:hidden">
+    class="top-0 bottom-0 fixed z-50 w-full h-full bg-blue-900 overflow-auto nav:hidden">
 
     <div x-dialog:panel>
       <div class="sticky top-0 bg-blue-900 flex justify-between items-center px-5 pt-16 z-10">
@@ -74,7 +74,7 @@
         </button>
       </div>
 
-      <nav x-data class="grid pt-16 lg:hidden" aria-label="Mobiele navigatie">
+      <nav x-data class="grid pt-16 nav:hidden" aria-label="Mobiele navigatie">
         <ul class="menu-mobile | ">
           <li class="menu-item">
             <a class="no-underline" data-nav-key="intro" title="Home" href="/" x-on:click="open = false">Home</a>

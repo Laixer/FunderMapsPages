@@ -22,7 +22,7 @@
     @apply h-full flex justify-end relative;
 
     a {
-      @apply flex text-grey-400 justify-center flex-col;
+      @apply flex text-grey-400 justify-center flex-col whitespace-nowrap;
 
       @include nav-active-selectors {
         @apply font-extrabold text-blue-900;
