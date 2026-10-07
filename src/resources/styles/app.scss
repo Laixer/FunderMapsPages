@@ -3,6 +3,10 @@
 @theme {
   --font-sans: "Greycliff CF", sans-serif;
 
+  // The width at which the full desktop menu fits on one line (eight items plus
+  // "Direct contact"); below it the header shows the hamburger menu.
+  --breakpoint-nav: 85rem;
+
   --color-grey-100: #f6f7f8;
   --color-grey-200: #e8eaf1;
   --color-grey-300: #ced0da;
