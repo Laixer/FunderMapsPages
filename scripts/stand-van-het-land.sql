@@ -1,8 +1,17 @@
--- Stand van het Land: national figures for fundermaps.com/stand-van-het-land.html.
+-- Stand van het Land: the figures for fundermaps.com/stand-van-het-land.html.
 --
--- Read-only. Returns ONE json document; save it as src/data/stand-van-het-land.json:
---   psql "$DATABASE_URL" -X -A -t -v ON_ERROR_STOP=1 \
---     -f scripts/stand-van-het-land.sql > src/data/stand-van-het-land.json
+-- Read-only. Returns ONE json document for the whole country, or for one
+-- province with -v province=<name> (geocoder.state.name, e.g. Utrecht). The
+-- page needs both; scripts/stand-van-het-land.py runs it for the country and
+-- the twelve provinces and writes src/data/stand-van-het-land.json:
+--   DATABASE_URL=... python3 scripts/stand-van-het-land.py
+-- One run by hand:
+--   psql "$DATABASE_URL" -X -A -t -v ON_ERROR_STOP=1 -v province= \
+--     -f scripts/stand-van-het-land.sql
+--
+-- The pand figures (coverage, families, risk, decades, costs) follow the
+-- province; the database, Verkennend Funderingsonderzoek and feedback figures
+-- are national either way and the page takes them from the national run.
 --
 -- Source: maplayer.building_tiles (every pand with an address, refreshed nightly
 -- from the current model), report.recovery_sample and dataops.dossier.
@@ -31,6 +40,10 @@ WITH b AS MATERIALIZED (
         -- the bacterial rule puts at D by pile length alone (EUR 18.1bn -> 58.6bn).
         t.drystand_risk IN ('d', 'e') OR t.dewatering_depth_risk IN ('d', 'e') AS urgent
     FROM maplayer.building_tiles t
+    WHERE :'province' = ''
+       OR t.municipality_id IN (SELECT m.external_id FROM geocoder.municipality m
+                                JOIN geocoder.state s ON s.id = m.state_id
+                                WHERE s.name = :'province')
 ),
 feedback AS (
     SELECT 'incident_portal' AS source, NULL::text AS outcome, NULL::interval AS lead_time
@@ -78,7 +91,7 @@ SELECT json_build_object(
             'neighborhoods', count(DISTINCT neighborhood_id),
             -- Herstelde panden: the Nationaal Herstel Register total (stand 2026-09-21),
             -- set by hand until the register is fully in FunderMaps (Don, 2026-09-25).
-            'restored', 30122
+            'restored', CASE WHEN :'province' = '' THEN 30122 END
         ) FROM b
     ),
     'families', (

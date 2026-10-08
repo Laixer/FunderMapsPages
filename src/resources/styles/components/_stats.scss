@@ -242,3 +242,17 @@
 .svl-vfo { background-color: var(--svl-fam-concrete); }
 
 .svl-col__stack--short { height: 8rem; }
+
+// The province picker above the key figures (Don, 2026-10-08).
+.svl-scope {
+  @apply flex flex-wrap items-center gap-3 rounded-2xl border border-grey-200 bg-grey-100 px-5 py-4;
+
+  label { @apply font-extrabold text-blue-900; }
+}
+
+.svl-select {
+  @apply rounded-lg border border-grey-300 bg-white px-3 py-2 font-bold text-blue-900;
+  min-width: 14rem;
+
+  &:focus-visible { @apply outline-2 outline-offset-2 outline-blue-300; }
+}
