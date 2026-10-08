@@ -25,23 +25,30 @@
     </section>
 
     <section class="section | wrapper py-12 lg:py-16 space-y-6">
+      <div class="svl-scope">
+        <label for="svl-province">Toon de cijfers voor</label>
+        <select id="svl-province" class="svl-select">
+          <option value="">Heel Nederland</option>
+        </select>
+        <span class="svl-muted svl-small" data-svl-national hidden>Waarnemingen, terugmeldingen en Verkennend Funderingsonderzoek blijven landelijke cijfers.</span>
+      </div>
       <div class="max-w-3xl space-y-2">
-        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Kerncijfers</h2>
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Kerncijfers <span class="text-grey-400 font-bold">· <span data-svl="scope">Nederland</span></span></h2>
         <p>Alle panden met een adres in de BAG. Funderingstype en risicoklasse komen uit het FunderMaps-model: waar onderzoek is gedaan uit dat onderzoek, elders afgeleid uit het pand en zijn omgeving.</p>
       </div>
       <div class="grid gap-4 sm:grid-cols-3">
         <div class="svl-figure">
-          <span class="svl-figure__label">Waarnemingen</span>
+          <span class="svl-figure__label">Waarnemingen <span data-svl-national hidden>· landelijk</span></span>
           <span class="svl-figure__value" data-svl="db_observations">–</span>
           <span class="svl-figure__note">funderingsgegevens per pand of adres uit onderzoek, archief, Verkennend Funderingsonderzoek, notities en herstel</span>
         </div>
         <div class="svl-figure">
-          <span class="svl-figure__label">Vastgelegde waarden</span>
+          <span class="svl-figure__label">Vastgelegde waarden <span data-svl-national hidden>· landelijk</span></span>
           <span class="svl-figure__value" data-svl="db_values">–</span>
           <span class="svl-figure__note">alle ingevulde gegevens in die waarnemingen samen</span>
         </div>
         <div class="svl-figure">
-          <span class="svl-figure__label">Onderzochte panden</span>
+          <span class="svl-figure__label">Onderzochte panden <span data-svl-national hidden>· landelijk</span></span>
           <span class="svl-figure__value" data-svl="db_researched">–</span>
           <span class="svl-figure__note">met een funderingstype uit eigen onderzoek of archief · <a href="hoe-het-model-werkt.html">hoe het model rekent</a></span>
         </div>
@@ -84,7 +91,7 @@
         </div>
       </div>
       <div class="svl-figure">
-        <span class="svl-figure__label">Herstelde panden</span>
+        <span class="svl-figure__label">Herstelde panden <span data-svl-national hidden>· landelijk</span></span>
         <span class="svl-figure__value">30.122</span>
         <span class="svl-figure__note">Gevalideerd en niet-gevalideerd funderingsherstel uit het <a href="nationaal-herstelregister.html">Nationaal Herstel Register</a>, stand 21 september 2026. Dit getal wordt nog met de hand bijgewerkt, tot het register volledig in FunderMaps is opgenomen.</span>
       </div>
@@ -92,7 +99,7 @@
 
     <section class="section | wrapper pb-12 lg:pb-16">
       <div class="svl-panel space-y-4">
-        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Funderingstypen</h2>
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Funderingstypen <span class="text-grey-400 font-bold">· <span data-svl="scope">Nederland</span></span></h2>
         <p class="max-w-3xl">Verhouding tussen de drie funderingsgroepen over alle panden met een adres.</p>
         <div data-svl-chart="family-share"></div>
       </div>
@@ -100,7 +107,7 @@
 
     <section class="section | wrapper pb-12 lg:pb-16">
       <div class="svl-panel space-y-4">
-        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Risicotabel</h2>
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Risicotabel <span class="text-grey-400 font-bold">· <span data-svl="scope">Nederland</span></span></h2>
         <p class="max-w-3xl">Risicoklasse A (laag) tot en met E (hoog), voor panden op houten palen en ondiepe funderingen. De klasse van een pand is de zwaarste van zijn vier funderingsrisico's: droogstand, bacteriële aantasting, ontwateringsdiepte en overig.</p>
         <div class="svl-scroll" data-svl-chart="risk-table">
           <table class="svl-table">
@@ -120,7 +127,7 @@
 
     <section class="section | wrapper pb-12 lg:pb-16">
       <div class="svl-panel space-y-4">
-        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Risicoklassen per funderingstype</h2>
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Risicoklassen per funderingstype <span class="text-grey-400 font-bold">· <span data-svl="scope">Nederland</span></span></h2>
         <p class="max-w-3xl">Betonpalen vallen vrijwel geheel in klasse A. Het risico zit bij houten palen en, in mindere mate, bij ondiepe funderingen.</p>
         <div data-svl-chart="family-risk"></div>
       </div>
@@ -128,7 +135,7 @@
 
     <section class="section | wrapper pb-12 lg:pb-16">
       <div class="svl-panel space-y-4">
-        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Risicoklassen per bouwdecennium</h2>
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Risicoklassen per bouwdecennium <span class="text-grey-400 font-bold">· <span data-svl="scope">Nederland</span></span></h2>
         <p class="max-w-3xl">Elke cel toont welk deel van de panden uit dat decennium in een klasse valt. Hoe voller de kleur, hoe groter het aandeel.</p>
         <div class="svl-scroll" data-svl-chart="decade-risk"></div>
       </div>
@@ -136,7 +143,7 @@
 
     <section class="section | wrapper pb-12 lg:pb-16">
       <div class="svl-panel space-y-4">
-        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Funderingstypen door de tijd</h2>
+        <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Funderingstypen door de tijd <span class="text-grey-400 font-bold">· <span data-svl="scope">Nederland</span></span></h2>
         <p class="max-w-3xl">Aandeel per funderingsgroep, per bouwdecennium (houten palen, beton en ondiep samen 100%). Ondiep domineert de oudere bouw; beton wint terrein na de oorlog.</p>
         <div data-svl-chart="decade-family"></div>
       </div>
@@ -145,7 +152,7 @@
     <section class="section | wrapper pb-12 lg:pb-16">
       <div class="svl-panel space-y-6">
         <div class="space-y-2">
-          <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Bandbreedtes herstelkosten</h2>
+          <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Bandbreedtes herstelkosten <span class="text-grey-400 font-bold">· <span data-svl="scope">Nederland</span></span></h2>
           <p class="max-w-3xl">Verdeling van de kostenindicatie, als aandeel van de panden met een indicatie. Niet elk pand heeft er een.</p>
         </div>
         <div class="grid gap-10 lg:grid-cols-2" data-svl-chart="cost-bands"></div>
