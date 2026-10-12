@@ -1131,5 +1131,29 @@ Staging      https://ws-staging.fundermaps.com/v4/...
   </div></section>
 </main>
 <footer class="wrap"><p>FunderMaps · Nationale Database Funderingen. Zie ook <a href="kennisbank.html">de kennisbank</a> en <a href="hoe-het-model-werkt.html">Hoe FunderMaps het funderingsrisico bepaalt</a>.</p></footer>
+<script>
+// A box that scrolls sideways (a wide table, a code block) must be reachable
+// by keyboard, or the part outside the box stays out of reach. Only boxes
+// that actually overflow get a tab stop, so a wide window adds none.
+(function () {
+  var boxes = document.querySelectorAll('.scroll, .tbl, pre');
+  function mark() {
+    for (var i = 0; i < boxes.length; i++) {
+      var b = boxes[i];
+      if (b.scrollWidth > b.clientWidth + 1) {
+        b.tabIndex = 0;
+        b.setAttribute('role', 'region');
+        b.setAttribute('aria-label', b.tagName === 'PRE' ? 'Codevoorbeeld, schuift opzij' : 'Tabel, schuift opzij');
+      } else if (b.getAttribute('role') === 'region') {
+        b.removeAttribute('tabindex');
+        b.removeAttribute('role');
+        b.removeAttribute('aria-label');
+      }
+    }
+  }
+  mark();
+  window.addEventListener('resize', mark);
+})();
+</script>
 </body>
 </html>

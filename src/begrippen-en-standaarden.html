@@ -23,7 +23,7 @@
   --tint: #e7f6fd;
   --open: #0a8158;
   --open-bg: #e9faf3;
-  --public: #b07a12;
+  --public: #94660f;
   --public-bg: #fffaf0;
   --ours: #0c75a8;
   --ours-bg: #e7f6fd;
@@ -291,5 +291,29 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
   <p>FunderMaps · Nationale Database Funderingen · 25 september 2026. Bronnen: KCAF, richtlijn Funderingen onder gebouwen (22 november 2022); NRVT, model taxatierapport woonruimte per 1 april 2026; Geonovum, NL-SBB (vastgesteld 10 oktober 2024), MIM 1.2 (vastgesteld 13 juni 2024) en DCAT-AP-NL 3.0.</p>
 </footer>
 
+<script>
+// A box that scrolls sideways (a wide table, a code block) must be reachable
+// by keyboard, or the part outside the box stays out of reach. Only boxes
+// that actually overflow get a tab stop, so a wide window adds none.
+(function () {
+  var boxes = document.querySelectorAll('.scroll, .tbl, pre');
+  function mark() {
+    for (var i = 0; i < boxes.length; i++) {
+      var b = boxes[i];
+      if (b.scrollWidth > b.clientWidth + 1) {
+        b.tabIndex = 0;
+        b.setAttribute('role', 'region');
+        b.setAttribute('aria-label', b.tagName === 'PRE' ? 'Codevoorbeeld, schuift opzij' : 'Tabel, schuift opzij');
+      } else if (b.getAttribute('role') === 'region') {
+        b.removeAttribute('tabindex');
+        b.removeAttribute('role');
+        b.removeAttribute('aria-label');
+      }
+    }
+  }
+  mark();
+  window.addEventListener('resize', mark);
+})();
+</script>
 </body>
 </html>
