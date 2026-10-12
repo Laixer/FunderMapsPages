@@ -43,10 +43,10 @@
     "tailwindcss": "^4.3.3"
   },
   "dependencies": {
-    "@alpinejs/collapse": "^3.17.2",
-    "@alpinejs/focus": "^3.17.2",
-    "@alpinejs/ui": "^3.17.2",
+    "@alpinejs/collapse": "^3.17.4",
+    "@alpinejs/focus": "^3.17.4",
+    "@alpinejs/ui": "^3.17.4",
     "@glidejs/glide": "^3.7.1",
-    "alpinejs": "^3.17.2"
+    "alpinejs": "^3.17.4"
   }
 }
