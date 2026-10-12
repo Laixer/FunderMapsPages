@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+
+<head>
+  <include src="./_partials/meta.html" locals='{"title":"Rondleiding FunderMaps — wat u ziet als u bent ingelogd","description":"Een rondleiding door de FunderMaps-kaart: funderingstype en funderingsrisico per pand, de zijbalk met pandinformatie en het funderingsrisicorapport als PDF.","slug":"demo.html","ogType":"website"}'></include>
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+
+<body>
+  <include src="./_partials/header.html" locals='{"active":""}'></include>
+
+  <div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+    <div class="absolute -top-11 right-[-625px] -z-10 w-[863px] lg:w-[1233px] lg:-top-16 lg:right-[-565px]">
+      <include src="./resources/svg/hero-bg.svg"></include>
+    </div>
+  </div>
+
+  <main class="relative overflow-hidden">
+    <section id="hero" class="section section--feature-blue | py-16 lg:py-24">
+      <div class="wrapper lg:grid lg:grid-cols-12">
+        <div class="lg:flex lg:flex-col lg:justify-center lg:col-span-8 lg:col-start-3">
+          <span class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-white/10 text-white font-extrabold text-xs uppercase tracking-widest mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-300"></span>
+            Rondleiding
+          </span>
+
+          <h1 class="mb-4 lg:mb-5 text-white">Zo ziet FunderMaps eruit als u bent ingelogd</h1>
+
+          <p class="text-grey-300">
+            Een rondleiding door een buurt in Dordrecht. U ziet per pand het funderingstype en het funderingsrisico, opent met één klik alle pandinformatie en downloadt het funderingsrisicorapport als PDF.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" class="section content | wrapper mb-12 lg:mb-16 space-y-16">
+      <div class="space-y-5">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-grey-400">Stap 1</span>
+        <h2>Funderingstype per pand</h2>
+        <p class="max-w-3xl">Zoek op adres of postcode en de kaart zoomt in op de buurt. Elk pand krijgt de kleur van zijn fundering: houten paal, houten paal met oplanger, betonnen paal of ondiepe fundering. De legenda maakt onderscheid tussen een vastgesteld funderingstype (uit onderzoek), een afgeleid type (uit vergelijkbare panden in dezelfde bouwkundige eenheid) en een indicatief type (een modelinschatting).</p>
+        <img src="./resources/images/demo/kaart-funderingstype.webp" alt="FunderMaps-kaart van een buurt in Dordrecht, panden gekleurd naar funderingstype, met de legenda links en de pandinformatie rechts" loading="lazy" class="w-full rounded-2xl border border-grey-300 shadow-sm">
+      </div>
+
+      <div class="space-y-5">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-grey-400">Stap 2</span>
+        <h2>Funderingsrisico in één oogopslag</h2>
+        <p class="max-w-3xl">Wissel naar de kaart Risico en zet de laag aan die u wilt zien: droogstand, ontwateringsdiepte, bacteriële aantasting, herstelkosten of de risico’s op basis van onderzoek. Elk pand krijgt een label van A (geen risico) tot en met E (aanzienlijk hoog risico). Zo ziet u direct waar in de buurt de aandacht nodig is.</p>
+        <img src="./resources/images/demo/kaart-risico.webp" alt="FunderMaps-kaart van dezelfde buurt, panden gekleurd naar risicolabel A tot en met E voor ontwateringsdiepte" loading="lazy" class="w-full rounded-2xl border border-grey-300 shadow-sm">
+      </div>
+
+      <div class="space-y-5">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-grey-400">Stap 3</span>
+        <h2>Alles over één pand in de zijbalk</h2>
+        <p class="max-w-3xl">Klik op een pand en de zijbalk opent. Daar staan de pandgegevens, de locatie, de fundering (type, betrouwbaarheid, indicatieve herstelkosten en pandzakking) en de funderingsrisico’s met hun betrouwbaarheid. Is er onderzoek of herstel bekend, dan bekijkt u dat hier ook. Onderaan downloadt u het rapport.</p>
+        <div class="grid gap-6 sm:grid-cols-3">
+          <figure class="space-y-2">
+            <img src="./resources/images/demo/zijbalk-pand.webp" alt="Zijbalk met pandinformatie en de knop PDF downloaden" loading="lazy" class="w-full rounded-2xl border border-grey-300 shadow-sm">
+            <figcaption class="text-sm text-grey-400">Overzicht van het pand, met onderaan “PDF downloaden”</figcaption>
+          </figure>
+          <figure class="space-y-2">
+            <img src="./resources/images/demo/zijbalk-fundering.webp" alt="Zijbalk met funderingstype, betrouwbaarheid, herstelkosten en pandzakking" loading="lazy" class="w-full rounded-2xl border border-grey-300 shadow-sm">
+            <figcaption class="text-sm text-grey-400">Fundering: type, betrouwbaarheid, herstelkosten en pandzakking</figcaption>
+          </figure>
+          <figure class="space-y-2">
+            <img src="./resources/images/demo/zijbalk-risico.webp" alt="Zijbalk met de funderingsrisico’s droogstand, ontwateringsdiepte en bacteriële aantasting" loading="lazy" class="w-full rounded-2xl border border-grey-300 shadow-sm">
+            <figcaption class="text-sm text-grey-400">Funderingsrisico: elk risico met label en betrouwbaarheid</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-grey-400">Stap 4</span>
+        <h2>Het funderingsrisicorapport als PDF</h2>
+        <p class="max-w-3xl">Met “PDF downloaden” maakt FunderMaps direct een funderingsrisicorapport van het pand. Het rapport bundelt de samenvatting, een leeswijzer voor de risicocategorieën en de betrouwbaarheid, de pandgegevens, de locatie en ondergrond, de fundering, bekend herstel en de afzonderlijke funderingsrisico’s. Klaar om te delen of bij een dossier te voegen.</p>
+        <div class="grid gap-6 grid-cols-2 lg:grid-cols-4">
+          <img src="./resources/images/demo/rapport-1.webp" alt="Rapport, pagina 1: samenvatting" loading="lazy" class="w-full rounded-xl border border-grey-300 shadow-sm">
+          <img src="./resources/images/demo/rapport-2.webp" alt="Rapport, pagina 2: hoe leest u dit rapport" loading="lazy" class="w-full rounded-xl border border-grey-300 shadow-sm">
+          <img src="./resources/images/demo/rapport-3.webp" alt="Rapport, pagina 3: pand en locatie" loading="lazy" class="w-full rounded-xl border border-grey-300 shadow-sm">
+          <img src="./resources/images/demo/rapport-4.webp" alt="Rapport, pagina 4: fundering en funderingsherstel" loading="lazy" class="w-full rounded-xl border border-grey-300 shadow-sm">
+        </div>
+        <p class="text-sm text-grey-400">Adres en pandnummer zijn in deze rondleiding onherkenbaar gemaakt.</p>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="mailto:info@fundermaps.com?subject=Toegang%20FunderMaps" class="button button-primary">
+          Vraag toegang aan
+          <div class="button-arrow"><include src="./resources/svg/arrow-right-icon.svg"></include></div>
+        </a>
+        <a href="https://maps.fundermaps.com" class="button button-outline-primary">Naar de kaart</a>
+      </div>
+    </section>
+  </main>
+
+  <include src="./_partials/footer.html"></include>
+</body>
+
+</html>
