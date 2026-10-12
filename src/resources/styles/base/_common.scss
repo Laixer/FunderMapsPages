@@ -83,6 +83,14 @@ code {
   @apply inline-block bg-blue-100/90 px-2 rounded-md text-base font-mono;
 }
 
+/* Inside a code block the block sets the colours: the light chip of inline
+   code under a dark block's white text made the example unreadable. */
+pre code {
+  @apply block bg-transparent p-0 rounded-none;
+
+  font-size: inherit;
+}
+
 a:where(:not(.button, .tag)),
 .fake-link:where(:not( .button, .tag)) {
   @apply inline-flex gap-1 items-center text-green-300 hover:text-blue-400 underline;
