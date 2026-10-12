@@ -23,10 +23,8 @@ This site is the Dutch-language marketing front for FunderMaps. The product itse
 
 ## External product surfaces
 
-- [FunderMaps Maps](https://maps.fundermaps.com/): Interactive map viewer.
-- [FunderMaps App](https://app.fundermaps.com/): Customer dashboard for inquiries, recoveries, samples.
-- [FunderMaps Admin](https://admin.fundermaps.com/): Admin console for FunderMaps staff.
-- [FunderMaps Analytics](https://analytics.fundermaps.com/): Dashboards built on the FunderMaps dataset.
+- [FunderMaps Maps](https://maps.fundermaps.com/): Interactive map viewer for customers (login required).
+- [Funderingsinformatie doorgeven](https://melden.fundermaps.com/): Public form to report that the foundation information of a building is wrong, or to submit a foundation survey or proof of repair.
 
 ## Legal
 
