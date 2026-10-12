@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+
+<head>
+  <!-- This page is served at whatever address was asked for, at any depth, so
+       the relative links of the shared partials must resolve from the root. -->
+  <base href="/" />
+  <meta name="robots" content="noindex" />
+  <include src="./_partials/meta.html" locals='{"title":"Pagina niet gevonden — FunderMaps","description":"Deze pagina bestaat niet of is verplaatst.","slug":"404.html","ogType":"website"}'></include>
+</head>
+
+<body>
+  <include src="./_partials/header.html" locals='{"active":""}'></include>
+
+  <main class="relative overflow-hidden">
+    <section id="hero" class="section section--feature-blue | py-16 lg:py-24">
+      <div class="wrapper">
+        <div class="max-w-3xl space-y-4">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white font-extrabold text-xs uppercase tracking-widest mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-300"></span>
+            Pagina niet gevonden
+          </span>
+          <h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-tight">Deze pagina bestaat niet</h1>
+          <p class="text-lg text-grey-300 max-w-3xl">Het adres klopt niet, of de pagina is verplaatst. Controleer de link, of ga verder via een van de pagina’s hieronder.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section | wrapper py-8 lg:py-12">
+      <div class="bg-white border border-blue-100 rounded-3xl shadow-sm px-6 py-8 lg:px-12 lg:py-12 space-y-8">
+        <div class="space-y-3 text-blue-900/80">
+          <a href="index.html" class="button button-primary">
+            Naar de homepage
+            <div class="button-arrow"><include src="./resources/svg/arrow-right-icon.svg"></include></div>
+          </a>
+          <p>Of bekijk de <a href="kennisbank.html">kennisbank</a> en de <a href="stand-van-het-land.html">Stand van het Land</a>. Wilt u funderingsinformatie over een pand doorgeven? Dat kan op <a href="https://melden.fundermaps.com">melden.fundermaps.com</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="./_partials/footer.html"></include>
+</body>
+
+</html>
