@@ -72,6 +72,13 @@ header.hero .thesis {
 header.hero .thesis strong { color: #ffcc69; }
 
 section { padding: 56px 0 8px; display: grid; gap: 20px; }
+/* A grid item is never narrower than its widest content unless told so; a wide
+   table or code block then widened the whole page on a phone. Let the items
+   shrink: tables and code blocks scroll sideways inside their own box. */
+section > *, .prose > *, .doc > *, .doc li { min-width: 0; }
+/* A long path in running text may break when its line cannot hold it. Not
+   "anywhere": that would also squeeze the tables, which scroll instead. */
+.doc :not(pre) > code { overflow-wrap: break-word; }
 .card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
 
 .steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
