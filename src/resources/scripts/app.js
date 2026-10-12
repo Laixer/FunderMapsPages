@@ -9,6 +9,7 @@ import mobileMenu from "./components/mobileMenu.js"
 import referencesCarousel from "./components/referencesCarousel.js"
 import quotesCarousel from "./components/quotesCarousel.js"
 import navScrollSpy from "./components/navScrollSpy.js"
+import scrollRegions from "./components/scrollRegions.js"
 
 (async () => {
   // Make alpine easier to use from the DevTools
@@ -32,4 +33,7 @@ import navScrollSpy from "./components/navScrollSpy.js"
 
   // Highlight the header nav item for the section currently in view.
   navScrollSpy()
+
+  // Give sideways-scrolling boxes a tab stop.
+  scrollRegions()
 })();
