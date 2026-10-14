@@ -57,8 +57,9 @@
     text-wrap: balance;
 
     // Side by side, a one-line label beside a two-line one put the values at different heights.
+    // A card alone in its row has nothing to line up with: it sets --svl-label-lines to 1.
     @media (min-width: 40rem) {
-      min-height: 2lh;
+      min-height: calc(var(--svl-label-lines, 2) * 1lh);
     }
   }
 

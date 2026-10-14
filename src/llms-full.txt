@@ -45,9 +45,9 @@ Resultaten van funderingsonderzoek en Verkennend Funderingsonderzoek stromen ter
 
 #### Terugmelding door de keten
 
-Makelaars, taxateurs, gemeenten en eigenaren melden onderzoek, herstel en correcties via melden.fundermaps.com . Elke melding wordt beoordeeld.
+Makelaars, taxateurs, gemeenten en eigenaren melden onderzoek, herstel en correcties via melden.fundermaps.com. Elke melding wordt beoordeeld.
 
-Niet elk pand is onderzocht. FunderMaps combineert onderzoeksgegevens met afgeleide gegevens en modeluitkomsten, en toont bij elk gegeven hoe het is vastgesteld. De actuele cijfers staan op de Stand van het land ; hoe het risico wordt bepaald op Hoe het model werkt .
+Niet elk pand is onderzocht. FunderMaps combineert onderzoeksgegevens met afgeleide gegevens en modeluitkomsten, en toont bij elk gegeven hoe het is vastgesteld. De actuele cijfers staan op de Stand van het land; hoe het risico wordt bepaald op Hoe het model werkt.
 
 Cijfers
 
@@ -71,7 +71,7 @@ Van de landelijke kaart tot een koppeling met uw eigen systemen: één databron,
 
 #### Kaart en kaartlagen
 
-Zoek op adres en zie per pand het funderingstype, de vier funderingsrisico's, de risicoklasse, onderzoekshistorie en herstel . Risicoprofielen per wijk, buurt of pand, voor beleid, onderzoek en taxatie.
+Zoek op adres en zie per pand het funderingstype, de vier funderingsrisico's, de risicoklasse, onderzoekshistorie en herstel. Risicoprofielen per wijk, buurt of pand, voor beleid, onderzoek en taxatie.
 
 Open de kaartdemo
 
@@ -83,25 +83,25 @@ Kennisbank: Hoe het model werkt
 
 #### Pandzakking
 
-Hoe snel een pand zelf zakt, gemeten met satellietmetingen (InSAR) . Een verhoogde zakkingssnelheid weegt mee als signaal in de funderingsrisico's.
+Hoe snel een pand zelf zakt, gemeten met satellietmetingen (InSAR). Een verhoogde zakkingssnelheid weegt mee als signaal in de funderingsrisico's.
 
 Kennisbank: Pandzakking in het model
 
 #### Nationaal Herstel Register
 
-Hét register van uitgevoerd funderingsherstel . Een geregistreerd herstel gaat boven de modelschatting en is zichtbaar voor taxatie en transactie.
+Hét register van uitgevoerd funderingsherstel. Een geregistreerd herstel gaat boven de modelschatting en is zichtbaar voor taxatie en transactie.
 
 Kennisbank: Nationaal Herstel Register
 
 #### Archiefverwerking met AI
 
-Een AI-leeslaag stelt velden voor uit archiefdocumenten, met citaat en paginaverwijzing . Elk voorstel wordt door een mens gecontroleerd; er wordt niets automatisch overgenomen.
+Een AI-leeslaag stelt velden voor uit archiefdocumenten, met citaat en paginaverwijzing. Elk voorstel wordt door een mens gecontroleerd; er wordt niets automatisch overgenomen.
 
 Kennisbank: Archiefstuk in de standaard
 
 #### API
 
-Funderingsdata rechtstreeks in uw eigen systemen, met het BAG-pand als sleutel : van één risicoklasse met betrouwbaarheid tot pandgegevens, funderingsrisico's, herstelkostenindicatie en buurtcijfers.
+Funderingsdata rechtstreeks in uw eigen systemen, met het BAG-pand als sleutel: van één risicoklasse met betrouwbaarheid tot pandgegevens, funderingsrisico's, herstelkostenindicatie en buurtcijfers.
 
 Meer over de API
 
@@ -145,6 +145,92 @@ Schermafbeelding van de FunderMaps-kaart.
 
 Deze organisaties werken met de gegevens van FunderMaps:
 
+- Aalsmeer
+
+- ABN AMRO
+
+- Accolade
+
+- Aedes
+
+- Amstelveen
+
+- Bodegraven-Reeuwijk
+
+- Calcasa
+
+- Delft
+
+- Den Haag
+
+- Elkien
+
+- Feangreide Fryslân
+
+- Gemeente Dordrecht
+
+- Gemeente Rotterdam
+
+- Gemeente Schiedam
+
+- Gouda
+
+- Haarlem
+
+- ING
+
+- KBF
+
+- Lansingerland
+
+- Lloyds Bank
+
+- Gemeente Amsterdam
+
+- Wetland Wonen
+
+- NHG
+
+- Nieuwkoop
+
+- NRVT
+
+- NVM
+
+- NWWI
+
+- Obvion
+
+- Oudewater
+
+- QuaWonen
+
+- Rabobank
+
+- Regio Deal Bodemdaling Groene Hart
+
+- Stadgenoot
+
+- Trivire
+
+- Utrecht
+
+- VastgoedNED
+
+- Westland
+
+- Woerden
+
+- Woonbron
+
+- Woonkracht10
+
+- Woonstad
+
+- WSW
+
+- Zwijndrecht
+
 ### Partners
 
 Kenniscentrum Aanpak Funderingsproblematiek. FunderMaps volgt de KCAF-richtlijn en de risicoklassen A tot en met E, en sluit aan op de ambitie van het KCAF: eigenaren en kopers helpen funderingsproblemen te signaleren en aan te pakken.
@@ -162,6 +248,16 @@ Meer info
 ### Levering via deskundigen
 
 Funderingsproblematiek gaat over hoge kosten en ingrijpende beslissingen. Daarom levert FunderMaps zijn data via deskundigen, die de uitkomst in context kunnen plaatsen: bouwkundigen, makelaars, taxateurs en andere vastgoedprofessionals. Dit zijn de partijen via wie wij leveren:
+
+- NWWI
+
+- NRVT
+
+- VastgoedNED
+
+- NVM
+
+- Calcasa
 
 Geen andere partijen of producten gebruiken de data van FunderMaps, ongeacht wat er wordt beweerd.
 
@@ -235,7 +331,7 @@ Alle panden met een adres in de BAG. Funderingstype en risicoklasse komen uit he
 
 Herstelde panden
 30.122
-Gevalideerd en niet-gevalideerd funderingsherstel uit het Nationaal Herstel Register , stand 21 september 2026. Dit getal wordt nog met de hand bijgewerkt, tot het register volledig in FunderMaps is opgenomen.
+Gevalideerd en niet-gevalideerd funderingsherstel uit het Nationaal Herstel Register, stand 21 september 2026. Dit getal wordt nog met de hand bijgewerkt, tot het register volledig in FunderMaps is opgenomen.
 
 ### Funderingstypen · Nederland
 
@@ -322,13 +418,13 @@ Hersteltempo nu ± 1.000 woningen per jaar; nodig is vijf keer zo snel
 
 - Telbasis: alle panden met ten minste één adres in de BAG.
 
-- Funderingsgroepen: houten palen (alle houten varianten, ook met oplanger), beton (betonpalen en andere paalsystemen van beton of staal) en ondiep (op staal, gemetseld, stroken en vloeren). Gecombineerde en overige funderingen staan apart. De kleuren volgen de kaartkleuren-standaard .
+- Funderingsgroepen: houten palen (alle houten varianten, ook met oplanger), beton (betonpalen en andere paalsystemen van beton of staal) en ondiep (op staal, gemetseld, stroken en vloeren). Gecombineerde en overige funderingen staan apart. De kleuren volgen de kaartkleuren-standaard.
 
 - Herstelkosten zijn een modelmatige indicatie per pand, geen offerte. Voor betonpalen wordt geen indicatie berekend. Herstelkosten en herstelopgave tellen alleen panden met klasse D of E op droogstand of ontwateringsdiepte. De gemiddelden laten per funderingsgroep de duurste 10% buiten beschouwing, zodat een paar zeer grote panden het beeld niet vertekenen; de totalen tellen alle panden.
 
 - Externe cijfers, zoals die van de AFM, noemen we met bron en datum. Ze komen niet uit de nachtelijke berekening.
 
-Vragen over de cijfers, of wilt u ze voor uw eigen gebied? Mail info@fundermaps.com .
+Vragen over de cijfers, of wilt u ze voor uw eigen gebied? Mail info@fundermaps.com.
 
 ---
 
@@ -360,7 +456,7 @@ ruim 215.000
 
 Panden waarvan het funderingstype uit eigen onderzoek of archief bekend is.
 
-Peildatum 25 september 2026. De actuele getallen staan op de Stand van het land .
+Peildatum 25 september 2026. De actuele getallen staan op de Stand van het land.
 
 In drie stappen
 
@@ -412,7 +508,7 @@ Waar: vooral in Noord- en West-Nederland, waar korte palen in een ondiepe zandla
 
 Risico's die uit onderzoek aan het pand zijn vastgesteld en niet onder de andere drie vallen. Dit risico wordt niet geschat; het bestaat alleen waar onderzoek ligt.
 
-Hieronder vallen onder meer: Negatieve kleef : zakkende grondlagen die de paal meetrekken, vooral in de regio Rijnmond en de Drechtsteden. En verder overbelasting, constructiefouten en trillingen, zoals het onderzoek ze vaststelt.
+Hieronder vallen onder meer: Negatieve kleef: zakkende grondlagen die de paal meetrekken, vooral in de regio Rijnmond en de Drechtsteden. En verder overbelasting, constructiefouten en trillingen, zoals het onderzoek ze vaststelt.
 
 #### Verschilzakking
 
@@ -438,11 +534,11 @@ Wat voorgaat
 
 Niet elk gegeven telt even zwaar. Liggen er voor een pand meerdere bronnen, dan gaat het sterkste bewijs voor:
 
-- Onderzoek ter plaatse , zoals een funderingsonderzoek met inspectieput: de fundering is gezien en gemeten.
+- Onderzoek ter plaatse, zoals een funderingsonderzoek met inspectieput: de fundering is gezien en gemeten.
 
-- Archiefstukken , zoals bouwtekeningen en bestekken: de fundering is gedocumenteerd.
+- Archiefstukken, zoals bouwtekeningen en bestekken: de fundering is gedocumenteerd.
 
-- Afleiding van vergelijkbare panden : onderzochte panden uit dezelfde buurt en bouwperiode.
+- Afleiding van vergelijkbare panden: onderzochte panden uit dezelfde buurt en bouwperiode.
 
 - Schatting op basis van kenmerken van het pand.
 
@@ -460,9 +556,9 @@ Vergelijkbare panden Onderzochte panden uit dezelfde buurt, bouwperiode en gebou
 
 Weging Hoe dichterbij en hoe meer het onderzochte pand lijkt, hoe zwaarder het meetelt. Heeft het pand zelf onderzoek of een archiefstuk, dan gaat dat voor, volgens de hiërarchie van bewijs.
 
-Uitkomst Een kans per funderingsfamilie (houten palen, betonpalen of ondiep) en hoeveel bewijs daaronder ligt. Daaruit volgt de betrouwbaarheid: vastgesteld , afgeleid of indicatief .
+Uitkomst Een kans per funderingsfamilie (houten palen, betonpalen of ondiep) en hoeveel bewijs daaronder ligt. Daaruit volgt de betrouwbaarheid: vastgesteld, afgeleid of indicatief.
 
-Zonder onderzoek in de buurt Dan schat het model de fundering uit de kenmerken van het pand zelf: bouwjaar, hoogte en ondergrond. De uitkomst is dan indicatief .
+Zonder onderzoek in de buurt Dan schat het model de fundering uit de kenmerken van het pand zelf: bouwjaar, hoogte en ondergrond. De uitkomst is dan indicatief.
 
 #### Getoetst op panden die het model nooit had gezien
 
@@ -494,7 +590,7 @@ Onze data
 
 - Ruim 500.000 waarnemingen met samen ruim 1,3 miljoen vastgelegde waarden
 
-- Ruim 215.000 onderzochte panden : funderingsonderzoek, inspectieputten, archiefonderzoek
+- Ruim 215.000 onderzochte panden: funderingsonderzoek, inspectieputten, archiefonderzoek
 
 - Het Nationaal Herstel Register
 
@@ -520,9 +616,9 @@ Commerciële data
 
 - Grondwaterstand per pand
 
-- Pandzakking uit satellietdata : hoe snel het pand zelf zakt, niet alleen de bodem in het gebied
+- Pandzakking uit satellietdata: hoe snel het pand zelf zakt, niet alleen de bodem in het gebied
 
-- Verkennend Funderingsonderzoek : de beoordeling van het pand door gespecialiseerde bureaus, met een risicoklasse per pand
+- Verkennend Funderingsonderzoek: de beoordeling van het pand door gespecialiseerde bureaus, met een risicoklasse per pand
 
 Onder licentie gebruikt en niet gedeeld.
 
@@ -534,7 +630,7 @@ Open
 
 #### De rekenmethode
 
-Hoe een risicoklasse tot stand komt, staat op deze pagina. De begrippen en gegevens staan in de Informatiestandaard funderingsgegevens .
+Hoe een risicoklasse tot stand komt, staat op deze pagina. De begrippen en gegevens staan in de Informatiestandaard funderingsgegevens.
 
 Van FunderMaps
 
@@ -552,13 +648,13 @@ Verwijzingen
 
 ### Verder lezen
 
-- Stand van het land : de funderingen van Nederland in cijfers
+- Stand van het land: de funderingen van Nederland in cijfers
 
-- Informatiestandaard funderingsgegevens : de begrippen, eenheden en waardelijsten
+- Informatiestandaard funderingsgegevens: de begrippen, eenheden en waardelijsten
 
-- Begrippen, standaarden en catalogus : welke begrippen en datasets FunderMaps gebruikt
+- Begrippen, standaarden en catalogus: welke begrippen en datasets FunderMaps gebruikt
 
-- Kennisbank : alle uitleg over de gegevens van FunderMaps
+- Kennisbank: alle uitleg over de gegevens van FunderMaps
 
 - Nationaal Herstel Register
 
@@ -566,9 +662,9 @@ Wat u kunt doen
 
 ### Heeft u een funderingsonderzoek, herstel of archiefstuk?
 
-Meld het via melden.fundermaps.com . Elke melding wordt beoordeeld. Verandert het risico, dan wordt het pand opnieuw doorgerekend. Zo wordt de uitkomst voor het pand en de buurt beter.
+Meld het via melden.fundermaps.com. Elke melding wordt beoordeeld. Verandert het risico, dan wordt het pand opnieuw doorgerekend. Zo wordt de uitkomst voor het pand en de buurt beter.
 
-Heeft u vragen over een risicoklasse of over deze methode? Neem contact op via info@fundermaps.com .
+Heeft u vragen over een risicoklasse of over deze methode? Neem contact op via info@fundermaps.com.
 
 #### Let op
 
@@ -626,7 +722,7 @@ Inhoud
 
 - Inhoud volgt de richtlijn. Onderzoek en beoordeling volgen de richtlijn Funderingen onder gebouwen van het KCAF (Kenniscentrum Aanpak Funderingsproblematiek), vastgesteld op 22 november 2022, die de F3O-richtlijnen verving. De risicoklassen A–E gebruiken de termen van het KCAF.
 
-- Vorm volgt de overheid. Begrippen volgens NL-SBB, het informatiemodel volgens MIM 1.2, de datasets volgens DCAT-AP-NL (zie Begrippen, standaarden en catalogus ).
+- Vorm volgt de overheid. Begrippen volgens NL-SBB, het informatiemodel volgens MIM 1.2, de datasets volgens DCAT-AP-NL (zie Begrippen, standaarden en catalogus).
 
 - Vaste eenheden. Niveaus in meters ten opzichte van NAP, diameters, scheurbreedtes en inslagdiepte in millimeters, afstanden en lengtes in meters, zakkingssnelheid in millimeters per jaar.
 
@@ -716,9 +812,9 @@ CBS wijken en buurten Indeling voor statistiek en het model Open data Ja
 
 ### Herkomst en betrouwbaarheid
 
-Bij elk vastgelegd gegeven moet te herleiden zijn: welk document (onderzoek of herstelregistratie), welke documentdatum , welke uitvoerder , wie de gegevens bezit (data-eigenaar) en of het is gecontroleerd (controlestatus). Dat legt de database al vast op het niveau van het document.
+Bij elk vastgelegd gegeven moet te herleiden zijn: welk document (onderzoek of herstelregistratie), welke documentdatum, welke uitvoerder, wie de gegevens bezit (data-eigenaar) en of het is gecontroleerd (controlestatus). Dat legt de database al vast op het niveau van het document.
 
-Bij elk afgeleid gegeven hoort bovendien de modelversie en de betrouwbaarheid : vastgesteld (uit onderzoek aan dit pand), afgeleid (van vergelijkbare panden dichtbij) of indicatief (geschat).
+Bij elk afgeleid gegeven hoort bovendien de modelversie en de betrouwbaarheid: vastgesteld (uit onderzoek aan dit pand), afgeleid (van vergelijkbare panden dichtbij) of indicatief (geschat).
 
 De hiërarchie van bewijs. Niet elk gegeven telt even zwaar. Liggen er voor een pand meerdere bronnen, dan gaat het sterkste bewijs voor: onderzoek ter plaatse gaat voor archiefstukken, archiefstukken gaan voor afleiding van vergelijkbare panden, en afleiding gaat voor een schatting. Een geregistreerd funderingsherstel en een Verkennend Funderingsonderzoek gaan boven de modelschatting.
 
@@ -776,19 +872,19 @@ Begrip Definitie Waarde Risicoklasse Verkennend Funderingsonderzoek facade_scan_
 
 ### Verkennend Funderingsonderzoek
 
-Een Verkennend Funderingsonderzoek (voorheen QuickScan / Fase 0) is een onderzoek van het soort facade_scan : een eerste beoordeling van het pand op basis van waarnemingen aan gevels en pand, uitgevoerd volgens de KCAF-methode. Het levert per pand een risicoklasse (A–E, in de termen van het KCAF) en het schadebeeld van de gevels.
+Een Verkennend Funderingsonderzoek (voorheen QuickScan / Fase 0) is een onderzoek van het soort facade_scan: een eerste beoordeling van het pand op basis van waarnemingen aan gevels en pand, uitgevoerd volgens de KCAF-methode. Het levert per pand een risicoklasse (A–E, in de termen van het KCAF) en het schadebeeld van de gevels.
 
 Wat een Verkennend Funderingsonderzoek vastlegt: de risicoklasse, de lintvoeg- en loodmeting met beoordeling, het scheurtype per gevel, en het funderingstype als dat bekend is.
 
-Een Verkennend Funderingsonderzoek gaat boven de modelschatting. Hoe het verder meeweegt, staat op de modelpagina .
+Een Verkennend Funderingsonderzoek gaat boven de modelschatting. Hoe het verder meeweegt, staat op de modelpagina.
 
-Oudere rapporten van de eerdere QuickScan-methode hebben de code quickscan . Ze blijven vastgelegd als historisch.
+Oudere rapporten van de eerdere QuickScan-methode hebben de code quickscan. Ze blijven vastgelegd als historisch.
 
 8
 
 ### Archiefonderzoek
 
-Archiefonderzoek haalt funderingsgegevens uit bestaande documenten in plaats van uit onderzoek ter plaatse: bouwtekeningen, bestekken, funderingskaarten, paalplannen, heirapporten, constructieberekeningen en vergunningen. Het is een onderzoek van het soort archive_research ; elk archiefstuk wordt vastgelegd als bewijs.
+Archiefonderzoek haalt funderingsgegevens uit bestaande documenten in plaats van uit onderzoek ter plaatse: bouwtekeningen, bestekken, funderingskaarten, paalplannen, heirapporten, constructieberekeningen en vergunningen. Het is een onderzoek van het soort archive_research; elk archiefstuk wordt vastgelegd als bewijs.
 
 #### Archiefstuk
 
@@ -807,7 +903,7 @@ Panden De panden waar het stuk over gaat. Eén stuk kan over veel panden gaan. B
 
 Wat eruit blijkt De gegevens die uit het stuk zijn afgelezen: funderingstype, paalgegevens (lengte, diameter, paalkop- en paalpuntniveau, oplanger), funderingsniveau, bouwjaar. Zelfde begrippen als bij de waarneming (§6). waarneming
 
-Bewijskracht Gedocumenteerd : het staat op een archiefstuk, maar is niet ter plaatse gezien. Staat tussen fysiek vastgesteld (inspectieput, funderingsonderzoek) en afgeleid . keuze: fysiek vastgesteld, gedocumenteerd, afgeleid, indicatief
+Bewijskracht Gedocumenteerd: het staat op een archiefstuk, maar is niet ter plaatse gezien. Staat tussen fysiek vastgesteld (inspectieput, funderingsonderzoek) en afgeleid. keuze: fysiek vastgesteld, gedocumenteerd, afgeleid, indicatief
 
 Afwijking van ontwerp Of bekend is dat er anders is gebouwd dan getekend. ja / nee / onbekend
 
@@ -815,7 +911,7 @@ Afwijking van ontwerp Of bekend is dat er anders is gebouwd dan getekend. ja / n
 
 ### Pandzakking
 
-Hoe snel een pand zakt, en hoeveel het al gezakt is. Er zijn drie soorten bronnen: satellietmetingen (InSAR, van een leverancier, voor veel panden tegelijk), waterpassingen en lintvoegmetingen uit onderzoek, en monitoring over een langere periode (soort onderzoek monitoring ).
+Hoe snel een pand zakt, en hoeveel het al gezakt is. Er zijn drie soorten bronnen: satellietmetingen (InSAR, van een leverancier, voor veel panden tegelijk), waterpassingen en lintvoegmetingen uit onderzoek, en monitoring over een langere periode (soort onderzoek monitoring).
 
 #### Zakkingsmeting
 
@@ -842,7 +938,7 @@ Zakkingssnelheid (mm per jaar) en cumulatieve zakking (mm) zijn twee verschillen
 
 ### Herstelregistratie
 
-Het Nationaal Herstel Register legt herstel vast in twee lagen: de registratie (het bewijsstuk) en per pand de herstelmaatregel .
+Het Nationaal Herstel Register legt herstel vast in twee lagen: de registratie (het bewijsstuk) en per pand de herstelmaatregel.
 
 #### Registratie (het bewijsstuk)
 
@@ -860,15 +956,15 @@ De herstelkostenindicatie is een afgeleid gegeven per pand: een raming van wat f
 
 Bij elke indicatie legt de standaard vast:
 
-- Bedrag , in euro, inclusief of exclusief btw
+- Bedrag, in euro, inclusief of exclusief btw
 
-- Eenheid : per pand of per adres
+- Eenheid: per pand of per adres
 
-- Rekenmethode : welke calculator en welke versie
+- Rekenmethode: welke calculator en welke versie
 
-- Prijspeildatum : van welk jaar de prijzen zijn
+- Prijspeildatum: van welk jaar de prijzen zijn
 
-- Grondslag : het funderingstype en de maat waarop de raming rust, elk met hun betrouwbaarheid
+- Grondslag: het funderingstype en de maat waarop de raming rust, elk met hun betrouwbaarheid
 
 - Herstelmethode waar de raming van uitgaat
 
@@ -878,7 +974,7 @@ De berekening zelf hoort bij de rekenregels van de calculator, niet bij deze sta
 
 ### Risico-inschatting
 
-Per pand en per modelversie: het funderingstype met betrouwbaarheid, vier funderingsrisico's (droogstand, ontwateringsdiepte, bacteriële aantasting, overig) elk met betrouwbaarheid, en de risicoklasse als de zwaarste van de vier. Hoe dat wordt berekend staat op de pagina Hoe FunderMaps het funderingsrisico bepaalt .
+Per pand en per modelversie: het funderingstype met betrouwbaarheid, vier funderingsrisico's (droogstand, ontwateringsdiepte, bacteriële aantasting, overig) elk met betrouwbaarheid, en de risicoklasse als de zwaarste van de vier. Hoe dat wordt berekend staat op de pagina Hoe FunderMaps het funderingsrisico bepaalt.
 
 Bij elke uitkomst legt de standaard vast: de modelversie waarmee is gerekend, de datum van berekening, en bij elk funderingsrisico de bron (eigen onderzoek, vergelijkbare panden, of indicatie).
 
@@ -918,15 +1014,15 @@ Kleur Betekenis Code Nihil #42FF33 Klein #D1FF33 Matig #FFEC33 Groot #FFAC33 Zee
 
 ### Beheer, licentie en contact
 
-Versies. Elke versie krijgt een nummer en een vaste URL. Deze versie staat op fundermaps.com/informatiestandaard-1-0.html ; de meest recente versie staat altijd op fundermaps.com/informatiestandaard.html .
+Versies. Elke versie krijgt een nummer en een vaste URL. Deze versie staat op fundermaps.com/informatiestandaard-1-0.html; de meest recente versie staat altijd op fundermaps.com/informatiestandaard.html.
 
 Wijzigingen. Een wijziging begint als voorstel, wordt beoordeeld en daarna gepubliceerd in een nieuwe versie. Elke versie staat in het wijzigingslog.
 
-Licentie. Deze standaard is gepubliceerd onder Creative Commons Naamsvermelding 4.0 (CC BY 4.0) . U mag hem gebruiken en overnemen, met vermelding van FunderMaps als bron. De licentie geldt voor de standaard, niet voor de gegevens in FunderMaps.
+Licentie. Deze standaard is gepubliceerd onder Creative Commons Naamsvermelding 4.0 (CC BY 4.0). U mag hem gebruiken en overnemen, met vermelding van FunderMaps als bron. De licentie geldt voor de standaard, niet voor de gegevens in FunderMaps.
 
 Machineleesbare vorm. De waardelijsten en de standaard in machineleesbare vorm zijn op te vragen bij FunderMaps.
 
-Contact. Vragen, reacties en voorstellen voor wijziging: info@fundermaps.com . Heeft u een funderingsonderzoek, herstel of archiefstuk? Meld het via melden.fundermaps.com .
+Contact. Vragen, reacties en voorstellen voor wijziging: info@fundermaps.com. Heeft u een funderingsonderzoek, herstel of archiefstuk? Meld het via melden.fundermaps.com.
 
 #### Wijzigingslog
 
@@ -961,7 +1057,7 @@ MIM 1.2
 
 #### Informatiemodel
 
-Hoe ziet het eruit? Welke objecten er zijn (pand, onderzoek, waarneming, herstel, risico-inschatting), welke kenmerken ze hebben en welke waarden zijn toegestaan. MIM is het metamodel waarmee ook de BAG en de BRO zijn beschreven. Uitgewerkt in de Informatiestandaard funderingsgegevens .
+Hoe ziet het eruit? Welke objecten er zijn (pand, onderzoek, waarneming, herstel, risico-inschatting), welke kenmerken ze hebben en welke waarden zijn toegestaan. MIM is het metamodel waarmee ook de BAG en de BRO zijn beschreven. Uitgewerkt in de Informatiestandaard funderingsgegevens.
 
 DCAT-AP-NL 3.0
 
@@ -973,9 +1069,9 @@ Openbaar
 
 #### Rekenregels
 
-Hoe wordt het risico bepaald? De rekenmethode staat op Hoe FunderMaps het funderingsrisico bepaalt , en verwijst naar de begrippen en datasets op deze pagina.
+Hoe wordt het risico bepaald? De rekenmethode staat op Hoe FunderMaps het funderingsrisico bepaalt, en verwijst naar de begrippen en datasets op deze pagina.
 
-De inhoud van de begrippen volgt de vakpraktijk. Onderzoek en beoordeling volgen de richtlijn Funderingen onder gebouwen van het KCAF (22 november 2022), die de F3O-richtlijnen verving. De risicoklassen A–E zijn die van het KCAF. Het pand is het BAG-pand. Kaarten gebruiken de kaartkleuren-standaard .
+De inhoud van de begrippen volgt de vakpraktijk. Onderzoek en beoordeling volgen de richtlijn Funderingen onder gebouwen van het KCAF (22 november 2022), die de F3O-richtlijnen verving. De risicoklassen A–E zijn die van het KCAF. Het pand is het BAG-pand. Kaarten gebruiken de kaartkleuren-standaard.
 
 Voorbeelden
 
@@ -993,7 +1089,7 @@ Bron FunderMaps, vakpraktijk
 
 Definitie Indeling van het funderingsrisico van een pand in vijf klassen: A geen risico, B licht risico, C verhoogd risico of onzekerheid, D hoog risico, E vastgesteld probleem.
 Uitleg Een inschatting van het risico, geen technisch oordeel over de fundering zelf.
-Code foundation_risk_indication : a–e
+Code foundation_risk_indication: a–e
 Bron KCAF
 
 #### Handhavingstermijn
@@ -1006,10 +1102,10 @@ Bron KCAF-richtlijn Funderingen onder gebouwen
 
 Definitie Het gegeven komt uit onderzoek aan dit pand zelf.
 Tegenhangers Afgeleid (van vergelijkbare panden), indicatief (geschat)
-Code reliability : established
+Code reliability: established
 Bron FunderMaps
 
-Alle begrippen, eenheden en waardelijsten staan in de Informatiestandaard funderingsgegevens .
+Alle begrippen, eenheden en waardelijsten staan in de Informatiestandaard funderingsgegevens.
 
 Catalogus
 
@@ -1059,7 +1155,7 @@ Contact
 
 #### Vragen en voorstellen
 
-Vragen over een begrip, of een voorstel voor een wijziging? Mail info@fundermaps.com .
+Vragen over een begrip, of een voorstel voor een wijziging? Mail info@fundermaps.com.
 
 Verwijzingen
 
@@ -1211,11 +1307,11 @@ Daarnaast levert de API de uitkomst van recent uitgevoerd onderzoek aan het pand
 
 - Toegang met een API-sleutel per organisatie.
 
-- Afrekening per pand per 24 uur : vaker opvragen binnen een dag telt één keer.
+- Afrekening per pand per 24 uur: vaker opvragen binnen een dag telt één keer.
 
 - Een testomgeving met dezelfde gegevens, om uw koppeling te proberen.
 
-- Ook te gebruiken door AI-assistenten , via een MCP-koppeling.
+- Ook te gebruiken door AI-assistenten, via een MCP-koppeling.
 
 - Een overzicht van uw eigen gebruik, per dag en per maand.
 
@@ -1236,9 +1332,9 @@ Taxatie- en hypotheekketens, banken en verzekeraars, woningcorporaties, gemeente
 
 ### Iets gezien dat niet klopt? Meld het terug
 
-De data in de API is net zo goed als wat er wordt teruggemeld. Ziet u in een antwoord een funderingstype, risico of herstel dat niet klopt, of heeft u een onderzoek of archiefstuk? Meld het via melden.fundermaps.com . Elke melding wordt beoordeeld, en waar het risico verandert, rekent FunderMaps het pand opnieuw door.
+De data in de API is net zo goed als wat er wordt teruggemeld. Ziet u in een antwoord een funderingstype, risico of herstel dat niet klopt, of heeft u een onderzoek of archiefstuk? Meld het via melden.fundermaps.com. Elke melding wordt beoordeeld, en waar het risico verandert, rekent FunderMaps het pand opnieuw door.
 
-Tip voor uw eigen toepassing: link direct naar het formulier met het adres al ingevuld: https://melden.fundermaps.com/form/<id> , met als <id> de BAG-nummeraanduiding (16 cijfers) of het BAG-pand-ID ( NL.IMBAG.PAND.… ).
+Tip voor uw eigen toepassing: link direct naar het formulier met het adres al ingevuld: https://melden.fundermaps.com/form/<id>, met als <id> de BAG-nummeraanduiding (16 cijfers) of het BAG-pand-ID (NL.IMBAG.PAND.…).
 
 Vraag een API-sleutel aan
 
@@ -1252,18 +1348,18 @@ URL: https://fundermaps.com/api-documentatie.html
 
 #### Terugmelden
 
-Ziet u in een antwoord iets dat niet klopt, of heeft u een onderzoek of archiefstuk? Meld het via melden.fundermaps.com . Elke melding wordt beoordeeld; waar het risico verandert, wordt het pand opnieuw doorgerekend.
+Ziet u in een antwoord iets dat niet klopt, of heeft u een onderzoek of archiefstuk? Meld het via melden.fundermaps.com. Elke melding wordt beoordeeld; waar het risico verandert, wordt het pand opnieuw doorgerekend.
 
-Tip: link vanuit uw toepassing direct naar het formulier met het adres al ingevuld: https://melden.fundermaps.com/form/<id> , met als <id> de BAG-nummeraanduiding (16 cijfers) of het pand-ID ( NL.IMBAG.PAND.… ). Dat is dezelfde sleutel als in de API.
+Tip: link vanuit uw toepassing direct naar het formulier met het adres al ingevuld: https://melden.fundermaps.com/form/<id>, met als <id> de BAG-nummeraanduiding (16 cijfers) of het pand-ID (NL.IMBAG.PAND.…). Dat is dezelfde sleutel als in de API.
 
-The FunderMaps webservice serves building-level foundation data to integrators: valuation chains, banks, insurers and municipalities. This document is the complete contract of the current version, v4 . Anything not listed here is not part of the contract; if a response differs from what is documented, treat it as a defect and report it to us.
+The FunderMaps webservice serves building-level foundation data to integrators: valuation chains, banks, insurers and municipalities. This document is the complete contract of the current version, v4. Anything not listed here is not part of the contract; if a response differs from what is documented, treat it as a defect and report it to us.
 
 Production https://ws.fundermaps.com/v4/...
 Staging https://ws-staging.fundermaps.com/v4/...
 
 Staging serves the same production data with the same API key and is meant for trying an integration before pointing production traffic at it. Calls on either hostname are billed.
 
-The previous version, /api/v3 , was switched off on 2026-08-29 and now returns 404 . If you are migrating an old v3 client, see Appendix: coming from v3 .
+The previous version, /api/v3, was switched off on 2026-08-29 and now returns 404. If you are migrating an old v3 client, see Appendix: coming from v3.
 
 ### 1. Endpoints
 
@@ -1307,7 +1403,7 @@ POST /v4/mcp
 The same products as an MCP server for AI agents — details
 per tool
 
-Billing counts billable events : one event per (product, building) per 24 hours, regardless of how often you request it. Per-product usage limits may apply to your key; see rate limits .
+Billing counts billable events: one event per (product, building) per 24 hours, regardless of how often you request it. Per-product usage limits may apply to your key; see rate limits.
 
 #### Accepted {id} formats
 
@@ -1315,7 +1411,7 @@ Endpoint
 Accepted formats
 
 /v4/product/analysis/{id}
-BAG pand ( NL.IMBAG.PAND.0599100000369041 or 16-digit 0599100000369041 ); BAG nummeraanduiding ( NL.IMBAG.NUMMERAANDUIDING.0599200000123456 or 16-/15-digit bare form)
+BAG pand (NL.IMBAG.PAND.0599100000369041 or 16-digit 0599100000369041); BAG nummeraanduiding (NL.IMBAG.NUMMERAANDUIDING.0599200000123456 or 16-/15-digit bare form)
 
 /v4/product/risk/{id}
 Same as analysis
@@ -1330,31 +1426,31 @@ Same as analysis
 Same as analysis
 
 /v4/product/statistics/{id}
-Any of the above, plus CBS neighborhood ( BU03630000 )
+Any of the above, plus CBS neighborhood (BU03630000)
 
 Nummeraanduiding IDs are resolved to their pand before lookup. BAG address-to-building is many-to-one, so two nummeraanduidingen on the same pand return identical analysis and statistics — that's expected, the model is building-level.
 
-Unrecognized or unresolvable IDs return a 404 with a structured error body — see Error responses .
+Unrecognized or unresolvable IDs return a 404 with a structured error body — see Error responses.
 
 #### /v4/product/risk and /v4/product/light
 
-/v4/product/risk/{id} — a subset of analysis for valuation chains and dashboards. Returns: buildingId , foundationType , foundationTypeReliability , restorationCosts , inquiryType , drystandRisk , drystandReliability , bioInfectionRisk , bioInfectionReliability , dewateringDepthRisk , dewateringDepthReliability , unclassifiedRisk , recoveryType .
+/v4/product/risk/{id} — a subset of analysis for valuation chains and dashboards. Returns: buildingId, foundationType, foundationTypeReliability, restorationCosts, inquiryType, drystandRisk, drystandReliability, bioInfectionRisk, bioInfectionReliability, dewateringDepthRisk, dewateringDepthReliability, unclassifiedRisk, recoveryType.
 
-Field names and semantics are identical to the corresponding fields in analysis — note that the reliability fields are drystandReliability , bioInfectionReliability and dewateringDepthReliability (not …RiskReliability ).
+Field names and semantics are identical to the corresponding fields in analysis — note that the reliability fields are drystandReliability, bioInfectionReliability and dewateringDepthReliability (not …RiskReliability).
 
-/v4/product/light/{id} — minimal response for fast integrations. Collapses the three component risks plus unclassifiedRisk (the construction-year-derived fallback classification) into a single derived overallRisk + overallRiskReliability . The fallback enters at indicative reliability, so it only determines overallRisk when no more reliable component risk is present — buildings covered only by the fallback report that class instead of null . If a recoveryType is set on the building (i.e. the foundation has been restored), overallRisk is forced to a with established reliability. Returns: overallRisk , overallRiskReliability — nothing else ( restorationCosts and drystandRisk were removed from the response).
+/v4/product/light/{id} — minimal response for fast integrations. Collapses the three component risks plus unclassifiedRisk (the construction-year-derived fallback classification) into a single derived overallRisk + overallRiskReliability. The fallback enters at indicative reliability, so it only determines overallRisk when no more reliable component risk is present — buildings covered only by the fallback report that class instead of null. If a recoveryType is set on the building (i.e. the foundation has been restored), overallRisk is forced to a with established reliability. Returns: overallRisk, overallRiskReliability — nothing else (restorationCosts and drystandRisk were removed from the response).
 
 #### Research outcome endpoints
 
-Where analysis returns the model-based risk assessment, these two endpoints return the summarized outcome of actually performed research on the building, where available. They complement analysis ; they do not replace it.
+Where analysis returns the model-based risk assessment, these two endpoints return the summarized outcome of actually performed research on the building, where available. They complement analysis; they do not replace it.
 
-/v4/product/facade_scan/{id} — the most recent facade scan (QuickScan) for the building, provided its report is less than 3 years old . Returns: buildingId , inquiryId , inquiryType ( facade_scan ), documentDate ( YYYY-MM-DD ), validUntil ( documentDate + 3 years), facadeScanRisk ( a – e ), settlementSpeed , skewedParallelFacade , skewedPerpendicularFacade , facadeCrack , contractor , resource (optional, see below).
+/v4/product/facade_scan/{id} — the most recent facade scan (QuickScan) for the building, provided its report is less than 3 years old. Returns: buildingId, inquiryId, inquiryType (facade_scan), documentDate (YYYY-MM-DD), validUntil (documentDate + 3 years), facadeScanRisk (a – e), settlementSpeed, skewedParallelFacade, skewedPerpendicularFacade, facadeCrack, contractor, resource (optional, see below).
 
-/v4/product/foundation-research/{id} — the most recent foundation research for the building, provided its report is less than 5 years old . Returns: buildingId , inquiryId , inquiryType ( foundation_research ), documentDate , validUntil ( documentDate + 5 years), settlementSpeed , skewedParallelFacade , skewedPerpendicularFacade , facadeCrack , overallQuality , recoveryAdvised (boolean), enforcementTerm , contractor , resource (optional, see below).
+/v4/product/foundation-research/{id} — the most recent foundation research for the building, provided its report is less than 5 years old. Returns: buildingId, inquiryId, inquiryType (foundation_research), documentDate, validUntil (documentDate + 5 years), settlementSpeed, skewedParallelFacade, skewedPerpendicularFacade, facadeCrack, overallQuality, recoveryAdvised (boolean), enforcementTerm, contractor, resource (optional, see below).
 
 Notes for both:
 
-- All fields are nullable except buildingId . A null means the underlying report did not record that observation.
+- All fields are nullable except buildingId. A null means the underlying report did not record that observation.
 
 - resource — the source document. A link to the original report (normally a PDF) the outcome was taken from:
 
@@ -1364,21 +1460,21 @@ Notes for both:
 "mediaType": "application/pdf"
 }
 
-- url is a signed, short-lived link : it works for 1 hour from the moment of the response ( expiresAt , ISO-8601 UTC), for anyone who holds it, with no further authentication. Fetch the document promptly; do not persist the URL — re-request the product to get a fresh one. Retrieving the document is not a separate billable call.
+- url is a signed, short-lived link: it works for 1 hour from the moment of the response (expiresAt, ISO-8601 UTC), for anyone who holds it, with no further authentication. Fetch the document promptly; do not persist the URL — re-request the product to get a fresh one. Retrieving the document is not a separate billable call.
 
-- Freshness follows the data window. The link is included whenever the record itself is served: within 3 years for facade_scan , within 5 years for foundation-research . There is no separate age limit on the document.
+- Freshness follows the data window. The link is included whenever the record itself is served: within 3 years for facade_scan, within 5 years for foundation-research. There is no separate age limit on the document.
 
-- Absent, never null . When the record has no source document on file, the resource key is omitted from the response entirely . Check for presence ( "resource" in body ), not for null .
+- Absent, never null. When the record has no source document on file, the resource key is omitted from the response entirely. Check for presence ("resource" in body), not for null.
 
-- mediaType is almost always application/pdf ; a handful of legacy dossiers hold an image instead.
+- mediaType is almost always application/pdf; a handful of legacy dossiers hold an image instead.
 
 - Building-level: a nummeraanduiding resolves to its pand first, so two addresses on the same building return the same outcome — the research is attached to the building, not to one address.
 
-- "Latest available" = the newest report by documentDate of that research type within the freshness window. A building whose only research is older than the window returns 404 no_data_available , same as a building never researched.
+- "Latest available" = the newest report by documentDate of that research type within the freshness window. A building whose only research is older than the window returns 404 no_data_available, same as a building never researched.
 
-- The skew/settlement classifications use the same scale ( nil → very_big ) and derivation as the public facade-scan map layer; facadeCrack is the worst of the four facade crack observations.
+- The skew/settlement classifications use the same scale (nil → very_big) and derivation as the public facade-scan map layer; facadeCrack is the worst of the four facade crack observations.
 
-Same authentication, ID formats, and error responses as analysis .
+Same authentication, ID formats, and error responses as analysis.
 
 #### MCP endpoint for AI agents
 
@@ -1390,31 +1486,31 @@ Tool
 Equivalent REST call
 Billed as
 
-find_building ( postalCode , houseNumber )
+find_building (postalCode, houseNumber)
 — (address → BAG id lookup)
 free
 
-get_analysis ( id )
+get_analysis (id)
 GET /v4/product/analysis/{id}
 analysis3
 
-get_risk ( id )
+get_risk (id)
 GET /v4/product/risk/{id}
 risk3
 
-get_light ( id )
+get_light (id)
 GET /v4/product/light/{id}
 light3
 
-get_facade_scan ( id )
+get_facade_scan (id)
 GET /v4/product/facade_scan/{id}
 facade_scan4
 
-get_foundation_research ( id )
+get_foundation_research (id)
 GET /v4/product/foundation-research/{id}
 foundation_research4
 
-get_statistics ( id )
+get_statistics (id)
 GET /v4/product/statistics/{id}
 statistics3
 
@@ -1434,7 +1530,7 @@ Connecting (Claude Desktop / Claude Code / any Streamable-HTTP client):
 }
 }
 
-Tool results carry the REST JSON body both as text and as structuredContent ; a non-200 REST response becomes a tool error whose text starts with the REST code ( no_data_available , rate_limit_exceeded , …) so the agent can pick the same follow-up a REST consumer would. The endpoint is POST-only: GET / DELETE return 405 because there are no sessions to resume or terminate.
+Tool results carry the REST JSON body both as text and as structuredContent; a non-200 REST response becomes a tool error whose text starts with the REST code (no_data_available, rate_limit_exceeded, …) so the agent can pick the same follow-up a REST consumer would. The endpoint is POST-only: GET / DELETE return 405 because there are no sessions to resume or terminate.
 
 ### 2. Authentication
 
@@ -1446,9 +1542,9 @@ No other delivery method (query parameter, custom header) is accepted. Keys are 
 
 ### 3. Analysis response reference
 
-The complete field set of GET /v4/product/analysis/{id} . Nothing else is returned; any field not listed here is not part of the contract.
+The complete field set of GET /v4/product/analysis/{id}. Nothing else is returned; any field not listed here is not part of the contract.
 
-"Null share" is the proportion of the 11.2M buildings in the current model snapshot for which the field is null . It is guidance for sizing your handling of missing data, not a contract — shares move as the model is rebuilt.
+"Null share" is the proportion of the 11.2M buildings in the current model snapshot for which the field is null. It is guidance for sizing your handling of missing data, not a contract — shares move as the model is rebuilt.
 
 Field
 Type
@@ -1572,7 +1668,7 @@ integer
 never
 Addresses (nummeraanduidingen) on this pand; divide restorationCosts by it for a per-object figure
 
-Note the asymmetry in the reliability field names: constructionYearReliability and foundationTypeReliability are named after their value field, while drystandReliability , bioInfectionReliability and dewateringDepthReliability are not …RiskReliability . This matches v3 exactly; it is a quirk we preserved deliberately rather than a v4 change.
+Note the asymmetry in the reliability field names: constructionYearReliability and foundationTypeReliability are named after their value field, while drystandReliability, bioInfectionReliability and dewateringDepthReliability are not …RiskReliability. This matches v3 exactly; it is a quirk we preserved deliberately rather than a v4 change.
 
 The *Reliability fields have never been null in any model snapshot to date, but treat them as nullable anyway — v3's non-nullable integer encoding could not express "unknown", and v4's can.
 
@@ -1592,7 +1688,7 @@ constructionYearDistribution
 foundationRiskDistribution
 [{ "foundationRisk": "a", "percentage": 81.01 }, …] — categories with 0 % are omitted
 
-totalIncidentCount , municipalityIncidentCount , totalReportCount , municipalityReportCount
+totalIncidentCount, municipalityIncidentCount, totalReportCount, municipalityReportCount
 [{ "year": 2024, "count": 7 }, …]
 
 dataCollectedPercentage
@@ -1601,7 +1697,7 @@ number
 totalBuildingRestoredCount
 integer
 
-Enum values follow the enum reference .
+Enum values follow the enum reference.
 
 ### 5. Error responses
 
@@ -1676,17 +1772,17 @@ service_unavailable
 Health check only (§7): the webservice is up but cannot currently serve product requests
 Treat the webservice as unavailable; retry later
 
-The four 404 "no result" codes are designed so automated integrations (e.g. the NWWI valuation chain) can choose the correct follow-up action from code alone: a corrected resubmission ( identifier_invalid , address_not_found ), a QuickScan request ( no_data_available ), or no action ( building_not_found , not_a_building ).
+The four 404 "no result" codes are designed so automated integrations (e.g. the NWWI valuation chain) can choose the correct follow-up action from code alone: a corrected resubmission (identifier_invalid, address_not_found), a QuickScan request (no_data_available), or no action (building_not_found, not_a_building).
 
 New codes may be added over time; treat any unlisted code on an error status generically based on the HTTP status.
 
 #### Rate limits
 
-Usage limits are set per API key and product as a number of billable events per calendar day or month (UTC). When a limit applies, every response to that product carries X-RateLimit-Limit , X-RateLimit-Remaining and X-RateLimit-Reset (seconds until the window resets); an exhausted limit returns 429 rate_limit_exceeded with Retry-After . Repeated requests for the same building within 24 hours do not consume additional events.
+Usage limits are set per API key and product as a number of billable events per calendar day or month (UTC). When a limit applies, every response to that product carries X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset (seconds until the window resets); an exhausted limit returns 429 rate_limit_exceeded with Retry-After. Repeated requests for the same building within 24 hours do not consume additional events.
 
 ### 6. Every known building carries a risk indication
 
-Since July 2026, the model guarantees that every building known to the model carries at least one risk indication. When none of the component risks ( drystandRisk , bioInfectionRisk , dewateringDepthRisk ) could be computed and no report-derived class exists — typically buildings outside groundwater-model coverage or with an undetermined foundation type — unclassifiedRisk contains a construction-year-based estimate:
+Since July 2026, the model guarantees that every building known to the model carries at least one risk indication. When none of the component risks (drystandRisk, bioInfectionRisk, dewateringDepthRisk) could be computed and no report-derived class exists — typically buildings outside groundwater-model coverage or with an undetermined foundation type — unclassifiedRisk contains a construction-year-based estimate:
 
 Construction year
 unclassifiedRisk
@@ -1699,9 +1795,9 @@ b
 
 Notes for interpreting responses:
 
-- This fallback is indicative : it is a heuristic, not a computed or inspected result. It applies to roughly 0.4% of buildings nationally.
+- This fallback is indicative: it is a heuristic, not a computed or inspected result. It applies to roughly 0.4% of buildings nationally.
 
-- The component risk fields themselves stay null in this case. More generally, a null component risk is structural, not missing data : each component only applies to certain foundation types (e.g. drystandRisk to wood foundations, dewateringDepthRisk to no-pile foundations). Do not infer data quality from individual null components.
+- The component risk fields themselves stay null in this case. More generally, a null component risk is structural, not missing data: each component only applies to certain foundation types (e.g. drystandRisk to wood foundations, dewateringDepthRisk to no-pile foundations). Do not infer data quality from individual null components.
 
 - Report-derived unclassifiedRisk values always take precedence over the fallback.
 
@@ -1711,7 +1807,7 @@ Notes for interpreting responses:
 
 ### 7. Health check
 
-GET /v4/health reports whether the webservice can currently serve product requests. It is unauthenticated , never billed, and intended for availability monitors.
+GET /v4/health reports whether the webservice can currently serve product requests. It is unauthenticated, never billed, and intended for availability monitors.
 
 curl -i https://ws.fundermaps.com/v4/health
 
@@ -1733,59 +1829,59 @@ The webservice itself is unreachable
 
 Treat the HTTP status as the contract: 200 means available, anything else means unavailable. The body is informational and deliberately carries no technical detail (no versions, hostnames, or timings).
 
-- Responses carry Cache-Control: no-store ; every call reflects the current state.
+- Responses carry Cache-Control: no-store; every call reflects the current state.
 
 - The state is re-evaluated at most once every 5 seconds server-side. Once a minute is a sensible polling interval; polling faster does not give fresher answers.
 
 - A 200 says the service is available, not that a specific building has data — the 404 codes in §5 still apply to product calls.
 
-- Staging exposes the same endpoint at https://ws-staging.fundermaps.com/v4/health .
+- Staging exposes the same endpoint at https://ws-staging.fundermaps.com/v4/health.
 
 ### Enum reference
 
-The values below are the exact, complete label sets of the database enum types the API serves from — every value a v4 response can contain is listed, and a CI check keeps this table in sync with the implementation ( src/enums.ts ). All enum fields are nullable: expect null when the underlying data point is absent.
+The values below are the exact, complete label sets of the database enum types the API serves from — every value a v4 response can contain is listed, and a CI check keeps this table in sync with the implementation (src/enums.ts). All enum fields are nullable: expect null when the underlying data point is absent.
 
 Field
 Values
 
 foundationType
-wood , concrete , no_pile , wood_charger , weighted_pile , combined , steel_pile , other , no_pile_masonry , no_pile_strips , no_pile_concrete_floor , no_pile_slit , wood_amsterdam , wood_rotterdam , no_pile_bearing_floor , wood_rotterdam_amsterdam , wood_rotterdam_arch , wood_amsterdam_arch
+wood, concrete, no_pile, wood_charger, weighted_pile, combined, steel_pile, other, no_pile_masonry, no_pile_strips, no_pile_concrete_floor, no_pile_slit, wood_amsterdam, wood_rotterdam, no_pile_bearing_floor, wood_rotterdam_amsterdam, wood_rotterdam_arch, wood_amsterdam_arch
 
 reliability
-indicative , established , cluster , supercluster
+indicative, established, cluster, supercluster
 
 foundationRisk
-a , b , c , d , e
+a, b, c, d, e
 
 damageCause
-drainage , construction_flaw , drystand , overcharge , overcharge_negative_cling , negative_cling , bio_infection , fungus_infection , bio_fungus_infection , foundation_flaw , construction_heave , subsidence , vegetation , gas , vibrations , partial_foundation_recovery , japanese_knotweed , groundwater_level_reduction
+drainage, construction_flaw, drystand, overcharge, overcharge_negative_cling, negative_cling, bio_infection, fungus_infection, bio_fungus_infection, foundation_flaw, construction_heave, subsidence, vegetation, gas, vibrations, partial_foundation_recovery, japanese_knotweed, groundwater_level_reduction
 
 inquiryType
-monitoring , note , quickscan , unknown , demolition_research , second_opinion , archive_research , architectural_research , foundation_advice , inspectionpit , foundation_research , additional_research , ground_water_level_research , soil_investigation , facade_scan
+monitoring, note, quickscan, unknown, demolition_research, second_opinion, archive_research, architectural_research, foundation_advice, inspectionpit, foundation_research, additional_research, ground_water_level_research, soil_investigation, facade_scan
 
 recoveryType
-table , beam_on_pile , pile_lowering , pile_in_wall , injection , unknown
+table, beam_on_pile, pile_lowering, pile_in_wall, injection, unknown
 
 facadeScanRisk
-a , b , c , d , e
+a, b, c, d, e
 
 settlementSpeed
-nil , small , mediocre , big , very_big
+nil, small, mediocre, big, very_big
 
 skewedParallelFacade
-nil , small , mediocre , big , very_big
+nil, small, mediocre, big, very_big
 
 skewedPerpendicularFacade
-nil , small , mediocre , big , very_big
+nil, small, mediocre, big, very_big
 
 facadeCrack
-none , nil , small , mediocre , big
+none, nil, small, mediocre, big
 
 overallQuality
-bad , mediocre , tolerable , good , mediocre_good , mediocre_bad
+bad, mediocre, tolerable, good, mediocre_good, mediocre_bad
 
 enforcementTerm
-term05 , term510 , term1020 , term5 , term10 , term15 , term20 , term25 , term30 , term40
+term05, term510, term1020, term5, term10, term15, term20, term25, term30, term40
 
 Correction notice (June 2026). Earlier revisions of this table were incomplete and listed four inquiryType values that the API never returns. If you implemented against an earlier revision, update your parsers:
 
@@ -1797,21 +1893,21 @@ Correction notice (June 2026). Earlier revisions of this table were incomplete a
 
 - quick_scan → the API returns quickscan
 
-Additionally, 8 foundationType values, 5 damageCause values, and 4 further inquiryType values ( archive_research , ground_water_level_research , soil_investigation , facade_scan ) were missing and have been added above. Treat any enum value outside this table as a defect and report it to us.
+Additionally, 8 foundationType values, 5 damageCause values, and 4 further inquiryType values (archive_research, ground_water_level_research, soil_investigation, facade_scan) were missing and have been added above. Treat any enum value outside this table as a defect and report it to us.
 
 ### Appendix: coming from v3
 
 /api/v3 was retired on 2026-08-29. The data and its meaning did not change between v3 and v4 — the same building returns the same assessment — but the wire format did. This appendix exists so historical v3 output can be reconciled with v4; nothing in it is needed for a new integration.
 
-- Paths: /api/v3/product/{analysis|statistics}/{id} → /v4/product/…/{id} . risk , light , facade_scan , foundation-research , usage , health and mcp have no v3 equivalent.
+- Paths: /api/v3/product/{analysis|statistics}/{id} → /v4/product/…/{id}. risk, light, facade_scan, foundation-research, usage, health and mcp have no v3 equivalent.
 
-- Authentication: only Authorization: Bearer fmsk.… ; X-API-Key , Authorization: authkey and ?authkey= are gone.
+- Authentication: only Authorization: Bearer fmsk.…; X-API-Key, Authorization: authkey and ?authkey= are gone.
 
-- Enums are strings, not integers — mapping tables below. Do not derive the mapping from the position of a value in the enum reference ; that table follows the database ordering, which is not the v3 ordering.
+- Enums are strings, not integers — mapping tables below. Do not derive the mapping from the position of a value in the enum reference; that table follows the database ordering, which is not the v3 ordering.
 
 - Analysis: enforcementTerm and overallQuality were removed (source column had drifted from the documented semantics); addressCount was added.
 
-- Statistics: foundationTypeDistribution is the array itself (was { foundationTypes: [...] } ); constructionYearDistribution items are { yearFrom, count } (was nested decade.yearFrom/yearTo dates + totalCount ); foundationRiskDistribution is an array of { foundationRisk, percentage } (was percentageA – percentageE ); the four year-count arrays renamed totalCount → count .
+- Statistics: foundationTypeDistribution is the array itself (was { foundationTypes: [...] }); constructionYearDistribution items are { yearFrom, count } (was nested decade.yearFrom/yearTo dates + totalCount); foundationRiskDistribution is an array of { foundationRisk, percentage } (was percentageA – percentageE); the four year-count arrays renamed totalCount → count.
 
 - Errors: every non-200 response is { code, message } with a stable code (§5).
 
@@ -1819,7 +1915,7 @@ Additionally, 8 foundationType values, 5 damageCause values, and 4 further inqui
 
 The underlying values did not change — only their encoding. A building that returned foundationType: 3 from v3 returns foundationType: "concrete" from v4 for the same identifier, from the same source data. Use these tables to reconcile historical v3 output with v4 output.
 
-⚠️ Do not derive this mapping from the position of a value in the enum reference table. That table is ordered by the database's own enum ordering, which is not the v3 integer ordering. Mapping by position silently yields concrete where v3 said wood_amsterdam , and so on. Use the explicit tables below.
+⚠️ Do not derive this mapping from the position of a value in the enum reference table. That table is ordered by the database's own enum ordering, which is not the v3 integer ordering. Mapping by position silently yields concrete where v3 said wood_amsterdam, and so on. Use the explicit tables below.
 
 Reliability — applies to all *Reliability fields:
 
@@ -1838,7 +1934,7 @@ cluster
 3
 supercluster
 
-FoundationRisk — applies to drystandRisk , bioInfectionRisk , dewateringDepthRisk , unclassifiedRisk , and facadeScanRisk :
+FoundationRisk — applies to drystandRisk, bioInfectionRisk, dewateringDepthRisk, unclassifiedRisk, and facadeScanRisk:
 
 v3
 v4
@@ -1858,7 +1954,7 @@ d
 4
 e
 
-foundationType :
+foundationType:
 
 v3
 v4
@@ -1917,7 +2013,7 @@ wood_rotterdam_arch
 17
 wood_amsterdam_arch
 
-inquiryType :
+inquiryType:
 
 v3
 v4
@@ -1967,7 +2063,7 @@ soil_investigation
 14
 facade_scan
 
-recoveryType :
+recoveryType:
 
 v3
 v4
@@ -1990,7 +2086,7 @@ injection
 5
 unknown
 
-damageCause — note that 7 is not used ; the v3 integer sequence has a gap there. Do not assume contiguous values.
+damageCause — note that 7 is not used; the v3 integer sequence has a gap there. Do not assume contiguous values.
 
 v3
 v4
@@ -2061,7 +2157,7 @@ Nationaal Herstel Register
 
 Meld herstelde funderingen in het Nationaal Herstel Register. Zo blijven kennis en vertrouwen behouden en verloopt besluitvorming rond transacties, taxaties en beleid sneller.
 
-Meld herstelmaatregelen aan via het registratieformulier en voeg de bewijsdocumenten toe. Wilt u als gemeente of herstelbedrijf structureel aansluiten? Neem contact op via info@fundermaps.com .
+Meld herstelmaatregelen aan via het registratieformulier en voeg de bewijsdocumenten toe. Wilt u als gemeente of herstelbedrijf structureel aansluiten? Neem contact op via info@fundermaps.com.
 
 Herstel registreren
 
@@ -2168,7 +2264,7 @@ Informatie
 
 Laatst bijgewerkt: 25 september 2026
 
-Deze pagina licht toe hoe FunderMaps omgaat met funderingsgegevens. Voor persoonsgegevens verwijzen wij naar onze privacyverklaring .
+Deze pagina licht toe hoe FunderMaps omgaat met funderingsgegevens. Voor persoonsgegevens verwijzen wij naar onze privacyverklaring.
 
 ### 1. Uitgangspunt
 
@@ -2204,7 +2300,7 @@ Deze gegevens worden gebruikt voor analyse en rapportage, kwaliteitsborging van 
 
 ### 4. Nationale Database Funderingen
 
-De funderingsgegevens in de Nationale Database Funderingen zijn objectgegevens op pandniveau. Ze worden gebruikt voor analyse, inzicht en risicobeoordeling. Hoe het risico wordt bepaald, staat op Hoe FunderMaps het funderingsrisico bepaalt .
+De funderingsgegevens in de Nationale Database Funderingen zijn objectgegevens op pandniveau. Ze worden gebruikt voor analyse, inzicht en risicobeoordeling. Hoe het risico wordt bepaald, staat op Hoe FunderMaps het funderingsrisico bepaalt.
 
 ### 5. Scheiding van gegevens
 
@@ -2218,11 +2314,11 @@ Het bewaren en hergebruiken van objectgegevens is nodig voor kwaliteitsborging v
 
 ### 7. Hoe gegevens binnenkomen
 
-- Onderzoek en archief : funderingsonderzoeken, archiefstukken en herstelregistraties, aangeleverd door gemeenten, onderzoeksbureaus, herstelbedrijven en eigenaren.
+- Onderzoek en archief: funderingsonderzoeken, archiefstukken en herstelregistraties, aangeleverd door gemeenten, onderzoeksbureaus, herstelbedrijven en eigenaren.
 
-- Meldingen : via melden.fundermaps.com. De persoonsgegevens van de melder blijven bij de melding; de funderingsgegevens uit het document worden beoordeeld en per pand vastgelegd.
+- Meldingen: via melden.fundermaps.com. De persoonsgegevens van de melder blijven bij de melding; de funderingsgegevens uit het document worden beoordeeld en per pand vastgelegd.
 
-- Commerciële data : grondwaterstand, pandzakking uit satellietdata en Verkennend Funderingsonderzoek, van gespecialiseerde leveranciers en bureaus.
+- Commerciële data: grondwaterstand, pandzakking uit satellietdata en Verkennend Funderingsonderzoek, van gespecialiseerde leveranciers en bureaus.
 
 ### 8. Delen van gegevens
 
@@ -2266,7 +2362,7 @@ FunderMaps besteedt grote zorg aan de juistheid en actualiteit van de informatie
 
 ### 3. Aansprakelijkheid
 
-FunderMaps is niet aansprakelijk voor schade die voortvloeit uit het gebruik van de informatie, behalve bij opzet of grove schuld. Voor klanten gelden de algemene voorwaarden .
+FunderMaps is niet aansprakelijk voor schade die voortvloeit uit het gebruik van de informatie, behalve bij opzet of grove schuld. Voor klanten gelden de algemene voorwaarden.
 
 ### 4. Links naar andere websites
 
@@ -2278,4 +2374,4 @@ De inhoud van deze website, waaronder teksten, cijfers, kaarten en afbeeldingen,
 
 ### 6. Fouten melden
 
-Ziet u een fout in de gegevens van een pand? Meld het via melden.fundermaps.com . Andere vragen: info@fundermaps.com.
+Ziet u een fout in de gegevens van een pand? Meld het via melden.fundermaps.com. Andere vragen: info@fundermaps.com.
