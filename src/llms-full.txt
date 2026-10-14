@@ -145,98 +145,6 @@ Schermafbeelding van de FunderMaps-kaart.
 
 Deze organisaties werken met de gegevens van FunderMaps:
 
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
--
-
-Vorige referentie slide
-
-" aria-label="glide right">
-
-Volgende referentie slide
-
 ### Partners
 
 Kenniscentrum Aanpak Funderingsproblematiek. FunderMaps volgt de KCAF-richtlijn en de risicoklassen A tot en met E, en sluit aan op de ambitie van het KCAF: eigenaren en kopers helpen funderingsproblemen te signaleren en aan te pakken.
@@ -255,61 +163,37 @@ Meer info
 
 Funderingsproblematiek gaat over hoge kosten en ingrijpende beslissingen. Daarom levert FunderMaps zijn data via deskundigen, die de uitkomst in context kunnen plaatsen: bouwkundigen, makelaars, taxateurs en andere vastgoedprofessionals. Dit zijn de partijen via wie wij leveren:
 
--
-
--
-
--
-
--
-
--
-
 Geen andere partijen of producten gebruiken de data van FunderMaps, ongeacht wat er wordt beweerd.
-
--
 
 Dankzij FunderMaps kregen we snel inzicht in risicogebieden. Hierdoor konden we tijdig ingrijpen en erger voorkomen. De kaartlagen en analyses zijn van hoge kwaliteit en makkelijk bruikbaar in ons interne systeem.
 
 Gemeente
 Beleidsmedewerker Openbare Ruimte
 
--
-
 Met de informatie van FunderMaps konden we gerichter communiceren met bewoners over funderingsrisico’s. Dat gaf vertrouwen en hielp ons bij het prioriteren van onderhoud.
 
 Woningcorporatie
 Projectleider Vastgoedbeheer
-
--
 
 Door de kaarten en modellen van FunderMaps weten wij precies waar de risico’s liggen. Dat maakt onze inspecties sneller én effectiever.
 
 Ingenieursbureau
 Adviseur Geotechniek
 
--
-
 Als taxateur zie ik direct of er sprake is van funderingsrisico’s. Dat scheelt enorm veel tijd en geeft duidelijkheid naar mijn opdrachtgevers.
 
 Taxatiebureau
 Taxateur
-
--
 
 Dankzij de data van FunderMaps kunnen we hypotheekaanvragen sneller en beter beoordelen. Funderingsrisico's zijn direct inzichtelijk.
 
 Bank
 Hypotheekadviseur
 
--
-
 Voor onze funderingsaanpak gebruiken we de kaarten van FunderMaps als basis. Ze zijn nauwkeurig, up-to-date en sluiten goed aan op onze eigen registraties.
 
 Gemeente
 Coördinator Gebiedsbeheer
-
-" aria-label="glide right">
 
 ### Open over wat we doen
 
@@ -337,84 +221,43 @@ Landelijke funderingscijfers
 
 Een actueel overzicht van de funderingsproblematiek in Nederland, rechtstreeks uit de Nationale Database Funderingen. Voor beleidsmakers, gemeenten, provincies, woningcorporaties en iedereen die risico's wil herkennen en gericht wil handelen.
 
-Bijgewerkt op – · –
+De actuele cijfers staan op de pagina Stand van het land: https://fundermaps.com/stand-van-het-land.html
 
 De funderingstypen en risicoklassen op deze pagina komen uit het huidige FunderMaps-model. Het vernieuwde funderingstypemodel dat op Hoe FunderMaps het funderingsrisico bepaalt wordt uitgelegd, vervangt dat binnenkort; dan worden ook deze cijfers bijgewerkt.
 
-### Kerncijfers
+Toon de cijfers voor
+
+Heel Nederland
+
+### Kerncijfers · Nederland
 
 Alle panden met een adres in de BAG. Funderingstype en risicoklasse komen uit het FunderMaps-model: waar onderzoek is gedaan uit dat onderzoek, elders afgeleid uit het pand en zijn omgeving.
-
-Waarnemingen
-–
-funderingsgegevens per pand of adres uit onderzoek, archief, Verkennend Funderingsonderzoek, notities en herstel
-
-Vastgelegde waarden
-–
-alle ingevulde gegevens in die waarnemingen samen
-
-Onderzochte panden
-–
-met een funderingstype uit eigen onderzoek of archief · hoe het model rekent
-
-Panden met een adres
-–
-– adressen
-
-Houten paalfundering
-–
-– van alle panden
-
-Ondiepe fundering
-–
-– van alle panden
-
-Dekking
-–
-gemeenten · – wijken · – buurten
-
-Herstelopgave klasse D en E
-–
-– panden met klasse D of E op droogstand of ontwateringsdiepte
-
-Houten palen, klasse D en E
-–
-gemiddeld per pand · totaal – · – panden ( – van de houten panden)
-
-Ondiep, klasse D en E
-–
-gemiddeld per pand · totaal – · – panden ( – van de ondiepe panden)
 
 Herstelde panden
 30.122
 Gevalideerd en niet-gevalideerd funderingsherstel uit het Nationaal Herstel Register , stand 21 september 2026. Dit getal wordt nog met de hand bijgewerkt, tot het register volledig in FunderMaps is opgenomen.
 
-### Funderingstypen
+### Funderingstypen · Nederland
 
 Verhouding tussen de drie funderingsgroepen over alle panden met een adres.
 
-### Risicotabel
+### Risicotabel · Nederland
 
 Risicoklasse A (geen risico) tot en met E (vastgesteld probleem), voor panden op houten palen en ondiepe funderingen. De klasse van een pand is de zwaarste van zijn vier funderingsrisico's: droogstand, bacteriële aantasting, ontwateringsdiepte en overig.
 
-Klasse
-Panden
-Adressen
-Aandeel panden
-
-### Risicoklassen per funderingstype
+### Risicoklassen per funderingstype · Nederland
 
 Betonpalen vallen vrijwel geheel in klasse A. Het risico zit bij houten palen en, in mindere mate, bij ondiepe funderingen.
 
-### Risicoklassen per bouwdecennium
+### Risicoklassen per bouwdecennium · Nederland
 
 Elke cel toont welk deel van de panden uit dat decennium in een klasse valt. Hoe voller de kleur, hoe groter het aandeel.
 
-### Funderingstypen door de tijd
+### Funderingstypen door de tijd · Nederland
 
 Aandeel per funderingsgroep, per bouwdecennium (houten palen, beton en ondiep samen 100%). Ondiep domineert de oudere bouw; beton wint terrein na de oorlog.
 
-### Bandbreedtes herstelkosten
+### Bandbreedtes herstelkosten · Nederland
 
 Verdeling van de kostenindicatie, als aandeel van de panden met een indicatie. Niet elk pand heeft er een.
 
@@ -423,22 +266,6 @@ Verdeling van de kostenindicatie, als aandeel van de panden met een indicatie. N
 Professionals en bewoners melden onderzoek, herstel en correcties terug. Elke melding wordt beoordeeld, en waar het risico verandert, rekent FunderMaps het pand opnieuw door.
 
 Doe een melding
-
-Terugmeldingen totaal
-–
-– via het meldportaal · – uit archiefonderzoek · – via melden.fundermaps.com
-
-Mediane doorlooptijd
-– uur
-van melding tot beoordeling, via melden.fundermaps.com
-
-Verkennend Funderingsonderzoek
-–
-onderzoeken op – panden, waarvan – in de afgelopen twaalf maanden. Aantal per maand van uitvoering:
-
-Risico herberekend
-–
-meldingen waarna het risico van het pand is aangepast en de melder bericht kreeg
 
 Externe duiding
 
