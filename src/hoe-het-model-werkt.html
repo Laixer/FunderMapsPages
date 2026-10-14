@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hoe FunderMaps rekent</title>
+<title>Hoe FunderMaps het funderingsrisico bepaalt — FunderMaps</title>
 <link rel="canonical" href="https://fundermaps.com/hoe-het-model-werkt.html">
 <meta name="description" content="Hoe het FunderMaps-model het funderingstype en funderingsrisico per pand bepaalt, en welke data daarachter zit: eigen onderzoeksdata, open data en commerciële data.">
+<link rel="icon" type="image/x-icon" href="resources/images/fundermaps-favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap">
@@ -81,9 +82,10 @@ section { padding: 56px 0 8px; display: grid; gap: 20px; }
 
 .classes { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
 .cls { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 6px; font-weight: 800; font-size: 0.9rem; }
-.cls.a { background: #0a8158; color: #fff; } .cls.b { background: #7fbf8e; color: #191e3c; }
-.cls.c { background: #ffcc69; color: #191e3c; } .cls.d { background: #e8793a; color: #191e3c; }
-.cls.e { background: #b3261e; color: #fff; }
+/* The class colours of the information standard (informatiestandaard.html#kleuren). */
+.cls.a { background: #2e7d32; color: #fff; } .cls.b { background: #9e9d24; color: #191e3c; }
+.cls.c { background: #f9a825; color: #191e3c; } .cls.d { background: #ef6c00; color: #191e3c; }
+.cls.e { background: #c62828; color: #fff; }
 
 .layers { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
 .layer { border-radius: 20px; padding: 24px; display: grid; gap: 12px; align-content: start; border: 1px solid var(--line); background: var(--paper); border-top: 6px solid var(--c); }
@@ -117,7 +119,10 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
 .fact { display: grid; gap: 4px; align-content: start; }
 .fact .big { font-weight: 800; font-size: clamp(2rem, 1.6rem + 1.6vw, 2.8rem); line-height: 1.05; color: var(--ours); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .fact .big sup { font-size: 0.45em; vertical-align: super; }
-.risks { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+/* Three cards side by side: each number on one line, so the headings under them line up. */
+@media (min-width: 64rem) { .fact .big { font-size: 2.3rem; white-space: nowrap; } }
+/* At most two side by side: the drawings carry their own legend, unreadable in a narrower card. */
+.risks { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(max(15rem, 50% - 8px), 1fr)); }
 .risks .card { display: grid; gap: 8px; align-content: start; }
 .risks .uses { font-size: 0.9rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
 .ladder { margin: 0; padding-left: 1.4rem; display: grid; gap: 8px; }
@@ -150,7 +155,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
       <div class="card fact"><span class="big">ruim 1,3 miljoen</span><h3>vastgelegde waarden</h3><p class="muted small">Alle ingevulde gegevens in die waarnemingen samen: funderingstype, niveaus, maten, kwaliteit, schade en herstel.</p></div>
       <div class="card fact"><span class="big">ruim 215.000</span><h3>onderzochte panden</h3><p class="muted small">Panden waarvan het funderingstype uit eigen onderzoek of archief bekend is.</p></div>
     </div>
-    <p class="muted small">Peildatum 25 september 2026. Dezelfde getallen staan op de <a href="https://fundermaps.com/stand-van-het-land.html">Stand van het land</a>.</p>
+    <p class="muted small">Peildatum 25 september 2026. De actuele getallen staan op de <a href="https://fundermaps.com/stand-van-het-land.html">Stand van het land</a>.</p>
   </section>
 
   <section>
@@ -334,7 +339,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
     <span class="eyebrow">Verwijzingen</span>
     <h2>Verder lezen</h2>
     <ul class="prose" style="margin:0;padding-left:1.2rem">
-      <li><a href="https://fundermaps.com/stand-van-het-land.html">Stand van het land</a>: de funderingen van Nederland in cijfers, met dezelfde peildatum als deze pagina</li>
+      <li><a href="https://fundermaps.com/stand-van-het-land.html">Stand van het land</a>: de funderingen van Nederland in cijfers</li>
       <li><a href="https://fundermaps.com/informatiestandaard.html">Informatiestandaard funderingsgegevens</a>: de begrippen, eenheden en waardelijsten</li>
       <li><a href="https://fundermaps.com/begrippen-en-standaarden.html">Begrippen, standaarden en catalogus</a>: welke begrippen en datasets FunderMaps gebruikt</li>
       <li><a href="https://fundermaps.com/kennisbank.html">Kennisbank</a>: alle uitleg over de gegevens van FunderMaps</li>
@@ -356,7 +361,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
 </main>
 
 <footer class="wrap">
-  <p>FunderMaps · Nationale Database Funderingen. Aantallen: productiedatabase FunderMaps, peildatum 25 september 2026: 520.749 waarnemingen, 1.371.547 vastgelegde waarden en 216.281 onderzochte panden; dezelfde bron en peildatum als de Stand van het land (fundermaps.com/stand-van-het-land.html). Toetsing: onderzochte panden achtergehouden en gescheiden per rapport en per gemeente; het model rekende zonder deze panden en is vergeleken met de onderzoeksuitkomst. Risicoklassen volgens de termen van het KCAF.</p>
+  <p>FunderMaps · Nationale Database Funderingen. Aantallen: productiedatabase FunderMaps, peildatum 25 september 2026: 520.749 waarnemingen, 1.371.547 vastgelegde waarden en 216.281 onderzochte panden; dezelfde bron als de Stand van het land (fundermaps.com/stand-van-het-land.html). Toetsing: onderzochte panden achtergehouden en gescheiden per rapport en per gemeente; het model rekende zonder deze panden en is vergeleken met de onderzoeksuitkomst. Risicoklassen volgens de termen van het KCAF.</p>
 </footer>
 
 </body>

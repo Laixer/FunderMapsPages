@@ -8,7 +8,7 @@ import html, re, pathlib
 
 PAGES = [
     ("Home", "index.html", ""),
-    ("Stand van het Land", "stand-van-het-land.html", "stand-van-het-land.html"),
+    ("Stand van het land", "stand-van-het-land.html", "stand-van-het-land.html"),
     ("Hoe FunderMaps het funderingsrisico bepaalt", "hoe-het-model-werkt.html", "hoe-het-model-werkt.html"),
     ("Informatiestandaard funderingsgegevens", "informatiestandaard.html", "informatiestandaard.html"),
     ("Begrippen, standaarden en catalogus", "begrippen-en-standaarden.html", "begrippen-en-standaarden.html"),
@@ -35,6 +35,8 @@ def text_of(page: str) -> str:
     t = re.sub(r"</(p|div|tr|li|ul|ol|table|section|article)>", "\n", t)
     t = re.sub(r"<[^>]+>", " ", t)
     t = html.unescape(t)
+    # A soft hyphen only tells a browser where a long word may break; it is not part of the text.
+    t = t.replace("\u00ad", "")
     t = re.sub(r"[ \t ]+", " ", t)
     t = re.sub(r" *\n *", "\n", t)
     t = re.sub(r"\n{3,}", "\n\n", t)

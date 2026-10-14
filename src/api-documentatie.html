@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FunderMaps API v4</title>
+<title>FunderMaps API v4 — FunderMaps</title>
 <link rel="canonical" href="https://fundermaps.com/api-documentatie.html">
 <meta name="description" content="De actuele documentatie van de FunderMaps API v4: endpoints, authenticatie, velden, foutmeldingen en limieten.">
+<link rel="icon" type="image/x-icon" href="resources/images/fundermaps-favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap">
@@ -75,10 +76,10 @@ section { padding: 56px 0 8px; display: grid; gap: 20px; }
 /* A grid item is never narrower than its widest content unless told so; a wide
    table or code block then widened the whole page on a phone. Let the items
    shrink: tables and code blocks scroll sideways inside their own box. */
-section > *, .prose > *, .doc > *, .doc li { min-width: 0; }
+section > *, .prose > *, .doc > *, .doc li, .card > * { min-width: 0; }
 /* A long path in running text may break when its line cannot hold it. Not
    "anywhere": that would also squeeze the tables, which scroll instead. */
-.doc :not(pre) > code { overflow-wrap: break-word; }
+.doc :not(pre) > code, .card code { overflow-wrap: break-word; }
 .card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
 
 .steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }

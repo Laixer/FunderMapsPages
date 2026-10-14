@@ -10,7 +10,9 @@
   [data-active-nav="references"] &[data-nav-key="references"],
   [data-active-nav="demo"] &[data-nav-key="demo"],
   [data-active-nav="partners"] &[data-nav-key="partners"],
-  [data-active-nav="artikelen"] &[data-nav-key="artikelen"] {
+  [data-active-nav="artikelen"] &[data-nav-key="artikelen"],
+  [data-active-nav="stand-van-het-land"] &[data-nav-key="stand-van-het-land"],
+  [data-active-nav="kennisbank"] &[data-nav-key="kennisbank"] {
     @content;
   }
 }
@@ -45,7 +47,7 @@
       @apply flex relative pl-16;
 
       a {
-        @apply flex text-[30px] text-grey-400;
+        @apply flex text-[30px] text-grey-300;
 
         @include nav-active-selectors {
           @apply font-extrabold text-white;
