@@ -29,6 +29,8 @@ OUT = pathlib.Path(__file__).resolve().parent.parent / "src" / "llms-full.txt"
 # The attributes of a tag; a quoted value may hold a ">" (data-glide-dir=">").
 ATTRS = r"""(?:[^>"']|"[^"]*"|'[^']*')*"""
 TAG = "<" + ATTRS + ">"
+# The build writes an attribute value bare when it can (alt=Aalsmeer).
+ALT = r"""\salt=(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))"""
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 # Stand van het land fills its figures in the browser; the built page holds only "–" in their place.
 LIVE_FIGURES = "De actuele cijfers staan op de pagina Stand van het land: https://fundermaps.com/stand-van-het-land.html"
@@ -80,6 +82,11 @@ class Cuts(HTMLParser):
         return "".join(out) + self.src[at:]
 
 
+def alt_of(attrs: str) -> str:
+    m = re.search(ALT, attrs)
+    return next((v for v in m.groups() if v is not None), "") if m else ""
+
+
 def text_of(page: str) -> str:
     t = (DIST / page).read_text(encoding="utf-8")
     m = re.search(r"<main[^>]*>(.*)</main>", t, re.S)
@@ -87,17 +94,24 @@ def text_of(page: str) -> str:
     t = Cuts(t).apply()
     t = re.sub(r"<(script|style|svg|nav|footer|details)\b" + ATTRS + r">.*?</\1>", "", t, flags=re.S)
     t = re.sub(r"<h([1-4])\b" + ATTRS + r">(.*?)</h\1>", lambda m: "\n\n" + "#" * (int(m.group(1)) + 1) + " " + re.sub(TAG, "", m.group(2)).strip() + "\n\n", t, flags=re.S)
+    # A list item that holds only a picture (the logo strips) stands for the picture's text: the organisation's name.
+    t = re.sub(r"(<li\b" + ATTRS + r">)\s*<img\b(" + ATTRS + r")>\s*(?=</li>)", lambda m: m.group(1) + alt_of(m.group(2)), t)
     t = re.sub(r"<li\b" + ATTRS + ">", "\n- ", t)
     t = re.sub(r"</(p|div|tr|li|ul|ol|table|section|article)>", "\n", t)
     # A line-break hint inside a word or an address is not a space.
     t = re.sub(r"<wbr\b" + ATTRS + ">", "", t)
-    t = re.sub(TAG, " ", t)
+    # Any other tag is a word boundary, except against punctuation: "Register</a>," reads "Register,"
+    # and "(<code>id</code>)" reads "(id)". Spaces written in the text itself stay.
+    t = re.sub(TAG, "\0", t)
+    t = re.sub(r"\0+(?=[,.;:)])", "", t)
+    t = re.sub(r"(?<=\()\0+", "", t)
+    t = t.replace("\0", " ")
     t = html.unescape(t)
     # A soft hyphen only tells a browser where a long word may break; it is not part of the text.
     t = t.replace("\u00ad", "")
     t = re.sub(r"[ \t ]+", " ", t)
     t = re.sub(r" *\n *", "\n", t)
-    # A list item that holds only a picture (the logo strips) is not a bullet.
+    # A list item left empty (a picture without a text) is not a bullet.
     t = re.sub(r"^-\n", "", t, flags=re.M)
     t = re.sub(r"\n{3,}", "\n\n", t)
     return t.strip()
