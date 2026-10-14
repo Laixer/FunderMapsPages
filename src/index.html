@@ -56,7 +56,7 @@
         <h2>Gebouwd op onderzoek, niet op aannames</h2>
         <p>FunderMaps is meer dan een kaart. Het is de Nationale Database Funderingen: funderingstypen uit onderzoek, herstelhistorie, pandzakking uit satellietmetingen en een risicoanalyse voor elk pand.</p>
       </div>
-      <div class="grid gap-4 lg:grid-cols-3">
+      <div class="grid gap-4 [--svl-fit:14cqi] lg:grid-cols-3">
         <div class="svl-figure svl-figure--lead">
           <span class="svl-figure__label">Panden</span>
           <span class="svl-figure__value">11 miljoen</span>
@@ -124,24 +124,22 @@
       <div class="grid grid-cols-1 gap-x-6 gap-y-6 lg:grid-cols-2">
         <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
           <div class="inline-flex items-center lg:block">
-            <include src="./resources/svg/card-viewer-icon.svg"></include>
+            <span class="inline-flex align-middle lg:h-14 lg:items-end"><include src="./resources/svg/card-viewer-icon.svg"></include></span>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Kaart en kaartlagen</h3>
           </div>
           <p class="text-grey-400 mb-6">Zoek op adres en zie per pand het <b>funderingstype, de vier funderingsrisico's, de risicoklasse, onderzoekshistorie en herstel</b>. Risicoprofielen per wijk, buurt of pand, voor beleid, onderzoek en taxatie.</p>
-          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="https://maps.fundermaps.com">
-            <span>Open de kaartdemo</span>
-            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          <a class="card__link | mt-auto block font-extrabold text-green-300 no-underline max-sm:leading-snug" href="https://maps.fundermaps.com">
+            <span>Open de <span class="whitespace-nowrap">kaartdemo<include src="./resources/svg/arrow-right-icon-green.svg"></include></span></span>
           </a>
         </article>
         <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
           <div class="inline-flex items-center lg:block">
-            <include src="./resources/svg/ai-model-icon.svg"></include>
+            <span class="inline-flex align-middle lg:h-14 lg:items-end"><include src="./resources/svg/ai-model-icon.svg"></include></span>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Risico&shy;analyse</h3>
           </div>
           <p class="text-grey-400 mb-6">Het model bepaalt het funderingstype uit <b>vergelijkbare onderzochte panden</b> en berekent vier funderingsrisico's met de risicoklassen van het KCAF. Wat ter plaatse is vastgesteld, gaat altijd voor.</p>
-          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="hoe-het-model-werkt.html">
-            <span>Kennisbank: Hoe het model werkt</span>
-            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          <a class="card__link | mt-auto block font-extrabold text-green-300 no-underline max-sm:leading-snug" href="hoe-het-model-werkt.html">
+            <span>Kennisbank: Hoe het model <span class="whitespace-nowrap">werkt<include src="./resources/svg/arrow-right-icon-green.svg"></include></span></span>
           </a>
         </article>
         <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
@@ -150,9 +148,8 @@
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Pandzakking</h3>
           </div>
           <p class="text-grey-400 mb-6">Hoe snel een pand zelf zakt, gemeten met <b>satellietmetingen (InSAR)</b>. Een verhoogde zakkingssnelheid weegt mee als signaal in de funderingsrisico's.</p>
-          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="hoe-het-model-werkt.html#risicos">
-            <span>Kennisbank: Pandzakking in het model</span>
-            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          <a class="card__link | mt-auto block font-extrabold text-green-300 no-underline max-sm:leading-snug" href="hoe-het-model-werkt.html#risicos">
+            <span>Kennisbank: Pandzakking in het <span class="whitespace-nowrap">model<include src="./resources/svg/arrow-right-icon-green.svg"></include></span></span>
           </a>
         </article>
         <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
@@ -161,31 +158,28 @@
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Nationaal Herstel Register</h3>
           </div>
           <p class="text-grey-400 mb-6">Hét register van <b>uitgevoerd funderingsherstel</b>. Een geregistreerd herstel gaat boven de modelschatting en is zichtbaar voor taxatie en transactie.</p>
-          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="nationaal-herstelregister.html">
-            <span>Kennisbank: Nationaal Herstel Register</span>
-            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          <a class="card__link | mt-auto block font-extrabold text-green-300 no-underline max-sm:leading-snug" href="nationaal-herstelregister.html">
+            <span>Kennisbank: Nationaal Herstel <span class="whitespace-nowrap">Register<include src="./resources/svg/arrow-right-icon-green.svg"></include></span></span>
           </a>
         </article>
         <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
           <div class="inline-flex items-center lg:block">
-            <include src="./resources/svg/application-icon.svg"></include>
+            <span class="inline-flex align-middle lg:h-14 lg:items-end"><include src="./resources/svg/application-icon.svg"></include></span>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">Archief&shy;verwerking met AI</h3>
           </div>
           <p class="text-grey-400 mb-6">Een AI-leeslaag stelt velden voor uit archiefdocumenten, <b>met citaat en paginaverwijzing</b>. Elk voorstel wordt door een mens gecontroleerd; er wordt niets automatisch overgenomen.</p>
-          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="informatiestandaard.html#archief">
-            <span>Kennisbank: Archiefstuk in de standaard</span>
-            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          <a class="card__link | mt-auto block font-extrabold text-green-300 no-underline max-sm:leading-snug" href="informatiestandaard.html#archief">
+            <span>Kennisbank: Archiefstuk in de <span class="whitespace-nowrap">standaard<include src="./resources/svg/arrow-right-icon-green.svg"></include></span></span>
           </a>
         </article>
         <article class="card | bg-white rounded-2xl px-7 pt-14 pb-12 flex flex-col">
           <div class="inline-flex items-center lg:block">
-            <include src="./resources/svg/api-icon.svg"></include>
+            <span class="inline-flex align-middle lg:h-14 lg:items-end"><include src="./resources/svg/api-icon.svg"></include></span>
             <h3 class="ml-6 lg:ml-0 lg:mt-6 lg:mb-2">API</h3>
           </div>
           <p class="text-grey-400 mb-6">Funderingsdata rechtstreeks in uw eigen systemen, met het <b>BAG-pand als sleutel</b>: van één risicoklasse met betrouwbaarheid tot pandgegevens, funderingsrisico's, herstelkostenindicatie en buurtcijfers.</p>
-          <a class="card__link | mt-auto flex items-center font-extrabold text-green-300 no-underline" href="api.html">
-            <span>Meer over de API</span>
-            <include src="./resources/svg/arrow-right-icon-green.svg"></include>
+          <a class="card__link | mt-auto block font-extrabold text-green-300 no-underline max-sm:leading-snug" href="api.html">
+            <span>Meer over de <span class="whitespace-nowrap">API<include src="./resources/svg/arrow-right-icon-green.svg"></include></span></span>
           </a>
         </article>
         <div id="references-anchor"></div>
@@ -254,47 +248,47 @@
                 <div class="glide__track" data-glide-el="track">
                   <ul class="glide__slides">
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/aalsmeer.svg" alt="Aalsmeer" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/abn.svg" alt="Abn" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/abn.svg" alt="ABN AMRO" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/accolade.png" alt="Accolade" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/aedes.png" alt="Aedes" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/amstelveen.webp" alt="Amstelveen" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/bodegraven-reeuwijk.svg" alt="Bodegraven Reeuwijk" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/bodegraven-reeuwijk.svg" alt="Bodegraven-Reeuwijk" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/calcasa.png" alt="Calcasa" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/delft.jpg" alt="Delft" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/den-haag.jpg" alt="Den Haag" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/elkien.webp" alt="Elkien" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/feangreide-frysland.webp" alt="Feangreide Frysland" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/feangreide-frysland.webp" alt="Feangreide Fryslân" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/gemeente-dordrecht.png" alt="Gemeente Dordrecht" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/gemeente-rotterdam.svg" alt="Gemeente Rotterdam" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/gemeente-schiedam.svg" alt="Gemeente Schiedam" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/gouda.svg" alt="Gouda" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/haarlem.svg" alt="Haarlem" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/ing.jpg" alt="Ing" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/kbf.svg" alt="Kbf" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/ing.jpg" alt="ING" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/kbf.svg" alt="KBF" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/lansingerland.svg" alt="Lansingerland" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/lloyds.svg" alt="Lloyds" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/logo-gemeente-amsterdam.png" alt="Gemeente Amsterdam" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/logo-wetland-wonen.svg" alt="Wetland Wonen" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nhg.svg" alt="Nhg" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nhg.svg" alt="NHG" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nieuwkoop.svg" alt="Nieuwkoop" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nrvt.svg" alt="Nrvt" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nvm.png" alt="Nvm" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nwwi.svg" alt="Nwwi" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nrvt.svg" alt="NRVT" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nvm.png" alt="NVM" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/nwwi.svg" alt="NWWI" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/obvion.svg" alt="Obvion" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/oude-water.png" alt="Oude Water" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/quawonen.png" alt="Quawonen" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/oude-water.png" alt="Oudewater" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/quawonen.png" alt="QuaWonen" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/rabobank.png" alt="Rabobank" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/regiodeal-loket.jpeg" alt="Regiodeal Loket" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/stadgenoot.webp" alt="Stadgenoot" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/trivire.png" alt="Trivire" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/utrecht.svg" alt="Utrecht" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/vastgoedned.svg" alt="Vastgoedned" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/vastgoedned.svg" alt="VastgoedNED" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/westland.svg" alt="Westland" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/woerden.png" alt="Woerden" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/woonbron.svg" alt="Woonbron" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/woonkracht10.svg" alt="Woonkracht10" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/woonstad.jpg" alt="Woonstad" loading="lazy"></li>
-                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/wsw.webp" alt="Wsw" loading="lazy"></li>
+                    <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/wsw.webp" alt="WSW" loading="lazy"></li>
                     <li class="glide__slide glide__slide--logo"><img src="./resources/images/references/zwijndrecht.png" alt="Zwijndrecht" loading="lazy"></li>
                   </ul>
                 </div>
@@ -302,14 +296,12 @@
                 <div class="flex justify-center">
                   <div class="glide__arrows" data-glide-el="controls">
                     <!-- Previous Button -->
-                    <button type="button" class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="glide left">
+                    <button type="button" class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Vorige">
                       <include src="./resources/svg/chevron-white-icon.svg"></include>
-                      <span class="sr-only">Vorige referentie slide</span>
                     </button>
                     <!-- Next Button -->
-                    <button type="button" class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="glide right">
+                    <button type="button" class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Volgende">
                       <include src="./resources/svg/chevron-white-icon.svg"></include>
-                      <span class="sr-only">Volgende referentie slide</span>
                     </button>
                   </div>
                 </div>
@@ -539,10 +531,10 @@
               </div> <!-- sluit glide__track -->
               
               <div class="glide__arrows" data-glide-el="controls">
-                <button type="button" class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="glide left">
+                <button type="button" class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Vorige">
                   <include src="./resources/svg/arrow-right-icon-green.svg"></include>
                 </button>
-                <button type="button" class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="glide right">
+                <button type="button" class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Volgende">
                   <include src="./resources/svg/arrow-right-icon-green.svg"></include>
                 </button>
               </div>

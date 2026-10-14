@@ -18,16 +18,17 @@ const FAMILY_LABEL = {
   shallow: "Ondiepe fundering (op staal)",
   other: "Overige funderingen",
 }
-const BANDS = ["< € 25.000", "€ 25.000 – 50.000", "€ 50.000 – 100.000", "€ 100.000 – 200.000", "≥ € 200.000"]
+// A no-break space after each sign: "€" or "<" never ends a line without its number.
+const BANDS = ["<\u00a0€\u00a025.000", "€\u00a025.000 – 50.000", "€\u00a050.000 – 100.000", "€\u00a0100.000 – 200.000", "≥\u00a0€\u00a0200.000"]
 
 const nf = new Intl.NumberFormat("nl-NL")
 const pf = new Intl.NumberFormat("nl-NL", { minimumFractionDigits: 1, maximumFractionDigits: 1 })
 const num = (n) => nf.format(n)
 const pct = (part, total) => (total ? pf.format((100 * part) / total) + "%" : "–")
-const euro = (n) => (n == null ? "–" : "€ " + nf.format(n))
+const euro = (n) => (n == null ? "–" : "€\u00a0" + nf.format(n))
 const billions = (n) =>
-  n == null ? "–" : "€ " + new Intl.NumberFormat("nl-NL", { maximumFractionDigits: 1 }).format(n / 1e9) + " miljard"
-const decadeLabel = (d) => (d < 1850 ? "< 1850" : d + "s")
+  n == null ? "–" : "€\u00a0" + new Intl.NumberFormat("nl-NL", { maximumFractionDigits: 1 }).format(n / 1e9) + " miljard"
+const decadeLabel = (d) => (d < 1850 ? "<\u00a01850" : `${d}–${d + 9}`)
 
 const el = (tag, cls, text) => {
   const node = document.createElement(tag)
@@ -61,15 +62,17 @@ function fillFigures() {
     wood_pct: pct(fam.wood.buildings, c.buildings),
     shallow: num(fam.shallow.buildings),
     shallow_pct: pct(fam.shallow.buildings, c.buildings),
-    de_total: billions(k.de_total),
-    de_with_cost: num(k.de_with_cost),
+    // No panden with D/E costs: "€ 0" and "Geen panden met klasse D of E …", not "–" and "0 panden".
+    de_total: k.de_with_cost ? billions(k.de_total) : euro(0),
+    de_with_cost: k.de_with_cost ? num(k.de_with_cost) : "Geen",
     de_wood_n: num(kf.wood.de_buildings),
-    de_wood_pct: pct(kf.wood.de_buildings, kf.wood.buildings),
-    de_wood_avg: euro(kf.wood.de_avg),
+    // Without a cost row the family's own count is the base, so a zero reads "0,0%", not "–".
+    de_wood_pct: pct(kf.wood.de_buildings, kf.wood.buildings || fam.wood.buildings),
+    de_wood_avg: kf.wood.de_buildings ? euro(kf.wood.de_avg) : euro(0),
     de_wood_total: billions(kf.wood.de_total),
     de_shallow_n: num(kf.shallow.de_buildings),
-    de_shallow_pct: pct(kf.shallow.de_buildings, kf.shallow.buildings),
-    de_shallow_avg: euro(kf.shallow.de_avg),
+    de_shallow_pct: pct(kf.shallow.de_buildings, kf.shallow.buildings || fam.shallow.buildings),
+    de_shallow_avg: kf.shallow.de_buildings ? euro(kf.shallow.de_avg) : euro(0),
     de_shallow_total: billions(kf.shallow.de_total),
     db_observations: num(view.database.observations),
     db_values: num(view.database.values),
@@ -88,6 +91,12 @@ function fillFigures() {
     const v = values[node.dataset.svl]
     if (v !== undefined) node.textContent = v
   })
+  // A family without D/E panden gets "Geen panden met klasse D of E" instead of its average and total.
+  for (const f of ["wood", "shallow"]) {
+    const zero = !kf[f].de_buildings
+    document.querySelectorAll(`[data-svl-some="${f}"]`).forEach((node) => (node.hidden = zero))
+    document.querySelectorAll(`[data-svl-none="${f}"]`).forEach((node) => (node.hidden = !zero))
+  }
 }
 
 // One tall 100% bar with the family names in their segments, and a card with

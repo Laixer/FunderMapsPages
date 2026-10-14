@@ -2,6 +2,15 @@ html {
   @apply leading-loose text-grey-400;
 }
 
+// A short page fills the window, so the footer never floats above a white band.
+body {
+  @apply flex min-h-dvh flex-col;
+}
+
+main {
+  @apply flex-1;
+}
+
 h1,
 h2,
 h3,
@@ -80,9 +89,10 @@ strong {
 }
 
 code {
-  @apply inline-block bg-blue-100/90 px-2 rounded-md text-base font-mono;
+  @apply inline box-decoration-clone bg-blue-100/90 px-2 rounded-md text-base font-mono;
 
-  // A long address in running text breaks instead of running out of its box on a phone.
+  // Inline, the chip flows with the text: a long address breaks instead of running out of
+  // its box on a phone, and the punctuation after it stays on its line.
   overflow-wrap: anywhere;
 }
 

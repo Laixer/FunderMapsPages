@@ -1,10 +1,15 @@
 // Article cards on the kennisbank page. Each card is a <details> element
 // that expands to reveal the full article body in place.
 .article-card {
-  @apply rounded-3xl border border-blue-100 bg-grey-100 p-5 transition-colors;
+  @apply rounded-3xl border border-blue-100 bg-grey-100 p-3 transition-colors sm:p-5;
 
   &[open] {
     @apply border-yellow-300 bg-white shadow-quote;
+
+    // The opened article starts with the same intro in full: show it once.
+    .article-card__teaser {
+      @apply hidden;
+    }
   }
 
   // Hide the default disclosure triangle — the whole summary is the affordance.
@@ -14,6 +19,11 @@
     &::-webkit-details-marker {
       display: none;
     }
+  }
+
+  // Set here, not as a utility class, so the [open] rule above can hide it.
+  &__teaser {
+    @apply block;
   }
 
   &__content {
@@ -32,9 +42,10 @@
     border border-blue-100 bg-white px-4 text-sm font-semibold text-blue-900
     transition-colors;
 
+  // Yellow text on white could hardly be read: the border marks the state.
   &:hover,
   &:focus-visible {
-    @apply border-yellow-300 text-yellow-300;
+    @apply border-yellow-300 text-blue-900;
   }
 
   &.is-active {

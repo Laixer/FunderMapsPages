@@ -6,6 +6,21 @@
 <title>Hoe FunderMaps het funderingsrisico bepaalt — FunderMaps</title>
 <link rel="canonical" href="https://fundermaps.com/hoe-het-model-werkt.html">
 <meta name="description" content="Hoe het FunderMaps-model het funderingstype en funderingsrisico per pand bepaalt, en welke data daarachter zit: eigen onderzoeksdata, open data en commerciële data.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FunderMaps">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Hoe FunderMaps het funderingsrisico bepaalt — FunderMaps">
+<meta property="og:description" content="Hoe het FunderMaps-model het funderingstype en funderingsrisico per pand bepaalt, en welke data daarachter zit: eigen onderzoeksdata, open data en commerciële data.">
+<meta property="og:url" content="https://fundermaps.com/hoe-het-model-werkt.html">
+<meta property="og:image" content="https://fundermaps.com/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="685">
+<meta property="og:image:alt" content="FunderMaps-platform — kaartweergave van het funderingstype per pand">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hoe FunderMaps het funderingsrisico bepaalt — FunderMaps">
+<meta name="twitter:description" content="Hoe het FunderMaps-model het funderingstype en funderingsrisico per pand bepaalt, en welke data daarachter zit: eigen onderzoeksdata, open data en commerciële data.">
+<meta name="twitter:image" content="https://fundermaps.com/og-image.jpg">
 <link rel="icon" type="image/x-icon" href="resources/images/fundermaps-favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,6 +91,8 @@ section { padding: 56px 0 8px; display: grid; gap: 20px; }
 .card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
 
 .steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+/* Five steps stand three and two, never four and a lone fifth. */
+.steps.five { grid-template-columns: repeat(auto-fit, minmax(max(13rem, (100% - 32px) / 3), 1fr)); }
 .step { display: grid; gap: 8px; align-content: start; }
 .step .n { font-weight: 800; color: var(--blue); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
 .step p { color: var(--muted); }
@@ -249,7 +266,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
     <div class="prose" style="display:grid;gap:14px">
       <p>Is een pand niet zelf onderzocht, dan bepaalt het vernieuwde funderingstypemodel de fundering uit onderzochte panden die erop lijken. Dat gaat in vijf stappen.</p>
     </div>
-    <div class="steps">
+    <div class="steps five">
       <div class="card step"><span class="n">Funderingseenheid</span><p>Aaneengesloten panden die naar verwachting één fundering delen, zoals een bouwblok uit hetzelfde jaar met dezelfde bouwvorm. Een onderzoek aan één pand zegt daardoor iets over de rest van het blok.</p></div>
       <div class="card step"><span class="n">Vergelijkbare panden</span><p>Onderzochte panden uit dezelfde buurt, bouwperiode en gebouwfamilie, met een vergelijkbare hoogte en ondergrond: de grondsoortregio en de opbouw van de ondergrond uit GeoTOP.</p></div>
       <div class="card step"><span class="n">Weging</span><p>Hoe dichterbij en hoe meer het onderzochte pand lijkt, hoe zwaarder het meetelt. Heeft het pand zelf onderzoek of een archiefstuk, dan gaat dat voor, volgens de hiërarchie van bewijs.</p></div>
