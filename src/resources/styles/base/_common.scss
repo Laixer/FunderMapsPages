@@ -81,6 +81,9 @@ strong {
 
 code {
   @apply inline-block bg-blue-100/90 px-2 rounded-md text-base font-mono;
+
+  // A long address in running text breaks instead of running out of its box on a phone.
+  overflow-wrap: anywhere;
 }
 
 /* Inside a code block the block sets the colours: the light chip of inline

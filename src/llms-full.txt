@@ -135,7 +135,7 @@ Onder meer de AFM en ministeries gebruiken de database voor landelijk onderzoek 
 
 ### Probeer de kaart
 
-Per pand het funderingsrisico, het funderingstype, onderzoekshistorie en herstel. Filter op wijk, gemeente of risicoklasse en duik door tot de pand­details. Zie het zelf in de kaartdemo.
+Per pand het funderingsrisico, het funderingstype, onderzoekshistorie en herstel. Filter op wijk, gemeente of risicoklasse en duik door tot de panddetails. Zie het zelf in de kaartdemo.
 
 Open de kaartdemo
 
@@ -292,7 +292,7 @@ Adviseur Geotechniek
 
 Als taxateur zie ik direct of er sprake is van funderingsrisico’s. Dat scheelt enorm veel tijd en geeft duidelijkheid naar mijn opdrachtgevers.
 
-Taxatie Bureau
+Taxatiebureau
 Taxateur
 
 -
@@ -327,15 +327,15 @@ Melding doen
 
 ---
 
-# Stand van het Land
+# Stand van het land
 
 URL: https://fundermaps.com/stand-van-het-land.html
 
 Landelijke funderingscijfers
 
-## Stand van het Land
+## Stand van het land
 
-Een actueel overzicht van de funderingsproblematiek in Nederland, rechtstreeks uit de Nationale Database FunderMaps. Voor beleidsmakers, gemeenten, provincies, woningcorporaties en iedereen die risico's wil herkennen en gericht wil handelen.
+Een actueel overzicht van de funderingsproblematiek in Nederland, rechtstreeks uit de Nationale Database Funderingen. Voor beleidsmakers, gemeenten, provincies, woningcorporaties en iedereen die risico's wil herkennen en gericht wil handelen.
 
 Bijgewerkt op – · –
 
@@ -395,7 +395,7 @@ Verhouding tussen de drie funderingsgroepen over alle panden met een adres.
 
 ### Risicotabel
 
-Risicoklasse A (laag) tot en met E (hoog), voor panden op houten palen en ondiepe funderingen. De klasse van een pand is de zwaarste van zijn vier funderingsrisico's: droogstand, bacteriële aantasting, ontwateringsdiepte en overig.
+Risicoklasse A (geen risico) tot en met E (vastgesteld probleem), voor panden op houten palen en ondiepe funderingen. De klasse van een pand is de zwaarste van zijn vier funderingsrisico's: droogstand, bacteriële aantasting, ontwateringsdiepte en overig.
 
 Klasse
 Panden
@@ -444,7 +444,7 @@ Externe duiding
 
 ### AFM: funderingsherstel is urgent
 
-Op basis van de Nationale Database FunderMaps concludeerde de AFM dat voor een grote groep woningeigenaren funderingsherstel noodzakelijk is, en dat dat niet voor iedereen verantwoord te financieren is.
+Op basis van de Nationale Database Funderingen concludeerde de AFM dat voor een grote groep woningeigenaren funderingsherstel noodzakelijk is, en dat dat niet voor iedereen verantwoord te financieren is.
 
 Publicatie 13 april 2026 · Lees het AFM-artikel
 
@@ -465,7 +465,7 @@ Externe duiding
 
 ### Overheidsrapporten
 
-Twee adviezen aan het Rijk rekenen met de funderingscijfers van het KCAF, gebaseerd op de Nationale Database FunderMaps.
+Twee adviezen aan het Rijk rekenen met de funderingscijfers van het KCAF, gebaseerd op de Nationale Database Funderingen.
 
 #### Goed gefundeerd
 
@@ -473,9 +473,9 @@ Raad voor de leefomgeving en infrastructuur (Rli), februari 2024 · Lees het adv
 
 Gebouwen met funderingsproblemen 425.000
 
-Schade tot € 54 mld
+Schade tot € 54 miljard
 
-Nodige overheidsbijdrage ruim € 12 mld over 2024 tot en met 2035
+Nodige overheidsbijdrage ruim € 12 miljard over 2024 tot en met 2035
 
 #### De olifant onder de kamer
 
@@ -491,7 +491,7 @@ Hersteltempo nu ± 1.000 woningen per jaar; nodig is vijf keer zo snel
 
 ### Hoe deze cijfers ontstaan
 
-- De cijfers komen rechtstreeks uit de Nationale Database FunderMaps, uit hetzelfde model dat klanten in FunderMaps zien. De datum van de laatste berekening staat bovenaan de pagina.
+- De cijfers komen rechtstreeks uit de Nationale Database Funderingen, uit hetzelfde model dat klanten in FunderMaps zien. De datum van de laatste berekening staat bovenaan de pagina.
 
 - Telbasis: alle panden met ten minste één adres in de BAG.
 
@@ -533,7 +533,7 @@ ruim 215.000
 
 Panden waarvan het funderingstype uit eigen onderzoek of archief bekend is.
 
-Peildatum 25 september 2026. Dezelfde getallen staan op de Stand van het land .
+Peildatum 25 september 2026. De actuele getallen staan op de Stand van het land .
 
 In drie stappen
 
@@ -725,7 +725,7 @@ Verwijzingen
 
 ### Verder lezen
 
-- Stand van het land : de funderingen van Nederland in cijfers, met dezelfde peildatum als deze pagina
+- Stand van het land : de funderingen van Nederland in cijfers
 
 - Informatiestandaard funderingsgegevens : de begrippen, eenheden en waardelijsten
 
@@ -939,7 +939,7 @@ Begrip Definitie Waarde Handhavingstermijn enforcement_term De periode waarin de
 
 #### Schadebeeld
 
-Begrip Definitie Waarde Scheur: type crack_*_type Grootteklasse van de grootste scheur, per plek: binnen, voorgevel, achtergevel, linker- en rechtergevel. keuze crack_type Scheur: breedte crack_*_size Gemeten breedte van de scheur, per plek. mm Scheur: hersteld crack_*_restored De scheur is al eerder dichtgezet. ja/nee Lintvoegmeting skewed_parallel Gemeten scheefstand langs de gevel. verhouding 1 : n (bijv. 1 : 300) Lintvoegmeting: beoordeling skewed_parallel_facade Oordeel over de gemeten scheefstand langs de gevel. keuze rotation_type Loodmeting skewed_perpendicular Gemeten scheefstand van de gevel ten opzichte van het lood. verhouding 1 : n (bijv. 1 : 300) Loodmeting: beoordeling skewed_perpendicular_facade Oordeel over de gemeten scheefstand ten opzichte van het lood. keuze rotation_type Pandzakkingsnelheid gemeten settlement_speed Gemeten snelheid waarmee het pand zakt. mm per jaar (negatief = zakken) Gevel vervormd deformed_facade De gevel is zichtbaar vervormd. ja/nee Scheve deur- of raamkozijnen skewed_window_frame Kozijnen staan zichtbaar scheef. ja/nee Ongelijkmatige zakking threshold_updown_skewed Het pand zakt niet overal even snel. ja/nee Drempel voorgevel niveau threshold_front_level Hoogte van de drempel aan de voorgevel. m t.o.v. NAP Drempel achtergevel niveau threshold_back_level Hoogte van de drempel aan de achtergevel. m t.o.v. NAP
+Begrip Definitie Waarde Scheur: type crack_*_type Grootteklasse van de grootste scheur, per plek: binnen, voorgevel, achtergevel, linker- en rechtergevel. keuze crack_type Scheur: breedte crack_*_size Gemeten breedte van de scheur, per plek. mm Scheur: hersteld crack_*_restored De scheur is al eerder dichtgezet. ja/nee Lintvoegmeting skewed_parallel Gemeten scheefstand langs de gevel. verhouding 1 : n (bijv. 1 : 300) Lintvoegmeting: beoordeling skewed_parallel_facade Oordeel over de gemeten scheefstand langs de gevel. keuze rotation_type Loodmeting skewed_perpendicular Gemeten scheefstand van de gevel ten opzichte van het lood. verhouding 1 : n (bijv. 1 : 300) Loodmeting: beoordeling skewed_perpendicular_facade Oordeel over de gemeten scheefstand ten opzichte van het lood. keuze rotation_type Pandzakkingssnelheid gemeten settlement_speed Gemeten snelheid waarmee het pand zakt. mm per jaar (negatief = zakken) Gevel vervormd deformed_facade De gevel is zichtbaar vervormd. ja/nee Scheve deur- of raamkozijnen skewed_window_frame Kozijnen staan zichtbaar scheef. ja/nee Ongelijkmatige zakking threshold_updown_skewed Het pand zakt niet overal even snel. ja/nee Drempel voorgevel niveau threshold_front_level Hoogte van de drempel aan de voorgevel. m t.o.v. NAP Drempel achtergevel niveau threshold_back_level Hoogte van de drempel aan de achtergevel. m t.o.v. NAP
 
 #### Verkennend Funderingsonderzoek
 
@@ -2228,7 +2228,7 @@ groundwater_level_reduction
 
 URL: https://fundermaps.com/nationaal-herstelregister.html
 
-Nationaal herstelregister
+Nationaal Herstel Register
 
 ## Leg funderingsherstel vast voor transparantie en zekerheid
 
@@ -2250,23 +2250,23 @@ URL: https://fundermaps.com/media-library.html
 
 Informatie
 
-## Funderingstypes & -risico's
+## Funderingstypen en -risico's
 
-Funderingstypes
+Funderingstypen
 
-In Nederland worden diverse funderingstypes gebruikt, afhankelijk van de ondergrond en bouwtechnische eisen.
-Veelvoorkomende types zijn een fundering op staal, waarbij betonnen stroken onder dragende muren worden
+In Nederland worden diverse funderingstypen gebruikt, afhankelijk van de ondergrond en bouwtechnische eisen.
+Veelvoorkomende typen zijn een fundering op staal, waarbij betonnen stroken onder dragende muren worden
 geplaatst, en paalfunderingen, waarbij palen in de grond worden geheid of geschroefd om de belasting naar
 diepere en stevigere grondlagen over te dragen. De keuze van het specifieke type fundering hangt af van
 factoren zoals bodemgesteldheid, belasting, kosten en bouwvoorschriften. Gedurende de afgelopen 150 jaar
-zijn er verschillende combinaties en varianten van deze funderingstypes toegepast in de bouwpraktijk.
+zijn er verschillende combinaties en varianten van deze funderingstypen toegepast in de bouwpraktijk.
 
 Bacteriën
 
 Bacteriën kunnen houten funderingspalen verzwakken, vooral grenenhout, door palenpest. Deze bacteriën vormen
 een consortium dat zonder zuurstof kan overleven en zich binnenin de paal verplaatst via waterstromen. Dit
 probleem treft ongeveer 33% van de houten paalfunderingen in Nederland, voornamelijk in regio's met een hogere
-dragende zandlaag. Vuren houten palen zijn minder vatbaar voor aantasting en worden daarom in gebieden zoals
+dragende zandlaag. Vurenhouten palen zijn minder vatbaar voor aantasting en worden daarom in gebieden zoals
 Rotterdam vaker gebruikt. Sinds de jaren '60 is het gebruik van grenenhout als heipaal verboden, en vanaf de
 jaren '70 zijn houten palen in het algemeen minder populair geworden vanwege bouwvoorschriften en de opkomst
 van betonnen palen.
@@ -2291,12 +2291,12 @@ ophogingen in de straat of bouwterreinen. Vóór 1965 werd er geen rekening geho
 ontwerp van gebouwen. Schade hangt samen met verschillen in het vervormingsgedrag van de palen, maar gelijkmatige
 vervorming voorkomt schade door negatieve kleef.
 
-Verschil zakking
+Verschilzakking
 
 Verschilzakking ontstaat wanneer delen van een pand ongelijkmatig zakken. Doordat de ondergrond, het
 funderingstype of de belasting per bouwdeel verschilt, zakt het ene deel sneller dan het andere. Dit veroorzaakt
 scheuren in muren, klemmende ramen en deuren en scheefstand van vloeren. Vooral bij overgangen tussen
-verschillende funderingstypes of grondlagen, en bij latere aan- en uitbouwen, is het risico op verschilzakking groot.
+verschillende funderingstypen of grondlagen, en bij latere aan- en uitbouwen, is het risico op verschilzakking groot.
 
 Optrekkend vocht
 

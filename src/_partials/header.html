@@ -28,7 +28,7 @@
           <a class="no-underline" data-nav-key="artikelen" title="Artikelen" href="artikelen.html">Artikelen</a>
         </li>
         <li class="menu-item | px-3 2xl:px-4">
-          <a class="no-underline" data-nav-key="stand-van-het-land" title="Stand van het Land" href="stand-van-het-land.html">Stand van het Land</a>
+          <a class="no-underline" data-nav-key="stand-van-het-land" title="Stand van het land" href="stand-van-het-land.html">Stand van het land</a>
         </li>
         <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="kennisbank" title="Kennisbank" href="kennisbank.html">Kennisbank</a>
@@ -95,13 +95,23 @@
             <a class="no-underline" data-nav-key="artikelen" title="Artikelen" href="artikelen.html" x-on:click="open = false">Artikelen</a>
           </li>
           <li class="menu-item">
-            <a class="no-underline" data-nav-key="stand-van-het-land" title="Stand van het Land" href="stand-van-het-land.html" x-on:click="open = false">Stand van het Land</a>
+            <a class="no-underline" data-nav-key="stand-van-het-land" title="Stand van het land" href="stand-van-het-land.html" x-on:click="open = false">Stand van het land</a>
           </li>
           <li class="menu-item">
             <a class="no-underline" data-nav-key="kennisbank" title="Kennisbank" href="kennisbank.html" x-on:click="open = false">Kennisbank</a>
           </li>
-          <li class="pl-16">
-            <a class="button button-outline-primary mt-10" href="https://www.linkedin.com/company/26521848/" target="_blank" rel="noopener" x-on:click="open = false">
+          <li class="pl-16 pr-5 mt-10 flex flex-wrap items-center gap-3">
+            <!-- The desktop button is dark blue, like this panel: the outline makes it stand out here. -->
+            <a class="button button-secondary border-2 border-white/40" href="https://melden.fundermaps.com" x-on:click="open = false">
+              <div class="inline-block">
+                <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64" alt="">
+              </div>
+              <span>Direct contact</span>
+              <div class="button-arrow">
+                <include src="./resources/svg/arrow-right-icon.svg"></include>
+              </div>
+            </a>
+            <a class="button button-outline-primary" href="https://www.linkedin.com/company/26521848/" target="_blank" rel="noopener" x-on:click="open = false">
               <div class="button-logo">
                 <include src="./resources/svg/linkedin-logo.svg"></include>
               </div>

@@ -172,6 +172,9 @@
 
   min-width: 2.25rem;
 
+  // Twelve months in one card: narrow enough to show them all on a phone.
+  &--month { min-width: 1rem; }
+
   &__stack {
     @apply flex w-full flex-col-reverse overflow-hidden rounded-t;
 
@@ -208,14 +211,28 @@
 // Funderingstypen: one tall bar with the family names standing in their segment,
 // and the three illustrations below (the FunderConsult composition, Don 2026-09-25).
 .svl-famshare {
-  @apply flex h-36 w-full overflow-hidden rounded-md;
+  // Tall enough for the longest family name on one line.
+  @apply flex h-44 w-full overflow-hidden rounded-md;
 
   &__seg {
-    @apply flex h-full items-start overflow-hidden p-2 text-xs font-extrabold text-white;
+    @apply h-full overflow-hidden;
+
+    // The label below looks at the width of its own segment.
+    container-type: inline-size;
+  }
+
+  &__label {
+    @apply flex h-full w-full items-start whitespace-nowrap p-2 text-xs font-extrabold text-white;
 
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     justify-content: flex-end;
+
+    // Too narrow for a line of text: no name, and no padding that would draw
+    // a sliver of a share (0,03%) as wide as a real one.
+    @container (max-width: 27.9px) {
+      display: none;
+    }
   }
 }
 

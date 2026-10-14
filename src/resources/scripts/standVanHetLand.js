@@ -50,7 +50,7 @@ function fillFigures() {
   const values = {
     scope: scope || "Nederland",
     updated: new Date(view.generated_at).toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" }),
-    model: view.model_version,
+    model: view.model_version.replace(/^model-/, "model "),
     buildings: num(c.buildings),
     addresses: num(c.addresses),
     municipalities: num(c.municipalities),
@@ -107,9 +107,11 @@ function familyShare(root) {
     const row = view.families.find((r) => r.family === f)
     if (!row) continue
     const share = (100 * row.buildings) / total
-    const seg = el("span", `svl-famshare__seg svl-fam-${f}`, share >= 3 ? FAMILY_LABEL[f] : "")
+    const seg = el("span", `svl-famshare__seg svl-fam-${f}`)
     seg.style.width = share + "%"
     seg.title = `${FAMILY_LABEL[f]}: ${pct(row.buildings, total)}`
+    // Shown only where the segment is wide enough for it (see .svl-famshare__label).
+    seg.append(el("span", "svl-famshare__label", FAMILY_LABEL[f]))
     bar.append(seg)
     if (!FAMILY_IMAGE[f]) continue
     const card = el("div", "svl-famcard")
@@ -277,7 +279,7 @@ function verkennendMonths(root) {
   const max = Math.max(...rows.map((r) => r.reports))
   const chart = el("div", "svl-columns")
   for (const r of rows) {
-    const col = el("div", "svl-col")
+    const col = el("div", "svl-col svl-col--month")
     const stack = el("div", "svl-col__stack svl-col__stack--short")
     const seg = el("span", "svl-col__seg svl-vfo")
     seg.style.height = (100 * r.reports) / max + "%"
