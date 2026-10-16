@@ -81,7 +81,7 @@ SELECT json_build_object(
                              AND i.type NOT IN ('quickscan', 'facade_scan'))
         ) FROM obs
     ),
-    'model_version', 'model-2024.1',
+    'model_version', 'model-2026.3',
     'coverage', (
         SELECT json_build_object(
             'buildings', count(*),
