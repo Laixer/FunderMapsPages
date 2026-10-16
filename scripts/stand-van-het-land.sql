@@ -81,7 +81,9 @@ SELECT json_build_object(
                              AND i.type NOT IN ('quickscan', 'facade_scan'))
         ) FROM obs
     ),
-    'model_version', 'model-2024.1',
+    -- The default model, from the registry (model-2026.3 since 2026-10-16), so the label cannot
+    -- drift from the numbers again.
+    'model_version', (SELECT slug FROM data.model_version WHERE is_default),
     'coverage', (
         SELECT json_build_object(
             'buildings', count(*),
