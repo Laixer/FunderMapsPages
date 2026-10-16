@@ -432,6 +432,276 @@ Vragen over de cijfers, of wilt u ze voor uw eigen gebied? Mail info@fundermaps.
 
 URL: https://fundermaps.com/hoe-het-model-werkt.html
 
+Modelversie 2026.3
+
+### Wat is er nieuw ten opzichte van 2024.1
+
+Met versie 2026.3 rust de risicoklasse van een pand vaker op feitelijke onderzoeks- en meetgegevens, en minder op algemene aannames. De belangrijkste veranderingen:
+
+- Rapporten breder benut. Ook als een rapport geen schadeoorzaak noemt, gebruikt het model de handhavingstermijn, het kwaliteitsoordeel over de fundering en het herstel-advies.
+
+- De handhavingstermijn telt af vanaf de rapportdatum. Het model kijkt naar de resterende tijd.
+
+- Aangetroffen aantasting van de houten palen (schimmel of bacteriën) wordt meegenomen.
+
+- Onderzoek in het bouwblok telt mee voor de buren die zelf geen onderzoek hebben.
+
+- Verkennend Funderingsonderzoek (QuickScan) telt drie jaar. Een funderingsonderzoek van maximaal vijf jaar oud gaat ervoor. Een uitgevoerd funderingsherstel gaat voor alles.
+
+- Pandzakking uit satellietdata wordt beoordeeld over het hele bouwblok in plaats van per pand.
+
+- Het betrouwbaarheidslabel volgt de bron van de klasse. Een schatting op basis van alleen het bouwjaar geldt nog uitsluitend als indicatieve klasse voor ontwateringsdiepte.
+
+Lees meer in het artikel Risicomodel 2026.3: wat is er veranderd (bovenaan de artikelen). De beschrijving van de vorige versie blijft beschikbaar: modelversie 2024.1.
+
+De basis
+
+### De grootste verzameling funderingsgegevens van Nederland
+
+Een model is zo goed als de gegevens waarop het rust. FunderMaps rust op onderzoek aan funderingen zelf: rapporten, archiefstukken en geregistreerd herstel, per pand of adres vastgelegd. Dat is het verschil met ieder model dat alleen op open data rekent.
+
+ruim 500.000
+
+#### waarnemingen
+
+Funderingsgegevens per pand of adres uit funderingsonderzoek, archiefonderzoek, Verkennend Funderingsonderzoek, notities en herstel.
+
+ruim 1,3 miljoen
+
+#### vastgelegde waarden
+
+Alle ingevulde gegevens in die waarnemingen samen: funderingstype, niveaus, maten, kwaliteit, schade en herstel.
+
+ruim 215.000
+
+#### onderzochte panden
+
+Panden waarvan het funderingstype uit eigen onderzoek of archief bekend is.
+
+Peildatum 25 september 2026. De actuele getallen staan op de Stand van het land.
+
+In drie stappen
+
+### Van pand naar risicoklasse
+
+Stap 1
+
+#### Welke fundering?
+
+Het funderingstype komt uit onderzoek aan het pand zelf. Is dat er niet, dan wordt het afgeleid van vergelijkbare onderzochte panden in de buurt. Is ook dat er niet, dan wordt het geschat op basis van kenmerken van het pand, zoals bouwjaar, hoogte en ondergrond.
+
+Stap 2
+
+#### Vier funderingsrisico's
+
+Voor elk pand worden vier funderingsrisico's bepaald, elk met een eigen betrouwbaarheid. Het zwaarste van de vier bepaalt de risicoklasse.
+
+Stap 3
+
+#### Wat altijd voorgaat
+
+Een uitgevoerd funderingsherstel gaat voor alles. Een Verkennend Funderingsonderzoek (voorheen QuickScan / Fase 0) gaat boven de modelschatting zolang het geldig is: drie jaar. Een funderingsonderzoek van maximaal vijf jaar oud gaat daar weer voor. Verder telt de hiërarchie van bewijs: wat ter plaatse is vastgesteld, gaat voor wat is afgeleid of geschat.
+
+Het risico
+
+### De vier funderingsrisico's
+
+De rekenmethode kent vier funderingsrisico's. Per risico staat hieronder wat het is, waar het speelt en wat de berekening gebruikt. Is er onderzoek aan het pand, dan gaat de uitkomst daarvan voor; zonder onderzoek wordt het risico geschat uit de kenmerken van het pand. De gemeten pandzakking uit satellietdata weegt bij de eerste drie risico's mee als aanwijzing: een pand dat sneller zakt dan verwacht, krijgt een hogere klasse. Voor droogstand en ontwateringsdiepte wordt die zakking beoordeeld over het hele bouwblok, zodat één afwijkende meting niet de klasse bepaalt.
+
+Bij onderzoek telt de beoordeling uit het rapport: de resterende handhavingstermijn (die telt af vanaf de rapportdatum), het kwaliteitsoordeel over de fundering en het herstel-advies. Ook aangetroffen aantasting van de houten palen (schimmel of bacteriën) wordt meegenomen. Heeft een pand zelf geen onderzoek, dan telt onderzoek aan een pand in hetzelfde bouwblok mee.
+
+#### Droogstand (paalrot)
+
+Houten palen of langshout komen boven de grondwaterstand uit. Het hout komt in contact met zuurstof en schimmels tasten het aan.
+
+Waar: overal waar op houten palen is gebouwd; landelijk berekend. In de berekening: het funderingstype (houten palen, of houten palen met betonoplanger), de grondwaterstand bij het pand, de pandzakking van het bouwblok als signaal, en bij onderzoek de beoordeling uit het rapport en aangetroffen schimmelaantasting.
+
+#### Ontwateringsdiepte
+
+Bij ondiepe funderingen (op staal, zonder palen) de afstand tussen de onderkant van de fundering en het grondwater. Staat het grondwater hoog, dan ontstaat optrekkend vocht en kan het pand gaan zakken.
+
+Waar: overal waar ondiep is gefundeerd; landelijk berekend. In de berekening: het funderingstype, de grondwaterstand bij het pand, de pandzakking van het bouwblok als signaal, en bij onderzoek de beoordeling uit het rapport. Is er voor een pand verder geen enkel gegeven, dan geeft het bouwjaar hier een indicatieve klasse. Verschilzakking valt hieronder: panden die duidelijk sneller zakken dan hun buren en dan de bodem om hen heen. Dit wordt berekend waar satellietdata is.
+
+#### Bacteriële aantasting (palenpest)
+
+Bacteriën tasten houten palen aan, ook onder water. Het hout verliest langzaam zijn draagkracht. Grenen is gevoeliger dan vuren.
+
+Waar: vooral in Noord- en West-Nederland, waar korte palen in een ondiepe zandlaag staan. Waar langere palen tot in een diepere zandlaag zijn gebruikt, zoals in Rotterdam, komt het minder voor. In de berekening: het funderingstype, de paallengte (hoe korter, hoe hoger het risico), een verhoogde pandzakkingssnelheid als signaal, en bij onderzoek de beoordeling uit het rapport en aangetroffen bacteriële aantasting.
+
+#### Overig risico
+
+Risico's die uit onderzoek aan het pand zijn vastgesteld en niet onder de andere drie vallen. Dit risico wordt niet geschat; het bestaat alleen waar onderzoek ligt.
+
+Hieronder vallen onder meer: Negatieve kleef: zakkende grondlagen die de paal meetrekken, vooral in de regio Rijnmond en de Drechtsteden. En verder overbelasting, constructiefouten en trillingen, zoals het onderzoek ze vaststelt.
+
+#### Verschilzakking
+
+Panden binnen één bouwblok die ongelijk zakken, of een pand dat duidelijk sneller zakt dan zijn buren. Het rekent mee onder ontwateringsdiepte, waar satellietdata is.
+
+#### De risicoklassen
+
+De klassen volgen de termen van het KCAF (Kenniscentrum Aanpak Funderingsproblematiek).
+
+A Geen risico
+
+B Licht risico
+
+C Verhoogd risico of onzekerheid
+
+D Hoog risico
+
+E Vastgesteld probleem
+
+Wat voorgaat
+
+### De hiërarchie van bewijs
+
+Niet elk gegeven telt even zwaar. Liggen er voor een pand meerdere bronnen, dan gaat het sterkste bewijs voor:
+
+- Onderzoek ter plaatse, zoals een funderingsonderzoek met inspectieput: de fundering is gezien en gemeten.
+
+- Archiefstukken, zoals bouwtekeningen en bestekken: de fundering is gedocumenteerd.
+
+- Afleiding van vergelijkbare panden: onderzochte panden uit dezelfde buurt en bouwperiode.
+
+- Schatting op basis van kenmerken van het pand.
+
+Een uitgevoerd funderingsherstel gaat altijd voor. Een geldig Verkennend Funderingsonderzoek gaat boven de modelschatting. Het betrouwbaarheidslabel bij elke risicoklasse volgt de bron van die klasse: vastgesteld (onderzoek, Verkennend Funderingsonderzoek of herstel aan dit pand), afgeleid (het bouwblok of vergelijkbare panden) of indicatief (een schatting).
+
+Het funderingstype
+
+### Het funderingstype schatten uit vergelijkbare panden
+
+Is een pand niet zelf onderzocht, dan bepaalt het vernieuwde funderingstypemodel de fundering uit onderzochte panden die erop lijken. Dat gaat in vijf stappen.
+
+Funderingseenheid Aaneengesloten panden die naar verwachting één fundering delen, zoals een bouwblok uit hetzelfde jaar met dezelfde bouwvorm. Een onderzoek aan één pand zegt daardoor iets over de rest van het blok.
+
+Vergelijkbare panden Onderzochte panden uit dezelfde buurt, bouwperiode en gebouwfamilie, met een vergelijkbare hoogte en ondergrond: de grondsoortregio en de opbouw van de ondergrond uit GeoTOP.
+
+Weging Hoe dichterbij en hoe meer het onderzochte pand lijkt, hoe zwaarder het meetelt. Heeft het pand zelf onderzoek of een archiefstuk, dan gaat dat voor, volgens de hiërarchie van bewijs.
+
+Uitkomst Een kans per funderingsfamilie (houten palen, betonpalen of ondiep) en hoeveel bewijs daaronder ligt. Daaruit volgt de betrouwbaarheid: vastgesteld, afgeleid of indicatief.
+
+Zonder onderzoek in de buurt Dan schat het model de fundering uit de kenmerken van het pand zelf: bouwjaar, hoogte en ondergrond. De uitkomst is dan indicatief.
+
+#### Getoetst op panden die het model nooit had gezien
+
+Van ruim 47.000 onderzochte panden is de uitkomst achtergehouden. Het model rekende zonder die panden en moest ze daarna inschatten. De uitkomst is vergeleken met wat het onderzoek vaststelde. De panden zijn gescheiden per rapport en per gemeente: panden uit hetzelfde rapport of dezelfde gemeente zaten nooit tegelijk in de rekenset en de toetsset. Zo kan het model niet leren van het antwoord.
+
+De juiste funderingsfamilie betekent dat het model dezelfde familie aanwijst als het onderzoek: houten palen, betonpalen of ondiep.
+
+Het resultaat: het vernieuwde model vindt in buurten met onderzoek ongeveer twee keer zo vaak de houten funderingen terug als de eerdere schatting. In gemeenten waarvan het model geen enkel onderzocht pand kende, wijst het ongeveer twee keer zo vaak de juiste funderingsfamilie aan.
+
+Waarom data het verschil maakt
+
+### Zonder onderzoek in de buurt raadt elk model
+
+In sommige gebieden verschilt de fundering sterk van die in de buurgemeenten. Een stad kan grotendeels op houten palen staan terwijl de gemeenten eromheen dat bijna niet hebben. Geen bouwjaar, hoogte of bodemkaart laat dat zien. Alleen lokaal onderzoek brengt het aan het licht.
+
+Komt er in zo'n gebied onderzoek bij, dan wordt de schatting voor de hele buurt beter. Het model blijft hetzelfde. De data maakt het verschil.
+
+Daarom staat bij elk pand hoe betrouwbaar de uitkomst is, en daarom vragen we professionals om onderzoek en herstel terug te melden.
+
+De bronnen
+
+### Drie soorten data
+
+Open data vertelt veel over een pand, maar niet wat eronder zit. Dat staat alleen in onderzoek aan de fundering zelf, en dat onderzoek heeft FunderMaps verzameld.
+
+Onze data
+
+#### Onderzocht, gekoppeld en gewogen
+
+- Ruim 500.000 waarnemingen met samen ruim 1,3 miljoen vastgelegde waarden
+
+- Ruim 215.000 onderzochte panden: funderingsonderzoek, inspectieputten, archiefonderzoek
+
+- Het Nationaal Herstel Register
+
+- Terugmeldingen van professionals, elke dag nieuwe
+
+Jaren verzameld met gemeenten, het KCAF en onderzoeksbureaus. Elk stuk is per pand gekoppeld en gewogen volgens de hiërarchie van bewijs.
+
+Open data
+
+#### Vrij beschikbaar, voor iedereen
+
+- BAG: bouwjaar, adressen en pandcontour
+
+- 3D BAG en AHN: hoogte van pand en maaiveld
+
+- CBS: wijken en buurten
+
+Zegt veel over het pand, niets over de fundering. Een bouwjaar is een aanwijzing, geen bewijs.
+
+Commerciële data
+
+#### Van gespecialiseerde leveranciers en bureaus
+
+- Grondwaterstand per pand
+
+- Pandzakking uit satellietdata: hoe snel het pand zelf zakt, niet alleen de bodem in het gebied
+
+- Verkennend Funderingsonderzoek: de beoordeling van het pand door gespecialiseerde bureaus, met een risicoklasse per pand
+
+Onder licentie gebruikt en niet gedeeld.
+
+Openheid
+
+### Wat open is, en wat niet
+
+Open
+
+#### De rekenmethode
+
+Hoe een risicoklasse tot stand komt, staat op deze pagina. De begrippen en gegevens staan in de Informatiestandaard funderingsgegevens.
+
+Van FunderMaps
+
+#### De brondata
+
+Ruim 500.000 waarnemingen, het herstelregister en de terugmeldingen. Verzameld, gekoppeld en gewogen. Deze gegevens zijn niet te downloaden; ze zijn de reden dat de uitkomst klopt.
+
+Onder licentie
+
+#### Commerciële data
+
+Grondwaterstand, pandzakking uit satellietdata en Verkennend Funderingsonderzoek. FunderMaps gebruikt deze gegevens, maar deelt ze niet.
+
+Verwijzingen
+
+### Verder lezen
+
+- Stand van het land: de funderingen van Nederland in cijfers
+
+- Informatiestandaard funderingsgegevens: de begrippen, eenheden en waardelijsten
+
+- Begrippen, standaarden en catalogus: welke begrippen en datasets FunderMaps gebruikt
+
+- Kennisbank: alle uitleg over de gegevens van FunderMaps
+
+- Nationaal Herstel Register
+
+- Modelversie 2024.1: de beschrijving van de vorige versie, ter naslag
+
+Wat u kunt doen
+
+### Heeft u een funderingsonderzoek, herstel of archiefstuk?
+
+Meld het via melden.fundermaps.com. Elke melding wordt beoordeeld. Verandert het risico, dan wordt het pand opnieuw doorgerekend. Zo wordt de uitkomst voor het pand en de buurt beter.
+
+Heeft u vragen over een risicoklasse of over deze methode? Neem contact op via info@fundermaps.com.
+
+#### Let op
+
+De uitkomst van FunderMaps is een indicatie van het funderingsrisico op basis van de beschikbare gegevens. Het is geen vervanging van funderingsonderzoek aan het pand. Voor zekerheid over de fundering van een pand is onderzoek ter plaatse nodig.
+
+---
+
+# Hoe FunderMaps het funderingsrisico bepaalt (modelversie 2024.1)
+
+URL: https://fundermaps.com/hoe-het-model-werkt-2024-1.html
+
 De basis
 
 ### De grootste verzameling funderingsgegevens van Nederland
@@ -1438,7 +1708,7 @@ Unrecognized or unresolvable IDs return a 404 with a structured error body — s
 
 Field names and semantics are identical to the corresponding fields in analysis — note that the reliability fields are drystandReliability, bioInfectionReliability and dewateringDepthReliability (not …RiskReliability).
 
-/v4/product/light/{id} — minimal response for fast integrations. Collapses the three component risks plus unclassifiedRisk (the construction-year-derived fallback classification) into a single derived overallRisk + overallRiskReliability. The fallback enters at indicative reliability, so it only determines overallRisk when no more reliable component risk is present — buildings covered only by the fallback report that class instead of null. If a recoveryType is set on the building (i.e. the foundation has been restored), overallRisk is forced to a with established reliability. Returns: overallRisk, overallRiskReliability — nothing else (restorationCosts and drystandRisk were removed from the response).
+/v4/product/light/{id} — minimal response for fast integrations. Collapses the three component risks plus unclassifiedRisk into a single derived overallRisk + overallRiskReliability. The construction-year fallback (§6) enters at indicative reliability, so it only determines overallRisk when no more reliable component risk is present — buildings covered only by the fallback report that class instead of null. If a recoveryType is set on the building (i.e. the foundation has been restored), overallRisk is forced to a with established reliability. Returns: overallRisk, overallRiskReliability — nothing else (restorationCosts and drystandRisk were removed from the response).
 
 #### Research outcome endpoints
 
@@ -1782,10 +2052,18 @@ Usage limits are set per API key and product as a number of billable events per 
 
 ### 6. Every known building carries a risk indication
 
-Since July 2026, the model guarantees that every building known to the model carries at least one risk indication. When none of the component risks (drystandRisk, bioInfectionRisk, dewateringDepthRisk) could be computed and no report-derived class exists — typically buildings outside groundwater-model coverage or with an undetermined foundation type — unclassifiedRisk contains a construction-year-based estimate:
+Since July 2026, the model guarantees that every building known to the model carries at least one risk indication. When none of the component risks (drystandRisk, bioInfectionRisk, dewateringDepthRisk) could be computed and no report-derived class exists — typically buildings outside groundwater-model coverage or with an undetermined foundation type — the model fills in a construction-year-based estimate.
+
+Where that estimate appears depends on the model version:
+
+- Model 2026.3 (current): in dewateringDepthRisk, with dewateringDepthReliability = indicative. unclassifiedRisk then stays null; it only carries a class derived from research (a report or QuickScan on the building, or a report in the same block).
+
+- Model 2024.1 (previous): in unclassifiedRisk; the component risks stay null.
+
+The estimate itself is the same in both versions:
 
 Construction year
-unclassifiedRisk
+Estimate
 
 before 1970
 d
@@ -1797,9 +2075,9 @@ Notes for interpreting responses:
 
 - This fallback is indicative: it is a heuristic, not a computed or inspected result. It applies to roughly 0.4% of buildings nationally.
 
-- The component risk fields themselves stay null in this case. More generally, a null component risk is structural, not missing data: each component only applies to certain foundation types (e.g. drystandRisk to wood foundations, dewateringDepthRisk to no-pile foundations). Do not infer data quality from individual null components.
+- Apart from where the estimate lands (see above), the component risk fields stay null in this case. More generally, a null component risk is structural, not missing data: each component only applies to certain foundation types (e.g. drystandRisk to wood foundations, dewateringDepthRisk to no-pile foundations). Do not infer data quality from individual null components.
 
-- Report-derived unclassifiedRisk values always take precedence over the fallback.
+- Report-derived values always take precedence over the fallback.
 
 - Consequently, the no_data_available error (§5) is rare in practice and mainly occurs for buildings not yet present in the current model snapshot, such as very recent BAG additions.
 

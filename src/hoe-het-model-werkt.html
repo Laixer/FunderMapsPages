@@ -154,7 +154,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
 <body>
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">FunderMaps · voor vastgoedprofessionals</span>
+    <span class="eyebrow">FunderMaps · voor vastgoedprofessionals · modelversie 2026.3</span>
     <h1>Hoe FunderMaps het funderingsrisico bepaalt</h1>
     <p>Deze pagina is bedoeld voor taxateurs, hypotheekverstrekkers, makelaars, gemeenten, woningcorporaties, onderzoeksbureaus en herstelbedrijven. U leest hier hoe een risicoklasse tot stand komt, op welke gegevens die rust en hoe zeker de uitkomst is. Zo kunt u een klasse begrijpen en aan uw klant uitleggen.</p>
     <p class="thesis">De rekenmethode is open. <strong>De data maakt het verschil.</strong></p>
@@ -162,6 +162,24 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
 </header>
 
 <main class="wrap">
+
+  <section>
+    <span class="eyebrow" id="nieuw">Modelversie 2026.3</span>
+    <h2>Wat is er nieuw ten opzichte van 2024.1</h2>
+    <p class="prose">Met versie 2026.3 rust de risicoklasse van een pand vaker op feitelijke onderzoeks- en meetgegevens, en minder op algemene aannames. De belangrijkste veranderingen:</p>
+    <div class="card">
+      <ul style="margin:0;padding-left:1.1rem;display:grid;gap:8px">
+        <li><strong>Rapporten breder benut.</strong> Ook als een rapport geen schadeoorzaak noemt, gebruikt het model de handhavingstermijn, het kwaliteitsoordeel over de fundering en het herstel-advies.</li>
+        <li><strong>De handhavingstermijn telt af</strong> vanaf de rapportdatum. Het model kijkt naar de resterende tijd.</li>
+        <li><strong>Aangetroffen aantasting</strong> van de houten palen (schimmel of bacteriën) wordt meegenomen.</li>
+        <li><strong>Onderzoek in het bouwblok</strong> telt mee voor de buren die zelf geen onderzoek hebben.</li>
+        <li><strong>Verkennend Funderingsonderzoek (QuickScan)</strong> telt drie jaar. Een funderingsonderzoek van maximaal vijf jaar oud gaat ervoor. Een uitgevoerd funderingsherstel gaat voor alles.</li>
+        <li><strong>Pandzakking uit satellietdata</strong> wordt beoordeeld over het hele bouwblok in plaats van per pand.</li>
+        <li><strong>Het betrouwbaarheidslabel volgt de bron</strong> van de klasse. Een schatting op basis van alleen het bouwjaar geldt nog uitsluitend als indicatieve klasse voor ontwateringsdiepte.</li>
+      </ul>
+    </div>
+    <p class="muted small">Lees meer in het artikel <a href="https://fundermaps.com/artikelen.html">Risicomodel 2026.3: wat is er veranderd</a> (bovenaan de artikelen). De beschrijving van de vorige versie blijft beschikbaar: <a href="https://fundermaps.com/hoe-het-model-werkt-2024-1.html">modelversie 2024.1</a>.</p>
+  </section>
 
   <section>
     <span class="eyebrow">De basis</span>
@@ -192,7 +210,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
       <div class="card step">
         <span class="n">Stap 3</span>
         <h3>Wat altijd voorgaat</h3>
-        <p>Een geregistreerd funderingsherstel en een Verkennend Funderingsonderzoek (voorheen QuickScan / Fase 0) gaan boven de modelschatting. Verder telt de hiërarchie van bewijs: wat ter plaatse is vastgesteld, gaat voor wat is afgeleid of geschat.</p>
+        <p>Een uitgevoerd funderingsherstel gaat voor alles. Een Verkennend Funderingsonderzoek (voorheen QuickScan / Fase 0) gaat boven de modelschatting zolang het geldig is: drie jaar. Een funderingsonderzoek van maximaal vijf jaar oud gaat daar weer voor. Verder telt de hiërarchie van bewijs: wat ter plaatse is vastgesteld, gaat voor wat is afgeleid of geschat.</p>
       </div>
     </div>
   </section>
@@ -200,25 +218,26 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
   <section>
     <span class="eyebrow" id="risicos">Het risico</span>
     <h2>De vier funderingsrisico's</h2>
-    <p class="prose">De rekenmethode kent vier funderingsrisico's. Per risico staat hieronder wat het is, waar het speelt en wat de berekening gebruikt. Is er onderzoek aan het pand, dan gaat de uitkomst daarvan voor; zonder onderzoek wordt het risico geschat uit de kenmerken van het pand. De gemeten pandzakking uit satellietdata weegt bij de eerste drie risico's mee als aanwijzing: een pand dat sneller zakt dan verwacht, krijgt een hogere klasse.</p>
+    <p class="prose">De rekenmethode kent vier funderingsrisico's. Per risico staat hieronder wat het is, waar het speelt en wat de berekening gebruikt. Is er onderzoek aan het pand, dan gaat de uitkomst daarvan voor; zonder onderzoek wordt het risico geschat uit de kenmerken van het pand. De gemeten pandzakking uit satellietdata weegt bij de eerste drie risico's mee als aanwijzing: een pand dat sneller zakt dan verwacht, krijgt een hogere klasse. Voor droogstand en ontwateringsdiepte wordt die zakking beoordeeld over het hele bouwblok, zodat één afwijkende meting niet de klasse bepaalt.</p>
+    <p class="prose">Bij onderzoek telt de beoordeling uit het rapport: de resterende handhavingstermijn (die telt af vanaf de rapportdatum), het kwaliteitsoordeel over de fundering en het herstel-advies. Ook aangetroffen aantasting van de houten palen (schimmel of bacteriën) wordt meegenomen. Heeft een pand zelf geen onderzoek, dan telt onderzoek aan een pand in hetzelfde bouwblok mee.</p>
     <div class="risks">
       <div class="card">
         <img src="./resources/images/schimmel.webp" alt="Schimmelaantasting van een houten paal door droogstand" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px">
         <h3>Droogstand (paalrot)</h3>
         <p>Houten palen of langshout komen boven de grondwaterstand uit. Het hout komt in contact met zuurstof en schimmels tasten het aan.</p>
-        <p class="uses"><strong>Waar:</strong> overal waar op houten palen is gebouwd; landelijk berekend.<br><strong>In de berekening:</strong> het funderingstype (houten palen, of houten palen met betonoplanger), de grondwaterstand bij het pand, bij onderzoek het houtniveau tegenover de grondwaterstand, en een verhoogde pandzakkingssnelheid als signaal.</p>
+        <p class="uses"><strong>Waar:</strong> overal waar op houten palen is gebouwd; landelijk berekend.<br><strong>In de berekening:</strong> het funderingstype (houten palen, of houten palen met betonoplanger), de grondwaterstand bij het pand, de pandzakking van het bouwblok als signaal, en bij onderzoek de beoordeling uit het rapport en aangetroffen schimmelaantasting.</p>
       </div>
       <div class="card">
         <img src="./resources/images/optrekkendvocht.webp" alt="Optrekkend vocht bij een ondiepe fundering" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px">
         <h3>Ontwateringsdiepte</h3>
         <p>Bij ondiepe funderingen (op staal, zonder palen) de afstand tussen de onderkant van de fundering en het grondwater. Staat het grondwater hoog, dan ontstaat optrekkend vocht en kan het pand gaan zakken.</p>
-        <p class="uses"><strong>Waar:</strong> overal waar ondiep is gefundeerd; landelijk berekend.<br><strong>In de berekening:</strong> het funderingstype, de funderingsdiepte tegenover de grondwaterstand bij het pand, en de pandzakkingssnelheid als signaal.<br><strong>Verschilzakking</strong> valt hieronder: panden die duidelijk sneller zakken dan hun buren en dan de bodem om hen heen. Dit wordt berekend waar satellietdata is.</p>
+        <p class="uses"><strong>Waar:</strong> overal waar ondiep is gefundeerd; landelijk berekend.<br><strong>In de berekening:</strong> het funderingstype, de grondwaterstand bij het pand, de pandzakking van het bouwblok als signaal, en bij onderzoek de beoordeling uit het rapport. Is er voor een pand verder geen enkel gegeven, dan geeft het bouwjaar hier een indicatieve klasse.<br><strong>Verschilzakking</strong> valt hieronder: panden die duidelijk sneller zakken dan hun buren en dan de bodem om hen heen. Dit wordt berekend waar satellietdata is.</p>
       </div>
       <div class="card">
         <img src="./resources/images/bacterie.webp" alt="Bacteriële aantasting van een houten paal" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px">
         <h3>Bacteriële aantasting (palenpest)</h3>
         <p>Bacteriën tasten houten palen aan, ook onder water. Het hout verliest langzaam zijn draagkracht. Grenen is gevoeliger dan vuren.</p>
-        <p class="uses"><strong>Waar:</strong> vooral in Noord- en West-Nederland, waar korte palen in een ondiepe zandlaag staan. Waar langere palen tot in een diepere zandlaag zijn gebruikt, zoals in Rotterdam, komt het minder voor.<br><strong>In de berekening:</strong> het funderingstype, de paallengte (hoe korter, hoe hoger het risico) en een verhoogde pandzakkingssnelheid als signaal.</p>
+        <p class="uses"><strong>Waar:</strong> vooral in Noord- en West-Nederland, waar korte palen in een ondiepe zandlaag staan. Waar langere palen tot in een diepere zandlaag zijn gebruikt, zoals in Rotterdam, komt het minder voor.<br><strong>In de berekening:</strong> het funderingstype, de paallengte (hoe korter, hoe hoger het risico), een verhoogde pandzakkingssnelheid als signaal, en bij onderzoek de beoordeling uit het rapport en aangetroffen bacteriële aantasting.</p>
       </div>
       <div class="card">
         <img src="./resources/images/negatievekleef.webp" alt="Negatieve kleef: zakkende grondlagen trekken de paal mee" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px">
@@ -255,7 +274,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
         <li><strong>Afleiding van vergelijkbare panden</strong>: onderzochte panden uit dezelfde buurt en bouwperiode.</li>
         <li><strong>Schatting</strong> op basis van kenmerken van het pand.</li>
       </ol>
-      <p>Een geregistreerd funderingsherstel en een Verkennend Funderingsonderzoek gaan altijd boven de modelschatting. Bij elk gegeven staat hoe het is vastgesteld: <em>vastgesteld</em> (onderzoek aan dit pand), <em>afgeleid</em> (vergelijkbare panden) of <em>indicatief</em> (een schatting).</p>
+      <p>Een uitgevoerd funderingsherstel gaat altijd voor. Een geldig Verkennend Funderingsonderzoek gaat boven de modelschatting. Het betrouwbaarheidslabel bij elke risicoklasse volgt de bron van die klasse: <em>vastgesteld</em> (onderzoek, Verkennend Funderingsonderzoek of herstel aan dit pand), <em>afgeleid</em> (het bouwblok of vergelijkbare panden) of <em>indicatief</em> (een schatting).</p>
     </div>
   </section>
 
@@ -361,6 +380,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
       <li><a href="https://fundermaps.com/begrippen-en-standaarden.html">Begrippen, standaarden en catalogus</a>: welke begrippen en datasets FunderMaps gebruikt</li>
       <li><a href="https://fundermaps.com/kennisbank.html">Kennisbank</a>: alle uitleg over de gegevens van FunderMaps</li>
       <li><a href="https://fundermaps.com/nationaal-herstelregister.html">Nationaal Herstel Register</a></li>
+      <li><a href="https://fundermaps.com/hoe-het-model-werkt-2024-1.html">Modelversie 2024.1</a>: de beschrijving van de vorige versie, ter naslag</li>
     </ul>
   </section>
 
@@ -378,7 +398,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
 </main>
 
 <footer class="wrap">
-  <p>FunderMaps · Nationale Database Funderingen. Aantallen: productiedatabase FunderMaps, peildatum 25 september 2026: 520.749 waarnemingen, 1.371.547 vastgelegde waarden en 216.281 onderzochte panden; dezelfde bron als de Stand van het land (fundermaps.com/stand-van-het-land.html). Toetsing: onderzochte panden achtergehouden en gescheiden per rapport en per gemeente; het model rekende zonder deze panden en is vergeleken met de onderzoeksuitkomst. Risicoklassen volgens de termen van het KCAF.</p>
+  <p>FunderMaps · Nationale Database Funderingen. Aantallen: productiedatabase FunderMaps, peildatum 25 september 2026: 520.749 waarnemingen, 1.371.547 vastgelegde waarden en 216.281 onderzochte panden; dezelfde bron als de Stand van het land (fundermaps.com/stand-van-het-land.html). Toetsing: onderzochte panden achtergehouden en gescheiden per rapport en per gemeente; het model rekende zonder deze panden en is vergeleken met de onderzoeksuitkomst. Risicoklassen volgens de termen van het KCAF. Modelversie 2026.3; de vorige versie, 2024.1, staat op fundermaps.com/hoe-het-model-werkt-2024-1.html.</p>
 </footer>
 
 </body>
