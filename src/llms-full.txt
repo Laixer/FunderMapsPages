@@ -28,7 +28,7 @@ Panden
 elk pand in Nederland, met funderingstype en funderingsrisico
 
 Vastgelegde waarden
-bijna 1,8 miljoen
+ruim 1,3 miljoen
 over funderingstypen, kwaliteit, schade en herstel, uit onderzoek en archief
 
 Herstelde panden
@@ -319,7 +319,7 @@ Een actueel overzicht van de funderingsproblematiek in Nederland, rechtstreeks u
 
 De actuele cijfers staan op de pagina Stand van het land: https://fundermaps.com/stand-van-het-land.html
 
-De funderingstypen en risicoklassen op deze pagina komen uit het huidige FunderMaps-model. Het vernieuwde funderingstypemodel dat op Hoe FunderMaps het funderingsrisico bepaalt wordt uitgelegd, vervangt dat binnenkort; dan worden ook deze cijfers bijgewerkt.
+De funderingstypen en risicoklassen op deze pagina komen uit het huidige FunderMaps-model, risicomodelversie 2026.3. Wat er ten opzichte van de vorige versie is veranderd, staat op Hoe FunderMaps het funderingsrisico bepaalt. Eerdere cijfers op deze pagina rekenden met versie 2024.1; de beschrijving daarvan blijft beschikbaar op modelversie 2024.1.
 
 Toon de cijfers voor
 
@@ -448,9 +448,11 @@ Met versie 2026.3 rust de risicoklasse van een pand vaker op feitelijke onderzoe
 
 - Verkennend Funderingsonderzoek (QuickScan) telt drie jaar. Een funderingsonderzoek van maximaal vijf jaar oud gaat ervoor. Een uitgevoerd funderingsherstel gaat voor alles.
 
-- Pandzakking uit satellietdata wordt beoordeeld over het hele bouwblok in plaats van per pand.
+- Pandzakking uit satellietdata wordt voor droogstand en ontwateringsdiepte beoordeeld over het hele bouwblok in plaats van per pand.
 
 - Het betrouwbaarheidslabel volgt de bron van de klasse. Een schatting op basis van alleen het bouwjaar geldt nog uitsluitend als indicatieve klasse voor ontwateringsdiepte.
+
+- Het funderingstype wordt bepaald zoals in 2024.1.
 
 Lees meer in het artikel Risicomodel 2026.3: wat is er veranderd (bovenaan de artikelen). De beschrijving van de vorige versie blijft beschikbaar: modelversie 2024.1.
 
@@ -478,7 +480,7 @@ ruim 215.000
 
 Panden waarvan het funderingstype uit eigen onderzoek of archief bekend is.
 
-Peildatum 25 september 2026. De actuele getallen staan op de Stand van het land.
+Peildatum 18 oktober 2026. De actuele getallen staan op de Stand van het land.
 
 In drie stappen
 
@@ -514,13 +516,13 @@ Bij onderzoek telt de beoordeling uit het rapport: de resterende handhavingsterm
 
 Houten palen of langshout komen boven de grondwaterstand uit. Het hout komt in contact met zuurstof en schimmels tasten het aan.
 
-Waar: overal waar op houten palen is gebouwd; landelijk berekend. In de berekening: het funderingstype (houten palen, of houten palen met betonoplanger), de grondwaterstand bij het pand, de pandzakking van het bouwblok als signaal, en bij onderzoek de beoordeling uit het rapport en aangetroffen schimmelaantasting.
+Waar: overal waar op houten palen is gebouwd; landelijk berekend. In de berekening: het funderingstype (houten palen, of houten palen met betonoplanger), de grondwaterstand bij het pand, de pandzakking van het bouwblok als signaal, en bij onderzoek het houtniveau tegenover de grondwaterstand, de beoordeling uit het rapport en aangetroffen schimmelaantasting.
 
 #### Ontwateringsdiepte
 
 Bij ondiepe funderingen (op staal, zonder palen) de afstand tussen de onderkant van de fundering en het grondwater. Staat het grondwater hoog, dan ontstaat optrekkend vocht en kan het pand gaan zakken.
 
-Waar: overal waar ondiep is gefundeerd; landelijk berekend. In de berekening: het funderingstype, de grondwaterstand bij het pand, de pandzakking van het bouwblok als signaal, en bij onderzoek de beoordeling uit het rapport. Is er voor een pand verder geen enkel gegeven, dan geeft het bouwjaar hier een indicatieve klasse. Verschilzakking valt hieronder: panden die duidelijk sneller zakken dan hun buren en dan de bodem om hen heen. Dit wordt berekend waar satellietdata is.
+Waar: overal waar ondiep is gefundeerd; landelijk berekend. In de berekening: het funderingstype, de funderingsdiepte tegenover de grondwaterstand bij het pand, de pandzakking van het bouwblok als signaal, en bij onderzoek de beoordeling uit het rapport. Is er voor een pand verder geen enkel gegeven, dan geeft het bouwjaar hier een indicatieve klasse. Verschilzakking valt hieronder: panden die duidelijk sneller zakken dan hun buren en dan de bodem om hen heen. Dit wordt berekend waar satellietdata is.
 
 #### Bacteriële aantasting (palenpest)
 
@@ -570,27 +572,23 @@ Een uitgevoerd funderingsherstel gaat altijd voor. Een geldig Verkennend Funderi
 
 Het funderingstype
 
-### Het funderingstype schatten uit vergelijkbare panden
+### Het funderingstype bepalen
 
-Is een pand niet zelf onderzocht, dan bepaalt het vernieuwde funderingstypemodel de fundering uit onderzochte panden die erop lijken. Dat gaat in vijf stappen.
+Is een pand niet zelf onderzocht, dan leidt het model de fundering af uit onderzochte panden in de omgeving. Het neemt de eerste stap waarvoor gegevens zijn. In modelversie 2026.3 gebeurt dit op dezelfde manier als in 2024.1; de veranderingen in deze versie zitten in de risicoregels.
 
-Funderingseenheid Aaneengesloten panden die naar verwachting één fundering delen, zoals een bouwblok uit hetzelfde jaar met dezelfde bouwvorm. Een onderzoek aan één pand zegt daardoor iets over de rest van het blok.
+Eigen onderzoek Onderzoek of een archiefstuk aan het pand zelf. Het funderingstype is dan vastgesteld.
 
-Vergelijkbare panden Onderzochte panden uit dezelfde buurt, bouwperiode en gebouwfamilie, met een vergelijkbare hoogte en ondergrond: de grondsoortregio en de opbouw van de ondergrond uit GeoTOP.
+Funderingseenheid Panden dicht bij elkaar uit dezelfde bouwperiode, zoals een bouwblok, die naar verwachting op dezelfde manier zijn gefundeerd. Is een pand in de eenheid onderzocht, dan geldt die uitkomst voor de rest: afgeleid.
 
-Weging Hoe dichterbij en hoe meer het onderzochte pand lijkt, hoe zwaarder het meetelt. Heeft het pand zelf onderzoek of een archiefstuk, dan gaat dat voor, volgens de hiërarchie van bewijs.
+Ruimere omgeving Ligt er in de eenheid geen onderzoek, dan kijkt het model naar een grotere groep vergelijkbare panden in de omgeving. Ook die uitkomst is afgeleid.
 
-Uitkomst Een kans per funderingsfamilie (houten palen, betonpalen of ondiep) en hoeveel bewijs daaronder ligt. Daaruit volgt de betrouwbaarheid: vastgesteld, afgeleid of indicatief.
+Zonder onderzoek in de buurt Dan schat het model de fundering uit de kenmerken van het pand zelf: bouwjaar, hoogte, grondsoort en het aantal adressen. De uitkomst is dan indicatief.
 
-Zonder onderzoek in de buurt Dan schat het model de fundering uit de kenmerken van het pand zelf: bouwjaar, hoogte en ondergrond. De uitkomst is dan indicatief.
+#### Volgende stap: een vernieuwd funderingstypemodel
 
-#### Getoetst op panden die het model nooit had gezien
+FunderMaps werkt aan een vernieuwd funderingstypemodel. Het weegt onderzochte panden die op het pand lijken, uit dezelfde buurt, bouwperiode en gebouwfamilie en met een vergelijkbare hoogte en ondergrond, en geeft per pand een kans per funderingsfamilie (houten palen, betonpalen of ondiep) met de hoeveelheid bewijs daaronder. Het is getoetst op ruim 47.000 onderzochte panden waarvan de uitkomst was achtergehouden, gescheiden per rapport en per gemeente, zodat het model niet kon leren van het antwoord.
 
-Van ruim 47.000 onderzochte panden is de uitkomst achtergehouden. Het model rekende zonder die panden en moest ze daarna inschatten. De uitkomst is vergeleken met wat het onderzoek vaststelde. De panden zijn gescheiden per rapport en per gemeente: panden uit hetzelfde rapport of dezelfde gemeente zaten nooit tegelijk in de rekenset en de toetsset. Zo kan het model niet leren van het antwoord.
-
-De juiste funderingsfamilie betekent dat het model dezelfde familie aanwijst als het onderzoek: houten palen, betonpalen of ondiep.
-
-Het resultaat: het vernieuwde model vindt in buurten met onderzoek ongeveer twee keer zo vaak de houten funderingen terug als de eerdere schatting. In gemeenten waarvan het model geen enkel onderzocht pand kende, wijst het ongeveer twee keer zo vaak de juiste funderingsfamilie aan.
+Zodra het vernieuwde model in een modelversie is opgenomen, staat dat op deze pagina.
 
 Waarom data het verschil maakt
 
@@ -816,27 +814,17 @@ Een geregistreerd funderingsherstel en een Verkennend Funderingsonderzoek gaan a
 
 Het funderingstype
 
-### Het funderingstype schatten uit vergelijkbare panden
+### Het funderingstype bepalen
 
-Is een pand niet zelf onderzocht, dan bepaalt het vernieuwde funderingstypemodel de fundering uit onderzochte panden die erop lijken. Dat gaat in vijf stappen.
+Is een pand niet zelf onderzocht, dan leidt het model de fundering af uit onderzochte panden in de omgeving. Het neemt de eerste stap waarvoor gegevens zijn.
 
-Funderingseenheid Aaneengesloten panden die naar verwachting één fundering delen, zoals een bouwblok uit hetzelfde jaar met dezelfde bouwvorm. Een onderzoek aan één pand zegt daardoor iets over de rest van het blok.
+Eigen onderzoek Onderzoek of een archiefstuk aan het pand zelf. Het funderingstype is dan vastgesteld.
 
-Vergelijkbare panden Onderzochte panden uit dezelfde buurt, bouwperiode en gebouwfamilie, met een vergelijkbare hoogte en ondergrond: de grondsoortregio en de opbouw van de ondergrond uit GeoTOP.
+Funderingseenheid Panden dicht bij elkaar uit dezelfde bouwperiode, zoals een bouwblok, die naar verwachting op dezelfde manier zijn gefundeerd. Is een pand in de eenheid onderzocht, dan geldt die uitkomst voor de rest: afgeleid.
 
-Weging Hoe dichterbij en hoe meer het onderzochte pand lijkt, hoe zwaarder het meetelt. Heeft het pand zelf onderzoek of een archiefstuk, dan gaat dat voor, volgens de hiërarchie van bewijs.
+Ruimere omgeving Ligt er in de eenheid geen onderzoek, dan kijkt het model naar een grotere groep vergelijkbare panden in de omgeving. Ook die uitkomst is afgeleid.
 
-Uitkomst Een kans per funderingsfamilie (houten palen, betonpalen of ondiep) en hoeveel bewijs daaronder ligt. Daaruit volgt de betrouwbaarheid: vastgesteld, afgeleid of indicatief.
-
-Zonder onderzoek in de buurt Dan schat het model de fundering uit de kenmerken van het pand zelf: bouwjaar, hoogte en ondergrond. De uitkomst is dan indicatief.
-
-#### Getoetst op panden die het model nooit had gezien
-
-Van ruim 47.000 onderzochte panden is de uitkomst achtergehouden. Het model rekende zonder die panden en moest ze daarna inschatten. De uitkomst is vergeleken met wat het onderzoek vaststelde. De panden zijn gescheiden per rapport en per gemeente: panden uit hetzelfde rapport of dezelfde gemeente zaten nooit tegelijk in de rekenset en de toetsset. Zo kan het model niet leren van het antwoord.
-
-De juiste funderingsfamilie betekent dat het model dezelfde familie aanwijst als het onderzoek: houten palen, betonpalen of ondiep.
-
-Het resultaat: het vernieuwde model vindt in buurten met onderzoek ongeveer twee keer zo vaak de houten funderingen terug als de eerdere schatting. In gemeenten waarvan het model geen enkel onderzocht pand kende, wijst het ongeveer twee keer zo vaak de juiste funderingsfamilie aan.
+Zonder onderzoek in de buurt Dan schat het model de fundering uit de kenmerken van het pand zelf: bouwjaar, hoogte, grondsoort en het aantal adressen. De uitkomst is dan indicatief.
 
 Waarom data het verschil maakt
 
@@ -1814,7 +1802,7 @@ No other delivery method (query parameter, custom header) is accepted. Keys are 
 
 The complete field set of GET /v4/product/analysis/{id}. Nothing else is returned; any field not listed here is not part of the contract.
 
-"Null share" is the proportion of the 11.2M buildings in the current model snapshot for which the field is null. It is guidance for sizing your handling of missing data, not a contract — shares move as the model is rebuilt.
+"Null share" is the proportion of the 11.3M buildings in the current model snapshot for which the field is null. It is guidance for sizing your handling of missing data, not a contract — shares move as the model is rebuilt.
 
 Field
 Type
@@ -1860,16 +1848,16 @@ Metres
 
 velocity
 number
-90%
+91%
 Subsidence rate, mm/year; negative = sinking
 
 groundWaterLevel
 number
-10%
+11%
 
 groundLevel
 number
-9%
+5%
 
 soil
 string
@@ -2039,8 +2027,8 @@ Retry later; contact support if it persists
 
 503
 service_unavailable
-Health check only (§7): the webservice is up but cannot currently serve product requests
-Treat the webservice as unavailable; retry later
+The webservice is temporarily unable to serve requests, for example during maintenance. Product and usage requests carry a Retry-After header; the health check (§7) reports the same state with this code
+Retry after the number of seconds in Retry-After
 
 The four 404 "no result" codes are designed so automated integrations (e.g. the NWWI valuation chain) can choose the correct follow-up action from code alone: a corrected resubmission (identifier_invalid, address_not_found), a QuickScan request (no_data_available), or no action (building_not_found, not_a_building).
 
@@ -2081,7 +2069,7 @@ Notes for interpreting responses:
 
 - Consequently, the no_data_available error (§5) is rare in practice and mainly occurs for buildings not yet present in the current model snapshot, such as very recent BAG additions.
 
-- Do not assert on this. The fallback is derived from the construction year, so a building whose construction year is itself unknown gets no fallback and returns null for all four risk fields. In the current snapshot that is exactly 1 building out of 11.2M — but it is not zero, so treat "all risks null" as a case your code handles rather than an impossible state.
+- Do not assert on this. The fallback is derived from the construction year, so a building whose construction year is itself unknown gets no fallback and returns null for all four risk fields. In the current snapshot no building out of 11.3M is in that state, but it can occur, so treat "all risks null" as a case your code handles rather than an impossible state.
 
 ### 7. Health check
 
@@ -2114,6 +2102,34 @@ Treat the HTTP status as the contract: 200 means available, anything else means 
 - A 200 says the service is available, not that a specific building has data — the 404 codes in §5 still apply to product calls.
 
 - Staging exposes the same endpoint at https://ws-staging.fundermaps.com/v4/health.
+
+### 8. Version of a delivery
+
+Every product response says which model produced it and when that model run finished. Store it next to the answer: it is how you tell one delivery from the next.
+
+Field
+Example
+Meaning
+
+modelVersion
+"model-2026.3"
+The FunderMaps model that produced the answer. Changes only when a new model goes live.
+
+calculatedAt
+"2026-10-06T19:59:49.011Z"
+When that model run finished (ISO 8601, UTC). The model is recalculated daily.
+
+- Both fields are added to the body of every 200 product response (/v4/product/*), next to the existing fields. They are the same for every building within one model run.
+
+- Every product response, including the 404 and 429 ones, also carries the header X-FunderMaps-Version: <modelVersion>@<calculatedAt>, so you can compare without parsing the body.
+
+- Compare calculatedAt. Equal value: the same inputs, so the same answer for the same building. A new value means the model ran again. The answer for your building may have changed, also when nothing was reported about the building itself, because the model takes information from neighbouring buildings into account.
+
+- For the research endpoints (facade_scan, foundation-research) the stamp marks the data publication; the research itself carries its own documentDate.
+
+- The stamp is never a reason for an error. If it cannot be determined, the response is served without it: treat the fields as optional.
+
+- The stamp is part of the response, not a separate product: it is not billed.
 
 ### Enum reference
 
@@ -2172,6 +2188,32 @@ Correction notice (June 2026). Earlier revisions of this table were incomplete a
 - quick_scan → the API returns quickscan
 
 Additionally, 8 foundationType values, 5 damageCause values, and 4 further inquiryType values (archive_research, ground_water_level_research, soil_investigation, facade_scan) were missing and have been added above. Treat any enum value outside this table as a defect and report it to us.
+
+#### Recommended Dutch labels
+
+The words FunderMaps itself uses for these values, in its reports, its mails and the Studio. Showing your users the same words keeps a valuation, a report and a melding saying the same thing. This is a recommendation, not part of the contract: the values above are the contract.
+
+- foundationType: wood houten palen · wood_amsterdam houten palen (Amsterdamse fundering) · wood_rotterdam houten palen (Rotterdamse fundering) · wood_rotterdam_amsterdam houten palen (Rotterdamse/Amsterdamse fundering) · wood_rotterdam_arch houten palen (Rotterdamse fundering met spaarboog) · wood_amsterdam_arch houten palen (Amsterdamse fundering met spaarboog) · wood_charger houten palen met betonoplanger · concrete betonnen palen · steel_pile stalen buispalen · weighted_pile verzwaarde-puntpalen · no_pile ondiepe fundering (op staal) · no_pile_masonry ondiepe fundering, gemetseld · no_pile_strips ondiepe fundering, stroken · no_pile_bearing_floor ondiepe fundering, plaatfundering · no_pile_concrete_floor ondiepe fundering, betonvloer · no_pile_slit ondiepe fundering, slieten · combined gecombineerde fundering · other overig
+
+- reliability: established vastgesteld · cluster afgeleid · supercluster afgeleid · indicative indicatief
+
+- foundationRisk: a A (geen risico) · b B (laag risico) · c C (verhoogd risico) · d D (hoog risico) · e E (aanzienlijk hoog risico)
+
+- facadeScanRisk: a A · b B · c C · d D · e E (in words: A/B laag, C midden, D/E hoog)
+
+- overallQuality: good goed · mediocre_good matig tot goed · tolerable redelijk · mediocre matig · mediocre_bad matig tot slecht · bad slecht
+
+- enforcementTerm: term05 0-5 jaar · term510 5-10 jaar · term1020 10-20 jaar · term5 5 jaar · term10 10 jaar · term15 15 jaar · term20 20 jaar · term25 25 jaar · term30 30 jaar · term40 40 jaar
+
+- damageCause: drainage ontwatering · construction_flaw constructiefout · drystand droogstand · overcharge overbelasting · overcharge_negative_cling overbelasting door negatieve kleef · negative_cling negatieve kleef · bio_infection bacteriële aantasting · fungus_infection schimmelaantasting · bio_fungus_infection bacteriële aantasting en schimmelaantasting · foundation_flaw funderingsgebrek · construction_heave opbolling door de constructie · subsidence zetting · vegetation boomwortels / vegetatie · gas gaswinning · vibrations trillingen · partial_foundation_recovery gedeeltelijk funderingsherstel · japanese_knotweed Japanse duizendknoop · groundwater_level_reduction grondwaterstandverlaging
+
+- inquiryType: foundation_research funderingsonderzoek · facade_scan Verkennend Funderingsonderzoek (QuickScan addendum) · quickscan QuickScan (vervallen) · archive_research archiefonderzoek · inspectionpit inspectieput · monitoring monitoring · ground_water_level_research grondwateronderzoek · soil_investigation grondonderzoek · architectural_research bouwkundig onderzoek · foundation_advice funderingsadvies · second_opinion second opinion · demolition_research sloop- of nieuwbouwonderzoek · additional_research aanvullend onderzoek · note notitie · unknown onbekend
+
+- recoveryType: table tafelconstructie · beam_on_pile balk op paal · pile_lowering paalverlaging · pile_in_wall paal in wand · injection injectie · unknown onbekend
+
+- settlementSpeed, skewedParallelFacade, skewedPerpendicularFacade: nil nihil · small klein · mediocre middelmatig · big groot · very_big zeer groot
+
+- facadeCrack: none geen · nil geen · small licht · mediocre matig · big ernstig
 
 ### Appendix: coming from v3
 

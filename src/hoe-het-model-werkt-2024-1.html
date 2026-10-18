@@ -153,7 +153,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
 </style>
 </head>
 <body>
-<div class="version"><div class="wrap"><strong>Vorige modelversie.</strong> Deze pagina beschrijft het risicomodel <strong>2024.1</strong>, zoals gepubliceerd tot de overgang naar modelversie 2026.3. Ze blijft staan ter naslag. De actuele beschrijving staat op <a href="https://fundermaps.com/hoe-het-model-werkt.html">Hoe FunderMaps het funderingsrisico bepaalt</a>.</div></div>
+<div class="version"><div class="wrap"><strong>Vorige modelversie.</strong> Deze pagina beschrijft het risicomodel <strong>2024.1</strong>, de versie vóór modelversie 2026.3. Ze blijft staan ter naslag. De actuele beschrijving staat op <a href="https://fundermaps.com/hoe-het-model-werkt.html">Hoe FunderMaps het funderingsrisico bepaalt</a>.</div></div>
 <header class="hero">
   <div class="wrap">
     <span class="eyebrow">FunderMaps · modelversie 2024.1 · vorige versie</span>
@@ -263,23 +263,16 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
 
   <section>
     <span class="eyebrow">Het funderingstype</span>
-    <h2>Het funderingstype schatten uit vergelijkbare panden</h2>
+    <h2>Het funderingstype bepalen</h2>
     <img src="./resources/images/funderingstype.webp" alt="Schematisch overzicht van de funderingstypen in Nederland" loading="lazy" style="width:100%;height:auto;border-radius:14px;background:#fff">
     <div class="prose" style="display:grid;gap:14px">
-      <p>Is een pand niet zelf onderzocht, dan bepaalt het vernieuwde funderingstypemodel de fundering uit onderzochte panden die erop lijken. Dat gaat in vijf stappen.</p>
+      <p>Is een pand niet zelf onderzocht, dan leidt het model de fundering af uit onderzochte panden in de omgeving. Het neemt de eerste stap waarvoor gegevens zijn.</p>
     </div>
-    <div class="steps five">
-      <div class="card step"><span class="n">Funderingseenheid</span><p>Aaneengesloten panden die naar verwachting één fundering delen, zoals een bouwblok uit hetzelfde jaar met dezelfde bouwvorm. Een onderzoek aan één pand zegt daardoor iets over de rest van het blok.</p></div>
-      <div class="card step"><span class="n">Vergelijkbare panden</span><p>Onderzochte panden uit dezelfde buurt, bouwperiode en gebouwfamilie, met een vergelijkbare hoogte en ondergrond: de grondsoortregio en de opbouw van de ondergrond uit GeoTOP.</p></div>
-      <div class="card step"><span class="n">Weging</span><p>Hoe dichterbij en hoe meer het onderzochte pand lijkt, hoe zwaarder het meetelt. Heeft het pand zelf onderzoek of een archiefstuk, dan gaat dat voor, volgens de hiërarchie van bewijs.</p></div>
-      <div class="card step"><span class="n">Uitkomst</span><p>Een kans per funderingsfamilie (houten palen, betonpalen of ondiep) en hoeveel bewijs daaronder ligt. Daaruit volgt de betrouwbaarheid: <em>vastgesteld</em>, <em>afgeleid</em> of <em>indicatief</em>.</p></div>
-      <div class="card step"><span class="n">Zonder onderzoek in de buurt</span><p>Dan schat het model de fundering uit de kenmerken van het pand zelf: bouwjaar, hoogte en ondergrond. De uitkomst is dan <em>indicatief</em>.</p></div>
-    </div>
-    <div class="card" style="display:grid;gap:10px">
-      <h3>Getoetst op panden die het model nooit had gezien</h3>
-      <p class="muted">Van ruim 47.000 onderzochte panden is de uitkomst achtergehouden. Het model rekende zonder die panden en moest ze daarna inschatten. De uitkomst is vergeleken met wat het onderzoek vaststelde. De panden zijn gescheiden per rapport en per gemeente: panden uit hetzelfde rapport of dezelfde gemeente zaten nooit tegelijk in de rekenset en de toetsset. Zo kan het model niet leren van het antwoord.</p>
-      <p class="muted">De <em>juiste funderingsfamilie</em> betekent dat het model dezelfde familie aanwijst als het onderzoek: houten palen, betonpalen of ondiep.</p>
-      <p><strong>Het resultaat:</strong> het vernieuwde model vindt in buurten met onderzoek ongeveer twee keer zo vaak de houten funderingen terug als de eerdere schatting. In gemeenten waarvan het model geen enkel onderzocht pand kende, wijst het ongeveer twee keer zo vaak de juiste funderingsfamilie aan.</p>
+    <div class="steps">
+      <div class="card step"><span class="n">Eigen onderzoek</span><p>Onderzoek of een archiefstuk aan het pand zelf. Het funderingstype is dan <em>vastgesteld</em>.</p></div>
+      <div class="card step"><span class="n">Funderingseenheid</span><p>Panden dicht bij elkaar uit dezelfde bouwperiode, zoals een bouwblok, die naar verwachting op dezelfde manier zijn gefundeerd. Is een pand in de eenheid onderzocht, dan geldt die uitkomst voor de rest: <em>afgeleid</em>.</p></div>
+      <div class="card step"><span class="n">Ruimere omgeving</span><p>Ligt er in de eenheid geen onderzoek, dan kijkt het model naar een grotere groep vergelijkbare panden in de omgeving. Ook die uitkomst is <em>afgeleid</em>.</p></div>
+      <div class="card step"><span class="n">Zonder onderzoek in de buurt</span><p>Dan schat het model de fundering uit de kenmerken van het pand zelf: bouwjaar, hoogte, grondsoort en het aantal adressen. De uitkomst is dan <em>indicatief</em>.</p></div>
     </div>
   </section>
 
