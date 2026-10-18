@@ -280,7 +280,7 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 <h3 id="v4productrisk-and-v4productlight"><code>/v4/product/risk</code> and <code>/v4/product/light</code></h3>
 <p><strong><code>/v4/product/risk/{id}</code></strong> — a subset of <code>analysis</code> for valuation chains and dashboards. Returns: <code>buildingId</code>, <code>foundationType</code>, <code>foundationTypeReliability</code>, <code>restorationCosts</code>, <code>inquiryType</code>, <code>drystandRisk</code>, <code>drystandReliability</code>, <code>bioInfectionRisk</code>, <code>bioInfectionReliability</code>, <code>dewateringDepthRisk</code>, <code>dewateringDepthReliability</code>, <code>unclassifiedRisk</code>, <code>recoveryType</code>.</p>
 <p>Field names and semantics are identical to the corresponding fields in <code>analysis</code> — note that the reliability fields are <code>drystandReliability</code>, <code>bioInfectionReliability</code> and <code>dewateringDepthReliability</code> (not <code>…RiskReliability</code>).</p>
-<p><strong><code>/v4/product/light/{id}</code></strong> — minimal response for fast integrations. Collapses the three component risks plus <code>unclassifiedRisk</code> (the construction-year-derived fallback classification) into a single derived <code>overallRisk</code> + <code>overallRiskReliability</code>. The fallback enters at <code>indicative</code> reliability, so it only determines <code>overallRisk</code> when no more reliable component risk is present — buildings covered only by the fallback report that class instead of <code>null</code>. If a <code>recoveryType</code> is set on the building (i.e. the foundation has been restored), <code>overallRisk</code> is forced to <code>a</code> with <code>established</code> reliability. Returns: <code>overallRisk</code>, <code>overallRiskReliability</code> — nothing else (<code>restorationCosts</code> and <code>drystandRisk</code> were removed from the response).</p>
+<p><strong><code>/v4/product/light/{id}</code></strong> — minimal response for fast integrations. Collapses the three component risks plus <code>unclassifiedRisk</code> into a single derived <code>overallRisk</code> + <code>overallRiskReliability</code>. The construction-year fallback (§6) enters at <code>indicative</code> reliability, so it only determines <code>overallRisk</code> when no more reliable component risk is present — buildings covered only by the fallback report that class instead of <code>null</code>. If a <code>recoveryType</code> is set on the building (i.e. the foundation has been restored), <code>overallRisk</code> is forced to <code>a</code> with <code>established</code> reliability. Returns: <code>overallRisk</code>, <code>overallRiskReliability</code> — nothing else (<code>restorationCosts</code> and <code>drystandRisk</code> were removed from the response).</p>
 <h3 id="research-outcome-endpoints">Research outcome endpoints</h3>
 <p>Where <code>analysis</code> returns the <strong>model-based</strong> risk assessment, these two endpoints return the summarized outcome of <strong>actually performed research</strong> on the building, where available. They complement <code>analysis</code>; they do not replace it.</p>
 <p><strong><code>/v4/product/facade_scan/{id}</code></strong> — the most recent facade scan (QuickScan) for the building, provided its report is <strong>less than 3 years old</strong>. Returns: <code>buildingId</code>, <code>inquiryId</code>, <code>inquiryType</code> (<code>facade_scan</code>), <code>documentDate</code> (<code>YYYY-MM-DD</code>), <code>validUntil</code> (<code>documentDate</code> + 3 years), <code>facadeScanRisk</code> (<code>a</code>–<code>e</code>), <code>settlementSpeed</code>, <code>skewedParallelFacade</code>, <code>skewedPerpendicularFacade</code>, <code>facadeCrack</code>, <code>contractor</code>, <code>resource</code> (optional, see below).</p>
@@ -382,7 +382,7 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 <p>No other delivery method (query parameter, custom header) is accepted. Keys are issued by FunderMaps; contact us to add or rotate a key.</p>
 <h2 id="3-analysis-response-reference">3. Analysis response reference</h2>
 <p>The complete field set of <code>GET /v4/product/analysis/{id}</code>. Nothing else is returned; any field not listed here is not part of the contract.</p>
-<p>&quot;Null share&quot; is the proportion of the 11.2M buildings in the current model snapshot for which the field is <code>null</code>. It is guidance for sizing your handling of missing data, not a contract — shares move as the model is rebuilt.</p>
+<p>&quot;Null share&quot; is the proportion of the 11.3M buildings in the current model snapshot for which the field is <code>null</code>. It is guidance for sizing your handling of missing data, not a contract — shares move as the model is rebuilt.</p>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -443,19 +443,19 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 <tr>
 <td><code>velocity</code></td>
 <td>number</td>
-<td>90%</td>
+<td>91%</td>
 <td>Subsidence rate, mm/year; negative = sinking</td>
 </tr>
 <tr>
 <td><code>groundWaterLevel</code></td>
 <td>number</td>
-<td>10%</td>
+<td>11%</td>
 <td></td>
 </tr>
 <tr>
 <td><code>groundLevel</code></td>
 <td>number</td>
-<td>9%</td>
+<td>5%</td>
 <td></td>
 </tr>
 <tr>
@@ -669,8 +669,8 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 <tr>
 <td>503</td>
 <td><code>service_unavailable</code></td>
-<td>Health check only (§7): the webservice is up but cannot currently serve product requests</td>
-<td>Treat the webservice as unavailable; retry later</td>
+<td>The webservice is temporarily unable to serve requests, for example during maintenance. Product and usage requests carry a <code>Retry-After</code> header; the health check (§7) reports the same state with this code</td>
+<td>Retry after the number of seconds in <code>Retry-After</code></td>
 </tr>
 </tbody></table></div>
 <p>The four 404 &quot;no result&quot; codes are designed so automated integrations (e.g. the NWWI valuation chain) can choose the correct follow-up action from <code>code</code> alone: a corrected resubmission (<code>identifier_invalid</code>, <code>address_not_found</code>), a QuickScan request (<code>no_data_available</code>), or no action (<code>building_not_found</code>, <code>not_a_building</code>).</p>
@@ -678,12 +678,18 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 <h3 id="rate-limits">Rate limits</h3>
 <p>Usage limits are set per API key and product as a number of billable events per calendar day or month (UTC). When a limit applies, every response to that product carries <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code> and <code>X-RateLimit-Reset</code> (seconds until the window resets); an exhausted limit returns <code>429 rate_limit_exceeded</code> with <code>Retry-After</code>. Repeated requests for the same building within 24 hours do not consume additional events.</p>
 <h2 id="6-every-known-building-carries-a-risk-indication">6. Every known building carries a risk indication</h2>
-<p>Since July 2026, the model guarantees that every building known to the model carries <strong>at least one</strong> risk indication. When none of the component risks (<code>drystandRisk</code>, <code>bioInfectionRisk</code>, <code>dewateringDepthRisk</code>) could be computed and no report-derived class exists — typically buildings outside groundwater-model coverage or with an undetermined foundation type — <code>unclassifiedRisk</code> contains a construction-year-based estimate:</p>
+<p>Since July 2026, the model guarantees that every building known to the model carries <strong>at least one</strong> risk indication. When none of the component risks (<code>drystandRisk</code>, <code>bioInfectionRisk</code>, <code>dewateringDepthRisk</code>) could be computed and no report-derived class exists — typically buildings outside groundwater-model coverage or with an undetermined foundation type — the model fills in a construction-year-based estimate.</p>
+<p>Where that estimate appears depends on the model version:</p>
+<ul>
+<li><strong>Model 2026.3</strong> (current): in <code>dewateringDepthRisk</code>, with <code>dewateringDepthReliability</code> = <code>indicative</code>. <code>unclassifiedRisk</code> then stays <code>null</code>; it only carries a class derived from research (a report or QuickScan on the building, or a report in the same block).</li>
+<li><strong>Model 2024.1</strong> (previous): in <code>unclassifiedRisk</code>; the component risks stay <code>null</code>.</li>
+</ul>
+<p>The estimate itself is the same in both versions:</p>
 <div class="tbl"><table>
 <thead>
 <tr>
 <th>Construction year</th>
-<th><code>unclassifiedRisk</code></th>
+<th>Estimate</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -698,10 +704,10 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 <p>Notes for interpreting responses:</p>
 <ul>
 <li>This fallback is <strong>indicative</strong>: it is a heuristic, not a computed or inspected result. It applies to roughly 0.4% of buildings nationally.</li>
-<li>The component risk fields themselves stay <code>null</code> in this case. More generally, a <code>null</code> component risk is <strong>structural, not missing data</strong>: each component only applies to certain foundation types (e.g. <code>drystandRisk</code> to wood foundations, <code>dewateringDepthRisk</code> to no-pile foundations). Do not infer data quality from individual <code>null</code> components.</li>
-<li>Report-derived <code>unclassifiedRisk</code> values always take precedence over the fallback.</li>
+<li>Apart from where the estimate lands (see above), the component risk fields stay <code>null</code> in this case. More generally, a <code>null</code> component risk is <strong>structural, not missing data</strong>: each component only applies to certain foundation types (e.g. <code>drystandRisk</code> to wood foundations, <code>dewateringDepthRisk</code> to no-pile foundations). Do not infer data quality from individual <code>null</code> components.</li>
+<li>Report-derived values always take precedence over the fallback.</li>
 <li>Consequently, the <code>no_data_available</code> error (§5) is rare in practice and mainly occurs for buildings not yet present in the current model snapshot, such as very recent BAG additions.</li>
-<li><strong>Do not assert on this.</strong> The fallback is derived from the construction year, so a building whose construction year is itself unknown gets no fallback and returns <code>null</code> for all four risk fields. In the current snapshot that is exactly 1 building out of 11.2M — but it is not zero, so treat &quot;all risks null&quot; as a case your code handles rather than an impossible state.</li>
+<li><strong>Do not assert on this.</strong> The fallback is derived from the construction year, so a building whose construction year is itself unknown gets no fallback and returns <code>null</code> for all four risk fields. In the current snapshot no building out of 11.3M is in that state, but it can occur, so treat &quot;all risks null&quot; as a case your code handles rather than an impossible state.</li>
 </ul>
 <h2 id="7-health-check">7. Health check</h2>
 <p><code>GET /v4/health</code> reports whether the webservice can currently serve product requests. It is <strong>unauthenticated</strong>, never billed, and intended for availability monitors.</p>
@@ -737,6 +743,35 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 <li>The state is re-evaluated at most once every 5 seconds server-side. Once a minute is a sensible polling interval; polling faster does not give fresher answers.</li>
 <li>A <code>200</code> says the service is available, not that a specific building has data — the <code>404</code> codes in §5 still apply to product calls.</li>
 <li>Staging exposes the same endpoint at <code>https://ws-staging.fundermaps.com/v4/health</code>.</li>
+</ul>
+<h2 id="8-version-of-a-delivery">8. Version of a delivery</h2>
+<p>Every product response says which model produced it and when that model run finished. Store it next to the answer: it is how you tell one delivery from the next.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>modelVersion</code></td>
+<td><code>&quot;model-2026.3&quot;</code></td>
+<td>The FunderMaps model that produced the answer. Changes only when a new model goes live.</td>
+</tr>
+<tr>
+<td><code>calculatedAt</code></td>
+<td><code>&quot;2026-10-06T19:59:49.011Z&quot;</code></td>
+<td>When that model run finished (ISO 8601, UTC). The model is recalculated daily.</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>Both fields are added to the body of every <code>200</code> product response (<code>/v4/product/*</code>), next to the existing fields. They are the same for every building within one model run.</li>
+<li>Every product response, including the <code>404</code> and <code>429</code> ones, also carries the header <code>X-FunderMaps-Version: &lt;modelVersion&gt;@&lt;calculatedAt&gt;</code>, so you can compare without parsing the body.</li>
+<li><strong>Compare <code>calculatedAt</code>.</strong> Equal value: the same inputs, so the same answer for the same building. A new value means the model ran again. The answer for your building <em>may</em> have changed, also when nothing was reported about the building itself, because the model takes information from neighbouring buildings into account.</li>
+<li>For the research endpoints (<code>facade_scan</code>, <code>foundation-research</code>) the stamp marks the data publication; the research itself carries its own <code>documentDate</code>.</li>
+<li>The stamp is never a reason for an error. If it cannot be determined, the response is served without it: treat the fields as optional.</li>
+<li>The stamp is part of the response, not a separate product: it is not billed.</li>
 </ul>
 <h2 id="enum-reference">Enum reference</h2>
 <p>The values below are the exact, complete label sets of the database enum types the API serves from — every value a v4 response can contain is listed, and a CI check keeps this table in sync with the implementation (<code>src/enums.ts</code>). All enum fields are nullable: expect <code>null</code> when the underlying data point is absent.</p>
@@ -810,6 +845,21 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 </ul>
 <p>Additionally, 8 <code>foundationType</code> values, 5 <code>damageCause</code> values, and 4 further <code>inquiryType</code> values (<code>archive_research</code>, <code>ground_water_level_research</code>, <code>soil_investigation</code>, <code>facade_scan</code>) were missing and have been added above. Treat any enum value outside this table as a defect and report it to us.</p>
 </blockquote>
+<h3 id="recommended-dutch-labels">Recommended Dutch labels</h3>
+<p>The words FunderMaps itself uses for these values, in its reports, its mails and the Studio. Showing your users the same words keeps a valuation, a report and a melding saying the same thing. This is a recommendation, not part of the contract: the values above are the contract.</p>
+<ul>
+<li><strong>foundationType</strong>: <code>wood</code> houten palen · <code>wood_amsterdam</code> houten palen (Amsterdamse fundering) · <code>wood_rotterdam</code> houten palen (Rotterdamse fundering) · <code>wood_rotterdam_amsterdam</code> houten palen (Rotterdamse/Amsterdamse fundering) · <code>wood_rotterdam_arch</code> houten palen (Rotterdamse fundering met spaarboog) · <code>wood_amsterdam_arch</code> houten palen (Amsterdamse fundering met spaarboog) · <code>wood_charger</code> houten palen met betonoplanger · <code>concrete</code> betonnen palen · <code>steel_pile</code> stalen buispalen · <code>weighted_pile</code> verzwaarde-puntpalen · <code>no_pile</code> ondiepe fundering (op staal) · <code>no_pile_masonry</code> ondiepe fundering, gemetseld · <code>no_pile_strips</code> ondiepe fundering, stroken · <code>no_pile_bearing_floor</code> ondiepe fundering, plaatfundering · <code>no_pile_concrete_floor</code> ondiepe fundering, betonvloer · <code>no_pile_slit</code> ondiepe fundering, slieten · <code>combined</code> gecombineerde fundering · <code>other</code> overig</li>
+<li><strong>reliability</strong>: <code>established</code> vastgesteld · <code>cluster</code> afgeleid · <code>supercluster</code> afgeleid · <code>indicative</code> indicatief</li>
+<li><strong>foundationRisk</strong>: <code>a</code> A (geen risico) · <code>b</code> B (laag risico) · <code>c</code> C (verhoogd risico) · <code>d</code> D (hoog risico) · <code>e</code> E (aanzienlijk hoog risico)</li>
+<li><strong>facadeScanRisk</strong>: <code>a</code> A · <code>b</code> B · <code>c</code> C · <code>d</code> D · <code>e</code> E (in words: A/B laag, C midden, D/E hoog)</li>
+<li><strong>overallQuality</strong>: <code>good</code> goed · <code>mediocre_good</code> matig tot goed · <code>tolerable</code> redelijk · <code>mediocre</code> matig · <code>mediocre_bad</code> matig tot slecht · <code>bad</code> slecht</li>
+<li><strong>enforcementTerm</strong>: <code>term05</code> 0-5 jaar · <code>term510</code> 5-10 jaar · <code>term1020</code> 10-20 jaar · <code>term5</code> 5 jaar · <code>term10</code> 10 jaar · <code>term15</code> 15 jaar · <code>term20</code> 20 jaar · <code>term25</code> 25 jaar · <code>term30</code> 30 jaar · <code>term40</code> 40 jaar</li>
+<li><strong>damageCause</strong>: <code>drainage</code> ontwatering · <code>construction_flaw</code> constructiefout · <code>drystand</code> droogstand · <code>overcharge</code> overbelasting · <code>overcharge_negative_cling</code> overbelasting door negatieve kleef · <code>negative_cling</code> negatieve kleef · <code>bio_infection</code> bacteriële aantasting · <code>fungus_infection</code> schimmelaantasting · <code>bio_fungus_infection</code> bacteriële aantasting en schimmelaantasting · <code>foundation_flaw</code> funderingsgebrek · <code>construction_heave</code> opbolling door de constructie · <code>subsidence</code> zetting · <code>vegetation</code> boomwortels / vegetatie · <code>gas</code> gaswinning · <code>vibrations</code> trillingen · <code>partial_foundation_recovery</code> gedeeltelijk funderingsherstel · <code>japanese_knotweed</code> Japanse duizendknoop · <code>groundwater_level_reduction</code> grondwaterstandverlaging</li>
+<li><strong>inquiryType</strong>: <code>foundation_research</code> funderingsonderzoek · <code>facade_scan</code> Verkennend Funderingsonderzoek (QuickScan addendum) · <code>quickscan</code> QuickScan (vervallen) · <code>archive_research</code> archiefonderzoek · <code>inspectionpit</code> inspectieput · <code>monitoring</code> monitoring · <code>ground_water_level_research</code> grondwateronderzoek · <code>soil_investigation</code> grondonderzoek · <code>architectural_research</code> bouwkundig onderzoek · <code>foundation_advice</code> funderingsadvies · <code>second_opinion</code> second opinion · <code>demolition_research</code> sloop- of nieuwbouwonderzoek · <code>additional_research</code> aanvullend onderzoek · <code>note</code> notitie · <code>unknown</code> onbekend</li>
+<li><strong>recoveryType</strong>: <code>table</code> tafelconstructie · <code>beam_on_pile</code> balk op paal · <code>pile_lowering</code> paalverlaging · <code>pile_in_wall</code> paal in wand · <code>injection</code> injectie · <code>unknown</code> onbekend</li>
+<li><strong>settlementSpeed, skewedParallelFacade, skewedPerpendicularFacade</strong>: <code>nil</code> nihil · <code>small</code> klein · <code>mediocre</code> middelmatig · <code>big</code> groot · <code>very_big</code> zeer groot</li>
+<li><strong>facadeCrack</strong>: <code>none</code> geen · <code>nil</code> geen · <code>small</code> licht · <code>mediocre</code> matig · <code>big</code> ernstig</li>
+</ul>
 <h2 id="appendix-coming-from-v3">Appendix: coming from v3</h2>
 <p><code>/api/v3</code> was retired on 2026-08-29. The data and its meaning did not change between v3 and v4 — the same building returns the same assessment — but the wire format did. This appendix exists so historical v3 output can be reconciled with v4; nothing in it is needed for a new integration.</p>
 <ul>

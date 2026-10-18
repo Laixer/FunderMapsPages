@@ -11,6 +11,7 @@ PAGES = [
     ("Home", "index.html", ""),
     ("Stand van het land", "stand-van-het-land.html", "stand-van-het-land.html"),
     ("Hoe FunderMaps het funderingsrisico bepaalt", "hoe-het-model-werkt.html", "hoe-het-model-werkt.html"),
+    ("Hoe FunderMaps het funderingsrisico bepaalt (modelversie 2024.1)", "hoe-het-model-werkt-2024-1.html", "hoe-het-model-werkt-2024-1.html"),
     ("Informatiestandaard funderingsgegevens", "informatiestandaard.html", "informatiestandaard.html"),
     ("Begrippen, standaarden en catalogus", "begrippen-en-standaarden.html", "begrippen-en-standaarden.html"),
     ("Kennisbank", "kennisbank.html", "kennisbank.html"),
