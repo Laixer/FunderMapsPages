@@ -422,7 +422,7 @@ Hersteltempo nu ± 1.000 woningen per jaar; nodig is vijf keer zo snel
 
 - Herstelkosten zijn een modelmatige indicatie per pand, geen offerte. Voor betonpalen wordt geen indicatie berekend. Herstelkosten en herstelopgave tellen alleen panden met klasse D of E op droogstand of ontwateringsdiepte. De gemiddelden laten per funderingsgroep de duurste 10% buiten beschouwing, zodat een paar zeer grote panden het beeld niet vertekenen; de totalen tellen alle panden.
 
-- Externe cijfers, zoals die van de AFM, noemen we met bron en datum. Ze komen niet uit de nachtelijke berekening.
+- Externe cijfers, zoals die van de AFM, noemen we met bron en datum. Ze komen niet uit de modelberekening.
 
 Vragen over de cijfers, of wilt u ze voor uw eigen gebied? Mail info@fundermaps.com.
 
@@ -2117,7 +2117,7 @@ The FunderMaps model that produced the answer. Changes only when a new model goe
 
 calculatedAt
 "2026-10-06T19:59:49.011Z"
-When that model run finished (ISO 8601, UTC). The model is recalculated daily.
+When that model run finished (ISO 8601, UTC). The model is recalculated twice a day (12:30 and 21:00 Amsterdam time).
 
 - Both fields are added to the body of every 200 product response (/v4/product/*), next to the existing fields. They are the same for every building within one model run.
 
