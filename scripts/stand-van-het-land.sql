@@ -88,9 +88,16 @@ SELECT json_build_object(
         SELECT json_build_object(
             'buildings', count(*),
             'addresses', sum(address_count),
-            'municipalities', count(DISTINCT municipality_id),
-            'districts', count(DISTINCT district_id),
-            'neighborhoods', count(DISTINCT neighborhood_id),
+            -- Gemeenten: CBS gebiedsindeling 2026 (342), set by hand. geocoder.municipality still
+            -- holds the 2020 division (355), so counting it overstates the number; wijken and
+            -- buurten are left out for the same reason until the geocoder is on 2026.
+            'municipalities', CASE :'province'
+                WHEN '' THEN 342
+                WHEN 'Groningen' THEN 10 WHEN 'Friesland' THEN 18 WHEN 'Drenthe' THEN 12
+                WHEN 'Overijssel' THEN 25 WHEN 'Flevoland' THEN 6 WHEN 'Gelderland' THEN 51
+                WHEN 'Utrecht' THEN 26 WHEN 'Noord-Holland' THEN 44 WHEN 'Zuid-Holland' THEN 50
+                WHEN 'Zeeland' THEN 13 WHEN 'Noord-Brabant' THEN 56 WHEN 'Limburg' THEN 31
+            END,
             -- Herstelde panden: the Nationaal Herstel Register total (stand 2026-09-21),
             -- set by hand until the register is fully in FunderMaps (Don, 2026-09-25).
             'restored', CASE WHEN :'province' = '' THEN 30122 END
