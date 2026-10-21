@@ -55,8 +55,6 @@ function fillFigures() {
     buildings: num(c.buildings),
     addresses: num(c.addresses),
     municipalities: num(c.municipalities),
-    districts: num(c.districts),
-    neighborhoods: num(c.neighborhoods),
     restored: c.restored == null ? "–" : num(c.restored),
     wood: num(fam.wood.buildings),
     wood_pct: pct(fam.wood.buildings, c.buildings),
