@@ -339,12 +339,6 @@ const METRICS = {
     // is drawn in the lightest shade. Drop this once the new type model is live.
     light: ["Limburg"],
   },
-  cost: {
-    color: "var(--svl-fam-concrete)",
-    value: (p) => (p.costs?.de_with_cost ? p.costs.de_total / p.costs.de_with_cost : 0),
-    format: (v) => euro(Math.round(v / 1000) * 1000),
-    explain: "Gemiddelde geschatte herstelkosten per pand met risicoklasse D of E.",
-  },
 }
 let metric = "de"
 
