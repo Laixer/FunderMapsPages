@@ -5,6 +5,8 @@
 // tables from those. Database, Verkennend Funderingsonderzoek and feedback
 // figures are national only and say so when a province is shown.
 import data from "../../data/stand-van-het-land.json"
+// Generalised CBS province outlines (PDOK, 2025) as SVG paths in RD/100 m units.
+import shapes from "../../data/provinces.json"
 
 /** What is drawn now: the country, or the country with one province's pand figures on top. */
 let view = data
@@ -311,10 +313,97 @@ function render() {
   document.querySelectorAll("[data-svl-national]").forEach((node) => (node.hidden = !scope))
 }
 
+
+// The province map (Don, 2026-10-28): one figure per province as a colour, so the
+// differences the tables hide become visible. Clicking a province picks it, like the select.
+const METRICS = {
+  de: {
+    color: "var(--svl-risk-E)",
+    value: (p) => {
+      const r = Object.fromEntries(p.risk_table.map((x) => [x.class, x.buildings]))
+      return p.coverage.buildings ? ((r.D || 0) + (r.E || 0)) / p.coverage.buildings : 0
+    },
+    format: (v) => pf.format(100 * v) + "%",
+    explain: "Aandeel panden met risicoklasse D of E.",
+  },
+  wood: {
+    color: "var(--svl-fam-wood)",
+    value: (p) => {
+      const w = p.families.find((f) => f.family === "wood")
+      return p.coverage.buildings ? (w?.buildings || 0) / p.coverage.buildings : 0
+    },
+    format: (v) => pf.format(100 * v) + "%",
+    explain: "Aandeel panden op een houten paalfundering.",
+    // Don, 2026-10-28: the live model puts wooden piles in Limburg that the new
+    // foundation-type model (2026.2) doesn't see (112 of 827k panden), so Limburg
+    // is drawn in the lightest shade. Drop this once the new type model is live.
+    light: ["Limburg"],
+  },
+  cost: {
+    color: "var(--svl-fam-concrete)",
+    value: (p) => (p.costs?.de_with_cost ? p.costs.de_total / p.costs.de_with_cost : 0),
+    format: (v) => euro(Math.round(v / 1000) * 1000),
+    explain: "Gemiddelde geschatte herstelkosten per pand met risicoklasse D of E.",
+  },
+}
+let metric = "de"
+
+function drawMap() {
+  const svg = document.getElementById("svl-map")
+  if (!svg || !data.provinces) return
+  const m = METRICS[metric]
+  const values = Object.fromEntries(Object.entries(data.provinces).map(([n, p]) => [n, m.value(p)]))
+  const max = Math.max(...Object.values(values))
+  const min = Math.min(...Object.values(values))
+  // Light grey at the lowest province, the full colour at the highest.
+  const fill = (v) => `color-mix(in srgb, ${m.color} ${Math.round(12 + (88 * (v - min)) / (max - min || 1))}%, #eef0f4)`
+  if (!svg.childElementCount) {
+    svg.setAttribute("viewBox", shapes.viewBox)
+    for (const [name, d] of Object.entries(shapes.provinces)) {
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path")
+      path.setAttribute("d", d)
+      path.setAttribute("tabindex", "0")
+      path.setAttribute("role", "button")
+      path.dataset.province = name
+      path.append(document.createElementNS("http://www.w3.org/2000/svg", "title"))
+      const choose = () => {
+        select.value = scope === name ? "" : name
+        select.dispatchEvent(new Event("change"))
+      }
+      path.addEventListener("click", choose)
+      path.addEventListener("keydown", (e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), choose()))
+      svg.append(path)
+    }
+  }
+  for (const path of svg.querySelectorAll("path")) {
+    const name = path.dataset.province
+    const v = values[name] ?? 0
+    path.style.fill = fill(m.light?.includes(name) ? min : v)
+    path.classList.toggle("is-picked", name === scope)
+    // Last in the SVG paints on top, so the picked outline isn't covered by its neighbours.
+    if (name === scope) svg.append(path)
+    path.querySelector("title").textContent = `${name}: ${m.format(v)}`
+    path.setAttribute("aria-label", `${name}: ${m.format(v)}`)
+  }
+  document.getElementById("svl-map-explain").textContent = m.explain
+  document.getElementById("svl-map-min").textContent = m.format(min)
+  document.getElementById("svl-map-max").textContent = m.format(max)
+  document.getElementById("svl-map-ramp").style.background = `linear-gradient(to right, ${fill(min)}, ${fill(max)})`
+  document.querySelectorAll("[data-svl-metric]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.svlMetric === metric)))
+}
+
+document.querySelectorAll("[data-svl-metric]").forEach((b) =>
+  b.addEventListener("click", () => {
+    metric = b.dataset.svlMetric
+    drawMap()
+  }),
+)
+
 function pick(province) {
   scope = province && data.provinces?.[province] ? province : ""
   view = scope ? { ...data, ...data.provinces[scope] } : data
   render()
+  drawMap()
 }
 
 // The choice lives in the URL (?provincie=Utrecht), so a province view can be shared.

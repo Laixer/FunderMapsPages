@@ -289,3 +289,51 @@
 
   &:focus-visible { @apply outline-2 outline-offset-2 outline-blue-300; }
 }
+
+// Province map: colour by one figure, click to pick (Don, 2026-10-28).
+.svl-map {
+  @apply grid items-center gap-8 md:grid-cols-2;
+
+  &__svg {
+    @apply mx-auto w-full;
+    max-width: 26rem;
+
+    path {
+      cursor: pointer;
+      stroke: #fff;
+      stroke-linejoin: round;
+      stroke-width: 6;
+      transition: fill 0.2s;
+
+      &:hover,
+      &:focus-visible {
+        outline: none;
+        stroke: var(--svl-fam-concrete);
+      }
+
+      &.is-picked {
+        stroke: #0b1f4b;
+        stroke-width: 14;
+      }
+    }
+  }
+
+  &__toggle {
+    @apply flex flex-wrap gap-2;
+
+    button {
+      @apply rounded-full border border-grey-300 bg-white px-4 py-2 text-sm font-bold text-blue-900;
+
+      &[aria-pressed="true"] { @apply border-blue-900 bg-blue-900 text-white; }
+    }
+  }
+
+  &__legend {
+    @apply flex items-center gap-3 text-sm font-bold text-blue-900;
+  }
+
+  &__ramp {
+    @apply h-3 flex-1 rounded-full;
+    max-width: 14rem;
+  }
+}
