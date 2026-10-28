@@ -32,6 +32,24 @@
         </select>
         <span class="svl-muted svl-small" data-svl-national hidden>Waarnemingen, terugmeldingen en Verkennend Funderingsonderzoek blijven landelijke cijfers.</span>
       </div>
+      <div class="svl-map">
+        <svg class="svl-map__svg" id="svl-map" role="group" aria-label="Kaart van Nederland per provincie"></svg>
+        <div class="svl-map__side space-y-4">
+          <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Verschillen per provincie</h2>
+          <div class="svl-map__toggle" role="group" aria-label="Kleur de kaart op">
+            <button type="button" data-svl-metric="de">Verhoogd risico (D/E)</button>
+            <button type="button" data-svl-metric="wood">Houten palen</button>
+            <button type="button" data-svl-metric="cost">Herstelkosten D/E</button>
+          </div>
+          <p class="svl-small" id="svl-map-explain"></p>
+          <div class="svl-map__legend">
+            <span id="svl-map-min"></span>
+            <span class="svl-map__ramp" id="svl-map-ramp"></span>
+            <span id="svl-map-max"></span>
+          </div>
+          <p class="svl-muted svl-small">Klik op een provincie om alle cijfers op deze pagina voor die provincie te zien. Nog een keer klikken toont weer heel Nederland.</p>
+        </div>
+      </div>
       <div class="max-w-3xl space-y-2">
         <h2 class="text-2xl lg:text-3xl font-extrabold text-blue-900">Kerncijfers <span class="text-grey-400 font-bold">· <span data-svl="scope">Nederland</span></span></h2>
         <p>Alle panden met een adres in de BAG. Funderingstype en risicoklasse komen uit het FunderMaps-model: waar onderzoek is gedaan uit dat onderzoek, elders afgeleid uit het pand en zijn omgeving.</p>
