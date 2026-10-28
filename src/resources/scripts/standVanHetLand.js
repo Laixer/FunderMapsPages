@@ -334,6 +334,10 @@ const METRICS = {
     },
     format: (v) => pf.format(100 * v) + "%",
     explain: "Aandeel panden op een houten paalfundering.",
+    // Don, 2026-10-28: the live model puts wooden piles in Limburg that the new
+    // foundation-type model (2026.2) doesn't see (112 of 827k panden), so Limburg
+    // is drawn in the lightest shade. Drop this once the new type model is live.
+    light: ["Limburg"],
   },
   cost: {
     color: "var(--svl-fam-concrete)",
@@ -374,7 +378,7 @@ function drawMap() {
   for (const path of svg.querySelectorAll("path")) {
     const name = path.dataset.province
     const v = values[name] ?? 0
-    path.style.fill = fill(v)
+    path.style.fill = fill(m.light?.includes(name) ? min : v)
     path.classList.toggle("is-picked", name === scope)
     // Last in the SVG paints on top, so the picked outline isn't covered by its neighbours.
     if (name === scope) svg.append(path)
