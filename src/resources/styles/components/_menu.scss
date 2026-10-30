@@ -61,3 +61,44 @@
     }
   }
 }
+
+// "Documentatie": a dropdown on desktop, a titled group of links on mobile.
+.menu .menu-item .menu-dropdown {
+  @apply h-auto block z-50;
+
+  li {
+    @apply block;
+  }
+
+  a {
+    @apply block px-5 py-2 text-grey-400 font-normal;
+
+    &::before,
+    &::after,
+    &:hover::after,
+    &:focus::after {
+      content: none;
+    }
+
+    &:hover,
+    &:focus {
+      @apply text-blue-900 bg-grey-100;
+    }
+  }
+}
+
+.menu-mobile .menu-item-group {
+  @apply flex-col items-start;
+
+  .menu-group-title {
+    @apply text-[30px] text-grey-300;
+  }
+
+  .menu-sub {
+    @apply grid gap-2 mt-2 mb-2 pl-5;
+  }
+
+  .menu-sub a {
+    @apply text-[20px];
+  }
+}
