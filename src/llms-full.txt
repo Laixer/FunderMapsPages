@@ -548,7 +548,7 @@ A Geen risico
 
 B Licht risico
 
-C Verhoogd risico of onzekerheid
+C Aandachtspunt of onzekerheid
 
 D Hoog risico
 
@@ -1236,6 +1236,12 @@ Per pand en per modelversie: het funderingstype met betrouwbaarheid, vier funder
 
 Bij elke uitkomst legt de standaard vast: de modelversie waarmee is gerekend, de datum van berekening, en bij elk funderingsrisico de bron (eigen onderzoek, vergelijkbare panden, of indicatie).
 
+#### Beoordeling risicoclassificatie in de aan- en verkoop
+
+Risicoklasse Beoordeling Verkennend Funderingsonderzoek A, B, C Laag risico Niet nodig D, E Verhoogd risico Nodig
+
+Deze indeling geldt bij de aan- en verkoop van een woning, in de taxatie en de financiering. NWWI, NRVT, NHG
+
 13
 
 ### Waardelijsten
@@ -1250,7 +1256,7 @@ Dezelfde waarde heeft op elke kaart, in elk rapport en in elke toepassing dezelf
 
 #### Risicoklasse (A–E)
 
-Kleur Betekenis Code A: geen risico #2E7D32 B: licht risico #9E9D24 C: verhoogd risico of onzekerheid #F9A825 D: hoog risico #EF6C00 E: vastgesteld probleem #C62828
+Kleur Betekenis Code A: geen risico #2E7D32 B: licht risico #9E9D24 C: aandachtspunt of onzekerheid #F9A825 D: hoog risico #EF6C00 E: vastgesteld probleem #C62828
 
 #### Funderingstype
 
@@ -1272,7 +1278,7 @@ Kleur Betekenis Code Nihil #2E7D32 Klein #9E9D24 Matig #F9A825 Groot #EF6C00 Zee
 
 ### Beheer, licentie en contact
 
-Versies. Elke versie krijgt een nummer en een vaste URL. Deze versie staat op fundermaps.com/informatiestandaard-1-1.html; versie 1.0 blijft beschikbaar op fundermaps.com/informatiestandaard-1-0.html; de meest recente versie staat altijd op fundermaps.com/informatiestandaard.html.
+Versies. Elke versie krijgt een nummer en een vaste URL. Deze versie staat op fundermaps.com/informatiestandaard-1-2.html; eerdere versies blijven beschikbaar op fundermaps.com/informatiestandaard-1-1.html en fundermaps.com/informatiestandaard-1-0.html; de meest recente versie staat altijd op fundermaps.com/informatiestandaard.html.
 
 Wijzigingen. Een wijziging begint als voorstel, wordt beoordeeld en daarna gepubliceerd in een nieuwe versie. Elke versie staat in het wijzigingslog.
 
@@ -1285,6 +1291,7 @@ Contact. Vragen, reacties en voorstellen voor wijziging: info@fundermaps.com. He
 #### Wijzigingslog
 
 Versie Datum Wijziging
+1.2 30 oktober 2026 Nieuw: beoordeling van de risicoklasse in de aan- en verkoop (A–C laag risico, D–E verhoogd risico). Klasse C heet voortaan „aandachtspunt of onzekerheid”.
 1.1 30 oktober 2026 Kleuren van het schadebeeld gelijkgetrokken met de risicoklassen A–E: nihil, klein, matig, groot en zeer groot krijgen de kleuren van A, B, C, D en E.
 1.0 25 september 2026 Eerste versie.
 
@@ -1346,7 +1353,7 @@ Bron FunderMaps, vakpraktijk
 
 #### Risicoklasse
 
-Definitie Indeling van het funderingsrisico van een pand in vijf klassen: A geen risico, B licht risico, C verhoogd risico of onzekerheid, D hoog risico, E vastgesteld probleem.
+Definitie Indeling van het funderingsrisico van een pand in vijf klassen: A geen risico, B licht risico, C aandachtspunt of onzekerheid, D hoog risico, E vastgesteld probleem.
 Uitleg Een inschatting van het risico, geen technisch oordeel over de fundering zelf.
 Code foundation_risk_indication: a–e
 Bron KCAF
