@@ -1266,13 +1266,13 @@ Kleur Betekenis Code Goed #96ED51 Redelijk #D3E14D Matig tot goed #FFEC33 Matig 
 
 #### Schadebeeld: scheuren, scheefstand en zakking
 
-Kleur Betekenis Code Nihil #42FF33 Klein #D1FF33 Matig #FFEC33 Groot #FFAC33 Zeer groot #FF5533
+Kleur Betekenis Code Nihil #2E7D32 Klein #9E9D24 Matig #F9A825 Groot #EF6C00 Zeer groot #C62828
 
 15
 
 ### Beheer, licentie en contact
 
-Versies. Elke versie krijgt een nummer en een vaste URL. Deze versie staat op fundermaps.com/informatiestandaard-1-0.html; de meest recente versie staat altijd op fundermaps.com/informatiestandaard.html.
+Versies. Elke versie krijgt een nummer en een vaste URL. Deze versie staat op fundermaps.com/informatiestandaard-1-1.html; versie 1.0 blijft beschikbaar op fundermaps.com/informatiestandaard-1-0.html; de meest recente versie staat altijd op fundermaps.com/informatiestandaard.html.
 
 Wijzigingen. Een wijziging begint als voorstel, wordt beoordeeld en daarna gepubliceerd in een nieuwe versie. Elke versie staat in het wijzigingslog.
 
@@ -1285,6 +1285,7 @@ Contact. Vragen, reacties en voorstellen voor wijziging: info@fundermaps.com. He
 #### Wijzigingslog
 
 Versie Datum Wijziging
+1.1 30 oktober 2026 Kleuren van het schadebeeld gelijkgetrokken met de risicoklassen A–E: nihil, klein, matig, groot en zeer groot krijgen de kleuren van A, B, C, D en E.
 1.0 25 september 2026 Eerste versie.
 
 ---
