@@ -405,6 +405,12 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 <td>—</td>
 </tr>
 <tr>
+<td><code>neighborhoodCode</code></td>
+<td>✓</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
 <td><code>constructionYear</code></td>
 <td>✓</td>
 <td>—</td>
@@ -588,7 +594,13 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 <td><code>neighborhoodId</code></td>
 <td>string</td>
 <td>&lt;0.1%</td>
-<td>Internal FunderMaps neighborhood id, not a CBS <code>BU*</code> code</td>
+<td>Internal FunderMaps neighborhood id, not a CBS <code>BU*</code> code. Use <code>neighborhoodCode</code> instead: this id will be retired, with notice in advance</td>
+</tr>
+<tr>
+<td><code>neighborhoodCode</code></td>
+<td>string</td>
+<td>&lt;0.1%</td>
+<td>CBS buurtcode of the same neighbourhood, <code>BU</code> + 8 digits, e.g. <code>BU05990110</code>. Accepted as <code>{id}</code> by <code>/v4/product/statistics</code></td>
 </tr>
 <tr>
 <td><code>constructionYear</code></td>
