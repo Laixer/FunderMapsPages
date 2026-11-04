@@ -25,7 +25,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap">
+<link href="./resources/styles/app.scss" rel="stylesheet" />
+<script src="./resources/scripts/app.js" type="module"></script>
 <style>
+/* Site chrome (scripts/add-site-chrome.py): undo what the site base styles and preflight change here. */
+.doc :is(h1, h2, h3, h4, h5, h6) { color: inherit; font-family: inherit; }
+.doc ul { list-style: disc; }
+.doc ol { list-style: decimal; }
+.doc a { display: inline; }
+.doc strong { font-weight: 700; }
+.doc code { background: none; padding: 0; border-radius: 0; font-size: inherit; display: inline; }
+
 :root {
   --navy: #191e3c;
   --blue: #0c75a8;
@@ -57,102 +67,104 @@
   --open: #4fd1a0; --open-bg: #10291f; --public: #f0c060; --public-bg: #2b2412; --ours: #5bb8e6; --ours-bg: #102a3d;
   --wood: #d98a70;
 }
-* { box-sizing: border-box; }
+.doc * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body {
+.doc {
   margin: 0; padding: 0 16px; background: var(--wash); color: var(--ink);
   font: 400 17px/1.6 Figtree, "Segoe UI", system-ui, sans-serif;
 }
-a { color: var(--ours); }
-a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
-.wrap { max-width: 64rem; margin: 0 auto; }
-.prose { max-width: 42rem; }
-h1, h2, h3 { text-wrap: balance; line-height: 1.15; margin: 0; }
-h1 { font-weight: 800; font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem); letter-spacing: -0.02em; }
-h2 { font-weight: 800; font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); letter-spacing: -0.01em; }
-h3 { font-weight: 800; font-size: 1.2rem; }
-p { margin: 0; }
-.eyebrow { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.doc a { color: var(--ours); }
+.doc a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+.doc .wrap { max-width: 64rem; margin: 0 auto; }
+.doc .prose { max-width: 42rem; }
+.doc h1, .doc h2, .doc h3 { text-wrap: balance; line-height: 1.15; margin: 0; }
+.doc h1 { font-weight: 800; font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem); letter-spacing: -0.02em; }
+.doc h2 { font-weight: 800; font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); letter-spacing: -0.01em; }
+.doc h3 { font-weight: 800; font-size: 1.2rem; }
+.doc p { margin: 0; }
+.doc .eyebrow { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 
-header.hero {
+.doc header.hero {
   margin: 0 -16px; padding: 56px 16px 48px; color: #ced0da;
   background: linear-gradient(160deg, #0c75a8, #191e3c);
 }
-header.hero .eyebrow { color: #ffcc69; }
-header.hero h1 { color: #fff; margin: 12px 0 16px; }
-header.hero p { font-size: 1.15rem; max-width: 40rem; }
-header.hero .thesis {
+.doc header.hero .eyebrow { color: #ffcc69; }
+.doc header.hero h1 { color: #fff; margin: 12px 0 16px; }
+.doc header.hero p { font-size: 1.15rem; max-width: 40rem; }
+.doc header.hero .thesis {
   margin-top: 28px; display: inline-block; padding: 14px 18px; border-radius: 12px;
   background: rgba(255,255,255,0.08); color: #fff; font-weight: 600;
 }
-header.hero .thesis strong { color: #ffcc69; }
+.doc header.hero .thesis strong { color: #ffcc69; }
 
-section { padding: 56px 0 8px; display: grid; gap: 20px; }
-.card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+.doc section { padding: 56px 0 8px; display: grid; gap: 20px; }
+.doc .card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
 
-.steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.doc .steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
 /* Five steps stand three and two, never four and a lone fifth. */
-.steps.five { grid-template-columns: repeat(auto-fit, minmax(max(13rem, (100% - 32px) / 3), 1fr)); }
-.step { display: grid; gap: 8px; align-content: start; }
-.step .n { font-weight: 800; color: var(--blue); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.step p { color: var(--muted); }
+.doc .steps.five { grid-template-columns: repeat(auto-fit, minmax(max(13rem, (100% - 32px) / 3), 1fr)); }
+.doc .step { display: grid; gap: 8px; align-content: start; }
+.doc .step .n { font-weight: 800; color: var(--blue); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.doc .step p { color: var(--muted); }
 
-.classes { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
-.cls { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 6px; font-weight: 800; font-size: 0.9rem; }
+.doc .classes { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.doc .cls { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 6px; font-weight: 800; font-size: 0.9rem; }
 /* The class colours of the information standard (informatiestandaard.html#kleuren). */
-.cls.a { background: #2e7d32; color: #fff; } .cls.b { background: #9e9d24; color: #191e3c; }
-.cls.c { background: #f9a825; color: #191e3c; } .cls.d { background: #ef6c00; color: #191e3c; }
-.cls.e { background: #c62828; color: #fff; }
+.doc .cls.a { background: #2e7d32; color: #fff; } .doc .cls.b { background: #9e9d24; color: #191e3c; }
+.doc .cls.c { background: #f9a825; color: #191e3c; } .doc .cls.d { background: #ef6c00; color: #191e3c; }
+.doc .cls.e { background: #c62828; color: #fff; }
 
-.layers { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
-.layer { border-radius: 20px; padding: 24px; display: grid; gap: 12px; align-content: start; border: 1px solid var(--line); background: var(--paper); border-top: 6px solid var(--c); }
-.layer.open { --c: var(--open); } .layer.public { --c: var(--public); } .layer.ours { --c: var(--ours); background: var(--ours-bg); }
-.layer .tag { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); }
-.layer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; }
-.layer .verdict { font-weight: 600; border-top: 1px solid var(--line); padding-top: 12px; }
-.layer.ours .verdict { border-color: color-mix(in srgb, var(--ours) 30%, transparent); }
+.doc .layers { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.doc .layer { border-radius: 20px; padding: 24px; display: grid; gap: 12px; align-content: start; border: 1px solid var(--line); background: var(--paper); border-top: 6px solid var(--c); }
+.doc .layer.open { --c: var(--open); } .doc .layer.public { --c: var(--public); } .doc .layer.ours { --c: var(--ours); background: var(--ours-bg); }
+.doc .layer .tag { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); }
+.doc .layer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; }
+.doc .layer .verdict { font-weight: 600; border-top: 1px solid var(--line); padding-top: 12px; }
+.doc .layer.ours .verdict { border-color: color-mix(in srgb, var(--ours) 30%, transparent); }
 
-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
-th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
-thead th { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-td.num, th.num { text-align: right; white-space: nowrap; }
-td.num strong { font-size: 1.15rem; }
-.scroll { overflow-x: auto; }
-.bar { display: block; height: 8px; border-radius: 99px; background: var(--line); margin-top: 6px; overflow: hidden; }
-.bar > span { display: block; height: 100%; border-radius: 99px; background: var(--wood); }
-.bar.old > span { background: var(--muted); }
+.doc table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.doc th, .doc td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.doc thead th { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.doc td.num, .doc th.num { text-align: right; white-space: nowrap; }
+.doc td.num strong { font-size: 1.15rem; }
+.doc .scroll { overflow-x: auto; }
+.doc .bar { display: block; height: 8px; border-radius: 99px; background: var(--line); margin-top: 6px; overflow: hidden; }
+.doc .bar > span { display: block; height: 100%; border-radius: 99px; background: var(--wood); }
+.doc .bar.old > span { background: var(--muted); }
 
-.callout { border-left: 4px solid var(--yellow); background: var(--paper); border-radius: 0 16px 16px 0; padding: 20px 24px; display: grid; gap: 8px; }
-.pill { justify-self: start; display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; background: var(--tint); color: var(--ours); }
-.pill.live { background: var(--open-bg); color: var(--open); }
-.pill.soon { background: var(--public-bg); color: var(--public); }
-.status { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
-.status .card { display: grid; gap: 8px; align-content: start; }
-.muted { color: var(--muted); }
-.small { font-size: 0.9rem; }
-footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
+.doc .callout { border-left: 4px solid var(--yellow); background: var(--paper); border-radius: 0 16px 16px 0; padding: 20px 24px; display: grid; gap: 8px; }
+.doc .pill { justify-self: start; display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; background: var(--tint); color: var(--ours); }
+.doc .pill.live { background: var(--open-bg); color: var(--open); }
+.doc .pill.soon { background: var(--public-bg); color: var(--public); }
+.doc .status { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.doc .status .card { display: grid; gap: 8px; align-content: start; }
+.doc .muted { color: var(--muted); }
+.doc .small { font-size: 0.9rem; }
+.doc footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
 
-.facts { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
-.fact { display: grid; gap: 4px; align-content: start; }
-.fact .big { font-weight: 800; font-size: clamp(2rem, 1.6rem + 1.6vw, 2.8rem); line-height: 1.05; color: var(--ours); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-.fact .big sup { font-size: 0.45em; vertical-align: super; }
+.doc .facts { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.doc .fact { display: grid; gap: 4px; align-content: start; }
+.doc .fact .big { font-weight: 800; font-size: clamp(2rem, 1.6rem + 1.6vw, 2.8rem); line-height: 1.05; color: var(--ours); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.doc .fact .big sup { font-size: 0.45em; vertical-align: super; }
 /* Three cards side by side: each number on one line, so the headings under them line up. */
-@media (min-width: 64rem) { .fact .big { font-size: 2.3rem; white-space: nowrap; } }
+@media (min-width: 64rem) { .doc .fact .big { font-size: 2.3rem; white-space: nowrap; } }
 /* At most two side by side: the drawings carry their own legend, unreadable in a narrower card. */
-.risks { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(max(15rem, 50% - 8px), 1fr)); }
-.risks .card { display: grid; gap: 8px; align-content: start; }
-.risks .uses { font-size: 0.9rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
-.ladder { margin: 0; padding-left: 1.4rem; display: grid; gap: 8px; }
-.scale { display: grid; gap: 8px; }
-.scale div { display: flex; gap: 12px; align-items: center; }
-.layer.commercial { --c: var(--slate); }
+.doc .risks { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(max(15rem, 50% - 8px), 1fr)); }
+.doc .risks .card { display: grid; gap: 8px; align-content: start; }
+.doc .risks .uses { font-size: 0.9rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
+.doc .ladder { margin: 0; padding-left: 1.4rem; display: grid; gap: 8px; }
+.doc .scale { display: grid; gap: 8px; }
+.doc .scale div { display: flex; gap: 12px; align-items: center; }
+.doc .layer.commercial { --c: var(--slate); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .layer.commercial { --c: #9fb2d0; } }
 :root[data-theme="dark"] .layer.commercial { --c: #9fb2d0; }
-.version { margin: 0 -16px; padding: 14px 16px; background: var(--public-bg); color: var(--ink); border-bottom: 1px solid var(--line); font-size: 0.95rem; }
-.disclaimer { border: 1px solid var(--line); background: var(--paper); border-radius: 16px; padding: 20px 24px; display: grid; gap: 8px; }
+.doc .version { margin: 0 -16px; padding: 14px 16px; background: var(--public-bg); color: var(--ink); border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.doc .disclaimer { border: 1px solid var(--line); background: var(--paper); border-radius: 16px; padding: 20px 24px; display: grid; gap: 8px; }
 </style>
 </head>
 <body>
+<include src="./_partials/header.html" locals='{"active":"documentatie"}'></include>
+<div class="doc">
 <div class="version"><div class="wrap"><strong>Vorige modelversie.</strong> Deze pagina beschrijft het risicomodel <strong>2024.1</strong>, de versie vóór modelversie 2026.3. Ze blijft staan ter naslag. De actuele beschrijving staat op <a href="https://fundermaps.com/hoe-het-model-werkt.html">Hoe FunderMaps het funderingsrisico bepaalt</a>.</div></div>
 <header class="hero">
   <div class="wrap">
@@ -376,5 +388,7 @@ footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; }
   <p>FunderMaps · Nationale Database Funderingen. Aantallen: productiedatabase FunderMaps, peildatum 25 september 2026: 520.749 waarnemingen, 1.371.547 vastgelegde waarden en 216.281 onderzochte panden; dezelfde bron als de Stand van het land (fundermaps.com/stand-van-het-land.html). Toetsing: onderzochte panden achtergehouden en gescheiden per rapport en per gemeente; het model rekende zonder deze panden en is vergeleken met de onderzoeksuitkomst. Risicoklassen volgens de termen van het KCAF.</p>
 </footer>
 
+</div>
+<include src="./_partials/footer.html"></include>
 </body>
 </html>
