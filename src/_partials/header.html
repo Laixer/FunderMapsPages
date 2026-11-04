@@ -10,19 +10,7 @@
     <nav class="hidden nav:flex items-center" aria-label="Hoofdnavigatie">
       <ul class="menu | ">
         <li class="menu-item | px-3 2xl:px-4">
-          <a class="no-underline" data-nav-key="intro" title="Home" href="/">Home</a>
-        </li>
-        <li class="menu-item | px-3 2xl:px-4">
-          <a class="no-underline" data-nav-key="services" title="Wat we leveren" href="/#services">Wat we leveren</a>
-        </li>
-        <li class="menu-item | px-3 2xl:px-4">
-          <a class="no-underline" data-nav-key="demo" title="Voorbeeld" href="/#preview">Voorbeeld</a>
-        </li>
-        <li class="menu-item | px-3 2xl:px-4">
-          <a class="no-underline" data-nav-key="references" title="Referenties" href="/#references-anchor">Referenties</a>
-        </li>
-        <li class="menu-item | px-3 2xl:px-4">
-          <a class="no-underline" data-nav-key="partners" title="Partners" href="/#partners">Partners</a>
+          <a class="no-underline" data-nav-key="demo" title="Demo" href="/#preview">Demo</a>
         </li>
         <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="artikelen" title="Artikelen" href="artikelen.html">Artikelen</a>
@@ -30,15 +18,8 @@
         <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="stand-van-het-land" title="Stand van het land" href="stand-van-het-land.html">Stand van het land</a>
         </li>
-        <li class="menu-item | px-3 2xl:px-4" x-data="{ docs: false }" x-on:mouseenter="docs = true" x-on:mouseleave="docs = false" x-on:keydown.escape="docs = false">
-          <a class="no-underline" data-nav-key="documentatie" title="Documentatie" href="informatiestandaard.html" x-on:click.prevent="docs = ! docs" aria-haspopup="true" x-bind:aria-expanded="docs">Documentatie</a>
-          <ul x-cloak x-show="docs" x-on:click.outside="docs = false" class="menu-dropdown | absolute top-full left-0 min-w-64 bg-white rounded-b-2xl shadow-nav py-3">
-            <li><a class="no-underline" href="informatiestandaard.html">Informatiestandaard</a></li>
-            <li><a class="no-underline" href="hoe-het-model-werkt.html">Hoe het model werkt</a></li>
-            <li><a class="no-underline" href="begrippen-en-standaarden.html">Begrippen en standaarden</a></li>
-            <li><a class="no-underline" href="api.html">API</a></li>
-            <li><a class="no-underline" href="api-documentatie.html">API-documentatie</a></li>
-          </ul>
+        <li class="menu-item | px-3 2xl:px-4">
+          <a class="no-underline" data-nav-key="documentatie" title="Documentatie" href="documentatie.html">Documentatie</a>
         </li>
         <li class="menu-item | px-3 2xl:px-4">
           <a class="no-underline" data-nav-key="kennisbank" title="Kennisbank" href="kennisbank.html">Kennisbank</a>
@@ -47,9 +28,9 @@
 
       <a class="button button-secondary ml-4" href="https://melden.fundermaps.com">
         <div class="inline-block">
-          <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64" alt="">
+          <span class="inline-flex items-center justify-center w-8 h-8 mr-1 rounded-full bg-white [&_svg]:w-5 [&_svg]:h-5"><include src="./resources/svg/logo/fundermaps-mark.svg"></include></span>
         </div>
-        <span>Direct contact</span>
+        <span>Contact</span>
         <div class="button-arrow">
           <include src="./resources/svg/arrow-right-icon.svg"></include>
         </div>
@@ -87,19 +68,7 @@
       <nav x-data class="grid pt-16 nav:hidden" aria-label="Mobiele navigatie">
         <ul class="menu-mobile | ">
           <li class="menu-item">
-            <a class="no-underline" data-nav-key="intro" title="Home" href="/" x-on:click="open = false">Home</a>
-          </li>
-          <li class="menu-item">
-            <a class="no-underline" data-nav-key="services" title="Wat we leveren" href="/#services" x-on:click="open = false">Wat we leveren</a>
-          </li>
-          <li class="menu-item">
-            <a class="no-underline" data-nav-key="demo" title="Voorbeeld" href="/#preview" x-on:click="open = false">Voorbeeld</a>
-          </li>
-          <li class="menu-item">
-            <a class="no-underline" data-nav-key="references" title="Referenties" href="/#references-anchor" x-on:click="open = false">Referenties</a>
-          </li>
-          <li class="menu-item">
-            <a class="no-underline" data-nav-key="partners" title="Partners" href="/#partners" x-on:click="open = false">Partners</a>
+            <a class="no-underline" data-nav-key="demo" title="Demo" href="/#preview" x-on:click="open = false">Demo</a>
           </li>
           <li class="menu-item">
             <a class="no-underline" data-nav-key="artikelen" title="Artikelen" href="artikelen.html" x-on:click="open = false">Artikelen</a>
@@ -107,15 +76,8 @@
           <li class="menu-item">
             <a class="no-underline" data-nav-key="stand-van-het-land" title="Stand van het land" href="stand-van-het-land.html" x-on:click="open = false">Stand van het land</a>
           </li>
-          <li class="menu-item menu-item-group">
-            <span class="menu-group-title">Documentatie</span>
-            <ul class="menu-sub">
-              <li><a class="no-underline" href="informatiestandaard.html" x-on:click="open = false">Informatiestandaard</a></li>
-              <li><a class="no-underline" href="hoe-het-model-werkt.html" x-on:click="open = false">Hoe het model werkt</a></li>
-              <li><a class="no-underline" href="begrippen-en-standaarden.html" x-on:click="open = false">Begrippen en standaarden</a></li>
-              <li><a class="no-underline" href="api.html" x-on:click="open = false">API</a></li>
-              <li><a class="no-underline" href="api-documentatie.html" x-on:click="open = false">API-documentatie</a></li>
-            </ul>
+          <li class="menu-item">
+            <a class="no-underline" data-nav-key="documentatie" title="Documentatie" href="documentatie.html" x-on:click="open = false">Documentatie</a>
           </li>
           <li class="menu-item">
             <a class="no-underline" data-nav-key="kennisbank" title="Kennisbank" href="kennisbank.html" x-on:click="open = false">Kennisbank</a>
@@ -124,9 +86,9 @@
             <!-- The desktop button is dark blue, like this panel: the outline makes it stand out here. -->
             <a class="button button-secondary border-2 border-white/40" href="https://melden.fundermaps.com" x-on:click="open = false">
               <div class="inline-block">
-                <img class="w-8 mr-1" src="./resources/images/contactpersoon.webp" height="64" width="64" alt="">
+                <span class="inline-flex items-center justify-center w-8 h-8 mr-1 rounded-full bg-white [&_svg]:w-5 [&_svg]:h-5"><include src="./resources/svg/logo/fundermaps-mark.svg"></include></span>
               </div>
-              <span>Direct contact</span>
+              <span>Contact</span>
               <div class="button-arrow">
                 <include src="./resources/svg/arrow-right-icon.svg"></include>
               </div>
