@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funderingsrisico bij aankoop, verkoop en taxatie — FunderMaps</title>
+<link rel="canonical" href="https://fundermaps.com/funderingsrisico-aankoop-verkoop.html">
+<meta name="description" content="Wat de funderingsrisicoklasse A–E betekent bij het kopen, verkopen en taxeren van een woning, wanneer een verkennend funderingsonderzoek (QuickScan) nodig is en hoe een onderzoek de risicoklasse bijstelt.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FunderMaps">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Funderingsrisico bij aankoop, verkoop en taxatie — FunderMaps">
+<meta property="og:description" content="Wat de funderingsrisicoklasse A–E betekent bij het kopen, verkopen en taxeren van een woning, wanneer een verkennend funderingsonderzoek (QuickScan) nodig is en hoe een onderzoek de risicoklasse bijstelt.">
+<meta property="og:url" content="https://fundermaps.com/funderingsrisico-aankoop-verkoop.html">
+<meta property="og:image" content="https://fundermaps.com/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="685">
+<meta property="og:image:alt" content="FunderMaps-platform — kaartweergave van het funderingstype per pand">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Funderingsrisico bij aankoop, verkoop en taxatie — FunderMaps">
+<meta name="twitter:description" content="Wat de funderingsrisicoklasse A–E betekent bij het kopen, verkopen en taxeren van een woning, wanneer een verkennend funderingsonderzoek (QuickScan) nodig is en hoe een onderzoek de risicoklasse bijstelt.">
+<meta name="twitter:image" content="https://fundermaps.com/og-image.jpg">
+<link rel="icon" type="image/x-icon" href="resources/images/fundermaps-favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap">
+<style>
+:root {
+  --navy: #191e3c;
+  --blue: #0c75a8;
+  --yellow: #ffcc69;
+  --ink: #17192a;
+  --muted: #525c77;
+  --line: #e8eaf1;
+  --paper: #ffffff;
+  --wash: #f6f7f8;
+  --tint: #e7f6fd;
+  --ours: #0c75a8;
+  --ok: #0a8158;
+  --ok-bg: #e9faf3;
+  --note: #94660f;
+  --note-bg: #fffaf0;
+  /* Risk classes A–E: the colours of the FunderMaps information standard. */
+  --cls-a: #2e7d32; --cls-b: #9e9d24; --cls-c: #f9a825; --cls-d: #ef6c00; --cls-e: #c62828;
+  /* Outcome of the verkennend funderingsonderzoek. */
+  --low: #14a46c; --mid: #f29d12; --high: #e8424f;
+  /* Quality from the uitgebreid funderingsonderzoek. */
+  --q1: #8fdc4f; --q2: #cddc4f; --q3: #c8b44a; --q4: #9c5a2e; --q5: #7a2a2a;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e9ebf3; --muted: #a9b0c4; --line: #2c3252; --paper: #121629; --wash: #191e38; --tint: #13304a;
+    --ours: #5bb8e6; --ok: #4fd1a0; --ok-bg: #10291f; --note: #f0c060; --note-bg: #2b2412;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #e9ebf3; --muted: #a9b0c4; --line: #2c3252; --paper: #121629; --wash: #191e38; --tint: #13304a;
+  --ours: #5bb8e6; --ok: #4fd1a0; --ok-bg: #10291f; --note: #f0c060; --note-bg: #2b2412;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; padding: 0 16px; background: var(--wash); color: var(--ink);
+  font: 400 17px/1.6 Figtree, "Segoe UI", system-ui, sans-serif;
+}
+a { color: var(--ours); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+.wrap { max-width: 68rem; margin: 0 auto; }
+.prose { max-width: 44rem; display: grid; gap: 12px; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-weight: 800; font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem); letter-spacing: -0.02em; }
+h2 { font-weight: 800; font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); letter-spacing: -0.01em; }
+h3 { font-weight: 800; font-size: 1.2rem; }
+p { margin: 0; }
+ul, ol { margin: 0; padding-left: 1.2rem; display: grid; gap: 6px; }
+.eyebrow { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+
+header.hero {
+  margin: 0 -16px; padding: 56px 16px 48px; color: #ced0da;
+  background: linear-gradient(160deg, #0c75a8, #191e3c);
+}
+header.hero .eyebrow { color: #ffcc69; }
+header.hero h1 { color: #fff; margin: 12px 0 16px; }
+header.hero p { font-size: 1.15rem; max-width: 44rem; }
+header.hero nav { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+header.hero nav a {
+  color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem;
+  padding: 8px 14px; border-radius: 99px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+}
+header.hero nav a:hover { background: rgba(255,255,255,0.18); }
+
+section { padding: 56px 0 8px; display: grid; gap: 20px; scroll-margin-top: 16px; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; display: grid; gap: 12px; align-content: start; }
+.grid2 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); }
+.grid3 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+
+/* Badges: risk classes, outcomes, reliability. */
+.cls { display: inline-flex; align-items: center; justify-content: center; min-width: 26px; height: 26px; padding: 0 6px; border-radius: 6px; font-weight: 800; font-size: 0.85rem; color: #fff; }
+.cls.a { background: var(--cls-a); } .cls.b { background: var(--cls-b); } .cls.c { background: var(--cls-c); color: #191e3c; }
+.cls.d { background: var(--cls-d); } .cls.e { background: var(--cls-e); }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.out { display: inline-block; padding: 4px 12px; border-radius: 99px; font-weight: 800; font-size: 0.85rem; color: #fff; white-space: nowrap; }
+.out.low { background: var(--low); } .out.mid { background: var(--mid); } .out.high { background: var(--high); }
+.out.q1 { background: var(--q1); color: #191e3c; } .out.q2 { background: var(--q2); color: #191e3c; } .out.q3 { background: var(--q3); color: #191e3c; }
+.out.q4 { background: var(--q4); } .out.q5 { background: var(--q5); }
+.rel { display: inline-block; padding: 3px 10px; border-radius: 99px; font-weight: 600; font-size: 0.8rem; }
+.rel.ind { background: var(--tint); color: var(--ours); border: 1px solid color-mix(in srgb, var(--ours) 40%, transparent); }
+.rel.der { background: #2196d3; color: #fff; }
+.rel.est { background: #191e3c; color: #fff; }
+
+/* The three-step plan. */
+.plan { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); align-items: stretch; }
+.stage { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 24px; display: grid; gap: 16px; align-content: start; }
+.stage__head { display: flex; gap: 14px; align-items: center; }
+.stage__no {
+  flex: none; width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--ok);
+  display: grid; place-items: center; color: var(--ok); font-weight: 800; font-size: 0.6rem; letter-spacing: 0.08em; line-height: 1.1; text-align: center;
+}
+.stage__no b { display: block; font-size: 1.05rem; }
+.stage__head p { color: var(--muted); font-size: 0.9rem; }
+.stage__facts { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 14px; padding: 12px; text-align: center; }
+.stage__facts span { display: block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.stage__facts strong { font-size: 0.95rem; }
+.stage h4 { margin: 0; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.stage ul { color: var(--muted); }
+.stage__next { background: var(--note-bg); border: 1px solid color-mix(in srgb, var(--note) 35%, transparent); border-radius: 14px; padding: 14px 16px; display: grid; gap: 6px; font-size: 0.92rem; }
+.stage__next h4 { color: var(--note); }
+.stage__where { background: var(--ok-bg); border: 1px solid color-mix(in srgb, var(--ok) 35%, transparent); border-radius: 14px; padding: 14px 16px; display: grid; gap: 8px; font-size: 0.92rem; }
+.stage__where h4 { color: var(--ok); }
+.terms { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; text-align: center; font-size: 0.72rem; color: var(--muted); }
+.terms .out { display: block; padding: 4px 2px; font-size: 0.7rem; }
+
+/* Outcome -> class mapping rows. */
+.map { display: grid; gap: 8px; }
+.map__row { display: grid; grid-template-columns: 8.5rem 1.2rem 4.5rem 1fr; gap: 10px; align-items: center; border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; background: var(--paper); }
+.map__row .out { text-align: center; }
+.map__row .arrow { color: var(--muted); }
+.map__row .what { color: var(--muted); font-size: 0.92rem; }
+@media (max-width: 34rem) {
+  .map__row { grid-template-columns: 8rem 1fr; }
+  .map__row .arrow { display: none; }
+  .map__row .what { grid-column: 1 / -1; }
+}
+
+.callout { border-left: 4px solid var(--yellow); background: var(--paper); border-radius: 0 16px 16px 0; padding: 20px 24px; display: grid; gap: 8px; }
+.pill { justify-self: start; display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; background: var(--tint); color: var(--ours); }
+.pill.ok { background: var(--ok-bg); color: var(--ok); }
+.pill.note { background: var(--note-bg); color: var(--note); }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.scroll { overflow-x: auto; }
+
+details { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; }
+details + details { margin-top: 8px; }
+summary { cursor: pointer; font-weight: 600; }
+details[open] summary { margin-bottom: 8px; }
+details p { color: var(--muted); }
+
+.check { list-style: none; padding: 0; }
+.check li { padding-left: 1.6rem; position: relative; }
+.check li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 800; }
+
+.cta { display: inline-block; justify-self: start; background: var(--ok); color: #fff; text-decoration: none; font-weight: 800; padding: 10px 18px; border-radius: 99px; }
+.cta:hover { filter: brightness(1.08); }
+footer { padding: 48px 0 56px; color: var(--muted); font-size: 0.9rem; display: grid; gap: 8px; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">FunderMaps · aankoop, verkoop en taxatie</span>
+    <h1>Funderingsrisico bij aankoop, verkoop en taxatie</h1>
+    <p>Bij het kopen, verkopen, taxeren en financieren van een woning hoort een funderingsrisicoklasse van A tot en met E. Op deze pagina leest u wat die klasse betekent, wanneer een verkennend funderingsonderzoek (QuickScan) nodig is en hoe een onderzoek de klasse bijstelt. Voor huiseigenaren en voor professionals.</p>
+    <nav aria-label="Op deze pagina">
+      <a href="#stappenplan">Het stappenplan</a>
+      <a href="#samenhang">Onderzoek en de risicoklasse</a>
+      <a href="#huiseigenaren">Voor huiseigenaren</a>
+      <a href="#verkennend">Verkennend onderzoek</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#professionals">Voor professionals</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section aria-labelledby="kort">
+  <div class="prose">
+    <span class="eyebrow">In het kort</span>
+    <h2 id="kort">Drie stappen, één waarheid</h2>
+    <p>De funderingsrisicoklasse komt uit FunderMaps, de Nationale Database Funderingen. Zij staat in het taxatierapport en is zichtbaar voor makelaars en taxateurs.</p>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="badges"><span class="cls a">A</span><span class="cls b">B</span><span class="cls c">C</span></div>
+      <h3>Laag risico</h3>
+      <p class="muted">Bij klasse A, B of C is geen vervolgstap nodig voor de aan- of verkoop.</p>
+    </div>
+    <div class="card">
+      <div class="badges"><span class="cls d">D</span><span class="cls e">E</span></div>
+      <h3>Verhoogd risico</h3>
+      <p class="muted">Bij klasse D of E volgt altijd een verkennend funderingsonderzoek door een erkend bureau. Een D of E maakt een woning niet onverkoopbaar.</p>
+    </div>
+    <div class="card">
+      <span class="pill ok">Onderzoek is leidend</span>
+      <h3>Onderzoek stelt bij</h3>
+      <p class="muted">Is er onderzoek gedaan, dan is de uitkomst daarvan leidend. Elk onderzoek komt terug in FunderMaps, zodat koper, verkoper, taxateur en financier naar dezelfde uitkomst kijken.</p>
+    </div>
+  </div>
+</section>
+
+<section id="stappenplan" aria-labelledby="stappenplan-h">
+  <div class="prose">
+    <span class="eyebrow">Het stappenplan</span>
+    <h2 id="stappenplan-h">Van risico-inschatting naar onderzoek</h2>
+    <p>De werkwijze volgt de richtlijn van het KCAF (Kenniscentrum Aanpak Funderingsproblematiek). Elke stap gaat alleen verder als de vorige daar aanleiding toe geeft.</p>
+  </div>
+  <div class="plan">
+    <article class="stage" aria-labelledby="stap1">
+      <div class="stage__head">
+        <div class="stage__no" aria-hidden="true">STAP<b>1</b></div>
+        <div><h3 id="stap1">Funderingsrisico-inschatting</h3><p>risicoklasse A–E met betrouwbaarheid</p></div>
+      </div>
+      <p>Risicoprofiel op basis van de landelijke FunderMaps-database: archieftekeningen, eerdere onderzoeken, bodemgegevens en zakkingsmetingen.</p>
+      <div class="stage__facts"><div><span>Kosten</span><strong>Kosteloos</strong></div><div><span>Doorlooptijd</span><strong>Direct</strong></div></div>
+      <h4>Uitkomst: risicoklasse</h4>
+      <div class="badges"><span class="cls a">A</span><span class="cls b">B</span><span class="cls c">C</span><span class="cls d">D</span><span class="cls e">E</span></div>
+      <h4>Met de betrouwbaarheid van het risicoprofiel</h4>
+      <div class="badges"><span class="rel ind">Indicatief</span><span class="rel der">Afgeleid</span><span class="rel est">Vastgesteld</span></div>
+      <h4>Methoden</h4>
+      <ul>
+        <li>Koppeling van FunderMaps-gegevens per adres</li>
+        <li>Funderingstype (uit archiefonderzoek, indien beschikbaar), bodemopbouw en grondwaterstand</li>
+        <li>Zakkingssnelheid en het verloop over de laatste tien jaar</li>
+      </ul>
+      <div class="stage__next">
+        <h4>Vervolgactie</h4>
+        <p>Bij een <span class="cls d">D</span> of <span class="cls e">E</span> <strong>altijd door naar stap 2</strong>, ongeacht de betrouwbaarheid. Bij A, B of C geen vervolgstap.</p>
+        <p>De betrouwbaarheid bepaalt niet <em>óf</em> u doorgaat, maar welk bewijs telt als u een heroverweging aanvraagt.</p>
+      </div>
+      <div class="stage__where">
+        <h4>Beschikbaar bij</h4>
+        <ul><li>het NRVT/NWWI-taxatierapport</li><li>NVM- en VastgoedNED-makelaars</li><li>erkende onderzoeksbureaus</li></ul>
+      </div>
+    </article>
+
+    <article class="stage" aria-labelledby="stap2">
+      <div class="stage__head">
+        <div class="stage__no" aria-hidden="true">STAP<b>2</b></div>
+        <div><h3 id="stap2">Verkennend funderingsonderzoek</h3><p>onderzoek op locatie, niet-destructief</p></div>
+      </div>
+      <p>Aanvullend, indicatief funderingsonderzoek door een erkend bureau, volgens het Addendum QuickScan van de KCAF-richtlijn.</p>
+      <div class="stage__facts"><div><span>Kosten (indicatief)</span><strong>€350 – €650</strong></div><div><span>Doorlooptijd</span><strong>Enkele dagen</strong></div></div>
+      <h4>Uitkomst: risico funderingsproblematiek</h4>
+      <div class="badges"><span class="out low">Laag risico</span><span class="out mid">Midden risico</span><span class="out high">Hoog risico</span></div>
+      <h4>Methoden (in aanvulling op stap 1)</h4>
+      <ul>
+        <li>Archiefonderzoek (optioneel)</li>
+        <li>Visuele inspectie</li>
+        <li>Lintvoegmetingen</li>
+        <li>Loodmeting</li>
+        <li>Pandzakkingssnelheid</li>
+      </ul>
+      <div class="stage__next">
+        <h4>Vervolgactie</h4>
+        <p><span class="out low">Laag</span> geen vervolg · <span class="out mid">Midden</span> monitoring of maatwerk uit het verkennend onderzoek · <span class="out high">Hoog</span> door naar <strong>stap 3</strong> (uitgebreid funderingsonderzoek).</p>
+      </div>
+      <div class="stage__where">
+        <h4>Uit te laten voeren bij</h4>
+        <p><a href="https://www.kcaf.nl/erkenningsregeling/erkenningslijst/">erkende bureaus voor verkennend onderzoek</a></p>
+        <a class="cta" href="https://funderconsult.com/quickscan#quickscan-aanvragen">Verkennend onderzoek aanvragen →</a>
+      </div>
+    </article>
+
+    <article class="stage" aria-labelledby="stap3">
+      <div class="stage__head">
+        <div class="stage__no" aria-hidden="true">STAP<b>3</b></div>
+        <div><h3 id="stap3">Uitgebreid funderingsonderzoek</h3><p>veldonderzoek · Fase 1 en Fase 2</p></div>
+      </div>
+      <p>Diepgaand onderzoek (Fase 1 en/of 2) met paalinspectie en laboratoriumanalyse, om de staat en de handhavingstermijn van de fundering vast te stellen.</p>
+      <div class="stage__facts"><div><span>Kosten (indicatief)</span><strong>€7.000 – €9.000</strong></div><div><span>Doorlooptijd</span><strong>1 tot 2 maanden</strong></div></div>
+      <h4>Uitkomst: handhavingstermijn</h4>
+      <div class="terms">
+        <div><span class="out q1">&gt; 25 jaar</span>Voldoende</div>
+        <div><span class="out q2">≤ 25 jaar</span>Redelijk</div>
+        <div><span class="out q3">≤ 15 jaar</span>Matig</div>
+        <div><span class="out q4">≤ 5 jaar</span>Onvoldoende</div>
+        <div><span class="out q5">Direct</span>Slecht</div>
+      </div>
+      <h4>Fase 1: bovengrondonderzoek en omgevingsfactoren</h4>
+      <ul><li>Archiefonderzoek (verplicht)</li><li>Vloerveldwaterpassing</li><li>Inpandige opname</li></ul>
+      <h4>Fase 2: inspectieputten, na Fase 1</h4>
+      <ul><li>Inspectiegaten en blootlegging van de fundering</li><li>Houtanalyse in het laboratorium</li><li>Bepaling van de handhavingstermijn en hersteladvies</li></ul>
+      <div class="stage__where">
+        <h4>Uit te laten voeren bij</h4>
+        <p><a href="https://www.kcaf.nl/erkenningsregeling/erkenningslijst/">erkende funderingsonderzoeksbureaus</a></p>
+        <a class="cta" href="https://funderconsult.com/quickscan?phase=fase1#quickscan-aanvragen">Fase 1 aanvragen →</a>
+        <a class="cta" href="https://funderconsult.com/quickscan?phase=fase2#quickscan-aanvragen">Fase 2 aanvragen →</a>
+        <p class="small muted">Aanvraag bij erkende bureaus in uw regio.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="samenhang" aria-labelledby="samenhang-h">
+  <div class="prose">
+    <span class="eyebrow">Stap 1, 2 en 3 in samenhang</span>
+    <h2 id="samenhang-h">Wat een verkennend of uitgebreid funderingsonderzoek met het funderingsrisicorapport doet</h2>
+    <p>Het funderingsrisicorapport (FRR) bepaalt óf een verkennend funderingsonderzoek nodig is. Ligt er eenmaal onderzoek, dan is dát leidend: het certificaat ligt op het FRR, en het FRR wordt op basis van de uitkomst bijgesteld. Dat geldt voor het verkennend funderingsonderzoek (stap 2) en op dezelfde manier voor het uitgebreide funderingsonderzoek Fase 1 en/of 2 (stap 3).</p>
+  </div>
+  <div class="grid3">
+    <div class="card"><span class="pill">Stap 1</span><h3>Het FRR bepaalt de noodzaak</h3><p class="muted">Het funderingsrisicorapport bepaalt óf een verkennend funderingsonderzoek nodig is. Klopt de uitkomst volgens de professional niet, dan wijkt hij daar niet zelf van af: die afweging kan onderbouwd in een <a href="#heroverweging">heroverweging</a> worden genomen.</p></div>
+    <div class="card"><span class="pill ok">Stap 2 en 3 · leidend</span><h3>Het certificaat ligt op het FRR</h3><p class="muted">Is er een verkennend of uitgebreid funderingsonderzoek uitgevoerd, dan is dat rapport leidend. Het funderingsrisicorapport verdwijnt niet, maar wordt op basis van de uitkomst bijgesteld.</p></div>
+    <div class="card"><span class="pill note">Verplicht</span><h3>Terug naar FunderMaps: één waarheid</h3><p class="muted">Elk verkennend en uitgebreid funderingsonderzoek wordt verplicht teruggeleverd aan FunderMaps, volgens de afspraken met NHG, NRVT, NWWI en NVM. Daardoor kijken koper, verkoper, taxateur en financier naar dezelfde uitkomst.</p></div>
+  </div>
+  <div class="card">
+    <span class="eyebrow">Zo stelt de uitkomst het FRR bij</span>
+    <h3>Verkennend funderingsonderzoek (stap 2) <span class="pill">3 jaar geldig</span></h3>
+    <div class="map">
+      <div class="map__row"><span class="out low">Laag risico</span><span class="arrow">→</span><span class="badges"><span class="cls a">A</span><span class="cls b">B</span></span><span class="what">Geen vervolgstap.</span></div>
+      <div class="map__row"><span class="out mid">Midden risico</span><span class="arrow">→</span><span class="badges"><span class="cls c">C</span></span><span class="what">Monitoring of maatwerk uit het verkennend onderzoek.</span></div>
+      <div class="map__row"><span class="out high">Hoog risico</span><span class="arrow">→</span><span class="badges"><span class="cls d">D</span><span class="cls e">E</span></span><span class="what">Door naar stap 3 (uitgebreid funderingsonderzoek).</span></div>
+    </div>
+    <h3>Uitgebreid funderingsonderzoek (stap 3 · Fase 1 en/of 2) <span class="pill">5 jaar geldig</span></h3>
+    <div class="map">
+      <div class="map__row"><span class="out q1">Voldoende</span><span class="arrow">→</span><span class="badges"><span class="cls a">A</span><span class="cls b">B</span></span><span class="what">Handhavingstermijn: &gt; 25 jaar</span></div>
+      <div class="map__row"><span class="out q2">Redelijk</span><span class="arrow">→</span><span class="badges"><span class="cls a">A</span><span class="cls b">B</span></span><span class="what">Handhavingstermijn: ≤ 25 jaar</span></div>
+      <div class="map__row"><span class="out q3">Matig</span><span class="arrow">→</span><span class="badges"><span class="cls c">C</span></span><span class="what">Handhavingstermijn: ≤ 15 jaar</span></div>
+      <div class="map__row"><span class="out q4">Onvoldoende</span><span class="arrow">→</span><span class="badges"><span class="cls e">E</span></span><span class="what">Handhavingstermijn: ≤ 5 jaar</span></div>
+      <div class="map__row"><span class="out q5">Slecht</span><span class="arrow">→</span><span class="badges"><span class="cls e">E</span></span><span class="what">Handhavingstermijn: direct</span></div>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="pill note">Geen blijvende aanpassing</span>
+    <p>De metingen uit het onderzoek blijven meegenomen, maar de bijstelling is niet voor altijd. Een verkennend funderingsonderzoek heeft een <strong>vervaltermijn van 3 jaar</strong>, een uitgebreid funderingsonderzoek een <strong>vervaltermijn van 5 jaar</strong>. Daarna kan de risicoaanduiding weer wijzigen.</p>
+    <p>Een verkennend funderingsonderzoek is een belangrijk meetpunt op locatie, en tegelijk een <strong>momentopname</strong>: er wordt niet gegraven en de fundering zelf wordt niet onderzocht. Daarvoor is een uitgebreid funderingsonderzoek (stap 3) nodig.</p>
+  </div>
+</section>
+
+<section id="klassen" aria-labelledby="klassen-h">
+  <div class="prose">
+    <span class="eyebrow">De risico-inschatting</span>
+    <h2 id="klassen-h">Risicoklasse en betrouwbaarheid</h2>
+    <p>Elke risico-inschatting heeft twee delen: een risicoklasse van A tot en met E, en de betrouwbaarheid van het risicoprofiel. De termen volgen het KCAF en de <a href="informatiestandaard.html">informatiestandaard van FunderMaps</a>.</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Risicoklassen</h3>
+      <div class="scroll"><table>
+        <thead><tr><th>Klasse</th><th>Betekenis</th><th>Bij aan- en verkoop</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cls a">A</span></td><td>Geen risico</td><td rowspan="3">Laag risico, verkennend onderzoek niet nodig</td></tr>
+          <tr><td><span class="cls b">B</span></td><td>Licht risico</td></tr>
+          <tr><td><span class="cls c">C</span></td><td>Aandachtspunt of onzekerheid</td></tr>
+          <tr><td><span class="cls d">D</span></td><td>Hoog risico</td><td rowspan="2">Verhoogd risico, verkennend onderzoek nodig</td></tr>
+          <tr><td><span class="cls e">E</span></td><td>Vastgesteld probleem</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <h3>Betrouwbaarheid</h3>
+      <div class="scroll"><table>
+        <thead><tr><th>Label</th><th>Waar het op rust</th></tr></thead>
+        <tbody>
+          <tr><td><span class="rel est">Vastgesteld</span></td><td>Onderzoek of archiefgegevens van dit pand zelf.</td></tr>
+          <tr><td><span class="rel der">Afgeleid</span></td><td>Gegevens van vergelijkbare panden dichtbij, bijvoorbeeld in hetzelfde bouwblok.</td></tr>
+          <tr><td><span class="rel ind">Indicatief</span></td><td>Een modelberekening op basis van onder meer bouwjaar, bodem, grondwater en satellietmetingen.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small muted">Hoe het model rekent, staat op <a href="hoe-het-model-werkt.html">Hoe het model werkt</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="huiseigenaren" aria-labelledby="huiseigenaren-h">
+  <div class="prose">
+    <span class="eyebrow">Voor huiseigenaren</span>
+    <h2 id="huiseigenaren-h">Wat betekent de uitkomst voor u?</h2>
+    <p>Gaat u kopen of verkopen, dan bespreekt uw makelaar of taxateur de risicoklasse met u. De inschatting zelf is kosteloos en loopt via de makelaar of de taxateur.</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Na de risico-inschatting (stap 1)</h3>
+      <div class="scroll"><table>
+        <tbody>
+          <tr><td><span class="badges"><span class="cls a">A</span><span class="cls b">B</span></span></td><td>Er is niets te doen; het risico is gering.</td></tr>
+          <tr><td><span class="cls c">C</span></td><td>Let op scheuren, scheefstand of klemmende deuren en ramen. Ziet u die, overweeg dan een verkennend funderingsonderzoek.</td></tr>
+          <tr><td><span class="badges"><span class="cls d">D</span><span class="cls e">E</span></span></td><td>Er volgt een verkennend funderingsonderzoek door een erkend bureau.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <h3>Na het verkennend onderzoek (stap 2)</h3>
+      <div class="scroll"><table>
+        <tbody>
+          <tr><td><span class="out low">Laag</span></td><td>Geen actie nodig.</td></tr>
+          <tr><td><span class="out mid">Midden</span></td><td>Geen directe actie; volg de situatie met metingen.</td></tr>
+          <tr><td><span class="out high">Hoog</span></td><td>Een uitgebreid onderzoek geeft definitief inzicht. Aan- en verkoop en financiering blijven mogelijk; de herstelkosten kunnen wel meewegen in de waarde of de financiering.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Geen verkoopplannen, wel zorgen?</h3>
+    <p class="muted">Drie signalen zijn een reden om een verkennend funderingsonderzoek te laten doen, ook buiten een aan- of verkoop:</p>
+    <ul>
+      <li><strong>Scheuren in de muren</strong>, vooral schuine scheuren of scheuren die groeien</li>
+      <li><strong>Klemmende ramen en deuren</strong></li>
+      <li><strong>Scheve vloeren</strong> of een zichtbaar scheef huis</li>
+    </ul>
+    <a class="cta" href="https://funderconsult.com/quickscan#quickscan-aanvragen">Verkennend onderzoek aanvragen →</a>
+  </div>
+  <div class="callout">
+    <p><strong>Waar vindt u de risicoklasse?</strong> De klasse komt uit FunderMaps en is zichtbaar voor makelaars en taxateurs. Bij een taxatie levert het NWWI het funderingsrisicorapport automatisch mee. Er is geen openbare website waar u de klasse per adres kunt opzoeken.</p>
+    <p>Klopt er volgens u iets niet aan de gegevens van uw woning? Meld het via <a href="https://melden.fundermaps.com">melden.fundermaps.com</a>, het liefst met een tekening of onderzoek erbij.</p>
+  </div>
+</section>
+
+<section id="verkennend" aria-labelledby="verkennend-h">
+  <div class="prose">
+    <span class="eyebrow">Stap 2 uitgelegd</span>
+    <h2 id="verkennend-h">Het verkennend funderingsonderzoek (QuickScan)</h2>
+    <p>Een verkennend funderingsonderzoek is een beperkt onderzoek op locatie door een erkend bureau, volgens het Addendum QuickScan van de KCAF-richtlijn. Het bevestigt of ontkracht het risico uit de inschatting. De uitkomst is laag, midden of hoog risico. Het onderzoek is niet-destructief: er wordt niet gegraven of gebroken.</p>
+  </div>
+  <div class="grid3">
+    <div class="card"><span class="pill">Drie namen, één onderzoek</span><p class="muted"><strong>Fase 0</strong> is de oude vakterm, <strong>QuickScan</strong> de bekende naam, en <strong>verkennend funderingsonderzoek</strong> de officiële naam sinds 1 augustus 2026. Het is in alle gevallen hetzelfde onderzoek.</p></div>
+    <div class="card"><span class="pill note">Bij klasse D of E</span><p class="muted">Bij een funderingsrisicoklasse D of E is een verkennend funderingsonderzoek nodig om de taxatie af te ronden. Makelaars, taxateurs en financiers vragen er dan om.</p></div>
+    <div class="card"><span class="pill ok">Duur</span><p class="muted">Het bezoek duurt meestal één tot enkele uren. Daarna volgt een digitaal rapport, dat het bureau aanlevert aan FunderMaps.</p></div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Wat wordt er onderzocht?</h3>
+      <ol>
+        <li><strong>Visuele inspectie</strong>: scheuren, vervormingen, scheefstand en klemmende ramen of deuren, binnen en buiten, met foto's.</li>
+        <li><strong>Metingen aan het pand</strong>: lintvoegwaterpassing, loodmeting en scheurregistratie, om te zien of het pand zakt of vervormt.</li>
+        <li><strong>Omgeving en archief</strong>: bouwjaar, funderingstype, bodemopbouw en zakkingsgegevens uit FunderMaps en archieven, vergeleken met de metingen.</li>
+        <li><strong>Beoordeling en rapport</strong>: laag, midden of hoog risico, met advies over de vervolgstap.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Welke metingen tellen?</h3>
+      <p class="muted">Volgens de richtlijn zijn lintvoeg- en loodmetingen met geijkte instrumenten, visuele inspectie met fotoregistratie en archiefonderzoek voorgeschreven. Technieken als ERT, MASW, GPR, satellietgegevens en 3D-scans geven extra context, maar vervangen geen oordeel volgens de richtlijn.</p>
+      <p class="muted">Alleen onderzoek van een erkend bureau dat aan FunderMaps is aangeleverd, telt mee voor de risicoklasse.</p>
+    </div>
+  </div>
+  <div>
+    <details><summary>Is Fase 0 hetzelfde als een QuickScan?</summary><p>Ja. Fase 0, QuickScan en verkennend funderingsonderzoek zijn drie namen voor precies hetzelfde onderzoek volgens de KCAF-richtlijn.</p></details>
+    <details><summary>Wanneer is een verkennend onderzoek nodig?</summary><p>Bij een funderingsrisicoklasse D of E. Daarnaast is het logisch bij zichtbare schade, scheefstand of twijfel bij aan- of verkoop.</p></details>
+    <details><summary>Wat gebeurt er na het onderzoek?</summary><p>Bij laag risico niets. Bij midden risico volgt u de situatie met periodieke metingen. Bij hoog risico kan een uitgebreid funderingsonderzoek definitief inzicht geven; voor de aan- of verkoop volstaat de verkennende uitkomst doorgaans.</p></details>
+    <details><summary>Wordt er gegraven of gebroken?</summary><p>Nee. Het verkennend onderzoek is niet-destructief. Een inspectieput komt pas bij het uitgebreide funderingsonderzoek (Fase 2).</p></details>
+    <details><summary>Hoe lang telt de uitkomst?</summary><p>De uitkomst van een verkennend funderingsonderzoek stelt de risicoklasse drie jaar bij. Daarna kan de klasse weer wijzigen.</p></details>
+  </div>
+</section>
+
+<section id="checklist" aria-labelledby="checklist-h">
+  <div class="prose">
+    <span class="eyebrow">Voorbereiding</span>
+    <h2 id="checklist-h">Checklist voor het bezoek</h2>
+    <p>Komt er een erkend bureau langs voor een verkennend funderingsonderzoek? Veel hoeft u niet te doen. Met deze checklist verloopt het bezoek vlot en krijgt het bureau een zo compleet mogelijk beeld.</p>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <h3>Zorg dat de inspecteur overal bij kan</h3>
+      <ul class="check">
+        <li>Maak het luik van de kruipruimte vrij. De kruipruimte zelf hoeft niet leeg.</li>
+        <li>Zorg dat alle gevels bereikbaar zijn, ook in de tuin en rond een aanbouw.</li>
+        <li>Maak de meterkast en een eventuele kelder toegankelijk.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Leg documenten klaar, als u ze heeft</h3>
+      <ul class="check">
+        <li>Bouw- of verbouwingstekeningen.</li>
+        <li>Eerdere rapporten: een bouwkundige keuring, funderingsonderzoek of bewijs van herstel.</li>
+        <li>Oudere foto's van scheuren of schade, zodat het bureau ziet of iets nieuw is.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Denk na over wat u zelf heeft gezien</h3>
+      <ul class="check">
+        <li>Waar zitten scheuren, en zijn ze gegroeid?</li>
+        <li>Klemmen ramen of deuren, en sinds wanneer?</li>
+        <li>Is er iets veranderd in de omgeving, zoals bouwwerkzaamheden of gekapte bomen?</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Tijdens het bezoek</h3>
+    <ul>
+      <li>De inspecteur bekijkt de woning binnen en buiten en maakt foto's.</li>
+      <li>Er wordt gemeten of het huis scheef staat of zakt, zonder graven of breken.</li>
+      <li>Het bezoek duurt doorgaans één tot enkele uren. Zorg dat u thuis bent, of dat iemand anders de inspecteur binnenlaat.</li>
+    </ul>
+  </div>
+  <div>
+    <details><summary>Wat als ik geen documenten van het huis heb?</summary><p>Dat is geen probleem. Het bureau gebruikt ook archiefgegevens en de gegevens in FunderMaps. Uw eigen documenten maken het beeld wel completer.</p></details>
+    <details><summary>Wanneer krijg ik het rapport?</summary><p>Het bureau verwerkt de metingen in een digitaal rapport, met als uitkomst laag, midden of hoog risico. U hoort vooraf hoe lang dat duurt.</p></details>
+  </div>
+</section>
+
+<section id="heroverweging" aria-labelledby="heroverweging-h">
+  <div class="prose">
+    <span class="eyebrow">Heroverweging</span>
+    <h2 id="heroverweging-h">Klopt de risicoklasse niet?</h2>
+    <p>Bij een klasse D of E kan de makelaar, de taxateur of de eigenaar bewijs aanleveren via <a href="https://melden.fundermaps.com">melden.fundermaps.com</a>. Blijkt het pand in klasse A, B of C te horen, dan is het verkennend onderzoek niet meer nodig. De route werkt ook andersom, bijvoorbeeld bij zichtbare schade.</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Tegen een vastgestelde of afgeleide inschatting</h3>
+      <ul>
+        <li>historisch funderingsonderzoek</li>
+        <li>een verkennend funderingsonderzoek</li>
+        <li>een bouwkundig rapport</li>
+        <li>archiefonderzoek dat iets anders laat zien</li>
+        <li>uitgevoerd funderingsherstel, geregistreerd in het <a href="nationaal-herstelregister.html">Nationaal Herstelregister</a></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Tegen een indicatieve inschatting</h3>
+      <ul>
+        <li>eigen waarneming: scheuren, scheefstand, klemmende deuren of ramen</li>
+        <li>een bouwtekening of archiefstuk met het funderingstype</li>
+        <li>lokale deskundigheid</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout">
+    <p><strong>Te weinig gegevens?</strong> Soms is er te weinig bekend voor een inschatting. Dat betekent niet automatisch een hoog risico of geen financiering. De taxateur weegt dan zelf af op basis van archief, gemeentelijke informatie, zichtbare signalen en eventueel herstel. Bij twijfel ligt een verkennend funderingsonderzoek voor de hand.</p>
+  </div>
+</section>
+
+<section id="professionals" aria-labelledby="professionals-h">
+  <div class="prose">
+    <span class="eyebrow">Voor professionals</span>
+    <h2 id="professionals-h">Makelaars, taxateurs en financiers</h2>
+    <p>De werkwijze sluit aan op de afspraken met NRVT en NWWI en op het NHG-kader. De uitgangspunten: een inschatting, geen oordeel; uitvoering alleen door erkende bureaus; resultaten altijd in de context van de brongegevens; en transparantie naar alle partijen.</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Per rol</h3>
+      <ul>
+        <li><strong>Makelaar</strong>: ziet de klasse met betrouwbaarheid in de software van de eigen vereniging, signaleert het risico en bespreekt het met de klant, bij aankoop én verkoop. Bij D of E schakelt hij een erkend bureau in en trekt geen eigen technische conclusies.</li>
+        <li><strong>Taxateur</strong>: ziet de volledige inschatting en weegt risico en betrouwbaarheid mee in de waardering. Een hoog risico zonder bijbehorend onderzoek komt in een afgerond taxatiedossier niet voor.</li>
+        <li><strong>Koper en verkoper</strong>: een D of E maakt een woning niet onverkoopbaar, maar vraagt wel om onderzoek.</li>
+        <li><strong>Financier</strong>: stelt een erkende onderzoeksroute als voorwaarde en toetst het rapport.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Beslisvragen voor de taxateur</h3>
+      <div class="scroll"><table>
+        <tbody>
+          <tr><td>Klasse D of E?</td><td>Ja: verkennend onderzoek. Nee: vermelden, geen vervolg.</td></tr>
+          <tr><td>Ligt er al bruikbaar onderzoek?</td><td>Ja: dat gebruiken. Nee: een erkend bureau inschakelen.</td></tr>
+          <tr><td>Erkend bureau én aangeleverd aan FunderMaps?</td><td>Ja: geldig. Nee: telt niet mee.</td></tr>
+          <tr><td>Bewijs voor een heroverweging?</td><td>Ja: melden via melden.fundermaps.com. Nee: onderzoek aanvragen.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Rangorde van rapporten</h3>
+      <ol>
+        <li><strong>Taxatierapport met de funderingsrisico-inschatting</strong>: de basis.</li>
+        <li><strong>Verkennend funderingsonderzoek</strong>: leidend, de bijstelling geldt drie jaar.</li>
+        <li><strong>Uitgebreid funderingsonderzoek</strong>: vervangt alle eerdere rapporten, de bijstelling geldt vijf jaar.</li>
+      </ol>
+      <p class="muted">Een D of E leidt niet automatisch tot destructief onderzoek: eerst volgt Fase 1, en Fase 2 alleen als het risico hoog blijft.</p>
+    </div>
+    <div class="card">
+      <h3>NHG-uitgangspunten (concept 2027)</h3>
+      <p class="muted">In het concept van de NHG Voorwaarden en Normen 2027, nog niet definitief:</p>
+      <ul>
+        <li><strong>Weigering</strong> van het onderzoek door de aanvrager: geen NHG-financiering.</li>
+        <li><strong>Laag risico</strong>: geen gevolgen.</li>
+        <li><strong>Midden risico</strong>: herstelkosten worden niet getoetst; monitoring wordt aanbevolen.</li>
+        <li><strong>Hoog risico</strong>: de indicatieve herstelkosten gaan als annuïtaire last (maximaal 30 jaar, tegen de AFM-toetsrente) af van de maximale financieringslast.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Aanleverplicht en erkenning</h3>
+      <ul>
+        <li>Onderzoeksbureaus leveren digitaal aan via de koppeling met FunderMaps. Een losse pdf telt niet.</li>
+        <li>Alleen KCAF- of VastgoedNED-erkende bureaus kunnen aanleveren. Niet-erkend onderzoek telt niet mee voor de risicoklasse.</li>
+        <li>Een Fase 2-rapport vraagt om directe inspectie en materiaalonderzoek. Een rapport dat alleen op GPR, ERT, MASW of een 3D-laserscan steunt, voldoet niet.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Richtlijnen en opleidingen</h3>
+      <ul>
+        <li><a href="https://www.kcaf.nl/wp-content/uploads/2023/01/Richtlijnen-onderzoek-funderingen-onder-gebouwen.pdf">KCAF-richtlijn Funderingen onder gebouwen</a> (22 november 2022)</li>
+        <li><a href="https://www.kcaf.nl/wp-content/uploads/2025/06/GROENE-VERSIE-ADDENDUM-Richtlijn-fundering-onder-gebouwen-25032025.pdf">Addendum QuickScan bij de KCAF-richtlijn</a></li>
+        <li><a href="https://www.kcaf.nl/erkenningsregeling/erkenningslijst/">KCAF-erkenningslijst</a></li>
+        <li><a href="https://www.kcaf.nl/cursussen-bijeenkomsten/praktijk-cursus-funderingsonderzoek/">KCAF/PAO Praktijkcursus funderingsonderzoek</a></li>
+        <li><a href="https://paotm.nl/aanbod/aanpak-funderingsproblematiek/">PAOTM Aanpak funderingsproblematiek</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>FunderMaps · Nationale Database Funderingen · november 2026.</p>
+  <p>Bronnen: KCAF, richtlijn Funderingen onder gebouwen (22 november 2022) en het Addendum QuickScan; NRVT, model taxatierapport woonruimte per 1 april 2026; NHG, concept Voorwaarden en Normen 2027. Het stappenschema is geen officieel NHG-document. Kosten en doorlooptijden zijn indicatief.</p>
+  <p><a href="index.html">fundermaps.com</a> · <a href="informatiestandaard.html">Informatiestandaard</a> · <a href="hoe-het-model-werkt.html">Hoe het model werkt</a> · <a href="nationaal-herstelregister.html">Nationaal Herstelregister</a></p>
+</footer>
+
+<script>
+// A box that scrolls sideways (a wide table) must be reachable by keyboard,
+// or the part outside the box stays out of reach. Only boxes that actually
+// overflow get a tab stop, so a wide window adds none.
+(function () {
+  var boxes = document.querySelectorAll('.scroll');
+  function mark() {
+    for (var i = 0; i < boxes.length; i++) {
+      var b = boxes[i];
+      if (b.scrollWidth > b.clientWidth + 1) {
+        b.tabIndex = 0;
+        b.setAttribute('role', 'region');
+        b.setAttribute('aria-label', 'Tabel, schuift opzij');
+      } else if (b.getAttribute('role') === 'region') {
+        b.removeAttribute('tabindex');
+        b.removeAttribute('role');
+        b.removeAttribute('aria-label');
+      }
+    }
+  }
+  mark();
+  window.addEventListener('resize', mark);
+})();
+</script>
+</body>
+</html>
