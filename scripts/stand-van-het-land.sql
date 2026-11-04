@@ -47,7 +47,7 @@ WITH b AS MATERIALIZED (
 ),
 feedback AS (
     SELECT 'incident_portal' AS source, NULL::text AS outcome, NULL::interval AS lead_time
-    FROM report.incident WHERE delete_date IS NULL
+    FROM report.incident
     UNION ALL
     SELECT CASE channel WHEN 'upload' THEN 'melden' ELSE 'archive' END, outcome::text, outcome_at - received_at
     FROM dataops.dossier
@@ -59,15 +59,14 @@ obs AS (
     -- Funderingsonderzoek and herstel;
     -- vastgelegde waarden = the filled fields in those samples.
     SELECT count(*) AS n,
-           sum((SELECT count(*) FROM jsonb_each(to_jsonb(s) - ARRAY['id','inquiry_id','address','create_date','update_date','delete_date','building_id','metadata']) e
+           sum((SELECT count(*) FROM jsonb_each(to_jsonb(s) - ARRAY['id','inquiry_id','address','create_date','update_date','building_id','metadata']) e
                 WHERE e.value NOT IN ('null'::jsonb, '[]'::jsonb, '""'::jsonb))) AS v
     FROM report.inquiry_sample s JOIN report.inquiry i ON i.id = s.inquiry_id
-    WHERE s.delete_date IS NULL AND i.delete_date IS NULL
     UNION ALL
     SELECT count(*),
-           sum((SELECT count(*) FROM jsonb_each(to_jsonb(r) - ARRAY['id','recovery_id','create_date','update_date','delete_date','building_id','metadata']) e
+           sum((SELECT count(*) FROM jsonb_each(to_jsonb(r) - ARRAY['id','recovery_id','create_date','update_date','building_id','metadata']) e
                 WHERE e.value NOT IN ('null'::jsonb, '""'::jsonb)))
-    FROM report.recovery_sample r WHERE r.delete_date IS NULL
+    FROM report.recovery_sample r
 )
 SELECT json_build_object(
     'generated_at', now(),
@@ -77,7 +76,7 @@ SELECT json_build_object(
             'values', sum(v),
             'researched', (SELECT count(DISTINCT s.building_id)
                            FROM report.inquiry_sample s JOIN report.inquiry i ON i.id = s.inquiry_id
-                           WHERE s.delete_date IS NULL AND i.delete_date IS NULL AND s.foundation_type IS NOT NULL
+                           WHERE s.foundation_type IS NOT NULL
                              AND i.type NOT IN ('quickscan', 'facade_scan'))
         ) FROM obs
     ),
@@ -181,21 +180,21 @@ SELECT json_build_object(
             'reports', count(DISTINCT i.id),
             'buildings', count(DISTINCT s.building_id),
             'last_12', (SELECT count(DISTINCT i2.id) FROM report.inquiry i2
-                        WHERE i2.type = 'facade_scan' AND i2.delete_date IS NULL
+                        WHERE i2.type = 'facade_scan'
                           AND i2.document_date >= date_trunc('month', now()) - interval '11 months'),
             'months', (
                 SELECT json_agg(json_build_object('month', m, 'reports', n) ORDER BY m)
                 FROM (
                     SELECT to_char(date_trunc('month', i3.document_date), 'YYYY-MM') AS m, count(*) AS n
                     FROM report.inquiry i3
-                    WHERE i3.type = 'facade_scan' AND i3.delete_date IS NULL
+                    WHERE i3.type = 'facade_scan'
                       AND i3.document_date >= date_trunc('month', now()) - interval '11 months'
                     GROUP BY 1
                 ) x
             )
         )
-        FROM report.inquiry i JOIN report.inquiry_sample s ON s.inquiry_id = i.id AND s.delete_date IS NULL
-        WHERE i.type = 'facade_scan' AND i.delete_date IS NULL
+        FROM report.inquiry i JOIN report.inquiry_sample s ON s.inquiry_id = i.id
+        WHERE i.type = 'facade_scan'
     ),
     'feedback', (
         SELECT json_build_object(
