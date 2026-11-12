@@ -2023,7 +2023,7 @@ number
 soil
 string
 10%
-Free-text soil description, not an enum
+Soil region code, see Soil region codes
 
 surfaceArea
 number
@@ -2349,6 +2349,29 @@ Correction notice (June 2026). Earlier revisions of this table were incomplete a
 - quick_scan → the API returns quickscan
 
 Additionally, 8 foundationType values, 5 damageCause values, and 4 further inquiryType values (archive_research, ground_water_level_research, soil_investigation, facade_scan) were missing and have been added above. Treat any enum value outside this table as a defect and report it to us.
+
+#### Soil region codes
+
+soil is the physical-geographic region (Fysisch Geografische Regio, FGR) the building stands in, as published by PDOK. The value is always one of the lowercase codes below, never free text. It is null when no region could be assigned to the building (about 10% of buildings).
+
+Codes starting with ni- are buildings in an area the FGR map marks as not classifiable, almost always built-up urban area. FunderMaps assigns these to the surrounding region, given after the dash: ni-lv is built-up area within the Laagveengebied. For soil behaviour, treat a ni- code as its surrounding region. Plain ni is not classifiable with no surrounding region assigned.
+
+- az: Afgesloten zeearmen (closed-off sea inlets)
+- du: Duinen (dunes)
+- gg: Getijdengebied (tidal area)
+- hl: Heuvelland (hill country (South Limburg))
+- hz: Hogere zandgronden (higher sandy soils)
+- lv: Laagveengebied (low-lying peat area)
+- ni: Niet indeelbaar (not classifiable, mostly built-up urban area)
+- nz: Noordzee (North Sea)
+- ri: Rivierengebied (river area)
+- zk: Zeekleigebied (marine clay area)
+- ni-du: Niet indeelbaar, binnen Duinen (built-up area within the dunes region)
+- ni-hl: Niet indeelbaar, binnen Heuvelland (built-up area within the hill country (South Limburg) region)
+- ni-hz: Niet indeelbaar, binnen Hogere zandgronden (built-up area within the higher sandy soils region)
+- ni-lv: Niet indeelbaar, binnen Laagveengebied (built-up area within the low-lying peat area region)
+- ni-ri: Niet indeelbaar, binnen Rivierengebied (built-up area within the river area region)
+- ni-zk: Niet indeelbaar, binnen Zeekleigebied (built-up area within the marine clay area region)
 
 #### Recommended Dutch labels
 

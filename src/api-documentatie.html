@@ -672,7 +672,7 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 <td><code>soil</code></td>
 <td>string</td>
 <td>10%</td>
-<td>Free-text soil description, not an enum</td>
+<td>Soil region code, see <a href="#soil-region-codes">Soil region codes</a></td>
 </tr>
 <tr>
 <td><code>surfaceArea</code></td>
@@ -1055,6 +1055,92 @@ Staging      https://ws-staging.fundermaps.com/v4/...
 </ul>
 <p>Additionally, 8 <code>foundationType</code> values, 5 <code>damageCause</code> values, and 4 further <code>inquiryType</code> values (<code>archive_research</code>, <code>ground_water_level_research</code>, <code>soil_investigation</code>, <code>facade_scan</code>) were missing and have been added above. Treat any enum value outside this table as a defect and report it to us.</p>
 </blockquote>
+<h3 id="soil-region-codes">Soil region codes</h3>
+<p><code>soil</code> is the physical-geographic region (<em>Fysisch Geografische Regio</em>, FGR) the building stands in, as published by PDOK. The value is always one of the lowercase codes below, never free text. It is <code>null</code> when no region could be assigned to the building (about 10% of buildings).</p>
+<p>Codes starting with <code>ni-</code> are buildings in an area the FGR map marks as not classifiable, almost always built-up urban area. FunderMaps assigns these to the surrounding region, given after the dash: <code>ni-lv</code> is built-up area within the Laagveengebied. For soil behaviour, treat a <code>ni-</code> code as its surrounding region. Plain <code>ni</code> is not classifiable with no surrounding region assigned.</p>
+<div class="tbl"><table>
+<thead><tr><th>Code</th><th>Region (Dutch)</th><th>Meaning</th></tr></thead>
+<tbody><tr>
+<td><code>az</code></td>
+<td>Afgesloten zeearmen</td>
+<td>closed-off sea inlets</td>
+</tr>
+<tr>
+<td><code>du</code></td>
+<td>Duinen</td>
+<td>dunes</td>
+</tr>
+<tr>
+<td><code>gg</code></td>
+<td>Getijdengebied</td>
+<td>tidal area</td>
+</tr>
+<tr>
+<td><code>hl</code></td>
+<td>Heuvelland</td>
+<td>hill country (South Limburg)</td>
+</tr>
+<tr>
+<td><code>hz</code></td>
+<td>Hogere zandgronden</td>
+<td>higher sandy soils</td>
+</tr>
+<tr>
+<td><code>lv</code></td>
+<td>Laagveengebied</td>
+<td>low-lying peat area</td>
+</tr>
+<tr>
+<td><code>ni</code></td>
+<td>Niet indeelbaar</td>
+<td>not classifiable, mostly built-up urban area</td>
+</tr>
+<tr>
+<td><code>nz</code></td>
+<td>Noordzee</td>
+<td>North Sea</td>
+</tr>
+<tr>
+<td><code>ri</code></td>
+<td>Rivierengebied</td>
+<td>river area</td>
+</tr>
+<tr>
+<td><code>zk</code></td>
+<td>Zeekleigebied</td>
+<td>marine clay area</td>
+</tr>
+<tr>
+<td><code>ni-du</code></td>
+<td>Niet indeelbaar, binnen Duinen</td>
+<td>built-up area within the dunes region</td>
+</tr>
+<tr>
+<td><code>ni-hl</code></td>
+<td>Niet indeelbaar, binnen Heuvelland</td>
+<td>built-up area within the hill country (South Limburg) region</td>
+</tr>
+<tr>
+<td><code>ni-hz</code></td>
+<td>Niet indeelbaar, binnen Hogere zandgronden</td>
+<td>built-up area within the higher sandy soils region</td>
+</tr>
+<tr>
+<td><code>ni-lv</code></td>
+<td>Niet indeelbaar, binnen Laagveengebied</td>
+<td>built-up area within the low-lying peat area region</td>
+</tr>
+<tr>
+<td><code>ni-ri</code></td>
+<td>Niet indeelbaar, binnen Rivierengebied</td>
+<td>built-up area within the river area region</td>
+</tr>
+<tr>
+<td><code>ni-zk</code></td>
+<td>Niet indeelbaar, binnen Zeekleigebied</td>
+<td>built-up area within the marine clay area region</td>
+</tr>
+</tbody></table></div>
 <h3 id="recommended-dutch-labels">Recommended Dutch labels</h3>
 <p>The words FunderMaps itself uses for these values, in its reports, its mails and the Studio. Showing your users the same words keeps a valuation, a report and a melding saying the same thing. This is a recommendation, not part of the contract: the values above are the contract.</p>
 <ul>
