@@ -6,7 +6,7 @@ This site is the Dutch-language marketing front for FunderMaps. The product itse
 
 ## Primary pages
 
-- [Home / Eén landelijke database, opgebouwd met de hele keten](https://fundermaps.com/): Hero, services overview, references, demo, partners.
+- [Home / Eén landelijke database, opgebouwd met de hele keten](https://fundermaps.com/): Hero, services overview, references, partners.
 - [Funderingstypen en -risico's](https://fundermaps.com/media-library.html): Visual reference of foundation types (Rotterdamse fundering, betonpaal, kespen, etc.) and their associated risks.
 - [Artikelen](https://fundermaps.com/artikelen.html): Articles on funderingsproblematiek — causes, repair, municipal policy, practical guidance.
 

@@ -12,7 +12,6 @@ export default function navScrollSpy() {
   const map = {
     hero: "intro",
     services: "services",
-    preview: "demo",
     references: "references",
     partners: "partners",
   }
