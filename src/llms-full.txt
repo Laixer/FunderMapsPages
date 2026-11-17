@@ -164,8 +164,6 @@ Deze organisaties werken met de gegevens van FunderMaps:
 
 - Gouda
 
-- Haarlem
-
 - ING
 
 - KBF
