@@ -312,6 +312,13 @@ Toon de cijfers voor
 
 Heel Nederland
 
+### Verschillen per provincie
+
+Verhoogd risico (D/E)
+Houten palen
+
+Klik op een provincie om alle cijfers op deze pagina voor die provincie te zien. Nog een keer klikken toont weer heel Nederland.
+
 ### Kerncijfers · Nederland
 
 Alle panden met een adres in de BAG. Funderingstype en risicoklasse komen uit het FunderMaps-model: waar onderzoek is gedaan uit dat onderzoek, elders afgeleid uit het pand en zijn omgeving.
@@ -675,7 +682,7 @@ Wat u kunt doen
 
 Meld het via melden.fundermaps.com. Elke melding wordt beoordeeld. Verandert het risico, dan wordt het pand opnieuw doorgerekend. Zo wordt de uitkomst voor het pand en de buurt beter.
 
-Heeft u vragen over een risicoklasse of over deze methode? Neem contact op via info@fundermaps.com.
+Heeft u een vraag over de risico-indicatie of de gegevens van een pand? Stel die via melden.fundermaps.com. Algemene vragen over deze methode kunt u mailen naar info@fundermaps.com; vragen over de gegevens van een pand beantwoorden wij niet per mail.
 
 #### Let op
 
@@ -909,7 +916,7 @@ Wat u kunt doen
 
 Meld het via melden.fundermaps.com. Elke melding wordt beoordeeld. Verandert het risico, dan wordt het pand opnieuw doorgerekend. Zo wordt de uitkomst voor het pand en de buurt beter.
 
-Heeft u vragen over een risicoklasse of over deze methode? Neem contact op via info@fundermaps.com.
+Heeft u een vraag over de risico-indicatie of de gegevens van een pand? Stel die via melden.fundermaps.com. Algemene vragen over deze methode kunt u mailen naar info@fundermaps.com; vragen over de gegevens van een pand beantwoorden wij niet per mail.
 
 #### Let op
 
@@ -1225,9 +1232,12 @@ Bij elke uitkomst legt de standaard vast: de modelversie waarmee is gerekend, de
 
 #### Beoordeling risicoclassificatie in de aan- en verkoop
 
-Risicoklasse Beoordeling Verkennend Funderingsonderzoek A, B, C Laag risico Niet nodig D, E Verhoogd risico Nodig
+Risicoklasse Beoordeling Verkennend Funderingsonderzoek
+A B C Laag risico Niet nodig
 
-Deze indeling geldt bij de aan- en verkoop van een woning, in de taxatie en de financiering. NWWI, NRVT, NHG
+D E Verhoogd risico Nodig
+
+Deze indeling geldt bij de aan- en verkoop van een woning, in de taxatie en de financiering.
 
 13
 
@@ -1278,9 +1288,7 @@ Contact. Vragen, reacties en voorstellen voor wijziging: info@fundermaps.com. He
 #### Wijzigingslog
 
 Versie Datum Wijziging
-1.2 30 oktober 2026 Nieuw: beoordeling van de risicoklasse in de aan- en verkoop (A–C laag risico, D–E verhoogd risico). Klasse C heet voortaan „aandachtspunt of onzekerheid”.
-1.1 30 oktober 2026 Kleuren van het schadebeeld gelijkgetrokken met de risicoklassen A–E: nihil, klein, matig, groot en zeer groot krijgen de kleuren van A, B, C, D en E.
-1.0 25 september 2026 Eerste versie.
+1.2 30 oktober 2026 Nieuw: beoordeling van de risicoklasse in de aan- en verkoop (A–C laag risico, D–E verhoogd risico). Klasse C heet voortaan „aandachtspunt of onzekerheid”. 1.1 30 oktober 2026 Kleuren van het schadebeeld gelijkgetrokken met de risicoklassen A–E: nihil, klein, matig, groot en zeer groot krijgen de kleuren van A, B, C, D en E. 1.0 25 september 2026 Eerste versie.
 
 ---
 
@@ -1386,7 +1394,7 @@ Grondwaterstand Commerciële data Leverancier Per levering
 
 Pandzakking (satelliet) Commerciële data Leverancier Per levering
 
-Funderingstype en risico per pand Afgeleid FunderMaps Twee keer per dag herberekend
+Funderingstype en risico per pand Afgeleid FunderMaps Dagelijks herberekend
 
 Beheer
 
@@ -1433,6 +1441,14 @@ Kennisbank
 ## Kennisbank
 
 Alles over de gegevens van FunderMaps: hoe ze tot stand komen, wat ze betekenen en hoe u ze gebruikt.
+
+Aankoop en verkoop
+
+### Funderingsrisico bij aankoop, verkoop en taxatie
+
+Wat de risicoklasse A–E betekent, wanneer een verkennend funderingsonderzoek nodig is en hoe een onderzoek de klasse bijstelt.
+
+Lees verder
 
 Het model
 
@@ -2195,7 +2211,7 @@ New codes may be added over time; treat any unlisted code on an error status gen
 
 #### Rate limits
 
-Usage limits are set per API key and product as a number of billable events per calendar day or month (UTC). When a limit applies, every response to that product carries X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset (seconds until the window resets); an exhausted limit returns 429 rate_limit_exceeded with Retry-After. Repeated requests for the same building within 24 hours do not consume additional events.
+Usage limits are set per organization and product, and shared by all of its API keys, as a number of billable events per calendar day or month (UTC). When a limit applies, every response to that product carries X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset (seconds until the window resets); an exhausted limit returns 429 rate_limit_exceeded with Retry-After. Repeated requests for the same building within 24 hours do not consume additional events.
 
 ### 6. Every known building carries a risk indication
 
@@ -2276,7 +2292,7 @@ The FunderMaps model that produced the answer. Changes only when a new model goe
 
 calculatedAt
 "2026-10-06T19:59:49.011Z"
-When that model run finished (ISO 8601, UTC). The model is recalculated twice a day (12:30 and 21:00 Amsterdam time).
+When that model run finished (ISO 8601, UTC). The model is recalculated daily.
 
 - Both fields are added to the body of every 200 product response (/v4/product/*), next to the existing fields. They are the same for every building within one model run.
 
@@ -2354,22 +2370,71 @@ soil is the physical-geographic region (Fysisch Geografische Regio, FGR) the bui
 
 Codes starting with ni- are buildings in an area the FGR map marks as not classifiable, almost always built-up urban area. FunderMaps assigns these to the surrounding region, given after the dash: ni-lv is built-up area within the Laagveengebied. For soil behaviour, treat a ni- code as its surrounding region. Plain ni is not classifiable with no surrounding region assigned.
 
-- az: Afgesloten zeearmen (closed-off sea inlets)
-- du: Duinen (dunes)
-- gg: Getijdengebied (tidal area)
-- hl: Heuvelland (hill country (South Limburg))
-- hz: Hogere zandgronden (higher sandy soils)
-- lv: Laagveengebied (low-lying peat area)
-- ni: Niet indeelbaar (not classifiable, mostly built-up urban area)
-- nz: Noordzee (North Sea)
-- ri: Rivierengebied (river area)
-- zk: Zeekleigebied (marine clay area)
-- ni-du: Niet indeelbaar, binnen Duinen (built-up area within the dunes region)
-- ni-hl: Niet indeelbaar, binnen Heuvelland (built-up area within the hill country (South Limburg) region)
-- ni-hz: Niet indeelbaar, binnen Hogere zandgronden (built-up area within the higher sandy soils region)
-- ni-lv: Niet indeelbaar, binnen Laagveengebied (built-up area within the low-lying peat area region)
-- ni-ri: Niet indeelbaar, binnen Rivierengebied (built-up area within the river area region)
-- ni-zk: Niet indeelbaar, binnen Zeekleigebied (built-up area within the marine clay area region)
+Code Region (Dutch) Meaning
+
+az
+Afgesloten zeearmen
+closed-off sea inlets
+
+du
+Duinen
+dunes
+
+gg
+Getijdengebied
+tidal area
+
+hl
+Heuvelland
+hill country (South Limburg)
+
+hz
+Hogere zandgronden
+higher sandy soils
+
+lv
+Laagveengebied
+low-lying peat area
+
+ni
+Niet indeelbaar
+not classifiable, mostly built-up urban area
+
+nz
+Noordzee
+North Sea
+
+ri
+Rivierengebied
+river area
+
+zk
+Zeekleigebied
+marine clay area
+
+ni-du
+Niet indeelbaar, binnen Duinen
+built-up area within the dunes region
+
+ni-hl
+Niet indeelbaar, binnen Heuvelland
+built-up area within the hill country (South Limburg) region
+
+ni-hz
+Niet indeelbaar, binnen Hogere zandgronden
+built-up area within the higher sandy soils region
+
+ni-lv
+Niet indeelbaar, binnen Laagveengebied
+built-up area within the low-lying peat area region
+
+ni-ri
+Niet indeelbaar, binnen Rivierengebied
+built-up area within the river area region
+
+ni-zk
+Niet indeelbaar, binnen Zeekleigebied
+built-up area within the marine clay area region
 
 #### Recommended Dutch labels
 
@@ -2876,4 +2941,4 @@ De inhoud van deze website, waaronder teksten, cijfers, kaarten en afbeeldingen,
 
 ### 6. Fouten melden
 
-Ziet u een fout in de gegevens van een pand? Meld het via melden.fundermaps.com. Andere vragen: info@fundermaps.com.
+Ziet u een fout in de gegevens van een pand, of heeft u een vraag over de risico-indicatie? Meld het via melden.fundermaps.com. Algemene vragen: info@fundermaps.com; vragen over de gegevens van een pand beantwoorden wij niet per mail.
